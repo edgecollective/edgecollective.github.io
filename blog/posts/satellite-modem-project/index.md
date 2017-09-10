@@ -9,6 +9,8 @@
 .. type: text
 -->
 
+<img src="/images/small_sat_holding.png">
+
 ## References
 
 Paul C's [Iridium 9603 Beacon project](https://github.com/PaulZC/Iridium_9603_Beacon).
@@ -21,9 +23,6 @@ Iridium 9603 [for sale by Rock7](https://www.rock7.com/shop-product-detail?produ
 
 <img src="/images/small_pcb.png">
 
-</br>
-</br>
 
-<img src="/images/small_sat_holding.png">
 
 
