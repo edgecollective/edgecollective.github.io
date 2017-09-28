@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <link rel="stylesheet" href="resources/style.css">
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<div class="navbar">
+<p><a href="index.html">Home</a> / Peer Production</p>
+</div>
+<h1 id="on-the-implementation-of-a-peer-production-license">On the Implementation of a Peer Production License</h1>
+<p>(Also posted as a gist -- allowing comments -- <a href="https://gist.github.com/dwblair/15ff3a4fd61310fb19e368d355de6855">here</a>.)</p>
+<h2 id="background">Background</h2>
+<ul>
+<li>Kleiner and Bauwens <a href="https://blog.p2pfoundation.net/michel-bauwens-on-the-pitfalls-of-start-up-culture-2/2017/09/20">point to the need for transvestment</a>, and propose a <a href="https://wiki.p2pfoundation.net/Peer_Production_License">Peer Production License</a>.</li>
+<li>This would require sharing information <em>selectively</em> with 'blessed' individual or organizations (Peers). This seems prima facie counter to the notion that 'useful information wants to be free'.</li>
+<li>But, Kleiner has elsewhere made the point: privacy is necessary in order to achieve true consent when sharing. If you don't have the ability to withold consent, then you can't truly give consent.</li>
+<li>The same values and infrastructure that would uphold this perceived right to Privacy -- the ability to decide with whom one shares one's information -- seem, then, at least potentially consistent with the dynamics of sharing in a Peer Production Licensing context, in which information is shared only with Peers.</li>
+<li>Selectively sharing useful information with particular Peers seems like it could be consistent with the same values and practices that support the maintenance of Privacy.</li>
+</ul>
+<h2 id="the-dat-protocol-secure-content-addressing-for-file-sharing">The DAT protocol: secure content addressing for file sharing</h2>
+<ul>
+<li>The DAT protocol provides a secure 'hash'-based content-addressing system for file storage.</li>
+<li>Every file is assigned a unique identifier that is a function of its contents. This identifier is difficult to guess without knowing the contents of the file.</li>
+<li>Any change or addition to the file results in a different hash address for the file.</li>
+<li>Thus, every new 'version' of a file will have a new, difficult-to-guess, effectively-unique identifier.</li>
+</ul>
+<h2 id="proposal-peer-production-licensing-via-dat">Proposal: Peer Production Licensing, via DAT</h2>
+<ul>
+<li>A commons-oriented individual or organization (the 'Publisher') might decide to share a set of files with particular Peers, using the DAT protocol.</li>
+<li>The licensing might be something like: &quot;Free for education, non-commercial, and commons-oriented uses.&quot;</li>
+<li>The definition of 'commons-oriented' would be at the discretion of the Publisher.</li>
+<li>The Publisher uses the criterion of 'commons-oriented' to decide whether or not some entity (individual, organization) qualifies as a Peer.</li>
+<li>Every new version of a file would necessarily have a new DAT address (because: content addressing).</li>
+<li>When creating a new version of a file, the Publisher only shares the resultant new address with Peers.</li>
+</ul>
+<h2 id="challenge-controlling-the-flow-of-information">Challenge: controlling the flow of information</h2>
+<ul>
+<li>It seems technically challenging, in an era in which the marginal cost of sharing information is approaching zero, to prevent the unauthorized sharing of information by Peers with Non-Peers.</li>
+<li>Once a data file is available to a Peer, what is to prevent that Peer from sharing information with Non-Peers -- using the DAT or other protocols?</li>
+</ul>
+<h3 id="traceablity-as-a-solution">Traceablity as a solution?</h3>
+<ul>
+<li>The Publisher might include an 'address' in a shared file that references a particular Peer -- adding to the file a secret key, only shared with that Peer.</li>
+<li>Then, if any DAT file Published by the author is found in the hands of a Non-Peer, its origin could be traced to the Peer who shared it in an unauthorized way.</li>
+<li>This still doesn't prevent unauthorized sharing of files via other, non-traceable means.</li>
+<li>But at least this would indur an extra computational cost on the part of Peers who attempt to share information with Non-Peers.</li>
+</ul>
+<h2 id="comments-questions">Comments / Questions</h2>
+<ul>
+<li>The discussion points by Tiberius Brastavicean -- <a href="https://wiki.p2pfoundation.net/Peer_Production_License#Why_I_still_don.27t_believe_in_this_peer_production_license">&quot;Why I still don't believe in this peer production license&quot;</a> -- and by Revlin John -- <a href="https://wiki.p2pfoundation.net/Peer_Production_License#Why_I_now_do_believe_in_the_P2P_license">&quot;Why I now do believe in the P2P license&quot;</a> -- are helpful.</li>
+</ul>
+<h2 id="alternative-interpretations-of-peer-production-licensing">Alternative Interpretations of Peer Production Licensing</h2>
+<ul>
+<li>Perhaps I am misconstruing the mechanics of 'exclusion', here. Maybe it is not necessary to worry about preventing access to Peer Licensed information by Non-Peers; rather, one might simply stipulate in the License that Non-Peers must pay licensing fees to the Publisher, and to enforce this by other means (via legal means, or through social pressure).</li>
+<li>At base, the fundamental goal ought not to be to limit the flow of useful information, or to create false scarcity. The goal should be to find material support for the Commons, and for those who want to create useful information and share it freely. This is the process of 'transvestment', in which value flows from the Capitalist Economy into the Commons Economy.</li>
+<li>Under what conditions might Capitalists be convinced to contribute value to the Commons?</li>
+<li>For example: IBM, Google, and Facebook do -- in certain circumstances -- support the development of open source software.</li>
+<li>A License-Based approach to Transvestment seems to require 'enclosure' and 'enforcement' --i.e., 'thou shall not use this information unless you meet the following conditions ...'.<br />
+</li>
+<li>Perhaps a 'support' approach to Transvestment would avoid the undesirable aspects of enclosure (limiting access to useful information) and associated enforcement (which might, though it wouldn't necessarily, entail an appeal to violent, coercive mechanisms, like legal systems). I.e. 'I will build this open source library for you, or maintain this dataset for you. If I deem you to be a Peer, then I will do it for free. If not, then you must pay.'</li>
+</ul>
+<p> </p>
+<p> </p>
+<hr />
+<p><span class="footer"><em>Last updated by <a href="https://twitter.com/donwblair">Don Blair</a> on Sep 21, 2017. Created using <a href="https://github.com/eakbas/TSPW">TSPW</a> and <a href="http://pandoc.org/">pandoc</a>.</em></span></p>
+</body>
+</html>
