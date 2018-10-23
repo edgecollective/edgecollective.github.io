@@ -22,7 +22,26 @@
     </head>
 
 <h1 id="remote-sensor">Remote sensor</h1>
-<h2 id="live-data">Live data</h2>
+<p>In the following setup, we're using a battery-powered <a href="https://www.adafruit.com/product/3178">Adafruit Feather</a> microcontroller as a remote sensor that measures temperature, light, and its own battery level:</p>
+<img src="resources/remote/IMG_2022.JPG" style="width:300px">
+<img src="resources/remote/IMG_2024.JPG" style="width:300px">
+<img src="resources/remote/IMG_2015.JPG" style="width:300px">
+<img src="resources/remote/IMG_2016.JPG" style="width:300px">
+<img src="resources/remote/IMG_2025.JPG" style="width:300px">
+<img src="resources/remote/IMG_2026.JPG" style="width:300px">
+<img src="resources/remote/IMG_2027.JPG" style="width:300px">
+
+<p>This remote sensor periodically sends these measurements via LoRa radio to a <a href="quahog.html">Quahog</a> microcontroller, which acts as a LoRa/wifi gateway:</p>
+ <img src="resources/remote/IMG_2021.JPG" style="width:500px">
+
+<p>The Quahog posts these measurements to 'cloud-based' servers -- both to <a href="https://wolfesneck.farmos.net/farm/sensor/quahog001">FarmOS</a> and to <a href="thingspeak.com">ThingSpeak.com</a> (at <a href="https://thingspeak.com/channels/607062">Feed ID= 607062</a>).</p>
+<p><img src="resources/remote/quahog.png" style="width:400px"><img src="resources/remote/thingspeak.png" style="width:400px"></p>
+<h2 id="live-plots">Live Plots</h2>
+<p>The graphs below are plotted using the <a href="https://github.com/plotly/plotly.js">Plotly.js</a> library, and pulling the data from ThingSpeak's data API. To fetch the most recent 10 datapoints from ThingSpeak's feed id=607062, one can use a 'GET' request of the form:</p>
+<ul>
+<li><a href="https://api.thingspeak.com/channels/607062/feeds.json?results=10">https://api.thingspeak.com/channels/607062/feeds.json?results=10</a></li>
+</ul>
+<p>Plots are updated every 60 seconds (when feed is 'live').</p>
 <table style="table-layout:fixed; width:1200px">
   <tr>
     <td id="temp" style="width:33%;height:300px;"></td>
@@ -31,16 +50,6 @@
   </tr>
 </table>
 
-<!--
-<p id="temp" style="width:320px;height:300px;"></p>
-
-<p id="light" style="width:320px;height:300px;"></p>
-
-<p id="batt" style="width:320px;height:300px;"></p>
--->
-
-<h2 id="setup">Setup</h2>
-<p><a href="https://thingspeak.com/channels/607062">ThingSpeak</a></p> <img src="resources/remote/IMG_2015.JPG" style="width:300px"> <img src="resources/remote/IMG_2016.JPG" style="width:300px"> <img src="resources/remote/quahog.png" style="width:500px"></p>
 <script>
 const url = 'https://api.thingspeak.com/channels/607062/feeds.json?results=100'
 
