@@ -21,8 +21,9 @@
     <script src="resources/js/plotly-basic-latest.min.js"></script>
     </head>
 
-<h1 id="remote-sensor">Remote sensor</h1>
-<p>In the following setup, we're using a battery-powered <a href="https://www.adafruit.com/product/3178">Adafruit Feather</a> microcontroller as a remote sensor that measures temperature, light, and its own battery level:</p>
+<h1 id="low-power-sensor---&gt;-lora/wifi-gateway---&gt;-farmos">Low-power Sensor --&gt; LoRa/Wifi Gateway --&gt; FarmOS</h1>
+<h2 id="hardware-setup">Hardware Setup</h2>
+<p>We're using a battery-powered <a href="https://www.adafruit.com/product/3178">Adafruit Feather</a> microcontroller as as a remote instrument to measure temperature, light, and its own battery level. For sensors, we're using a <a href="https://www.amazon.com/T-PRO-DS18b20-Waterproof-Temperature-Transmitter/dp/B073XKXB3G/ref=asc_df_B073XKXB3G/?tag=hyprod-20&amp;linkCode=df0&amp;hvadid=216574878909&amp;hvpos=1o2&amp;hvnetw=g&amp;hvrand=7307361722931237624&amp;hvpone=&amp;hvptwo=&amp;hvqmt=&amp;hvdev=c&amp;hvdvcmdl=&amp;hvlocint=&amp;hvlocphy=9002000&amp;hvtargid=pla-350075920462&amp;psc=1">DS18B20 'onewire' probe</a> to measure temperature, and a simple <a href="https://www.amazon.com/Honbay-Photoresistor-Dependent-Resistor-Sensitive/dp/B07DHDQ8LN/ref=asc_df_B07DHDQ8LN/?tag=hyprod-20&amp;linkCode=df0&amp;hvadid=241964169520&amp;hvpos=1o2&amp;hvnetw=g&amp;hvrand=11525597541767094435&amp;hvpone=&amp;hvptwo=&amp;hvqmt=&amp;hvdev=c&amp;hvdvcmdl=&amp;hvlocint=&amp;hvlocphy=9002000&amp;hvtargid=pla-499448294844&amp;psc=1">light-dependent resistor</a> to measure light level.</p>
 <img src="resources/remote/IMG_2022.JPG" style="width:300px">
 <img src="resources/remote/IMG_2024.JPG" style="width:300px">
 <img src="resources/remote/IMG_2015.JPG" style="width:300px">
@@ -31,16 +32,15 @@
 <img src="resources/remote/IMG_2026.JPG" style="width:300px">
 <img src="resources/remote/IMG_2027.JPG" style="width:300px">
 
-<p>This remote sensor periodically sends these measurements via LoRa radio to a <a href="quahog.html">Quahog</a> microcontroller, which acts as a LoRa/wifi gateway:</p>
+<p>This remote sensor periodically sends these measurements via LoRa radio to a <a href="quahog.html">Quahog</a> microcontroller, which in this setup is acting as a LoRa/wifi gateway -- receiving messages from the Feather via LoRa, and posting them online via wifi.</p>
  <img src="resources/remote/IMG_2021.JPG" style="width:500px">
 
-<p>The Quahog posts these measurements to 'cloud-based' servers -- both to <a href="https://wolfesneck.farmos.net/farm/sensor/quahog001">FarmOS</a> and to <a href="thingspeak.com">ThingSpeak.com</a> (at <a href="https://thingspeak.com/channels/607062">Feed ID= 607062</a>).</p>
+<h2 id="storing-data">Storing Data</h2>
+<p>The Quahog can store data locally to an SD card; in the current setup, the Quahog is posting the measurements it receives from the remote sensor (via LoRa) to 'cloud-based' servers (via wifi) -- both to <a href="https://wolfesneck.farmos.net/farm/sensor/quahog001">FarmOS</a> and to <a href="thingspeak.com">ThingSpeak.com</a> (at <a href="https://thingspeak.com/channels/607062">Feed ID= 607062</a>).</p>
 <p><img src="resources/remote/quahog.png" style="width:400px"><img src="resources/remote/thingspeak.png" style="width:400px"></p>
 <h2 id="live-plots">Live Plots</h2>
-<p>The graphs below are plotted using the <a href="https://github.com/plotly/plotly.js">Plotly.js</a> library, and pulling the data from ThingSpeak's data API. To fetch the most recent 10 datapoints from ThingSpeak's feed id=607062, one can use a 'GET' request of the form:</p>
-<ul>
-<li><a href="https://api.thingspeak.com/channels/607062/feeds.json?results=10">https://api.thingspeak.com/channels/607062/feeds.json?results=10</a></li>
-</ul>
+<p>The graphs below are plotted using the <a href="https://github.com/plotly/plotly.js">Plotly.js</a> library. Currently, the data is being pulled from ThingSpeak's data API. To fetch the most recent 10 datapoints from ThingSpeak's feed id=607062, one can use a 'GET' request of the form:</p>
+<p><a href="https://api.thingspeak.com/channels/607062/feeds.json?results=10">https://api.thingspeak.com/channels/607062/feeds.json?results=10</a></p>
 <p>Plots are updated every 60 seconds (when feed is 'live').</p>
 <table style="table-layout:fixed; width:1200px">
   <tr>
