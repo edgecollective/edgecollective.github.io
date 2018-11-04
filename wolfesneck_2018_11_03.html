@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>sdfgsdfs7fs8d7tfgsduifgsdi5234j</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <link rel="stylesheet" href="resources/style.css" />
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<head>
+    <script src="resources/js/plotly-basic-latest.min.js"></script>
+    </head>
+
+<h1 id="wolfesneck-monitoring-shed">Wolfesneck Monitoring Shed</h1>
+<p>(Post pics)</p>
+<h2 id="live-plots">Live Plots</h2>
+<p>Plots are updated every 60 seconds (when feed is 'live').</p>
+<p>thingspeak api read key 7UIGRA3Z6ZZ0XWNJ</p>
+<table style="table-layout:fixed; width:1200px">
+  <tr>
+    <td id="temp" style="width:33%;height:300px;"></td>
+    <td id="light" style="width:33%;height:300px;"></td>
+    <td id="batt" style="width:33%;height:300px;"></td>
+  </tr>
+</table>
+
+<script>
+const url = 'https://api.thingspeak.com/channels/616822/feeds.json?results=100'
+
+
+function plotter() {
+
+fetch(url)
+  .then((resp) => resp.json()) // Transform the data into json
+  .then(function(data) {
+    let series=data.feeds;
+    
+    var date=[];
+    var index=[];
+    var temp=[];
+    var humid=[];
+    var batt=[];
+    for (var i = 0; i < data.feeds.length; i++) {
+ 
+    date.push(data.feeds[i].created_at);
+    index.push(i);
+    batt.push(data.feeds[i].field1);
+    temp.push(data.feeds[i].field2);
+    humid.push(data.feeds[i].field3);
+    }
+    //console.log(date);
+    //console.log(index);
+    console.log(temp);
+
+
+    TEMP = document.getElementById('temp');
+    
+/*  Plotly.plot( TESTER, [{
+    x: date,
+    y: temp }], {
+    margin: { t: 0 } } );
+    */
+    
+    var trace1={
+    x:date,
+    y:temp,
+    name: 'Temp',
+    type: 'scatter'
+    };
+    
+    var data=[trace1];
+    var layout = {
+  title: 'Temp',
+  xaxis: {
+    title: 'date',
+    titlefont: {
+      family: 'Courier New, monospace',
+      size: 12,
+      color: 'green'
+    }
+  },
+  yaxis: {
+    title: 'temp (C)',
+    titlefont: {
+      family: 'Courier New, monospace',
+      size: 12,
+      color: 'green'
+    }
+  }
+};
+
+Plotly.newPlot(TEMP,data,layout);
+
+
+ LIGHT = document.getElementById('light');
+    
+/*  Plotly.plot( TESTER, [{
+    x: date,
+    y: temp }], {
+    margin: { t: 0 } } );
+    */
+    
+    var trace2={
+    x:date,
+    y:light,
+    name: 'Light',
+    type: 'scatter'
+    };
+    
+    var data2=[trace2];
+    var layout2 = {
+  title: 'Light',
+  xaxis: {
+    title: 'date',
+    titlefont: {
+      family: 'Courier New, monospace',
+      size: 12,
+      color: 'green'
+    }
+  },
+  yaxis: {
+    title: 'level (0..1)',
+    titlefont: {
+      family: 'Courier New, monospace',
+      size: 12,
+      color: 'green'
+    }
+  }
+};
+
+Plotly.newPlot(LIGHT,data2,layout2);
+
+
+BATT = document.getElementById('batt');
+    
+/*  Plotly.plot( TESTER, [{
+    x: date,
+    y: temp }], {
+    margin: { t: 0 } } );
+    */
+    
+    var trace3={
+    x:date,
+    y:batt,
+    name: 'Batt',
+    type: 'scatter'
+    };
+    
+    var data3=[trace3];
+    var layout3 = {
+  title: 'Battery',
+  xaxis: {
+    title: 'date',
+    titlefont: {
+      family: 'Courier New, monospace',
+      size: 12,
+      color: 'green'
+    }
+  },
+  yaxis: {
+    title: 'voltage (Volts)',
+    titlefont: {
+      family: 'Courier New, monospace',
+      size: 12,
+      color: 'green'
+    }
+  }
+};
+
+Plotly.newPlot(BATT,data3,layout3);
+
+    })
+    
+    }
+     
+ plotter();
+ 
+ var myVar = setInterval(plotter,60000);
+      
+</script>
+</body>
+</html>
