@@ -1,0 +1,112 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>sdfgsdfs7fs8d7tfgsduifgsdi5234j</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <link rel="stylesheet" href="resources/style.css" />
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+
+<script src="plotly-basic-latest.min.js"></script>
+
+<h2 id="live-plots">Live Plots</h2>
+<p>The graphs below are plotted using the <a href="https://github.com/plotly/plotly.js">Plotly.js</a> library. Currently, the data is being pulled from ThingSpeak's data API. To fetch the most recent 10 datapoints from ThingSpeak's feed id=607062, one can use a 'GET' request of the form:</p>
+<p><a href="https://api.thingspeak.com/channels/607062/feeds.json?results=10">https://api.thingspeak.com/channels/607062/feeds.json?results=10</a></p>
+<p>Plots are updated every 60 seconds (when feed is 'live').</p>
+<table style="table-layout:fixed; width:1200px">
+  <tr>
+    <td id="temp" style="width:33%;height:300px;"></td>
+    <td id="humid" style="width:33%;height:300px;"></td>
+    <td id="batt" style="width:33%;height:300px;"></td>
+  </tr>
+</table>
+
+<script>
+//var sensor_url = 'https://wolfesneck.farmos.net/farm/sensor/listener/3fac48d4a8daca665ea3b8caff8742f9?private_key=9b247ed0ef9a615c3b0b25d0c160b405';
+
+
+var sensor_url = 'https://wolfesneck.farmos.net/farm/sensor/listener/0dd7e8cbc2db252e801cb83bee9868f4?private_key=9b247ed0ef9a615c3b0b25d0c160b405';
+
+var limit = 100;
+var names = ['fence']
+
+function plot(name) {
+
+  // Assemble the url.
+  var url = sensor_url + "&limit=" + limit + "&name=" + name
+
+  // Fetch the data from the url.
+  fetch(url)
+
+  // Decode the response json.
+  .then((resp) => resp.json())
+
+  // Process the data.
+  .then(function(data) {
+
+    // Initialize variables.
+    var dates=[];
+    var values=[];
+
+    // Iterate through the data and put it into the arrays.
+    for (var j = 0; j < data.length; j++) {
+      dates.push(data[j].timestamp);
+      values.push(data[j][name]);
+    }
+    
+    // Assemble variables for plotly.
+    var graph_data=[{
+      x:dates,
+      y:values,
+      name: name,
+      type: 'scatter'
+    }];
+    var titlefont = {
+      family: 'Courier New, monospace',
+      size: 12,
+      color: 'green'
+    }
+    var layout = {
+      title: name,
+      xaxis: {
+        title: 'date',
+        titlefont: titlefont
+      },
+      yaxis: {
+        title: name,
+        titlefont: titlefont
+      }
+    }
+
+    // Draw the graph to the element.
+    element = document.getElementById(name);
+    Plotly.newPlot(element, graph_data, layout);
+  });
+}
+
+function plotter() {
+  for (var i = 0; i < names.length; i++) {
+    plot(names[i]);
+  }
+}
+
+plotter();
+ 
+var myVar = setInterval(plotter,60000);
+      
+</script>
+</body>
+</html>
+
