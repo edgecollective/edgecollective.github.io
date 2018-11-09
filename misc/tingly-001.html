@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <link rel="stylesheet" href="resources/style.css">
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<div class="navbar">
+<p><a href="index.html">Home</a> / Tingly Tentacle</p>
+</div>
+<h1 id="tingly-tentacle-v-0.1">Tingly Tentacle v 0.1</h1>
+<p>Build documentation for Tingly Tentancle version 0.1. Latest file is the 'mother4.brd' file <a href="https://github.com/edge-research/tingly-tentacle/tree/master/mother_board">here</a>.</p>
+<h2 id="general-notes">General notes</h2>
+<ul>
+<li><strong>Placement and orientation</strong>. The only breakoutboard for which orientation is ambiguous is the motor driver shield -- the VMOT and SLA pins are labeled in order to aid orientation.</li>
+<li><strong>Recommendation: use female headers</strong>. It is recommended to use female headers to mount external breakouts / boards on the PCB. This will allow for easier debugging / replacement in case of damage.</li>
+<li><strong>Errata</strong>. There is an error in the wiring -- the input battery (VBAT) should be connected directly to the motor shield input voltage (VMOT). This is addressed under 'Connecting VBAT to VMOT' below.</li>
+</ul>
+<h2 id="battery-input">Battery input</h2>
+<p><img width=800 src="resources/tingly/battery.png"></p>
+<h2 id="i2c-pull-up-resistors">I2C Pull-up resistors</h2>
+<p><img width=800 src="resources/tingly/i2c_focus.png"></p>
+<p>Place resistors somewhere in the range of 2.2K - 10K.</p>
+<h2 id="voltage-measure">Voltage measure</h2>
+<p><img width=800 src="resources/tingly/voltage_measure.png"></p>
+<p>Place 100K resistors.</p>
+<h2 id="connecting-vbat-to-vmot">Connecting VBAT to VMOT</h2>
+<p><img width=800 src="resources/tingly/vbat_vmot.png"></p>
+<p>These two pins should be connected with a jumper wire. This will connect the input battery to the VMOT pin on the motor shield. NOTE: The input battery must therefore provide an appropriate voltage for the motor shield.</p>
+<h2 id="led-resistors">LED resistors</h2>
+<p><img width=800 src="resources/tingly/leds.png"></p>
+<p>Place 10K resistors.</p>
+<h2 id="leds">LEDs</h2>
+<p><img width=800 src="resources/tingly/leds_place.png"></p>
+<p>Place LEDs here. The negative pin for LEDS should be placed on the 'flat' side of the LED symbol.</p>
+<h2 id="motor-setup">Motor setup</h2>
+<p><img src="resources/tingly/motor_wiring.jpg"></p>
+<p>It is recommended that screw terminals, placed on the motor shield itself, be used to connect to the motor wires. Alternatively, the relevant pins are also broken out on the end of the board. These pins are MOTXP, MOTXN, MOTYN, and MOTYP.</p>
+<h2 id="blue-robotics-i2c">Blue Robotics / I2C</h2>
+<p><img width = 800 src="resources/tingly/bluerobotics.png"></p>
+<p>The i2c connectors on the board use the DF13 connector standard (compatible with Blue Robotics sensors):</p>
+<ul>
+<li><a href="https://www.digikey.com/product-detail/en/hirose-electric-co-ltd/DF13-4P-1.25DSA/H2193-ND/241767"> DF13 board connector: </br><img  src="resources/tingly/DF13-board-connector.jpg"> </a></li>
+<li><a href="https://www.banggood.com/APM-2_5-DF13-Position-Connector-20cm-Flight-control-Cable-p-89195.html"> DF13 cable connector: </br><img  src="resources/tingly/DF13-cable.png"> </a></li>
+<li><a href="http://www.ebay.com/itm/like/152544534898?chn=ps&dispItem=1"> Cable with separate wires:</br> <img src="resources/tingly/df13-sep.png"> </a></li>
+</ul>
+<h2 id="solenoid-setup">Solenoid Setup</h2>
+<h3 id="mosfets">Mosfets</h3>
+<p><img width=800 src="resources/tingly/mosfets.png"></p>
+<p>Take care to orient the mosfet appropriately, and select a Mosfet with the proper pin arrangement.</p>
+<h3 id="diodes">Diodes</h3>
+<p><img width=800 src="resources/tingly/diodes.png"></p>
+<p>Diodes must be oriented appropriately.</p>
+<h3 id="solenoid-connectors">Solenoid connectors</h3>
+<p><img width=800 src="resources/tingly/solenoids.png"></p>
+<p>These are appropriate for 5V solenoids, like those sold by Adafruit.</p>
+<p><a href="https://www.adafruit.com/product/2776"> Adafruit mini push-pull solenoid - 5V: </br></br><img width=300 src="resources/tingly/ada_sol.jpg"></p>
+<p> </p>
+<p> </p>
+<hr />
+<p><span class="footer"><em>Last updated by <a href="https://twitter.com/donwblair">Don Blair</a> on Sep 28, 2017. Created using <a href="https://github.com/eakbas/TSPW">TSPW</a> and <a href="http://pandoc.org/">pandoc</a>.</em></span></p>
+</body>
+</html>
