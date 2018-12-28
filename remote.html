@@ -40,7 +40,7 @@ var names = ['adc_val', 'humidity_ambient', 'temp_ambient','temp_onewire']
 function plot(name) {
 
   // Assemble the url.
-  var url = sensor_url + "&start="+start+ "&limit=" + limit + "&name=" + name
+  var url = sensor_url + "?start="+start+ "&limit=" + limit + "&name=" + name
 
 console.log(url)
   // Fetch the data from the url.
