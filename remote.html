@@ -23,17 +23,44 @@
 
 <h2 id="live-plots">Live Plots</h2>
 <p>Plots are updated every 60 seconds (when feed is 'live').</p>
+
+<!--
 <table style="table-layout:fixed; width:1200px">
   <tr>
-    <td id="temp" style="width:33%;height:300px;"></td>
-    <td id="humid" style="width:33%;height:300px;"></td>
-    <td id="batt" style="width:33%;height:300px;"></td>
+    <td id="adc_val" style="width:33%;height:300px;"></td>
+    <td id="humidity_ambient" style="width:33%;height:300px;"></td>
+    <td id="temp_ambient" style="width:33%;height:300px;"></td>
+    <td id="temp_onewire" style="width:33%;height:300px;"></td>
   </tr>
 </table>
+-->
+
+<p id="temp_ambient" style="height:300px;">
+<p id="temp_onewire" style="height:300px;">
+<p id="humidity_ambient" style="height:300px;">
+<p id="adc_val" style="height:300px;">
+
+
 
 <script>
+function timeConverter(UNIX_timestamp){
+  var a = new Date(UNIX_timestamp * 1000);
+  var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  var year = a.getFullYear();
+  //var month = months[a.getMonth()];
+  var month = "0"+a.getMonth();
+  var date = "0"+a.getDate();
+  var hour = "0"+a.getHours();
+  var minutes = "0"+a.getMinutes();
+  var sec = "0"+a.getSeconds();
+  var time = year + '-' + month.substr(-2) + '-' + date.substr(-2) + ' ' + hour.substr(-2) + ':' + minutes.substr(-2) + ':' + sec.substr(-2) ;
+  return time;
+}
+
+//console.log(timeConverter(1546009871));
+
 var sensor_url = 'https://wolfesneck.farmos.net/farm/sensor/listener/655b163077b0d2edeb5af5bfc4fccfc3';
-var limit = 100;
+var limit = 1000;
 var start = 1545868800;
 var names = ['adc_val', 'humidity_ambient', 'temp_ambient','temp_onewire']
 
@@ -42,7 +69,6 @@ function plot(name) {
   // Assemble the url.
   var url = sensor_url + "?start="+start+ "&limit=" + limit + "&name=" + name
 
-console.log(url)
   // Fetch the data from the url.
   fetch(url)
 
@@ -55,12 +81,18 @@ console.log(url)
     // Initialize variables.
     var dates=[];
     var values=[];
-
+    //var dates_fancy=[];
+    
     // Iterate through the data and put it into the arrays.
     for (var j = 0; j < data.length; j++) {
-      dates.push(data[j].timestamp);
+      timestamp=data[j].timestamp;
+      //dates_fancy.push(timeConverter(timestamp));
+      dates.push(timeConverter(timestamp));
+      //dates.push(data[j].timestamp);
       values.push(data[j][name]);
     }
+    
+    //console.log(dates)
     
     // Assemble variables for plotly.
     var graph_data=[{
