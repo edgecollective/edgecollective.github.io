@@ -1,0 +1,146 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>sdfgsdfs7fs8d7tfgsduifgsdi5234j</title>
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <link rel="stylesheet" href="resources/style.css" />
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+
+<script src="resources/js/plotly-basic-latest.min.js"></script>
+
+<h2 id="live-plots">Quahog located at Wolfe's Neck </h2>
+</br>
+
+<img src="images/q_wolfe.png" height=300px>
+
+<p>This device is currently collecting temperature, humidity, and an adc value (related to battery voltage). Plots are updated approx every 60 seconds (when feed is 'live').</p>
+
+<!--
+<table style="table-layout:fixed; width:1200px">
+  <tr>
+    <td id="adc_val" style="width:33%;height:300px;"></td>
+    <td id="humidity_ambient" style="width:33%;height:300px;"></td>
+    <td id="temp_ambient" style="width:33%;height:300px;"></td>
+    <td id="temp_onewire" style="width:33%;height:300px;"></td>
+  </tr>
+</table>
+-->
+
+<p id="temp" style="height:300px;">
+<p id="humid" style="height:300px;">
+<p id="batt" style="height:300px;">
+
+
+
+<script>
+function timeConverter(UNIX_timestamp){
+  var a = new Date(UNIX_timestamp * 1000);
+  var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  var year = a.getFullYear();
+  //var month = months[a.getMonth()];
+  var month = "0"+(a.getMonth()+1);
+  //console.log(month);
+  var date = "0"+a.getDate();
+  var hour = "0"+a.getHours();
+  var minutes = "0"+a.getMinutes();
+  var sec = "0"+a.getSeconds();
+  var time = year + '-' + month.substr(-2) + '-' + date.substr(-2) + ' ' + hour.substr(-2) + ':' + minutes.substr(-2) + ':' + sec.substr(-2) ;
+  return time;
+}
+
+//console.log(timeConverter(1546009871));
+
+var sensor_url = 'https://wolfesneck.farmos.net/farm/sensor/listener/3fac48d4a8daca665ea3b8caff8742f9';
+var limit = 50000;
+var start = 1543681827;
+var names = ['temp', 'humid', 'batt']
+
+function plot(name) {
+
+  // Assemble the url.
+  var url = sensor_url + "?start="+start+ "&limit=" + limit + "&name=" + name
+
+console.log(url)
+
+  // Fetch the data from the url.
+  fetch(url)
+
+  // Decode the response json.
+  .then((resp) => resp.json())
+
+  // Process the data.
+  .then(function(data) {
+
+    // Initialize variables.
+    var dates=[];
+    var values=[];
+    //var dates_fancy=[];
+    
+    // Iterate through the data and put it into the arrays.
+    for (var j = 0; j < data.length; j++) {
+      timestamp=data[j].timestamp;
+      //dates_fancy.push(timeConverter(timestamp));
+      dates.push(timeConverter(timestamp));
+      //dates.push(data[j].timestamp);
+      values.push(data[j][name]);
+    }
+    
+    //console.log(dates)
+    
+    // Assemble variables for plotly.
+    var graph_data=[{
+      x:dates,
+      y:values,
+      name: name,
+      type: 'scatter'
+    }];
+    var titlefont = {
+      family: 'Courier New, monospace',
+      size: 12,
+      color: 'green'
+    }
+    var layout = {
+      title: name,
+      xaxis: {
+        title: 'date',
+        titlefont: titlefont
+      },
+      yaxis: {
+        title: name,
+        titlefont: titlefont
+      }
+    }
+
+    // Draw the graph to the element.
+    element = document.getElementById(name);
+    Plotly.newPlot(element, graph_data, layout);
+  });
+}
+
+function plotter() {
+  for (var i = 0; i < names.length; i++) {
+    plot(names[i]);
+  }
+}
+
+plotter();
+ 
+var myVar = setInterval(plotter,60000);
+      
+</script>
+</body>
+</html>
+
