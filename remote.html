@@ -22,8 +22,11 @@
 <script src="plotly-basic-latest.min.js"></script>
 
 <h2 id="live-plots">Quahog located at Artisan's Asylum </h2>
-<p>Ambient Temperature and Humidity; Probe Temp; ADC value</p>
-<p>Plots are updated every 60 seconds (when feed is 'live').</p>
+</br>
+
+<img src="images/q_a2.jpeg" height=300px>
+
+<p>This device is currently collecting ambient temperature and humidity; probe temp; and ADC value. Plots are updated every 60 seconds (when feed is 'live').</p>
 
 <!--
 <table style="table-layout:fixed; width:1200px">
@@ -49,7 +52,8 @@ function timeConverter(UNIX_timestamp){
   var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
   var year = a.getFullYear();
   //var month = months[a.getMonth()];
-  var month = "0"+a.getMonth();
+  var month = "0"+(a.getMonth()+1);
+  //console.log(month);
   var date = "0"+a.getDate();
   var hour = "0"+a.getHours();
   var minutes = "0"+a.getMinutes();
