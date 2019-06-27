@@ -23,9 +23,8 @@
 <p>We're planning on beginning by creating two instrumentation setups, one at each measurement site (“biochar” and “non-biochar”).  Each setup will operate on 12V battery power, and measure soil moisture and temperature locally every 30 minutes.  One of the setups (“Remote Node”, Fig 1) will send its data to a “Gateway Node” via LoRa radio; and the “Gateway Node” will then send the combined datasets to FarmOS via cellular modem. We will be using HOBO / Decagon Soil Moisture probes as our sensors.</p>
 <img src="/img/field_1/config_1.png">
 <hr>
-<p><em>June 26, 2019</em></p>
 <h2>Cellular Posting to FarmOS</h2>
-<p><em>-- Update, 18.00 --</em></p>
+<p><em>-- June 26, 2019, 18.00 --</em></p>
 <p>We'll begin by setting up a quick 'end-to-end' test system for transmitting data from a Quahog to FarmOS via a cellular modem (the Adafruit FONA cellular module).</p>
 <p>Because the FONA can only use TSL 1.0, and FarmOS is setup to require higher than TSL 1.0 to POST, we'll be using a 'relay server' -- a very simple NodeJS script, <a href="https://github.com/edgecollective/farmos-relay">farmos-relay</a>, that receives POSTs from the FONA (accepting TSL 1.0) and then re-broadcasts to FarmOS.  (Note: we should look into the security of doing things this way.)</p>
 <p><em>-- Update, 18:55 --</em></p>
@@ -59,6 +58,18 @@
 <ul>
 <li>Detecting the network status of the FONA and waiting until it's connected to attempt to post.</li>
 </ul>
+<p><em>-- June 27, 2019, 10:20 --</em></p>
+<p>The cellular modem system has been running overnight without a hitch, posting temperature data every two minutes to FarmOS!  I downloaded a csv file from FarmOS.  Because the format is:</p>
+<pre><code>timestamp 1, key1, value1
+timestamp 1, key2, value2
+timestamp 2, key1, value1
+tiemstamp 2, key2, value2
+</code></pre>
+<p>I used a little script I found online to remove every other line (so that I could focus on temp data only and graph it easily):</p>
+<pre><code>sed -e n\;d &lt;file
+</code></pre>
+<p>Worked nicely.  Plot of the resultant data (using LibreOffice) is here:</p>
+<img src="/img/field_1/plot_overnight.png">
 
   </body>
 </html>

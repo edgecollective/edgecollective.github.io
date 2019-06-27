@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+	<title>MOSSPIG</title>
+    </head>
+    <body>
+	    <a href="/">MOSSPIG</a>
+        <h1>Peer-to-Peer Sketchbook</h1>
+
+        <h1>Really Simple Grid Maps</h1>
+<h2>Background</h2>
+<p>In 1985, <strong>Sting</strong> was rocking hard ...</p>
+<img src="/img/maps/Sting2.jpg" width=500>
+<p>... but the <strong>Global Positioning System (GPS)</strong> ... wasn't really a thing for most people!  People were still zooming about, of course, in cars and planes and boats and and horses and tuktuks ...</p>
+<img src="/img/maps/tuktuk.jpg" width=500>
+<p>... but one wonders -- how did they <em>possibly</em> find their way about, without GPS?</p>
+<p>Well -- they often used paper maps!</p>
+<img src="/img/maps/salt_lake.png" width=500>
+<p>Oh but hey! you say, what are those weird boxes on that image? Well, if you're doing everything with paper, you can't just 'zoom in / zoom out' ... you need other ways of referencing subsets of data (notice that legend at the bottom of the map, with a rectangle that says &quot;Corresponds to page in atlas&quot;) ...</p>
+<p>In the era of hyperlinked GPS data, drawing custom boxes must seem like a lot of work, and not very fun.  Indeed, there was a more common, simpler technique: simply overlay a grid on any map:</p>
+<img src="/img/maps/florida.png" width=500>
+<p>Notice the letters along the left and right sides of the map, and the numbers along the top and bottom -- this makes indexing particular places on the map very easy in the 'INDEX' at the bottom!</p>
+<p>And note -- it's not 'either-or' -- you can even have overlapping coordinate systems! See how in this map they've used their own custom grid overlay <em>and</em> latitude / longitude:</p>
+<img src="/img/maps/mexico.png" width=500>
+<h2>Why Grid Maps Today?</h2>
+<p>So, in the era of GPS, are grid maps still useful? In some cases, yes!  Here are some reasons to consider using them:</p>
+<h3>Resilient for Offline Usage</h3>
+<p>On a mundane level: it's possible that you're unable to get a stable GPS signal on your navigation device.  Sometimes this happens in cities; certainly it happens indoors!</p>
+<p>But what if things go <em>really</em> poorly, and -- your GPS device runs out of batteries? Or malfunctions? Or you don't have a GPS device handy?</p>
+<p>You can print out a copy of a grid map, and it works!</p>
+<h3>Decentralized</h3>
+<p>When it comes down to it, the satellite network is an example of a 'centralized, single-point-of-failure' system -- if there's something wrong with it, there's not much for you do about it.  We can hope that the satellite companies maintain the system well -- and certainly, there are a lot of strong incentives for them to do so!  So this might not be too much of a worry (unless, eeep, there's a solar flare or something ...)</p>
+<h3>Accessible for Users</h3>
+<p>On the one hand, GPS-enabled devices provide us with a very simple, magical navigation interface -- often directions are very intuitive on them.</p>
+<p>On the other hand: it is relatively difficult for end users to reason about latitude and longitude coordinates.  Do you know what your current lat / lon is? Even approximately? If you're like most, you would need a GPS system to tell you!  More intuitive and accessible grid systems (a square grid in accessible units like &quot;1,2,3&quot; or &quot;A,B,C&quot;) mean that users can quickly ascertain &quot;I'm within block D-3, near the water tower&quot;, using language and concepts that are accessible to most, and usually sufficient for everyday location / navigation purposes.</p>
+<h3>Resilient for Offline Use</h3>
+<p>Talk about &quot;offline first&quot; -- if you print out a grid map, you don't even need a computer!</p>
+<h3>Accessible for Developers</h3>
+<p>Not everyone is excited about the challenge of managing map projections in order to manage latitude and longitude coordinates -- but most programmers can index a square grid in their sleep!</p>
+<h3>Generic Application</h3>
+<p>So, this is maybe the most exciting reason for reconsidering the humble 'grid map':  it can be applied to pretty much <em>anything</em>.</p>
+<p>For example:  let's say that you're on a hike, and you're given a nice hiking map, on paper:</p>
+<img src="/img/maps/wolfesneck.png" width=600>
+<p>How do you talk about this map with your friends?  You basically need to point at it, together -- or say things like &quot;So let's meet at this picnic spot that is sort of on the top left of the peninsula near the bottom of the lake ...&quot;</p>
+<p>But if you just draw a grid on it:</p>
+<img src="/img/maps/wolfesneck_grid.png" width=600> 
+<p>Now you've got an easy way to refer to locations!  &quot;Let's meet on the trail at G,12 in an hour from now.&quot;</p>
+<p>Okay, that might not be as exciting if you're thinking &quot;look I'll just hope for GPS, this is goofy.&quot;</p>
+<p>But what about this:  let's say that someone with local knowledge does you a kind favor and sketches out a hand-drawn map of the hike, with points of interest:</p>
+<img src="/img/maps/hand_drawn_trail.jpg" width=600>
+<p>How are you going to apply latitude / longitude to this, haha?  BUT if you just draw a grid overlay:</p>
+<img src="/img/maps/trail_grid.png" width=600>
+<p>Now you can say &quot;Let's head to 'The Dome' at G-14&quot;!</p>
+<p>The real magic of this is when we apply this technique to situations where GPS really isn't a great solution at all, even if it were available.  For example, the floorplan of a warehouse or a greenhouse:</p>
+<img src="/img/maps/greenhouse_grid.png" width=600>
+<h2>P2P Implementation ... ?</h2>
+<p>What if we were to make a simple &quot;grid map&quot; system for decentralized p2p devices?</p>
+<p>One simple idea would be to simply store a map image -- which could be a simple bitmapped image -- along with some very simple metadata around the type of grid one wants to apply.</p>
+<p>For example:</p>
+<ul>
+<li><code>wolfesneck.png</code> could be the original image file; and</li>
+<li><code>wolfesneck.json</code> could be the metadata file</li>
+</ul>
+<p>where <code>wolfesneck.json</code> tells us what kind of grid to apply to the image:</p>
+<pre><code>{
+'ref': 'ax3dj388g8djj38fj83jf',
+'num_xticks': 20,
+'xticks_style': 'alpha'
+'num_yticks': 30,
+'xticks_style': 'number'
+}
+</code></pre>
+<p>... or something like that.  The key would be that you could always have the map image associated with a particular grid configuration, so that computerized systems could always reproduce the grid and the image together consistently.</p>
+<p>My sense is that the sort of 'unique hash identifier' functionality that the <a href="https://github.com/datproject">dat protocol</a> provides out of the box could easily be leveraged for this sort of thing.</p>
+<p>Then, once it's easy to refer to 'canonical' versions of these 'grid-maps', people could use p2p chat protocols like <a href="https://cabal.chat/">cabal</a> to send simple updates of their location to one another -- which will also work easily 'offline'.</p>
+<p>What do you think?</p>
+
+    </body>
+</html>
