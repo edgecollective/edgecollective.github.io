@@ -36,7 +36,10 @@
 <p><em>-- Update, 19:43 --</em></p>
 <p>I've got the Quahog receiving the Feather data via LoRa, and printing it out on the OLED, with this commit of <a href="https://github.com/edgecollective/knuth-soil-remote/blob/5767ee35aad9d368e93ba1d583416a532b8b608b/quahog/rad_relay.py">rad_relay.py</a> Micropython code on the Quahog.</p>
 <p><em>-- Update, 20:06 --</em></p>
-<p>Cool! We've got the end-to-end demo (with faked data) now:  Remote Node -- (LoRa radio) --&gt; Quahog -- (cellular) --&gt; relay server --&gt; FarmOS!  The relevant code is <a href="https://github.com/edgecollective/knuth-soil-remote/blob/a53c40da56e1735645031fd489de680767c98ef1/quahog/rad_relay.py">this version</a> of rad_relay.py on the Quahog.</p>
+<p>Cool! We've got the end-to-end demo (with faked data) now!</p>
+<pre><code>Remote Node -- (LoRa radio) --&gt; Quahog -- (cellular) --&gt; relay server --&gt; FarmOS
+</code></pre>
+<p>The relevant code is <a href="https://github.com/edgecollective/knuth-soil-remote/blob/a53c40da56e1735645031fd489de680767c98ef1/quahog/rad_relay.py">this version</a> of rad_relay.py on the Quahog.</p>
 <img src="/img/field_1/end_to_end.png" width=300>
 <img src="/img/field_1/farmos_post.png" height=300>
 <p>TODO:</p>
@@ -70,6 +73,8 @@ tiemstamp 2, key2, value2
 </code></pre>
 <p>Worked nicely.  Plot of the resultant data (using LibreOffice) is here:</p>
 <img src="/img/field_1/plot_overnight.png">
+<p><strong>Cellular network status</strong>. I saw some notes online that the network status of the SIM800 module (on which the Fona is based) isn't particularly revealing about the actual network status.  I'll at least try to assess its status, but not sure yet whether it makes sense to write any logic around it; it might be better to just attempt to send, and then if fail, go back to sleep -- rather than wasting battery on re-attempts.  Perhaps the network status <em>is</em> reliable upon wakeup -- when it first transitions from &quot;not available&quot; to &quot;available&quot; -- in which case we can at least keep attempting to post before a TIMEOUT is reached.</p>
+<p><strong>Power</strong>. The next big step is to think about the optimal way to do battery power.  The complication is that the FONA module really wants a 3.7V rechargeable battery input.  What this might mean is that the rest of the system ought to get designed around that; or (less elegantly), that we have a separate charging system for the 3.7V battery, and then another one for the Quahog + sensor.  The sensor will likely require 3.6 - 12V.  The Quahog's 3.3V regulator requires 4.7V input, and its 5V regulator requires over 6V, I believe.  Other than these voltage considerations, I believe the circuit for turning the entire system on and off is well-designed at this point; it's really just a matter of figuring out how to generate the required voltages nicely and simply.</p>
 
   </body>
 </html>
