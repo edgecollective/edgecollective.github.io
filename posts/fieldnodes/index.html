@@ -48,11 +48,16 @@
 <p><em>-- Update, 20:39 --</em></p>
 <p><a href="https://github.com/edgecollective/knuth-soil-remote/blob/master/feather/rad_onewire.py">rad_onewire.py</a> on the Feather will measure temp every interval, and post via LoRa ...</p>
 <p><em>-- Update, 21.:01 --</em></p>
-<p>Alright, looks like we're consistently posting!  The latest code is:</p>
+<p>Alright, looks like we're consistently posting -- with real temp data!  The latest code is:</p>
 <ul>
 <li>Feather: <a href="https://github.com/edgecollective/knuth-soil-remote/blob/master/feather/rad_onewire.py">rad_onewire.py</a> (copied as main.py onto the Feather so that it runs on boot)</li>
 <li>Quahog: <a href="https://github.com/edgecollective/knuth-soil-remote/blob/master/quahog/rad_relay.py">rad_relay.py</a></li>
 <li>FarmOS data: <a href="https://wolfesneck.farmos.net/farm/sensor/knuthtestone">test data</a> at the Wolfesneck FarmOS instance.</li>
+</ul>
+<img src="/img/field_1/temp_1.png">
+<p>Still have the remaining todo:</p>
+<ul>
+<li>Detecting the network status of the FONA and waiting until it's connected to attempt to post.</li>
 </ul>
 
   </body>
