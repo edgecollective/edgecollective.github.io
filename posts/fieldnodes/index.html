@@ -85,6 +85,10 @@ tiemstamp 2, key2, value2
 <p><em>-- Update 11:41 --</em></p>
 <p>Okay!  Was able to capture the cellular battery voltage using a function I slapped together, and made a new version of the Quahog code: <a href="https://github.com/edgecollective/knuth-soil-remote/blob/master/quahog/rad_relay_batt.py">rad_relay_batt.py</a>.</p>
 <p>I realized in the process that the &quot;relay server&quot; is currently &quot;hard-coded&quot; to accept and relay only two parameters: temp and soil moisture.  So for this test, I'm just going to stuff the battery voltage into the moisture variable -- this will allow me to track the voltage values over time for a few hours.  Meanwhile, I'll work on making the relay server on mosspig.club more generic if I can (perhaps making the cellular code into HTTP POST).  And I'l also work on the power circuit.</p>
+<p><em>-- Update 20:34 --</em></p>
+<p>Okay, I've been running the cellular system for 24 hours straight, more or less; and keeping track of the cellular battery voltage for the last 10 or more.  Here's a snapshot of the last 3 hours.  It's what one would expect from a lithium ion battery charger:  the battery discharges, the control circuit sees a threshold crossed and charges it back up again:</p>
+<img src="/img/field_1/cell_batt_recharging.png">
+<p>What I'd like to know is: what's a similarly 'clean' way of measuring voltage on other batteries? Whenever I've tried with a voltage divider, I've gotten such a noisy signal ... I'll look into it.</p>
 
   </body>
 </html>
