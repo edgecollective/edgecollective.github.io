@@ -88,7 +88,28 @@ tiemstamp 2, key2, value2
 <p><em>-- Update 20:34 --</em></p>
 <p>Okay, I've been running the cellular system for 24 hours straight, more or less; and keeping track of the cellular battery voltage for the last 10 or more.  Here's a snapshot of the last 3 hours.  It's what one would expect from a lithium ion battery charger:  the battery discharges, the control circuit sees a threshold crossed and charges it back up again:</p>
 <img src="/img/field_1/cell_batt_recharging.png">
+<p>(And the temp has been going strong ...)</p>
+<img src="/img/field_1/farmos_moisture_temp.png">
 <p>What I'd like to know is: what's a similarly 'clean' way of measuring voltage on other batteries? Whenever I've tried with a voltage divider, I've gotten such a noisy signal ... I'll look into it.</p>
+<p><em>-- Update 23:48 --</em></p>
+<p>I've swapped in a Ting mobile SIM card -- just involved changing the APN in Quahog code to &quot;wholesale&quot; instead of &quot;fast.t-mobile.com&quot; (for the previous T Mobile card I was using).  Works nicely.</p>
+<p>One option that might be easier around the &quot;relay&quot; code on the server is to simply accept an arbitrary number of additonal &quot;GET&quot; parameters.  So then I don't have to worry about doing a &quot;POST&quot; on the SIM800 side -- I can just form a long GET url, and then construct a POST on the server side that will interact with FarmOS.</p>
+<p>Next step: migrate from Wolfesneck FarmOS to Edge Collective FarmOS instance (deep thanks to Mike Stenta!).</p>
+<p><em>-- Update Jun 28, 00:57 --</em></p>
+<p>Neat!  I've got the relay code on the server grabbing all of the GET params and posting them to FarmOS.</p>
+<p>I've also migrated to the Edge Collective FarmOS instance.
+A next step might be to pass the FarmOS base url as a GET param, so that I don't have to touch the server code when migrating ...</p>
+<p><em>-- Update 01:42 --</em></p>
+<p>Things are running solidly now.  I'm using the FarmOS base url as a GET param, as suggested above.</p>
+<p>The relay code on the server side is <a href="https://github.com/edgecollective/knuth-soil-remote/blob/master/server_relay/relay_get_post.js">relay_get_post.js</a>, and the latest Quahog code is <a href="https://github.com/edgecollective/knuth-soil-remote/blob/master/quahog/rad_relay_batt.py">rad_relay_batt.py</a>.</p>
+<img src="/img/field_1/edge_cell_blog.png">
+<p>Next steps:</p>
+<ul>
+<li>See if I can resurrect the Iowa Decagon hardware;</li>
+<li>Look into the optimal power circuit for the Quahog + Cellular</li>
+<li>Add a &quot;KEY&quot; functionality to the cellular modem code to make sure it resets properly on boot</li>
+<li>Resurrect the timer circuit</li>
+</ul>
 
   </body>
 </html>
