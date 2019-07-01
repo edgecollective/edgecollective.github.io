@@ -160,13 +160,15 @@ A next step might be to pass the FarmOS base url as a GET param, so that I don't
 <p>Doesn't seem to have rubber gaskets, but should be fine for at least the initial prototyping.</p>
 <p>The solar charging setup is working. The battery is relatively low capacity -- 1200 mAH, compared to ~6000 mAH available on Adafruit -- and I haven't been keeping it outdoors in the mornings, so the pattern now is: it charges enough to work, and then discharges after sunset until it's no longer working.  Then, when there's sunlight again, it comes back on.  (You can see that in the below graph of cellular battery voltage over time.) I'll try a larger battery; but I've also designed the adapter circuit to allow for 6.5-36V input that will charge the solar battery and provide its own power.</p>
 <img src="/img/field_1/cell_battery_returns.png" width=400>
-<p>I've also started working on the layout for the cellular adapter circuit, intended for a milled board at Artisan's:</p>
+<h2>Gateway Board</h2>
+<p>I've also started working on the layout for the &quot;Gateway Board&quot; that will connect cellular modem, solar charger, power booster, and timer circuit together -- intended for a milled board at Artisan's:</p>
 <img src="/img/field_1/cellular_layout.png" width=400>
 <img src="/img/field_1/knuth_adapter.png" width=400>
 <p>I'm trying something new -- rather than spend inordinate amounts of time trying to lay out a one-layer board, I'm using the standard technique of 'vias':</p>
 <img src="/img/field_1/vias_layout_upclose.png" width=400>
+<p>This will simply mean that I need to use my own 'jumper wires' between these vias (you can see them in the above layout diagram as white lines connecting vias). Should work out fine, as long as the OtherMill recognizes these vias.</p>
 <img src="/img/field_1/vias_upclose.png" width=400>
-<p>This will simply mean that I need to use my own 'jumper wires' between these vias.  Should work out fine, as long as the OtherMill recognizes these vias.  Going to double check the schematic tonight, then plan to mill the board out tomorrow.</p>
+<p>Going to double check the schematic tonight, then plan to mill the board out tomorrow.</p>
 
   </body>
 </html>
