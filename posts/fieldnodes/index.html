@@ -111,7 +111,7 @@ A next step might be to pass the FarmOS base url as a GET param, so that I don't
 <li>Resurrect the timer circuit</li>
 </ul>
 <h2>Power circuit</h2>
-<p><em>-- Update Une 29, 22:55 --</em></p>
+<p><em>-- Update June 29, 22:55 --</em></p>
 <p>Okay, today I:</p>
 <ul>
 <li>Resurrected the timer circuit, and incorporated it.</li>
@@ -119,6 +119,31 @@ A next step might be to pass the FarmOS base url as a GET param, so that I don't
 <li>Simply connected the 'KEY' pin to ground, which seems to work nicely with the power circuit</li>
 <li>Added in the 'DONE' timer functionality</li>
 <li>redid the LoRa antennae on each device</li>
+</ul>
+<p>I'm connecting the 3.7V battery to the FONA directly; and I'm then using the solar charging circuit directly on the &quot;BAT&quot; pin of the FONA.  This isn't crazy if one looks at the FONA schematic; as long as I don't apply power to '5V / USB in' on the FONA, I'm not powering its charger chip -- so I should be fine charging it on my own.</p>
+<p>Oddly -- I would think that I ought to be able to connect the battery to the &quot;BATT&quot; JST on the solar lipo, and that this would be equivalent.  But this didn't seem to work -- the FONA kept resetting.  So, instead I'm running wires from the &quot;B&quot; pin on the solar lipo into the &quot;BAT&quot; pin on the FONA. Could it be the length of the wires?  I should check the solar charger schematic to see why this might be the case.</p>
+<p><em>-- Update June 30, 22:02 --</em></p>
+<p>Tested circuit -- it works!  It recharged during the sunlight hours today.  Given the specs on the FONA, it won't work with a battery voltage below 3.4V, so it simply shuts down when that happens.</p>
+<p>After I recharged today, here's a picture of the battery recharging again in the sun, then draining in the dark:</p>
+<img src="/img/field_1/cellular_battery.png" width=500>
+<p>Once it drains down to 3.4V, it will stop.</p>
+<p>There are two ways of mitigating this:</p>
+<ul>
+<li>select a larger lithium-ion battery, with greater capacity, and hope for more sun;</li>
+<li>have a way to introduce a battery backup, like a car battery.</li>
+</ul>
+<p>So I've arranged to do both!</p>
+<p>The <a href="https://github.com/edgecollective/knuth-soil-remote/blob/master/gateway/gateway_circuit.png">circuit thus far</a> is here:</p>
+<img src="/img/field_1/gateway_circuit.png" width=500>
+<p>Need to look up <a href="https://www.adafruit.com/product/390">adafruit solar lipo</a> <a href="https://cdn-learn.adafruit.com/assets/assets/000/010/372/original/projects_solarv2.png?1396904194">schematic</a> to see what USB in does, how it relates to DCIN.  Done:  looks like there's a limiting resistor on the USB input. Might want to stick that in. (Done).</p>
+<p>I'm using a <a href="https://www.digikey.com/product-detail/en/cui-inc/VX7805-500/102-4244-ND/7350283">5V switching regulator</a> (<a href="https://www.cui.com/product/resource/vx78-500.pdf">datasheet</a>) that can take 36V input in the board design.</p>
+<p>So, TODO over the next couple of days:</p>
+<ul>
+<li>make a milled board for the Gateway circuit</li>
+<li>work on connected the Decagon soil moisture sensors to the Feather side of things (will require rewriting the Gateway code, too)</li>
+<li>prototype the remote instrument with the timer chip included</li>
+<li>design a milled board for the Remote instrument.</li>
+<li>Order a larger lithium ion battery</li>
 </ul>
 
   </body>
