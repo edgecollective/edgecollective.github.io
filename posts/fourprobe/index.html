@@ -1,0 +1,59 @@
+
+
+<!-- feed it through our cssmin filter to minify -->
+<style>
+  body{font-family:sans-serif;margin:1em 1.2em 1em 1.2em;max-width:900px;font-size:small}#profile_pic{float:right;margin:0 0 1em 1em}h1{line-height:1em;font-size:x-large;margin-bottom:.31em}h2{font-size:large;margin-bottom:1px}h3{font-size:small;margin-bottom:1px}a{text-decoration:none}a:hover{text-decoration:underline}a:visited{color:#00f}
+</style>
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edge Collective</title>
+  </head>
+  <body>
+  <a href="/">Edge Collective</a>
+        <h1>Remote Soil Moisture Monitoring</h1>
+        
+    <hr>
+<p><em>June 25, 2019</em></p>
+<h2>Project Goals</h2>
+<p>An Edge Collective client was looking to establish some baseline soil measurements around tree planting sites in order to begin to assess the impact of regenerative agriculture practices there; specifically, the impact of biochar on soil moisture.</p>
+<p>We're planning on beginning by creating two instrumentation setups, one at each measurement site (“biochar” and “non-biochar”).  Each setup will operate on 12V battery power, and measure soil moisture and temperature locally every 30 minutes.  One of the setups (“Remote Node”, Fig 1) will send its data to a “Gateway Node” via LoRa radio; and the “Gateway Node” will then send the combined datasets to FarmOS via cellular modem. We will be using HOBO / Decagon Soil Moisture probes as our sensors.</p>
+<img src="/img/field_1/config_1.png">
+<hr>
+<p><em>June 26, 2019</em></p>
+<h2>Cellular Posting to FarmOS</h2>
+<p><em>-- Update, 18.00 --</em></p>
+<p>We'll begin by setting up a quick 'end-to-end' test system for transmitting data from a Quahog to FarmOS via a cellular modem (the Adafruit FONA cellular module).</p>
+<p>Because the FONA can only use TSL 1.0, and FarmOS is setup to require higher than TSL 1.0 to POST, we'll be using a 'relay server' -- a very simple NodeJS script, <a href="https://github.com/edgecollective/farmos-relay">farmos-relay</a>, that receives POSTs from the FONA (accepting TSL 1.0) and then re-broadcasts to FarmOS.  (Note: we should look into the security of doing things this way.)</p>
+<p><em>-- Update, 18:55 --</em></p>
+<p>I've reproduced the Quahog FONA code so that it posts to FarmOS via the above relay script.  The micropython script is <a href="git@github.com:edgecollective/knuth-soil-remote.git">relay.py</a>.</p>
+<p>I've also got a Feather M0 LoRa running CircuitPython posting every second to the Quahog via LoRa; that code is called <a href="https://github.com/edgecollective/knuth-soil-remote/blob/master/feather/rad_alice.py">rad_alice.py</a></p>
+<p>Next, to hook these up together so that the Feather is posting (fake, at this point, until I hook up the sensors) data to the Quahog, and then that data is posted to FarmOS.  If I can get that running, I'll run it overnight at 30 minute intervals.  It'd be nice to include a 1-wire sensor, or equivalent, if possible so that temperature data were collected. I'll see how far I can get ...</p>
+<p><em>-- Update, 19:15 --</em></p>
+<p>To make things easier, I'm rewriting the Feather LoRa code so that it'll just post (test) data once on boot, after two seconds.  That code is <a href="https://github.com/edgecollective/knuth-soil-remote/blob/master/feather/rad_alice.py">here</a>.  That way when I want to test the remote --&gt; gateway system, I can just press the &quot;Reset&quot; button the Feather, and after two seconds it'll send some test data through the system.  At this point it's just CSV format data; in the future I'll try to send JSON and parse it on the other end.</p>
+<p><em>-- Update, 19:43 --</em></p>
+<p>I've got the Quahog receiving the Feather data via LoRa, and printing it out on the OLED, with this commit of <a href="https://github.com/edgecollective/knuth-soil-remote/blob/5767ee35aad9d368e93ba1d583416a532b8b608b/quahog/rad_relay.py">rad_relay.py</a> Micropython code on the Quahog.</p>
+<p><em>-- Update, 20:06 --</em></p>
+<p>Cool! We've got the end-to-end demo (with faked data) now:  Remote Node -- (LoRa radio) --&gt; Quahog -- (cellular) --&gt; relay server --&gt; FarmOS!  The relevant code is <a href="https://github.com/edgecollective/knuth-soil-remote/blob/a53c40da56e1735645031fd489de680767c98ef1/quahog/rad_relay.py">this version</a> of rad_relay.py on the Quahog.</p>
+<img src="/img/field_1/end_to_end.png" width=300>
+<img src="/img/field_1/farmos_post.png" height=300>
+<p>TODO:</p>
+<ul>
+<li>Getting some temp data posted. I'll implement OneWire on the Feather side for this.</li>
+<li>Detecting the network status of the FONA and waiting until it's connected to attempt to post.</li>
+</ul>
+<p><em>-- Update, 20:39 --</em></p>
+<p><a href="https://github.com/edgecollective/knuth-soil-remote/blob/master/feather/rad_onewire.py">rad_onewire.py</a> on the Feather will measure temp every interval, and post via LoRa ...</p>
+<p><em>-- Update, 21.:01 --</em></p>
+<p>Alright, looks like we're consistently posting!  The latest code is:</p>
+<ul>
+<li>Feather: <a href="https://github.com/edgecollective/knuth-soil-remote/blob/master/feather/rad_onewire.py">rad_onewire.py</a> (copied as main.py onto the Feather so that it runs on boot)</li>
+<li>Quahog: <a href="https://github.com/edgecollective/knuth-soil-remote/blob/master/quahog/rad_relay.py">rad_relay.py</a></li>
+<li>FarmOS data: <a href="https://wolfesneck.farmos.net/farm/sensor/knuthtestone">test data</a> at the Wolfesneck FarmOS instance.</li>
+</ul>
+
+  </body>
+</html>
