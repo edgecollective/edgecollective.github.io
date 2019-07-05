@@ -21,13 +21,13 @@
 <h2>Project Goals</h2>
 <p>An Edge Collective client was looking to establish some baseline soil measurements around tree planting sites in order to begin to assess the impact of regenerative agriculture practices there; specifically, the impact of biochar on soil moisture.</p>
 <p>We're planning on beginning by creating two instrumentation setups, one at each measurement site (“biochar” and “non-biochar”).  Each setup will operate on 12V battery power, and measure soil moisture and temperature locally every 30 minutes.  One of the setups (“Remote Node”, Fig 1) will send its data to a “Gateway Node” via LoRa radio; and the “Gateway Node” will then send the combined datasets to FarmOS via cellular modem. We will be using HOBO / Decagon Soil Moisture probes as our sensors.</p>
-<img src="/img/field_1/config_1.png">
+<img src="/img/field_1/config_1.png" width=50%>
 <hr>
 <h2>Cellular Posting to FarmOS</h2>
 <p><em>-- June 26, 2019, 18.00 --</em></p>
 <p>We'll begin by setting up a quick 'end-to-end' test system for transmitting data from a Quahog to FarmOS via a cellular modem (the Adafruit FONA cellular module).</p>
 <p>Because the FONA can only use TSL 1.0, and FarmOS is setup to require higher than TSL 1.0 to POST, we'll be using a 'relay server' -- a very simple NodeJS script, <a href="https://github.com/edgecollective/farmos-relay">farmos-relay</a>, that receives POSTs from the FONA (accepting TSL 1.0) and then re-broadcasts to FarmOS.  (Note: we should look into the security of doing things this way.)</p>
-<img src="/img/field_1/prototype_1.jpeg">
+<img src="/img/field_1/prototype_1.jpeg" width=50%>
 <p><em>-- Update, 18:55 --</em></p>
 <p>I've reproduced the Quahog FONA code so that it posts to FarmOS via the above relay script.  The micropython script is <a href="git@github.com:edgecollective/knuth-soil-remote.git">relay.py</a>.</p>
 <p>I've also got a Feather M0 LoRa running CircuitPython posting every second to the Quahog via LoRa; that code is called <a href="https://github.com/edgecollective/knuth-soil-remote/blob/master/feather/rad_alice.py">rad_alice.py</a></p>
@@ -41,8 +41,8 @@
 <pre><code>Remote Node -- (LoRa radio) --&gt; Quahog -- (cellular) --&gt; relay server --&gt; FarmOS
 </code></pre>
 <p>The relevant code is <a href="https://github.com/edgecollective/knuth-soil-remote/blob/a53c40da56e1735645031fd489de680767c98ef1/quahog/rad_relay.py">this version</a> of rad_relay.py on the Quahog.</p>
-<img src="/img/field_1/end_to_end.png" width=300>
-<img src="/img/field_1/farmos_post.png" height=300>
+<img src="/img/field_1/end_to_end.png" width=50%>
+<img src="/img/field_1/farmos_post.png" width=50%>
 <p>TODO:</p>
 <ul>
 <li>Getting some temp data posted. I'll implement OneWire on the Feather side for this.</li>
@@ -87,9 +87,9 @@ tiemstamp 2, key2, value2
 <p>I realized in the process that the &quot;relay server&quot; is currently &quot;hard-coded&quot; to accept and relay only two parameters: temp and soil moisture.  So for this test, I'm just going to stuff the battery voltage into the moisture variable -- this will allow me to track the voltage values over time for a few hours.  Meanwhile, I'll work on making the relay server on mosspig.club more generic if I can (perhaps making the cellular code into HTTP POST).  And I'l also work on the power circuit.</p>
 <p><em>-- Update 20:34 --</em></p>
 <p>Okay, I've been running the cellular system for 24 hours straight, more or less; and keeping track of the cellular battery voltage for the last 10 or more.  Here's a snapshot of the last 3 hours.  It's what one would expect from a lithium ion battery charger:  the battery discharges, the control circuit sees a threshold crossed and charges it back up again:</p>
-<img src="/img/field_1/cell_batt_recharging.png">
+<img src="/img/field_1/cell_batt_recharging.png" width=50%>
 <p>(And the temp has been going strong ...)</p>
-<img src="/img/field_1/farmos_moisture_temp.png">
+<img src="/img/field_1/farmos_moisture_temp.png" width=50%>
 <p>What I'd like to know is: what's a similarly 'clean' way of measuring voltage on other batteries? Whenever I've tried with a voltage divider, I've gotten such a noisy signal ... I'll look into it.</p>
 <p><em>-- Update 23:48 --</em></p>
 <p>I've swapped in a Ting mobile SIM card -- just involved changing the APN in Quahog code to &quot;wholesale&quot; instead of &quot;fast.t-mobile.com&quot; (for the previous T Mobile card I was using).  Works nicely.</p>
@@ -125,7 +125,7 @@ A next step might be to pass the FarmOS base url as a GET param, so that I don't
 <p><em>-- Update June 30, 22:02 --</em></p>
 <p>Tested circuit -- it works!  It recharged during the sunlight hours today.  Given the specs on the FONA, it won't work with a battery voltage below 3.4V, so it simply shuts down when that happens.</p>
 <p>After I recharged today, here's a picture of the battery recharging again in the sun, then draining in the dark:</p>
-<img src="/img/field_1/cellular_battery.png" width=500>
+<img src="/img/field_1/cellular_battery.png" width=50%>
 <p>Once it drains down to 3.4V, it will stop.</p>
 <p>There are two ways of mitigating this:</p>
 <ul>
@@ -149,33 +149,33 @@ A next step might be to pass the FarmOS base url as a GET param, so that I don't
 <p>Note: it'd be more generally useful if I swap over the regular SIM 800 FONA board.  That'll require a little hot glue tomorrow.</p>
 <p><em>-- Update Jul 1st, 2019, 18.31 --</em></p>
 <p>Spent the afternoon at artisan's prototyping the cellular gateway circuit:</p>
-<img src="/img/field_1/cell_circuit_prototye.JPG" width=400>
+<img src="/img/field_1/cell_circuit_prototye.JPG" width=50%>
 <p>For now, I'm simply taping the pieces into a cardboard box in order to test them:</p>
-<img src="/img/field_1/solar_circuit.JPG" width=400>
+<img src="/img/field_1/solar_circuit.JPG" width=50%>
 <p>It was raining yesterday in between bouts of sunshine, so I used a low-tech solution -- a trashbag:</p>
-<img src="/img/field_1/trashbag.JPG" width=400>
+<img src="/img/field_1/trashbag.JPG" width=50%>
 <p>Meanwhile, while at Artisan's I found a nice spare project box for outdoor use:</p>
-<img src="/img/field_1/tork.JPG" width=400>
-<img src="/img/field_1/tork2.JPG" width=400>
+<img src="/img/field_1/tork.JPG" width=50%>
+<img src="/img/field_1/tork2.JPG" width=50%>
 <p>Doesn't seem to have rubber gaskets, but should be fine for at least the initial prototyping.</p>
 <p>The solar charging setup is working. The battery is relatively low capacity -- 1200 mAH, compared to ~6000 mAH available on Adafruit -- and I haven't been keeping it outdoors in the mornings, so the pattern now is: it charges enough to work, and then discharges after sunset until it's no longer working.  Then, when there's sunlight again, it comes back on.  (You can see that in the below graph of cellular battery voltage over time.) I'll try a larger battery; but I've also designed the adapter circuit to allow for 6.5-36V input that will charge the solar battery and provide its own power.</p>
-<img src="/img/field_1/cell_battery_returns.png" width=400>
+<img src="/img/field_1/cell_battery_returns.png" width=50%>
 <h2>Gateway Board</h2>
 <p>I've also started working on the layout for the &quot;Gateway Board&quot; that will connect cellular modem, solar charger, power booster, and timer circuit together -- intended for a milled board at Artisan's:</p>
-<img src="/img/field_1/cellular_layout.png" width=400>
-<img src="/img/field_1/knuth_adapter.png" width=400>
+<img src="/img/field_1/cellular_layout.png" width=50%>
+<img src="/img/field_1/knuth_adapter.png" width=50%>
 <p>I'm trying something new -- rather than spend inordinate amounts of time trying to lay out a one-layer board, I'm using the standard technique of 'vias':</p>
-<img src="/img/field_1/vias_layout_upclose.png" width=400>
+<img src="/img/field_1/vias_layout_upclose.png" width=50%>
 <p>This will simply mean that I need to use my own 'jumper wires' between these vias (you can see them in the above layout diagram as white lines connecting vias). Should work out fine, as long as the OtherMill recognizes these vias.</p>
-<img src="/img/field_1/vias_upclose.png" width=400>
+<img src="/img/field_1/vias_upclose.png" width=50%>
 <p>Going to double check the schematic tonight, then plan to mill the board out tomorrow.</p>
 <p><em>-- Update July 5, 2019 --</em></p>
 <p>On Wednesday I milled out the boards.  Made two small mistakes: the footprint on the powerboost included some extra pins; and the orientation on the FONA 808 module was flipped.  But when I wired it up modulo these changes, it all works nicely!</p>
-<img src="/img/field_1/bantam.JPG" width=600>
-<img src="/img/field_1/milling.JPG" width=600>
-<img src="/img/field_1/milled_board.JPG" width=400>
-<img src="/img/field_1/cell_milled.JPG" width=400>
-<img src="/img/field_1/cell_kit.JPG" width=600>
+<img src="/img/field_1/bantam.JPG" width=50%>
+<img src="/img/field_1/milling.JPG" width=50%>
+<img src="/img/field_1/milled_board.JPG" width=50%>
+<img src="/img/field_1/cell_milled.JPG" width=50%>
+<img src="/img/field_1/cell_kit.JPG" width=50%>
 <p>On Monday I'll be able to redo the milled board -- and this time I might also design around the enclosure to make for a nice fit.</p>
 <p>Todo:</p>
 <ul>
