@@ -1,0 +1,54 @@
+
+
+<!-- feed it through our cssmin filter to minify -->
+<style>
+  body{font-family:sans-serif;margin:1em 1.2em 1em 1.2em;max-width:900px;font-size:small}#profile_pic{float:right;margin:0 0 1em 1em}h1{line-height:1em;font-size:x-large;margin-bottom:.31em}h2{font-size:large;margin-bottom:1px}h3{font-size:small;margin-bottom:1px}a{text-decoration:none}a:hover{text-decoration:underline}a:visited{color:#00f}
+</style>
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edge Collective</title>
+  </head>
+  <body>
+  <a href="/">Edge Collective</a>
+        <h1>R&amp;D Notes vol 1</h1>
+        
+    <hr>
+<h1>Misc Notes</h1>
+<p><a href="https://forum.kicad.info/t/how-to-create-a-bill-of-materials-bom/12346">How to create a BOM in Kicad</a></p>
+<hr>
+<h1>Notes on Pressure Sensors</h1>
+<ul>
+<li>BMP180 -- 0.17 meters, tiny package</li>
+<li>MPL3115A2 -- easy package, .3 meters / 1.5 Pascal</li>
+<li>LPS35HW -- 0.1% hPa</li>
+<li></li>
+<li>BMP280 12 Pascal / 1 meters</li>
+</ul>
+<h2>BMP388</h2>
+<p><a href="https://ae-bst.resource.bosch.com/media/_tech/media/datasheets/BST-BMP388-DS001.pdf">datasheet</a></p>
+<p>Footprint:</p>
+<img src="/img/rvol1/bmp388_wiring.png">
+<p>Relative accuracy:  +- 8 Pa / +- 0.66 m</p>
+<p>Abs accuracy: +- 50 Pa</p>
+<h2>LPS35HW</h2>
+<p><a href="https://www.st.com/resource/en/datasheet/lps35hw.pdf">datasheet</a></p>
+<p>Footprint:</p>
+<img src="/img/rvol1/LPS35HW_foot.png">
+<p>Relative accuracy:  800-1100 hPa</p>
+<p>Abs accuracy:  +- 1 hPa</p>
+<h2>Notes</h2>
+<p>Conclusion -- seems like we could make extended pads for the BMP388, and it's not going to be so much harder to solder than the LPS35HW. And we can pot it ourselves if need be.  So this might be a reason for a first foray into kicad footprint construction.</p>
+<h2>Quahog ordering</h2>
+<p>22 uF on backorder</p>
+<p>Ordered TIP42 PNPs from Mouser. Need to find SMT equiv.</p>
+<p><a href="https://www.sparkfun.com/datasheets/Prototyping/Barrel-Connector-PJ-202A.pdf">Barrel connector</a></p>
+<p><a href="https://www.digikey.com/product-detail/en/cui-inc/PJ-202A/CP-202A-ND/252007">PJ202A on Digikey</a></p>
+<p><a href="https://www.digikey.com/product-detail/en/cui-inc/PJ-202AH/CP-202AH-ND/408450">PJ202AH on Digikey</a> --- 5 Amp rating</p>
+<p><a href="https://www.digikey.com/product-detail/en/keystone-electronics/3000TR/36-3000CT-ND/1532229">Coin battery holder</a> is a Keystone 3000, intended for 12 mm coin cell batteries -- 1216, 1220, 1225</p>
+
+  </body>
+</html>
