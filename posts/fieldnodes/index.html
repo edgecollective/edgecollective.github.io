@@ -185,6 +185,34 @@ A next step might be to pass the FarmOS base url as a GET param, so that I don't
 <li>order a higher-charging-rate Powerboost</li>
 <li>look into handheld soil moisture probes</li>
 </ul>
+<p><em>-- Update Jul 21, 2019 --</em></p>
+<p>Updates:</p>
+<ul>
+<li>Decagon 5TE soil moisture successfully connected and tested.</li>
+<li>Wasn't able to resurrect both; only have one to use. Will use for calibration.</li>
+<li>Now trying to hook up EC-5 sensor</li>
+</ul>
+<img src="/img/field_1/ec_5.png" width=50%>
+<p><a href="http://manuals.decagon.com/Manuals/13876_EC-5_Web.pdf">EC-5 manual</a></p>
+<p>BOSSAC install for Circuitpython: https://learn.adafruit.com/welcome-to-circuitpython/non-uf2-installation</p>
+<pre><code>sudo ./bossac -p /dev/ttyACM1 -e -w -v -R --offset=0x2000 ./adafruit-circuitpython-feather_m0_rfm9x-en_US-4.0.2.bin 
+</code></pre>
+<p>https://learn.adafruit.com/circuitpython-essentials/circuitpython-analog-in</p>
+<pre><code>import board
+import time
+
+from analogio import AnalogIn
+analog_in = AnalogIn(board.A2)
+
+while True:
+    print(analog_in.value*3.3/65536)
+    time.sleep(1)
+</code></pre>
+<img src="/img/field_1/ec_5.png" width=50%>
+<img src="/img/field_1/ec_5_test.png" width=50%>
+<img src="/img/field_1/ec_5_test_2.png" width=50%>
+<p>Onewire code:</p>
+<p>https://github.com/adafruit/Adafruit_CircuitPython_OneWire/releases</p>
 
   </body>
 </html>
