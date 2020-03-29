@@ -25,7 +25,6 @@
 <p>Several resources are available online around this.  I'll record them here later; but in particular, the tutorial I found particularly relevant was this one by Andreas Spiess:  <a href="https://www.youtube.com/watch?v=J3PBL9oLPX8">&quot;What you always wanted to know about Antennas and nobody told you&quot;</a>.  Summary lessons from this video:</p>
 <ul>
 <li><strong>Minimize the length of cable connecting the gateway to the external antenna</strong>. 10s of feet of cable connecting the gateway to an external antenna -- even high quality, low-loss cable -- can reduce the signal range significantly (in kilometers).  Best to minimize this connection cable to the extent possible.</li>
-<li><strong>The greater the antenna gain, the more directional it is.</strong> This means that if we want 'omnidirectional', we actually don't want particularly high gain.</li>
 <li><strong>With good line of sight, very long distances should be possible.</strong></li>
 <li><strong>The 'Fresnel effect'</strong> means that line of sight actually requires some margin above / below the direct line of sight.</li>
 <li><strong>Always connect an antenna to the sender</strong>.  Without an antenna, energy is reflected back into the sender, potentially damaging the electronics.</li>
@@ -65,13 +64,41 @@
 <p>Otherwise, there are quite standard enclosures to be found online, with hinges, like this one used by <a href="https://nootropicdesign.com/projectlab/2018/10/27/lorawan-gateway/">Nootropic Design</a>:</p>
 <p><a href="/img/harold/baseStation1_lg.jpg"><img src="/img/harold/baseStation1_lg.jpg" width=50%></a></p>
 <p><a href="/img/harold/pi_outdoors.jpg"><img src="/img/harold/pi_outdoors.jpg" width=50%></a></p>
-<h2>Overall Recommendations</h2>
+<h2>Overall Recommendedations</h2>
 <ul>
 <li>If it is possible to situate the external antenna within line of sight of the relay nodes, having a longer cable connector might not be so much of an issue.  At the Olathe site, the antenna location on the roof may have line-of-sight to most of the fields.</li>
 <li>Therefore, the recommended purchase at this point will be both the cable and the wifi extender.  The cable can be tried first; if it is of insufficient signal strength, then the wifi extender can be used to extend the wifi signal, and the gateway can be housed outdoors.</li>
 <li>For this reason an additional enclosure outside for the gateway may be a good purchase at this stage.</li>
 <li>Note that the Sigfox setup in Olathe may already be something we can leverage for the RAK gateway system, if the cable end matches, as it likely uses the same 900 Mhz ISM band, and the antenna is already nicely mounted on the roof.</li>
 </ul>
+<hr>
+<p><em>March 28, 2020</em></p>
+<h2>LSN50 + Vegetronix</h2>
+<p><a href="https://www.dragino.com/products/lora-lorawan-end-node/item/128-lsn50.html">LSN50</a></p>
+<p><a href="https://www.dragino.com/downloads/downloads/LSN50-LoRaST/LSN50_LoRa_Sensor_Node_UserManual_v1.6.3.pdf">User Manual + Case Study</a></p>
+<p><a href="https://www.dragino.com/downloads/downloads/LSN50-LoRaST/DRAGINO_LSN50_AT_Commands_v1.6.3.pdf">AT Commands</a></p>
+<img src="/img/lsn50/pinout_1_2.png">
+<img src="/img/lsn50/pin_functions.png">
+<p>What worked with the CP2104:</p>
+<ul>
+<li>RXD --&gt; P02</li>
+<li>TXD --&gt; P03</li>
+<li>GND --&gt; GND</li>
+</ul>
+<p>Seems to take about 2 minutes to join network at start.</p>
+<p>Command for changing interval (in units of milliseconds) to 60 seconds:</p>
+<pre><code>AT+TDC=60000
+</code></pre>
+<h2>Burning a MicroSD card image of the RAK OS</h2>
+<p>This will require three steps:</p>
+<ol>
+<li>
+<p><strong>Reformatting the microSD card</strong>.  To do this on a MAC, you can follow <a href="https://apple.stackexchange.com/questions/226016/how-to-remove-partition-on-sd-card-using-a-mac">this guide</a>, which is demonstrated in <a href="">this video</a>.</p>
+</li>
+<li>
+<p><strong>Burning the RAK image</strong> to the formatted microSD card, using <a href="">Balena Etcher</a>.   The image you'll want to download and burn is <a href="https://drive.google.com/file/d/19H8hP0pc4SMgFN5tfnBUKg9ZB8RsXnZf/view?usp=sharing">here</a>. You can watch a video of this process [here].</p>
+</li>
+</ol>
 
   </body>
 </html>
