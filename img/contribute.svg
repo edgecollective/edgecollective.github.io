@@ -47,7 +47,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -272,7 +272,7 @@
            height="62.629459"
            x="-747.51288"
            y="399.25046" /></flowRegion><flowPara
-         id="flowPara220"></flowPara></flowRoot>    <rect
+         id="flowPara220" /></flowRoot>    <rect
        style="fill:#ffaaaa;stroke-width:0.21979177"
        id="rect22-3-36"
        width="33.408688"
@@ -285,29 +285,29 @@
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:7.53412294px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.18835305"
-       x="-192.69838"
+       x="-193.23293"
        y="120.78802"
        id="text12-6-1"
        inkscape:export-xdpi="96"
        inkscape:export-ydpi="96"><tspan
          sodipodi:role="line"
          id="tspan10-7-2"
-         x="-192.69838"
+         x="-193.23293"
          y="120.78802"
          style="stroke-width:0.18835305">$[custom]</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:4.21675873px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#666666;fill-opacity:1;stroke:none;stroke-width:0.10541897"
-       x="-190.72638"
+       x="-198.47719"
        y="126.94875"
        id="text16-5-9"
        inkscape:export-xdpi="96"
        inkscape:export-ydpi="96"><tspan
          sodipodi:role="line"
          id="tspan14-3-3"
-         x="-190.72638"
+         x="-198.47719"
          y="126.94875"
-         style="fill:#666666;stroke-width:0.10541897">once, or monthly</tspan></text>
+         style="fill:#666666;stroke-width:0.10541897">per month OR just once</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:5.12658119px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.12816451"
