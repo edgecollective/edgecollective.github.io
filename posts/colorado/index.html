@@ -15,12 +15,16 @@
     <title>Edge Collective</title>
   </head>
   <body>
+
+
   <a href="/">Edge Collective</a>
         <h1>Colorado -- Soil Moisture Monitoring</h1>
-        
-    <hr>
+
+<!--  &lt;nav class=&quot;toc&quot;&gt;&lt;/nav&gt;-->
+  
+  <hr>
 <p><em>March 22, 2020</em></p>
-<h2>Gatway Setup</h2>
+<h2>Gateway Setup</h2>
 <p>Now that we have a field relay node design for capturing the soil moisture data and sending it to a LoRa gateway (based on the RAK / Raspberry Pi gateway), we are looking to optimize signal strength in the system.</p>
 <p>Several resources are available online around this.  I'll record them here later; but in particular, the tutorial I found particularly relevant was this one by Andreas Spiess:  <a href="https://www.youtube.com/watch?v=J3PBL9oLPX8">&quot;What you always wanted to know about Antennas and nobody told you&quot;</a>.  Summary lessons from this video:</p>
 <ul>
@@ -64,7 +68,7 @@
 <p>Otherwise, there are quite standard enclosures to be found online, with hinges, like this one used by <a href="https://nootropicdesign.com/projectlab/2018/10/27/lorawan-gateway/">Nootropic Design</a>:</p>
 <p><a href="/img/harold/baseStation1_lg.jpg"><img src="/img/harold/baseStation1_lg.jpg" ></a></p>
 <p><a href="/img/harold/pi_outdoors.jpg"><img src="/img/harold/pi_outdoors.jpg" ></a></p>
-<h2>Overall Recommendedations</h2>
+<h2>Overall Recommendations</h2>
 <ul>
 <li>If it is possible to situate the external antenna within line of sight of the relay nodes, having a longer cable connector might not be so much of an issue.  At the Olathe site, the antenna location on the roof may have line-of-sight to most of the fields.</li>
 <li>Therefore, the recommended purchase at this point will be both the cable and the wifi extender.  The cable can be tried first; if it is of insufficient signal strength, then the wifi extender can be used to extend the wifi signal, and the gateway can be housed outdoors.</li>
@@ -73,7 +77,7 @@
 </ul>
 <hr>
 <p><em>March 28, 2020</em></p>
-<h2>LSN50 + Vegetronix</h2>
+<h2><a name="lsn50">LSN50</a> Vegetronix</h2>
 <p><a href="https://www.dragino.com/products/lora-lorawan-end-node/item/128-lsn50.html">LSN50</a></p>
 <p><a href="https://www.dragino.com/downloads/downloads/LSN50-LoRaST/LSN50_LoRa_Sensor_Node_UserManual_v1.6.3.pdf">User Manual + Case Study</a></p>
 <p><a href="https://www.dragino.com/downloads/downloads/LSN50-LoRaST/DRAGINO_LSN50_AT_Commands_v1.6.3.pdf">AT Commands</a></p>
