@@ -27,6 +27,7 @@
 <li><a href="#lsn50">LSN50 Vegetronix temperature sensor setup</a></li>
 <li><a href="#gateway">Gateway setup</a></li>
 <li><a href="#range">Improving range</a></li>
+<li><a href="#lsn50_pattern">LSN50 data capture</a></li>
 </ul>
 <hr>
 <p><em>March 22, 2020</em></p>
@@ -156,6 +157,11 @@
 <li>for 1 mile range, want about 30 feet of clearance at midpoint of ellipsoid;</li>
 <li>for 5 miles range, we want about 70 feet of clearance at midpoint of ellipsoid.</li>
 </ul>
+<hr>
+<p><em>12 April 2020</em></p>
+<h2><a name="lsn50_pattern">LSN50 data capture</a></h2>
+<p>Got timestamps working properly with data in Plotly.  Interesting that an initial experiment with the LSN50 seems to show some periodic 'gaps' in the data when broadcasting at 30 second intervals.  Wonder if this is inherent to the LSN50, to the gateway, or to some other part of the system:</p>
+<img src='/img/harold/lsn50_pattern.png'>
 
   </body>
 </html>
