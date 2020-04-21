@@ -9,9 +9,9 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="224.17432mm"
-   height="74.214516mm"
-   viewBox="0 0 224.17433 74.214518"
+   width="187.06204mm"
+   height="75.445618mm"
+   viewBox="0 0 187.06206 75.44562"
    version="1.1"
    id="svg8"
    inkscape:version="0.92.3 (2405546, 2018-03-11)"
@@ -566,9 +566,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.98994949"
-     inkscape:cx="309.04531"
-     inkscape:cy="231.86178"
+     inkscape:zoom="0.7"
+     inkscape:cx="181.92729"
+     inkscape:cy="146.51309"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -594,50 +594,50 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(55.44494,-79.050492)">
+     transform="translate(18.332681,-78.515953)">
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:6.18051767px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.15451291"
-       x="8.8570471"
-       y="84.397537"
+       x="23.797279"
+       y="83.862999"
        id="text1070"><tspan
          sodipodi:role="line"
          id="tspan1068"
-         x="8.8570471"
-         y="84.397537"
+         x="23.797279"
+         y="83.862999"
          style="fill:#000000;stroke:#000000;stroke-width:0.15451291">Basic GROUND Network Architecture</tspan></text>
     <circle
        id="path232-3"
-       cx="-82.629562"
-       cy="-19.445835"
+       cx="-85.525917"
+       cy="-4.7792954"
        r="1.4515066"
        style="fill:#00ffff;stroke:#0000ff;stroke-width:0.07975859;stroke-miterlimit:4;stroke-dasharray:none"
        transform="rotate(-103.22014)" />
     <circle
        id="path232-6"
-       cx="-79.794075"
-       cy="-16.244841"
+       cx="-82.69043"
+       cy="-1.5783011"
        r="2.3036609"
        style="fill:#00ffff;stroke:#0000ff;stroke-width:0.07975859;stroke-miterlimit:4;stroke-dasharray:none"
        transform="rotate(-103.22014)" />
     <circle
        id="path232-3-5-5"
-       cx="-81.619682"
-       cy="-22.077557"
+       cx="-84.516037"
+       cy="-7.4110174"
        r="0.78816652"
        style="fill:#00ffff;stroke:#0000ff;stroke-width:0.07975859;stroke-miterlimit:4;stroke-dasharray:none"
        transform="rotate(-103.22014)" />
     <circle
        id="path232-3-5-6"
-       cx="-79.832611"
-       cy="-20.372173"
+       cx="-82.728966"
+       cy="-5.7056341"
        r="0.78816652"
        style="fill:#00ffff;stroke:#0000ff;stroke-width:0.07975859;stroke-miterlimit:4;stroke-dasharray:none"
        transform="rotate(-103.22014)" />
     <circle
        id="path232-3-5-2"
-       cx="-81.703766"
-       cy="-13.185816"
+       cx="-84.600121"
+       cy="1.4807237"
        r="0.78816652"
        style="fill:#00ffff;stroke:#0000ff;stroke-width:0.07975859;stroke-miterlimit:4;stroke-dasharray:none"
        transform="rotate(-103.22014)" />
@@ -983,7 +983,7 @@
     </g>
     <g
        id="g4745"
-       transform="translate(-104.88839,-3.6579286)">
+       transform="translate(-114.77736,-3.6579286)">
       <rect
          y="98.485901"
          x="99.013168"
@@ -1005,7 +1005,7 @@
     </g>
     <g
        id="g4740"
-       transform="translate(-116.52936,-1.6034754)">
+       transform="translate(-126.41833,-1.6034754)">
       <rect
          y="115.15685"
          x="111.57483"
@@ -1026,26 +1026,30 @@
            sodipodi:role="line">Sensor</tspan></text>
     </g>
     <g
-       id="g4735"
-       transform="translate(-110.55804,3.0099013)">
-      <rect
-         y="130.52751"
-         x="101.02037"
-         height="10.603398"
-         width="24.531534"
-         id="rect1567-5-3"
-         style="fill:#ff00ff;stroke:#000000;stroke-width:0.07993484;stroke-miterlimit:4;stroke-dasharray:none" />
-      <text
-         id="text1571-47-1"
-         y="137.19621"
-         x="103.28711"
-         style="font-style:normal;font-weight:normal;font-size:4.92017412px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.12300435"
-         xml:space="preserve"><tspan
-           style="stroke-width:0.12300435"
-           y="137.19621"
+       id="g21796"
+       transform="translate(-8.7550438)">
+      <g
+         transform="translate(-110.55804,3.0099013)"
+         id="g4735">
+        <rect
+           style="fill:#ff00ff;stroke:#000000;stroke-width:0.07993484;stroke-miterlimit:4;stroke-dasharray:none"
+           id="rect1567-5-3"
+           width="24.531534"
+           height="10.603398"
+           x="101.02037"
+           y="130.52751" />
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-weight:normal;font-size:4.92017412px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.12300435"
            x="103.28711"
-           id="tspan1569-4-49"
-           sodipodi:role="line">Actuator</tspan></text>
+           y="137.19621"
+           id="text1571-47-1"><tspan
+             sodipodi:role="line"
+             id="tspan1569-4-49"
+             x="103.28711"
+             y="137.19621"
+             style="stroke-width:0.12300435">Actuator</tspan></text>
+      </g>
     </g>
     <g
        id="g4710"
@@ -1070,12 +1074,12 @@
            sodipodi:role="line">Gateway</tspan></text>
     </g>
     <path
-       style="fill:none;stroke:#000000;stroke-width:0.16500001;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker2304)"
-       d="m 15.504016,100.0061 h 5.48066"
+       style="fill:none;stroke:#000000;stroke-width:0.2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker2304)"
+       d="M 7.2215905,100.0061 H 19.781963"
        id="path2288"
        inkscape:connector-curvature="0" />
     <path
-       style="fill:none;stroke:#000000;stroke-width:0.26310006;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker2408)"
+       style="fill:none;stroke:#000000;stroke-width:0.2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker2408)"
        d="m 40.535187,100.59566 34.815379,13.26466"
        id="path2404"
        inkscape:connector-curvature="0" />
@@ -1097,43 +1101,10 @@
        inkscape:transform-center-x="0.50910198"
        inkscape:transform-center-y="2.9936844" />
     <path
-       style="fill:none;stroke:#000000;stroke-width:0.16500001;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#marker3450);marker-end:url(#marker3562)"
-       d="m 15.365338,138.93717 7.21628,0.13364"
+       style="fill:none;stroke:#000000;stroke-width:0.2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#marker3450);marker-end:url(#marker3562)"
+       d="m 7.5915088,138.93717 13.9534562,0.13364"
        id="path3440"
        inkscape:connector-curvature="0" />
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:4.02501583px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.10062539"
-       x="-49.970001"
-       y="101.83856"
-       id="text4144"><tspan
-         sodipodi:role="line"
-         id="tspan4142"
-         x="-49.970001"
-         y="101.83856"
-         style="stroke-width:0.10062539">(e.g. greenhouse temp)</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:4.02501583px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.10062539"
-       x="-49.455513"
-       y="120.22155"
-       id="text4144-6"><tspan
-         sodipodi:role="line"
-         id="tspan4142-8"
-         x="-49.455513"
-         y="120.22155"
-         style="stroke-width:0.10062539">(e.g. field soil moisture)</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-weight:normal;font-size:4.02501583px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.10062539"
-       x="-42.250393"
-       y="139.73222"
-       id="text4144-6-9"><tspan
-         sodipodi:role="line"
-         id="tspan4142-8-2"
-         x="-42.250393"
-         y="139.73222"
-         style="stroke-width:0.10062539">(e.g. water valve)</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:6.18051815px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.15451291"
@@ -1494,8 +1465,8 @@
          y="230.94005"
          style="stroke-width:0.10062539">(e.g. valve)</tspan></text>
     <path
-       style="fill:none;stroke:#000000;stroke-width:0.16500001;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker2304-1)"
-       d="M 16.51614,118.97762 H 21.9968"
+       style="fill:none;stroke:#000000;stroke-width:0.2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker2304-1)"
+       d="M 7.9731109,118.97762 H 20.794087"
        id="path2288-9"
        inkscape:connector-curvature="0" />
     <path
@@ -1584,5 +1555,38 @@
          x="114.87775"
          y="99.470978"
          style="stroke-width:0.08383781">Internet</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:3.35351205px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.08383781"
+       x="-14.374945"
+       y="109.69598"
+       id="text15442-9-4"><tspan
+         sodipodi:role="line"
+         id="tspan15440-7-0"
+         x="-14.374945"
+         y="109.69598"
+         style="stroke-width:0.08383781">soil moisture</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:3.35351205px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.08383781"
+       x="-18.160927"
+       y="128.13139"
+       id="text15442-9-4-5"><tspan
+         sodipodi:role="line"
+         id="tspan15440-7-0-9"
+         x="-18.160927"
+         y="128.13139"
+         style="stroke-width:0.08383781">greenhouse temp</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:3.35351205px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.08383781"
+       x="-9.9404392"
+       y="147.90933"
+       id="text15442-9-4-5-4"><tspan
+         sodipodi:role="line"
+         id="tspan15440-7-0-9-6"
+         x="-9.9404392"
+         y="147.90933"
+         style="stroke-width:0.08383781">valve</tspan></text>
   </g>
 </svg>
