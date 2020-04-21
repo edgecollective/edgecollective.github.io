@@ -9,9 +9,9 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="160.88966mm"
+   width="176.4838mm"
    height="17.96693mm"
-   viewBox="0 0 160.88967 17.96693"
+   viewBox="0 0 176.4838 17.96693"
    version="1.1"
    id="svg8"
    inkscape:version="0.92.3 (2405546, 2018-03-11)"
@@ -25,9 +25,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.4"
-     inkscape:cx="282.57234"
-     inkscape:cy="84.668184"
+     inkscape:zoom="0.98994949"
+     inkscape:cx="428.12704"
+     inkscape:cy="-34.167721"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -45,7 +45,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -64,7 +64,7 @@
          id="tspan1068"
          x="15.098732"
          y="64.069702"
-         style="stroke-width:0.23022479">GROUND: Soil &amp; Water Sensing</tspan></text>
+         style="stroke-width:0.23022479">GROUND for Soil &amp; Water Sensing</tspan></text>
     <circle
        id="path232"
        cx="-67.967979"
@@ -291,11 +291,11 @@
          y="69.995857"
          style="stroke-width:0.09961896"><tspan
    style="font-weight:bold"
-   id="tspan1493">G</tspan>ritty <tspan
+   id="tspan1493">G</tspan>ritty, <tspan
    style="font-weight:bold"
-   id="tspan1495">R</tspan>edundant <tspan
+   id="tspan1495">R</tspan>edundant, <tspan
    style="font-weight:bold"
-   id="tspan1497">O</tspan>pen <tspan
+   id="tspan1497">O</tspan>pen, <tspan
    style="font-weight:bold"
    id="tspan1499">U</tspan>n-interruptible <tspan
    style="font-weight:bold"
