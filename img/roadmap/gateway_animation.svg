@@ -1,0 +1,977 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg8"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)"
+   sodipodi:docname="gateway_animation.svg"
+   inkscape:export-filename="/home/dwblair/g_019.png"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96">
+  <defs
+     id="defs2">
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible;"
+       id="marker8401"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="Arrow1Lend">
+      <path
+         transform="scale(0.8) rotate(180) translate(12.5,0)"
+         style="fill-rule:evenodd;stroke:#ff0000;stroke-width:1pt;stroke-opacity:1;fill:#ff0000;fill-opacity:1"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         id="path8399" />
+    </marker>
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible;"
+       id="marker7864"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="Arrow1Lend">
+      <path
+         transform="scale(0.8) rotate(180) translate(12.5,0)"
+         style="fill-rule:evenodd;stroke:#ff0000;stroke-width:1pt;stroke-opacity:1;fill:#ff0000;fill-opacity:1"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         id="path7862" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Lstart"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="marker6962"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         id="path6960"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         transform="scale(0.8) translate(12.5,0)" />
+    </marker>
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible;"
+       id="marker5259"
+       refX="0.0"
+       refY="0.0"
+       orient="auto"
+       inkscape:stockid="Arrow1Lend">
+      <path
+         transform="scale(0.8) rotate(180) translate(12.5,0)"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         id="path5257" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Lend"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow1Lend-6"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         inkscape:connector-curvature="0"
+         id="path871-2"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.00000003pt;stroke-opacity:1"
+         transform="matrix(-0.8,0,0,-0.8,-10,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Lend"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow1Lend-61"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         inkscape:connector-curvature="0"
+         id="path871-8"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.00000003pt;stroke-opacity:1"
+         transform="matrix(-0.8,0,0,-0.8,-10,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Lend"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow1Lend-61-2"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         inkscape:connector-curvature="0"
+         id="path871-8-8"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.00000003pt;stroke-opacity:1"
+         transform="matrix(-0.8,0,0,-0.8,-10,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Lend"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow1Lend-61-2-9"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         inkscape:connector-curvature="0"
+         id="path871-8-8-3"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.00000003pt;stroke-opacity:1"
+         transform="matrix(-0.8,0,0,-0.8,-10,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Lend"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow1Lend-61-7"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         inkscape:connector-curvature="0"
+         id="path871-8-4"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.00000003pt;stroke-opacity:1"
+         transform="matrix(-0.8,0,0,-0.8,-10,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Lend"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow1Lend-6-5"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         inkscape:connector-curvature="0"
+         id="path871-2-2"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.00000003pt;stroke-opacity:1"
+         transform="matrix(-0.8,0,0,-0.8,-10,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Lend"
+       orient="auto"
+       refY="0"
+       refX="0"
+       id="Arrow1Lend-5"
+       style="overflow:visible"
+       inkscape:isstock="true">
+      <path
+         inkscape:connector-curvature="0"
+         id="path871-4"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.00000003pt;stroke-opacity:1"
+         transform="matrix(-0.8,0,0,-0.8,-10,0)" />
+    </marker>
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible"
+       id="marker5307-4"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Lend">
+      <path
+         inkscape:connector-curvature="0"
+         transform="matrix(-0.8,0,0,-0.8,-10,0)"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.00000003pt;stroke-opacity:1"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path5305-9" />
+    </marker>
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible"
+       id="marker8401-9"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Lend">
+      <path
+         inkscape:connector-curvature="0"
+         transform="matrix(-0.8,0,0,-0.8,-10,0)"
+         style="fill:#ff0000;fill-opacity:1;fill-rule:evenodd;stroke:#ff0000;stroke-width:1.00000003pt;stroke-opacity:1"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path8399-3" />
+    </marker>
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible"
+       id="marker7864-6"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Lend">
+      <path
+         inkscape:connector-curvature="0"
+         transform="matrix(-0.8,0,0,-0.8,-10,0)"
+         style="fill:#ff0000;fill-opacity:1;fill-rule:evenodd;stroke:#ff0000;stroke-width:1.00000003pt;stroke-opacity:1"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path7862-0" />
+    </marker>
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible"
+       id="marker8401-9-9"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Lend">
+      <path
+         inkscape:connector-curvature="0"
+         transform="matrix(-0.8,0,0,-0.8,-10,0)"
+         style="fill:#ff0000;fill-opacity:1;fill-rule:evenodd;stroke:#ff0000;stroke-width:1.00000003pt;stroke-opacity:1"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path8399-3-1" />
+    </marker>
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible"
+       id="marker7864-6-2"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Lend">
+      <path
+         inkscape:connector-curvature="0"
+         transform="matrix(-0.8,0,0,-0.8,-10,0)"
+         style="fill:#ff0000;fill-opacity:1;fill-rule:evenodd;stroke:#ff0000;stroke-width:1.00000003pt;stroke-opacity:1"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path7862-0-7" />
+    </marker>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.35355339"
+     inkscape:cx="-2482.7956"
+     inkscape:cy="589.02116"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1366"
+     inkscape:window-height="719"
+     inkscape:window-x="0"
+     inkscape:window-y="25"
+     inkscape:window-maximized="1"
+     showguides="true" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="opacity:1;fill:#ffffff;stroke:none;stroke-width:0.26458332"
+       id="rect6663"
+       width="514.11963"
+       height="226.00311"
+       x="-824.68689"
+       y="4.3933215" />
+    <rect
+       style="opacity:0.41000001;fill:#e3dbdb;stroke-width:0.1382957"
+       id="rect6598-1"
+       width="105.21023"
+       height="204.65273"
+       x="-812.5592"
+       y="15.386331" />
+    <rect
+       style="opacity:0.41000001;fill:#999999;stroke-width:0.26458332"
+       id="rect6598"
+       width="385.09299"
+       height="204.65273"
+       x="-707.34894"
+       y="15.386326" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10.58333302px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="-418.63666"
+       y="572.11829"
+       id="text804"><tspan
+         sodipodi:role="line"
+         id="tspan802"
+         x="-418.63666"
+         y="581.48206"
+         style="stroke-width:0.26458332" /></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:7.6016078px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.19004019"
+       x="-493.10422"
+       y="49.746494"
+       id="text14-4-1-6"
+       inkscape:export-filename="/home/dwblair/cloud001.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96"><tspan
+         sodipodi:role="line"
+         id="tspan12-4-8-0"
+         x="-493.10422"
+         y="49.746494"
+         style="stroke-width:0.19004019">Gateway</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:7.44760752px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.18619019"
+       x="-388.92325"
+       y="51.097324"
+       id="text14-6-0-9-2"
+       inkscape:export-filename="/home/dwblair/cloud001.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96"><tspan
+         sodipodi:role="line"
+         id="tspan12-7-7-2-6"
+         x="-388.92325"
+         y="51.097324"
+         style="stroke-width:0.18619019">Relay Node</tspan></text>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.33624873;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m -402.65344,75.021677 h -41.48722"
+       id="path58-4-5-2"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/dwblair/cloud001.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.44025174px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m -440.92267,71.378697 c -0.23235,-2.11773 2.04186,-7.40617 3.66791,-4.21664 -0.11244,1.72084 1.50624,5.91795 2.32627,2.4032 -0.18143,-1.96481 2.0358,-5.90396 2.64134,-2.18138 -0.54349,2.14656 0.3421,8.4495 2.30682,4.16743 0.82547,-1.12968 0.61058,-5.88727 2.11182,-4.64806 0.36733,1.10792 -0.14231,3.01554 1.07099,3.50931"
+       id="path2525-4-2-3"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/dwblair/cloud001.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:7.8675561px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.19668888"
+       x="-424.04202"
+       y="71.650421"
+       id="text2576-9-8-7"
+       inkscape:export-filename="/home/dwblair/cloud001.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96"><tspan
+         sodipodi:role="line"
+         id="tspan2574-2-9-5"
+         x="-424.04202"
+         y="71.650421"
+         style="stroke-width:0.19668888">LoRa</tspan></text>
+    <path
+       style="fill:#e6e6e6;stroke:#000000;stroke-width:0.29891378px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m -754.83191,65.192771 c -0.97287,-2.860989 -4.60155,-5.496527 -10.53771,-5.897721 -7.59489,2.204773 -4.21217,12.528238 -9.68258,5.591707 -7.06022,-2.373026 -13.59333,7.030285 -14.91241,16.021789 -4.60939,-4.639179 -10.43143,1.062648 -12.70643,6.865634 -4.99212,6.614659 -1.32374,14.42348 2.04327,20.2281 -3.8715,8.72635 0.28484,22.44641 8.02969,23.39639 6.95942,-2.57417 10.45991,9.05037 16.9011,9.81633 4.86001,1.34283 11.12337,1.9998 14.20863,-4.53077 1.88409,-2.66222 6.5149,5.00313 10.35089,3.50267 4.40139,0.22308 8.91969,-0.5799 13.09791,-2.30189 3.86909,-4.29612 3.84541,-13.73945 10.34749,-12.13265 7.72811,-3.77062 8.26674,-16.67658 7.23832,-26.017008 -0.34505,-7.318329 -7.96575,-9.523889 -4.38672,-16.558477 1.11876,-8.794837 -4.82081,-13.945873 -10.29553,-13.445902 -2.86789,-4.343798 -6.26504,-12.710629 -11.18199,-6.850848 -1.54647,1.440027 -7.32314,-2.442184 -8.51393,2.312646 z"
+       id="path2747-8-6-2"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccccccccccccccc"
+       inkscape:export-filename="/home/dwblair/cloud001.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path2508-3-4-4-2"
+       d="m -536.7472,99.409357 c 0.60697,-1.83117 1.82364,-4.05147 4.03864,-4.03865"
+       style="fill:none;stroke:#000000;stroke-width:0.21746551px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       inkscape:export-filename="/home/dwblair/cloud001.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path2510-6-8-7-9"
+       d="m -539.03715,98.441557 c 0.0726,-3.3772 3.75733,-5.31293 6.75498,-5.38189"
+       style="fill:none;stroke:#000000;stroke-width:0.21746551px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       inkscape:export-filename="/home/dwblair/cloud001.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path2514-0-7-8-3"
+       d="m -541.23387,97.617777 c -0.26722,-3.96401 3.91253,-6.84221 7.57874,-6.48033"
+       style="fill:none;stroke:#000000;stroke-width:0.21746551px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       inkscape:export-filename="/home/dwblair/cloud001.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:7.94143057px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.19853577"
+       x="-529.40356"
+       y="97.670502"
+       id="text2523-6-1-4-1"
+       inkscape:export-filename="/home/dwblair/cloud001.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96"><tspan
+         sodipodi:role="line"
+         id="tspan2521-2-7-5-9"
+         x="-529.40356"
+         y="97.670502"
+         style="stroke-width:0.19853577">WiFi</tspan></text>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.31782237;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m -509.19532,101.56565 h -37.06483"
+       id="path58-7-2-0-4"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/dwblair/cloud001.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:7.6016078px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.19004019"
+       x="-631.45709"
+       y="143.11972"
+       id="text14-2-2-1-6-0"
+       inkscape:export-filename="/home/dwblair/cloud001.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96"><tspan
+         sodipodi:role="line"
+         x="-631.45709"
+         y="143.11972"
+         style="stroke-width:0.19004019"
+         id="tspan227-0-1">Smartphone</tspan></text>
+    <circle
+       id="path213-1-9"
+       cx="-558.92267"
+       cy="178.82529"
+       r="5.3382721"
+       style="fill:#ffffff;stroke:#24221c;stroke-width:0.347;stroke-miterlimit:4;stroke-dasharray:none"
+       inkscape:export-filename="/home/dwblair/cloud001.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <rect
+       id="rect215-7-4"
+       width="15.529521"
+       height="23.941343"
+       x="-566.52557"
+       y="186.42825"
+       style="fill:#ffffff;stroke:#24221c;stroke-width:0.347;stroke-miterlimit:4;stroke-dasharray:none"
+       inkscape:export-filename="/home/dwblair/cloud001.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <rect
+       id="rect10-7-6-3-1"
+       width="59.840614"
+       height="26.369959"
+       x="-506.54721"
+       y="59.360294"
+       style="fill:#ffffff;stroke:#000000;stroke-width:0.29014239"
+       inkscape:export-filename="/home/dwblair/cloud001.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:7.6016078px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.19004019"
+       x="-496.80594"
+       y="75.151642"
+       id="text14-4-4-1-1-2"
+       inkscape:export-filename="/home/dwblair/cloud001.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96"><tspan
+         sodipodi:role="line"
+         id="tspan12-78-5-2-5-9"
+         x="-496.80594"
+         y="75.151642"
+         style="stroke-width:0.19004019">LoRa Radio</tspan></text>
+    <rect
+       id="rect10-7-6-3-1-8"
+       width="68.004944"
+       height="26.409771"
+       x="-398.91672"
+       y="59.645145"
+       style="fill:#ffffff;stroke:#000000;stroke-width:0.30953586"
+       inkscape:export-filename="/home/dwblair/cloud001.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:7.6016078px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.19004019"
+       x="-386.84073"
+       y="75.47641"
+       id="text14-4-4-1-1-2-8"
+       inkscape:export-filename="/home/dwblair/cloud001.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96"><tspan
+         sodipodi:role="line"
+         id="tspan12-78-5-2-5-9-5"
+         x="-386.84073"
+         y="75.47641"
+         style="stroke-width:0.19004019">LoRa Radio</tspan></text>
+    <rect
+       id="rect10-7-6-3-1-8-0"
+       width="68.004944"
+       height="26.409771"
+       x="-398.91672"
+       y="86.054901"
+       style="fill:#ffffff;stroke:#000000;stroke-width:0.30953586"
+       inkscape:export-filename="/home/dwblair/cloud002.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:7.44760752px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.18619019"
+       x="-395.22836"
+       y="101.45602"
+       id="text14-6-0-9-2-9"
+       inkscape:export-filename="/home/dwblair/cloud001.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96"><tspan
+         sodipodi:role="line"
+         id="tspan12-7-7-2-6-6"
+         x="-395.22836"
+         y="101.45602"
+         style="stroke-width:0.18619019">Microcontroller</tspan></text>
+    <rect
+       id="rect10-7-6-3-1-8-0-8"
+       width="66.270546"
+       height="26.453302"
+       x="-398.91861"
+       y="132.93381"
+       style="fill:#ffffff;stroke:#000000;stroke-width:0.30581492"
+       inkscape:export-filename="/home/dwblair/e_001.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:7.44760752px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.18619019"
+       x="-381.78476"
+       y="147.88004"
+       id="text14-6-0-9-2-9-4"
+       inkscape:export-filename="/home/dwblair/cloud001.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96"><tspan
+         sodipodi:role="line"
+         id="tspan12-7-7-2-6-6-8"
+         x="-381.78476"
+         y="147.88004"
+         style="stroke-width:0.18619019">Sensor</tspan></text>
+    <rect
+       id="rect10-7-6-3-4"
+       width="49.638016"
+       height="26.369959"
+       x="-597.31293"
+       y="60.05579"
+       style="fill:#ffffff;stroke:#000000;stroke-width:0.26425329"
+       inkscape:export-filename="/home/dwblair/cloud001.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:7.6016078px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.19004019"
+       x="-585.83569"
+       y="49.666447"
+       id="text14-4-1-6-4"
+       inkscape:export-filename="/home/dwblair/cloud001.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96"><tspan
+         sodipodi:role="line"
+         id="tspan12-4-8-0-4"
+         x="-585.83569"
+         y="49.666447"
+         style="stroke-width:0.19004019">Router</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:7.6016078px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.19004019"
+       x="-589.32349"
+       y="75.859833"
+       id="text14-4-4-1-1-4"
+       inkscape:export-filename="/home/dwblair/cloud001.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96"><tspan
+         sodipodi:role="line"
+         id="tspan12-78-5-2-5-7"
+         x="-589.32349"
+         y="75.859833"
+         style="stroke-width:0.19004019">Ethernet</tspan></text>
+    <rect
+       id="rect10-7-6-3-1-6"
+       width="59.840614"
+       height="26.369959"
+       x="-506.54721"
+       y="85.730255"
+       style="fill:#ffffff;stroke:#000000;stroke-width:0.29014239"
+       inkscape:export-filename="/home/dwblair/cloud001.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:7.6016078px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.19004019"
+       x="-493.10916"
+       y="101.52158"
+       id="text14-4-4-1-1-2-2"
+       inkscape:export-filename="/home/dwblair/cloud001.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96"><tspan
+         sodipodi:role="line"
+         id="tspan12-78-5-2-5-9-1"
+         x="-493.10916"
+         y="101.52158"
+         style="stroke-width:0.19004019">WiFi Radio</tspan></text>
+    <rect
+       id="rect10-7-6-3-1-6-5"
+       width="49.638016"
+       height="26.369959"
+       x="-597.31293"
+       y="86.425751"
+       style="fill:#ffffff;stroke:#000000;stroke-width:0.26425329"
+       inkscape:export-filename="/home/dwblair/cloud001.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:7.6016078px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.19004019"
+       x="-592.14929"
+       y="102.21713"
+       id="text14-4-4-1-1-2-2-7"
+       inkscape:export-filename="/home/dwblair/cloud001.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96"><tspan
+         sodipodi:role="line"
+         id="tspan12-78-5-2-5-9-1-4"
+         x="-592.14929"
+         y="102.21713"
+         style="stroke-width:0.19004019">WiFi Radio</tspan></text>
+    <rect
+       id="rect10-7-6-3-18"
+       width="49.006706"
+       height="26.369959"
+       x="-782.28381"
+       y="72.815765"
+       style="fill:#ffffff;stroke:#000000;stroke-width:0.26256746"
+       inkscape:export-filename="/home/dwblair/cloud001.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:7.6016078px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.19004019"
+       x="-768.41479"
+       y="88.619843"
+       id="text14-4-4-1-1-5"
+       inkscape:export-filename="/home/dwblair/cloud001.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96"><tspan
+         sodipodi:role="line"
+         id="tspan12-78-5-2-5-97"
+         x="-768.41479"
+         y="88.619843"
+         style="stroke-width:0.19004019">Server</tspan></text>
+    <rect
+       id="rect10-36-9-9-5"
+       width="49.141487"
+       height="26.754559"
+       x="-782.41858"
+       y="99.18576"
+       style="fill:#ffffff;stroke:#000000;stroke-width:0.2648387"
+       inkscape:export-filename="/home/dwblair/cloud001.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:7.6016078px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.19004019"
+       x="-774.11743"
+       y="115.05801"
+       id="text14-4-2-5-9-7-3"
+       inkscape:export-filename="/home/dwblair/cloud001.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96"><tspan
+         sodipodi:role="line"
+         id="tspan12-78-0-6-0-6-8"
+         x="-774.11743"
+         y="115.05801"
+         style="stroke-width:0.19004019">Database</tspan></text>
+    <rect
+       id="rect10-7-6-3-4-8"
+       width="51.967487"
+       height="26.369959"
+       x="-688.26752"
+       y="60.627872"
+       style="fill:#ffffff;stroke:#000000;stroke-width:0.27038276"
+       inkscape:export-filename="/home/dwblair/cloud001.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:7.6016078px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.19004019"
+       x="-687.86432"
+       y="50.201939"
+       id="text14-4-1-6-4-3"
+       inkscape:export-filename="/home/dwblair/cloud001.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96"><tspan
+         sodipodi:role="line"
+         id="tspan12-4-8-0-4-1"
+         x="-687.86432"
+         y="50.201939"
+         style="stroke-width:0.19004019">Cable Modem</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:7.6016078px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.19004019"
+       x="-677.89362"
+       y="76.431915"
+       id="text14-4-4-1-1-4-8"
+       inkscape:export-filename="/home/dwblair/cloud001.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96"><tspan
+         sodipodi:role="line"
+         id="tspan12-78-5-2-5-7-9"
+         x="-677.89362"
+         y="76.431915"
+         style="stroke-width:0.19004019">Ethernet</tspan></text>
+    <rect
+       id="rect10-7-6-3-4-8-3"
+       width="51.967487"
+       height="26.369959"
+       x="-688.26752"
+       y="86.997833"
+       style="fill:#ffffff;stroke:#000000;stroke-width:0.27038276"
+       inkscape:export-filename="/home/dwblair/cloud001.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:7.6016078px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.19004019"
+       x="-677.89362"
+       y="102.80197"
+       id="text14-4-4-1-1-4-8-3"
+       inkscape:export-filename="/home/dwblair/cloud001.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96"><tspan
+         sodipodi:role="line"
+         id="tspan12-78-5-2-5-7-9-8"
+         x="-677.89362"
+         y="102.80197"
+         style="stroke-width:0.19004019">Modem</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:7.94143009px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.19853574"
+       x="-625.15802"
+       y="73.739838"
+       id="text2523-6-1-4-1-8"
+       inkscape:export-filename="/home/dwblair/cloud001.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96"><tspan
+         sodipodi:role="line"
+         id="tspan2521-2-7-5-9-8"
+         x="-625.15802"
+         y="73.739838"
+         style="stroke-width:0.19853574">wire</tspan></text>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.28716367;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m -601.94909,77.983507 h -30.25883"
+       id="path58-7-2-0-4-8"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/dwblair/cloud001.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <rect
+       id="rect10-7-6-3-1-6-5-5"
+       width="65.312927"
+       height="26.369959"
+       x="-641.78888"
+       y="149.20712"
+       style="fill:#ffffff;stroke:#000000;stroke-width:0.30311871"
+       inkscape:export-filename="/home/dwblair/cloud001.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:7.6016078px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.19004019"
+       x="-626.02563"
+       y="164.9985"
+       id="text14-4-4-1-1-2-2-7-9"
+       inkscape:export-filename="/home/dwblair/cloud001.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96"><tspan
+         sodipodi:role="line"
+         id="tspan12-78-5-2-5-9-1-4-4"
+         x="-626.02563"
+         y="164.9985"
+         style="stroke-width:0.19004019">WiFi Radio</tspan></text>
+    <rect
+       id="rect10-7-6-3-1-6-5-5-6"
+       width="65.312927"
+       height="26.369959"
+       x="-641.78888"
+       y="175.57712"
+       style="fill:#ffffff;stroke:#000000;stroke-width:0.30311871"
+       inkscape:export-filename="/home/dwblair/cloud001.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:7.6016078px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.19004019"
+       x="-635.15558"
+       y="191.3685"
+       id="text14-4-4-1-1-2-2-7-9-9"
+       inkscape:export-filename="/home/dwblair/cloud001.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96"><tspan
+         sodipodi:role="line"
+         id="tspan12-78-5-2-5-9-1-4-4-2"
+         x="-635.15558"
+         y="191.3685"
+         style="stroke-width:0.19004019">Cellular Radio</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:7.94143009px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.19853576"
+       x="-361.67783"
+       y="124.11929"
+       id="text2523-6-1-4-1-8-2"
+       inkscape:export-filename="/home/dwblair/cloud001.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96"><tspan
+         sodipodi:role="line"
+         id="tspan2521-2-7-5-9-8-8"
+         x="-361.67783"
+         y="124.11929"
+         style="stroke-width:0.19853576">wire</tspan></text>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.21429415;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m -366.00318,114.4502 v 16.85054"
+       id="path58-7-2-0-4-8-9"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/dwblair/cloud001.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path2508-3-4-4-2-0"
+       d="m -568.3953,134.71472 c 0.607,-1.83117 1.8236,-4.05147 4.0386,-4.03865"
+       style="fill:none;stroke:#000000;stroke-width:0.21746551px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       inkscape:export-filename="/home/dwblair/cloud001.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path2510-6-8-7-9-5"
+       d="m -570.6853,133.74692 c 0.073,-3.3772 3.7574,-5.31293 6.755,-5.38189"
+       style="fill:none;stroke:#000000;stroke-width:0.21746551px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       inkscape:export-filename="/home/dwblair/cloud001.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path2514-0-7-8-3-1"
+       d="m -572.882,132.92314 c -0.2672,-3.96401 3.9126,-6.84221 7.5788,-6.48033"
+       style="fill:none;stroke:#000000;stroke-width:0.21746551px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       inkscape:export-filename="/home/dwblair/cloud001.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:7.94143057px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.19853577"
+       x="-561.05157"
+       y="132.97586"
+       id="text2523-6-1-4-1-1"
+       inkscape:export-filename="/home/dwblair/cloud001.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96"><tspan
+         sodipodi:role="line"
+         id="tspan2521-2-7-5-9-0"
+         x="-561.05157"
+         y="132.97586"
+         style="stroke-width:0.19853577">WiFi</tspan></text>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.33552873;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m -571.95156,115.00822 -9.02457,31.58129"
+       id="path58-7-2-0-4-85"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/dwblair/cloud001.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:6.65809393px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.16645236"
+       x="-710.6004"
+       y="99.242645"
+       id="text2523-6-1-4-1-8-0"
+       inkscape:export-filename="/home/dwblair/cloud001.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96"><tspan
+         sodipodi:role="line"
+         id="tspan2521-2-7-5-9-8-6"
+         x="-710.6004"
+         y="99.242645"
+         style="stroke-width:0.16645236">wire</tspan></text>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.27002171;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m -690.48507,103.36615 h -26.75411"
+       id="path58-7-2-0-4-8-4"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/dwblair/cloud001.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:7.6016078px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.19004019"
+       x="-566.47705"
+       y="168.28722"
+       id="text14-4-4-1-1-2-2-7-9-9-5"
+       inkscape:export-filename="/home/dwblair/cloud001.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96"><tspan
+         sodipodi:role="line"
+         x="-566.47705"
+         y="168.28722"
+         style="stroke-width:0.19004019"
+         id="tspan1749">User</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10.58333302px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="-466.95819"
+       y="207.0681"
+       id="text6619"><tspan
+         sodipodi:role="line"
+         id="tspan6617"
+         x="-466.95819"
+         y="207.0681"
+         style="stroke-width:0.26458332">Local Site</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:10.58333302px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="-803.35431"
+       y="206.9782"
+       id="text6619-3"><tspan
+         sodipodi:role="line"
+         id="tspan6617-1"
+         x="-803.35431"
+         y="206.9782"
+         style="stroke-width:0.26458332">Remote (Cloud)</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:7.6016078px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.19004019"
+       x="-789.79706"
+       y="50.791721"
+       id="text14-4-1-6-4-3-1"
+       inkscape:export-filename="/home/dwblair/cloud001.png"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96"><tspan
+         sodipodi:role="line"
+         id="tspan12-4-8-0-4-1-0"
+         x="-789.79706"
+         y="50.791721"
+         style="stroke-width:0.19004019">Online Platform</tspan></text>
+  </g>
+</svg>
