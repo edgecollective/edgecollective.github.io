@@ -29,6 +29,7 @@
 <li><a href="#range">Improving range</a></li>
 <li><a href="#lsn50_pattern">LSN50 data capture</a></li>
 <li><a href="#lsn50_onewire">LSN50 onewire</a></li>
+<li><a href="#acclima_deploy">Acclima relay node</a></li>
 </ul>
 <hr>
 <p><em>March 22, 2020</em></p>
@@ -171,6 +172,24 @@
 <h2><a name="lsn50_onewire">LSN50</a> and Onewire ds18b20</h2>
 <img src='/img/lsn50/lsn50_onewire.png'>
 <img src='/img/lsn50/pinout_1_2.png'>
+<hr>
+<p><em>May 03, 2020</em></p>
+<h2><a name="acclima_deploy">Notes on Acclima Relay Field Test and Deployment</a></h2>
+<p><strong>Data graphs / links</strong>. Links to LSN50 and Acclima data (from Kelly and from Don) here:  <a href="http://olathe.edgecollective.io">olathe.edgecollective.io</a>.)</p>
+<p><strong>Field testing and deployment.</strong> Below is a procedure for 'field deployment' of the EC Acclima relay -- it's a way of testing the LoRa connection in the field quickly (short sleep interval, i.e. 'LOW') with visual feedback (LEDs on), making sure that things are working properly, then setting it up for long-term deployments (LEDs off to save power, sleep interval 'HIGH', typically one hour).</p>
+<h2>Procedure for Acclima field deployment</h2>
+<p><a href="https://photos.app.goo.gl/uQazq1F5i3KaB7JC7"><img src="/img/harold/acclima_relay.png"></a></p>
+<ol start="0">
+<li>Switch the device power OFF</li>
+<li>Put the &quot;LED ON&quot; switch to &quot;ON&quot; so the indicator LEDs work (they should generally be switched to 'OFF' for long deployments on battery).</li>
+<li>Put the interval to &quot;LOW&quot; (30 sec)</li>
+<li>Turn the device power ON</li>
+<li>Watch the LEDs  to make sure it gives you a JOIN and a SENT (explanation video here: https://photos.app.goo.gl/GSyRos8Y2sWa53QJ9). Should JOIN within a minute or two, then should cycle through every 30 sec or so. You might wait for one or two cycles to make sure.</li>
+<li>Check http://64.227.0.108:8200/ (you'll want to refresh the page) to see that you got new data values. It might take a minute.  You might need to refresh the web page.</li>
+<li>Rejoice if you did see new values; curse if you didn't</li>
+<li><strong>If you did</strong> -- then put the LEDs to OFF (to save battery), put the interval to HIGH (sleep interval to 1 hour instead of 30 sec), and replace the cover.</li>
+<li><strong>If you didn't</strong> -- maybe it's out of range? (signal strength 'RSSI' below about 120); maybe it's low on batteries? Maybe the sensor wire is loose (it won't transmit if sensor wire is loose).  Check those things and go back to step # 0 above ...</li>
+</ol>
 
   </body>
 </html>
