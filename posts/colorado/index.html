@@ -191,13 +191,26 @@
 <li><strong>If you did</strong> -- then put the LEDs to OFF (to save battery), put the interval to HIGH (sleep interval to 1 hour instead of 30 sec), and replace the cover.</li>
 <li><strong>If you didn't</strong> -- maybe it's out of range? (signal strength 'RSSI' below about 120); maybe it's low on batteries? Maybe the sensor wire is loose (it won't transmit if sensor wire is loose).  Check those things and go back to step # 0 above ...</li>
 </ol>
-<h2>Testing</h2>
-<p>3/4 mile from gateway</p>
+<h2>Testing the EC Acclima relay.</h2>
+<p>Witnessed odd behavior with the EC Acclima relay -- was not connecting.  On power cycling, it connected, but sent odd data (values way out of bounds).  [TO DO: POST PICS].</p>
+<p>Then noticed that battery level was close to / just below recommended voltage for Acclima sensor.</p>
+<p>Provisional diagnosis:  the sensor was underpowered; this meant that originally it was causing the relay to fail to transmit to the gateway (the current firmware requires successful sensor data acquisition before transmit.  TODO: rewrite so that it transmits 'error codes' (integers?)?).</p>
+<p>Relay batteries were replaced, and now sensor is broadcasting regularly.</p>
+<p>EC Acclima Relay was placed 3/4 mile from gateway.  Prior, probe was placed directly in water (generating ~ %100 VWC readings).  At new location, probe was placed in soil, which is generating readings of 14% VWC.</p>
 <img src="/img/harold/vwc_2020_may_03_site.png">
 </br>
 <img src="/img/harold/vwc_2020_may_03_signal_b.png">
 </br>
 <img src="/img/harold/vwc_2020_may_03_dip.png">
+<hr>
+<p><em>May 04, 2020</em></p>
+<h2>Periodically dropped data points?</h2>
+<p>All of the sensors currently deployed in Colorado seem to exhibit a similar behavior -- a periodic 'missing data point':</p>
+<img src="/img/harold/2020_may_04_acclima_skip.png">
+</br>
+<img src="/img/harold/2020_may_04_acclima_skip.png">
+</br>
+<p>Merits investigation to see whether the issue is on the gateway (likely) or has to do with some periodic feature of the local internet connectivity.</p>
 
   </body>
 </html>
