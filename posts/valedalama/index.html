@@ -29,6 +29,22 @@
 <hr>
 <p><em>24 Apr 2020</em></p>
 <p><a href="https://gist.github.com/dwblair/c18edaaa2de9a8d5e3a6b47c48797d98">Simple test code</a>  for Adafruit Feather + RAK</p>
+<hr>
+<p><em>05 May 2020</em></p>
+<h2>Configuring the region on the RAK</h2>
+<p>General setup for the RAK 7243 + Pi firmware is <a href="https://doc.rakwireless.com/rak7243c-lorawan-developer-gateway/device-firmware-setup">here</a>.</p>
+<p>Information about the configuration file is <a href="https://www.chirpstack.io/network-server/install/config/">here</a>.</p>
+<p>The firmware we're using is <a href="https://downloads.rakwireless.com/LoRa/Pilot-Gateway-Pro-RAK7243/Firmware/">here</a>.</p>
+<p>Can use 'gateway-config' command line script on RAK to set the region.</p>
+<p>This script modifies this file:</p>
+<pre><code>/etc/chirpstack-network-server/chirpstack-network-server.toml
+</code></pre>
+<h2>Basic Arduino Test Code</h2>
+<p>Basic test code for sending data to the RAK in OTAA mode</p>
+<p>https://gist.github.com/dwblair/f6a0c3dd07fc3ae073fad3914f77af64</p>
+<h2>Configuring the region on the Arduino</h2>
+<p>Changing the region on the Arduino requires modifing a special header file.</p>
+<p>See the Adafruit Arduino tutorial <a href="https://learn.adafruit.com/the-things-network-for-feather?view=all#region-configuration">here</a>.</p>
 
   </body>
 </html>
