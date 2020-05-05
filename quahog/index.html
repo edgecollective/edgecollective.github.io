@@ -1,0 +1,69 @@
+
+
+<!-- feed it through our cssmin filter to minify -->
+<style>
+  body{font-family:sans-serif;margin:20px;font-size:small;width:90%;margin-right:auto;margin-left:auto;padding-top:15px}#profile_pic{float:right;margin:0 0 1em 1em}h1{line-height:1em;font-size:x-large;margin-bottom:.31em}h2{font-size:large;margin-bottom:1px}h3{font-size:small;margin-bottom:1px}a{text-decoration:none}a:hover{text-decoration:underline}a:visited{color:#00f}*,:after,:before{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}.posts-area{width:100%;padding-top:10px}.posts-area:after{content:"";display:table;clear:both}.post{float:left;width:33.33%;padding-right:20px}.post .post-contents{background:#f7f7f7;border-radius:5px}.post .image a{display:block;overflow:hidden;height:214px}.post img{object-fit:cover;width:100%;height:100%}.post .text{height:200px;padding:20px}@media (max-width:680px){.post{width:100%}}body{font-family:ubuntu,sans-serif;margin:10px;width:90%;margin-right:auto;margin-left:auto;padding-top:15px}#profile_pic{float:right;margin:0 0 1em 1em}h1{line-height:1em;font-size:x-large;margin-bottom:.31em}h2{font-size:large;margin-bottom:1px}h3{font-size:small;margin-bottom:1px}a{text-decoration:none}a:hover{text-decoration:underline}a:visited{color:#00f}*,:after,:before{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}.posts-area{width:100%;padding-top:10px}.posts-area:after{content:"";display:table;clear:both}.post{float:left;width:33.33%;padding-right:20px}.contribute{width:100%;padding-top:10px}.post .post-contents{background:#f7f7f7;border-radius:5px}.post .image a{display:block;overflow:hidden;height:214px}.post img{object-fit:cover;width:100%;height:100%}img{max-height:500px}.post .text{height:200px;padding:20px}@media (max-width:680px){.post{width:100%}}
+</style>
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" type="image/x-icon" href="/img/edge_favicon.png" />
+
+    <title>Edge Collective</title>
+  </head>
+  <body>
+
+
+  <a href="/">Edge Collective</a>
+        <h1>Welcome to the Quahog!</h1>
+
+<!--  &lt;nav class=&quot;toc&quot;&gt;&lt;/nav&gt;-->
+  
+  <img src="/img/quahog/quahog_close.png" width=25%>
+<p>Contact:  collaborate @ edgecollective.io</p>
+<p>Hi!  Welcome to our page for the <strong>Quahog</strong>, a ruggedized,  microcontroller intended for use on farms for monitoring important assets remotely:  the temperature of a greenhouse (on- or off-grid), the temperature of a freezer, soil moisture in the field, water level, etc.</p>
+<hr>
+<h2>Current Status</h2>
+<p>We've been testing the first version of the Quahog (version 0.1, see below) for about a year now, and we're in the process of testing a new version (version 0.2) -- if it works as well as ver 0.1, we'll be distributing it as a kit or pre-assembled very soon.</p>
+<p>We expect to be able to <strong>sell hand-assembled version of the Quahog</strong> (likely for around $300 each) <strong>within the next month or so</strong>; we will also be trying to sell the parts as a DIY &quot;kit&quot; for hand soldering and assembly.  For those with the relevant background, the hardware design files are available online (see below).</p>
+<p>Meanwhile: we're currently using this hardware for &quot;custom installs&quot;: <strong>so if you have a gnarly on-farm problem you'd like to solve</strong> --  monitoring a remote greenhouse, retrofitting existing infrastructure, monitoring freezer temp -- do contact us if you'd like to hire us to solve a problem for you!  We're based in Northeast USA but love to travel.</p>
+<p>Contact:  collaborate @ edgecollective.io</p>
+<hr>
+<h2>Our Philosophy</h2>
+<p>Our aim as a cooperative is to enable farming communities to have more control over their important infrastructure, and be as resilient and independent as they'd like to be. So, we've deliberately designed the board to be as accessible, rugged, and easy to assemble and repair as possible.</p>
+<p><strong>Right to repair; and to assemble; and to sell</strong></p>
+<p>The board is fully open source -- all of the designs are available online.  We want people to have the freedom to build, modify, and distribute their own boards.  Our vision is that local farming communities that wish to can become as self-sufficient as possible around this sort of technology:  using it, repairing it, and even producing it themselves.  The software allows you to speak to any server that speaks HTTP (including one you set up on your farm, if you like) -- no vendor lock-in.</p>
+<p><strong>Accessible, hackable design</strong></p>
+<p>We've design the board using as many through-hole parts as possible, so that it's relatively easy to assemble and repair by those new to electronics.  The hardware is fully open source; all of the design files are available online.</p>
+<p>The Quahog has switching regulators that allow it to run off up to 36 Volts, so it can be used with many solar panel systems, car batteries, and the like in off-grid scenarios.</p>
+<p>It is possible to program the Quahog via both the Arduino IDE and Micropython -- we have been excited to push forward with Micropython development, and have developed code for measuring temperature (via inexpensive one-wire sensors), humidity, and for connecting to Decagon sensors (via a serial connection).</p>
+<p><strong>Flexible Communication options</strong></p>
+<p>The Quahog can connect to WiFi, and it also has an on-board LoRa radio module.  It can thus form a simple &quot;star&quot; topology sensor network, with one of the Quahogs acting as a &quot;gateway&quot;; or an individual Quahog can simply post sensor measurements online.</p>
+<p>We've also connected the Quahog to an inexpensive satellite modem (the RockBlock) capable of sending short messages via the Iridium satellite network.  Our plan is to enable farmers in remote locations to monitor assets in an inexpensive way.</p>
+<p>Contact:  collaborate @ edgecollective.io</p>
+<hr>
+<h1>Quahog Version 0.1</h1>
+<p>The Quahog is a microcontroller based around the Espressif ESP32 microcontroller, which is capable of being programmed in the Arduino IDE and in Micropython.</p>
+<p>The Quahog requires an USB-TTL cable for programming.</p>
+<p>The Quahog version 0.1 schematic is <a href="/img/quahog/hog32a.pdf">here</a>; you can find the full KiCad design files <a href="https://github.com/edgecollective/hog32">here</a>.</p>
+<p><strong>Schematic</strong>:</p>
+<img src="/img/quahog/hog32a.png" width=50%>
+<p><strong>Board layout</strong>:</p>
+<img src="/img/quahog/hog32a_board.png" width=30%>
+<p><strong>More pictures of the Quahog</strong>:</p>
+<img src="/img/quahog/pic1.JPG" width=30%>
+<img src="/img/quahog/pic2.JPG" width=30%>
+<img src="/img/quahog/pic3.JPG" width=30%>
+<img src="/img/quahog/pic4.JPG" width=30%>
+<img src="/img/quahog/sat1.JPG" width=30%>
+<img src="/img/quahog/sat2.JPG" width=30%>
+<img src="/img/quahog/sat3.JPG" width=30%>
+<img src="/img/quahog/sat4.JPG" width=30%>
+<img src="/img/quahog/board1.JPG" width=30%>
+<p>More <a href="sldkjf">pics</a> of the Quahog.</p>
+
+  </body>
+</html>
