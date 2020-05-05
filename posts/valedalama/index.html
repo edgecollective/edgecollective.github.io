@@ -24,10 +24,12 @@
   
   <hr>
 <p><em>April 13, 2020</em></p>
+<h2>SQLite</h2>
 <p>Great <a href="https://www.youtube.com/watch?v=Jib2AmRb_rk">talk on Sqllite</a>, arguing that it's appropriate for a database located on 'the edge'.</p>
 <img src="/img/valedalama/about_sqlite.png">
 <hr>
 <p><em>24 Apr 2020</em></p>
+<h2>Test Feather Code</h2>
 <p><a href="https://gist.github.com/dwblair/c18edaaa2de9a8d5e3a6b47c48797d98">Simple test code</a>  for Adafruit Feather + RAK</p>
 <hr>
 <p><em>05 May 2020</em></p>
@@ -35,16 +37,22 @@
 <p>General setup for the RAK 7243 + Pi firmware is <a href="https://doc.rakwireless.com/rak7243c-lorawan-developer-gateway/device-firmware-setup">here</a>.</p>
 <p>Information about the configuration file is <a href="https://www.chirpstack.io/network-server/install/config/">here</a>.</p>
 <p>The firmware we're using is <a href="https://downloads.rakwireless.com/LoRa/Pilot-Gateway-Pro-RAK7243/Firmware/">here</a>.</p>
-<p>Can use 'gateway-config' command line script on RAK to set the region.</p>
+<p>Can use 'gateway-config' command line script on RAK to set the region:</p>
+<pre><code>sudo gateway-config
+</code></pre>
 <p>This script modifies this file:</p>
 <pre><code>/etc/chirpstack-network-server/chirpstack-network-server.toml
 </code></pre>
 <h2>Basic Arduino Test Code</h2>
-<p>Basic test code for sending data to the RAK in OTAA mode</p>
-<p>https://gist.github.com/dwblair/f6a0c3dd07fc3ae073fad3914f77af64</p>
+<p>Basic test code for sending data to the RAK in OTAA mode is in gist form <a href="https://gist.github.com/dwblair/f6a0c3dd07fc3ae073fad3914f77af64">here</a>.</p>
 <h2>Configuring the region on the Arduino</h2>
 <p>Changing the region on the Arduino requires modifing a special header file.</p>
 <p>See the Adafruit Arduino tutorial <a href="https://learn.adafruit.com/the-things-network-for-feather?view=all#region-configuration">here</a>.</p>
-
+<h2>Adafruit Feather 900 Mhz can be tuned to 868 Mhz band</h2>
+<p>See the below snippet from the <a href="https://www.adafruit.com/product/3178">Adafruit Feather M0 LoRa 900 Mhz product page</a>:</p>
+<img src="/img/valedalama/feather_tunable.png">
+<h2>Adafruit LMIC OTAA basic code will attempt to rejoin periodically</h2>
+<p>See this example serial output:</p>
+<img src="/img/valedalama/rejoin.png">
   </body>
 </html>
