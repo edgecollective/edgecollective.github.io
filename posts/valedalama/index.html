@@ -54,5 +54,34 @@
 <h2>Adafruit LMIC OTAA basic code will attempt to rejoin periodically</h2>
 <p>See this example serial output:</p>
 <img src="/img/valedalama/rejoin.png">
+<h2>Needed tweak on Adafruit for EU band</h2>
+<p>See the forum post <a href="https://www.thethingsnetwork.org/forum/t/solved-adafruit-feather-m0-to-connect-to-ttn-over-otaa-unknown-event-20/29990/15">here</a>:</p>
+<img src="/img/valedalama/eu_band_adafruit_tweak.png">
+<p><a href="https://www.hackster.io/Amedee/the-things-network-node-for-ttnmapper-org-a8bcd4">This</a> might be a useful reference for setting up 868 band.</p>
+<p>Current impression is that RAK hardware does indeed distinguish between 868 and 915 Mhz bands ... ?</p>
+<p>05 May 2020 13:27 Update:  there is a 'project_config' file located in the 'src' folder on in the lmic library folder itself -- and it's set to the US band -- perhaps this is overriding the project files? Trying setting it to EU and the RAK to EU.  One open question is how specific the RAK Pi Hat is re: freq bands ... can it handle 868?</p>
+<p>So the current thinking for getting 868 band to work is:</p>
+<ul>
+<li>change the Arduino lib folder project_config file to 868</li>
+<li>change the sketch lib folder project_config file to 868 (for good measure)</li>
+<li>comment out LMIC_selectSubBand(1);</li>
+</ul>
+<p>Meanwhile, note that upload via bossac did work on the Pi.</p>
+<p>Confirmed -- was able to get upload on RAK in US '915' version by setting to '868' following above steps.  Key seems to have been the Arduino library project_config folder issue.</p>
+<p>Note: we are using <a href="https://github.com/mcci-catena/arduino-lmic/releases/tag/v2.3.2">mcci-catena arduino-lmic 2.3.2 version</a> of library with success.  Later versions haven't always worked. Stick with that for now.</p>
+<h2>Strategy</h2>
+<p>First:</p>
+<ul>
+<li>set up RAK to 868 via sudo gateway-config</li>
+<li>try loading binary to Feather via RAK</li>
+</ul>
+<p>Second:</p>
+<ul>
+<li>make sure we're using proper version of lmic library (see above)</li>
+<li>change the Arduino lib folder project_config file to 868</li>
+<li>change the sketch lib folder project_config file to 868 (for good measure)</li>
+<li>comment out LMIC_selectSubBand(1);</li>
+</ul>
+
   </body>
 </html>
