@@ -219,6 +219,10 @@
 <p>The EC Acclima relay is back to broadcasting steadily, even though the LNS50 is still periodically hiccuping. The missing LSN50 data point is consistently around the top of the hour (there's one that would come through at about :02).  Wondering if the reason that the EC relay is sometimes solidly ever hour-ish for a stretch, sometimes not, is that its timer is a little more than an hour (I set it for an hour, but the measurement / transmit process takes up to a minute).  This would mean that the EC relay's 'phase' would to in and out of sync with a 'top of the hour' broadcast over time.  I think in contrast the LSN50 firmware is quite nicely set up to hit relatively precise sleep increments, so that setting it for '10 minutes' means 10 minutes. Or, because it is broadcasting every 10 minutes, instead of every hour, it's more likely that we hit that gap?</p>
 <p>To figure this out, there is some math to be done about the relative phases, and some numbers to check.  But a quicker check might be to look into the Chirpstack / RAK gateway itself.  Perhaps we can even set up a 'curl' to ping a remote site every minute via HTTP, and see if there it goes 'dark' once per hour ...</p>
 <img src="/img/harold/vwc_2020_may_05.png">
+<hr>
+<p><em>May 6, 2020</em></p>
+<p>Hit snag with dhcpcd.conf file -- the version that RAK OS provides is intended, it seems, to provide a static IP address / WAP / etc when connected to eth0. Solution seems to be to comment out all of the last 5-ish lines in the /etc/dhcpcd.conf</p>
+<p>TODO: remove the 'zoom' controls from the EC Acclima online display ...</p>
 
   </body>
 </html>
