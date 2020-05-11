@@ -18,7 +18,7 @@
 
 
   <a href="/">Edge Collective</a>
-        <h1>Colorado -- Soil Moisture Monitoring</h1>
+        <h1>Soil Monitoring System in Olathe, Colorado (USA)</h1>
 
 <!--  &lt;nav class=&quot;toc&quot;&gt;&lt;/nav&gt;-->
   
@@ -223,6 +223,11 @@
 <p><em>May 6, 2020</em></p>
 <p>Hit snag with dhcpcd.conf file -- the version that RAK OS provides is intended, it seems, to provide a static IP address / WAP / etc when connected to eth0. Solution seems to be to comment out all of the last 5-ish lines in the /etc/dhcpcd.conf</p>
 <p>TODO: remove the 'zoom' controls from the EC Acclima online display ...</p>
+<p>(Update: was able to do this. But ultimately switched over to ChartsJS for now, see below).</p>
+<hr>
+<p><em>May 11, 2020</em></p>
+<p>Couldn't quickly figure out odd dropped points bug when using Plotlyjs (should file a bug report?); switched over to Charts.js:</p>
+<img src="/img/harold/chartjs_upgrade.png">
 
   </body>
 </html>
