@@ -2,7 +2,7 @@
 
 <!-- feed it through our cssmin filter to minify -->
 <style>
-  body{font-family:sans-serif;margin:20px;font-size:small;width:90%;margin-right:auto;margin-left:auto;padding-top:15px}#profile_pic{float:right;margin:0 0 1em 1em}h1{line-height:1em;font-size:x-large;margin-bottom:.31em}h2{font-size:large;margin-bottom:1px}h3{font-size:small;margin-bottom:1px}a{text-decoration:none}a:hover{text-decoration:underline}a:visited{color:#00f}*,:after,:before{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}.posts-area{width:100%;padding-top:10px}.posts-area:after{content:"";display:table;clear:both}.post{float:left;width:33.33%;padding-right:20px}.post .post-contents{background:#f7f7f7;border-radius:5px}.post .image a{display:block;overflow:hidden;height:214px}.post img{object-fit:cover;width:100%;height:100%}.post .text{height:200px;padding:20px}@media (max-width:680px){.post{width:100%}}body{font-family:ubuntu,sans-serif;margin:10px;font-size:15px;width:80%;margin-right:auto;margin-left:auto;padding-top:15px}.img-with-caption{font-size:14px;text-align:center;margin:20 0;background-color:F1F1F1;padding:10px}#intro,#post-content{max-width:800px}#profile_pic{float:right;margin:0 0 1em 1em}h1{line-height:1em;font-size:x-large;margin-bottom:.31em}h2{font-size:large;margin-bottom:1px}h3{font-size:medium;margin-bottom:1px}ol,ul{max-width:650px}a{text-decoration:none}a:hover{text-decoration:underline}a:visited{color:#00f}*,:after,:before{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}.posts-area{width:100%;padding-top:10px}.posts-area:after{content:"";display:table;clear:both}.post{float:left;width:33.33%;padding:0 20px 20px 0}.contribute{width:100%;padding-top:10px}.post .post-contents{background:#f7f7f7;border-radius:5px}.post .image a{display:block;overflow:hidden;height:214px}.post img{object-fit:cover;width:100%;height:100%}img{max-height:500px;max-width:100%}.post .text{height:200px;padding:20px}@media (max-width:680px){.post{width:100%}}
+  body{font-family:sans-serif;margin:20px;font-size:small;width:90%;margin-right:auto;margin-left:auto;padding-top:15px}#profile_pic{float:right;margin:0 0 1em 1em}h1{line-height:1em;font-size:x-large;margin-bottom:.31em}h2{font-size:large;margin-bottom:1px}h3{font-size:small;margin-bottom:1px}a{text-decoration:none}a:hover{text-decoration:underline}a:visited{color:#00f}*,:after,:before{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}.posts-area{width:100%;padding-top:10px}.posts-area:after{content:"";display:table;clear:both}.post{float:left;width:33.33%;padding-right:20px}.post .post-contents{background:#f7f7f7;border-radius:5px}.post .image a{display:block;overflow:hidden;height:214px}.post img{object-fit:cover;width:100%;height:100%}.post .text{height:200px;padding:20px}@media (max-width:680px){.post{width:100%}}body{font-family:ubuntu,sans-serif;margin:10px;font-size:15px;width:80%;margin-right:auto;margin-left:auto;padding-top:15px}.img-with-caption{font-size:14px;text-align:center;margin:20 0;background-color:F1F1F1;padding:10px}#intro,#post-content{max-width:800px}#profile_pic{float:right;margin:0 0 1em 1em}h1{line-height:1em;font-size:x-large;margin-bottom:.31em}h2{font-size:large;margin-bottom:1px}h3{font-size:medium;margin-bottom:1px}ol,ul{max-width:650px}a{text-decoration:none}a:hover{text-decoration:underline}a:visited{color:#00f}*,:after,:before{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}.posts-area{width:100%;padding-top:10px}.posts-area:after{content:"";display:table;clear:both}.post{float:left;width:33.33%;padding:0 20px 20px 0}.contribute{width:100%;padding-top:10px}.post .post-contents{background:#f7f7f7;border-radius:5px}.post .image a{display:block;overflow:hidden;height:214px}.post img{object-fit:cover;width:100%;height:100%}img{max-height:500px;max-width:100%}.post .text{height:250px;padding:20px}@media (max-width:680px){.post{width:100%}}
 </style>
 
 <!doctype html>
@@ -47,11 +47,13 @@
 <p>If, however, we wanted another 3dBi gain, we could Opt for the <a href="https://www.digikey.com/product-detail/en/taoglas-limited/OMB-915-B08F21/931-1519-ND/8275277">Taoglas OMB.915.B08F21</a>, for $161. The datasheet indicates that it is still a fairly uniform / 'omni' antenna (which leads me to believe that our 5 dBi antenna, for which we don't have a datasheet, is likely even more uniform):</p>
 <div class='img-with-caption'>
 <a href="/img/harold/taoglas_radiation.png"><img src="/img/harold/taoglas_radiation.png" ></a>
+<p>Signal amplification in the horizontal plane.</p>
 </div>
 <h2>Mounting the antenna</h2>
 <p>Nootropic Design has a <a href="https://nootropicdesign.com/projectlab/2018/10/27/lorawan-gateway/">nice short article</a>  describing their deployment of a RAK gateway outdoors. We can ignore the GPS antenna;  this might be a cheap option for getting the fiberglass antenna mounted as high as possible.</p>
 <div class='img-with-caption'>
 <a href="/img/harold/antenna_sm.jpg"><img src="/img/harold/antenna_sm.jpg" ></a>
+<p>Example outdoor antenna mounting.</p>
 </div>
 <h2>Cable options</h2>
 <p>Despite the anticipated signal loss through the cable, it may be sufficiently difficult / inconvenient to place the gateway outdoors (lack of available wifi signal, wind / lightning / weather conditions), that it's worth using a low-loss cable to connect the gateway to the external antenna, and keep the gateway indoors.</p>
@@ -63,10 +65,12 @@
 </ul>
 <div class='img-with-caption'>
 <a href="/img/harold/cable_wrapped.png"><img src="/img/harold/cable_wrapped.png" ></a>
+<p>Low-loss signal cable.</p>
 </div>
 <p>The seller provides a chart with the &quot;total signal loss&quot; over the course of the cable:</p>
 <div class='img-with-caption'>
 <a href="/img/harold/cable_loss.png"><img src="/img/harold/cable_loss.png" ></a>
+<p>Example of calculated values for signal loss in a particular cable.</p>
 </div>
 <p>(Note: a general reference for signal loss per foot through various cable types at various frequences can be found <a href="https://www.w4rp.com/ref/coax.html">here</a>).</p>
 <p>Patrick estimated about 40 feet of cable might be necessary:  the chart indicates that the 50 foot cable option, at 900 MHz (our LoRa band), induces a loss of 2.2 dB.</p>
@@ -74,6 +78,7 @@
 <h2>WiFi Extension Options</h2>
 <div class='img-with-caption'>
 <a href="/img/harold/tp-link.png"><img src="/img/harold/tp-link.png" ></a>
+<p>Example of a WiFi extender -- the TP-Link AC1750.</p>
 </div>
 <p>Even if we use a cable, we will still need to connect the gateway to the wifi network, and this may require extending its range with a WiFi range extender.</p>
 <p>Two options that seemed to be promising were:</p>
@@ -85,10 +90,17 @@
 <p>If we do opt to place the gateway outdoords, many options here could work for housing the gateway outdoors.  If wind is a concern, a round PVC pipe might be a good option, as in this design from the Things network:</p>
 <div class='img-with-caption'>
 <a href="/img/harold/gateway_outdoors.jpeg"><img src="/img/harold/gateway_outdoors.jpeg" ></a>
+<p>An outdoor LoRa gateway.</p>
 </div>
 <p>Otherwise, there are quite standard enclosures to be found online, with hinges, like this one used by <a href="https://nootropicdesign.com/projectlab/2018/10/27/lorawan-gateway/">Nootropic Design</a>:</p>
+<div class='img-with-caption'>
 <p><a href="/img/harold/baseStation1_lg.jpg"><img src="/img/harold/baseStation1_lg.jpg" ></a></p>
-<p><a href="/img/harold/pi_outdoors.jpg"><img src="/img/harold/pi_outdoors.jpg" ></a></p>
+<p>Another outdoor LoRa gateway.</p>
+</div>
+<div class='img-with-caption'>
+<a href="/img/harold/pi_outdoors.jpg"><img src="/img/harold/pi_outdoors.jpg" ></a>
+<p>The RAK inside the above enclosure.</p>
+</div>
 <h2>Overall Recommendations</h2>
 <ul>
 <li>If it is possible to situate the external antenna within line of sight of the relay nodes, having a longer cable connector might not be so much of an issue.  At the Olathe site, the antenna location on the roof may have line-of-sight to most of the fields.</li>
