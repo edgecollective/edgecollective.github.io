@@ -2,7 +2,7 @@
 
 <!-- feed it through our cssmin filter to minify -->
 <style>
-  body{font-family:sans-serif;margin:20px;font-size:small;width:90%;margin-right:auto;margin-left:auto;padding-top:15px}#profile_pic{float:right;margin:0 0 1em 1em}h1{line-height:1em;font-size:x-large;margin-bottom:.31em}h2{font-size:large;margin-bottom:1px}h3{font-size:small;margin-bottom:1px}a{text-decoration:none}a:hover{text-decoration:underline}a:visited{color:#00f}*,:after,:before{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}.posts-area{width:100%;padding-top:10px}.posts-area:after{content:"";display:table;clear:both}.post{float:left;width:33.33%;padding-right:20px}.post .post-contents{background:#f7f7f7;border-radius:5px}.post .image a{display:block;overflow:hidden;height:214px}.post img{object-fit:cover;width:100%;height:100%}.post .text{height:200px;padding:20px}@media (max-width:680px){.post{width:100%}}body{font-family:ubuntu,sans-serif;margin:10px;width:90%;margin-right:auto;margin-left:auto;padding-top:15px}#profile_pic{float:right;margin:0 0 1em 1em}h1{line-height:1em;font-size:x-large;margin-bottom:.31em}h2{font-size:large;margin-bottom:1px}h3{font-size:small;margin-bottom:1px}a{text-decoration:none}a:hover{text-decoration:underline}a:visited{color:#00f}*,:after,:before{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}.posts-area{width:100%;padding-top:10px}.posts-area:after{content:"";display:table;clear:both}.post{float:left;width:33.33%;padding:0 20px 20px 0}.contribute{width:100%;padding-top:10px}.post .post-contents{background:#f7f7f7;border-radius:5px}.post .image a{display:block;overflow:hidden;height:214px}.post img{object-fit:cover;width:100%;height:100%}img{max-height:500px}.post .text{height:200px;padding:20px}@media (max-width:680px){.post{width:100%}}
+  body{font-family:sans-serif;margin:20px;font-size:small;width:90%;margin-right:auto;margin-left:auto;padding-top:15px}#profile_pic{float:right;margin:0 0 1em 1em}h1{line-height:1em;font-size:x-large;margin-bottom:.31em}h2{font-size:large;margin-bottom:1px}h3{font-size:small;margin-bottom:1px}a{text-decoration:none}a:hover{text-decoration:underline}a:visited{color:#00f}*,:after,:before{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}.posts-area{width:100%;padding-top:10px}.posts-area:after{content:"";display:table;clear:both}.post{float:left;width:33.33%;padding-right:20px}.post .post-contents{background:#f7f7f7;border-radius:5px}.post .image a{display:block;overflow:hidden;height:214px}.post img{object-fit:cover;width:100%;height:100%}.post .text{height:200px;padding:20px}@media (max-width:680px){.post{width:100%}}body{font-family:ubuntu,sans-serif;margin:10px;font-size:15px;width:80%;margin-right:auto;margin-left:auto;padding-top:15px}.img-with-caption{font-size:14px;text-align:center;margin:20 0;background-color:F1F1F1;padding:10px}#intro,#post-content{max-width:800px}#profile_pic{float:right;margin:0 0 1em 1em}h1{line-height:1em;font-size:x-large;margin-bottom:.31em}h2{font-size:large;margin-bottom:1px}h3{font-size:medium;margin-bottom:1px}ol,ul{max-width:650px}a{text-decoration:none}a:hover{text-decoration:underline}a:visited{color:#00f}*,:after,:before{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}.posts-area{width:100%;padding-top:10px}.posts-area:after{content:"";display:table;clear:both}.post{float:left;width:33.33%;padding:0 20px 20px 0}.contribute{width:100%;padding-top:10px}.post .post-contents{background:#f7f7f7;border-radius:5px}.post .image a{display:block;overflow:hidden;height:214px}.post img{object-fit:cover;width:100%;height:100%}img{max-height:500px;max-width:100%}.post .text{height:200px;padding:20px}@media (max-width:680px){.post{width:100%}}
 </style>
 
 <!doctype html>
@@ -15,7 +15,7 @@
     <title>Edge Collective</title>
   </head>
   <body>
-
+    <div id='post-content'>
 
   <a href="/">Edge Collective</a>
         <h1>Flood Sensing in New Orleans, Louisiana (USA)</h1>
@@ -124,6 +124,17 @@ Error compiling for board Adafruit ItsyBitsy M4 (SAMD51).
 <h2>Streetwise</h2>
 <p>Here's a 'traffic accident and street flooding' app that is being used currently in NOLA -- they allow for users to report accidents or flooding:</p>
 <p><a href="http://streetwise.nola.gov/">Streetwise</a></p>
+<h2>Version 3</h2>
+<p>vl6180x Microlidar sensor from adafruit</p>
+<p>Tutorial on using the sensor (with arduino code) <a href="https://learn.adafruit.com/adafruit-vl6180x-time-of-flight-micro-lidar-distance-sensor-breakout/wiring-and-test">here</a></p>
+<pre><code>{ batt: '3.680274',
+  dist: '0',
+  rssi: -25,
+  lux: '9.09',
+  status: '7' }
+</code></pre>
 
+
+    </div>
   </body>
 </html>
