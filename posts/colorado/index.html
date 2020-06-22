@@ -180,8 +180,30 @@ Example of calculated values for signal loss in a particular cable.
 <p><a href="https://www.dragino.com/products/lora-lorawan-end-node/item/128-lsn50.html">LSN50</a></p>
 <p><a href="https://www.dragino.com/downloads/downloads/LSN50-LoRaST/LSN50_LoRa_Sensor_Node_UserManual_v1.6.3.pdf">User Manual + Case Study</a></p>
 <p><a href="https://www.dragino.com/downloads/downloads/LSN50-LoRaST/DRAGINO_LSN50_AT_Commands_v1.6.3.pdf">AT Commands</a></p>
-<img src="/img/lsn50/pinout_1_2.png">
-<img src="/img/lsn50/pin_functions.png">
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><img src="/img/lsn50/pinout_1_2.png" alt="LSN50"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">The LSN50 version 1.2, with pins labeled.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><img src="/img/lsn50/pin_functions.png" alt="LSN50 Pin Functions"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Pin functions of some typically-used pins on the LSN50.</td>
+</tr>
+</tbody>
+</table>
 <p>What worked with the CP2104:</p>
 <ul>
 <li>RXD --&gt; P02</li>
@@ -193,7 +215,18 @@ Example of calculated values for signal loss in a particular cable.
 <pre><code>AT+TDC=60000
 </code></pre>
 <p>The <a href="https://www.vegetronix.com/Products/VH400/">Vegetronix VH400</a> provides temperature via analog output from 0.0 - 3.3V.  Note: needs be powered with 3.5 - 20V.  Wiring is as follows:</p>
-<img src="/img/harold/vegetronix_pinout.png">
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><img src="/img/harold/vegetronix_pinout.png" alt="vegetronix"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Pin hookup for the Vegetronix soil temperature sensor (graphic shows 'soil moisture' but same applies to temeprature sensor).</td>
+</tr>
+</tbody>
+</table>
 <p>This means that to connect a VH400 to the LSN50, the wiring is as follows:</p>
 <p>Vegetronix --&gt; LSN50</p>
 <ul>
@@ -225,18 +258,36 @@ Example of calculated values for signal loss in a particular cable.
 </li>
 </ul>
 <p><strong>Overview of Fresnel Zones</strong>:</p>
-<div class='img-with-caption'>
-<img src="/img/harold/fresnel_overview.png">
-</div>
-<p>In order to achieve longer ranges and try to get good signal, there are two main issues to consider when placing the antenna:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><img src="/img/harold/fresnel_overview.png" alt="Fresnel"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">The 'Fresnel Zone' for radio transmission close to the earth's surface.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>The Fresnel Zone</strong>. In order to achieve longer ranges and try to get good signal, there are two main issues to consider when placing the antenna:</p>
 <ul>
 <li>The first is the curvature of the earth -- this is relatively minor at short distances of course; but at a distance of 5 miles, you need the antenna to be at least 4 feet higher than the node to get line-of-sight -- assuming no other obstacles in between.</li>
 <li>The second is what's called the &quot;Fresnel zone&quot;: you should try to maintain an ellipsoidal / football-shaped zone of clearance between the antenna and the node; or else a significant amount of the radio transmission that strikes surfaces inside that zone can bounce and self-interfere.</li>
 </ul>
-<p><a href="https://ham.stackexchange.com/questions/12149/antenna-height-for-lorawan-gateway">Nice post</a> on calculating line-of-sight horizon and Fresnel zone:</p>
-<div class='img-with-caption'>
-<img src='/img/harold/horizon.png'>
-</div>
+<p>There's a <a href="https://ham.stackexchange.com/questions/12149/antenna-height-for-lorawan-gateway">nice post</a> on calculating line-of-sight horizon and Fresnel zone, which provides the following equations:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><img src="/img/harold/horizon.png" alt="Horizon"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Calculation of the Fresnel Zone geometry.</td>
+</tr>
+</tbody>
+</table>
 <p><a href="https://www.youtube.com/watch?v=HWOivbJjw7s">Fresnel Zone Tutorial on Youtube</a>  by Mobile Fish</p>
 <img src='/img/harold/fresnel_zone_diag.png'>
 <img src='/img/harold/fresnel_zone.png'>
@@ -335,7 +386,18 @@ Example of calculated values for signal loss in a particular cable.
 <hr>
 <p><em>May 20, 2020</em></p>
 <p>Testing another antenna on the remote node:</p>
-<img src="/img/harold/node_antenna_test.jpeg">
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><img src="/img/harold/node_antenna_test.jpeg" alt="Harold test"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Remote node experiment on David Harold's farm.</td>
+</tr>
+</tbody>
+</table>
 <p>Checking to see whether David's Rak's NodeRed is piping data to Kelly's AWS NodeRed -- indeed it should be (ignore &quot;no response from server&quot; msg):</p>
 <img src="/img/harold/david_nodered.png">
 <p>Looks like antenna switch resulted in signal drop.  Also note that times on graph are in Mountain Time, not EST:</p>
