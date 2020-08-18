@@ -22,11 +22,23 @@
 
 <!--  &lt;nav class=&quot;toc&quot;&gt;&lt;/nav&gt;-->
   
-  <h2>Overview</h2>
+  <h2>Meshtastic Overview</h2>
 <p>Some notes on our experiments with the <a href="https://www.meshtastic.org/">Meshtastic Project</a>.</p>
 <p>Check out their <a href="https://meshtastic.letstalkthis.com/">beginner's guide</a>, and their <a href="https://meshtastic.discourse.group/">discussion forum</a>, and watch Andreas Spiess' review of the project:</p>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/TY6m6fS8bxU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-<h2>Prototyping</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><a href="/img/mesh/arrow.png"> <img src="/img/mesh/arrow.png" alt="arrow"></a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"></td>
+</tr>
+</tbody>
+</table>
+<h2>Heltec Boards</h2>
 <table>
 <thead>
 <tr>
@@ -42,31 +54,7 @@
 <table>
 <thead>
 <tr>
-<th style="text-align:center"><a href="/img/mesh/meshtastic.jpeg"> <img src="/img/mesh/meshtastic.jpeg" alt="meshtastic"></a></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center"></td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
 <th style="text-align:center"><a href="/img/mesh/sender_code.png"> <img src="/img/mesh/sender_code.png" alt="sender_code"></a></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center"></td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th style="text-align:center"><a href="/img/mesh/arrow.png"> <img src="/img/mesh/arrow.png" alt="arrow"></a></th>
 </tr>
 </thead>
 <tbody>
@@ -132,6 +120,32 @@
 <tbody>
 <tr>
 <td style="text-align:center"></td>
+</tr>
+</tbody>
+</table>
+<h2>Quahog</h2>
+<p>Got Meshtastic up and running on the Quahog -- simplified board with ESP32 + RFM9X chip.  Just required modifying the 'heltec' GPIO settings in configuration.h in the source code and compiling, as per suggestions on the Meshtastic discourse forum.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><a href="/img/mesh/meshtastic.jpeg"> <img src="/img/mesh/meshtastic.jpeg" alt="meshtastic"></a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Meshtastic running on a Quahog.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><a href="/img/mesh/update3/qtest.jpg"> <img src="/img/mesh/update3/qtest.jpg" alt="qtest"></a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">First message received on the Quahog.</td>
 </tr>
 </tbody>
 </table>
