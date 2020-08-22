@@ -58,6 +58,20 @@
       </div>
     </div>
   </div>
+  <div class="post">
+    <div class="note-contents">
+      <div class="image">
+        <a href="/posts/notes/quahogdebug/">
+          <img src="img/notebook/quahog_debug/q_debug.png"/>
+        </a>
+      </div>
+      <div class="text">
+        <h3><a href="/posts/notes/quahogdebug/">Quahog Debug</a></h3>
+        <p>Revising the Quahog ESP32 + LoRa circuit</p>
+        <em>Updated: 2020-08-21</em>
+      </div>
+    </div>
+  </div>
 </div>
 <h1>Projects</h1>
 <div class="posts-area">
@@ -410,6 +424,45 @@
 </tr>
 </tbody>
 </table>
+</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="post">
+    <div class="project-contents">
+      <div class="text">
+        <h3>Note </h3>
+        <p><h2>fixing the bootloader</h2>
+<p><a href="https://github.com/espressif/esptool/wiki/ESP32-Boot-Mode-Selection">ESP32 boot mode selection</a></p>
+<p>Upshot -- for <a href="https://github.com/edgecollective/hog32">hog32a</a> version:</p>
+<ul>
+<li>get rid of R4 and C4</li>
+<li>place R1, C3, R2, R3, Q1, and Q2</li>
+<li>need to connect pin 2 to ground (or it can float; but currently it is used in i2c, and is pulled high with a resistor, so we need to connect it to ground)</li>
+<li>need to connect the 'DTR' pin on the CP2104 breakout to the DTR pin on the quahog</li>
+</ul>
+<p>Once these are done, the board will enter the bootloader automatically.</p>
+<h2>flashing using esptool</h2>
+<p>Looks like we need to convert the .elf file to a binary image ...</p>
+<p>See the <a href="https://github.com/espressif/esptool">guide to esptool</a></p>
+<blockquote>
+<p>For esp32, elf2image produces a single output binary &quot;image file&quot;. By default this has the same name as the .elf file, with a .bin extension. ie:</p>
+</blockquote>
+<pre><code>    esptool.py --chip esp32 elf2image my_esp32_app.elf
+</code></pre>
+<blockquote>
+<p>In the above example, the output image file would be called my_esp32_app.bin.</p>
+</blockquote>
+<p>Actually, checking just now -- platformio generates a 'bin' file directly, so no worries.</p>
+<p>need to upload the partitions, too? See <a href="https://github.com/espressif/arduino-esp32/issues/3409">this issue</a></p>
+<p><a href="https://robotzero.one/arduino-ide-partitions/">arduino esp32 partitions scheme</a></p>
+<p>Setting up <a href="https://www.youtube.com/watch?v=j-Nz14qaNIw">Heltec ESP32 on Arduino</a></p>
+<h2>What is working</h2>
+<p>If I first erase the chip using:</p>
+<pre><code>python esptool.py --chip esp32 erase_flash
+</code></pre>
+<p>And then use 'adafruit esp32 feather' in the board setup in arduino ide, it seems to just work.  Not sure if I needed simply to erase the flash beforehand.</p>
 </p>
       </div>
     </div>
