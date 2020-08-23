@@ -28,6 +28,8 @@
 <p>This is why a 'mesh' networking setup for lora sensor nodes becomes very appealing; one might be able to deploy 'self-healing' collections of nodes that can pass messages along via a chain of connections.</p>
 <h2>References</h2>
 <p>Basing my experiments on a fantastic writeup by nootropicdesign -- <a href="https://nootropicdesign.com/projectlab/2018/10/20/lora-mesh-networking/">LoRa Mesh Networking with Simple Arduino-Based Modules</a>, and its associated <a href="https://github.com/nootropicdesign/lora-mesh">source code on github</a>.</p>
+<p>Also note that there is an RH MESH client example <a href="https://www.airspayce.com/mikem/arduino/RadioHead/rf22_mesh_client_8pde-example.html">here</a> -- though it is currently based on the RF22 radio.</p>
+<p>Also notice the other examples of mesh servers and clients <a href="https://www.airspayce.com/mikem/arduino/RadioHead/examples.html">here</a>.</p>
 <h2>Near-term Goals</h2>
 <ul>
 <li>Understanding the flow of data through the mesh to a target node from a source node;</li>
@@ -35,6 +37,17 @@
 <li>Adding GPS in order to track location of at least the source node;</li>
 <li>Testing the memory impact on the 328p of using N nodes</li>
 </ul>
+<h2>Experiments</h2>
+<p>I believe that the standard appproach to mesh networking might be simpler than the nootropic design example.  It might simply involve a mesh 'server', and then mesh 'clients'.</p>
+<p>A simple verison might only have two types of node:</p>
+<ul>
+<li>a <a href="https://www.airspayce.com/mikem/arduino/RadioHead/rf22_mesh_server1_8pde-example.html">simple server</a>; and</li>
+<li>a <a href="https://www.airspayce.com/mikem/arduino/RadioHead/rf22_mesh_client_8pde-example.html">simple client</a>.</li>
+</ul>
+<p>Server side:
+<img src="/img/proto2/simple_works_server.png" alt="simple works server"></p>
+<p>Client side:
+<img src="/img/proto2/simple_works.png" alt="simple works"></p>
 
 
     </div>
