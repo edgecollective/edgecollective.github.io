@@ -72,6 +72,20 @@
       </div>
     </div>
   </div>
+  <div class="post">
+    <div class="note-contents">
+      <div class="image">
+        <a href="/posts/notes/proto1/">
+          <img src="/img/proto1/proto.jpg"/>
+        </a>
+      </div>
+      <div class="text">
+        <h3><a href="/posts/notes/proto1/">SAMD21 Low power</a></h3>
+        <p>Low power experiments</p>
+        <em>Updated: 2020-08-22</em>
+      </div>
+    </div>
+  </div>
 </div>
 <h1>Projects</h1>
 <div class="posts-area">
@@ -463,6 +477,22 @@
 <pre><code>python esptool.py --chip esp32 erase_flash
 </code></pre>
 <p>And then use 'adafruit esp32 feather' in the board setup in arduino ide, it seems to just work.  Not sure if I needed simply to erase the flash beforehand.</p>
+</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="post">
+    <div class="project-contents">
+      <div class="text">
+        <h3>Note </h3>
+        <p><h2>Sparkfun SAMD21 breakout</h2>
+<p>Experimenting with the <a href="https://www.sparkfun.com/products/13664">Sparkfun SAMD21 Mini Breakout</a>.
+By powering it directly on the 3V line, we avoid the regulator.  Was able to achieve 0.03 mA sleep current.  Next test will be to put an RFM95 LoRa module in the mix.</p>
+<p><img src="/img/proto1/spark_power.png" alt="sparkpower"></p>
+<p><img src="/img/proto1/current.jpg" alt="current"></p>
+<h2>Adafruit Feather</h2>
+<p>Have only been able to achieve 0.2 mA sleep current on this.  Somehow disabling the voltage regulator by pulling EN to ground, and powering the device on the 3V line, results in even higher sleep currents.</p>
 </p>
       </div>
     </div>
