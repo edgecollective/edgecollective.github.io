@@ -520,7 +520,8 @@ By powering it directly on the 3V line, we avoid the regulator.  Was able to ach
         <h3>Note </h3>
         <p><h2>Overview</h2>
 <p>LoRa connectivity (ISM band 900 Mhz in the US) is highly dependent on line-of-sight.  This can be a challenge in many topologies of interest (urban, with buildings; rural, with trees / hills). The typical solution -- mounting a gateway at a very high location, in an attempt to achieve line-of-sight to remote nodes -- is not always feasible.</p>
-<p>This is why a 'mesh' networking setup for lora sensor nodes is very appealing.</p>
+<p>Non line-of-sight connections are still possible -- they are just very unreliable, and signal strength / connectivity may fluctuate based on the precise orientation and location of any intermediate objects / ground cover.</p>
+<p>This is why a 'mesh' networking setup for lora sensor nodes becomes very appealing; one might be able to deploy 'self-healing' collections of nodes that can pass messages along via a chain of connections.</p>
 <h2>References</h2>
 <p>Basing my experiments on a fantastic writeup by nootropicdesign -- <a href="https://nootropicdesign.com/projectlab/2018/10/20/lora-mesh-networking/">LoRa Mesh Networking with Simple Arduino-Based Modules</a>, and its associated <a href="https://github.com/nootropicdesign/lora-mesh">source code on github</a>.</p>
 <h2>Near-term Goals</h2>
