@@ -86,6 +86,20 @@
       </div>
     </div>
   </div>
+  <div class="post">
+    <div class="note-contents">
+      <div class="image">
+        <a href="/posts/notes/simplemesh/">
+          <img src="/img/proto2/proto.jpg"/>
+        </a>
+      </div>
+      <div class="text">
+        <h3><a href="/posts/notes/simplemesh/">Simple LoRa Mesh</a></h3>
+        <p>Experiments with the Radiohead RHMesh approach.</p>
+        <em>Updated: 2020-08-22</em>
+      </div>
+    </div>
+  </div>
 </div>
 <h1>Projects</h1>
 <div class="posts-area">
@@ -495,6 +509,27 @@ By powering it directly on the 3V line, we avoid the regulator.  Was able to ach
 <p>Have only been able to achieve 0.2 mA sleep current on this.  Somehow disabling the voltage regulator by pulling EN to ground, and powering the device on the 3V line, results in even higher sleep currents.</p>
 <h2>Arm Programming</h2>
 <p>Nice <a href="https://learn.sparkfun.com/tutorials/arm-programming?_ga=2.31674685.2071070740.1598130081-351514117.1580570302">notes on ARM programming</a> from Sparkfun.</p>
+</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="post">
+    <div class="project-contents">
+      <div class="text">
+        <h3>Note </h3>
+        <p><h2>Overview</h2>
+<p>LoRa connectivity (ISM band 900 Mhz in the US) is highly dependent on line-of-sight.  This can be a challenge in many topologies of interest (urban, with buildings; rural, with trees / hills). The typical solution -- mounting a gateway at a very high location, in an attempt to achieve line-of-sight to remote nodes -- is not always feasible.</p>
+<p>This is why a 'mesh' networking setup for lora sensor nodes is very appealing.</p>
+<h2>References</h2>
+<p>Basing my experiments on a fantastic writeup by nootropicdesign -- <a href="https://nootropicdesign.com/projectlab/2018/10/20/lora-mesh-networking/">LoRa Mesh Networking with Simple Arduino-Based Modules</a>, and its associated <a href="https://github.com/nootropicdesign/lora-mesh">source code on github</a>.</p>
+<h2>Near-term Goals</h2>
+<ul>
+<li>Understanding the flow of data through the mesh to a target node from a source node;</li>
+<li>Visualizing the flow of data</li>
+<li>Adding GPS in order to track location of at least the source node;</li>
+<li>Testing the memory impact on the 328p of using N nodes</li>
+</ul>
 </p>
       </div>
     </div>
