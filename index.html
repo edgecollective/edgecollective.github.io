@@ -100,6 +100,20 @@
       </div>
     </div>
   </div>
+  <div class="post">
+    <div class="note-contents">
+      <div class="image">
+        <a href="/posts/notes/ssb/">
+          <img src="/img/Hermies.png"/>
+        </a>
+      </div>
+      <div class="text">
+        <h3><a href="/posts/notes/ssb/">Custom Location for Secure Scuttlebutt</a></h3>
+        <p>How to set up a custom database directory location for Secure Scuttlebutt (SSB) (enabling e.g. storage of SSB on a portable drive).</p>
+        <em>Updated: 2020-08-26</em>
+      </div>
+    </div>
+  </div>
 </div>
 <h1>Projects</h1>
 <div class="posts-area">
@@ -544,6 +558,24 @@ By powering it directly on the 3V line, we avoid the regulator.  Was able to ach
 <img src="/img/proto2/simple_works_server.png" alt="simple works server"></p>
 <p>Client side:
 <img src="/img/proto2/simple_works.png" alt="simple works"></p>
+</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="post">
+    <div class="project-contents">
+      <div class="text">
+        <h3>Note </h3>
+        <p><p>Goal: to run Secure Scuttlebutt off a USB stick.</p>
+<p>Followed the advice <a href="https://github.com/ssbc/patchwork/issues/822">here</a> -- seems to work!</p>
+<p><strong>Note</strong>: ran into separate issue when trying to install <a href="">Patwork</a> on Ubuntu, locally --  got an error when doing an ‘npm install’ -- turns out that I first needed to install these packages:</p>
+<pre><code>sudo apt install libx11-dev libxkbfile-dev
+</code></pre>
+<p><strong>In any case</strong>, once you have a working local Patchwork install, you can convince it to store its data (in the '.ssb' folder) somewhere other than the default (home directory) by using:</p>
+<pre><code>npm start -- --path ~/Documents/myssb/.ssb
+</code></pre>
+<p>where in this case '~/Documenst/myssb/.ssb' is the custom location (could be external USB drive) for your '.ssb' folder. Seems to work!</p>
 </p>
       </div>
     </div>
