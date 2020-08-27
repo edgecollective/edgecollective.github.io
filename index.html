@@ -108,7 +108,7 @@
         </a>
       </div>
       <div class="text">
-        <h3><a href="/posts/notes/ssb/">Custom Location for Secure Scuttlebutt</a></h3>
+        <h3><a href="/posts/notes/ssb/">Custom Location for Secure Scuttlebutt Data</a></h3>
         <p>How to set up a custom database directory location for Secure Scuttlebutt (SSB) (enabling e.g. storage of SSB on a portable drive).</p>
         <em>Updated: 2020-08-26</em>
       </div>
@@ -567,16 +567,27 @@ By powering it directly on the 3V line, we avoid the regulator.  Was able to ach
     <div class="project-contents">
       <div class="text">
         <h3>Note </h3>
-        <p><p>Goal: to run Secure Scuttlebutt off a USB stick.</p>
-<p>Followed the advice <a href="https://github.com/ssbc/patchwork/issues/822">here</a> -- seems to work!</p>
-<p><strong>Note</strong>: ran into separate issue when trying to install <a href="">Patwork</a> on Ubuntu, locally --  got an error when doing an ‘npm install’ -- turns out that I first needed to install these packages:</p>
-<pre><code>sudo apt install libx11-dev libxkbfile-dev
-</code></pre>
-<p><strong>In any case</strong>, once you have a working local Patchwork install, you can convince it to store its data (in the '.ssb' folder) somewhere other than the default (home directory) by using:</p>
+        <p><h2>Setting up a custom SSB database location</h2>
+<p><a href="https://scuttlebutt.nz">Secure Scuttlebutt</a> (SSB) is a peer-to-peer (p2p) social network -- akin to Facebook, but fully decentralized and owned by noone.  Connecting to the SSB network requires a client -- for example, <a href="https://github.com/ssbc/patchwork">Patchwork</a>.</p>
+<p>One feature of this p2p network is that you store all of your peer data (your posts, and posts from friends) on your local drive -- which is neat, because it means that all of your data since your last sync is available even if you're offline.</p>
+<p>One related caveat is that this means storing a lot of data locally; so it's good to have options for where to store it.</p>
+<p>By default, all of your SSB data is stored in your home directory (an obvious location in Linux-based systems; not sure where the default is in Windows / Mac), in a directory called '.ssb'.</p>
+<p>If you'd like to store it elsewhere, you can invoke a local installation of Patchwork (at least installations installed via npm) like so:</p>
 <pre><code>npm start -- --path ~/Documents/myssb/.ssb
 </code></pre>
-<p>where in this case '~/Documenst/myssb/.ssb' is the custom location (could be external USB drive) for your '.ssb' folder. Seems to work!</p>
-<p>(Posted a <a href="https://gist.github.com/dwblair/951df80d31d2940e55db70b7fd99e5fe">gist</a> with the startup script I use.)</p>
+<p>where in this case '~/Documenst/myssb/.ssb' is your custom (SSB) data directory location (could be external USB drive) for your '.ssb' folder. Seems to work!</p>
+<p>Credit for this method goes to an online discussion thread <a href="https://github.com/ssbc/patchwork/issues/822">here</a>.</p>
+<p>(To make this easier to invoke on a regular basis, I've posted a <a href="https://gist.github.com/dwblair/951df80d31d2940e55db70b7fd99e5fe">gist</a> with the startup script I use.)</p>
+<h2>Dependencies for Patchwork on Ubuntu / Linux-based systems</h2>
+<p>Note: I found a hiccup when trying to install Patchwork via npm on my Ubuntu system via 'npm install'.  It was solved by first installing these dependencies:</p>
+<pre><code>sudo apt install libx11-dev libxkbfile-dev
+</code></pre>
+<h2>Further Resources / Links</h2>
+<ul>
+<li><a href="https://scuttlebutt.nz/">Secure Scuttlebutt</a> -- main site for the p2p networking protocol</li>
+<li><a href="https://github.com/ssbc/ssb-server/wiki/pub-servers">Secure Scuttlebutt Pub Servers</a> -- list of servers you can join with a Secure Scuttlebutt 'client'</li>
+<li><a href="https://github.com/ssbc/patchwork">Patchwork</a> -- a 'client' for Secure Scuttlebutt</li>
+</ul>
 </p>
       </div>
     </div>
