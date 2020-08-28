@@ -52,6 +52,8 @@
 <pre><code>python esptool.py --chip esp32 erase_flash
 </code></pre>
 <p>And then use 'adafruit esp32 feather' in the board setup in arduino ide, it seems to just work.  Not sure if I needed simply to erase the flash beforehand.</p>
+<h2>Button on Meshtastic</h2>
+<p>I was getting 'button press functionality' when running Meshtastic on the Quahog.  I needed to change the quahog Mestastic-device code so that the 'button' was no longer GPIO 0 (default), but GPIO 19 (other pins may also work for this).  This corresponds to 'release/latest/quahog_firmware_v3.bin' in Meshtastic-device-quahog on github.</p>
 
 
     </div>
