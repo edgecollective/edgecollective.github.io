@@ -656,8 +656,9 @@ By powering it directly on the 3V line, we avoid the regulator.  Was able to ach
 </tbody>
 </table>
 <p>This weekend we used the <a href="https://github.com/meshtastic/Meshtastic-python">Meshtastic Python API</a> to perform some basic range tests of the <a href="https://www.meshtastic.org/">Meshtastic</a> LoRa mesh networking communications system, around the lake at Newfound Lake in Bristol, NH.</p>
+<p>Below are some hastily-assembled data and scripts; will hope to organize this into a narrative account ASAP.</p>
+<h2>Example Mesthastic-Python script</h2>
 <p>A link to some of the Meshtastic-Python scripts we played with is <a href="https://github.com/edgecollective/meshtastic-python-experiments">here</a>.</p>
-<h2>Example script</h2>
 <pre><code class="language-python">import meshtastic
 import time
 from pubsub import pub
@@ -681,7 +682,7 @@ pub.subscribe(onReceive, &quot;meshtastic.receive&quot;)
 pub.subscribe(onConnection, &quot;meshtastic.connection.established&quot;)
 interface = meshtastic.StreamInterface()
 </code></pre>
-<h2>Example output</h2>
+<h2>Example Mesthastic-Python script output</h2>
 <blockquote>
 <p>Received: {'from': 3520888364, 'to': 4294967295, 'decoded': {'data': {'typ': 'CLEAR_TEXT', 'payload': 'dGVzdDc=', 'text': 'test7'}}, 'id': 2204634416, 'rxSnr': 3.0, 'hopLimit': 1, 'fromId': None, 'toId': '^all'}</p>
 </blockquote>
@@ -692,6 +693,114 @@ interface = meshtastic.StreamInterface()
 <p>Sending reply:  got msg 'test7' with rxSnr: 3.0 and hopLimit: 1</p>
 </blockquote>
 <h2>Pics</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><a href="/img/newfound/screen/Screenshot_20200830-123404.png"> <img src="/img/newfound/screen/Screenshot_20200830-123404.png" alt="Screenshot_20200830-123404"></a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><a href="/img/newfound/screen/Screenshot_20200830-121357.png"> <img src="/img/newfound/screen/Screenshot_20200830-121357.png" alt="Screenshot_20200830-121357"></a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><a href="/img/newfound/screen/Screenshot_20200830-123413.png"> <img src="/img/newfound/screen/Screenshot_20200830-123413.png" alt="Screenshot_20200830-123413"></a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><a href="/img/newfound/screen/Screenshot_20200830-112105.png"> <img src="/img/newfound/screen/Screenshot_20200830-112105.png" alt="Screenshot_20200830-112105"></a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><a href="/img/newfound/screen/Screenshot_20200830-124655.png"> <img src="/img/newfound/screen/Screenshot_20200830-124655.png" alt="Screenshot_20200830-124655"></a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><a href="/img/newfound/screen/Screenshot_20200830-115555.png"> <img src="/img/newfound/screen/Screenshot_20200830-115555.png" alt="Screenshot_20200830-115555"></a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><a href="/img/newfound/screen/Screenshot_20200830-121245.png"> <img src="/img/newfound/screen/Screenshot_20200830-121245.png" alt="Screenshot_20200830-121245"></a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><a href="/img/newfound/screen/Screenshot_20200830-122047.png"> <img src="/img/newfound/screen/Screenshot_20200830-122047.png" alt="Screenshot_20200830-122047"></a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><a href="/img/newfound/screen/Screenshot_20200830-115714.png"> <img src="/img/newfound/screen/Screenshot_20200830-115714.png" alt="Screenshot_20200830-115714"></a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"></td>
+</tr>
+</tbody>
+</table>
 <table>
 <thead>
 <tr>
