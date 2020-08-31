@@ -35,6 +35,18 @@
 </tr>
 </tbody>
 </table>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><a href="/img/newfound/locations.png"> <img src="/img/newfound/locations.png" alt="locations.png"></a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">The locations of various nodes in this experiment. With respect to the <strong>base station</strong> node, the <strong>kayak</strong> node is in a landscape-induced 'radio shadow', so that the only viable LoRa radio path from base station to kayak is via the <strong>relay</strong> node.</td>
+</tr>
+</tbody>
+</table>
 <h2>Background</h2>
 <p>The goal was to test ‘hop’ dynamics with a system of 3 Meshtastic nodes, by first setting up a ‘base station sender’ and a ‘target receiver’ on opposite sides of a hill that blocks direct LoRa transmission; and then placing a ‘relay’ node on the ‘corner’ of that hill, so that messages might ‘hop’ around it.</p>
 <p>The ‘sender’ was located in a cabin on a lake, and was controlled by Meshtastic-python, using a script (linked to in the above post) that would ‘reply’ to received messages with the SNR of the incoming message. The idea was that from the field I could send messages from my ‘end node’ (controlled via the Android app), and if the ‘relay’ node was able to relay my message via a ‘hop’ to the ‘base station sender’, I might ultimately get a reply relayed back to me at the end node.</p>
