@@ -29,6 +29,8 @@ By powering it directly on the 3V line, we avoid the regulator.  Was able to ach
 <p><img src="/img/proto1/current.jpg" alt="current"></p>
 <h2>Adafruit Feather</h2>
 <p>Have only been able to achieve 0.2 mA sleep current on this.  Somehow disabling the voltage regulator by pulling EN to ground, and powering the device on the 3V line, results in even higher sleep currents.</p>
+<p><strong>Update 15 Sep 2020</strong>: Using <a href="https://gist.github.com/dwblair/b69a20dcf87314348bac970db574a723">this code</a> -- on a Feather M0 LoRa without any sensors attached -- was able to get down to 0.09 mA (90 uA).  This isn't so far away from what one might expect for the AP2112K LDO used on the Feather (~ 60 uA), plus the M0 itself in standby sleep mode (~ 10 uA), plus the RFM95 radio in sleep mode (a few uA, I believe).</p>
+<p><img src="/img/radio.jpg" alt="radio"></p>
 <h2>Arm Programming</h2>
 <p>Nice <a href="https://learn.sparkfun.com/tutorials/arm-programming?_ga=2.31674685.2071070740.1598130081-351514117.1580570302">notes on ARM programming</a> from Sparkfun.</p>
 
