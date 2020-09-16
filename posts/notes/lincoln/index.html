@@ -21,7 +21,11 @@
         <h1>Radiohead LoRa Mesh Field Test</h1>
 
   
-  <table>
+  <p>We used some Arduino-based devices to demonstrate the <a href="https://www.airspayce.com/mikem/arduino/RadioHead/classRHMesh.html">mesh functionality</a> of the <a href="https://www.airspayce.com/mikem/arduino/RadioHead">Radiohead library</a>, a common radio library for LoRa radio devices.</p>
+<p>Our starting point was the <a href="https://github.com/nootropicdesign/lora-mesh">code</a> from a <a href="https://nootropicdesign.com/projectlab/2018/10/20/lora-mesh-networking/">nootropic design blog post</a>. <a href="https://github.com/edgecollective/lora-mesh/tree/master/gpsexpt/exp3">Our version</a> adds GPS funcitonality, using some inexpensive GPS modules and some Adafruit Feather LoRa boards.</p>
+<h2>Trial data</h2>
+<p>In our first trial, we deployed three nodes at a residence in Lincoln, MA USA, as depicted in <strong>Fig 1</strong> below.  Node #1 (blue) is stationary, and connected to a laptop which is recording any data received by Node #1 (via a Python script).  Nodes #2 (red) and #3 (green) are mobile, and equipped with GPS; every few seconds they make a GPS measurement, and attempt to send their latitude and longitude back to Node #1.</p>
+<table>
 <thead>
 <tr>
 <th style="text-align:center"><a href="https://edgecollective.io/lora-mesh/gpsexpt/exp3/plotting/"> <img src="/img/lincoln/mesh.png" alt="mesh"></a></th>
@@ -33,11 +37,14 @@
 </tr>
 </tbody>
 </table>
-<p>Using several Arduino-based devices to demonstrate the <a href="https://www.airspayce.com/mikem/arduino/RadioHead/classRHMesh.html">mesh functionality</a> of the <a href="https://www.airspayce.com/mikem/arduino/RadioHead">Radiohead library</a>, a common radio library for LoRa radio devices.</p>
-<p>Our starting point was the <a href="https://github.com/nootropicdesign/lora-mesh">code</a> from a <a href="https://nootropicdesign.com/projectlab/2018/10/20/lora-mesh-networking/">nootropic design blog post</a>.</p>
-<p>In <a href="https://github.com/edgecollective/lora-mesh/tree/master/gpsexpt/exp3">our code</a> we used Adafruit Feather LoRa boards with some inexpensive GPS modules</p>
-<p>You can see an animated depiction of our first trial <a href="https://edgecollective.io/lora-mesh/gpsexpt/exp3/plotting/">here</a>.</p>
-<p><strong>Explanation</strong>:  Node #1 (blue) is stationary, and connected to a laptop which is recording any data received by Node #1 (via a Python script).  Nodes #2 (red) and #3 (green) are mobile, and equipped with GPS; every few seconds they make a GPS measurement, and attempt to send their latitude and longitude back to Node #1.  What you can see in the animation is that during the first part of the journey, Nodes #2 and #3 are able to send their data directly back to Node #1, as they are easily within range.  At some point, we found that lost the connection to Node #1 due to topography / obstructions; so we backtracked a bit to where we still had a good signal, and dropped off Node #3 by the side of the road.  We then continued to walk down the path with Node #2.  At various points, Node #2 loses its connection to Node #1, and re-routes (according to the Radiohead mesh algorithm) its messages via Node #3.  Interesting, at some point in our journey with Node #2 walking away from Node #1, we regain our connection to Node #1 (likely because we went up a hill, and regained line-of-sight).  (I believe that the Radiohead algorithm will simply stick with whatever route was most recently successful until it fails; so perhaps this means that when we see Node #2 and Node #3 connecting, the connection between Node #2 and Node #3 must have dropped, prior. will look into this).</p>
+<p>What you can see in the <a href="https://edgecollective.io/lora-mesh/gpsexpt/exp3/plotting/">animation of the trial data</a> is the following:</p>
+<ul>
+<li>During the first part of the journey, Nodes #2 and #3 are able to send their data directly back to Node #1, as they are easily within range.</li>
+<li>At some point, we found that lost the connection to Node #1 due to topography / obstructions; so we backtracked a bit to where we still had a good signal, and dropped off Node #3 by the side of the road.</li>
+<li>We then continued to walk down the path with Node #2.</li>
+<li>At various points, Node #2 loses its connection to Node #1, and re-routes (according to the Radiohead mesh algorithm) its messages via Node #3.</li>
+</ul>
+<p>You can also observe that at some point in our journey -- with Node #2, walking away from Node #1 -- we regain our connection to Node #1 (likely because we went up a hill, and regained line-of-sight).  We believe that the Radiohead algorithm will simply stick with whatever route was most recently successful until it fails; so perhaps this means that when we see Node #2 and Node #3 connecting, the connection between Node #2 and Node #3 must have dropped, prior. will look into this.</p>
 
 
     </div>
