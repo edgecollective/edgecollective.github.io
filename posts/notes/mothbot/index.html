@@ -46,6 +46,91 @@
 <li><strong>BIG</strong> -- caps on power circuit should be 1uF.  Pin order messed up on MCP1700.</li>
 <li>soldering the RFM95 -- really need to 'flood' the casselated pins in order for them to be connected properly -- would be good to have a diagnostic</li>
 </ul>
+<h2>KiCAD notes</h2>
+<h3>Custom footprint as logo in KiCAD</h3>
+<p>Use the 'Bitmap to component converter' in the main KiCad window (the bitmappy-looking 'a' in the below screenshot) to convert a bitmap to a footprint.  Then you can import this footprint directly to the PCB layout (no need to have an associated symbol), as a logo.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><a href="/img/mothbot/converter.png"> <img src="/img/mothbot/converter.png" alt="parts.jpg"></a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Screenshot highlighting the 'bitmap to component converter'</td>
+</tr>
+</tbody>
+</table>
+<h3>Design Rules / Templates for OSHPark</h3>
+<p><a href="https://docs.oshpark.com/design-tools/kicad/kicad-design-rules/">This guide</a> has some nice info.</p>
+<h2>Reference for QWIIC connector</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><a href="/img/mothbot/qwiic.png"> <img src="/img/mothbot/qwiic.png" alt="parts.jpg"></a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Sparkfun 'QWIIC' I2C Connector</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><a href="/img/mothbot/qwiic_board.png"> <img src="/img/mothbot/qwiic_board.png" alt="parts.jpg"></a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Sparkfun 'QWIIC' I2C Connector</td>
+</tr>
+</tbody>
+</table>
+<p><a href="https://www.sparkfun.com/qwiic">Sparkfun QWIIC reference</a></p>
+<p><a href="https://www.adafruit.com/product/4208">JST SH 4 Pin Connector</a></p>
+<p><a href="https://www.adafruit.com/product/4210">Adafruit reference for JST SH 4 Pin QWIIC Pin Ordering</a></p>
+<h2>Adding a reset button</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><a href="/img/mothbot/reset_button.png"> <img src="/img/mothbot/reset_button.png" alt="parts.jpg"></a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Footprint for KMR2 pushbutton</td>
+</tr>
+</tbody>
+</table>
+<h2>Adding a DC-DC converter footprint</h2>
+<p><a href="https://www.adafruit.com/product/1065">TSR12450 Converter</a> -- 5V output</p>
+<p><a href="https://www.adafruit.com/product/1066">TSR12433 Converter</a> -- 3.3V output</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><a href="/img/mothbot/dc_dc.png"> <img src="/img/mothbot/dc_dc.png" alt="parts.jpg"></a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Pinout for DC-DC</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><a href="/img/mothbot/dcdc_bottom.png"> <img src="/img/mothbot/dcdc_bottom.png" alt="parts.jpg"></a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Footprint for DC-DC</td>
+</tr>
+</tbody>
+</table>
 
 
     </div>
