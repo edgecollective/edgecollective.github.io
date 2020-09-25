@@ -23,15 +23,27 @@
 <p><em>Accessible infrastructure for communities living at ‘the edge'.</em></p>
 <div id='intro'>
 <p><strong>Edge Collective</strong> is a distributed research, teaching, and facilitation cooperative working to help individuals and communities increase the capacity of their vital food, water, energy, and communications infrastructure to adapt to challenging environments.</p>
-<p>All of the research, designs, and code that we produce are freely available in our <a href="https://github.com/edgecollective">archives</a> as Free and Open Source / Creative Commons.</p>
-<p>You can read more about our philosophy <a href="/about">here</a>.</p>
-<p>We support our work through <a href="https://opencollective.com/edgecollective">donations</a> and via 'pay-as-you-can' arrangements.</p>
-<p>Cheers!</p>
+<p>All of the research, designs, and code that we produce are freely available in our <a href="https://github.com/edgecollective">archives</a> as Free and Open Source / Creative Commons. (You can read more about our philosophy <a href="/about">here</a>.)</p>
+<p>We support our work through <a href="https://opencollective.com/edgecollective">donations</a> and via 'pay-as-you-can' arrangements. Cheers!</p>
 <!-- <p><a href="http://edgecollective.io">edgecollective.io</a> | contact us at: collaborate @ edgecollective.io</p>-->
 </div>
 </div>
 <h1>Notebook</h1>
 <div class="posts-area">
+  <div class="post">
+    <div class="note-contents">
+      <div class="image">
+        <a href="/posts/notes/heltec/">
+          <img src="img/placeholder.png"/>
+        </a>
+      </div>
+      <div class="text">
+        <h3><a href="/posts/notes/heltec/">Inexpensive Heltec WiFi + LoRa Gateway Setup</a></h3>
+        <p>Notes on setting up a Heltec device.</p>
+        <em>Updated: 2020-09-24</em>
+      </div>
+    </div>
+  </div>
   <div class="post">
     <div class="note-contents">
       <div class="image">
@@ -1482,6 +1494,50 @@ interface = meshtastic.StreamInterface()
 </tr>
 </tbody>
 </table>
+</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="post">
+    <div class="project-contents">
+      <div class="text">
+        <h3>Note </h3>
+        <p><h2>Guides</h2>
+<p><a href="https://robotzero.one/heltec-wifi-kit-32/">Robotzero</a></p>
+<p>Basically need to just load this config file in 'Additional Board Manager URLs' field in Preferences in Arduino IDE:</p>
+<p><code>https://dl.espressif.com/dl/package_esp32_index.json</code></p>
+<p>Then can select Heltec WiFi Lora (V2) (the board we're using).</p>
+<p>WiFi scan worked.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><a href="/img/heltec/wifi_scan.png"> <img src="/img/heltec/wifi_scan.png" alt="wifi scan"></a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Initial wifi scan test.</td>
+</tr>
+</tbody>
+</table>
+<h2>Display Library</h2>
+<p><a href="https://github.com/olikraus/u8g2">U8g2 library</a> for Arduino covers a wide range of common displays.</p>
+<p><a href="https://gist.github.com/dwblair/d74bb01fbd3514ffd6b5eb5d9b66ab88">Test code</a> that will scan wifi and display the results on the screen.</p>
+<h2>Main Heltec Documentation</h2>
+<p><a href="https://heltec.org/project/wifi-lora-32/">Heltec Wifi Lora 32</a></p>
+<h2>Coding and Setup</h2>
+<p><a href="https://www.instructables.com/id/Introduction-to-ESP32-WiFi-LoRa/">Instructable</a> that has a nice set of diagrams of pinouts</p>
+<p><a href="https://github.com/HelTecAutomation/Heltec_ESP32">Heltec Library</a></p>
+<p><a href="https://github.com/Heltec-Aaron-Lee/WiFi_Kit_series">Main github reference for Heltec devices -- includes KiCad file for device</a></p>
+<p><a href="http://community.heltec.cn/t/heltec-wifi-lora-32-v2-send-receive/160">Heltec WiFi LoRa send / receive</a></p>
+<p><a href="http://community.heltec.cn/t/ping-pong-test-between-cubecell-dev-board-and-wifi-lora-32-v2/508/7">Heltec syncword issue</a></p>
+<p><a href="https://robotzero.one/heltec-wifi-lora-32/">Robot Zero One LoRa receiver demo</a></p>
+<p>They suggest using <a href="https://github.com/sandeepmistry/arduino-LoRa">this LoRa library</a>.</p>
+<h2>Working LoRa Example</h2>
+<p>Follow <a href="https://robotzero.one/heltec-wifi-lora-32/">Robot Zero One LoRa receiver demo</a>;</p>
+<p>use <a href="https://github.com/sandeepmistry/arduino-LoRa">this LoRa library</a>;</p>
+<p>And <a href="https://gist.github.com/dwblair/cfe9bfb895d4ad72d88ed91fb76ded47">this example</a>.</p>
 </p>
       </div>
     </div>
