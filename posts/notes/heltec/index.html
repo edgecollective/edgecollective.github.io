@@ -21,7 +21,12 @@
         <h1>Inexpensive Heltec WiFi + LoRa Gateway Setup</h1>
 
   
-  <h2>Guides</h2>
+  <h2>Arduino IDE Setup</h2>
+<p>Board Manager URL for ESP32:</p>
+<p><code>https://dl.espressif.com/dl/package_esp32_index.json</code></p>
+<p>Board Manager URL for Feather M0 LoRa:</p>
+<p><code>https://adafruit.github.io/arduino-board-index/package_adafruit_index.json</code></p>
+<h2>Guides</h2>
 <p><a href="https://robotzero.one/heltec-wifi-kit-32/">Robotzero</a></p>
 <p>Basically need to just load this config file in 'Additional Board Manager URLs' field in Preferences in Arduino IDE:</p>
 <p><code>https://dl.espressif.com/dl/package_esp32_index.json</code></p>
@@ -57,6 +62,20 @@
 <p>use <a href="https://github.com/sandeepmistry/arduino-LoRa">this LoRa library</a>;</p>
 <p>And <a href="https://gist.github.com/dwblair/cfe9bfb895d4ad72d88ed91fb76ded47">this example</a>.</p>
 <p><strong>Receive and display</strong>. Can get it posted on the display using <a href="https://gist.github.com/dwblair/9da853fb274c184f89f3f14123b9e032">this example</a> with <a href="https://github.com/olikraus/u8g2">U8g2 display library</a> -- basically works.</p>
+<h2>Radiohead Example</h2>
+<p><a href="https://gist.github.com/dwblair/e6626567ff14cec6e29db35b8eb985ed">Basic RFM95 Receive</a> code for Heltec.  Works.</p>
+<h2>Low Power sleep</h2>
+<p><a href="https://github.com/Heltec-Aaron-Lee/WiFi_Kit_series/issues/6">Discussion of entering low power sleep mode</a></p>
+<h2>HTTP GET AND POST</h2>
+<p>Tutorial <a href="https://randomnerdtutorials.com/esp32-http-get-post-arduino/">here</a>.</p>
+<p>Working code to do basic JSON post to FarmOS <a href="https://gist.github.com/dwblair/c1411750491ef2120d01ca661dbcd747">here</a>.</p>
+<p>ArduinoJSON SerializeJSON <a href="https://arduinojson.org/v6/api/json/serializejson/">documentation</a>.</p>
+<h2>HTTP JSON POST TO FARMOS</h2>
+<p>Using loop-updated variables, code is <a href="https://gist.github.com/dwblair/731c806170a11bfc536c32d126559495">here</a>.</p>
+<h2>HELTEC WIFI LORA POST TO FARMOS</h2>
+<p>Using dummy variables, not yet parsing incoming radio, code is <a href="https://gist.github.com/dwblair/895fdbe3cbb5f5f1c43025230a8a5f10">here</a></p>
+<h2>Github Repo</h2>
+<p>Feather sends JSON data; Heltec receives, parses, posts to FarmOS; code is <a href="https://github.com/edgecollective/heltec-32-lora-v2-farmos/tree/master/ver1">here</a>.</p>
 
 
     </div>
