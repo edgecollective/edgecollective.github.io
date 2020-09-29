@@ -271,6 +271,20 @@
   <div class="post">
     <div class="note-contents">
       <div class="image">
+        <a href="/posts/notes/co2/">
+          <img src="img/placeholder.png"/>
+        </a>
+      </div>
+      <div class="text">
+        <h3><a href="/posts/notes/co2/">DIY CO2 Monitoring</a></h3>
+        <p>Notes on inexpensive CO2 monitoring options</p>
+        <em>Updated: 2020-09-28</em>
+      </div>
+    </div>
+  </div>
+  <div class="post">
+    <div class="note-contents">
+      <div class="image">
         <a href="/posts/notes/heltec/">
           <img src="img/placeholder.png"/>
         </a>
@@ -1625,6 +1639,177 @@ interface = meshtastic.StreamInterface()
 <p><a href="https://learn.sparkfun.com/tutorials/esp32-lora-1-ch-gateway-lorawan-and-the-things-network/all">From Sparkfun</a></p>
 <p><a href="https://appcodelabs.com/introduction-to-iot-building-a-budget-single-channel-lora-gateway">Appcodelabs using MQTT</a></p>
 <p><a href="https://www.cnx-software.com/2018/08/21/how-to-make-cheap-single-channel-gateway-lora-esp32-board/">From CNX Software</a> -- looks like they use dozens of nodes here.</p>
+</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="post">
+    <div class="project-contents">
+      <div class="text">
+        <h3>Note </h3>
+        <p><p>Below is a development notebook for constructing a DIY CO2 monitor.</p>
+<p>Click <a href="#gatewaysetup">here</a> to jump to the latest remote CO2 node + gateway setup.</p>
+<h2>CO2METER.COM K30</h2>
+<p><a href="https://www.co2meter.com/products/k-30-co2-sensor-module">Online description of K30</a></p>
+<p><a href="http://co2meters.com/Documentation/Datasheets/DS_SE_0118_CM_0024_Revised9%20(1).pdf">K30 Datasheet</a></p>
+<p>Needs 5V power minimum.</p>
+<p>Logic levels are 3.3V</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><a href="/img/co2/fig2.png"> <img src="/img/co2/fig2.png" alt="fig2"></a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Figure 2 from the <a href="http://co2meters.com/Documentation/Datasheets/DS_SE_0118_CM_0024_Revised9%20(1).pdf">K30 datasheet</a>.</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>'G0' -- GND</li>
+<li>'G+' -- Voltage input (5V to 9V)</li>
+<li>'TxD, RxD' -- UART</li>
+<li>'OUT1' -- Analog output (alternative way of getting the data)</li>
+</ul>
+<p>Datasheet says: should avoid connecting analog and digital ground pins externally in order to avoid ground loops</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><a href="/img/co2/analog_outputs.png"> <img src="/img/co2/analog_outputs.png" alt="fig2"></a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Analog outputs.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><a href="/img/co2/calibration.png"> <img src="/img/co2/calibration.png" alt="fig2"></a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Calibration.</td>
+</tr>
+</tbody>
+</table>
+<h2>Connecting to an Arduino</h2>
+<h3>Via I2C</h3>
+<p><a href="http://www.co2meters.com/Documentation/AppNotes/AN102-K30-Sensor-Arduino-I2C.pdf">Connecting a K30 to an Arduino via I2C</a></p>
+<p>This suggests using 6 to 9V input. (Might be good to upgrade the spec on the MCP1702 voltage reg so we can take &gt; 6V input on the Mothbot).  Needs to be able to provide 500mA.  So: direct from battery power is likely best.</p>
+<h3>Via UART</h3>
+<p><a href="http://www.co2meters.com/Documentation/AppNotes/AN126-K3x-sensor-arduino-uart.pdf">Connecting a K30 to an Arduino via UART</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><a href="/img/co2/uart_closeup.png"> <img src="/img/co2/uart_closeup.png" alt="fig2"></a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">UART connection.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><a href="/img/co2/first_readings.png"> <img src="/img/co2/first_readings.png" alt="fig2"></a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">First readings.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><a href="/img/co2/breath_test.png"> <img src="/img/co2/breath_test.png" alt="fig2"></a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Blowing on the sensor and then letting it recover.</td>
+</tr>
+</tbody>
+</table>
+<p>Edge Collective copy of the library for UART connection is <a href="https://github.com/edgecollective/co2-kseries">here</a> (replica of that provided by CO2 Monitor <a href="http://www.co2meters.com/Documentation/AppNotes/AN126-K3x-sensor-arduino-uart.zip">here</a>).</p>
+<h2>SSD1306 Display</h2>
+<p>Guide <a href="https://randomnerdtutorials.com/guide-for-oled-display-with-arduino/">here</a> for hookup to Arduino UNO.</p>
+<h2>UART + SSD1306 Display</h2>
+<p>Example code <a href="https://gist.github.com/dwblair/310acc6f8dafa8f82af713200ceda577">here</a>.</p>
+<h2><a name="gatewaysetup"></a> Remote LoRa CO2 Node and Heltec Gateway sending to FarmOS</h2>
+<p>Using a <a href="https://edgecollective.io/posts/notes/mothbot/">Mothbot</a> to connect to the K30 sensor over UART and send via LoRa to a <a href="https://www.amazon.com/MakerFocus-Development-Bluetooth-0-96inch-Display/dp/B076MSLFC9">Heltec</a> Wifi-LoRa gateway, posting to <a href="https://edgecollective.farmos.net/farm/sensor/heltecone">FarmOS</a>.</p>
+<p>Code for remote and gateway is <a href="https://github.com/edgecollective/co2-remote-and-gateway">here</a>.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><a href="/img/co2/remote_v1.jpg"> <img src="/img/co2/remote_v1.jpg" alt="fig2"></a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Mothbot remote node connected to K30 CO2 sensor.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><a href="/img/co2/mothbo.jpg"> <img src="/img/co2/mothbo.jpg" alt="fig2"></a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Closeup of Mothbot.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><a href="/img/co2/k30.jpg"> <img src="/img/co2/k30.jpg" alt="fig2"></a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Closeup of K30 CO2 sensor.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><a href="/img/co2/heltec_gateway.jpg"> <img src="/img/co2/heltec_gateway.jpg" alt="fig2"></a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Heltec Wifi-LoRa gateway</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><a href="/img/co2/farmos_graph.png"> <img src="/img/co2/farmos_graph.png" alt="fig2"></a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Graphing on FarmOS</td>
+</tr>
+</tbody>
+</table>
+<h2>Misc</h2>
+<p>Would be nice to develop useful ways of connecting to some standard hardware (e.g. Feathers, etc).</p>
 </p>
       </div>
     </div>
