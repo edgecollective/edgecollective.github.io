@@ -1844,7 +1844,7 @@ interface = meshtastic.StreamInterface()
 <p><a href="https://www.ti.com/lit/an/sboa068/sboa068.pdf?ts=1601648370947&amp;ref_url=https%253A%252F%252Fwww.google.com%252F">Burr Brown App Note</a> on precision absolute value circuits.</p>
 <h2>Signal generation</h2>
 <p><a href="https://www.instructables.com/Arduino-Waveform-Generator/">Arduino Waveform Generator</a></p>
-<h2>Schematic Review</h2>
+<h2>Prior Art Among Us</h2>
 <p>Don's last version in January, based off Craig's 4pstat is <a href="https://gitlab.com/p-v-o-s/echem/4pstat/-/blob/4p-v1/kicad-pcb/pdf/4pstat.pdf">here</a></p>
 <p>Craig's latest 4pstat is <a href="https://gitlab.com/p-v-o-s/echem/4pstat/-/blob/master/kicad-pcb/pdf/4pstat.pdf">here</a></p>
 <p>Don's simplified 4 probe based on an earlier design is <a href="https://gitlab.com/p-v-o-s/echem/ec-4p/-/blob/master/v_0.1/four_probe.pdf">here</a></p>
@@ -1873,7 +1873,7 @@ interface = meshtastic.StreamInterface()
 <blockquote>
 <p>Actually I wonder if the corner frequency is actually 6X lower because of the added 50 Ohm resistor? If that is the case, it might be better to back off the capacitance a bit And what about output resistance from the opamp (Mike, I'm looking at you)? If that's like around 100 Ohm maybe we'd be smart using an even smaller cap. This could be why I did not make my intended bandwidth of 100kHz on the bodged up 4pstat.</p>
 </blockquote>
-<h2>Current Plans</h2>
+<h2>Current Work</h2>
 <p>As of 10-02-2020:</p>
 <ul>
 <li>use an OPA281 for the TIA (current measurement)</li>
@@ -1881,6 +1881,7 @@ interface = meshtastic.StreamInterface()
 <li>add the driven shield, snubs, and in-the-loop compensation as per Craig's design &amp; mods</li>
 <li>use through-hole headers for any passives we might want to swap (avoiding the MUX chip for now) to simplify the board</li>
 </ul>
+<p>Don's current attempt at the above is <a href="https://gitlab.com/p-v-o-s/echem/ec-4p/-/blob/master/v_0.3/pdf/ec-4p.pdf">here</a>.</p>
 </p>
       </div>
     </div>
