@@ -17,8 +17,8 @@
     <itunes:image
       href="https://edgecollective.io/img/edge_flower_medium.png"
     />
-    <itunes:category text="Philosphy">
-      <itunes:category text="Science"/>
+ <itunes:category text="Sports">
+      <itunes:category text="Wilderness"/>
     </itunes:category>
     <itunes:explicit>no</itunes:explicit>
     <item>
