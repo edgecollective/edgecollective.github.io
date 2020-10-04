@@ -20,7 +20,7 @@
     <itunes:category text="Philosphy">
       <itunes:category text="Science"/>
     </itunes:category>
-    <itunes:explicit>false</itunes:explicit>
+    <itunes:explicit>no</itunes:explicit>
     <item>
       <itunes:episodeType>full</itunes:episodeType>
       <itunes:episode>1</itunes:episode>
@@ -34,10 +34,10 @@
         type="audio/mpeg" 
         url="https://edgecollective.io/audio/hamish_indymedia_cop25.mp3"
       />
-      <guid>aae20190606</guid>
+      <guid>https://edgecollective.io/posts/podcast/hamish/</guid>
       <pubDate>Tue, 07 May 2019 12:00:00 GMT</pubDate>
       <itunes:duration>1024</itunes:duration>
-      <itunes:explicit>false</itunes:explicit>
+      <itunes:explicit>no</itunes:explicit>
     </item>
   </channel>
 </rss>
