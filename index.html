@@ -334,7 +334,7 @@
       <div class="text">
         <h3><a href="/posts/notes/mothbot/">Mothbot Prototyping</a></h3>
         <p>Prototyping the Mothbot -- an Arduino-compatible LoRa node for remote monitoring applications.</p>
-        <em>Updated: 2020-09-27</em>
+        <em>Updated: 2020-10-02</em>
       </div>
     </div>
   </div>
@@ -1479,6 +1479,16 @@ interface = meshtastic.StreamInterface()
 <p>Made explicit i2c header that will allow for display.  But this means that certain i2c sensors are no longer useful via screw terminal.  But, added a 'qwiic' connector for i2c ... so maybe what we do is to make a qwiic adapter for AM2315 (i2c version).</p>
 <p>Might need to change screw terminal size to 5mm, as they're far easier to source, it seems ...</p>
 <p>Consider placing mounting holes at proper separation for 3XAA battery holder mounting holes ...</p>
+<h2>Version 2.0 Notes</h2>
+<ol>
+<li>Need bigger spacing on MCP1700 footprint</li>
+<li>Need C1 &amp; R1 to be 0.1 uF and 10K (as they are), apparently, for bootloader to auto-reset properly (timing issue?)</li>
+<li>Note: I cannibalized C1 from a ver 1.0 Mothbot, need to replace!</li>
+<li>Reset button doesn't seem to work?</li>
+<li>Swapped A4 &amp; A5 (they are SDA and SCL, not SCL and SDA, respectively) -- need to fix in order for monitor to work</li>
+<li>Add 0.1&quot; headers for all terminals, as per i2c ... space as per breadboard?</li>
+<li>Match mounting hole spacing to battery pack?</li>
+</ol>
 </p>
       </div>
     </div>
