@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Edge Collective</title>
+    <link>https://edgecollective.io/podcast/</link>
+    <language>en-us</language>
+    <copyright>&#169; 2020 Edge Collective</copyright>
+    <itunes:author>Edge Collective</itunes:author>
+    <description>
+      Edge Collective is a distributed research, teaching, and facilitation cooperative working to help individuals and communities increase the capacity of their vital food, water, energy, and communications infrastructure to adapt to challenging environments. All of the research, designs, and code that we produce is freely available online. Cheers!
+    </description>
+    <itunes:type>serial</itunes:type>
+    <itunes:owner>
+      <itunes:name>Edge Collective</itunes:name>
+      <itunes:email>collaborate@edecollective.io</itunes:email>
+    </itunes:owner>
+    <itunes:image
+      href="https://edgecollective.io/img/edge_flower_medium.png"
+    />
+    <itunes:category text="Philosphy">
+      <itunes:category text="Science"/>
+    </itunes:category>
+    <itunes:explicit>false</itunes:explicit>
+    <item>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:episode>1</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <title>S01 EP01 History of Indymedia</title>
+      <description>
+        We talk with Hamish Campbell about the history of Indymedia
+      </description>
+      <enclosure
+        length="8727310" 
+        type="audio/mpeg" 
+        url="https://edgecollective.io/audio/hamish_indymedia_cop25.mp3"
+      />
+      <guid>aae20190606</guid>
+      <pubDate>Tue, 07 May 2019 12:00:00 GMT</pubDate>
+      <itunes:duration>1024</itunes:duration>
+      <itunes:explicit>false</itunes:explicit>
+    </item>
+  </channel>
+</rss>
