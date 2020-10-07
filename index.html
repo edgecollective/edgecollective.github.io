@@ -271,13 +271,27 @@
   <div class="post">
     <div class="note-contents">
       <div class="image">
+        <a href="/posts/notes/vale_remote/">
+          <img src="img/placeholder.png"/>
+        </a>
+      </div>
+      <div class="text">
+        <h3><a href="/posts/notes/vale_remote/">Vale da Lama Remote Node</a></h3>
+        <p>Greenhouse node at Vale da Lama</p>
+        <em>Updated: 2020-10-06</em>
+      </div>
+    </div>
+  </div>
+  <div class="post">
+    <div class="note-contents">
+      <div class="image">
         <a href="/posts/notes/conductivity/">
           <img src="img/placeholder.png"/>
         </a>
       </div>
       <div class="text">
         <h3><a href="/posts/notes/conductivity/">DIY Conductivity Sensor</a></h3>
-        <p>Notes on devlepment of DIY conductivity sensors</p>
+        <p>Notes on development of DIY conductivity sensors</p>
         <em>Updated: 2020-10-01</em>
       </div>
     </div>
@@ -1943,6 +1957,74 @@ interface = meshtastic.StreamInterface()
 <p><a href="https://www.ti.com/lit/ds/symlink/ina2331.pdf?ts=1602019726489&amp;ref_url=https%253A%252F%252Fwww.ti.com%252Fproduct%252FINA2331%253Futm_source%253Dgoogle%2526utm_medium%253Dcpc%2526utm_campaign%253Dasc-null-null-GPN_EN-cpc-pf-google-wwe%2526utm_content%253DINA2331%2526ds_k%253DINA2331%2526DCM%253Dyes%2526gclid%253DCjwKCAjwq_D7BRADEiwAVMDdHqgen4POVfQNUaSvv1tTeDEJar15NgWLAQamLzuEf4j7nOT6NZ4iQBoCoFYQAvD_BwE%2526gclsrc%253Daw.ds">INA331</a></p>
 <p><a href="https://www.ti.com/lit/ds/symlink/opa381.pdf?ts=1602019570296&amp;ref_url=https%253A%252F%252Fwww.ti.com%252Fproduct%252FOPA381">OPA831 / OPA2381</a></p>
 <p><a href="https://www.ti.com/lit/ds/symlink/lmc6484.pdf?ts=1602019481665">LMC6484</a></p>
+</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="post">
+    <div class="project-contents">
+      <div class="text">
+        <h3>Note </h3>
+        <p><p><a href="https://youtu.be/LljqFv8GzxA">Video explanation</a> of the current status as of Oct 07 2020  ..</p>
+<h2>AM2315 and 'new' i2c on Feather M0</h2>
+<p>Issue: we designed a <a href="https://github.com/edgecollective/valedalama-greenhouse-remote">breakout board</a> (in Eagle CAD) to be milled in Portugal by <a href="">Lucio</a>; but the original intent was for a different, non-i2c sensor; the one we're using now is an i2c sensor (the <a href="https://www.adafruit.com/product/1293">AM2315</a>, and requires:</p>
+<ul>
+<li>10K pullups on both signal lines</li>
+<li>that the signal lines be used as i2c lines, which isn't standard for the Feather M0 firmware.</li>
+</ul>
+<h2>References</h2>
+<h3>I2C</h3>
+<ul>
+<li>
+<p><a href="https://learn.adafruit.com/using-atsamd21-sercom-to-add-more-spi-i2c-serial-ports/creating-a-new-wire">Creating a new I2c interface on the M0 -- Adafruit</a></p>
+</li>
+<li>
+<p><a href="https://learn.sparkfun.com/tutorials/adding-more-sercom-ports-for-samd-boards/all">Creating a new I2C interface on the M0 -- Sparkfun</a></p>
+</li>
+</ul>
+<p>Ah -- update -- can't reassign the pins because of the 'pad constraint', see the section <a href="https://learn.adafruit.com/using-atsamd21-sercom-to-add-more-spi-i2c-serial-ports/creating-a-new-wire#ok-so-lets-make-a-new-i2c-sercom-already-1603458-14">here</a>.</p>
+<h3>AM2315</h3>
+<ul>
+<li><a href="https://github.com/adafruit/Adafruit_AM2315">Adafruit AM2315 library</a>.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><a href="/img/valedalama/feather_m0_lora.jpg"> <img src="/img/valedalama/feather_m0_lora.jpg" alt="fig2"></a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Adafruit Feather M0 LoRa (for pin reference).</td>
+</tr>
+</tbody>
+</table>
+<h2>Version 4 of the Board</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><a href="/img/valedalama/remote_v4_schematic.png"> <img src="/img/valedalama/remote_v4_schematic.png" alt="fig2"></a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Remote schematic, version 4.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><a href="/img/valedalama/remote_v4_board.png"> <img src="/img/valedalama/remote_v4_board.png" alt="fig2"></a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Remote board, version 4.</td>
+</tr>
+</tbody>
+</table>
 </p>
       </div>
     </div>
