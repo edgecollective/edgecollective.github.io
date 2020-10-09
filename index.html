@@ -1732,8 +1732,21 @@ interface = meshtastic.StreamInterface()
 <h2>CO2METER.COM K30</h2>
 <p><a href="https://www.co2meter.com/products/k-30-co2-sensor-module">Online description of K30</a></p>
 <p><a href="http://co2meters.com/Documentation/Datasheets/DS_SE_0118_CM_0024_Revised9%20(1).pdf">K30 Datasheet</a></p>
-<p>Needs 5V power minimum.</p>
-<p>Logic levels are 3.3V</p>
+<p>Needs 5V power minimum (actually, looks like it's best run at 6-9V); meanwhile, <strong>Logic levels for the UART are at 3.3V</strong>.</p>
+<p>Useful info on logic levels / etc from the datasheet:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><a href="/img/co2/logic_levels.png"> <img src="/img/co2/logic_levels.png" alt="fig2"></a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Table 1 from the <a href="http://co2meters.com/Documentation/Datasheets/DS_SE_0118_CM_0024_Revised9%20(1).pdf">K30 datasheet</a>.</td>
+</tr>
+</tbody>
+</table>
+<p>Meanwhile, though -- good advice on connecting to signals that run at higher voltage from JeeLab, <a href="https://jeelabs.org/2010/12/16/voltage-3-3-vs-5/index.html">here</a>.  Punchline -- can add a 1K resistor in series with signal as protection.</p>
 <table>
 <thead>
 <tr>
@@ -1782,6 +1795,7 @@ interface = meshtastic.StreamInterface()
 <p><a href="http://www.co2meters.com/Documentation/AppNotes/AN102-K30-Sensor-Arduino-I2C.pdf">Connecting a K30 to an Arduino via I2C</a></p>
 <p>This suggests using 6 to 9V input. (Might be good to upgrade the spec on the MCP1702 voltage reg so we can take &gt; 6V input on the Mothbot).  Needs to be able to provide 500mA.  So: direct from battery power is likely best.</p>
 <h3>Via UART</h3>
+<p>Note: <strong>Logic levels for the UART are at 3.3V</strong>.</p>
 <p><a href="http://www.co2meters.com/Documentation/AppNotes/AN126-K3x-sensor-arduino-uart.pdf">Connecting a K30 to an Arduino via UART</a></p>
 <table>
 <thead>
@@ -1971,10 +1985,48 @@ interface = meshtastic.StreamInterface()
 </tr>
 </tbody>
 </table>
+<p>As of Oct 9 2020:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><a href="/img/conductivity/p1_feedback_circuit.png"> <img src="/img/conductivity/p1_feedback_circuit.png" alt="fig2"></a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Revision A of the 0.4 EC-4P circuit: attempt at a simpler 'conductivity' measurement with adder amp feedback coming directly from the the amp output. See discussion <a href="https://gitlab.com/p-v-o-s/echem/ec-4p/-/issues/6#note_427124136">here</a>.</td>
+</tr>
+</tbody>
+</table>
+<p><a href="https://en.wikipedia.org/wiki/Adder_(electronics)">Adder circuit</a> explanation on wikipedia.</p>
+<p>Oops.  Above places C16 incorrectly:</p>
+<p>Craig:</p>
+<blockquote>
+<p>It looks like you are shorting out C16.  Instead C16 should go across R21 to the summing junction.</p>
+</blockquote>
+<blockquote>
+<p>Think of it this way, your gain at DC for each adder pathway (e0-e3) should be R21/Rn.  What the feedback capacitor C16 does is to short out R21 for high frequency signals where its impedance is small; thus it rolls off the gain at high frequencies, the corner frequency being 1/(2<em>pi</em>R21*C16).  Just set that, say 5X, above your highest intended signal frequency and you will have smoothed DAC signals and more stability.</p>
+</blockquote>
+<p>Correction:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><a href="/img/conductivity/p1_feedback_circuit_REV-B.png"> <img src="/img/conductivity/p1_feedback_circuit_REV-B.png" alt="fig2"></a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><a href="https://gitlab.com/p-v-o-s/echem/ec-4p/-/blob/d616fd5467dd4cd1d415cf019640ec242f7dc668/v_0.4/pdf/ec-4p.pdf">Revision B</a> of the 0.4 EC-4P circuit: attempt at a simpler 'conductivity' measurement with adder amp feedback coming directly from the the amp output. See discussion <a href="https://gitlab.com/p-v-o-s/echem/ec-4p/-/issues/6#note_427124136">here</a>.</td>
+</tr>
+</tbody>
+</table>
 <h2>References / Datasheets</h2>
 <p><a href="https://www.ti.com/lit/ds/symlink/ina2331.pdf?ts=1602019726489&amp;ref_url=https%253A%252F%252Fwww.ti.com%252Fproduct%252FINA2331%253Futm_source%253Dgoogle%2526utm_medium%253Dcpc%2526utm_campaign%253Dasc-null-null-GPN_EN-cpc-pf-google-wwe%2526utm_content%253DINA2331%2526ds_k%253DINA2331%2526DCM%253Dyes%2526gclid%253DCjwKCAjwq_D7BRADEiwAVMDdHqgen4POVfQNUaSvv1tTeDEJar15NgWLAQamLzuEf4j7nOT6NZ4iQBoCoFYQAvD_BwE%2526gclsrc%253Daw.ds">INA331</a></p>
 <p><a href="https://www.ti.com/lit/ds/symlink/opa381.pdf?ts=1602019570296&amp;ref_url=https%253A%252F%252Fwww.ti.com%252Fproduct%252FOPA381">OPA831 / OPA2381</a></p>
 <p><a href="https://www.ti.com/lit/ds/symlink/lmc6484.pdf?ts=1602019481665">LMC6484</a></p>
+<h2>Useful misc info</h2>
+<p><a href="https://stackoverflow.com/questions/15677439/command-to-get-latest-git-commit-hash-from-a-branch">via Stackoverflow</a>: Command to get latest URL for remote commit:</p>
+<p><code>git ls-remote git://github.com/&lt;user&gt;/&lt;project&gt;.git</code></p>
 </p>
       </div>
     </div>

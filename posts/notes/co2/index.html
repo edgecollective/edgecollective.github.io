@@ -26,8 +26,21 @@
 <h2>CO2METER.COM K30</h2>
 <p><a href="https://www.co2meter.com/products/k-30-co2-sensor-module">Online description of K30</a></p>
 <p><a href="http://co2meters.com/Documentation/Datasheets/DS_SE_0118_CM_0024_Revised9%20(1).pdf">K30 Datasheet</a></p>
-<p>Needs 5V power minimum.</p>
-<p>Logic levels are 3.3V</p>
+<p>Needs 5V power minimum (actually, looks like it's best run at 6-9V); meanwhile, <strong>Logic levels for the UART are at 3.3V</strong>.</p>
+<p>Useful info on logic levels / etc from the datasheet:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><a href="/img/co2/logic_levels.png"> <img src="/img/co2/logic_levels.png" alt="fig2"></a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Table 1 from the <a href="http://co2meters.com/Documentation/Datasheets/DS_SE_0118_CM_0024_Revised9%20(1).pdf">K30 datasheet</a>.</td>
+</tr>
+</tbody>
+</table>
+<p>Meanwhile, though -- good advice on connecting to signals that run at higher voltage from JeeLab, <a href="https://jeelabs.org/2010/12/16/voltage-3-3-vs-5/index.html">here</a>.  Punchline -- can add a 1K resistor in series with signal as protection.</p>
 <table>
 <thead>
 <tr>
@@ -76,6 +89,7 @@
 <p><a href="http://www.co2meters.com/Documentation/AppNotes/AN102-K30-Sensor-Arduino-I2C.pdf">Connecting a K30 to an Arduino via I2C</a></p>
 <p>This suggests using 6 to 9V input. (Might be good to upgrade the spec on the MCP1702 voltage reg so we can take &gt; 6V input on the Mothbot).  Needs to be able to provide 500mA.  So: direct from battery power is likely best.</p>
 <h3>Via UART</h3>
+<p>Note: <strong>Logic levels for the UART are at 3.3V</strong>.</p>
 <p><a href="http://www.co2meters.com/Documentation/AppNotes/AN126-K3x-sensor-arduino-uart.pdf">Connecting a K30 to an Arduino via UART</a></p>
 <table>
 <thead>
