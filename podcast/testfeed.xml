@@ -15,7 +15,7 @@
       <itunes:email>collaborate@edecollective.io</itunes:email>
     </itunes:owner>
     <itunes:image
-      href="https://edgecollective.io/img/edge_flower_medium.png"
+	    href="https://edgecollective.io/podcast/rect.png"
     />
  <itunes:category text="Sports">
       <itunes:category text="Wilderness"/>
