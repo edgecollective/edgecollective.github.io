@@ -39,5 +39,23 @@
       <itunes:duration>1024</itunes:duration>
       <itunes:explicit>no</itunes:explicit>
     </item>
+    <item>
+      <itunes:episodeType>full</itunes:episodeType>
+      <itunes:episode>1</itunes:episode>
+      <itunes:season>1</itunes:season>
+      <title>S01 EP02 Stewarding Technological Freedom in Agriculture</title>
+      <description>
+        Discussion with Mike Stenta, Jamie Gaehring, and Don Blair. (Originally recorded for LibrePlanet2020.)
+      </description>
+      <enclosure
+        length="8727310" 
+        type="audio/mpeg" 
+        url="https://edgecollective.io/audio/libre.mp3"
+      />
+      <guid>aae201902206</guid>
+      <pubDate>Tue, 13 March 2020 12:00:00 GMT</pubDate>
+      <itunes:duration>1024</itunes:duration>
+      <itunes:explicit>false</itunes:explicit>
+    </item>
   </channel>
 </rss>
