@@ -23,17 +23,6 @@
   
   <hr>
 <h2>Hyperssh</h2>
-<h3>Usage</h3>
-<p>(Copied from the <a href="https://github.com/mafintosh/hyperssh">Hyperssh README</a>)</p>
-<p>On a server or some laptop with ssh-server running run</p>
-<pre><code class="language-sh">hyperssh-server
-</code></pre>
-<p>This will print out the ssh fingerprint and start announcing the server
-on the Hyperswarm network under this fingerprint.</p>
-<p>To connect to the server on another computer simply pass in the fingerprint
-and the user you want to connect as to hyperssh</p>
-<pre><code class="language-sh">hyperssh ssh-ed25519 AAAA.... maf
-</code></pre>
 <h3>Installing hyperssh on Ubuntu 18.04</h3>
 <ol>
 <li>First install openssh-server if not present:</li>
@@ -62,6 +51,17 @@ and the user you want to connect as to hyperssh</p>
 <blockquote>
 <p><code>npm link</code></p>
 </blockquote>
+<h3>Using hyperssh</h3>
+<p>(Copied from the <a href="https://github.com/mafintosh/hyperssh">Hyperssh README</a>)</p>
+<p>On a server or some laptop with ssh-server running run</p>
+<pre><code class="language-sh">hyperssh-server
+</code></pre>
+<p>This will print out the ssh fingerprint and start announcing the server
+on the Hyperswarm network under this fingerprint.</p>
+<p>To connect to the server on another computer simply pass in the fingerprint
+and the user you want to connect as to hyperssh</p>
+<pre><code class="language-sh">hyperssh ssh-ed25519 AAAA.... maf
+</code></pre>
 <hr>
 <h2>Misc. Hyper resources &amp; tools</h2>
 <p><a href="https://github.com/noffle/hypergit">Hyper-git</a></p>
