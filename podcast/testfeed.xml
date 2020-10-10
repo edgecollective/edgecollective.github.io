@@ -52,7 +52,7 @@
         type="audio/mpeg" 
         url="https://edgecollective.io/audio/libre.mp3"
       />
-      <guid>aae201902206</guid>
+      <guid>https://edgecollective.io/posts/podcast/libre/</guid>
       <pubDate>Tue, 13 March 2020 12:00:00 GMT</pubDate>
       <itunes:duration>1024</itunes:duration>
       <itunes:explicit>false</itunes:explicit>
