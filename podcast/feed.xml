@@ -18,7 +18,7 @@
 	    href="https://edgecollective.io/podcast/pod.png"
     />
  <itunes:category text="Science">
-      <itunes:category text="Nature"/>
+      <itunes:category text="Technology"/>
     </itunes:category>
     <itunes:explicit>no</itunes:explicit>
     <item>
@@ -68,7 +68,7 @@
       <enclosure
         length="8727310" 
         type="audio/mpeg" 
-        url="https://edgecollective.io/audio/tom_audio.m4a"
+        url="https://edgecollective.io/audio/tom_audio.mp3"
       />
       <guid>https://edgecollective.io/posts/podcast/tom/</guid>
       <pubDate>Tue, 19 May 2020 12:00:00 GMT</pubDate>
