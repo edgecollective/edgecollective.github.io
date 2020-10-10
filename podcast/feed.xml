@@ -17,8 +17,8 @@
     <itunes:image
 	    href="https://edgecollective.io/podcast/pod.png"
     />
- <itunes:category text="Sports">
-      <itunes:category text="Wilderness"/>
+ <itunes:category text="Science">
+      <itunes:category text="Nature"/>
     </itunes:category>
     <itunes:explicit>no</itunes:explicit>
     <item>
