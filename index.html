@@ -271,6 +271,20 @@
   <div class="post">
     <div class="note-contents">
       <div class="image">
+        <a href="/posts/notes/hyper/">
+          <img src="img/placeholder.png"/>
+        </a>
+      </div>
+      <div class="text">
+        <h3><a href="/posts/notes/hyper/">Experiments with the Hyper Protocol</a></h3>
+        <p>Experiments with the Hyper Protocol</p>
+        <em>Updated: 2020-10-08</em>
+      </div>
+    </div>
+  </div>
+  <div class="post">
+    <div class="note-contents">
+      <div class="image">
         <a href="/posts/notes/vale_remote/">
           <img src="img/placeholder.png"/>
         </a>
@@ -1794,6 +1808,22 @@ interface = meshtastic.StreamInterface()
 <h3>Via I2C</h3>
 <p><a href="http://www.co2meters.com/Documentation/AppNotes/AN102-K30-Sensor-Arduino-I2C.pdf">Connecting a K30 to an Arduino via I2C</a></p>
 <p>This suggests using 6 to 9V input. (Might be good to upgrade the spec on the MCP1702 voltage reg so we can take &gt; 6V input on the Mothbot).  Needs to be able to provide 500mA.  So: direct from battery power is likely best.</p>
+<h3>Notes on using a Feather</h3>
+<p><a href="https://cdn-learn.adafruit.com/assets/assets/000/032/914/large1024/feather_schem.png?1465421956">Schematic</a> of the Feather M0 Lora.</p>
+<p>Datasheet for the AP2112-3.3 voltage regulator used on the feather is <a href="https://www.diodes.com/assets/Datasheets/AP2112.pdf">here</a>.</p>
+<p>From the AP2112K datasheet -- 6V max allowed on Feather:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><a href="/img/co2/feather_voltage_input.png"> <img src="/img/co2/feather_voltage_input.png" alt="fig2"></a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">UART connection.</td>
+</tr>
+</tbody>
+</table>
 <h3>Via UART</h3>
 <p>Note: <strong>Logic levels for the UART are at 3.3V</strong>.</p>
 <p><a href="http://www.co2meters.com/Documentation/AppNotes/AN126-K3x-sensor-arduino-uart.pdf">Connecting a K30 to an Arduino via UART</a></p>
@@ -1908,6 +1938,9 @@ interface = meshtastic.StreamInterface()
 <blockquote>
 <p>Until recently, the vast majority of growers in the U.S. did not measure CO2 or use it to enrich their greenhouses. However, during the winter, CO2 levels can quickly become limiting in unventilated greenhouses full of plants on cold and sunny days. Over the past 10 years, we have also seen greenhouse growers seal up their greenhouses in an effort to control their heating bills during the winter. Other growers, especially in northern latitudes, have invested in supplemental lighting because of the numerous benefits, from improved quality and yields to reduced production time. An apparent result of tightly sealing the greenhouse is increased humidity and condensation. A not-so-apparent result of reducing air infiltration is a reduction of CO2 levels within the greenhouse below ambient levels found outdoors.</p>
 </blockquote>
+<h2>Ongoing work / research</h2>
+<p>Oct 9 2020:</p>
+<p>Maybe a good configuraiton is to have the sensor powered via a 7.4V rechargeable lith-ion, while the micro attached has its separate battery voltage?</p>
 </p>
       </div>
     </div>
@@ -2109,6 +2142,64 @@ interface = meshtastic.StreamInterface()
 </tr>
 </tbody>
 </table>
+</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="post">
+    <div class="project-contents">
+      <div class="text">
+        <h3>Note </h3>
+        <p><hr>
+<h2>Hyperssh</h2>
+<h3>Usage</h3>
+<p>(Copied from the <a href="https://github.com/mafintosh/hyperssh">Hyperssh README</a>)</p>
+<p>On a server or some laptop with ssh-server running run</p>
+<pre><code class="language-sh">hyperssh-server
+</code></pre>
+<p>This will print out the ssh fingerprint and start announcing the server
+on the Hyperswarm network under this fingerprint.</p>
+<p>To connect to the server on another computer simply pass in the fingerprint
+and the user you want to connect as to hyperssh</p>
+<pre><code class="language-sh">hyperssh ssh-ed25519 AAAA.... maf
+</code></pre>
+<h3>Installing hyperssh on Ubuntu 18.04</h3>
+<ol>
+<li>First install openssh-server if not present:</li>
+</ol>
+<blockquote>
+<p><code>sudo apt-get install openssh-server</code></p>
+</blockquote>
+<ol start="2">
+<li>Grab the hyperssh repo:</li>
+</ol>
+<blockquote>
+<p><code>git clone https://github.com/mafintosh/hyperssh</code></p>
+</blockquote>
+<ol start="3">
+<li>Enter the hyperssh directory; then install it:</li>
+</ol>
+<blockquote>
+<p><code>cd hyperssh</code></p>
+</blockquote>
+<blockquote>
+<p><code>npm install</code></p>
+</blockquote>
+<ol start="4">
+<li>Create symbolic links for nicer command-line usage:</li>
+</ol>
+<blockquote>
+<p><code>npm link</code></p>
+</blockquote>
+<hr>
+<h2>Misc. Hyper resources &amp; tools</h2>
+<p><a href="https://github.com/noffle/hypergit">Hyper-git</a></p>
+<p><a href="https://github.com/joehand/hypersshuttle">hyper sshuttle</a></p>
+<p><a href="https://github.com/mafintosh/hyperssh">hyper ssh</a></p>
+<p><a href="https://github.com/noffle/airpipe">airpipe</a></p>
+<p><a href="https://blog.hypercore-protocol.org/posts/hyperspace/">Hyperspace</a></p>
+<p><a href="https://twitter.com/feross/status/1305612758667259904?s=20">Talk about Hyperbee</a></p>
 </p>
       </div>
     </div>
