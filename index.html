@@ -2143,6 +2143,13 @@ interface = meshtastic.StreamInterface()
 </tr>
 </tbody>
 </table>
+<h2>Feather BME280 data export from server</h2>
+<p>One can grab CSV data from the Valedalama server like thus:</p>
+<blockquote>
+<p><code>http://64.227.0.108:8100/api/csv?limit=1000</code></p>
+</blockquote>
+<p>where the 'limit=N' parameter gives the 'most recent N values'.</p>
+<p>A snapshot of all of the historical data from &quot;Valedalama BME280 Feather&quot; from the earliest collection date (July 10 2020) up through Oct 10 2020 can be downloaded <a href="/data/historical_bme280_as_of_10_oct_2020.csv">here</a>.</p>
 </p>
       </div>
     </div>
