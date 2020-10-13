@@ -21,7 +21,10 @@
         <h1>DIY CO2 Monitoring</h1>
 
   
-  <p>Below is a development notebook for constructing a DIY CO2 monitor.</p>
+  <h2>Table of contents</h2>
+<p><a href="#feather">Feather Hookup Guide for K30</a></p>
+<h2>Background</h2>
+<p>Below is a development notebook for constructing a DIY CO2 monitor.</p>
 <p>Click <a href="#gatewaysetup">here</a> to jump to the latest remote CO2 node + gateway setup.</p>
 <h2>CO2METER.COM K30</h2>
 <p><a href="https://www.co2meter.com/products/k-30-co2-sensor-module">Online description of K30</a></p>
@@ -219,8 +222,47 @@
 <p>Until recently, the vast majority of growers in the U.S. did not measure CO2 or use it to enrich their greenhouses. However, during the winter, CO2 levels can quickly become limiting in unventilated greenhouses full of plants on cold and sunny days. Over the past 10 years, we have also seen greenhouse growers seal up their greenhouses in an effort to control their heating bills during the winter. Other growers, especially in northern latitudes, have invested in supplemental lighting because of the numerous benefits, from improved quality and yields to reduced production time. An apparent result of tightly sealing the greenhouse is increased humidity and condensation. A not-so-apparent result of reducing air infiltration is a reduction of CO2 levels within the greenhouse below ambient levels found outdoors.</p>
 </blockquote>
 <h2>Ongoing work / research</h2>
+<hr>
 <p>Oct 9 2020:</p>
 <p>Maybe a good configuraiton is to have the sensor powered via a 7.4V rechargeable lith-ion, while the micro attached has its separate battery voltage?</p>
+<hr>
+<p>oct 13 2020:</p>
+<p>Recreating the prototype but using a Feather M0 instead ...</p>
+<p>now we want to use Hardware Serial instead of Software Serial ...</p>
+<h3><a name="feather"></a>Feather Hookup Guide for K30</h3>
+<p>Feather firmware is <a href="https://github.com/edgecollective/co2-remote-and-gateway/tree/master/v1/featherm0_K30">here</a>.</p>
+<p>Wiring for test:</p>
+<ul>
+<li>Connect TXD (K30, see Fig A below) to RX0 (Feather);</li>
+<li>Connect RXD (K30, see Fig A below) to TX1 (Feather);</li>
+<li>Connect Feather GND to 6V Battery GND;</li>
+<li>Connect 6V battery Power to Feather to K30 Power in (labeled &quot;5V&quot; in fig A below)</li>
+<li>Power Feather via USB (for initial test)</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><a href="/img/co2/uart_closeup.png"> <img src="/img/co2/uart_closeup.png" alt="figA"></a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Fig A.  UART connection on the K30.  When connecting to the Feather, connect TXD (K30) to RX0 (Feather) and RXD (K30) to TX1 (Feather).</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><a href="/img/co2/feather_co2_decay_test.png"> <img src="/img/co2/feather_co2_decay_test.png" alt="figB"></a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">FigB.  Data from Feather, plotted in Arduino plotter utility.  Data shows breathing on sensor twice (began recording right after initial breath) and watching decay.</td>
+</tr>
+</tbody>
+</table>
 
 
     </div>
