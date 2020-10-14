@@ -135,6 +135,13 @@
 </tr>
 </tbody>
 </table>
+<hr>
+<h2>Misc Notes</h2>
+<h3>Aside on STM32</h3>
+<p>Nice note on <a href="https://jeelabs.org/2015/11/25/pi-based-stm32f103-development/index.html">STM32 boards</a> from Jeenode, by the way.</p>
+<h3>Installing Arduino Libraries</h3>
+<p>Adafruit tutorail on installing Arduino libraries <a href="https://learn.adafruit.com/adafruit-all-about-arduino-libraries-install-use">here</a>.</p>
+<hr>
 <h2>Sensor notes</h2>
 <h3>HC-SR04</h3>
 <p><a href="https://www.adafruit.com/product/3942">Adafruit page</a></p>
@@ -142,13 +149,13 @@
 <p><a href="https://www.adafruit.com/product/1298">Adafruit page</a></p>
 <h3>AM2315</h3>
 <p><a href="https://github.com/adafruit/Adafruit_AM2315">Adafruit library</a></p>
-<h3>Arduino Libraries</h3>
-<p>Adafruit tutorail on installing Arduino libraries <a href="https://learn.adafruit.com/adafruit-all-about-arduino-libraries-install-use">here</a>.</p>
-<h2>Version 1.0 Notes</h2>
+<hr>
+<h2>Mothbot Version 1.0 Notes</h2>
 <p>Made explicit i2c header that will allow for display.  But this means that certain i2c sensors are no longer useful via screw terminal.  But, added a 'qwiic' connector for i2c ... so maybe what we do is to make a qwiic adapter for AM2315 (i2c version).</p>
 <p>Might need to change screw terminal size to 5mm, as they're far easier to source, it seems ...</p>
 <p>Consider placing mounting holes at proper separation for 3XAA battery holder mounting holes ...</p>
-<h2>Version 2.0 Notes</h2>
+<hr>
+<h2>Mothbot Version 2.0 Notes</h2>
 <ol>
 <li>Need bigger spacing on MCP1700 footprint</li>
 <li>Need C1 &amp; R1 to be 0.1 uF and 10K (as they are), apparently, for bootloader to auto-reset properly (timing issue?)</li>
@@ -159,10 +166,8 @@
 <li>Match mounting hole spacing to battery pack?</li>
 <li>Nice <a href="https://jeelabs.org/2013/05/16/measuring-the-battery-without-draining-it/index.html">note</a> on measuring the battery level without draining it.</li>
 </ol>
-<p>Nice note on <a href="https://jeelabs.org/2015/11/25/pi-based-stm32f103-development/index.html">STM32 boards</a> from Jeenode, by the way.</p>
-<h2>AM2315 Sensor</h2>
-<p><a href="https://github.com/adafruit/Adafruit_AM2315">Adafruit library</a>.</p>
-<h2>Version 3</h2>
+<hr>
+<h2>Mothbot Version 3.0 Notes</h2>
 <table>
 <thead>
 <tr>
@@ -208,6 +213,13 @@
 <li>i2c Screen</li>
 <li>D4 works</li>
 </ul>
+<h3>Notes on Display</h3>
+<ul>
+<li>Current (larger) display is nice, but prevents access to screw terminals. Uses 'VCC GND SCL SDA'</li>
+<li>Can add a rearranged i2c port at the 'top' of U3 (the ATMEGA), arranged as 'GND VCC SCL SDA', and accommodate a <a href="https://www.amazon.com/Pieces-Display-Module-SSD1306-3-3V-5V/dp/B08CDN5PSJ/ref=sr_1_8?dchild=1&amp;keywords=SSD1306&amp;qid=1602675432&amp;sr=8-8">smaller screen</a>.</li>
+<li>Note: 'GND VCC SCL SDA' <a href="https://www.amazon.com/Display-Module-SSD1306-Du-pont-Arduino/dp/B07VDXYDVY/ref=sr_1_9?dchild=1&amp;keywords=SSD1306&amp;qid=1602675432&amp;sr=8-9">is also common</a> for the larger displays.</li>
+</ul>
+<p>So, maybe we switch over to 'GND VCC SCL SDA' in general, move pins to above U3.</p>
 <table>
 <thead>
 <tr>
@@ -230,13 +242,6 @@
 <ul>
 <li><a href="https://docs.google.com/spreadsheets/d/10DjISUPHa8-PfmeBYISGM-iekXHcvAeN48qu73FdD7M/edit?usp=sharing">BOM in spreadsheet form</a>. Includes link to PCB files on github and for ordering via OSHPark.</li>
 </ul>
-<h3>Display</h3>
-<ul>
-<li>Current (larger) display is nice, but prevents access to screw terminals. Uses 'VCC GND SCL SDA'</li>
-<li>Can add a rearranged i2c port at the 'top' of U3 (the ATMEGA), arranged as 'GND VCC SCL SDA', and accommodate a <a href="https://www.amazon.com/Pieces-Display-Module-SSD1306-3-3V-5V/dp/B08CDN5PSJ/ref=sr_1_8?dchild=1&amp;keywords=SSD1306&amp;qid=1602675432&amp;sr=8-8">smaller screen</a>.</li>
-<li>Note: 'GND VCC SCL SDA' <a href="https://www.amazon.com/Display-Module-SSD1306-Du-pont-Arduino/dp/B07VDXYDVY/ref=sr_1_9?dchild=1&amp;keywords=SSD1306&amp;qid=1602675432&amp;sr=8-9">is also common</a> for the larger displays.</li>
-</ul>
-<p>So, maybe we switch over to 'GND VCC SCL SDA' in general, move pins to above U3.</p>
 
 
     </div>
