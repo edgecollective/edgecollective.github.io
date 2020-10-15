@@ -26,7 +26,9 @@
 <ul>
 <li>set up / test heltec gateway again to send to FarmOS [X]</li>
 <li>also send to custom server on DO;</li>
-<li>use <a href="https://www.circuits.dk/testing-mh-z19-ndir-co2-sensor-module/">this article</a> and make an arduino module for reading from the Z19.</li>
+<li>get Z19 up and running [X]</li>
+<li>turn off autocalibration on the Z19 []</li>
+<li>turn off autocalibration on the K30 []</li>
 </ul>
 <h2>Table of contents</h2>
 <p><a href="#feather">Feather Hookup Guide for K30</a></p>
@@ -314,7 +316,12 @@ Another option</p>
 <p>Mentions infrared. This is the one that Craig used / that I have in my possession now.</p>
 <p>For sale on <a href="https://usa.banggood.com/MH-Z19-MH-Z19B-Infrared-CO2-Sensor-Module-Carbon-Dioxide-Gas-Sensor-for-CO2-Monitor-0-5000ppm-MH-Z19B-NDIR-with-Pin-p-1693604.html">Banggood</a> for $20.</p>
 <p>Goal as of 13 OCT 2020: get this up and running in parallel to the K30 and see how they compare with the 'ambient' test.</p>
-<p>Nice <a href="https://www.circuits.dk/testing-mh-z19-ndir-co2-sensor-module/">article</a> on testing out the Z19.</p>
+<p>Nice <a href="https://www.circuits.dk/testing-mh-z19-ndir-co2-sensor-module/">article</a> on testing out the Z19 on a Raspberry Pi.</p>
+<p>Update 15 OCT 2020: Just found a fairly official-looking Arduino library for the MH-Z19 <a href="https://github.com/WifWaf/MH-Z19">here</a> by WifWaf.</p>
+<p>In that repo they have some nice notes about calibration.  The Z19 allows us to turn autocalibration off (which seems useful -- otherwise it is using the lowest reading in a 24 hour period as '400 ppm').  Would be good to experiment with this.</p>
+<p>Also, here's <a href="https://github.com/tobiasschuerg/MH-Z-CO2-Sensors">another library for the MH-19</a> -- looks a bit older.  Going to try the WifWaf one above for now.</p>
+<p>Note that the WifWaf github MH-Z19 lib is already in the Arduino online Lib repo, can just install via Library Manager in IDE.</p>
+<p>Update 15 OCT 2020:  was able to get the WifWaf lib running on the MothbotV3.  Radiohead + the library ends up generating a 'low memory' warning.  This is fine; we'll likely end up using the Feather; also, we can pare down the full library to just generate raw values, likely.</p>
 <h2>Programming the Heltec Gateway</h2>
 <p><a href="https://randomnerdtutorials.com/installing-the-esp32-board-in-arduino-ide-windows-instructions/">Guide to using ESP32 in Arduino IDE</a></p>
 <p><a href="https://github.com/espressif/arduino-esp32/blob/master/docs/arduino-ide/boards_manager.md">Another guide from Sparkfun</a></p>
@@ -338,8 +345,24 @@ Another option</p>
 </tr>
 </tbody>
 </table>
+<h2>Turning off autocalibration in K30</h2>
+<p><a href="http://www.yoctopuce.com/EN/article/how-to-calibrate-a-co2-sensor">This article</a> mentions a technique, using their library.</p>
 <h2>CO2 with custom server</h2>
 <p>(TODO: set up using chappy-server as a model?)</p>
+<h2>Ongoing Work Log</h2>
+<p>As Of 15 OCT 2020 10:42 AM -- K30 is autocalibrating, Z19 is not.</p>
+<p>Ah -- looks like the K30 also can give temp, and RH!  Cf the example <a href="https://gist.github.com/pkourany/53415d7f0c354a6d1e05">here</a>.</p>
+<p>How to read the K30 via I2c app note <a href="http://www.co2meters.com/Documentation/AppNotes/AN102-K30-Sensor-Arduino-I2C.pdf">here</a>.</p>
+<p>Ahhh here is a library for multiple params by CO2meter for the K30 -- <a href="http://www.co2meters.com/Documentation/AppNotes/AN126-K3x-sensor-arduino-uart.pdf">boom</a>.</p>
+<p>need to modify their library so that it doesn't rely on SoftwareSerial (necessarily)</p>
+<p>-- but first check whether we can even disable autocalibration?</p>
+<p>Reading the <a href="https://img.ozdisan.com/ETicaret_Dosya/456729_1584920.PDF">K30 datasheet</a></p>
+<p>Useful CO2meter guide to K30 ABC <a href="https://www.co2meter.com/blogs/news/7512282-co2-sensor-calibration-what-you-need-to-know">here</a>.</p>
+<p><a href="http://www.warf.com/download/3671_7081_I2C_comm_guide_2_1031.pdf">i2c communication guide to K series sensors</a></p>
+<p>-- looks like it can be disabled in EEPROM via I2C, at least ...</p>
+<p>Nice reference on connecting a Teensy to a K30 <a href="https://forum.pjrc.com/threads/23963-Teensy-3-0-and-co2-sensor-with-UART">here</a></p>
+<p>Reference to a key application note re: K-Series eeprom setup <a href="https://www.co2meter.com/blogs/news/9278787-senseair-k-series-sensor-uart-eeprom-ram-access-procedure">here</a></p>
+<p>-- need to email them, UART command lib is missing ...</p>
 
 
     </div>
