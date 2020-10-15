@@ -2193,6 +2193,24 @@ Another option</p>
 <p>Nice reference on connecting a Teensy to a K30 <a href="https://forum.pjrc.com/threads/23963-Teensy-3-0-and-co2-sensor-with-UART">here</a></p>
 <p>Reference to a key application note re: K-Series eeprom setup <a href="https://www.co2meter.com/blogs/news/9278787-senseair-k-series-sensor-uart-eeprom-ram-access-procedure">here</a></p>
 <p>-- need to email them, UART command lib is missing ...</p>
+<p>15 OCT 14:00 -- Interesting link to the <a href="http://www.yoctopuce.com/EN/products/usb-environmental-sensors/yocto-co2-v2">Yoctopuce V2</a>, which uses a 'better sensor' than the K30, they claim ...</p>
+<p>The K30-based yoctopuce-c02 is <a href="http://www.yoctopuce.com/EN/products/discontinued-products/yocto-co2">here</a></p>
+<p>More about the yp-co2-v2 is <a href="https://www.yoctopuce.com/EN/article/new-the-yocto-co2-v2">here</a></p>
+<p>Yp-co2 (K30) <a href="https://www.yoctopuce.com/EN/products/yocto-co2/doc/YCO2MK01.usermanual.html">user's guide</a></p>
+<h2>K30 via i2c</h2>
+<p>this is the serious guide, <a href="http://www.warf.com/download/3671_7081_I2C_comm_guide_2_1031.pdf">here</a></p>
+<p>simple i2c example <a href="http://www.co2meters.com/Documentation/AppNotes/AN102-K30-Sensor-Arduino-I2C.pdf">here</a></p>
+<h2>SCD30</h2>
+<p>The yocto uses the SCD30 -- listed for $54 on <a href="https://www.digikey.com/en/products/detail/sensirion-ag/SCD30/8445334?utm_adgroup=Sensors%20%26%20Transducers&amp;utm_source=google&amp;utm_medium=cpc&amp;utm_campaign=Dynamic%20Search&amp;utm_term=&amp;utm_content=Sensors%20%26%20Transducers&amp;gclid=CjwKCAjw5p_8BRBUEiwAPpJO63lPqw8gZyFFETPN5SMQElL0quJ5jvgLhi2gGq7jW4WlxdnqgtCC_xoCyLAQAvD_BwE">digikey</a></p>
+<p>Here's the SCD30 <a href="https://cdn.sparkfun.com/assets/d/c/0/7/2/SCD30_Interface_Description.pdf">datasheet</a></p>
+<p>Arduino library <a href="https://www.arduino.cc/reference/en/libraries/sparkfun-scd30-arduino-library/">here</a></p>
+<p>And on <a href="https://github.com/sparkfun/SparkFun_SCD30_Arduino_Library">github</a></p>
+<p>annnnd the Sparkfun library has a 'disable calibration' settting <a href="https://github.com/sparkfun/SparkFun_SCD30_Arduino_Library/tree/master/examples/Example4_DisableCalibrate">here</a></p>
+<h2>Summary as of 15 OCt 2020 15:00</h2>
+<p>K30 seems outdated; won't trust it until we figure out how to turn off the autocalibration ... waiting to hear back from CO2 meter</p>
+<p>MH-Z19 is also a bit older;  can at least control the autocal ...</p>
+<p>The calibration assumption with these meters seems to be that they use the lowest ppm value over some period and consider it to be 400 ppm -- assumes that all spaces end up getting 'fresh air' at some point in that period.  For the K30, this is et to 7 days.  Not sure for the other sensors.</p>
+<p>Also: readings for NDIR are temp, humidity, and pressure dependent.  My sense is that all the sensors measure these variables and compensate; the SCD30 also allows for feeding it the current ambient pressure and using it for calibration.</p>
 </p>
       </div>
     </div>
