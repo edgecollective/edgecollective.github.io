@@ -334,9 +334,9 @@
         </a>
       </div>
       <div class="text">
-        <h3><a href="/posts/notes/vale_remote/">Vale da Lama Remote Node</a></h3>
-        <p>Greenhouse node at Vale da Lama</p>
-        <em>Updated: 2020-10-06</em>
+        <h3><a href="/posts/notes/vale_remote/">Vale da Lama Greenhouse Monitoring</a></h3>
+        <p>Greenhouse monitoring electronics at Vale da Lama</p>
+        <em>Updated: 2020-10-20</em>
       </div>
     </div>
   </div>
@@ -2386,7 +2386,23 @@ Another option</p>
     <div class="project-contents">
       <div class="text">
         <h3>Note </h3>
-        <p><p><a href="https://youtu.be/LljqFv8GzxA">Video explanation</a> of the current status as of Oct 07 2020  ..</p>
+        <p><h2>TODO</h2>
+<ul>
+<li>Make a mill-able PCB design in Eagle CAD for Lucio to mill [X]</li>
+<li>Make a manfuacture-able PCB design in KiCAD to send to that company in Germany</li>
+<li>Review: contact of company in Germany</li>
+<li>test timer chip with Heltec ESP32</li>
+<li>figure out how to load code remotely to Feather and to ESP32 via Pi</li>
+<li>set up data repository online</li>
+<li>display sensor data on a map</li>
+</ul>
+<p>Need designs for:</p>
+<ul>
+<li>the remote node (Feather + sensors)</li>
+<li>the gateway node (Heltec ESP32 + LoRa + timer chip + BME280)</li>
+</ul>
+<h2>Overview</h2>
+<p><a href="https://youtu.be/LljqFv8GzxA">Video explanation</a> of the current status as of Oct 07 2020  ..</p>
 <h2>AM2315 and 'new' i2c on Feather M0</h2>
 <p>Issue: we designed a <a href="https://github.com/edgecollective/valedalama-greenhouse-remote">breakout board</a> (in Eagle CAD) to be milled in Portugal by <a href="">Lucio</a>; but the original intent was for a different, non-i2c sensor; the one we're using now is an i2c sensor (the <a href="https://www.adafruit.com/product/1293">AM2315</a>, and requires:</p>
 <ul>
@@ -2420,7 +2436,31 @@ Another option</p>
 </tr>
 </tbody>
 </table>
-<h2>Version 4 of the Board</h2>
+<h2>FAB Farm</h2>
+<p><a href="https://www.google.com/maps?q=37.160365,-8.774516&amp;shorturl=1">Location</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><a href="/img/valedalama/fabfarm.png"> <img src="/img/valedalama/fabfarm.png" alt="fig2"></a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Lucio's FAB Farm.</td>
+</tr>
+</tbody>
+</table>
+<h2>Feather BME280 data export from server</h2>
+<p>One can grab CSV data from the Valedalama server like thus:</p>
+<blockquote>
+<p><code>http://64.227.0.108:8100/api/csv?limit=1000</code></p>
+</blockquote>
+<p>where the 'limit=N' parameter gives the 'most recent N values'.</p>
+<p>A snapshot of all of the historical data from &quot;Valedalama BME280 Feather&quot; from the earliest collection date (July 10 2020) up through Oct 10 2020 can be downloaded <a href="/data/historical_bme280_as_of_10_oct_2020.csv">here</a>.</p>
+<h2>Board Designs</h2>
+<h3>Remote</h3>
+<h4>Remote Version 4: Eagle CAD</h4>
+<p>Design files are <a href="https://github.com/edgecollective/valedalama-greenhouse-remote">here</a></p>
 <table>
 <thead>
 <tr>
@@ -2445,27 +2485,20 @@ Another option</p>
 </tr>
 </tbody>
 </table>
-<h2>FAB Farm</h2>
-<p><a href="https://www.google.com/maps?q=37.160365,-8.774516&amp;shorturl=1">Location</a></p>
+<h4>Remote Version 5 in KiCAD:</h4>
+<p>Repo is <a href="https://github.com/edgecollective/valedalama/tree/master/greenhouse/remote/v5">here</a>.</p>
 <table>
 <thead>
 <tr>
-<th style="text-align:center"><a href="/img/valedalama/fabfarm.png"> <img src="/img/valedalama/fabfarm.png" alt="fig2"></a></th>
+<th style="text-align:center"><a href="/img/valedalama/3d_render.png"> <img src="/img/valedalama/3d_render.png" alt="fig2"></a></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align:center">Lucio's FAB Farm.</td>
+<td style="text-align:center">Remote board, version 5.</td>
 </tr>
 </tbody>
 </table>
-<h2>Feather BME280 data export from server</h2>
-<p>One can grab CSV data from the Valedalama server like thus:</p>
-<blockquote>
-<p><code>http://64.227.0.108:8100/api/csv?limit=1000</code></p>
-</blockquote>
-<p>where the 'limit=N' parameter gives the 'most recent N values'.</p>
-<p>A snapshot of all of the historical data from &quot;Valedalama BME280 Feather&quot; from the earliest collection date (July 10 2020) up through Oct 10 2020 can be downloaded <a href="/data/historical_bme280_as_of_10_oct_2020.csv">here</a>.</p>
 </p>
       </div>
     </div>
@@ -2534,7 +2567,11 @@ and the user you want to connect as to hyperssh</p>
     <div class="project-contents">
       <div class="text">
         <h3>Note </h3>
-        <p><h2>Misc notes</h2>
+        <p><h2>TODO</h2>
+<ul>
+<li>use python feedgen script to print out list of podcasts locally, and descriptions, to test the code.</li>
+</ul>
+<h2>Misc notes</h2>
 <p><a href="https://github.com/yaml/pyyaml">yaml generator in python</a></p>
 <p><a href="http://zetcode.com/python/yaml/">pyyaml tutorial</a></p>
 <p><a href="https://github.com/lkiesow/python-feedgen">python feedgen</a></p>
@@ -2583,12 +2620,15 @@ and the user you want to connect as to hyperssh</p>
 <p>jquery approach <a href="https://stackoverflow.com/questions/7600892/respond-to-key-press-javascript">here</a></p>
 <p>more elaborate description <a href="https://www.cryer.co.uk/resources/javascript/script20_respond_to_keypress.htm">here</a></p>
 <p>cross-browser support <a href="https://medium.com/@uistephen/keyboardevent-key-for-cross-browser-key-press-check-61dbad0a067a">here</a></p>
+<h2>Android listening to keyboard presses</h2>
+<p>Suggestion of using Accessibility Services, <a href="https://stackoverflow.com/questions/2986337/is-it-possible-to-create-an-android-service-that-listens-for-hardware-key-presse">here</a></p>
 <h2>Work Log</h2>
 <hr>
 <p>18 OCT 2020</p>
 <p>Working example <a href="https://github.com/edgecollective/micro-hid">here</a> -- presses the 'u' key on a button press.</p>
 <p>Working example for multiple buttons <a href="https://github.com/edgecollective/micro-hid/tree/main/key_multi">here</a>.  Video demo <a href="https://www.youtube.com/watch?v=x7i3M5QsfW0">here</a>.  Or click below:</p>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/x7i3M5QsfW0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/x7i3M5QsfW0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</p>
       </div>
     </div>
   </div>
