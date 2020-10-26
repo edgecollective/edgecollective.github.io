@@ -2771,6 +2771,33 @@ and the user you want to connect as to hyperssh</p>
 <li>Add simple metrics (size of file, timespan of datafile, num datapoints)</li>
 <li>Add human-readable timestamp (at least e.g. in CSV export)</li>
 </ul>
+<hr>
+<p>25 OCT 2020</p>
+<p>Making a python PUT script.</p>
+<p>Reference on python requests <a href="https://requests.readthedocs.io/en/master/user/authentication/">here</a>.</p>
+<p>Setting the authorization header in curl <a href="https://stackoverflow.com/questions/3044315/how-to-set-the-authorization-header-using-curl">here</a>.</p>
+<p>Issue: when using basic auth in current basicAuth branch, it is putting the username password authentication method on top of <em>every</em> request -- need to do it just for the home page.</p>
+<p>Guide to using basic auth <a href="https://github.com/fastify/fastify-basic-auth">here</a>.</p>
+<p>Combining fastify static with fastify basic auth <a href="https://github.com/fastify/help/issues/190">here</a>.</p>
+<p>Using multiple authentication options with fastify <a href="https://github.com/fastify/fastify-auth#usage">here</a></p>
+<p>addhook onresponse by route <a href="https://github.com/fastify/fastify/issues/1828">here</a></p>
+<p>fastify and mongodb <a href="https://www.fastify.io/docs/v3.4.x/Getting-Started/">here</a></p>
+<p>Might just need to find a way to serve up web page from directly in fastify, using basicAuthFix branch</p>
+<p>Nice <a href="https://www.fastify.io/docs/v3.4.x/Getting-Started/">getting started with fastify</a> document.</p>
+<p>Currently the action is in 'main.js' ...</p>
+<p>Looks like there is a way to addHook to specific routes <a href="https://github.com/fastify/fastify/blob/master/docs/Hooks.md#onroute">here</a></p>
+<p>latest idea:  keep basicAuth branch as-is, but use multiple authentication methods in 'PUT' script</p>
+<p>'ctrl shift i' will insert timestamp in VS Code given installation of an extension <a href="https://stackoverflow.com/questions/38780057/how-to-insert-current-date-time-in-vscode#:~:text=To%20insert%20current%20date%20and,Insert%20DateTime%20then%20press%20Enter%20.&amp;text=By%20default%20you%20don't%20have%20to%20set%20anything.">here</a></p>
+<p>Adding multiple authorization headers via postman <a href="https://stackoverflow.com/questions/29282578/multiple-http-authorization-headers">here</a></p>
+<p>Combining multiple authorizations via curl <a href="https://stackoverflow.com/questions/22229996/basic-http-and-bearer-token-authentication">here</a></p>
+<p>Setting multiple headers in curl -- useful! -- <a href="https://www.shellhacks.com/curl-add-header-multiple-headers-authorization/">here</a></p>
+<p>issues:</p>
+<ol>
+<li>can't use multiple authorization schemes, in particular not if one of them is Basic Auth</li>
+<li>not sure how to combine basic auth with fastify-static</li>
+</ol>
+<p>interesting angle mentioned in <a href="https://stackoverflow.com/questions/64201513/transform-response-of-fastify-static-served-files">&quot;Transform response of fastify-static served files&quot;</a>, which led to fastify <a href="https://github.com/fastify/point-of-view">point-of-view templates idea</a>.</p>
+<p>Ah -- I think I've got it working with the basicAuth branch, now!</p>
 </p>
       </div>
     </div>
