@@ -2602,6 +2602,35 @@ Seems like this latter mode would work best.</p>
 </tr>
 </tbody>
 </table>
+<hr>
+<h3><a name="version_4_assembly"></a>Assembly Guide for Remote Node Version 4</h3>
+<p>(Update OCT 30 2020)</p>
+<p>Lucio has milled both Version 3 and Version 4 of the remote node.  Current focus is on assembly of Version 4 (design files <a href="https://github.com/edgecollective/valedalama-greenhouse-remote/blob/master/pcb/ver4/remote_v4_board.png">here</a>.</p>
+<p>For reference, Version 4 board design looks like this:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><a href="/img/valedalama/remote_v4_board.png"> <img src="/img/valedalama/remote_v4_board.png" alt="fig2"></a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Remote board, version 4.</td>
+</tr>
+</tbody>
+</table>
+<p>It is a 'mother board' for a Feather M0 LoRa microcontroller.</p>
+<p>The remote board version 4 requires:</p>
+<ul>
+<li>A 1x12 and a 1x16 0.1&quot; / 2.54mm female header, to hold the Feather in place.</li>
+<li>Note: the Feather also requires 1x12 and 1x16 2.54mm male headers soldered to it, as well as an antenna (a straight wire, or a helical one). I think this is already done.</li>
+<li>A 4-position 5mm spacing screw terminal (typically, a pair of 2-position screw terminals)</li>
+<li>A 3-position 5mm screw terminal</li>
+<li>A 2-position 5mm screw terminal</li>
+<li>3 resistors (all of them 10K, or all of them 4.7K).</li>
+</ul>
+<p>It is obvious from the footprints on the board which of the above go where :)</p>
+<p>Note: the ESP32 device only requires that the accompanying antenna that came with the baord be plugged into it (it's a bit fiddly, but no soldering required).</p>
 </p>
       </div>
     </div>
