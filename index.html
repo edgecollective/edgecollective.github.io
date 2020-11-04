@@ -273,6 +273,20 @@
   <div class="post">
     <div class="note-contents">
       <div class="image">
+        <a href="/posts/notes/greenhouse_stack/">
+          <img src="img/placeholder.png"/>
+        </a>
+      </div>
+      <div class="text">
+        <h3><a href="/posts/notes/greenhouse_stack/">Greenhouse Monitoring, 'Full Stack'</a></h3>
+        <p>Instructions for End-to-End Greenhouse monitoring stack</p>
+        <em>Updated: 2020-11-02</em>
+      </div>
+    </div>
+  </div>
+  <div class="post">
+    <div class="note-contents">
+      <div class="image">
         <a href="/posts/notes/alt_server/">
           <img src="img/placeholder.png"/>
         </a>
@@ -2828,6 +2842,108 @@ and the user you want to connect as to hyperssh</p>
 </ol>
 <p>interesting angle mentioned in <a href="https://stackoverflow.com/questions/64201513/transform-response-of-fastify-static-served-files">&quot;Transform response of fastify-static served files&quot;</a>, which led to fastify <a href="https://github.com/fastify/point-of-view">point-of-view templates idea</a>.</p>
 <p>Ah -- I think I've got it working with the basicAuth branch, now!</p>
+</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="post">
+    <div class="project-contents">
+      <div class="text">
+        <h3>Note </h3>
+        <p><p>(((Status: DRAFT)))</p>
+<hr>
+<h2>Overview</h2>
+<p>The following is a prototype for a free and open source 'end-to-end' system for monitoring greenhouse parameters.  It consists of three main parts:</p>
+<ul>
+<li><strong>Remote node</strong> -- consisting of a microcontroller + sensor, that captures a signal (e.g. temperature) and relays this data via low-power radio to a wifi gateway</li>
+<li><strong>Gateway</strong> -- which relays this incoming sensor data to a server</li>
+<li><strong>Server</strong> -- which stores this sensor data in a database.</li>
+</ul>
+<p>The following guide helps to set up this system, in a series of steps.</p>
+<hr>
+<h2>Table of Contents</h2>
+<ol>
+<li><a href="#server">Setting up the <strong>Server</strong></a></li>
+<li><a href="#micro">Setting up the <strong>Remote Node</strong></a></li>
+<li><a href="#gateway">Setting up the <strong>Gateway</strong></a></li>
+</ol>
+<hr>
+<h2><a name="micro"></a> 1. Server setup</h2>
+<p>We will be covering two different server options:</p>
+<ul>
+<li><strong>FarmOS</strong> (an open source farm data management system); and</li>
+<li><strong>Bayou</strong> (an open source sensor data cooperative).</li>
+</ul>
+<h3>FarmOS</h3>
+<p>You can watch a short video (~ 3 min) on setting up a FarmOS sensor feed <a href="https://youtu.be/arGErKKODrU">here</a>.</p>
+<p>The process will generate a public key + private key pair, and indicate a URL to which you can post sensor data via JSON (See &quot;Sensor Configuration&quot;: &quot;Developer Information&quot;).  The URL format looks like this:</p>
+<pre><code>https://edgecollective.farmos.net/farm/sensor/listener/[public key]?private_key=[private key]
+</code></pre>
+<p>For example, a typical URL with the keys actually inserted looks like this:</p>
+<pre><code>https://edgecollective.farmos.net/farm/sensor/listener/0ce692a8fd8474137839535dd7997a28?private_key=ba0c7dbfd4321b3abaa7851457dc12ef
+</code></pre>
+<p>Find this URL (with the keys inserted) for your sensor feed, and take note of it (keep the relevant FarmOS browser tab open, or copy-paste this URL into a text file.) It will be used in the  <a href="#gateway">Gateway Setup</a> section below.</p>
+<h3>Bayou</h3>
+<p>You can watch a short video on setting up a <a href="http://159.65.226.222:3000/">Bayou</a> sensor feed <a href="https://youtu.be/EKZA-AtDYO0">here</a>.</p>
+<p>The basic steps are:</p>
+<ul>
+<li>visit <a href="http://159.65.226.222:3000/">Bayou</a> (you can get a login via word-of-mouth), and fill in the forms for 'Create a data feed'.</li>
+</ul>
+<p>This will generate a <strong>public key</strong> and a <strong>private key</strong>.</p>
+<ul>
+<li>take note of these; you will use them in your gateway configuration file in the <a href="#gateway">Gateway Setup</a> step below.</li>
+</ul>
+<hr>
+<h2><a name="micro"></a> 2. Remote Node setup</h2>
+<p>In our example setup for this guide, the Remote node consists of:</p>
+<ul>
+<li><strong>Sensor</strong>: an AM2315 Temperature and Humidity Sensor</li>
+<li><strong>Microcontroller</strong>: a Feather M0 LoRa</li>
+<li><strong>Additional Hardware</strong>: a PVOS Greenhouse Motherboard Version 4</li>
+</ul>
+<h3>Wiring things up</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><a href="/img/valedalama/am2315.jpg"> <img src="/img/valedalama/am2315.jpg" alt="figA2"></a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">AM2315 temp and humidity sensor, as <a href="https://www.adafruit.com/product/1293">listed on Adafruit</a>.</td>
+</tr>
+</tbody>
+</table>
+<p>The <a href="https://www.adafruit.com/product/1293">AM2315</a> is an i2c sensor -- which means that it has the following wires:</p>
+<ul>
+<li>VCC / 3.3V  (Red)</li>
+<li>GND (Black)</li>
+<li>SCL (White)</li>
+<li>SDA (Yellow)</li>
+</ul>
+<p>These wires should connect to the relevant screw terminal inputs on the &quot;Version 4 Motherboard&quot;, as depicted here:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><a href="/img/valedalama/remote_v4_board.png"> <img src="/img/valedalama/remote_v4_board.png" alt="fig2"></a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Remote board, version 4.</td>
+</tr>
+</tbody>
+</table>
+<p>The Feather M0 LoRa should be plugged into the relevant headers on the mothboard, as well.</p>
+<p>Note that all resistors (4.7K or 10K) should also be soldered to the board.</p>
+<h3>Sensor Test</h3>
+<p>[feather + am2315 TODO]</p>
+<h3>Radio Setup</h3>
+<p>[feather + am2315 + lora radio]</p>
+<hr>
+<h2>3. Gateway setup</h2>
+<p>[esp32 gateway]</p>
 </p>
       </div>
     </div>
