@@ -24,13 +24,30 @@
   <p>(((Status: DRAFT)))</p>
 <hr>
 <h2>Overview</h2>
-<p>The following is a prototype for a free and open source 'end-to-end' system for monitoring greenhouse parameters.  It consists of three main parts:</p>
+<p>Here we're going to be describing how to set up a basic 'Greenhouse Monitoring' system, which consists of three main parts:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><a href="/img/valedalama/greenhouse_stack.png"> <img src="/img/valedalama/greenhouse_stack.png" alt="figA2"></a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Overview of the flow of data in this system.</td>
+</tr>
+</tbody>
+</table>
 <ul>
-<li><strong>Remote node</strong> -- consisting of a microcontroller + sensor, that captures a signal (e.g. temperature) and relays this data via low-power radio to a wifi gateway</li>
+<li><strong>Remote Node</strong> -- consisting of a microcontroller + sensor, that captures a signal (e.g. temperature) and relays this data via low-power radio to a wifi gateway</li>
 <li><strong>Gateway</strong> -- which relays this incoming sensor data to a server</li>
-<li><strong>Server</strong> -- which stores this sensor data in a database.</li>
+<li><strong>Server</strong> -- a server which receives data from the gateway and stores it in a database.</li>
 </ul>
-<p>The following guide helps to set up this system, in a series of steps.</p>
+<h2>Materials / software used in this example</h2>
+<ul>
+<li><strong>Remote Node</strong>: A <a href="https://www.adafruit.com/product/3178">Feather M0 LoRa</a>, an <a href="https://www.adafruit.com/product/1293">AM2315 Temp + Humidity sensor</a>, and a <a href="https://oshpark.com/shared_projects/vQ5JTv0Z">PVOS 'Lama' Board Ver 5</a>.</li>
+<li><strong>Gateway</strong>: A <a href="https://heltec.org/project/wifi-lora-32/">'Heltec Wifi-LoRa 32 v2'</a>.</li>
+<li><strong>Server</strong>: the Bayou cooperative sensor data platform.</li>
+</ul>
 <hr>
 <h2>Table of Contents</h2>
 <ol>
@@ -40,6 +57,7 @@
 </ol>
 <hr>
 <h2><a name="micro"></a> 1. Server setup</h2>
+<p><img src="/img/valedalama/stack_server.png" alt="figA2"></p>
 <p>We will be covering two different server options:</p>
 <ul>
 <li><strong>FarmOS</strong> (an open source farm data management system); and</li>
@@ -66,6 +84,7 @@
 </ul>
 <hr>
 <h2><a name="micro"></a> 2. Remote Node setup</h2>
+<p><img src="/img/valedalama/stack_node.png" alt="figA2"></p>
 <p>In our example setup for this guide, the Remote node consists of:</p>
 <ul>
 <li><strong>Sensor</strong>: an AM2315 Temperature and Humidity Sensor</li>
@@ -113,7 +132,10 @@
 <p>[feather + am2315 + lora radio]</p>
 <hr>
 <h2>3. Gateway setup</h2>
-<p>[esp32 gateway]</p>
+<p><img src="/img/valedalama/stack_gateway.png" alt="figA2"></p>
+<p>You can purchase a Heltec Wifi-Lora 32 v2 <a href="https://www.amazon.com/MakerFocus-Development-Bluetooth-0-96inch-Display/dp/B076MSLFC9/ref=asc_df_B076MSLFC9/?tag=hyprod-20&amp;linkCode=df0&amp;hvadid=312824707815&amp;hvpos=&amp;hvnetw=g&amp;hvrand=4477519221563307865&amp;hvpone=&amp;hvptwo=&amp;hvqmt=&amp;hvdev=c&amp;hvdvcmdl=&amp;hvlocint=&amp;hvlocphy=9002000&amp;hvtargid=pla-570414542843&amp;psc=1">here</a>.</p>
+<p>Sample code for esp32-lora gateway is <a href="https://github.com/edgecollective/valedalama/tree/master/greenhouse/gateway/heltec_wifi_lora_bayou_farmos">here</a></p>
+<p>Example of data posted <a href="http://159.65.226.222:3000/drives/1a142aee9702045f3049325318f14fab10d24ce3e0c8a387d092759c0594ba5e">here</a></p>
 
 
     </div>
