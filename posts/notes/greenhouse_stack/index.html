@@ -71,13 +71,69 @@
 <p>Another option is to use the <a href="http://159.65.226.222:3000/">Bayou cooperative sensor data platform</a>. This donation-based data service allows users to set up free sensor data feeds. Email collaborate at edgecollective dot io to request a password.</p>
 <p>You can watch a short video on setting up a <a href="http://159.65.226.222:3000/">Bayou</a> sensor feed <a href="https://youtu.be/EKZA-AtDYO0">here</a>.</p>
 <p>The basic steps are:</p>
-<ul>
-<li>visit <a href="http://159.65.226.222:3000/">Bayou</a> (you can get a login via word-of-mouth), and fill in the forms for 'Create a data feed'.</li>
-</ul>
-<p>This will generate a <strong>public key</strong> and a <strong>private key</strong>.</p>
-<ul>
-<li>take note of these; you will use them in your gateway configuration file in the <a href="#gateway">Gateway Setup</a> step below.</li>
-</ul>
+<ol>
+<li>Visit <a href="http://159.65.226.222:3000/">Bayou</a>.  There may be a 'username' and 'password' required to access the site -- contact collaborate@edgecollective.io to request a login!</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><a href="/img/valedalama/bayou.png"> <img src="/img/valedalama/bayou_landing.png" alt="figA2"></a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">The Bayou main site.</td>
+</tr>
+</tbody>
+</table>
+<ol start="2">
+<li>To create a new data feed, enter new values for your feed in the 'name' and 'description' fields, and click Create.</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><a href="/img/valedalama/bayou_create.png"> <img src="/img/valedalama/bayou_create.png" alt="figA2"></a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Create a new data feed on Bayou by entering a 'name' and 'description' for the feed, and then pressing the 'Create' button.</td>
+</tr>
+</tbody>
+</table>
+<ol start="3">
+<li>This will generate a <strong>public key</strong> and a <strong>private key</strong>.</li>
+</ol>
+<blockquote>
+<p><strong>IMPORTANT:  Take note of these keys!</strong> Copy them to a separate text file for safekeeping -- you will use them in your gateway configuration file in the <a href="#gateway">Gateway Setup</a> step below.</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><a href="/img/valedalama/bayou_keys_highlight.png"> <img src="/img/valedalama/bayou_keys_highlight.png" alt="figA2"></a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">After clicking 'create', you'll be shown a Public Key and Private Key.  Take note of these!</td>
+</tr>
+</tbody>
+</table>
+<ol start="4">
+<li>To view a feed you've created, enter the <strong>public key</strong> into the 'View a data feed!' section, in the 'key' field, and click View.</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><a href="/img/valedalama/bayou_view.png"> <img src="/img/valedalama/bayou_view.png" alt="figA2"></a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">To view a feed you've created, enter the <strong>public key</strong> into the 'View a data feed!' section, in the 'key' field, and click View.</td>
+</tr>
+</tbody>
+</table>
 <hr>
 <h2><a name="arduino"></a> 2. Setting up the Arduino IDE</h2>
 <p>In order to load firmware onto the Remote Node and the Gateway, we'll need to set up the Arduino IDE to program the Feather M0 (for the Remote node, which uses a Feather M0 LoRa), and an ESP32-based device (for the Gateway, which uses an ESP32-based Heltec device).</p>

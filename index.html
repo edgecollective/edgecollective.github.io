@@ -273,6 +273,20 @@
   <div class="post">
     <div class="note-contents">
       <div class="image">
+        <a href="/posts/notes/e_ink/">
+          <img src="img/placeholder.png"/>
+        </a>
+      </div>
+      <div class="text">
+        <h3><a href="/posts/notes/e_ink/">E-Ink Display Prototyping</a></h3>
+        <p>Setting up a (low power?) E-Ink display with a micro</p>
+        <em>Updated: 2020-11-08</em>
+      </div>
+    </div>
+  </div>
+  <div class="post">
+    <div class="note-contents">
+      <div class="image">
         <a href="/posts/notes/greenhouse_stack/">
           <img src="img/placeholder.png"/>
         </a>
@@ -2646,6 +2660,11 @@ Seems like this latter mode would work best.</p>
 </ul>
 <p>It is obvious from the footprints on the board which of the above go where :)</p>
 <p>Note: the ESP32 device only requires that the accompanying antenna that came with the baord be plugged into it (it's a bit fiddly, but no soldering required).</p>
+<hr>
+<p>2020 Nov 10</p>
+<p><img src="/img/valedalama/v5_success.png" alt=""></p>
+<p>The associated <a href="">version 5 kicad pcb file</a> is easy to upload to <a href="aisler.net">Aisler</a> (German PCB producer) -- about $25 euros for 3 PCBs, 3-5 day turnaround:</p>
+<p><img src="/img/valedalama/aisler_v5.png" alt=""></p>
 </p>
       </div>
     </div>
@@ -2901,13 +2920,69 @@ and the user you want to connect as to hyperssh</p>
 <p>Another option is to use the <a href="http://159.65.226.222:3000/">Bayou cooperative sensor data platform</a>. This donation-based data service allows users to set up free sensor data feeds. Email collaborate at edgecollective dot io to request a password.</p>
 <p>You can watch a short video on setting up a <a href="http://159.65.226.222:3000/">Bayou</a> sensor feed <a href="https://youtu.be/EKZA-AtDYO0">here</a>.</p>
 <p>The basic steps are:</p>
-<ul>
-<li>visit <a href="http://159.65.226.222:3000/">Bayou</a> (you can get a login via word-of-mouth), and fill in the forms for 'Create a data feed'.</li>
-</ul>
-<p>This will generate a <strong>public key</strong> and a <strong>private key</strong>.</p>
-<ul>
-<li>take note of these; you will use them in your gateway configuration file in the <a href="#gateway">Gateway Setup</a> step below.</li>
-</ul>
+<ol>
+<li>Visit <a href="http://159.65.226.222:3000/">Bayou</a>.  There may be a 'username' and 'password' required to access the site -- contact collaborate@edgecollective.io to request a login!</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><a href="/img/valedalama/bayou.png"> <img src="/img/valedalama/bayou_landing.png" alt="figA2"></a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">The Bayou main site.</td>
+</tr>
+</tbody>
+</table>
+<ol start="2">
+<li>To create a new data feed, enter new values for your feed in the 'name' and 'description' fields, and click Create.</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><a href="/img/valedalama/bayou_create.png"> <img src="/img/valedalama/bayou_create.png" alt="figA2"></a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Create a new data feed on Bayou by entering a 'name' and 'description' for the feed, and then pressing the 'Create' button.</td>
+</tr>
+</tbody>
+</table>
+<ol start="3">
+<li>This will generate a <strong>public key</strong> and a <strong>private key</strong>.</li>
+</ol>
+<blockquote>
+<p><strong>IMPORTANT:  Take note of these keys!</strong> Copy them to a separate text file for safekeeping -- you will use them in your gateway configuration file in the <a href="#gateway">Gateway Setup</a> step below.</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><a href="/img/valedalama/bayou_keys_highlight.png"> <img src="/img/valedalama/bayou_keys_highlight.png" alt="figA2"></a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">After clicking 'create', you'll be shown a Public Key and Private Key.  Take note of these!</td>
+</tr>
+</tbody>
+</table>
+<ol start="4">
+<li>To view a feed you've created, enter the <strong>public key</strong> into the 'View a data feed!' section, in the 'key' field, and click View.</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><a href="/img/valedalama/bayou_view.png"> <img src="/img/valedalama/bayou_view.png" alt="figA2"></a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">To view a feed you've created, enter the <strong>public key</strong> into the 'View a data feed!' section, in the 'key' field, and click View.</td>
+</tr>
+</tbody>
+</table>
 <hr>
 <h2><a name="arduino"></a> 2. Setting up the Arduino IDE</h2>
 <p>In order to load firmware onto the Remote Node and the Gateway, we'll need to set up the Arduino IDE to program the Feather M0 (for the Remote node, which uses a Feather M0 LoRa), and an ESP32-based device (for the Gateway, which uses an ESP32-based Heltec device).</p>
@@ -3074,6 +3149,40 @@ and the user you want to connect as to hyperssh</p>
 <p>You should expect to see your device connecting to your wifi, then receiving data from the Feather and posting it to Bayou / FarmOS.</p>
 <h3>Example data</h3>
 <p>Example of Bayou server data <a href="http://159.65.226.222:3000/drives/1a142aee9702045f3049325318f14fab10d24ce3e0c8a387d092759c0594ba5e">here</a></p>
+</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="post">
+    <div class="project-contents">
+      <div class="text">
+        <h3>Note </h3>
+        <p><hr>
+<p>2020 Nov 09</p>
+<h2>Youtube tutorial by Techiesms</h2>
+<p>Nice <a href="https://www.youtube.com/watch?v=mySnfyyL4i4">tutorial</a> using ESP32 and 4.2 &quot; e-ink display</p>
+<p>Associated library, GxEPD is <a href="https://github.com/ZinggJM/GxEPD">here</a></p>
+<p>Link for project code in the tutorial is <a href="https://github.com/techiesms/E-paper-module-using-ESP32">here</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><a href="/img/valedalama/heltec_pinout.png"> <img src="/img/valedalama/heltec_pinout.png" alt="figA2"></a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Heltec Wifi LoRa v2 pinout.</td>
+</tr>
+</tbody>
+</table>
+<p>Instructions for Adafruit MicroSD are <a href="https://www.adafruit.com/product/254">here</a>.</p>
+<p>Formatting a microSD tutorial <a href="https://ragnyll.gitlab.io/2018/05/22/format-a-sd-card-to-fat-32linux.html">here</a></p>
+<p>Convert to byte array code <a href="https://www.briandorey.com/post/bitmap-byte-converter-for-e-ink-display">here</a></p>
+<p>converting input images to proper grayscale <a href="https://github.com/sqfmi/badgy/tree/master/examples/grayscale">here</a></p>
+<p>this conversion pipeline looks great -- <a href="https://stackoverflow.com/questions/35797988/converting-images-to-indexed-2-bit-grayscale-bmp">here</a></p>
+<p>which is explained along with other code <a href="https://github.com/yy502/ePaperDisplay">here</a></p>
+<h2>Working code, SD card to itsym0 4.2 in e-ink</h2>
 </p>
       </div>
     </div>
