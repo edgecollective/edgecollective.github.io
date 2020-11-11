@@ -3161,7 +3161,8 @@ const char* farmOS_url = &quot;(YOUR FARMOS URL)&quot;;
 <pre><code>public key: 1a142aee9702045f3049325318f14fab10d24ce3e0c8a387d092759c0594ba53
 private key: db84537367d8e9026e93b97cfef3adc11781d90abb56f24d96ee12e7ce899344
 </code></pre>
-<p>Then you'd modify the <code>configuraiton.h</code> file to look like this:</p>
+<p>Then your 'bayou_url' is formed by pre-pending <code>http://157.230.188.100:3000/api/drives/</code> to your public key, and your bayou_privkey is simply your private key.</p>
+<p>In our example, you'd modify the <code>configuration.h</code> file to look like this:</p>
 <pre><code>const char *SSID = &quot;(YOUR WIFI SSID)&quot;;
 const char *WiFiPassword = &quot;(YOUR WIFI PASSWORD)&quot;;
 const char* bayou_url = &quot;http://157.230.188.100:3000/api/drives/1a142aee9702045f3049325318f14fab10d24ce3e0c8a387d092759c0594ba53&quot;;
