@@ -2389,6 +2389,54 @@ Seems like this latter mode would work best.</p>
 <hr>
 <p>OCT 24 2020</p>
 <p>Might consider adding a high-precision pressure sensor to any SCD30 breakout board; the SCD30 can compensate for pressure if sent values directly.  E.g. the <a href="https://www.adafruit.com/product/3966">BMP388 breakout from Adafruit</a>.</p>
+<hr>
+<p>NOV 12 2020</p>
+<p>Quick task: Feather-based breakout for SCD30 + BMP388 or equiv.</p>
+<ul>
+<li>can run on USB or lithium ion battery</li>
+<li>mount for SCD30</li>
+</ul>
+<p>Any other useful things to add?</p>
+<ul>
+<li>i2c and uart breakouts?</li>
+<li>display header -- oled to show graph of last few hours, w/ normal range?</li>
+</ul>
+<p>Should we use the ESP32?</p>
+<p>If we use Heltec, it could be a remote node <em>or</em> a gateway ...</p>
+<p>That's an argument for using the Heltec ...</p>
+<p>Looks like SCD30 can use i2c ...
+... other sensors can use i2c (break it out!) or UART ...</p>
+<p>which library does Sparkfun use?</p>
+<h3>SCD30 library and pinout</h3>
+<p><strong>Sparkfun SCD30 library</strong> Ah, here's the <a href="https://github.com/sparkfun/SparkFun_SCD30_Arduino_Library">Sparkfun SCD30 CO2 Library</a>.  They use i2c, great!</p>
+<p><strong>SCD30 pinout</strong> From the <a href="https://cdn.sparkfun.com/assets/1/a/7/9/9/Sensirion_CO2_Sensors_SCD30_Preliminary-Datasheet.pdf">SCD30 datasheet</a>:</p>
+<p><a href="/img/co2/scd30_pinout.png"><img src="/img/co2/scd30_pinout.png" alt=""></a></p>
+<h3>Making a breakout</h3>
+<p>Pinout for <a href="https://www.adafruit.com/product/3966">BMP388</a>, precision temp + pressure ...</p>
+<p><a href="/img/co2/bmp388.jpg"><img src="/img/co2/bmp388.jpg" alt=""></a></p>
+<p>Current thinking: make a place for the i2c oled displays, both the thin and the larger versions.</p>
+<p>Ahhh ... <a href="https://www.adafruit.com/product/4816">BM390</a> has even greater precision, why not go for that. Looks like same pinout, in fact.</p>
+<h4>BMP390 Pinout</h4>
+<p>(Same as BMP380)</p>
+<p><a href="/img/co2/bmp390.jpg"><img src="/img/co2/bmp390.jpg" alt=""></a></p>
+<p>Question -- do we need the INT pin assigned to a feather pin?</p>
+<p>Looks like it might only be for SPI -- see Adafruit description of <a href="https://learn.adafruit.com/adafruit-bmp388-bmp390-bmp3xx/pinouts">pinout</a>. In any case, not used in their libraries, so don't assign for now.</p>
+<h4>Feather M0 pinout</h4>
+<p><a href="/img/co2/feather_m0_pinout.jpg"><img src="/img/co2/feather_m0_pinout.jpg" alt=""></a></p>
+<h4>Adding a second UART to the Feather M0</h4>
+<p>Guide is <a href="https://learn.adafruit.com/using-atsamd21-sercom-to-add-more-spi-i2c-serial-ports/creating-a-new-serial">here</a></p>
+<p>They give an example with D10 as TX and D11 as RX.  So, break out those pins.</p>
+<h4>Display</h4>
+<ul>
+<li>
+<p>[Small i2c display] is 38x12mm.</p>
+</li>
+<li>
+<p><a href="https://www.amazon.com/Dorhea-Display-SSD1306-Self-Luminous-Raspberry/dp/B07WPCPM5H/ref=psdc_306754011_t2_B0761LV1SD">Large i2c display</a> is 27mm x 27mm.</p>
+</li>
+</ul>
+<h5>Breakout REV A</h5>
+<p>Current breakout board is <a href="https://github.com/edgecollective/co2-remote-and-gateway/tree/master/rev_a/atkins">here</a>.</p>
 </p>
       </div>
     </div>
@@ -3178,6 +3226,7 @@ const char* bayou_privkey = &quot;db84537367d8e9026e93b97cfef3adc11781d90abb56f2
 const char* farmOS_url = &quot;(YOUR FARMOS URL)&quot;;
 </code></pre>
 <p>(Note, you don't need to modify the FarmOS parameters in configuration.h if you're not posting to FarmOS.)</p>
+<p><strong>NOTE</strong>:  you must rename &quot;sample_configuration.h&quot; to &quot;configuration.h&quot;!</p>
 <h4>Setting the LoRa frequency</h4>
 <p>Next, you'll need to modify the LoRa radio frequency to match your setup:</p>
 <p><img src="/img/valedalama/heltec_wifi_lora_gateway_freq.png" alt=""></p>
@@ -3220,6 +3269,13 @@ const char* farmOS_url = &quot;(YOUR FARMOS URL)&quot;;
 <p>this conversion pipeline looks great -- <a href="https://stackoverflow.com/questions/35797988/converting-images-to-indexed-2-bit-grayscale-bmp">here</a></p>
 <p>which is explained along with other code <a href="https://github.com/yy502/ePaperDisplay">here</a></p>
 <h2>Working code, SD card to itsym0 4.2 in e-ink</h2>
+<p>Code on github is <a href="https://github.com/edgecollective/eink-map/tree/main/GxEPD_SD_itsym0">here</a></p>
+<h2>Converting images</h2>
+<p>Great little tutorial <a href="https://steve.fi/hardware/d1-epaper/">here</a></p>
+<pre><code>convert Lenna.png -monochrome lenna-1.png
+</code></pre>
+<pre><code>convert lenna.png -monochrome -resize 200x320\! lenna4.bmp
+</code></pre>
 </p>
       </div>
     </div>
