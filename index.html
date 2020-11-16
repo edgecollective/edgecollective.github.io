@@ -1949,7 +1949,10 @@ interface = meshtastic.StreamInterface()
 <li>turn off autocalibration on the K30 []</li>
 </ul>
 <h2>Table of contents</h2>
-<p><a href="#feather">Feather Hookup Guide for K30</a></p>
+<ul>
+<li><a href="#feather">Feather Hookup Guide for K30</a></li>
+<li><a href="#peng">Peng &amp; Jimenez paper on CO2 and COVID infection probability</a></li>
+</ul>
 <h2>Background</h2>
 <p>Below is a development notebook for constructing a DIY CO2 monitor.</p>
 <p>Click <a href="#gatewaysetup">here</a> to jump to the latest remote CO2 node + gateway setup.</p>
@@ -2622,6 +2625,16 @@ void loop() {
 <p><a href="/img/co2/co2_reva_schematic.png"><img src="/img/co2/co2_reva_schematic.png" alt=""></a></p>
 <p><a href="/img/co2/co2_reva_3drender.png"><img src="/img/co2/co2_reva_3drender.png" alt=""></a></p>
 <p>Repo for REV_A schematic and board file is <a href="https://github.com/edgecollective/co2-remote-and-gateway/tree/master/rev_a/atkins">here</a>.</p>
+<hr>
+<p>2020 NOV 16</p>
+<h2><a name="#peng"></a>Research paper by Peng and Jimenez on CO2 and indoor transmission rates</h2>
+<p>Really nice research paper by Peng and Jimenez that yields CO2 thresholds for indoor activity, with thresholds based on activity / mask use / etc -- linked <a href="https://www.medrxiv.org/content/10.1101/2020.09.09.20191676v1.full.pdf">here</a></p>
+<p>This is the key figure (Fig 2) to understand from the paper:</p>
+<p><a href="/img/co2/peng_fig2.png"><img src="/img/co2/peng_fig2.png" alt=""></a></p>
+<p>An online aersol transmission calculator based on the paper is <a href="https://docs.google.com/spreadsheets/d/16K1OQkLD4BjgBdO8ePj6ytf-RpPMlJ6aXFg3PrIQBbQ/edit#gid=519189277">here</a>.</p>
+<p>The tweet broadcasting the tool is <a href="https://twitter.com/jljcolorado/status/1275466006312304640">here</a>.</p>
+<p>The lead author on the paper, an expert on aerosol transmission, is <a href="https://twitter.com/jljcolorado">here</a>.</p>
+<p>Some of the feedback on the paper &amp; tool was from Linsey Marr, the NYTimes-quoted air expert on COVID transmission.  Her Twitter profile is <a href="https://twitter.com/linseymarr">here</a>.</p>
 </p>
       </div>
     </div>
@@ -2910,6 +2923,37 @@ void loop() {
 <p><img src="/img/valedalama/feather_working.jpeg" alt=""></p>
 <p>Data flowing through to Bayou:</p>
 <p><img src="/img/valedalama/bayou_data.png" alt=""></p>
+<hr>
+<p>2020 Nov 14</p>
+<p>Next steps:</p>
+<ul>
+<li>Modify Bayou to allow for inputing date ranges</li>
+<li>Figure out reflashing of boards from command line via Pi</li>
+<li>Figure out setting wifi credentials (and OTA firmware) on ESP via bluetooth</li>
+<li>NRF52 bluetooth OTA firmware update in Arduino possible? If so maybe switch to NRF52 feather</li>
+<li>List the remote board and the esp32 gateway combo -- make a breakout board for the Heltec</li>
+</ul>
+<p>Can offer ...</p>
+<p>Remote:</p>
+<ul>
+<li>Mothbot</li>
+<li>Feather motherboard (add power input 12V or higher)</li>
+</ul>
+<p>Gateway</p>
+<ul>
+<li>Heltec</li>
+<li>Heltec + motherboard (with timer chip)</li>
+<li>Quahog (advantage of power input 12V or higher)</li>
+</ul>
+<p>Database:</p>
+<ul>
+<li>FarmOS</li>
+<li>Bayou</li>
+</ul>
+<p>So -- all off-the-shelf, o r fully custom.
+Along with guides for all of this.</p>
+<h3>OTA for the remote node?</h3>
+<p>NRF52 OTA programming link (weather buoy project) <a href="https://opensourceoceanweatherbuoy.wordpress.com/2018/03/11/nrf52-program-sketches-over-the-air/">here</a></p>
 </p>
       </div>
     </div>
@@ -3464,7 +3508,15 @@ const char* farmOS_url = &quot;(YOUR FARMOS URL)&quot;;
 <pre><code>convert Lenna.png -monochrome lenna-1.png
 </code></pre>
 <pre><code>convert lenna.png -monochrome -resize 200x320\! lenna4.bmp
+
 </code></pre>
+<h3>Compass</h3>
+<p>Good quality compass offered <a href="https://www.amazon.com/gp/product/B07CK8B3R3/ref=ox_sc_saved_title_1?smid=A2LLNHIZM5ZWNT&amp;psc=1">here</a></p>
+<h3>Map tiles</h3>
+<p>Typical map tile size is 256x265 -- reference <a href="https://wiki.openstreetmap.org/wiki/Tiles#:~:text=Graphical%20Map%20Tiles,-Map%20tiles%20are&amp;text=512%C3%97512%20pixel%20seems,and%20also%20several%20zoom%20levels.">here</a></p>
+<p>Guide to creating your own tiles <a href="https://wiki.openstreetmap.org/wiki/Creating_your_own_tiles">here</a></p>
+<p>Browsing local tiles guide <a href="https://wiki.openstreetmap.org/wiki/OpenLayers_Local_Tiles_Example">here</a> &lt;---- this seems like a great guide to dive into.</p>
+<p>More basic guide to OSM tiles <a href="https://wiki.openstreetmap.org/wiki/Tiles">here</a>.</p>
 </p>
       </div>
     </div>
