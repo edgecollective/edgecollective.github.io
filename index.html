@@ -273,6 +273,20 @@
   <div class="post">
     <div class="note-contents">
       <div class="image">
+        <a href="/posts/notes/bluetooth/">
+          <img src="img/placeholder.png"/>
+        </a>
+      </div>
+      <div class="text">
+        <h3><a href="/posts/notes/bluetooth/">Bluetooth experiments</a></h3>
+        <p>Experiments with Bluetooth microcontrollers</p>
+        <em>Updated: 2020-11-15</em>
+      </div>
+    </div>
+  </div>
+  <div class="post">
+    <div class="note-contents">
+      <div class="image">
         <a href="/posts/notes/e_ink/">
           <img src="img/placeholder.png"/>
         </a>
@@ -1756,6 +1770,10 @@ interface = meshtastic.StreamInterface()
 <hr>
 <p>Oct 24 2020</p>
 <p>Created dimensions document for Mothbot ver 0.1, <a href="https://github.com/edgecollective/dippy-slim/blob/master/ver1/mothbot_dim/mothbot_dim.pdf">here</a>.</p>
+<hr>
+<p>NOV 16 2020</p>
+<p>Photo of latest version in action here:</p>
+<p><img src="/img/mothbot/mothbot_am2315.jpg" alt=""></p>
 </p>
       </div>
     </div>
@@ -2658,6 +2676,24 @@ void loop() {
 <p>The tweet broadcasting the tool is <a href="https://twitter.com/jljcolorado/status/1275466006312304640">here</a>.</p>
 <p>The lead author on the paper, an expert on aerosol transmission, is <a href="https://twitter.com/jljcolorado">here</a>.</p>
 <p>Some of the feedback on the paper &amp; tool was from Linsey Marr, the NYTimes-quoted air expert on COVID transmission.  Her Twitter profile is <a href="https://twitter.com/linseymarr">here</a>.</p>
+<p>TODO:</p>
+<p>Need to add buttons!!  For calibration, and other navigation.</p>
+<p>Sensiron SCD30 <a href="https://www.amazon.co.uk/X-SCD30-Air-Quality-Sensors/dp/B07WRJD4TN/ref=sr_1_2?dchild=1&amp;keywords=scd30&amp;qid=1605562830&amp;sr=8-2">available on Amazon UK</a></p>
+<p>NRF52 + LoRa wing setup --</p>
+<ul>
+<li>B / 11 -- RST</li>
+<li>D / 30 -- CS</li>
+<li>E / 27 -- IRQ</li>
+</ul>
+<p><a href="/img/co2/nrf52_pinout.jpg"><img src="/img/co2/nrf52_pinout.jpg" alt=""></a></p>
+<h3>Button</h3>
+<p><img src="/img/valedalama/kicad_button.png" alt=""></p>
+<p><img src="/img/valedalama/button_wiring.png" alt=""></p>
+<p><img src="/img/co2/sparkfun_pushbutton.png" alt=""></p>
+<h3>REV_B -- Added Buttons</h3>
+<p>REVB board 3D rendering:</p>
+<p><img src="/img/co2/co2_revb_3drender.png" alt=""></p>
+<p>Design files are <a href="https://github.com/edgecollective/co2-remote-and-gateway/tree/master/rev_b/atkins">here</a>.</p>
 </p>
       </div>
     </div>
@@ -2983,6 +3019,28 @@ Along with guides for all of this.</p>
 <li>Easy way to set up wifi &amp; bayou on Heltec -- via bluetooth, or via 'router setup' / wifi</li>
 <li>Remote node should send status message whether or not the sensors worked</li>
 </ul>
+<h3>TODO</h3>
+<ul>
+<li>Change Feather send frequency to every 10 minutes</li>
+<li>Change the radio frequency to 868 to match Walt's order</li>
+</ul>
+<hr>
+<p>2020 Nov 17</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><a href="/img/valedalama/temp_valedalama.png"> <img src="/img/valedalama/temp_valedalama.png" alt="fig2"></a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Data coming in from first deploymend of milled board version of the remote node.</td>
+</tr>
+</tbody>
+</table>
+<p>bayou_longer.png</p>
+<h3>Server</h3>
+<p>Pagination strategies with pouchdb -- useful for setting up the server, <a href="https://pouchdb.com/2014/04/14/pagination-strategies-with-pouchdb.html">here</a></p>
 </p>
       </div>
     </div>
@@ -3546,6 +3604,44 @@ const char* farmOS_url = &quot;(YOUR FARMOS URL)&quot;;
 <p>Guide to creating your own tiles <a href="https://wiki.openstreetmap.org/wiki/Creating_your_own_tiles">here</a></p>
 <p>Browsing local tiles guide <a href="https://wiki.openstreetmap.org/wiki/OpenLayers_Local_Tiles_Example">here</a> &lt;---- this seems like a great guide to dive into.</p>
 <p>More basic guide to OSM tiles <a href="https://wiki.openstreetmap.org/wiki/Tiles">here</a>.</p>
+<h3>PCB Antennas for GPS</h3>
+<p>Guide <a href="https://resources.altium.com/p/gps-antennas-in-your-pcb-design-you-won-t-get-lost-again">here</a></p>
+<p>Design considerations for UBlox <a href="GNSS-Antennas_AppNote_UBX-15030289.pdf">here</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><a href="/img/eink/chip_antenna_vs_patch.png"><img src="/img/eink/chip_antenna_vs_patch.png" alt=""></a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Fig 9 from the UBlox <a href="GNSS-Antennas_AppNote_UBX-15030289.pdf">App Note</a> mentioned above.</td>
+</tr>
+</tbody>
+</table>
+<h3>Offline maps</h3>
+<p>Nice discussion and review <a href="https://meshtastic.discourse.group/t/offline-maps-on-meshtastic/137/20">here</a></p>
+</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="post">
+    <div class="project-contents">
+      <div class="text">
+        <h3>Note </h3>
+        <p><hr>
+<p>2020 NOV 16</p>
+<p>NRF52 + LoRa wing setup --</p>
+<ul>
+<li>B / 11 -- RST</li>
+<li>D / 30 -- CS</li>
+<li>E / 27 -- IRQ</li>
+</ul>
+<p>NRF52 Feather:</p>
+<p><a href="/img/co2/nrf52_pinout.jpg"><img src="/img/co2/nrf52_pinout.jpg" alt=""></a></p>
+<p>LoRa Featherwing:</p>
+<p><a href="/img/bluetooth/lora_featherwing.jpg"><img src="/img/bluetooth/lora_featherwing.jpg" alt=""></a></p>
 </p>
       </div>
     </div>
