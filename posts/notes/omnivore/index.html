@@ -18,70 +18,10 @@
     <div id='post-content'>
 
   <a href="/">Edge Collective</a>
-        <h1>E-Ink Map Display Prototyping</h1>
+        <h1>Omnivore</h1>
 
   
-  <hr>
-<p>2020 Nov 09</p>
-<h2>Youtube tutorial by Techiesms</h2>
-<p>Nice <a href="https://www.youtube.com/watch?v=mySnfyyL4i4">tutorial</a> using ESP32 and 4.2 &quot; e-ink display</p>
-<p>Associated library, GxEPD is <a href="https://github.com/ZinggJM/GxEPD">here</a></p>
-<p>Link for project code in the tutorial is <a href="https://github.com/techiesms/E-paper-module-using-ESP32">here</a></p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center"><a href="/img/valedalama/heltec_pinout.png"> <img src="/img/valedalama/heltec_pinout.png" alt="figA2"></a></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">Heltec Wifi LoRa v2 pinout.</td>
-</tr>
-</tbody>
-</table>
-<p>Instructions for Adafruit MicroSD are <a href="https://www.adafruit.com/product/254">here</a>.</p>
-<p>Formatting a microSD tutorial <a href="https://ragnyll.gitlab.io/2018/05/22/format-a-sd-card-to-fat-32linux.html">here</a></p>
-<p>Convert to byte array code <a href="https://www.briandorey.com/post/bitmap-byte-converter-for-e-ink-display">here</a></p>
-<p>converting input images to proper grayscale <a href="https://github.com/sqfmi/badgy/tree/master/examples/grayscale">here</a></p>
-<p>this conversion pipeline looks great -- <a href="https://stackoverflow.com/questions/35797988/converting-images-to-indexed-2-bit-grayscale-bmp">here</a></p>
-<p>which is explained along with other code <a href="https://github.com/yy502/ePaperDisplay">here</a></p>
-<h2>Working code, SD card to itsym0 4.2 in e-ink</h2>
-<p>Code on github is <a href="https://github.com/edgecollective/eink-map/tree/main/GxEPD_SD_itsym0">here</a></p>
-<h2>Converting images</h2>
-<p>Great little tutorial <a href="https://steve.fi/hardware/d1-epaper/">here</a></p>
-<pre><code>convert Lenna.png -monochrome lenna-1.png
-</code></pre>
-<pre><code>convert lenna.png -monochrome -resize 200x320\! lenna4.bmp
-
-</code></pre>
-<h3>Compass</h3>
-<p>Good quality compass offered <a href="https://www.amazon.com/gp/product/B07CK8B3R3/ref=ox_sc_saved_title_1?smid=A2LLNHIZM5ZWNT&amp;psc=1">here</a></p>
-<h3>Map tiles</h3>
-<p>Typical map tile size is 256x265 -- reference <a href="https://wiki.openstreetmap.org/wiki/Tiles#:~:text=Graphical%20Map%20Tiles,-Map%20tiles%20are&amp;text=512%C3%97512%20pixel%20seems,and%20also%20several%20zoom%20levels.">here</a></p>
-<p>Guide to creating your own tiles <a href="https://wiki.openstreetmap.org/wiki/Creating_your_own_tiles">here</a></p>
-<p>Browsing local tiles guide <a href="https://wiki.openstreetmap.org/wiki/OpenLayers_Local_Tiles_Example">here</a> &lt;---- this seems like a great guide to dive into.</p>
-<p>More basic guide to OSM tiles <a href="https://wiki.openstreetmap.org/wiki/Tiles">here</a>.</p>
-<h3>PCB Antennas for GPS</h3>
-<p>Guide <a href="https://resources.altium.com/p/gps-antennas-in-your-pcb-design-you-won-t-get-lost-again">here</a></p>
-<p>Design considerations for UBlox <a href="GNSS-Antennas_AppNote_UBX-15030289.pdf">here</a></p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center"><a href="/img/eink/chip_antenna_vs_patch.png"><img src="/img/eink/chip_antenna_vs_patch.png" alt=""></a></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">Fig 9 from the UBlox <a href="GNSS-Antennas_AppNote_UBX-15030289.pdf">App Note</a> mentioned above.</td>
-</tr>
-</tbody>
-</table>
-<h3>Offline maps</h3>
-<p>Nice discussion and review <a href="https://meshtastic.discourse.group/t/offline-maps-on-meshtastic/137/20">here</a></p>
-<h3>Open Map Tiles</h3>
-<p>Main project description is <a href="https://openmaptiles.com/">here</a>.</p>
-<p>Open map tiles project update is <a href="https://www.maptiler.com/news/2020/05/the-future-of-openmaptiles-project/">here</a></p>
-<p>OMT is compatible with Stamen's Toner -- post <a href="https://www.maptiler.com/news/2020/04/long-live-toner/">here</a>.</p>
+  <p><a href="https://www.analog.com/media/en/technical-documentation/data-sheets/3536fa.pdf">LTC3536 datasheet</a></p>
 
 
     </div>
