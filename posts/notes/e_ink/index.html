@@ -82,6 +82,22 @@
 <p>Main project description is <a href="https://openmaptiles.com/">here</a>.</p>
 <p>Open map tiles project update is <a href="https://www.maptiler.com/news/2020/05/the-future-of-openmaptiles-project/">here</a></p>
 <p>OMT is compatible with Stamen's Toner -- post <a href="https://www.maptiler.com/news/2020/04/long-live-toner/">here</a>.</p>
+<h3>Grayscale / B&amp;W image</h3>
+<p>Thread discussion <a href="https://www.imagemagick.org/discourse-server/viewtopic.php?t=21264">here</a>.</p>
+<p>Doing it without dithering:</p>
+<pre><code>convert bone.png -colorspace gray -threshold 80% -type bilevel -resize 200x320\! bone4.bmp
+</code></pre>
+<h2>Caltopo</h2>
+<p><a href="https://caltopo.com/">Caltopo</a></p>
+<h2>E-Ink setup</h2>
+<p>Link to waveshare guide for 4.2 in e-ink <a href="https://www.waveshare.com/wiki/4.2inch_e-Paper_Module">here</a></p>
+<p>Datasheet is <a href="https://www.waveshare.com/w/upload/6/6a/4.2inch-e-paper-specification.pdf">here</a>.</p>
+<h2>ESP32 Low-power modes</h2>
+<p>There's a nice description <a href="https://lastminuteengineers.com/esp32-sleep-modes-power-consumption/">here</a>.</p>
+<p>Tutorial on using ESP32 deep sleep <a href="https://lastminuteengineers.com/esp32-deep-sleep-wakeup-sources/">here</a>.</p>
+<p>In particular, wakeup from external pin <a href="https://lastminuteengineers.com/esp32-deep-sleep-wakeup-sources/#ext0-external-wakeup-source">here</a>.</p>
+<h2>Low-power ESP32: E-Pulse</h2>
+<p>Project [here](https://thingpulse.com/product/epulse-low-power-esp32-development-board/#:~:text=ePulse%2C%20the%20low%20power%20ESP32,and%2035uA%20(at%2012V).</p>
 
 
     </div>

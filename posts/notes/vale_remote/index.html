@@ -250,6 +250,43 @@ Along with guides for all of this.</p>
 <p>AM2315 temp + humidity sensor tech details:</p>
 <p><a href="/img/valedalama/am2315_details.png"><img src="/img/valedalama/am2315_details.png" alt=""></a></p>
 <p>AM2315 <a href="https://cdn-shop.adafruit.com/datasheets/AM2315.pdf">datasheet</a></p>
+<h2>Architecture Idea</h2>
+<p>Gateway is Heltec.  Can do AP wifi credentials and FarmOS / Bayou configuration.</p>
+<p>Remote node is Feather / Mothbot.  Has a DIP switch to modify the node ID.</p>
+<p>Both might allow for serial configuration, or OTA programming (need to add SPI Memory to Mothbot if so).</p>
+<h3>Battery holders</h3>
+<p>3XAA holder <a href="https://www.amazon.com/LampVPath-Battery-Holder-Leads-Wires/dp/B07WRQ3XTJ/ref=sr_1_7?dchild=1&amp;keywords=3XAA+holder&amp;qid=1605969565&amp;s=electronics&amp;sr=1-7">here</a>.</p>
+<p>Guide to battery holders and mounts <a href="https://uk.rs-online.com/web/generalDisplay.html?id=ideas-and-advice/battery-holders-guide">here</a>.</p>
+<h3>Adafruit guide to using the battery on the Feather</h3>
+<p>Do's and don't's, <a href="https://learn.adafruit.com/adafruit-feather-m0-adalogger/power-management">here</a>.</p>
+<p>What if we put use 3.3V regulator and power the Feather this way?  Try this experiment out at home.  Turning a Feather into a lower-power device would be a win.</p>
+<p>Breakout boards for:</p>
+<ul>
+<li>Feather M0 LoRa</li>
+<li>Moteino , and Moteino M0</li>
+</ul>
+<p>Using: dip switch + MCP1700</p>
+<hr>
+<p>2020 NOV 22</p>
+<p>Looks like remote node (Feather) is requiring reset periodically (every few days) -- doesn't appear to be a battery issue.  Might be in the code -- e.g. if it doesn't read from sensor successfully.</p>
+<h3>ESP32 Watchdog timer</h3>
+<p>Guide <a href="https://iotassistant.io/esp32/enable-hardware-watchdog-timer-esp32-arduino-ide/">here</a>.</p>
+<p>Also, working code <a href="https://medium.com/@supotsaeea/esp32-reboot-system-when-watchdog-timeout-4f3536bf17ef">here</a>. &lt;--- this looks like the proper setup.  Great!</p>
+<h3>SAMD21 Watchdog timer</h3>
+<p>There's a discussion <a href="https://eugeniopace.org/arduino/resiliency/2020/05/11/Using-a-Watchdog-to-fix-all-issues.html">here</a> &lt;&lt;-- this is a GREAT discussion.</p>
+<p>Note that he's also got an e-ink project running, <a href="https://eugeniopace.org/arduino/epaper/eink/stoicism/2020/01/18/A-Display-of-Stoic-Quotes-using-Arduino-and-e-Paper-Display.html">here</a>.</p>
+<p>Getting sleepy dog to work, <a href="https://github.com/adafruit/Adafruit_SleepyDog/issues/9">here</a>.</p>
+<p>Another blog post on it <a href="https://bitknitting.wordpress.com/2016/08/02/backyard-automatic-watering-using-a-featherarduino/">here</a>.</p>
+<h3>Powerdown Sleep</h3>
+<p>Nice post from Tony D, <a href="https://learn.adafruit.com/low-power-wifi-datalogging/power-down-sleep">here</a>.</p>
+<h3>ArduBadge system for Arduino libraries</h3>
+<p>Check out some of the libraries <a href="https://www.ardu-badge.com/">here</a>.</p>
+<h3>Overview of system architecture</h3>
+<ul>
+<li>Remote</li>
+<li>Gateway</li>
+<li>Server</li>
+</ul>
 
 
     </div>

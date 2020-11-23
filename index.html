@@ -2009,6 +2009,25 @@ interface = meshtastic.StreamInterface()
 </tr>
 </tbody>
 </table>
+<h3>General Heltec guides</h3>
+<p>Great guide to Heltec, <a href="https://randomnerdtutorials.com/esp32-access-point-ap-web-server/">here</a></p>
+<h3>Config Portal setup for wifi on ESP32</h3>
+<p>WiFi Manager library <a href="https://github.com/khoih-prog/ESP_WiFiManager">here</a></p>
+<p>I think the relevant section is <a href="https://github.com/khoih-prog/ESP_WiFiManager#howto-open-config-portal">here</a></p>
+<p>Nice guide for Config Portal <a href="https://www.instructables.com/ESP8266-and-ESP32-With-WiFiManager/">here</a></p>
+<ul>
+<li>This library <a href="https://github.com/zhouhan0126/WIFIMANAGER-ESP32">here</a> is the relevant one in the above guide.</li>
+</ul>
+<p>Nice set of utilities around AutoConnect and etc for ESP32 by 'hieromon', <a href="https://hieromon.github.io/AutoConnect/index.html">here</a></p>
+<p>Maybe <a href="https://github.com/Hieromon/AutoConnect">this</a>, by 'Hieromon' is the latest lib &lt;---- yes, this is it!!</p>
+<p>Getting started page <a href="https://hieromon.github.io/AutoConnect/gettingstarted.html">here</a> &lt;---- Great place to start with autoconnect.</p>
+<h3>Working Autoconfig code</h3>
+<p>This is the code that I took from that link just above, and I put it <a href="https://github.com/edgecollective/heltec-ota/tree/main/autoconfig_getting_started">here</a> And it worked!</p>
+<p><img src="/img/heltec/autoconnect_worked.png" alt=""></p>
+<p>Easiest to install AutoConnect via ArduinoIDE -- it then prompts for other necessary libraries.</p>
+<p>Can use AutoConnect 'Credential' example to erase currently-saved WiFi credentials.</p>
+<h3>Embedding autoconfig</h3>
+<p>How to embed Autoconnect, <a href="https://hieromon.github.io/AutoConnect/howtoembed.html">here</a>.</p>
 </p>
       </div>
     </div>
@@ -2776,6 +2795,10 @@ void loop() {
 <h3>Moteino M0</h3>
 <p>Product page <a href="https://lowpowerlab.com/shop/product/184">here</a></p>
 <p>Product guide <a href="https://lowpowerlab.com/guide/moteino/moteinom0/">here</a></p>
+<h3>IQAir monitor</h3>
+<p>Link on Amazon <a href="https://www.amazon.com/dp/B0784TZFRW/ref=syn_sp_syn_da_desktop_2?psc=1&amp;tag=dradisplay-20&amp;ascsubtag=addfab9c56bb6f407e973154a0adf08a_CT&amp;spLa=ZW5jcnlwdGVkUXVhbGlmaWVyPUEzVFJTSjBDMkJHQlFVJmVuY3J5cHRlZElkPUEwNDIxNTc0Mlc2M1A3VlZHOE05MSZlbmNyeXB0ZWRBZElkPUEwNDA5ODE3MzExTVdEQUZIMjFXWCZ3aWRnZXROYW1lPXNwX3N5bl9kYV9kZXNrdG9wJmFjdGlvbj1jbGlja1JlZGlyZWN0JmRvTm90TG9nQ2xpY2s9dHJ1ZQ==">here</a>.</p>
+<h3>GZair monitor for CO2</h3>
+<p>Link on Amazon <a href="https://www.amazon.com/dp/B0861777SL/ref=syn_sd_onsite_desktop_96?psc=1&amp;uh_it=831b79d927acc84ecbf32f6df054d07c_CT&amp;spLa=ZW5jcnlwdGVkUXVhbGlmaWVyPUEzVTRMWFREU1pUUzY2JmVuY3J5cHRlZElkPUEwODkxNTcyMzZCWFc3OFZISDdWJmVuY3J5cHRlZEFkSWQ9QTAwNTk2NzcyUVJRR0NaVU80M09ZJndpZGdldE5hbWU9c2Rfb25zaXRlX2Rlc2t0b3AmYWN0aW9uPWNsaWNrUmVkaXJlY3QmZG9Ob3RMb2dDbGljaz10cnVl">here</a>.</p>
 </p>
       </div>
     </div>
@@ -3137,6 +3160,43 @@ Along with guides for all of this.</p>
 <p>AM2315 temp + humidity sensor tech details:</p>
 <p><a href="/img/valedalama/am2315_details.png"><img src="/img/valedalama/am2315_details.png" alt=""></a></p>
 <p>AM2315 <a href="https://cdn-shop.adafruit.com/datasheets/AM2315.pdf">datasheet</a></p>
+<h2>Architecture Idea</h2>
+<p>Gateway is Heltec.  Can do AP wifi credentials and FarmOS / Bayou configuration.</p>
+<p>Remote node is Feather / Mothbot.  Has a DIP switch to modify the node ID.</p>
+<p>Both might allow for serial configuration, or OTA programming (need to add SPI Memory to Mothbot if so).</p>
+<h3>Battery holders</h3>
+<p>3XAA holder <a href="https://www.amazon.com/LampVPath-Battery-Holder-Leads-Wires/dp/B07WRQ3XTJ/ref=sr_1_7?dchild=1&amp;keywords=3XAA+holder&amp;qid=1605969565&amp;s=electronics&amp;sr=1-7">here</a>.</p>
+<p>Guide to battery holders and mounts <a href="https://uk.rs-online.com/web/generalDisplay.html?id=ideas-and-advice/battery-holders-guide">here</a>.</p>
+<h3>Adafruit guide to using the battery on the Feather</h3>
+<p>Do's and don't's, <a href="https://learn.adafruit.com/adafruit-feather-m0-adalogger/power-management">here</a>.</p>
+<p>What if we put use 3.3V regulator and power the Feather this way?  Try this experiment out at home.  Turning a Feather into a lower-power device would be a win.</p>
+<p>Breakout boards for:</p>
+<ul>
+<li>Feather M0 LoRa</li>
+<li>Moteino , and Moteino M0</li>
+</ul>
+<p>Using: dip switch + MCP1700</p>
+<hr>
+<p>2020 NOV 22</p>
+<p>Looks like remote node (Feather) is requiring reset periodically (every few days) -- doesn't appear to be a battery issue.  Might be in the code -- e.g. if it doesn't read from sensor successfully.</p>
+<h3>ESP32 Watchdog timer</h3>
+<p>Guide <a href="https://iotassistant.io/esp32/enable-hardware-watchdog-timer-esp32-arduino-ide/">here</a>.</p>
+<p>Also, working code <a href="https://medium.com/@supotsaeea/esp32-reboot-system-when-watchdog-timeout-4f3536bf17ef">here</a>. &lt;--- this looks like the proper setup.  Great!</p>
+<h3>SAMD21 Watchdog timer</h3>
+<p>There's a discussion <a href="https://eugeniopace.org/arduino/resiliency/2020/05/11/Using-a-Watchdog-to-fix-all-issues.html">here</a> &lt;&lt;-- this is a GREAT discussion.</p>
+<p>Note that he's also got an e-ink project running, <a href="https://eugeniopace.org/arduino/epaper/eink/stoicism/2020/01/18/A-Display-of-Stoic-Quotes-using-Arduino-and-e-Paper-Display.html">here</a>.</p>
+<p>Getting sleepy dog to work, <a href="https://github.com/adafruit/Adafruit_SleepyDog/issues/9">here</a>.</p>
+<p>Another blog post on it <a href="https://bitknitting.wordpress.com/2016/08/02/backyard-automatic-watering-using-a-featherarduino/">here</a>.</p>
+<h3>Powerdown Sleep</h3>
+<p>Nice post from Tony D, <a href="https://learn.adafruit.com/low-power-wifi-datalogging/power-down-sleep">here</a>.</p>
+<h3>ArduBadge system for Arduino libraries</h3>
+<p>Check out some of the libraries <a href="https://www.ardu-badge.com/">here</a>.</p>
+<h3>Overview of system architecture</h3>
+<ul>
+<li>Remote</li>
+<li>Gateway</li>
+<li>Server</li>
+</ul>
 </p>
       </div>
     </div>
@@ -3721,6 +3781,22 @@ const char* farmOS_url = &quot;(YOUR FARMOS URL)&quot;;
 <p>Main project description is <a href="https://openmaptiles.com/">here</a>.</p>
 <p>Open map tiles project update is <a href="https://www.maptiler.com/news/2020/05/the-future-of-openmaptiles-project/">here</a></p>
 <p>OMT is compatible with Stamen's Toner -- post <a href="https://www.maptiler.com/news/2020/04/long-live-toner/">here</a>.</p>
+<h3>Grayscale / B&amp;W image</h3>
+<p>Thread discussion <a href="https://www.imagemagick.org/discourse-server/viewtopic.php?t=21264">here</a>.</p>
+<p>Doing it without dithering:</p>
+<pre><code>convert bone.png -colorspace gray -threshold 80% -type bilevel -resize 200x320\! bone4.bmp
+</code></pre>
+<h2>Caltopo</h2>
+<p><a href="https://caltopo.com/">Caltopo</a></p>
+<h2>E-Ink setup</h2>
+<p>Link to waveshare guide for 4.2 in e-ink <a href="https://www.waveshare.com/wiki/4.2inch_e-Paper_Module">here</a></p>
+<p>Datasheet is <a href="https://www.waveshare.com/w/upload/6/6a/4.2inch-e-paper-specification.pdf">here</a>.</p>
+<h2>ESP32 Low-power modes</h2>
+<p>There's a nice description <a href="https://lastminuteengineers.com/esp32-sleep-modes-power-consumption/">here</a>.</p>
+<p>Tutorial on using ESP32 deep sleep <a href="https://lastminuteengineers.com/esp32-deep-sleep-wakeup-sources/">here</a>.</p>
+<p>In particular, wakeup from external pin <a href="https://lastminuteengineers.com/esp32-deep-sleep-wakeup-sources/#ext0-external-wakeup-source">here</a>.</p>
+<h2>Low-power ESP32: E-Pulse</h2>
+<p>Project [here](https://thingpulse.com/product/epulse-low-power-esp32-development-board/#:~:text=ePulse%2C%20the%20low%20power%20ESP32,and%2035uA%20(at%2012V).</p>
 </p>
       </div>
     </div>
