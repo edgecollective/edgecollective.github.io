@@ -3187,6 +3187,14 @@ Along with guides for all of this.</p>
 <p>Note that he's also got an e-ink project running, <a href="https://eugeniopace.org/arduino/epaper/eink/stoicism/2020/01/18/A-Display-of-Stoic-Quotes-using-Arduino-and-e-Paper-Display.html">here</a>.</p>
 <p>Getting sleepy dog to work, <a href="https://github.com/adafruit/Adafruit_SleepyDog/issues/9">here</a>.</p>
 <p>Another blog post on it <a href="https://bitknitting.wordpress.com/2016/08/02/backyard-automatic-watering-using-a-featherarduino/">here</a>.</p>
+<h3>AVR Watchdog timers</h3>
+<p>Another article on the watchdog timer for AVRs is <a href="https://create.arduino.cc/projecthub/rafitc/what-is-watchdog-timer-fffe20">here</a>.</p>
+<p>And yet another nice article for WDTs in AVRs is <a href="https://circuits4you.com/2018/01/24/tutorial-on-arduino-watchdog-timer-setup/">here</a>.</p>
+<p>Good point made in <a href="https://www.instructables.com/The-Arduino-Hang-Guardian-Arduino-Watchdog-Timer-T/">this tutorial</a>:</p>
+<blockquote>
+<p>One possible issue with the watchdog timer, depending on the bootloader of your Arduino is that if the watchdog timer value is too low and the bootloader does not reset the timer when uploading new code, you may end up damaging your Arduino board in a way that it will always be stuck in the boot phase. The bootloader will try to start, but the timer will keep resetting the board, never allowing it to properly start. To prevent issues like this, make sure to always use threshold intervals of 2 seconds or more.</p>
+</blockquote>
+<p>Another good description by Electronic Wings, <a href="https://www.electronicwings.com/arduino/watchdog-in-arduino">here</a>.</p>
 <h3>Powerdown Sleep</h3>
 <p>Nice post from Tony D, <a href="https://learn.adafruit.com/low-power-wifi-datalogging/power-down-sleep">here</a>.</p>
 <h3>ArduBadge system for Arduino libraries</h3>
@@ -3197,6 +3205,32 @@ Along with guides for all of this.</p>
 <li>Gateway</li>
 <li>Server</li>
 </ul>
+<h3>Remote access to Pis</h3>
+<ul>
+<li>TeamViewer</li>
+<li>RealVNC</li>
+<li>UV4L.  Discussion <a href="https://www.raspberrypi.org/forums/viewtopic.php?t=177028#p1128706">here</a>.  RPI videoconference setup <a href="https://www.linux-projects.org/download/rpi-videoconference-os-image/">here</a>.</li>
+</ul>
+<p>Indeed, this looks like cool software -- browser-based.  Check it <a href="https://www.linux-projects.org/uv4l/tutorials/rpi-webapp-screen-audio-keyboard-sharing/">here</a>.</p>
+<p>Ah, a better, RPi-specific set of options is <a href="https://raspberrytips.com/remote-desktop-raspberry-pi/">here</a>.</p>
+<p>Jim Spark's guide to port forwarding / SSH with Pis  <a href="https://medium.com/@jimip6c12/raspberry-pi-dummy-tutorial-on-port-forwarding-and-ssh-to-pi-remotely-d4fbc2ed3bdf">here</a>.</p>
+<p>He says it's very dangerous to do; and that cloud proxy is better. His guide <a href="https://medium.com/@jimip6c12/raspberry-pi-tutorial-on-the-most-secure-way-to-connect-to-your-pi-cloud-proxy-server-11867ddaac95">here</a>.</p>
+<p>pre-burning an image on the pi from remote.it, <a href="https://remote.it/blog/how-to-use-a-raspberry-pi-to-remotely-access-your-office-network/">here</a>.</p>
+<h4>Copy-paste in RealVNC</h4>
+<p>Descriptive link is <a href="https://help.realvnc.com/hc/en-us/articles/360002253738-Copying-and-Pasting-Text">here</a>.</p>
+<h3>Remote Access via hyperssh</h3>
+<p>Diff of dwblair's hyperssh and mafintosh's versions, <a href="https://github.com/mafintosh/hyperssh/compare/master...dwblair:master">here</a>.</p>
+<hr>
+<p>2020 NOV 23</p>
+<p>REV_A of the 'greenhouse' system uses the following code:</p>
+<ul>
+<li>remote: featherm0_am2315_lora_sleep</li>
+<li>gateway: heltec_wifi_lora_bayou_farmos</li>
+</ul>
+<p>Going to try a watchdog timer on the feather ...</p>
+<p>Implemented very basic watchdog <a href="https://github.com/edgecollective/valedalama/tree/master/greenhouse/REV_A/remote/feather_firmware/featherm0_am2315_lora_watchdog">here</a>.</p>
+<p><img src="/img/valedalama/watchdog_attempt.png" alt=""></p>
+<p>Data <a href="http://159.65.226.222:3000/drives/3a28c09fa93ccf15513a055984148b02b0709f545c12013aaf25252f73626f62">here</a>.</p>
 </p>
       </div>
     </div>
@@ -3795,8 +3829,15 @@ const char* farmOS_url = &quot;(YOUR FARMOS URL)&quot;;
 <p>There's a nice description <a href="https://lastminuteengineers.com/esp32-sleep-modes-power-consumption/">here</a>.</p>
 <p>Tutorial on using ESP32 deep sleep <a href="https://lastminuteengineers.com/esp32-deep-sleep-wakeup-sources/">here</a>.</p>
 <p>In particular, wakeup from external pin <a href="https://lastminuteengineers.com/esp32-deep-sleep-wakeup-sources/#ext0-external-wakeup-source">here</a>.</p>
-<h2>Low-power ESP32: E-Pulse</h2>
-<p>Project [here](https://thingpulse.com/product/epulse-low-power-esp32-development-board/#:~:text=ePulse%2C%20the%20low%20power%20ESP32,and%2035uA%20(at%2012V).</p>
+<h2>Low-power ESP32:</h2>
+<ul>
+<li>
+<p>TinyPic project is <a href="https://www.tinypico.com/">here</a>, on sale at Amazon <a href="https://www.amazon.com/gp/product/B07ZZKZDGQ/ref=ppx_yo_dt_b_asin_title_o00_s00?ie=UTF8&amp;psc=1">here</a></p>
+</li>
+<li>
+<p>E-Pulse project is [here](https://thingpulse.com/product/epulse-low-power-esp32-development-board/#:~:text=ePulse%2C%20the%20low%20power%20ESP32,and%2035uA%20(at%2012V).</p>
+</li>
+</ul>
 </p>
       </div>
     </div>
