@@ -40,6 +40,7 @@ Basic captioned image formatting structure:
 <li><a href="#gatewaysetup">Description of remote node + gateway setup</a>.</li>
 <li><a href="#jimenez">Peng and Jimenez paper on CO2 and COVID infection probability</a></li>
 <li><a href="#rev_a_build">Rev_A build of Feather-based SCD30 board</a></li>
+<li><a href="#calibration">Thoughts on calibration</a></li>
 </ul>
 <hr>
 <p>2020 SEPT 29</p>
@@ -857,7 +858,8 @@ void loop() {
 </ul>
 <p>This fluctuation is due to pressure inside the apartment, when the HVAC system turns on?  Now worth attempting to compensate with external pressure sensor.</p>
 <p><strong>Addendum</strong>.  I've now replaced the above graphs so that we can see the readings from 0430 to 0530, during which time I sat close to sensor.  Note that the temperature rose less than during some of the nightly spikes, but CO2 rose more, as one might expect given my proximity to the sensor. This perhaps leads to more confidence in the temperature-compensation of the SCD30.</p>
-<p><strong>Thoughts on calibration, and baselines.</strong>  The key metric in the 2020 paper by <a href="#jimenez">Peng et al</a> is 'PPM above baseline'.  So, perhaps absolute calibration isn't really an important metric, here.  The more interesting thing would be to establish a 'baseline', algorithmically, display it graphically, and allow the user to adjust based on their interpretation.</p>
+<p><a name="calibration"></a></p>
+<p><strong>Thoughts on calibration, and baselines.</strong>  The key metric in the 2020 paper by <a href="#jimenez">Peng et al</a> is 'PPM above baseline'.  So, perhaps absolute calibration isn't really an important metric, here; more useful and interesting might be to establish a 'baseline', algorithmically; display it graphically; and allow the user to adjust based on their interpretation.</p>
 <p>Key passage from page one of <a href="#jimenez">Peng et al</a>:</p>
 <blockquote>
 <p>Indoor CO2 has been suggested as a practical proxy of respiratory infectious disease transmission
