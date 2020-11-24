@@ -21,25 +21,29 @@
         <h1>DIY CO2 Monitoring</h1>
 
   
-  <h2>TODO</h2>
-<p>14 OCT 2020</p>
-<ul>
-<li>set up / test heltec gateway again to send to FarmOS [X]</li>
-<li>also send to custom server on DO;</li>
-<li>get Z19 up and running [X]</li>
-<li>turn off autocalibration on the Z19 []</li>
-<li>turn off autocalibration on the K30 []</li>
-</ul>
+  <!--
+
+Basic captioned image formatting structure:
+
+| [![](/img/[FOLDER]/[FILENAME])](/img/[FOLDER]/[FILENAME]) |
+|:--:|
+| [CAPTION] |
+
+-->
+<hr>
+<h2>Background</h2>
+<p>The following is a development notebook for constructing a DIY CO2 monitor.</p>
 <h2>Table of contents</h2>
+<p>More or less random bookmarks into the notes file, for reference:</p>
 <ul>
 <li><a href="#feather">Feather Hookup Guide for K30</a></li>
+<li><a href="#gatewaysetup">Description of remote node + gateway setup</a>.</li>
 <li><a href="#jimenez">Peng and Jimenez paper on CO2 and COVID infection probability</a></li>
 <li><a href="#rev_a_build">Rev_A build of Feather-based SCD30 board</a></li>
 </ul>
-<h2>Background</h2>
-<p>Below is a development notebook for constructing a DIY CO2 monitor.</p>
-<p>Click <a href="#gatewaysetup">here</a> to jump to the latest remote CO2 node + gateway setup.</p>
-<h2>CO2METER.COM K30</h2>
+<hr>
+<p>2020 SEPT 29</p>
+<h2>Experiments with K30 from CO2METER.com</h2>
 <p><a href="https://www.co2meter.com/products/k-30-co2-sensor-module">Online description of K30</a></p>
 <p><a href="http://co2meters.com/Documentation/Datasheets/DS_SE_0118_CM_0024_Revised9%20(1).pdf">K30 Datasheet</a></p>
 <p>Needs 5V power minimum (actually, looks like it's best run at 6-9V); meanwhile, <strong>Logic levels for the UART are at 3.3V</strong>.</p>
@@ -234,7 +238,6 @@
 <blockquote>
 <p>Until recently, the vast majority of growers in the U.S. did not measure CO2 or use it to enrich their greenhouses. However, during the winter, CO2 levels can quickly become limiting in unventilated greenhouses full of plants on cold and sunny days. Over the past 10 years, we have also seen greenhouse growers seal up their greenhouses in an effort to control their heating bills during the winter. Other growers, especially in northern latitudes, have invested in supplemental lighting because of the numerous benefits, from improved quality and yields to reduced production time. An apparent result of tightly sealing the greenhouse is increased humidity and condensation. A not-so-apparent result of reducing air infiltration is a reduction of CO2 levels within the greenhouse below ambient levels found outdoors.</p>
 </blockquote>
-<h2>Ongoing work / research</h2>
 <hr>
 <p>Oct 9 2020:</p>
 <p>Maybe a good configuraiton is to have the sensor powered via a 7.4V rechargeable lith-ion, while the micro attached has its separate battery voltage?</p>
@@ -353,8 +356,9 @@ Another option</p>
 <p><a href="http://www.yoctopuce.com/EN/article/how-to-calibrate-a-co2-sensor">This article</a> mentions a technique, using their library.</p>
 <h2>CO2 with custom server</h2>
 <p>(TODO: set up using chappy-server as a model?)</p>
-<h2>Ongoing Work Log</h2>
-<p>As Of 15 OCT 2020 10:42 AM -- K30 is autocalibrating, Z19 is not.</p>
+<hr>
+<p>15 OCT 2020 10:42 AM</p>
+<p>K30 is autocalibrating, Z19 is not.</p>
 <p>Ah -- looks like the K30 also can give temp, and RH!  Cf the example <a href="https://gist.github.com/pkourany/53415d7f0c354a6d1e05">here</a>.</p>
 <p>How to read the K30 via I2c app note <a href="http://www.co2meters.com/Documentation/AppNotes/AN102-K30-Sensor-Arduino-I2C.pdf">here</a>.</p>
 <p>Ahhh here is a library for multiple params by CO2meter for the K30 -- <a href="http://www.co2meters.com/Documentation/AppNotes/AN126-K3x-sensor-arduino-uart.pdf">boom</a>.</p>
@@ -784,14 +788,28 @@ void loop() {
 <p>Link on Amazon <a href="https://www.amazon.com/dp/B0784TZFRW/ref=syn_sp_syn_da_desktop_2?psc=1&amp;tag=dradisplay-20&amp;ascsubtag=addfab9c56bb6f407e973154a0adf08a_CT&amp;spLa=ZW5jcnlwdGVkUXVhbGlmaWVyPUEzVFJTSjBDMkJHQlFVJmVuY3J5cHRlZElkPUEwNDIxNTc0Mlc2M1A3VlZHOE05MSZlbmNyeXB0ZWRBZElkPUEwNDA5ODE3MzExTVdEQUZIMjFXWCZ3aWRnZXROYW1lPXNwX3N5bl9kYV9kZXNrdG9wJmFjdGlvbj1jbGlja1JlZGlyZWN0JmRvTm90TG9nQ2xpY2s9dHJ1ZQ==">here</a>.</p>
 <h3>GZair monitor for CO2</h3>
 <p>Link on Amazon <a href="https://www.amazon.com/dp/B0861777SL/ref=syn_sd_onsite_desktop_96?psc=1&amp;uh_it=831b79d927acc84ecbf32f6df054d07c_CT&amp;spLa=ZW5jcnlwdGVkUXVhbGlmaWVyPUEzVTRMWFREU1pUUzY2JmVuY3J5cHRlZElkPUEwODkxNTcyMzZCWFc3OFZISDdWJmVuY3J5cHRlZEFkSWQ9QTAwNTk2NzcyUVJRR0NaVU80M09ZJndpZGdldE5hbWU9c2Rfb25zaXRlX2Rlc2t0b3AmYWN0aW9uPWNsaWNrUmVkaXJlY3QmZG9Ob3RMb2dDbGljaz10cnVl">here</a>.</p>
+<hr>
+<p>2020 NOV 23</p>
 <h3><a name="rev_a_build"></a>Carbon Dioxide Board Rev_A</h3>
+<p>REV_A Boards have arrived in the mail.  Assembly and initial code tests!</p>
 <p>Sparkfun SCD30 i2c library is <a href="https://github.com/sparkfun/SparkFun_SCD30_Arduino_Library">here</a>.</p>
 <p>First version with display, lora, screen, scd30 is <a href="https://github.com/edgecollective/co2-remote-and-gateway/tree/master/rev_a/firmware/feather_m0_scd30_batt_lora_display">here</a>.</p>
 <p><img src="/img/co2/rev_a_proto.jpeg" alt=""></p>
 <p>Associated gateway code is <a href="https://github.com/edgecollective/co2-remote-and-gateway/tree/master/rev_a/firmware/gateway/heltec_wifi_lora_bayou_farmos">here</a>.</p>
 <p>Online data is currently posting <a href="http://159.65.226.222:3000/drives/112a7b2a9d08f492a6736aba33de90c519b7966158f6a2682f9db5eb122c51de">here</a>.</p>
-<p><img src="/img/co2/rev_a_data.png" alt=""></p>
-<p>Quick impression -- seems like we're going to want to average readings over a minute or or more to get some stable value when the CO2 is low -- it fluctuates a lot.  Though, that could've been the wind, too.  Might need to suggest that people get out of wind if they calibrate outside.  Or, to tell folks to wait til the reading stabilizes before hitting calibrate.  Or even have this happen automatically.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><a href="/img/co2/rev_a_data.png"><img src="/img/co2/rev_a_data.png" alt=""></a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Quick indoor test of REV_A board.</td>
+</tr>
+</tbody>
+</table>
+<p>Also took sensor outside for a few minutes.  It fluctuated a lot.  Seems like we're going to want to average readings over a minute or or more to get some stable value when the CO2 is low.  Might have been due to wind. Might need to suggest that people get out of wind if they calibrate outside.  Or, to tell folks to wait til the reading stabilizes before hitting calibrate.  Or even have this happen automatically.</p>
 <h3>TODO</h3>
 <ul>
 <li>Add watchdog to remote node and to gateway</li>
@@ -800,15 +818,6 @@ void loop() {
 <li>dip switch to set node ID</li>
 </ul>
 <hr>
-<!--
-
-Basic captioned image formatting structure:
-
-| [![](/img/[FOLDER]/[FILENAME])](/img/[FOLDER]/[FILENAME]) |
-|:--:|
-| [CAPTION] |
-
--->
 <p>2020 NOV 24</p>
 <p>Went to bed NOV 23 at around 10:30 PM; woke up and started using computer right next to CO2 sensor at 4:30 AM. Generated these graphs as of 4:30 AM:</p>
 <table>
