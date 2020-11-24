@@ -40,7 +40,7 @@ Basic captioned image formatting structure:
 <li><a href="#gatewaysetup">Description of remote node + gateway setup</a>.</li>
 <li><a href="#jimenez">Peng and Jimenez paper on CO2 and COVID infection probability</a></li>
 <li><a href="#rev_a_build">Rev_A build of Feather-based SCD30 board</a></li>
-<li><a href="#calibration">Thoughts on calibration</a></li>
+<li><a href="#calibration">Thoughts on calibration as of 24 NOV 2020</a></li>
 </ul>
 <hr>
 <p>2020 SEPT 29</p>
@@ -868,6 +868,41 @@ Since background (ambient) CO2 level is stable and indoor excess CO2 is usually 
 human exhalation, measurements of indoor CO2 concentration by low-cost CO2 sensors can
 often be good indicators of infection risk and suitable for mass deployment (9, 10).</p>
 </blockquote>
+<h3>Use of microphones to detect ambient activity</h3>
+<ul>
+<li>Electret MAX4466 (manual gain) listed on Adafruit, <a href="https://www.adafruit.com/product/1063">here</a>.</li>
+<li>Electret MAX9814 (auto gain) listed on Adafruit, <a href="https://www.adafruit.com/product/1713">here</a>.</li>
+<li>Adafruit Silicon MEMS Microphone Breakout - SPW2430, <a href="https://www.adafruit.com/product/2716">here</a></li>
+</ul>
+<p>Nice <a href="https://learn.adafruit.com/adafruit-microphone-amplifier-breakout/overview">tutorial</a> on measuring sound levels using the MAX4466.  This might be the way to go if we're going to use ambient audio data to determine in-room activity.</p>
+<p>Tutorial on using the <a href="https://learn.adafruit.com/adafruit-agc-electret-microphone-amplifier-max9814">auto-gain</a> mic, which might be even better ...</p>
+<blockquote>
+<p>This fancy microphone amplifier module is a step above the rest, with built in automatic gain control. The AGC in the amplifier means that nearby 'loud' sounds will be quieted so they don't overwhelm &amp; 'clip' the amplifier, and even quiet, far-away sounds will be amplified. This amplifier is great for when you want to record or detect audio in a setting where levels change and you don't want to have to tweak the amplifier gain all the time.</p>
+</blockquote>
+<p><strong>Thoughts.</strong>  Using a simple, auto-amplified microphone in this context seems useful.  The raw data can be presented online, and used in an attempt to discern baseline thresholds.  No algorithm needs to be applied at first; or, the user community can supply the algorithm.</p>
+<p>This leads to a sensor in the following configuration:</p>
+<ul>
+<li>ESP32 ($3)</li>
+<li>USB chip ($2)</li>
+<li>Lithium ion charging ($1)</li>
+<li>OLED display (larger if possible) ($3)</li>
+<li>microphone (with switch to turn power off) ($2)</li>
+<li>SCD30 ($50)</li>
+<li>BMP388 or 390 ($5)</li>
+<li>a button or two ($2)</li>
+<li>PCB ($4)</li>
+</ul>
+<p>Total: $72</p>
+<p>This can be designed as a separate board, or accomplished via, e.g.:</p>
+<ul>
+<li>ESP32 + OLED + USB (Heltec) ($20)</li>
+<li>microphone (adafruit MAX9814) ($8)</li>
+<li>SCD30 ($50)</li>
+<li>pressure sensor (adafruit BMP388) ($10)</li>
+<li>PCB ($10)</li>
+</ul>
+<p>Total: $98</p>
+<p>Likely best to produce this latter version immediately, and then take time, if available, to make the inexpensive version.</p>
 
 
     </div>
