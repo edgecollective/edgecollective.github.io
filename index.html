@@ -287,6 +287,34 @@ And if you'd like to help support our podcast, you can now do so via [Patreon](h
   <div class="post">
     <div class="note-contents">
       <div class="image">
+        <a href="/posts/notes/depth_sensing/">
+          <img src="/img/placeholder.png"/>
+        </a>
+      </div>
+      <div class="text">
+        <h3><a href="/posts/notes/depth_sensing/">Vale da Lama Greenhouse Monitoring</a></h3>
+        <p>Experiments in depth sensing</p>
+        <em>Updated: 2020-11-25</em>
+      </div>
+    </div>
+  </div>
+  <div class="post">
+    <div class="note-contents">
+      <div class="image">
+        <a href="/posts/notes/compressed_air/">
+          <img src="/img/eink/map_proto.jpg"/>
+        </a>
+      </div>
+      <div class="text">
+        <h3><a href="/posts/notes/compressed_air/">Compressed air energy storage</a></h3>
+        <p>Reserach into compressed air energy storage</p>
+        <em>Updated: 2020-11-25</em>
+      </div>
+    </div>
+  </div>
+  <div class="post">
+    <div class="note-contents">
+      <div class="image">
         <a href="/posts/notes/omnivore/">
           <img src="img/placeholder.png"/>
         </a>
@@ -2040,17 +2068,7 @@ interface = meshtastic.StreamInterface()
     <div class="project-contents">
       <div class="text">
         <h3>Note </h3>
-        <p><!--
-
-Basic captioned image formatting structure:
-
-| [![](/img/[FOLDER]/[FILENAME])](/img/[FOLDER]/[FILENAME]) |
-|:--:|
-| [CAPTION] |
-
--->
-<hr>
-<h2>Background</h2>
+        <p><h2>Background</h2>
 <p>The following is a development notebook for constructing a DIY CO2 monitor.</p>
 <h2>Table of contents</h2>
 <p>More or less random bookmarks into the notes file, for reference:</p>
@@ -2621,92 +2639,113 @@ void setup() {
 int readCO2()
 {
   int co2_value = 0;  // We will store the CO2 value inside this variable.
-<p>digitalWrite(13, HIGH);  // turn on LED
-// On most Arduino platforms this pin is used as an indicator light.</p>
-<p>//////////////////////////
-/* Begin Write Sequence */
-//////////////////////////</p>
-<p>Wire.beginTransmission(co2Addr);
-Wire.write(0x22);
-Wire.write(0x00);
-Wire.write(0x08);
-Wire.write(0x2A);</p>
-<p>Wire.endTransmission();</p>
-<p>/////////////////////////
-/* End Write Sequence. */
-/////////////////////////</p>
-<p>/*
-We wait 10ms for the sensor to process our command.
-The sensors's primary duties are to accurately
-measure CO2 values. Waiting 10ms will ensure the
-data is properly written to RAM</p>
-<p>*/</p>
-<p>delay(10);</p>
-<p>/////////////////////////
-/* Begin Read Sequence */
-/////////////////////////</p>
-<p>/*
-Since we requested 2 bytes from the sensor we must
-read in 4 bytes. This includes the payload, checksum,
-and command status byte.</p>
-<p>*/</p>
-<p>Wire.requestFrom(co2Addr, 4);</p>
-<p>byte i = 0;
-byte buffer[4] = {0, 0, 0, 0};</p>
-<p>/*
-Wire.available() is not nessessary. Implementation is obscure but we leave
-it in here for portability and to future proof our code
-*/
-while (Wire.available())
-{
-buffer[i] = Wire.read();
-i++;
-}</p>
-<p>///////////////////////
-/* End Read Sequence */
-///////////////////////</p>
-<p>/*
-Using some bitwise manipulation we will shift our buffer
-into an integer for general consumption
-*/</p>
-<p>co2_value = 0;
-co2_value |= buffer[1] &amp; 0xFF;
-co2_value = co2_value &lt;&lt; 8;
-co2_value |= buffer[2] &amp; 0xFF;</p>
-<p>byte sum = 0; //Checksum Byte
-sum = buffer[0] + buffer[1] + buffer[2]; //Byte addition utilizes overflow</p>
-<p>if (sum == buffer[3])
-{
-// Success!
-digitalWrite(13, LOW);
-return co2_value;
+
+  digitalWrite(13, HIGH);  // turn on LED
+  // On most Arduino platforms this pin is used as an indicator light.
+
+  //////////////////////////
+  /* Begin Write Sequence */
+  //////////////////////////
+
+  Wire.beginTransmission(co2Addr);
+  Wire.write(0x22);
+  Wire.write(0x00);
+  Wire.write(0x08);
+  Wire.write(0x2A);
+
+  Wire.endTransmission();
+
+  /////////////////////////
+  /* End Write Sequence. */
+  /////////////////////////
+
+  /*
+    We wait 10ms for the sensor to process our command.
+    The sensors's primary duties are to accurately
+    measure CO2 values. Waiting 10ms will ensure the
+    data is properly written to RAM
+
+  */
+
+  delay(10);
+
+  /////////////////////////
+  /* Begin Read Sequence */
+  /////////////////////////
+
+  /*
+    Since we requested 2 bytes from the sensor we must
+    read in 4 bytes. This includes the payload, checksum,
+    and command status byte.
+
+  */
+
+  Wire.requestFrom(co2Addr, 4);
+
+  byte i = 0;
+  byte buffer[4] = {0, 0, 0, 0};
+
+  /*
+    Wire.available() is not nessessary. Implementation is obscure but we leave
+    it in here for portability and to future proof our code
+  */
+  while (Wire.available())
+  {
+    buffer[i] = Wire.read();
+    i++;
+  }
+
+  ///////////////////////
+  /* End Read Sequence */
+  ///////////////////////
+
+  /*
+    Using some bitwise manipulation we will shift our buffer
+    into an integer for general consumption
+  */
+
+  co2_value = 0;
+  co2_value |= buffer[1] &amp; 0xFF;
+  co2_value = co2_value &lt;&lt; 8;
+  co2_value |= buffer[2] &amp; 0xFF;
+
+
+  byte sum = 0; //Checksum Byte
+  sum = buffer[0] + buffer[1] + buffer[2]; //Byte addition utilizes overflow
+
+  if (sum == buffer[3])
+  {
+    // Success!
+    digitalWrite(13, LOW);
+    return co2_value;
+  }
+  else
+  {
+    // Failure!
+    /*
+      Checksum failure can be due to a number of factors,
+      fuzzy electrons, sensor busy, etc.
+    */
+
+    digitalWrite(13, LOW);
+    return 0;
+  }
 }
-else
-{
-// Failure!
-/*
-Checksum failure can be due to a number of factors,
-fuzzy electrons, sensor busy, etc.
-*/</p>
-<pre><code>digitalWrite(13, LOW);
-return 0;
+void loop() {
+
+  int co2Value = readCO2();
+  if (co2Value &gt; 0)
+  {
+    Serial.print(&quot;CO2 Value: &quot;);
+    Serial.println(co2Value);
+  }
+  else
+  {
+    Serial.println(&quot;Checksum failed / Communication failure&quot;);
+  }
+  delay(2000);
+}
 </code></pre>
-<p>}
-}
-void loop() {</p>
-<p>int co2Value = readCO2();
-if (co2Value &gt; 0)
-{
-Serial.print(&quot;CO2 Value: &quot;);
-Serial.println(co2Value);
-}
-else
-{
-Serial.println(&quot;Checksum failed / Communication failure&quot;);
-}
-delay(2000);
-}
-</code></pre></p>
 <h3>CO2 Motherboard Update NOV 14 2020</h3>
 <p>'Final' REV_A version (ordered on JLCPCB on 14 NOV) is here:</p>
 <p><a href="/img/co2/co2_reva_schematic.png"><img src="/img/co2/co2_reva_schematic.png" alt=""></a></p>
@@ -2960,7 +2999,6 @@ Materials and Methods for the derivation)</p>
 </tr>
 </tbody>
 </table>
-<hr>
 <p>2020 NOV 24 Update 22:10</p>
 <table>
 <thead>
@@ -2985,7 +3023,7 @@ Materials and Methods for the derivation)</p>
 </thead>
 <tbody>
 <tr>
-<td style="text-align:center">Nov 245th through morning of Nov 25th.  Spikes on Nov 24th at 7:30 AM, 10:30 AM, 12 PM, and on Nov 25th at 8 AM, are perhaps due to use of propane stove for cooking.  Apartment was unoccupied on Nov 24th from about 12:30 PM until 5:30 PM.</td>
+<td style="text-align:center"><strong>CO2 (PPM) measured on Nov 245th through morning of Nov 25th.</strong>  Spikes on Nov 24th at 7:30 AM, 10:30 AM, 12 PM, and on Nov 25th at 8 AM, are perhaps due to use of propane stove for cooking.  Apartment was unoccupied on Nov 24th from about 12:30 PM until 5:30 PM.</td>
 </tr>
 </tbody>
 </table>
@@ -2993,6 +3031,7 @@ Materials and Methods for the derivation)</p>
       </div>
     </div>
   </div>
+
   <div class="post">
     <div class="project-contents">
       <div class="text">
@@ -3115,6 +3154,7 @@ Materials and Methods for the derivation)</p>
       </div>
     </div>
   </div>
+
   <div class="post">
     <div class="project-contents">
       <div class="text">
@@ -3419,10 +3459,18 @@ Along with guides for all of this.</p>
 <p>Implemented very basic watchdog <a href="https://github.com/edgecollective/valedalama/tree/master/greenhouse/REV_A/remote/feather_firmware/featherm0_am2315_lora_watchdog">here</a>.</p>
 <p><img src="/img/valedalama/watchdog_attempt.png" alt=""></p>
 <p>Data <a href="http://159.65.226.222:3000/drives/3a28c09fa93ccf15513a055984148b02b0709f545c12013aaf25252f73626f62">here</a>.</p>
+<hr>
+<p>2020-11-26 20:33:48</p>
+<h3>Design notes</h3>
+<p>Interesting Things Network post on a BME280 outdoor LoRa node, <a href="https://www.thethingsnetwork.org/forum/t/lora-bme280-environmental-node-with-webbased-backend/9264">here</a>.</p>
+<p>Relies on a really low power LoRa node design based on an Atmel 328p -- elegant! -- <a href="https://www.thethingsnetwork.org/forum/t/full-arduino-mini-lorawan-below-1ua-sleep-mode/8059">here</a></p>
+<p>Nice post on OLED sleep current, <a href="https://bitbanksoftware.blogspot.com/2019/06/how-much-current-do-oled-displays-use.html">here</a>.  Looks like the 128x65 display I favor uses around 25 uA when asleep.</p>
+<p>A nice general review of OLEDs and various libraries and use-cases, <a href="https://bengoncalves.wordpress.com/2015/10/01/oled-display-and-arduino-with-power-save-mode/">here</a>.  Includes code for putting the OLED to sleep.</p>
 </p>
       </div>
     </div>
   </div>
+
   <div class="post">
     <div class="project-contents">
       <div class="text">
@@ -3481,6 +3529,7 @@ and the user you want to connect as to hyperssh</p>
       </div>
     </div>
   </div>
+
   <div class="post">
     <div class="project-contents">
       <div class="text">
@@ -3507,6 +3556,7 @@ and the user you want to connect as to hyperssh</p>
       </div>
     </div>
   </div>
+
   <div class="post">
     <div class="project-contents">
       <div class="text">
@@ -3521,6 +3571,7 @@ and the user you want to connect as to hyperssh</p>
       </div>
     </div>
   </div>
+
   <div class="post">
     <div class="project-contents">
       <div class="text">
@@ -3548,6 +3599,7 @@ and the user you want to connect as to hyperssh</p>
       </div>
     </div>
   </div>
+
   <div class="post">
     <div class="project-contents">
       <div class="text">
@@ -3614,6 +3666,7 @@ and the user you want to connect as to hyperssh</p>
       </div>
     </div>
   </div>
+
   <div class="post">
     <div class="project-contents">
       <div class="text">
@@ -3931,6 +3984,7 @@ const char* farmOS_url = &quot;(YOUR FARMOS URL)&quot;;
       </div>
     </div>
   </div>
+
   <div class="post">
     <div class="project-contents">
       <div class="text">
@@ -3966,7 +4020,8 @@ const char* farmOS_url = &quot;(YOUR FARMOS URL)&quot;;
 <pre><code>convert Lenna.png -monochrome lenna-1.png
 </code></pre>
 <pre><code>convert lenna.png -monochrome -resize 200x320\! lenna4.bmp
-<p></code></pre></p>
+
+</code></pre>
 <h3>Compass</h3>
 <p>Good quality compass offered <a href="https://www.amazon.com/gp/product/B07CK8B3R3/ref=ox_sc_saved_title_1?smid=A2LLNHIZM5ZWNT&amp;psc=1">here</a></p>
 <h3>Map tiles</h3>
@@ -4040,7 +4095,7 @@ const char* farmOS_url = &quot;(YOUR FARMOS URL)&quot;;
 <p>Example grid square:</p>
 <p>FN42IK44LP</p>
 <h3>Grid Squares</h3>
-<p>Generator <a href="https://dxcluster.ha8tks.hu/hamgeocoding/">here</a>.</p>
+<p>Generator <a href="https://dxcluster.ha8tks.hu/hamgeocoding/">here</a>.  Uses a nice open source <a href="https://nominatim.org/">geocoding app</a> that works with OSM.  The author, <a href="https://twitter.com/ha8tks?lang=en">ha8tks</a>, has a <a href="https://github.com/ha8tks/Leaflet.Maidenhead">repo on github</a> that applies the GridSquare layout in Leaflet.</p>
 <p><img src="/img/eink/gridquare.png" alt=""></p>
 <p><img src="/img/eink/weston.png" alt=""></p>
 <p>Reference on gridsquares <a href="https://www.amsat.org/amsat-new/tools/grids.php">here</a></p>
@@ -4055,10 +4110,49 @@ const char* farmOS_url = &quot;(YOUR FARMOS URL)&quot;;
 <p>Tutorial on how to use OSM tiles in an application, <a href="https://switch2osm.org/using-tiles/">here</a>.</p>
 <p>Leaflet providers <a href="http://leaflet-extras.github.io/leaflet-providers/preview/">here</a> &lt;-- really useful survey of free tile providers.</p>
 <p>Good list of <a href="https://wiki.openstreetmap.org/wiki/Hiking_Maps">hiking maps</a></p>
+<hr>
+<p>2020-11-25 10:50:31</p>
+<p>Would be nice to include the GridSquare system in an offline map.  Easily switch between a device and a paper printout.</p>
+<p>How would one overlap on a 'regular' map? Might be neat to try to do via features.  Would need same project I suppose.</p>
+<p>Note that there's a TTGO EINK+ESP32 module <a href="https://www.amazon.com/WEMS-ESP32-EPaper-Module-Speakers/dp/B07B9V1K7H">here</a>.</p>
+<p>E-ink calendar display project <a href="https://github.com/martinberlin/eink-calendar">here</a> for ESP32.</p>
+<h3>Quick tally of hardware costs</h3>
+<p>If custom board:</p>
+<ul>
+<li>pcb: $10</li>
+<li>display: $30</li>
+<li>gps: $5</li>
+<li>micro+passives: $5</li>
+<li>misc: $5</li>
+<li><strong>total</strong>: $55</li>
+</ul>
+<p>can sell for 4X to support project, or around $200?</p>
+<p>If DIY kit:</p>
+<ul>
+<li>pcb: $10</li>
+<li>display: $30</li>
+<li>microcontroller: $20</li>
+<li>SD card: $5</li>
+<li>GPS: $5</li>
+</ul>
+<p>Can sell the PCB + SD card + GPS + screen as a kit for (10+30+5+5)*4 = $200 ... hmm. Maybe if also sell a case ...</p>
+<h3>GPS</h3>
+<p>Sparkfun <a href="https://www.arduino.cc/reference/en/libraries/sparkfun-ublox-arduino-library/">ublox library</a>.</p>
+<p>Various Sparkfun <a href="https://www.sparkfun.com/categories/tags/u-blox">ublox products</a>.</p>
+<p>I think the cheap chip vis a vis ublox is the NEO-6M. That's on the meshtastic, and that's what I'm using via Amazon. E.g. <a href="https://www.amazon.com/DIYmall-AeroQuad-Antenna-Arduino-Aircraft/dp/B01H5FNA4K/ref=sr_1_7?dchild=1&amp;keywords=GPS+U-blox+NEO-6M+Module&amp;qid=1606324327&amp;refinements=p_76%3A2661625011&amp;rps=1&amp;sr=8-7">here</a>.</p>
+<p>This is the 'NEO-6M' item I've been using, <a href="https://www.amazon.com/DIYmall-AeroQuad-Antenna-Arduino-Aircraft/dp/B01H5FNA4K/ref=pd_lpo_147_t_0/138-2479136-9655161?_encoding=UTF8&amp;pd_rd_i=B01H5FNA4K&amp;pd_rd_r=4c20784f-c1a2-486c-b9dc-aa87c28e8ace&amp;pd_rd_w=oiq9h&amp;pd_rd_wg=sPeQk&amp;pf_rd_p=7b36d496-f366-4631-94d3-61b87b52511b&amp;pf_rd_r=TE8WSNWNZTAYDY5AT2RK&amp;psc=1&amp;refRID=TE8WSNWNZTAYDY5AT2RK">here</a>.</p>
+<h3>Designing a PCB for the waveshare</h3>
+<p>Module description is <a href="https://www.waveshare.com/4.2inch-e-paper-module.htm">here</a>.</p>
+<p>Dimensions of module are thus:</p>
+<p><img src="/img/eink/4.2inch-e-Paper-Module-size.jpg" alt=""></p>
+<p><a href="https://www.sparkfun.com/products/10063">5-way tactile switch</a></p>
+<p>Sparfkun <a href="https://www.sparkfun.com/products/9426">thumb slide joystick</a>.</p>
+<p>Two-axis analog thumb joystick <a href="https://www.adafruit.com/product/3103?gclid=CjwKCAiAnvj9BRA4EiwAuUMDf3G_fkelMEeerVZsKheGOKmEEHHC8dTNP6ZO3IY1C-4tmHcKU-vbJBoC7bUQAvD_BwE">from adafruit</a>.</p>
 </p>
       </div>
     </div>
   </div>
+
   <div class="post">
     <div class="project-contents">
       <div class="text">
@@ -4081,10 +4175,16 @@ const char* farmOS_url = &quot;(YOUR FARMOS URL)&quot;;
 <p>By <a href="https://github.com/pswoodworth">Parker</a>!</p>
 <p><a href="https://github.com/pswoodworth/esp32-ble-interface">ESP32 Code</a></p>
 <p><a href="https://github.com/pswoodworth/ble-micro-web-interface">Web app</a></p>
+<hr>
+<p>2020-11-26 14:57:25</p>
+<p>Experimenting with <a href="https://github.com/edgecollective/esp32-ble-interface">Parker's Arduino BLE code</a> ...</p>
+<p>Compiles nicely for Heltec Wifi LoRa 32 v2!  But interesting that for ESP32 Feather, we get:</p>
+<p><img src="/img/bluetooth/adafruit_feather_32_error.png" alt=""></p>
 </p>
       </div>
     </div>
   </div>
+
   <div class="post">
     <div class="project-contents">
       <div class="text">
@@ -4095,6 +4195,35 @@ const char* farmOS_url = &quot;(YOUR FARMOS URL)&quot;;
       </div>
     </div>
   </div>
+
+  <div class="post">
+    <div class="project-contents">
+      <div class="text">
+        <h3>Note </h3>
+        <p><hr>
+<p>2020-11-26 14:37:30</p>
+<h3>Misc notes</h3>
+<p><a href="http://windcompressor.com/">windcompressor.com</a></p>
+<p><a href="http://ucsustainability.blogspot.com/2009/01/amish-wind-problems.html?m=1">&quot;Amish Wind Problems&quot;</a></p>
+</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="post">
+    <div class="project-contents">
+      <div class="text">
+        <h3>Note </h3>
+        <p><p>Nice discussion on envirodiy <a href="https://www.envirodiy.org/ultrasonic-water-depth-sensor/">here</a> of a Maxtobox-based design.</p>
+<p>Another nice post on environdiy on evaluating their performance, <a href="https://www.envirodiy.org/evaluation-water-level-monitoring-maxbotix-ultrasonic-sensors/">here</a>.</p>
+<ul>
+<li>A question I have, here:  they consider the Onset logger to be the 'reference' ... but oughtn't we also to evalue <em>its</em> values?  I like the idea of conductive screws as an 'absolute' external check on either sensor (though maybe that measurement mode is more complex than I realize).</li>
+</ul>
+</p>
+      </div>
+    </div>
+  </div>
+
 </div>
 -->
 
