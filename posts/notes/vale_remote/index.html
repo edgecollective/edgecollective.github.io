@@ -21,7 +21,11 @@
         <h1>Vale da Lama Greenhouse Monitoring</h1>
 
   
-  <h2>TODO</h2>
+  <h2>Table of Contents</h2>
+<ul>
+<li><a href="#update_nov29">Update 29 NOV 2020</a></li>
+</ul>
+<h2>TODO</h2>
 <ul>
 <li>Make a mill-able PCB design in Eagle CAD for Lucio to mill [X]</li>
 <li>Make a manfuacture-able PCB design in KiCAD to send to that company in Germany</li>
@@ -328,6 +332,18 @@ Along with guides for all of this.</p>
 <p>Relies on a really low power LoRa node design based on an Atmel 328p -- elegant! -- <a href="https://www.thethingsnetwork.org/forum/t/full-arduino-mini-lorawan-below-1ua-sleep-mode/8059">here</a></p>
 <p>Nice post on OLED sleep current, <a href="https://bitbanksoftware.blogspot.com/2019/06/how-much-current-do-oled-displays-use.html">here</a>.  Looks like the 128x65 display I favor uses around 25 uA when asleep.</p>
 <p>A nice general review of OLEDs and various libraries and use-cases, <a href="https://bengoncalves.wordpress.com/2015/10/01/oled-display-and-arduino-with-power-save-mode/">here</a>.  Includes code for putting the OLED to sleep.</p>
+<hr>
+<p>2020-11-29 04:42:55</p>
+<h1><a name="update_nov29"></a> Update NOV 29 2020</h1>
+<p><strong>Current situation.</strong>  Adding the watchdog timer seems to have made the remote node more robust; it has been operating non-stop for several days now, plugged into the RAK Pi. We'd like to move to installing the device into the greenhouse.  Are there any things we ought to do first to improve the likelihood of success there?</p>
+<p>There are two things we might consider doing immediately:</p>
+<ol>
+<li><strong>Reduce remote node power consumption.</strong> The remote node is currently broadcasting every 10 seconds or so, and sleeping in between.  This is far more data than is useful, and will unnecessarily drain the battery.  We should change this to an interval of about 10 minutes or so.</li>
+<li><strong>Add remote node battery measurement</strong>.  It would be helpful to add remote battery level measurement to the remote node, so we can better assess the solar charging statistics.  Note: doing so would require re-programming the gateway, as well, to accommodate the additional parameter.</li>
+</ol>
+<p><strong>Discussion</strong>.  (1) Above (increasing the sleep time between measurements / broadcasts) is an quick fix, which can be accomplished with the Feather plugged into the RAK, and the process has been done before, and recently.  The process for (2) should be straightforward, but hasn't been done before via the RAK.  It could require some fiddling, iterating, back-and-forth, and risks 'breaking' the system until the Arduino IDE is used; and we currently don't have an on-site way of using the Arduino IDE to reprogram the ESP32 (ran into security issues installing ESP32 on Walt's computer).</p>
+<p><strong>Recommendation</strong>.  My recommendation at this point is: let's do (1) above (increase the sleep time), and wait on (2) (adding battery level).</p>
+<p><strong>Next steps</strong>.  On 30 NOV or so, I will test out (1) locally here in the US, increasing the sleep time on the remote node to approx. 10 minutes.  If the code works, we can upload it to the remote node (via the RAK), and test it overnight.  If that works, we can then move the remote node to the greenhouse.</p>
 
 
     </div>
