@@ -1164,6 +1164,30 @@ Materials and Methods for the derivation)</p>
 <p>gesis notebooks, <a href="https://notebooks.gesis.org/">here</a></p>
 <p>guide to voila, <a href="https://analyticsindiamag.com/complete-guide-to-voila-to-turn-a-jupyter-notebook-into-a-standalone-web-application/">here</a></p>
 <p>Dashboarding options in Jupyter discussed <a href="https://medium.com/informatics-lab/jupyter-dashboarding-some-thoughts-on-voila-panel-and-dash-b84df9c9482f">here</a></p>
+<hr>
+<p>2020-12-01 13:41:41</p>
+<h3>REV_D -- ESP32 + RFM95 SMT Version</h3>
+<ul>
+<li>FTDI / USB-TTL cable req'd for first version</li>
+<li>mimic pinout of the heltec wifi 32 lora v2</li>
+<li>auto-reset feature from Quahog revision</li>
+<li>leds for mic level?</li>
+<li>mic</li>
+<li>light sensor</li>
+<li>oled display</li>
+<li>ultrasonic distance sensor breakout? or time of flight / i2c breakout?</li>
+<li>qwik connector for i2c breakout for additional sensors</li>
+</ul>
+<hr>
+<p>2020-12-01 16:17:24</p>
+<p><a href="/img/hog32.pdf"><img src="/img/hog32.png" alt=""></a></p>
+<p>Some changes that need to be made to the circuit:</p>
+<ul>
+<li>get rid of R4 and C4</li>
+<li>place R1, C3, R2, R3, Q1, and Q2</li>
+<li>need to connect pin 2 to ground (or it can float; but currently it is used in i2c, and is pulled high with a resistor, so we need to connect it to ground)</li>
+<li>need to connect the 'DTR' pin on the CP2104 breakout to the DTR pin on the quahog</li>
+</ul>
 
 
     </div>
