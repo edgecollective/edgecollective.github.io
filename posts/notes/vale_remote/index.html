@@ -350,6 +350,29 @@ Along with guides for all of this.</p>
 <li>If that works, we can then move the remote node to the greenhouse.</li>
 </ul>
 <p>Meanwhile, I will test locally the procedure for accomplishing (2) above -- adding battery level monitoring to the remote node.</p>
+<hr>
+<p>2020-11-30 08:57:54</p>
+<h3>Watchdog Sleep</h3>
+<p>Use Moteino M0 sleep code as a reference, <a href="https://lowpowerlab.com/guide/moteino/moteinom0/">here</a>.</p>
+<p>Test feed <a href="http://159.65.226.222:3000/api/drives/0b15fcbcc3a7332e3bb061a7739398ffb2322f7feb9556bcc63e1879f0750ad7/csv">here</a></p>
+<p>Alright, looking for every 5 min, after 1606774953 ...</p>
+<p>Checking:</p>
+<ul>
+<li>initial: 1606774953 -- Monday, November 30, 2020 5:22:33 PM</li>
+<li>next: 1606775266 -- Monday, November 30, 2020 5:27:46 PM</li>
+</ul>
+<p>Works!  When get home will try for 10 minute intervals, and test the power consumption ...</p>
+<hr>
+<p>2020-12-01 07:36:47</p>
+<p>Update on code ...</p>
+<p>timestamp difference:</p>
+<ul>
+<li>initial: 1606821668 -- Tuesday, December 1, 2020 6:21:08 AM</li>
+<li>final: 1606822287 -- Tuesday, December 1, 2020 6:31:27 AM</li>
+</ul>
+<p>10 minute intervals!</p>
+<p>Working code is part of &quot;REV_A&quot; greenhouse suite, <a href="https://github.com/edgecollective/valedalama/tree/master/greenhouse/REV_A/remote/feather_firmware/30_NOV/featherm0_am2315_lora_watchdog_sleep">here</a>.</p>
+<p>Also have improved REV_A gateway code that displays wifi status (sort of), <a href="https://github.com/edgecollective/valedalama/tree/master/greenhouse/REV_A/gateway/heltec_wifi_lora_bayou_farmos_monitorwifi">here</a>.</p>
 
 
     </div>
