@@ -1208,6 +1208,60 @@ Materials and Methods for the derivation)</p>
 <p>2020-12-01 20:45:59</p>
 <h3>REV_D Initial Pass</h3>
 <p><img src="/img/co2/rev_d_3drender.png" alt=""></p>
+<hr>
+<p>2020-12-02 20:41:42</p>
+<p>Upshot -- the SPW2430 mic is weak w/out an amplifier -- should check out tutorial for how to add it when doing SMT version ...</p>
+<p>Meanwhile, light sensor BH1750 tutorial is <a href="https://learn.adafruit.com/adafruit-bh1750-ambient-light-sensor">here</a></p>
+<p>Install hp_BH1750 library via Arduino IDE ...</p>
+<p>firmware that adds the light sensor is <a href="https://github.com/edgecollective/co2-remote-and-gateway/tree/master/rev_b/firmware/remote/feather_m0_scd30_batt_lora_display_max4466_bh1750">here</a></p>
+<p>Resultant data feed <a href="http://159.65.226.222:3000/drives/112a7b2a9d08f492a6736aba33de90c519b7966158f6a2682f9db5eb122c51de">here</a></p>
+<h3>Adding an amplifier to the SPW2430</h3>
+<p>For reference, Eagle CAD for max4466 is <a href="https://github.com/adafruit/Adafruit-MAX4466-Electret-Mic-Amplifier-PCBs">here</a> -- can likely use the amp setup they have ...</p>
+<hr>
+<p>2020-12-03 08:25:40</p>
+<p>co2 sensor seems to have stopped last night? and reset on m0 didn't reset it -- needed to power cycle -- do we need a mosfet on it?</p>
+<p>if we use esp32 for mic, do we need to worry about analog performance / drift?</p>
+<p>Should SEL be floating to ground (or tied to ground) on SCD30? https://forum.sparkfun.com/viewtopic.php?t=48325</p>
+<p>issue where bh1750 library hangs <a href="https://forum.mysensors.org/topic/9214/bh1750-library-hangs">here</a>.</p>
+<p>tried co2 + bh1750 -- co2 freezes</p>
+<p>can't reset, co2 still 'frozen'</p>
+<p>changed firmware to remove bh1750, but kept bh1750 on board, co2 freezes</p>
+<p>then removed wires of bh1750, no freezing yet</p>
+<p>I wonder if it's an 'address' issue with the bh1750?  can check.  info on the module i'm using is <a href="https://www.amazon.com/SMAKN%C2%AE-BH1750-Digital-intensity-Arduino/dp/B014IP9V4I">here</a></p>
+<p>BUT:  light sensor is of questionable use for now.  better perhaps to have breakout for i2c.</p>
+<p>real next steps:</p>
+<ul>
+<li>check esp32 feather functionality on rev_b breakout board</li>
+<li>pull in bmp388 parameters [X]</li>
+<li>how to incorprate the max4466 electret, or add amplification to the smt mic module? (the 'sw something')?</li>
+</ul>
+<p>Seems like the max4466 board avail on amazon (<a href="https://www.amazon.com/uxcell-Electret-Microphone-Amplifier-Adjustable/dp/B07W3HV92Z/ref=sr_1_10?dchild=1&amp;keywords=max4466&amp;qid=1607006487&amp;s=industrial&amp;sr=1-10">here</a>) is fairly identical to that sold by Adafruit. wonder if the op-amp is similarly set up.</p>
+<p>So, design:</p>
+<ul>
+<li>esp32</li>
+<li>oled</li>
+<li>bmp388</li>
+<li>scd30</li>
+<li>mic (electret or smt)</li>
+<li>buttons</li>
+<li>leds to show mic level? or just: remove board</li>
+<li>breakouts for avail pins</li>
+<li>qwiic breakout</li>
+</ul>
+<p>i like how explicit the mic on the co2 sensor is ...
+and it's an analog reading -- if it's removed, just get 'zero' for analog measurement.</p>
+<p>that might be the place to start. simplify the design. part is avail on amazon, alternative to adafruit.</p>
+<p>don't even need a switch -- just remove the part.</p>
+<p>Nice feature:  basic board that can be produced with SMT parts; then, add adafruit boards for pressure and/or mic as one likes.</p>
+<h3>Adding BMP388 functionality to REV_B</h3>
+<p>Tutorial on Adafruit <a href="https://learn.adafruit.com/adafruit-bmp388-bmp390-bmp3xx/arduino">here</a>.</p>
+<p>Actually, confusing way to do the i2c / spi ... not sure how to hook up to Feather's i2c ...</p>
+<p>Shifting to Sparkfun library <a href="https://www.sparkfun.com/products/17001">here</a> ....</p>
+<p>which leads to the library <a href="https://github.com/MartinL1/BMP388_DEV">here</a></p>
+<p>Nice feature:  allows for use with ESP32, has special code for that ... (maybe just picks particular pins?)</p>
+<hr>
+<p>2020-12-03 10:10:13</p>
+<p>Looks like BMP388 code is working (using the lib from MartinL1, 'BMP388_DEV', <a href="https://github.com/MartinL1/BMP388_DEV">here</a>).</p>
 
 
     </div>
