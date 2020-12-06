@@ -3357,11 +3357,18 @@ and it's an analog reading -- if it's removed, just get 'zero' for analog measur
 <p>All systems go!</p>
 <p><img src="/img/co2/feather_esp32_data_test.png" alt=""></p>
 <p><img src="/img/co2/feather_esp32_test.jpeg" alt=""></p>
-<p>Feather scd30 code is <a href="https://github.com/edgecollective/co2-remote-and-gateway/tree/master/rev_b/firmware/wifi_sensor/feather_esp32_wifi_bayou_scd30_display">here</a></p>
+<p>Feather ESP32 scd30 code for &quot;rev_b&quot; is <a href="https://github.com/edgecollective/co2-remote-and-gateway/tree/master/rev_b/firmware/wifi_sensor/feather_esp32_wifi_bayou_scd30_display">here</a></p>
 <h3>Heltec ESP32 + LoRa remote wifi sensor (&quot;REV_C&quot;)</h3>
 <p>SSD1306 with the u8x8 library tutorial <a href="https://tronixstuff.com/2019/08/29/ssd1306-arduino-tutorial/">here</a></p>
 <p>List of u8x8 fonts <a href="https://github.com/olikraus/u8g2/wiki/fntlist8x8">here</a></p>
 <p><a href="https://github.com/edgecollective/co2-remote-and-gateway/tree/master/rev_c/firmware/wifi_sensor/heltec_wifi_bayou_scd30_display_v2">Arduino code for heltec-based &quot;rev_c&quot; here</a></p>
+<h3>Max4466 on ESP32</h3>
+<p><a href="https://learn.adafruit.com/adafruit-microphone-amplifier-breakout/measuring-sound-levels">Adafruit tutorial</a> on Max4466</p>
+<hr>
+<p>2020-12-06 14:42:04</p>
+<p>Fixed the microphone issue with the Feather ESP32 -- seems to be necessary to refer to A0 by its gpio number for feather esp32 -- i.e., &quot;26&quot; for A0.</p>
+<p>Updated code for REV_B Feather ESP32 is <a href="https://github.com/edgecollective/co2-remote-and-gateway/tree/master/rev_b/firmware/wifi_sensor/feather_esp32_wifi_bayou_scd30_display">here</a></p>
+<p>Posting data from REV_B with Feather esp32 ('wifi sensor' mode) <a href="http://159.65.226.222:3000/api/drives/516d21cb12f7e724be7c3d1ea66b7113316fb9f4018d2a9345bacf4b05f00c74/csv">here</a>.</p>
 </p>
       </div>
     </div>
