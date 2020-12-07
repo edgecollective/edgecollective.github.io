@@ -1404,6 +1404,37 @@ bool SCD30::setAltitudeCompensation(uint16_t altitude)
 <p>overnight feeds as of 2020-12-06 22:13:47:</p>
 <p><a href="http://159.65.226.222:3000/api/drives/516d21cb12f7e724be7c3d1ea66b7113316fb9f4018d2a9345bacf4b05f00c74/csv">feather esp32 feed</a></p>
 <p><a href="http://159.65.226.222:3000/api/drives/5bd89f163a158797ab86668e67ac92736905c4056ec03600b8c37b0296da6763/csv">heltec (calibrated)</a></p>
+<hr>
+<p>2020-12-07 09:35:29</p>
+<h2>Plan update</h2>
+<ul>
+<li>leaflet floormap</li>
+</ul>
+<hr>
+<p>2020-12-07 10:23:27</p>
+<p>Further reading on temperature / other compensation for the SCD30, <a href="https://www.mouser.com/pdfdocs/CD_AN_SCD30_Low_Power_Mode_D2.pdf">&quot;Low Power Mode for the SCD30&quot;</a></p>
+<p>Observation: when force calibrating the sensor outdoors in much lower temperature and assuming 410 ppm, it recovered inside to &lt; 400 ppm.  This may be because of temperature effects. There is a temperature compensation function for the sensor.  It requires an external temperature reading for calibration.  This might be done with a 1-wire temp sensor attached to the device.</p>
+<p>So, advantages of the pvos device:</p>
+<ul>
+<li>1-wire external temp sensor compensation (similar in setup to maxbotix)</li>
+<li>external pressure sensor compensation</li>
+<li>microphone data</li>
+<li>i2c and other breakout pins for additional setup</li>
+<li>wifi, bluetooth, lora configurations</li>
+<li>open hardware design</li>
+</ul>
+<hr>
+<p>2020-12-07 10:37:03</p>
+<p>Blog on use of SCD30 <a href="https://blog.devmobile.co.nz/tag/scd30/">here</a></p>
+<p>TODO: need to find field calibration guide for SCD30.</p>
+<p><a href="https://wiki.seeedstudio.com/Grove-CO2_Temperature_Humidity_Sensor-SCD30/">SEEED wiki on SCD30</a></p>
+<p><a href="https://files.seeedstudio.com/wiki/Grove-CO2-Temperature-Humidity-Sensor-SCD30/res/CD_AN_SCD30_Design-In_Guidelines_D2.pdf">SCD30 design-in guidelines</a></p>
+<p><img src="/img/co2/scd30_protection_from_light.png" alt=""></p>
+<p>I believe the airflow isolation issue is the reason for seeing such strong fluctuations of measurements when outdoors in wind, and is a strong argument for designing an enclosure:</p>
+<p><img src="/img/co2/scd30_airflow_isolation.png" alt=""></p>
+<p><img src="/img/co2/scd30_thermal_decoupling.png" alt=""></p>
+<p><img src="/img/co2/scd30_coupling_ambient.png" alt=""></p>
+<p><img src="/img/co2/scd30_auto_self_calibration.png" alt=""></p>
 
 
     </div>
