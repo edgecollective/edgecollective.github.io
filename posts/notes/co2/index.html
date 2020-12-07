@@ -1364,6 +1364,37 @@ df2.plot(ax=ax)
 <li><a href="https://twitter.com/j_g_allen">Joseph Allen</a> -- 'Health Buildings'</li>
 <li><a href="https://twitter.com/mlipsitch">Marc Lipstich</a></li>
 </ul>
+<h2>SCD30 Pressure Correction and Calibration Disable</h2>
+<p>Sparkfun SCD30 library is <a href="https://github.com/sparkfun/SparkFun_SCD30_Arduino_Library">here</a>, and has several relevant examples:</p>
+<ul>
+<li><a href="https://github.com/sparkfun/SparkFun_SCD30_Arduino_Library/blob/master/examples/Example2_SetOptions/Example2_SetOptions.ino">Pressure correction</a></li>
+<li><a href="https://github.com/sparkfun/SparkFun_SCD30_Arduino_Library/blob/master/examples/Example4_DisableCalibrate/Example4_DisableCalibrate.ino">Disable autocalibration</a></li>
+<li><a href="https://github.com/sparkfun/SparkFun_SCD30_Arduino_Library/blob/master/examples/Example3_WireOptions/Example3_WireOptions.ino">Alternative i2c / Wire</a></li>
+</ul>
+<p><a href="https://github.com/sparkfun/SparkFun_SCD30_Arduino_Library/blob/master/documents/Sensirion_CO2_Sensors_SCD30_Preliminary-Datasheet.pdf">SCD30 datasheet</a></p>
+<h3>Forced calibration of SCD30</h3>
+<p>See 1.3.7 (p. 7) of document:</p>
+<p><a href="https://cdn.sparkfun.com/assets/d/c/0/7/2/SCD30_Interface_Description.pdf">SCD30 interface description</a></p>
+<p>For implementation, look at Sparkfun library and follow procedure for temperature / altitude compensation.</p>
+<p>E.g. altitude compensation code begins <a href="https://github.com/sparkfun/SparkFun_SCD30_Arduino_Library/blob/0a6ca999ffcb725a9d528f98bc87881ac1688b35/src/SparkFun_SCD30_Arduino_Library.cpp#L139">here</a></p>
+<pre><code>//Set the altitude compenstation. See 1.3.9.
+bool SCD30::setAltitudeCompensation(uint16_t altitude)
+{
+  return sendCommand(COMMAND_SET_ALTITUDE_COMPENSATION, altitude);
+}
+</code></pre>
+<p>Can we set this up with a button? Would be nice if it works mid-loop ... test with ESP32?</p>
+<p>ESP32 GPIO interrupts guide <a href="https://lastminuteengineers.com/handling-esp32-gpio-interrupts-tutorial/">here</a></p>
+<p>Fork of Sparkfun library <a href="https://github.com/edgecollective/SparkFun_SCD30_Arduino_Library">here</a></p>
+<p>Experimental feed is <a href="http://159.65.226.222:3000/api/drives/5bd89f163a158797ab86668e67ac92736905c4056ec03600b8c37b0296da6763/csv">here</a></p>
+<p>Update: the library already includes the functionality!</p>
+<pre><code>setForcedRecalibrationFactor(int co2_concentration_ppm)
+</code></pre>
+<p>the 'calibrate' button on rev_c is pin 36</p>
+<p>ESP32 debouncing a button w/ interrupts, <a href="https://www.switchdoc.com/2018/04/esp32-tutorial-debouncing-a-button-press-using-interrupts/">here</a></p>
+<p>The <a href="https://github.com/craftmetrics/esp32-button">ultimate debouncer</a> from Hackaday</p>
+<p><a href="http://community.heltec.cn/t/wifi-lora-32-v2-pinout-diagram-questions/1762">Heltec pinout discussion</a></p>
+<p>Following debounce <a href="https://lastminuteengineers.com/handling-esp32-gpio-interrupts-tutorial/">here</a></p>
 
 
     </div>
