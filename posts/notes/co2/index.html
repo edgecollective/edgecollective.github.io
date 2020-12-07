@@ -1310,6 +1310,32 @@ and it's an analog reading -- if it's removed, just get 'zero' for analog measur
 <p>Fixed the microphone issue with the Feather ESP32 -- seems to be necessary to refer to A0 by its gpio number for feather esp32 -- i.e., &quot;26&quot; for A0.</p>
 <p>Updated code for REV_B Feather ESP32 is <a href="https://github.com/edgecollective/co2-remote-and-gateway/tree/master/rev_b/firmware/wifi_sensor/feather_esp32_wifi_bayou_scd30_display">here</a></p>
 <p>Posting data from REV_B with Feather esp32 ('wifi sensor' mode) <a href="http://159.65.226.222:3000/api/drives/516d21cb12f7e724be7c3d1ea66b7113316fb9f4018d2a9345bacf4b05f00c74/csv">here</a>.</p>
+<hr>
+<p>2020-12-06 15:08:54</p>
+<p>Parallel tests:</p>
+<p>REV_C board (heltec) feed <a href="http://159.65.226.222:3000/drives/8b3f9d89866ac91fd748e2d89e8005f96e77e6cdeef10ffd033d74aeff1105ab">here</a></p>
+<p>REV_B board (with Feather ESP32) feed <a href="http://159.65.226.222:3000/drives/516d21cb12f7e724be7c3d1ea66b7113316fb9f4018d2a9345bacf4b05f00c74">here</a></p>
+<hr>
+<p>2020-12-06 19:05:45</p>
+<p>Jupyter plotting csv file tutorial <a href="https://towardsdatascience.com/plotting-with-pandas-an-introduction-to-data-visualization-8bd7c0831650">here</a></p>
+<p>Another nice guide <a href="https://www.geeksforgeeks.org/python-read-csv-using-pandas-read_csv/">here</a></p>
+<p>plotting two data traces on the same graph:</p>
+<pre><code>ax = df1.plot()
+df2.plot(ax=ax)
+</code></pre>
+<h3>Comparing two scd30 sensors</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><a href="/img/co2/scd30_cross/compare.png"><img src="/img/co2/scd30_cross/compare.png" alt=""></a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Comparison of two side-by-side SCD30 CO2 sensors for a given time range.  Jupyter notebook used in the analysis is <a href="/img/co2/scd30_cross/compare.ipynb">here</a>.</td>
+</tr>
+</tbody>
+</table>
 
 
     </div>
