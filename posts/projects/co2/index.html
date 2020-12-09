@@ -25,6 +25,66 @@
 <h2>Overview</h2>
 <p>Developing an Free and Open Source end-to-end system for CO2 monitoring.</p>
 <p>Ongoing notes on development are posted <a href="https://edgecollective.io/posts/notes/co2/">here</a>.</p>
+<h2>Goals for Version 1</h2>
+<p>(Updated: 2020-12-09 08:31:32)</p>
+<p>Key to assessment of work items:</p>
+<ul>
+<li>[X] -- &quot;Done&quot;</li>
+<li>[EASY] -- Won't take much additional effort or time.  A day or two or work.</li>
+<li>[MEDIUM] -- Straightforward, but could take up to a week of work.</li>
+<li>[HARD] -- Will take a lot of time / effort.  May need to reconsider.</li>
+</ul>
+<h3>Hardware + firmware</h3>
+<ul>
+<li>Ability to turn of autocalibration [X]</li>
+<li>Ability to trigger calibration value in firmware [X]</li>
+<li>Http PUT/POST to online server [X]</li>
+<li>Gardware for pressure compensation [X]</li>
+<li>Firmware compensation using pressure input [SHORT]</li>
+<li>'Calibrate' button that works on interrupt &amp; is debounced  [MEDIUM]</li>
+<li>Reasonable first pass at enclosure that respects the scd30 design guidelines [MEDIUM]</li>
+</ul>
+<h3>Data server</h3>
+<ul>
+<li>Initial prototype using 'nosql' data server with simple public key / private key design for accessing / posting to feeds [X]</li>
+<li>Redo initial prototype using Node + Express + Postgresql server + database backend [MEDIUM]</li>
+<li>Add simple user login to permit data feed creation [HARD]</li>
+</ul>
+<h3>Client data viz / analysis</h3>
+<ul>
+<li>Initial simple graphing and location of sensors on a floorplan [X]</li>
+<li>Feed graphs can be show in summary graphical form in a 'list' [X]</li>
+<li>Client that takes in multiple data feeds from Bayou [LONG]</li>
+<li>Client can choose which available parameters to display [LONG]</li>
+<li>Feed location on a floorplan / map can be display and 'highlighted' by clicking on / hovering over feed list [MEDIUM]</li>
+<li>Thresholds can be displayed on the graph as lines or bands [SHORT]</li>
+<li>User can define / select thresholds on a per-graph basis [MEDIUM]</li>
+<li>Demo of using Jupyter to download and analyze data [EASY]</li>
+<li>Demo of using R to download and analyze data [MEDIUM]</li>
+</ul>
+<h3>Science / calibration / validation</h3>
+<ul>
+<li>Demonstrate calibration with 'fresh air'</li>
+<li>Demonstrate calibration with CO2 cannister (and then matching fresh air on later measurement)</li>
+<li>Comparison of scd30 modules against one another</li>
+<li>Comparison of scd30 modules with k30, z19</li>
+</ul>
+<h2>Goals for Version 2</h2>
+<h3>User data viz / analysis workflow</h3>
+<ul>
+<li>Client that takes in data feeds from multiple data feed sources (e.g. Adafruit.io)</li>
+<li>Data feed parameters can be overlaid on same graph and compared</li>
+</ul>
+<h3>Hardware + firmware</h3>
+<ul>
+<li>bluetooth configuration of parameters</li>
+<li>lora gateway + lora remote nodes</li>
+<li>MQTT functionality</li>
+</ul>
+<h3>Science / calibration / validation</h3>
+<ul>
+<li>Import parameters from various air / infection 'models' and apply as thresholds to graph</li>
+</ul>
 <hr>
 <h2>Update 2020-12-07</h2>
 <h3>Hardware and Firmware</h3>
