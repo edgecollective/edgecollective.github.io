@@ -3582,6 +3582,46 @@ export to csv ...</p>
 <h2>Curated Twitter list of air quality / covid / science</h2>
 <p>Link <a href="https://twitter.com/i/lists/1337064747762642947">here</a></p>
 <p>Key organizing tweet by Jose-Luis Jimenez, <a href="https://twitter.com/jljcolorado/status/1335025183493599232?s=20">here</a> and <a href="https://twitter.com/jljcolorado/status/1337066415694733320?s=20">here</a>.  Jimenez group <a href="http://cires1.colorado.edu/jimenez/">here</a>.</p>
+<p>Jimenez group listing <a href="http://cires1.colorado.edu/jimenez-group/">here</a></p>
+<p>Aranet4 listing <a href="https://www.amazon.com/Aranet4-Home-Temperature-Ink-Configuration/dp/B07YY7BH2W">here</a></p>
+<p>Article covering Jimenez int'l org around air quality and covid <a href="https://drive.google.com/file/d/1rBToRlgQfRoEPuY1WHhlwmIhcl5WrTye/view?usp=sharing">here</a></p>
+<p>Online presentation <a href="https://www.aireamos.org/presentacion-online-de-la-nueva-plataforma-aireamos/">here</a></p>
+<hr>
+<p>2020-12-10 13:42:11</p>
+<p>note on next steps:</p>
+<ul>
+<li>see how the two scd30s compare after force calibration procedure, side-by-side (don't need to be calibrated outdoors, just cross-comparison)</li>
+<li>make sure can force calibrate the k30 and z19 and then do cross-comparison -- if they work comparably, can be lower-cost option</li>
+<li>end-to-end demo of tech, including floorplan viz</li>
+<li>(storage to microSD? easy next step)</li>
+<li>kit assembly instructions for heltec version and for feather version</li>
+<li>make a video explaining the project and the status</li>
+<li>show Jupyter and R workflows</li>
+</ul>
+<hr>
+<p>2020-12-10 17:44:16</p>
+<h2>SCD30 Cross-comparison with force calibration</h2>
+<ul>
+<li>Heltec + REV_C using <a href="https://github.com/edgecollective/co2-remote-and-gateway/tree/master/rev_c/firmware/wifi_sensor/heltec_wifi_bayou_scd30_display_bmp388_calibrate">this code</a> posting to <a href="http://159.65.226.222:3000/api/drives/5bd89f163a158797ab86668e67ac92736905c4056ec03600b8c37b0296da6763/csv">this feed</a></li>
+<li>Feather ESP32 + REV_B using <a href="https://github.com/edgecollective/co2-remote-and-gateway/tree/master/rev_b/firmware/wifi_sensor/feather_esp32_wifi_bayou_scd30_display_calibrate">this code</a> posting to <a href="http://159.65.226.222:3000/api/drives/516d21cb12f7e724be7c3d1ea66b7113316fb9f4018d2a9345bacf4b05f00c74/csv">this feed</a></li>
+</ul>
+<p>Note on experimental setup.  Code is set up to broadcast every 90 seconds; on third round, it force calibrates to 410 ppm; there is a parameter named 'forced' that is '0' initially and then '1' after forced calibration. Both devices were reset simultaneously, hopefully they will be relatively in sync when force calibrated.  need to check difference.</p>
+<p>Update: no, better to force calibrate in beginning.  Send value right after force calibration, then reset to 0.</p>
+<hr>
+<p>2020-12-10 20:21:52</p>
+<ul>
+<li>not sure that the force calibrate functions were simultaneous, might need to run again ...</li>
+<li>but as a one-off the data looks spot-on right now ...</li>
+</ul>
+<hr>
+<p>2020-12-10 22:03:01</p>
+<ul>
+<li>the data was spot on because the devices were force calibrating every cycle :) so they were always at around 410 ppm.</li>
+<li>edited code so that it would force calibrate only once, about 2 minutes into cycle of measuring every 30 sec.  Data is here:</li>
+</ul>
+<p><img src="/img/co2/co_test.png" alt=""></p>
+<p>Note that the orange line is the FeatherESP2, and tracking the 'forced' parameter indicates that the device rebooted and then re-force calibrated to 410 ppm.  Not sure why it rebooted -- perhaps the power supply on the Feather is insufficient to handle the SCD30, or the memory?  Note that the readings were more variable for the Feather prior to the reboot.</p>
+<p>New experiment:  restart code, but swap the SCD30 modules.</p>
 </p>
       </div>
     </div>
