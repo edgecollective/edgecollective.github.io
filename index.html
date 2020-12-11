@@ -3621,7 +3621,14 @@ export to csv ...</p>
 </ul>
 <p><img src="/img/co2/co_test.png" alt=""></p>
 <p>Note that the orange line is the FeatherESP2, and tracking the 'forced' parameter indicates that the device rebooted and then re-force calibrated to 410 ppm.  Not sure why it rebooted -- perhaps the power supply on the Feather is insufficient to handle the SCD30, or the memory?  Note that the readings were more variable for the Feather prior to the reboot.</p>
+<p><img src="/img/co2/co_test_color.png" alt=""></p>
+<hr>
+<p>2020-12-10 22:12:26</p>
+<p>Added legend, and the 'forced' parameter, to make it all more explicit. Here, the red line is the Feather32 data, the blue is the Heltec. The accompanying 'forced' data are shown, multiplied and shifted to show on scale.</p>
 <p>New experiment:  restart code, but swap the SCD30 modules.</p>
+<hr>
+<p>2020-12-10 22:18:31</p>
+<p>Update:  swapped the scd30.  heltec didn't start up at first. realized that i placed the scd30, was shorting something.  so there may be some odd data out of the heltec now.  if there was something wrong with the scd30 module associated with the feather, it's on the heltec now.</p>
 </p>
       </div>
     </div>
