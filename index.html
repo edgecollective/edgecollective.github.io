@@ -3551,6 +3551,7 @@ bool SCD30::setAltitudeCompensation(uint16_t altitude)
 <p>using react and fetch <a href="https://reactjs.org/docs/faq-ajax.html">here</a></p>
 <hr>
 <p>2020-12-08 10:58:47</p>
+<h3>interactive viz of data on map</h3>
 <p>nice leaflet grid layer code for displaying lat / long <a href="https://gist.github.com/letmaik/e71eae5b3ae9e09f8aeb288c3b95230b">here</a></p>
 <p>Nice leaflet grid layer <a href="http://bl.ocks.org/letmaik/e71eae5b3ae9e09f8aeb288c3b95230b">here</a></p>
 <hr>
@@ -3570,7 +3571,9 @@ bool SCD30::setAltitudeCompensation(uint16_t altitude)
 <hr>
 <p>2020-12-09 17:39:11</p>
 <p>modfiying leaflet icon on mouseover <a href="https://gis.stackexchange.com/questions/267400/highlight-l-divicon-on-mouseover-or-programmatically-in-leaflet-map">here</a></p>
+<h3>leaflet icon resize</h3>
 <p>nice working example of buttons and overlap and highlighting <a href="https://github.com/edgecollective/leaflet-highlight">here</a>.</p>
+<h3>references for covid 19</h3>
 <p>https://www.providencejournal.com/story/news/coronavirus/2020/08/14/umass-professor-expands-on-risks-of-covid-19-and-how-to-avoid-them-in-schools/113968580/</p>
 <p>https://twitter.com/ErinBromage</p>
 <p>https://twitter.com/ErinBromage/status/1336769111922241539</p>
@@ -3678,6 +3681,19 @@ export to csv ...</p>
 <p>2020-12-11 13:54:30</p>
 <p><img src="/img/co2/co_test_color_7.png" alt=""></p>
 <p><img src="/img/co2/co2_differences_7.png" alt=""></p>
+<hr>
+<p>2020-12-11 22:33:39</p>
+<h3>Revisiting the 'map' interface code</h3>
+<p>p2p-farm-server/public/console.html is the latest code connected to the p2p-farm-server, which does floorplan side by side with the charts.</p>
+<p>the route to visit is <a href="http://0.0.0.0:3050/drives/94dc05a75bc3ac9b064cbe1c2ae3264e96ca753ff05aef28303d1c5b752a1f4b/console">here</a>.</p>
+<p>It's determined in p2p-farm-server/routes/index.js</p>
+<p>meanwhile, the code that connects buttons and highlights leaflet markers is <a href="https://github.com/edgecollective/leaflet-highlight">here</a>.</p>
+<hr>
+<p>2020-12-12 10:50:11</p>
+<p>Video of attempt at interactive code <a href="https://youtu.be/otHVABif8Rs">here</a>, and below:</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/otHVABif8Rs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<p>Relevant code is in 'console.html', <a href="https://gitlab.com/dwblair/p2p-farm-server/-/blob/mappin/public/console.html">here</a>; the routes portion of the server that handles that page is index.js, <a href="https://gitlab.com/dwblair/p2p-farm-server/-/blob/mappin/routes/index.js">here</a>.</p>
+<p>Note: was able to resolve CORS errors when prototyping locally by simply referencing the '0.0.0.0' address rather than 'localhost'.</p>
 </p>
       </div>
     </div>
