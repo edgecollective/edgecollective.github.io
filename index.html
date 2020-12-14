@@ -2098,7 +2098,7 @@ interface = meshtastic.StreamInterface()
         <h3>Note </h3>
         <p><h2>Background</h2>
 <p>The following is a development notebook for constructing a DIY CO2 monitor.</p>
-<h2>Table of contents</h2>
+<h2>Index</h2>
 <p>More or less random bookmarks into the notes file, for reference:</p>
 <ul>
 <li><a href="#feather">Feather Hookup Guide for K30</a></li>
@@ -2109,6 +2109,7 @@ interface = meshtastic.StreamInterface()
 <li><a href="#nov25">Nov 25 update</a></li>
 <li><a href="#mic_experiment">Initial Microphone Experiment Nov 28</a></li>
 <li><a href="#compare_scd30">Comparing two SCD30 sensors</a></li>
+<li><a href="https://community.hiveeyes.org/t/heltec-wifi-lora-32/3125">Heltec Wifi Lora 32 v 2 -- Schematic and Pinouts</a></li>
 </ul>
 <hr>
 <p>2020 SEPT 29</p>
@@ -3690,10 +3691,62 @@ export to csv ...</p>
 <p>meanwhile, the code that connects buttons and highlights leaflet markers is <a href="https://github.com/edgecollective/leaflet-highlight">here</a>.</p>
 <hr>
 <p>2020-12-12 10:50:11</p>
+<h2>console update</h2>
 <p>Video of attempt at interactive code <a href="https://youtu.be/otHVABif8Rs">here</a>, and below:</p>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/otHVABif8Rs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 <p>Relevant code is in 'console.html', <a href="https://gitlab.com/dwblair/p2p-farm-server/-/blob/mappin/public/console.html">here</a>; the routes portion of the server that handles that page is index.js, <a href="https://gitlab.com/dwblair/p2p-farm-server/-/blob/mappin/routes/index.js">here</a>.</p>
 <p>Note: was able to resolve CORS errors when prototyping locally by simply referencing the '0.0.0.0' address rather than 'localhost'.</p>
+<p>Inspirational map flood network viz <a href="https://flood.network/">here</a> (link to actual viz seems to be broken).</p>
+<hr>
+<p>2020-12-12 14:04:25</p>
+<h2>Revisiting mic</h2>
+<p>Adafruit max4466 is <a href="https://www.adafruit.com/product/1063">here</a>.</p>
+<ul>
+<li>Pinout from 'left to right' when mic is facing viewer and is oriented at 'bottom' is:  VCC GND OUT</li>
+</ul>
+<p>Typical Amazon cheaper product is <a href="https://www.amazon.com/HiLetgo-Electret-Microphone-Amplifier-Adjustable/dp/B07DRGF8C2/ref=pd_lpo_147_t_0/138-2479136-9655161?_encoding=UTF8&amp;pd_rd_i=B07DRGF8C2&amp;pd_rd_r=dc81b1e9-e296-4ec2-8eee-8f102542b805&amp;pd_rd_w=Octxo&amp;pd_rd_wg=EnXDs&amp;pf_rd_p=7b36d496-f366-4631-94d3-61b87b52511b&amp;pf_rd_r=BYWGQV117YHEYJBE8WNE&amp;psc=1&amp;refRID=BYWGQV117YHEYJBE8WNE">here</a></p>
+<ul>
+<li>Pinout from 'left to right' when mic is facing viewer and is oriented at 'bottom' is also:  VCC GND OUT</li>
+</ul>
+<p><img src="/img/co2/adafruit_electret_dim.png" alt=""></p>
+<p>Dimensions of board seem to be about (width x height) (15 mm x 22 mm).</p>
+<h2>qwiic connector, right angle</h2>
+<ul>
+<li>listed on adafruit <a href="https://www.adafruit.com/product/4208">here</a>. &quot;JST SH 4-pin&quot; -- 'micro' / 'right angle' version.</li>
+</ul>
+<p><img src="/img/co2/jst_sh_4_right.png" alt=""></p>
+<h2>qwiic connector, vertical</h2>
+<p>listed on adafruit <a href="https://www.adafruit.com/product/4328">here</a>. &quot;JST SH 4-pin&quot; -- 'micro' / 'vertical' version.</p>
+<p><img src="/img/co2/jst_sh_4_vertical.png" alt=""></p>
+<h2>tactile switch side / horizontal</h2>
+<p>amazon listing <a href="https://www.amazon.com/uxcell-Momentary-Pushbutton-Terminals-6mmx6mmx12mm/dp/B07JKWC6LH/ref=sr_1_18?dchild=1&amp;keywords=tactile+switch+push&amp;qid=1607805967&amp;s=automotive&amp;sr=1-18">here</a></p>
+<p><img src="/img/co2/tactile_side.png" alt=""></p>
+<p>For now: break out A0 and A1 pins to do the button measurement separately on a breakout if need be (to externalize the control, avoid interacting with scd30).</p>
+<p>Aside: nice <a href="https://github.com/ppelleti/NeoBit">neobit project</a></p>
+<h2>battery for heltec</h2>
+<p>micro li-ion board on Amazon <a href="https://www.amazon.com/MakerFocus-Rechargable-Protection-Insulated-Development/dp/B07CXNQ3ZR/ref=pd_bxgy_img_2/138-2479136-9655161?_encoding=UTF8&amp;pd_rd_i=B07CXNQ3ZR&amp;pd_rd_r=6e7cfcdc-c293-4378-aa63-5c7473b5b896&amp;pd_rd_w=45JGk&amp;pd_rd_wg=s7u5J&amp;pf_rd_p=f325d01c-4658-4593-be83-3e12ca663f0e&amp;pf_rd_r=YHBZ9KHHR1X6CY0GS3E2&amp;psc=1&amp;refRID=YHBZ9KHHR1X6CY0GS3E2">here</a> -- 'jst 1.25 connector 2 pin'</p>
+<p>Size: 8.5<em>25</em>40（mm）</p>
+<hr>
+<p>2020-12-13 09:55:51</p>
+<h2>buttons</h2>
+<p>mini pushbutton switch -- tall <a href="https://www.sparkfun.com/products/8605">via sparkfun</a></p>
+<p>10 mm tall.</p>
+<p>How tall is a typical header?</p>
+<p>Assortment of pushbuttons <a href="https://www.amazon.com/DaFuRui-250pcs-Tactile-Momentary-Assortment/dp/B07KGR7L9M/ref=asc_df_B07KGR7L9M/?tag=hyprod-20&amp;linkCode=df0&amp;hvadid=312112220877&amp;hvpos=&amp;hvnetw=g&amp;hvrand=4606913672532958917&amp;hvpone=&amp;hvptwo=&amp;hvqmt=&amp;hvdev=c&amp;hvdvcmdl=&amp;hvlocint=&amp;hvlocphy=9058138&amp;hvtargid=pla-614560844137&amp;psc=1">here</a></p>
+<p>Omron B3F datasheet <a href="https://4donline.ihs.com/images/VipMasterIC/IC/OMRN/OMRN-S-A0001309768/OMRN-S-A0001309768-1.pdf?hkey=52A5661711E402568146F3353EA87419">here</a></p>
+<p><img src="/img/co2/tactile_side_connectivity.png" alt=""></p>
+<p>need to swap out 'dual' switch for a single ..</p>
+<p><img src="/img/co2/in_progress.png" alt=""></p>
+<h2>Guide for qwiic connectors</h2>
+<p>Discussion <a href="https://forum.kicad.info/t/hand-soldering-jst-sh-connector/12894">here</a></p>
+<pre><code>Connectors_JST:JST_SH_SM04B-SRSS-TB_04x1.00mm_Angled
+</code></pre>
+<p>Redo for easier hand soldering?</p>
+<p><img src="/img/co2/rev_e.png" alt=""></p>
+<p><img src="/img/co2/rev_e_3d.png" alt=""></p>
+<p><img src="/img/co2/qwiic_pinout.png" alt=""></p>
+<p><a href="https://learn.sparkfun.com/tutorials/qwiic-adapter-hookup-guide/all">Qwiic adapter hookup guide</a></p>
+<p><img src="/img/co2/qwiic_pin_assignment.png" alt=""></p>
 </p>
       </div>
     </div>
