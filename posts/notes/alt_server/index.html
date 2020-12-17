@@ -319,6 +319,36 @@ looks like they do have a front end in React example at the end <a href="https:/
 </ul>
 <p>latest running code experimented with was <a href="node-js-jwt-authentication-postgresql">here</a>.</p>
 <p>going to experiment with the '.bio' code asap.</p>
+<p><a href="https://able.bio/rhett/creating-a-web-application-in-your-home-with-a-raspberry-pi-express-and-postgresql--3c90a372">.bio tutorial</a></p>
+<p>creating new tables</p>
+<p>CREATE TABLE users (
+user_id SERIAL PRIMARY KEY,
+username VARCHAR(50),
+password VARCHAR(255),
+is_admin BOOLEAN DEFAULT FALSE
+);</p>
+<p>CREATE TABLE measurements(
+id SERIAL PRIMARY KEY,
+feed_id INT,
+celcius FLOAT,
+humidity FLOAT,
+created TIMESTAMP DEFAULT NOW(),
+CONSTRAINT feed
+FOREIGN KEY(feed_id)
+REFERENCES feeds(feed_id)
+);</p>
+<p>CREATE TABLE measurements(
+id SERIAL PRIMARY KEY,
+feed_id INT,
+celcius FLOAT,
+humidity FLOAT,
+created TIMESTAMP DEFAULT NOW(),
+CONSTRAINT feed
+FOREIGN KEY(feed_id)
+REFERENCES feeds(feed_id)
+);</p>
+<p>INSERT INTO users (username, password) VALUES ('bob', 'jones');</p>
+<p>INSERT INTO feeds (name) values ('NodeMCU  ESP32');</p>
 
 
     </div>
