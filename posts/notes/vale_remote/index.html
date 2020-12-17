@@ -21,26 +21,115 @@
         <h1>Vale da Lama Greenhouse Monitoring</h1>
 
   
-  <h2>Table of Contents</h2>
+  <h2>Overview</h2>
+<p>All of this research and prototyping is occurring at <a href="https://www.valedalama.net/en/">Quinta Vale Da Lama</a>.</p>
+<hr>
+<p><em>April 13, 2020</em></p>
+<h2>SQLite</h2>
+<p>Great <a href="https://www.youtube.com/watch?v=Jib2AmRb_rk">talk on Sqllite</a>, arguing that it's appropriate for a database located on 'the edge'.</p>
+<img src="/img/valedalama/about_sqlite.png">
+<hr>
+<p><em>24 Apr 2020</em></p>
+<h2>Test Feather Code</h2>
+<p><a href="https://gist.github.com/dwblair/c18edaaa2de9a8d5e3a6b47c48797d98">Simple test code</a>  for Adafruit Feather + RAK</p>
+<hr>
+<p><em>05 May 2020</em></p>
+<h2>Configuring the region on the RAK</h2>
+<p>General setup for the RAK 7243 + Pi firmware is <a href="https://doc.rakwireless.com/rak7243c-lorawan-developer-gateway/device-firmware-setup">here</a>.</p>
+<p>Information about the configuration file is <a href="https://www.chirpstack.io/network-server/install/config/">here</a>.</p>
+<p>The firmware we're using is <a href="https://downloads.rakwireless.com/LoRa/Pilot-Gateway-Pro-RAK7243/Firmware/">here</a>.</p>
+<p>Can use 'gateway-config' command line script on RAK to set the region:</p>
+<pre><code>sudo gateway-config
+</code></pre>
+<p>This script modifies this file:</p>
+<pre><code>/etc/chirpstack-network-server/chirpstack-network-server.toml
+</code></pre>
+<h2>Basic Arduino Test Code</h2>
+<p>Basic test code for sending data to the RAK in OTAA mode is in gist form <a href="https://gist.github.com/dwblair/f6a0c3dd07fc3ae073fad3914f77af64">here</a>.</p>
+<h2>Configuring the region on the Arduino</h2>
+<p>Changing the region on the Arduino requires modifing a special header file.</p>
+<p>See the Adafruit Arduino tutorial <a href="https://learn.adafruit.com/the-things-network-for-feather?view=all#region-configuration">here</a>.</p>
+<h2>Adafruit Feather 900 Mhz can be tuned to 868 Mhz band</h2>
+<p>See the below snippet from the <a href="https://www.adafruit.com/product/3178">Adafruit Feather M0 LoRa 900 Mhz product page</a>:</p>
+<img src="/img/valedalama/feather_tunable.png">
+<h2>Adafruit LMIC OTAA basic code will attempt to rejoin periodically</h2>
+<p>See this example serial output:</p>
+<img src="/img/valedalama/rejoin.png">
+<h2>Needed tweak on Adafruit for EU band</h2>
+<p>See the forum post <a href="https://www.thethingsnetwork.org/forum/t/solved-adafruit-feather-m0-to-connect-to-ttn-over-otaa-unknown-event-20/29990/15">here</a>:</p>
+<img src="/img/valedalama/eu_band_adafruit_tweak.png">
+<p><a href="https://www.hackster.io/Amedee/the-things-network-node-for-ttnmapper-org-a8bcd4">This</a> might be a useful reference for setting up 868 band.</p>
+<p>Current impression is that RAK hardware does indeed distinguish between 868 and 915 Mhz bands ... ?</p>
+<p>05 May 2020 13:27 Update:  there is a 'project_config' file located in the 'src' folder on in the lmic library folder itself -- and it's set to the US band -- perhaps this is overriding the project files? Trying setting it to EU and the RAK to EU.  One open question is how specific the RAK Pi Hat is re: freq bands ... can it handle 868?</p>
+<p>So the current thinking for getting 868 band to work is:</p>
 <ul>
-<li><a href="#update_nov29">Update 29 NOV 2020</a></li>
+<li>change the Arduino lib folder project_config file to 868</li>
+<li>change the sketch lib folder project_config file to 868 (for good measure)</li>
+<li>comment out LMIC_selectSubBand(1);</li>
 </ul>
-<h2>TODO</h2>
+<p>Meanwhile, note that upload via bossac did work on the Pi.</p>
+<p>Confirmed -- was able to get upload on RAK in US '915' version by setting to '868' following above steps.  Key seems to have been the Arduino library project_config folder issue.</p>
+<p>Note: we are using <a href="https://github.com/mcci-catena/arduino-lmic/releases/tag/v2.3.2">mcci-catena arduino-lmic 2.3.2 version</a> of library with success.  Later versions haven't always worked. Stick with that for now.</p>
+<h2>Strategy</h2>
+<p>First:</p>
 <ul>
-<li>Make a mill-able PCB design in Eagle CAD for Lucio to mill [X]</li>
-<li>Make a manfuacture-able PCB design in KiCAD to send to that company in Germany</li>
-<li>Review: contact of company in Germany</li>
-<li>test timer chip with Heltec ESP32</li>
-<li>figure out how to load code remotely to Feather and to ESP32 via Pi</li>
-<li>set up data repository online</li>
-<li>display sensor data on a map</li>
+<li>set up RAK to 868 via sudo gateway-config</li>
+<li>try loading binary to Feather via RAK</li>
 </ul>
-<p>Need designs for:</p>
+<p>Second:</p>
 <ul>
-<li>the remote node (Feather + sensors)</li>
-<li>the gateway node (Heltec ESP32 + LoRa + timer chip + BME280)</li>
+<li>make sure we're using proper version of lmic library (see above)</li>
+<li>change the Arduino lib folder project_config file to 868</li>
+<li>change the sketch lib folder project_config file to 868 (for good measure)</li>
+<li>comment out LMIC_selectSubBand(1);</li>
 </ul>
-<h2>Overview</h2>
+<h2><a name="bme280_wiring">Wiring Adafruit Feather to BME280</a></h2>
+<p>As per instructions <a href="https://learn.adafruit.com/adafruit-bme280-humidity-barometric-pressure-temperature-sensor-breakout/arduino-test">here</a>:</p>
+<img src="/img/valedalama/feather_pinouts.jpg">
+</br>
+<img src="/img/valedalama/bme_280_pins.jpg">
+<p><strong>BME280 ---&gt; Feather</strong></p>
+<ul>
+<li>VIN --&gt; 3V</li>
+<li>GND --&gt; GND</li>
+<li>SCK --&gt; SCL</li>
+<li>SDI --&gt; SDA</li>
+</ul>
+<img src="/img/valedalama/bme_280_feather_wiring.png">
+<h2>Code for BME280 + Feather M0 LoRa</h2>
+<p>Using the BME280 can be accomplished by using the <a href="https://github.com/adafruit/Adafruit_BME280_Library">Adafruit BME280 Arduino Library</a>, which also requires using the <a href="https://github.com/adafruit/Adafruit_Sensor">Adafruit Sensor Library</a>.</p>
+<h2>Uplaoding firmware to Adafruit Feather M0 via command line (bossac)</h2>
+<p>An Adafruit tutorial is <a href="https://learn.adafruit.com/welcome-to-circuitpython/non-uf2-installation">here</a>.  Note that we need the 'arduino' branch of the bossac tool on github, which is version 1.7.X.</p>
+<pre><code>sudo bossac -p /dev/ttyACM0 -e -w -v -R firmware.bin
+</code></pre>
+<h2>Debugging the BME280 sensor</h2>
+<p>Sensor not working on Walt's RAK.  Q: is it because of connection to Feather / problem with Feather, or is it because of some setting on the Gateway?</p>
+<p>Diagnostic:  some basic BME280 test code, non-LoRa -- just prints values out to serial port.  Wrote the binary, and then sent it to Walt's feather remotely -- and got back an error:</p>
+<img src="/img/valedalama/bme_test.png">
+<hr>
+<p><em>09 May 2020</em></p>
+<h2>BME280 Node Fixed</h2>
+<p>Walt was able to fix the BME280 node by re-soldering nad re-wiring:</p>
+<img src="/img/valedalama/success_bme280.png">
+</br>
+</br>
+<h2>Local Sqlite database on USB</h2>
+<p>We've been able to get a local sqlite database up and running now, stored on a USB flash drive on the RAK:</p>
+<img src="/img/valedalama/local_first_iteration_1.png">
+</br>
+</br>
+<img src="/img/valedalama/local_first_iteration_1_rak.png">
+</br>
+</br>
+<img src="/img/valedalama/local_first_node_red.png">
+</br>
+</br>
+<h2>Human-readable date format</h2>
+<p>And we added a field to the database that provides a human-readable date.</p>
+<img src="/img/valedalama/human_readable_date.png">
+</br>
+</br>
+## Overview
 <p><a href="#version_4_assembly">Assembly Guide for Version 4</a>.</p>
 <p><a href="https://youtu.be/LljqFv8GzxA">Video explanation</a> of the current status as of Oct 07 2020  ..</p>
 <h2>AM2315 and 'new' i2c on Feather M0</h2>
@@ -332,6 +421,22 @@ Along with guides for all of this.</p>
 <p>Relies on a really low power LoRa node design based on an Atmel 328p -- elegant! -- <a href="https://www.thethingsnetwork.org/forum/t/full-arduino-mini-lorawan-below-1ua-sleep-mode/8059">here</a></p>
 <p>Nice post on OLED sleep current, <a href="https://bitbanksoftware.blogspot.com/2019/06/how-much-current-do-oled-displays-use.html">here</a>.  Looks like the 128x65 display I favor uses around 25 uA when asleep.</p>
 <p>A nice general review of OLEDs and various libraries and use-cases, <a href="https://bengoncalves.wordpress.com/2015/10/01/oled-display-and-arduino-with-power-save-mode/">here</a>.  Includes code for putting the OLED to sleep.</p>
+<hr>
+<h2>INTERIM TODO</h2>
+<ul>
+<li>Make a mill-able PCB design in Eagle CAD for Lucio to mill [X]</li>
+<li>Make a manfuacture-able PCB design in KiCAD to send to that company in Germany</li>
+<li>Review: contact of company in Germany</li>
+<li>test timer chip with Heltec ESP32</li>
+<li>figure out how to load code remotely to Feather and to ESP32 via Pi</li>
+<li>set up data repository online</li>
+<li>display sensor data on a map</li>
+</ul>
+<p>Need designs for:</p>
+<ul>
+<li>the remote node (Feather + sensors)</li>
+<li>the gateway node (Heltec ESP32 + LoRa + timer chip + BME280)</li>
+</ul>
 <hr>
 <p>2020-11-29 04:42:55</p>
 <h1><a name="update_nov29"></a> Update NOV 29 2020</h1>
