@@ -22,6 +22,9 @@
 
   
   <hr>
+<h2>Update 2020-12-17 17:43:13</h2>
+<p>Accomplished above, items 1-5. Remote node and gateway are connected to RAK, and remote node is posting data to this feed <a href="http://159.65.226.222:3000/drives/b02f7797b045956e79c019f889dfb080cadbfda6b468a9505835a82aadd5762c">here</a>.</p>
+<hr>
 <h2>Update 2020-12-17 08:07:06</h2>
 <p>Getting ready to deploy a remote node in the greenhouse for (hopefully) a longer run.</p>
 <p>Previously, the remote node's process was 'hung up' after some random interval.  Still not sure why (though suspect some oddness around sensor data acquisition).  The attempted solution is to add a 'watchdog timer' to the code, which should mean that if it 'freezes', it will eventually reboot and start from scratch.  This should address any firmware-related issues.  Note that it won't address e.g. insecure sensor wiring, which could also have been the cause of the problem.  But on a test of a few days, it did seem as though the watchdog technique worked.</p>
@@ -38,9 +41,6 @@
 <li>Test this data flow for a few days with the remote node and gateway plugged into the RAK, so that any hiccups can be more easily fixed.</li>
 <li>Once the system is stable, bring the remote node out to the greenhouse to install.</li>
 </ol>
-<hr>
-<h2>Update 2020-12-17 17:43:13</h2>
-<p>Accomplished above, items 1-5. Remote node and gateway are connected to RAK, and remote node is posting data to this feed <a href="http://159.65.226.222:3000/drives/b02f7797b045956e79c019f889dfb080cadbfda6b468a9505835a82aadd5762c">here</a>.</p>
 
 
     </div>
