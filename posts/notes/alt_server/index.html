@@ -189,6 +189,136 @@ psps</p>
 <hr>
 <p>2020-12-17 08:04:23</p>
 <p>arg for postgresql for iot <a href="https://blog.timescale.com/blog/choose-postgresql-for-iot-19688efc60ca/">here</a></p>
+<hr>
+<h3>(HICCUP IN NOTES FLOW)</h3>
+<hr>
+<p>2020-12-15 17:31:58</p>
+<p><a href="https://www.digitaljunky.io/make-your-own-data-platform-for-the-internet-of-things-using-node-js-and-express-js/">make your own iot data platform</a></p>
+<p>mern stack <a href="https://www.digitalocean.com/community/tutorials/getting-started-with-the-mern-stack">here</a></p>
+<p>mean stack jwt <a href="https://www.youtube.com/watch?v=T8qepiTbJi4">here</a></p>
+<p>MERN full stack <a href="https://github.com/praveenscience/JWT-MERN-FullStack">here</a></p>
+<p>ooooooh this is good MERN! <a href="https://github.com/praveenscience/JWT-MERN-FullStack">here</a></p>
+<p>another good example <a href="https://github.com/vishalnagda1/mern-jwt-auth">here</a></p>
+<p>this worked!</p>
+<p>https://github.com/vishalnagda1/mern-jwt-auth</p>
+<p>broader tutorial on MERN <a href="https://codingthesmartway.com/the-mern-stack-tutorial-building-a-react-crud-application-from-start-to-finish-part-1/">here</a></p>
+<p>MERN CRUD app tutorial <a href="https://github.com/SinghDigamber/react-mernstack-crud">here</a></p>
+<p>this looks like a nice example, using postgres -- <a href="https://github.com/adrach/starter-postgres-express-react">here</a></p>
+<hr>
+<p>MERN:</p>
+<p>okay so this tutorial lets you create student records and view them -- <a href="https://github.com/SinghDigamber/react-mernstack-crud">here</a></p>
+<p>whereas <a href="https://github.com/vishalnagda1/mern-jwt-auth">this tutorial</a> does user login stuff.</p>
+<hr>
+<p>2020-12-15 20:59:54</p>
+<p>this pair of server (node + mongo + jwt) + client (angular) worked:</p>
+<ul>
+<li>server <a href="https://jasonwatmore.com/post/2020/06/17/nodejs-mongodb-api-jwt-authentication-with-refresh-tokens">tutorial</a> and <a href="https://github.com/cornflourblue/node-mongo-jwt-refresh-tokens-api">code</a></li>
+<li>client <a href="https://github.com/cornflourblue/angular-9-jwt-refresh-tokens">tutorial</a> and <a href="https://github.com/cornflourblue/angular-9-jwt-refresh-tokens">code</a></li>
+</ul>
+<p>reading about fastify <a href="https://medium.com/@tarusharora/how-to-build-a-node-js-api-with-fastify-mongodb-docker-and-postman-f1ffab912ece">here</a></p>
+<hr>
+<p>2020-12-16 09:25:10</p>
+<p>this might be my starting place -- node express postgresql ubuntu <a href="https://medium.com/codingtown/node-express-and-postgresql-using-sequelize-in-ubuntu-18-04-3-lts-bc8d2cde3796">here</a></p>
+<p>also see post <a href="https://scotch.io/tutorials/getting-started-with-node-express-and-postgres-using-sequelize">here</a></p>
+<p>doing this in ~/Documents/postgres-express-react-node-tutorial</p>
+<p>notes on postgres and user auth <a href="https://stackoverflow.com/questions/11919391/postgresql-error-fatal-role-username-does-not-exist">here</a></p>
+<p>used this technique to change postgres password to 'i8buddha':
+linked <a href="https://serverfault.com/questions/110154/whats-the-default-superuser-username-password-for-postgres-after-a-new-install">here</a></p>
+<p>sequelize import is not a function' -- https://stackoverflow.com/questions/62917111/sequelize-import-is-not-a-function</p>
+<p>associated github repo is <a href="https://github.com/waiyaki/postgres-express-node-tutorial">here</a></p>
+<hr>
+<p>2020-12-16 10:16:16</p>
+<p>In the end, a nice codebase for postgres express and node is <a href="https://scotch.io/tutorials/getting-started-with-node-express-and-postgres-using-sequelize#toc-sequelize-setup">here</a>.  Note that this blog post is based on an earlier blog post by Michael Herman, <a href="https://mherman.org/blog/node-postgres-sequelize/">here</a>.</p>
+<p>with the github repo <a href="https://github.com/waiyaki/postgres-express-node-tutorial">here</a></p>
+<p>used this technique to change postgres password to 'i8buddha':
+linked <a href="https://serverfault.com/questions/110154/whats-the-default-superuser-username-password-for-postgres-after-a-new-install">here</a></p>
+<p>which needed to be changed in server/config/config.json as per:</p>
+<p>{
+&quot;development&quot;: {
+&quot;username&quot;: &quot;postgres&quot;,
+&quot;password&quot;: &quot;i8buddha&quot;,
+&quot;database&quot;: &quot;todos-dev&quot;,
+&quot;host&quot;: &quot;127.0.0.1&quot;,
+&quot;port&quot;: 5432,
+&quot;dialect&quot;: &quot;postgres&quot;
+},
+&quot;test&quot;: {
+&quot;username&quot;: &quot;postgres&quot;,
+&quot;password&quot;: &quot;i8buddha&quot;,
+&quot;database&quot;: &quot;todos-test&quot;,
+&quot;host&quot;: &quot;127.0.0.1&quot;,
+&quot;port&quot;: 5432,
+&quot;dialect&quot;: &quot;postgres&quot;
+}
+}</p>
+<p>this was the only change needed in the github repo above.</p>
+<p>clone, then install with npm install, and run with npm run start:dev</p>
+<p>result: working todo api w/ sequelize.</p>
+<hr>
+<p>2020-12-16 11:26:24</p>
+<p>as another approach w/ node + postgres, trying out <a href="https://rike.dev/2019/04/20/setup-postgresql-database-and-api-for-node-js">this tutorial</a></p>
+<p>Nice intro tutorial on nodejs and postgres <a href="https://stackabuse.com/using-postgresql-with-nodejs-and-node-postgres/">here</a></p>
+<p>try out the github code <a href="https://github.com/jkasun/sa-node-postgres">here</a></p>
+<p>worked.</p>
+<p>New homework!  This is the thing to try:</p>
+<p>&quot;creating a web application in your home using nodes, rpi, express, postgresql&quot; -- <a href="https://able.bio/rhett/creating-a-web-application-in-your-home-with-a-raspberry-pi-express-and-postgresql--3c90a372">here</a></p>
+<p>NOTE:  'createdb -0 username dbname' should have -O instead of -0</p>
+<p>Associated github repo is <a href="https://github.com/RhettTrickett/habitat">here</a></p>
+<p>Grand. And then can add users / JWT with something like <a href="https://www.codementor.io/@olawalealadeusi896/building-a-simple-api-with-nodejs-expressjs-postgresql-db-and-jwt-3-mke10c5c5">this post</a></p>
+<p>The first post for that series is <a href="https://www.codementor.io/@olawalealadeusi896/building-simple-api-with-es6-krn8xx3k6">here</a></p>
+<p>Full code for the latter is <a href="https://github.com/olawalejarvis/reflection_app_server">here</a></p>
+<p>And perhaps this shows how to combine the above with a front end -- <a href="https://bezkoder.com/react-express-authentication-jwt/">here</a></p>
+<h3>Good example!</h3>
+<p>The following pairing of backend and frontend seems to work as a baseline structure. Running both, they even find one another on the proper ports.</p>
+<h4>Backend w/ node + express + postgresql + JWT</h4>
+<p>Tutorial <a href="https://bezkoder.com/node-js-jwt-authentication-postgresql/">here</a> with associated code on github <a href="https://github.com/bezkoder/node-js-jwt-authentication-postgresql">here</a></p>
+<h4>Frontend</h4>
+<p>React front end <a href="https://bezkoder.com/react-jwt-auth/">here</a>, with github repo <a href="https://github.com/bezkoder/react-jwt-auth">here</a></p>
+<h2>Node + Express + Postgres + Sequelize</h2>
+<p>Tutorial <a href="https://www.robinwieruch.de/postgres-express-setup-tutorial">here</a>.  Nice explanation.</p>
+<p>Another nice tutorial <a href="https://www.djamware.com/post/5b56a6cc80aca707dd4f65a9/nodejs-expressjs-sequelizejs-and-postgresql-restful-api">here</a>, with associated code on github <a href="https://github.com/didinj/node-express-postgresql-sequelize.git">here</a></p>
+<p>Ahhhh, really nice tutorial on using sequelize, <a href="https://blog.echobind.com/a-guide-for-restful-apis-with-node-sequelize-postgres-63636d026d5d">here</a></p>
+<hr>
+<p>2020-12-16 13:02:19</p>
+<p>ingesting real time data w/ nodejs and timescale db <a href="https://stephanefrechette.dev/posts/ingest-real-time-streaming-data-for-time-series-analysis/">here</a></p>
+<p>rike in berlin <a href="https://dev.to/frankanka">here</a></p>
+<p>getting a csv download from nodejs <a href="https://dev.to/frankanka/get-a-csv-download-out-of-postgresql-or-lowdb-database-on-node-js-45k2">here</a></p>
+<p>rike -- project -- maybe she'd help with corona -- <a href="https://rike.dev/">here</a></p>
+<hr>
+<p>multiple users and reflections <a href="https://www.codementor.io/@olawalealadeusi896/building-a-simple-api-with-nodejs-expressjs-postgresql-db-and-jwt-3-mke10c5c5">here</a></p>
+<p>this is a meaty post <a href="https://www.codementor.io/@olawalealadeusi896/building-a-simple-api-with-nodejs-expressjs-and-postgresql-db-masuu56t7">here</a></p>
+<h2>Key links</h2>
+<p>https://scotch.io/tutorials/getting-started-with-node-express-and-postgres-using-sequelize#toc-sequelize-setup</p>
+<p>https://bezkoder.com/node-js-jwt-authentication-postgresql/</p>
+<p>https://www.codementor.io/@olawalealadeusi896/building-a-simple-api-with-nodejs-expressjs-and-postgresql-db-masuu56t7</p>
+<p>this adds content to the node + express + postgres + sequelize <a href="https://bezkoder.com/node-express-sequelize-postgresql/">here</a> w/ associated github repo <a href="https://github.com/bezkoder/node-express-sequelize-postgresql">here</a></p>
+<p>follow this first!<br>
+and see if you can make it appropriate for sensors ...</p>
+<p>and maybe if you can do a front end for it ...
+looks like they do have a front end in React example at the end <a href="https://bezkoder.com/react-node-express-postgresql/">here</a> -- w/ associated github repo <a href="https://github.com/bezkoder/react-crud-web-api">here</a></p>
+<p>NOTE: have changed default port to something other than 8080, should go back to that ...</p>
+<p>so, plan of attack:</p>
+<ol>
+<li>return to that <a href="https://able.bio/rhett/creating-a-web-application-in-your-home-with-a-raspberry-pi-express-and-postgresql--3c90a372">.bio tutorial</a> on sensors, and see how they set up the tables.  use that as an inspiration for how to create the postgresql table structure.</li>
+<li>figure out best next thing to implement above; 'todo' or 'tutorials' examples; with or without jwt</li>
+<li>add jwt + users using the other tutorial.</li>
+</ol>
+<p>postgres tutorial <a href="https://www.digitalocean.com/community/tutorials/how-to-install-and-use-postgresql-on-ubuntu-18-04">here</a></p>
+<pre><code>sudo -i -u postgres
+</code></pre>
+<p>psql</p>
+<p>\q</p>
+<hr>
+<p>2020-12-16 21:08:14</p>
+<p>next steps:</p>
+<ul>
+<li>try to 'sequelize' the .bio example above, in order to understand how sequelize works ...</li>
+<li>send sensor data to it</li>
+<li>build it out like the 'tutorials' codebase that was associated with a react frontend</li>
+<li>find a way to add JWT</li>
+</ul>
+<p>latest running code experimented with was <a href="node-js-jwt-authentication-postgresql">here</a>.</p>
+<p>going to experiment with the '.bio' code asap.</p>
 
 
     </div>
