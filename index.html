@@ -4846,15 +4846,10 @@ username VARCHAR(50),
 password VARCHAR(255),
 is_admin BOOLEAN DEFAULT FALSE
 );</p>
-<p>CREATE TABLE measurements(
-id SERIAL PRIMARY KEY,
-feed_id INT,
-celcius FLOAT,
-humidity FLOAT,
-created TIMESTAMP DEFAULT NOW(),
-CONSTRAINT feed
-FOREIGN KEY(feed_id)
-REFERENCES feeds(feed_id)
+<p>CREATE TABLE feeds(
+feed_id SERIAL PRIMARY KEY,
+name VARCHAR(255),
+private_key VARCHAR(255)
 );</p>
 <p>CREATE TABLE measurements(
 id SERIAL PRIMARY KEY,
@@ -4868,6 +4863,18 @@ REFERENCES feeds(feed_id)
 );</p>
 <p>INSERT INTO users (username, password) VALUES ('bob', 'jones');</p>
 <p>INSERT INTO feeds (name) values ('NodeMCU  ESP32');</p>
+<p>checking string status <a href="https://stackoverflow.com/questions/60117067/javascript-regex-how-to-check-if-a-string-only-contains-letters-numbers-dash">here</a></p>
+<hr>
+<p>2020-12-17 20:03:39</p>
+<p>newfeed branch is <a href="https://github.com/edgecollective/habitat/pull/new/newfeed">here</a></p>
+<p>going to try for csv next using tutorial <a href="https://dev.to/frankanka/get-a-csv-download-out-of-postgresql-or-lowdb-database-on-node-js-45k2">here</a></p>
+<p>another tutorial on exporting csv w/ node and express <a href="https://kb.objectrocket.com/postgresql/postgresql-export-csv-with-node-959">here</a></p>
+<p>nice bezcoder tutorial <a href="https://bezkoder.com/node-js-export-postgresql-csv-file/">here</a></p>
+<hr>
+<p>2020-12-17 22:09:41</p>
+<p>'heltec' is the latest branch.  accepts data from a heltec; includes firmware.</p>
+<p><img src="/img/alt_server/feed_data.png" alt=""></p>
+<p>Server code is <a href="https://github.com/edgecollective/habitat/tree/heltec">here</a>; firmware is in 'firmware' directory.</p>
 </p>
       </div>
     </div>
