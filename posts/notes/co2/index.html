@@ -1704,6 +1704,39 @@ export to csv ...</p>
 <p>JST SH 4 pin micro -- vertical, <a href="https://www.amazon.com/Micro-4-Pin-Connector-100mm-Female/dp/B01L5PSHDA/ref=sr_1_12?crid=J2RDX2QAWXZY&amp;dchild=1&amp;keywords=jst-sh+1.0mm&amp;qid=1608386735&amp;sprefix=jst-sh%2Caps%2C371&amp;sr=8-12">here</a></p>
 <p>horizontal (as placed on rev_e) <a href="https://www.adafruit.com/product/4208">here</a></p>
 <p>or as listed on sparkfun (horizontal) <a href="https://www.sparkfun.com/products/14417">here</a></p>
+<hr>
+<p>2020-12-19 13:18:40</p>
+<h2>uFL connector</h2>
+<p>adafruit uFL connector <a href="https://www.adafruit.com/product/1661">here</a></p>
+<p>looking at feather m0 lora pcb for uFL connector reference <a href="https://github.com/adafruit/Adafruit-Feather-M0-RFM-LoRa-PCB.git">here</a></p>
+<p><img src="/img/co2/feather_m0_antenna.png" alt=""></p>
+<h2>BMP3XX</h2>
+<p>BMP3XX adafruit firmware on github <a href="https://github.com/adafruit/Adafruit_BMP3XX">here</a></p>
+<p>BMP3XX adafruit hardware design files on github <a href="https://github.com/adafruit/Adafruit-BMP3xx-PCB">here</a></p>
+<h2>BMP390</h2>
+<p>BMP390 datasheet <a href="/img/co2/bst-bmp390-fl000.pdf">here</a></p>
+<p>Adafruit BMP390 schematic:</p>
+<p><img src="/img/co2/sensors_BMP390_sch.png" alt=""></p>
+<h2>BMP388</h2>
+<p>BMP388 datasheet <a href="https://ae-bst.resource.bosch.com/media/_tech/media/datasheets/BST-BMP388-DS001.pdf">here</a></p>
+<p>Adafruit BMP388 schematic:</p>
+<p><img src="/img/co2/sensors_BMP388_Sch.png" alt=""></p>
+<p>Question: do we need to add a power supply to board? Seems to be a common way of keeping the power supply clean for the pressure sensor chip.</p>
+<p>Reference: <a href="https://community.bosch-sensortec.com/t5/MEMS-sensors-forum/BMP388-PCBs/td-p/16815">here</a></p>
+<p><img src="/img/co2/bmp388_regulator.png" alt=""></p>
+<p>Looks like we should add a regulator. Default to using the Adafruit part, change if something else seems better.</p>
+<p>Adafruit uses AP2112K-3.3 for the BMP390 breakout (more recent breakout). This also seems to be used for the feather.</p>
+<p>Look to see if it's also used for the Feather ESP32 -- and what its specs are -- if it can source sufficient current for the full CO2 board (which are ...?)</p>
+<p>Q:</p>
+<ul>
+<li>what LDO is used on the Feather ESP32?</li>
+<li>what are the current req's for this board?</li>
+<li>footprint to use for AP2112K?  (SOT-25 assumed)</li>
+</ul>
+<p>AP2112K-3.3 on <a href="https://www.digikey.com/en/products/detail/diodes-incorporated/AP2112K-3-3TRG1/4470746">Digikey</a> and associated <a href="https://www.diodes.com/assets/Datasheets/AP2112.pdf">datasheet</a></p>
+<p>Looks like it can provide 600 mA.</p>
+<p>max input 6V</p>
+<p>Assume SOT-25 package on Adafruit</p>
 
 
     </div>
