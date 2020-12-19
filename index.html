@@ -3826,6 +3826,7 @@ export to csv ...</p>
 <p><img src="/img/co2/feather_m0_mcp7831.png" alt=""></p>
 <h2>FTDI</h2>
 <p>Do FTDI board separately? yes b/c DTR might be needed</p>
+<p><img src="/img/co2/ftdi_plus.png" alt=""></p>
 <h2>Reset and GPIO0</h2>
 <p>TODO: Need also to break out the reset and other button, in case ftdi cable someone uses doesn't expose dtr ...</p>
 <p>Buttons -- use SW_Push symbol ... with which SMT buttons? use adafruits?</p>
@@ -3846,6 +3847,7 @@ export to csv ...</p>
 <p>this would simplify things.</p>
 <p>Q: Possible to solder? Look at Feather ESP32 schematic / footprint.</p>
 <p>Maybe this is a separate project -- make an ftdi header board.</p>
+<p>Need to decide on nice microUSB footprint. SMT would be nice, and fine for this context -- don't need through-hole. feather esp32 part should be fine. see if you can source them on digikey (or which smt parts are easy to source).</p>
 <h2>Filtering / decoupling</h2>
 <p>TODO Need to add caps from all relevant sub-circuits:</p>
 <ul>
