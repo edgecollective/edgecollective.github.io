@@ -3910,6 +3910,36 @@ export to csv ...</p>
 <li>re-measure and redo the oled &amp; scd30 outlines, to ensure enough space</li>
 </ul>
 <p><img src="/img/co2/rev_d_3drender_dec_19.png" alt=""></p>
+<p><img src="/img/co2/board_rev_d_process.png" alt=""></p>
+<p>if add a smt mic, add a switch
+otherwise: maybe just make it an optional DIP add-on ...</p>
+<hr>
+<p>2020-12-20 08:21:38</p>
+<p>rather than replicate the mosfet on the power supply, maybe just have one at the intake?</p>
+<p>alright -- emulate feather 32 instead of heltec. we know that the circuit works, and it's the same esp32 module, with same pins avail.</p>
+<p>iterate to fancier version of batt meas circuit.</p>
+<p>check against tinypico for power circuit</p>
+<p>nice reference for esp32 pinouts and which pins to use <a href="https://randomnerdtutorials.com/esp32-pinout-reference-gpios/">here</a></p>
+<p>default spi pins on esp32 for lora <a href="https://randomnerdtutorials.com/esp32-lora-rfm95-transceiver-arduino-ide/">here</a></p>
+<p><img src="/img/co2/esp32_lora_random_nerd.png" alt=""></p>
+<p>Hog 32 schematic:</p>
+<p><img src="/img/co2/hog32_schem.png" alt=""></p>
+<p>using the arduino ide + esp32 + sd card <a href="http://www.iotsharing.com/2017/05/how-to-use-arduino-esp32-to-store-data-to-sdcard.html">here</a></p>
+<p>update: heltec uses gpio5 for lora sck; feather esp32 uses gpio5 for sck; so that's fine.
+default to using feather esp32 pinouts.</p>
+<p>pins 34,35,36,39 are input only.  use these on buttons.</p>
+<p>ref for using sd card featherwing with feather esp32 <a href="https://learn.adafruit.com/adafruit-adalogger-featherwing/using-the-sd-card">here</a> -- cs is on gpio33</p>
+<h2>BMP388 wiring / connections</h2>
+<p>nice reference <a href="https://learn.adafruit.com/adafruit-bmp388-bmp390-bmp3xx/arduino">here</a></p>
+<h2>Qwiic pin arrangement</h2>
+<p><img src="/img/co2/qwiic_arrangement.png" alt=""></p>
+<h2>Adalogger featherwing pin arrangement</h2>
+<p>(mimic in rev_d)</p>
+<p><img src="/img/co2/adalogger_featherwing.png" alt=""></p>
+<h2>Advice regarding microusb ground</h2>
+<p>Reference <a href="https://electronics.stackexchange.com/questions/4515/how-to-connect-usb-connector-shield">here</a></p>
+<h2>SOD123 oddness?</h2>
+<p>TODO: Look into changing footprint ...</p>
 </p>
       </div>
     </div>
