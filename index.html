@@ -3940,6 +3940,28 @@ default to using feather esp32 pinouts.</p>
 <p>Reference <a href="https://electronics.stackexchange.com/questions/4515/how-to-connect-usb-connector-shield">here</a></p>
 <h2>SOD123 oddness?</h2>
 <p>TODO: Look into changing footprint ...</p>
+<h2>Pad sizes</h2>
+<p><img src="/img/co2/pin_sizes.png" alt=""></p>
+<hr>
+<p>2020-12-22 09:41:59</p>
+<p>for low power tests -- look up tinypico schematic</p>
+<p>schematic <a href="https://cromwell-intl.com/open-source/raspberry-pi/sdr-getting-started.html">here</a></p>
+<p>and in our own repo <a href="/img/co2/TinyPICO_Schematic.pdf">here</a></p>
+<p>key part is the power subcircuit:</p>
+<p><img src="/img/co2/tinypico_power.png" alt=""></p>
+<p>This is the regulator they are using on the board <a href="https://www.digikey.com/en/products/detail/on-semiconductor/NCP167BMX330TBG/9169761">here</a></p>
+<p>and this is the mosfet <a href="https://datasheet.lcsc.com/szlcsc/Leshan-Radio-LP0404N3T5G_C172433.pdf">here</a></p>
+<p>analysis: looks like we've got essentially an identical circuit; they make a different choice of mosfet, but we can probably dial that in easily ....</p>
+<hr>
+<p>2020-12-22 10:00:06</p>
+<p>battery voltage meas reference on jeenode <a href="https://jeelabs.org/2013/05/16/measuring-the-battery-without-draining-it/index.html">here</a></p>
+<p>TODO: check reset subcircuit -- match feather</p>
+<hr>
+<p>2020-12-24 05:04:43</p>
+<p>Test of the co2 board &quot;rev_e&quot;!</p>
+<p>Used firmware <a href="">here</a></p>
+<p>http://159.65.226.222:3000/drives/493074c83fde57d306e13d972739d8b4d2c7d1d7506835264b1e196f979a87ec</p>
+<p><img src="/img/co2/rev_e_test_bayou.png" alt=""></p>
 </p>
       </div>
     </div>
@@ -4569,6 +4591,10 @@ Along with guides for all of this.</p>
 <hr>
 <p>2020-12-17 15:23:43</p>
 <p><img src="/img/valedalama/greenhouse_v_0.2.png" alt=""></p>
+<hr>
+<p>2020-12-23 08:17:40</p>
+<p>Test of the battery level over a few days ...</p>
+<p><img src="/img/valedalama/sunny_days.png" alt=""></p>
 </p>
       </div>
     </div>
