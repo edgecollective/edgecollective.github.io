@@ -2023,6 +2023,65 @@ New idea:  3d print a nice enclosure, and then also design a cardboard one.  Run
 <h2>REV_E 3D printed enclsoure update</h2>
 <p>File is <a href="https://github.com/edgecollective/co2-remote-and-gateway/blob/master/rev_e/enclosure/ver1d.scad">here</a>.</p>
 <p><img src="/img/co2/3d_enclosure_render.png" alt=""></p>
+<hr>
+<p>2020-12-30 14:16:53</p>
+<h2>Optimizing cardboard designs</h2>
+<p>The current design worked out better with a thinner cardboard box from Amazon, that has 'A3' and 'FLX' printed prominently on it, and which also had some graphics printed on it. Saving that as &quot;a3_flx.scad&quot; in the 'cardboard' branc.</p>
+<p>Going to try also to optimize for the thicker (but I think more standard) Amazon box that has &quot;Z12&quot; and &quot;120&quot; printed on it, saving as 'z12_120.scad'.</p>
+<hr>
+<p>2020-12-30 14:55:05</p>
+<p>Set up 'router-style' connection on rev_e ...</p>
+<p>'heltec_router.ino' ...</p>
+<hr>
+<p>2020-12-30 15:03:18</p>
+<h2>Buttons</h2>
+<p>TODO: check button status on rev_e -- is &quot;A&quot; connected to LED pin?</p>
+<p>Basic button check ...</p>
+<p>Buttons check out.  Pin &quot;A&quot; is gpio37, Pin &quot;B&quot; is gpio36.</p>
+<h2>Jupyter analysis</h2>
+<p>Todo!</p>
+<h2>WiFi setup with ESP32</h2>
+<p>Nice tutorial <a href="https://www.instructables.com/ESP8266-and-ESP32-With-WiFiManager/">here</a></p>
+<p>Ahh -- this is the code I'd found that worked nicely -- from hieromon, <a href="https://hieromon.github.io/AutoConnect/gettingstarted.html">here</a>.</p>
+<p>Arduino WiFi module description <a href="https://www.arduino.cc/en/Reference/WiFi">here</a></p>
+<hr>
+<p>captive portal <a href="https://arduino.stackexchange.com/questions/77642/esp32-open-captive-portal-on-connected">here</a></p>
+<p>wifimanager for esp32 <a href="https://github.com/zhouhan0126/WIFIMANAGER-ESP32">here</a></p>
+<p>or maybe better library <a href="https://diyprojects.io/esp32-test-wifimanager-library-manage-wifi-connections/#.X-99TnVKjVM">https://diyprojects.io/esp32-test-wifimanager-library-manage-wifi-connections/#.X-99TnVKjVM</a></p>
+<p>this seems powerful -- not sure how to use though!</p>
+<p><a href="https://github.com/warmcat/lws-esp32-factory">https://github.com/warmcat/lws-esp32-factory</a></p>
+<p><a href="https://github.com/tonyp7/esp32-wifi-manager/">https://github.com/tonyp7/esp32-wifi-manager/</a> looks like a great option</p>
+<p>back to trying <a href="https://diyprojects.io/esp32-test-wifimanager-library-manage-wifi-connections/#.X--CfHVKjVM">https://diyprojects.io/esp32-test-wifimanager-library-manage-wifi-connections/#.X--CfHVKjVM</a></p>
+<p><img src="/img/co2/library_options.png" alt=""></p>
+<p>documentation for wifi manager <a href="https://github.com/tzapu/WiFiManager">here</a></p>
+<p>note: seems that we want the 'development' branch of wifimanger for esp32 -- as per instructions <a href="https://diyprojects.io/esp32-test-wifimanager-library-manage-wifi-connections/#.X--CfHVKjVM">here</a></p>
+<p>tutorial on using wifimanager (with esp8266, but should work here) -- <a href="https://diyprojects.io/esp32-test-wifimanager-library-manage-wifi-connections/#.X--CfHVKjVM">https://diyprojects.io/esp32-test-wifimanager-library-manage-wifi-connections/#.X--CfHVKjVM</a></p>
+<hr>
+<p>2021-01-01 15:48:48</p>
+<p>OKAY!  working wifi configuration (basic) at <a href="https://github.com/edgecollective/co2-remote-and-gateway/tree/rev_e_wifi_config/rev_e/firmware/wifi_sensor/wifi_config_basic_scd30">https://github.com/edgecollective/co2-remote-and-gateway/tree/rev_e_wifi_config/rev_e/firmware/wifi_sensor/wifi_config_basic_scd30</a></p>
+<hr>
+<p>2021-01-01 18:13:05</p>
+<p>migrating from arduinojson5 to 6 article <a href="https://arduinojson.org/v6/doc/upgrade/">here</a></p>
+<hr>
+<p>2021-01-01 19:17:36</p>
+<p>okay, current candidates are: wifimanager (dev branch), and hieromon.</p>
+<p>latest attempt at getting it to work (which req'd upgrading the ArduinoJSON code) was here: <a href="https://github.com/edgecollective/co2-remote-and-gateway/tree/rev_e_wifi_config/rev_e/firmware/wifi_sensor/AutoConnectWithFSParameters_bayou">AutoConnectWithFSParameters_bayou</a></p>
+<p>customization on wifimanager looks a bit hairy.<br>
+l
+hieromon might work better re: customization.</p>
+<p>trying more with hieromon now ...</p>
+<p>for autoconnect, looks like we want to consider autoreconnect to determine behavior if device needs to connect to wifi again. link here: <a href="https://hieromon.github.io/AutoConnect/adconnection.html">https://hieromon.github.io/AutoConnect/adconnection.html</a></p>
+<hr>
+<p>2021-01-01 19:49:31</p>
+<p>Here's a thread on how to delete credentials --</p>
+<p><a href="https://github.com/Hieromon/AutoConnect/issues/175">https://github.com/Hieromon/AutoConnect/issues/175</a></p>
+<hr>
+<p>2021-01-01 20:31:46</p>
+<p>This code is working fairly nicely!</p>
+<p><a href="https://github.com/edgecollective/co2-remote-and-gateway/tree/rev_e_wifi_config/rev_e/firmware/wifi_sensor/AutoConnect_Elements_display">https://github.com/edgecollective/co2-remote-and-gateway/tree/rev_e_wifi_config/rev_e/firmware/wifi_sensor/AutoConnect_Elements_display</a></p>
+<p>Document this tomorrow first thing.</p>
+<p>It displays the AP to visit, then once connected, displays the IP.</p>
+<p>Need to collect custom paramters ...</p>
 
 
     </div>
