@@ -2133,6 +2133,77 @@ hieromon might work better re: customization.</p>
 <p>Two button interface video demo <a href="https://youtu.be/w6CxT43gUV8">here</a></p>
 <p>Code here: <a href="https://github.com/edgecollective/co2-remote-and-gateway/tree/button/rev_e/firmware/wifi_sensor/two_buttons">https://github.com/edgecollective/co2-remote-and-gateway/tree/button/rev_e/firmware/wifi_sensor/two_buttons</a></p>
 <p>NOTE: LED D1 doesn't seem to work -- perhaps value of resistor?</p>
+<hr>
+<p>2021-01-02 21:01:25</p>
+<p>Idea: measure every X seconds; average these values; PUT every Y*X seconds so that the PUT interval is 5 or 10 min or more. The averaging will help smooth out the noise.  Every measurement, can blink the LED (optionally) and update the screen.  Indicate on screen when have sent data online.</p>
+<p>Also: can embed videos &amp; other 'heavy' material in the ESP32 landing page by pulling it from online such that it only shows up once there's an internet connection to the outside world ...</p>
+<hr>
+<p>2021-01-03 10:54:43</p>
+<p>cap_params seems to work alright ...</p>
+<p>working on cap_params_load ...</p>
+<p>retrieving files from SPIFFS -- <a href="https://techexplorations.com/blog/esp32/blog-esp32-how-to-retrieve-a-file-from-the-spiffs/">https://techexplorations.com/blog/esp32/blog-esp32-how-to-retrieve-a-file-from-the-spiffs/</a></p>
+<hr>
+<p>2021-01-03 11:55:47</p>
+<p>arduinojson read file -- <a href="https://arduinojson.org/v6/example/config/">https://arduinojson.org/v6/example/config/</a></p>
+<p>arduinojson read array -- <a href="https://arduinojson.org/v6/api/jsonarray/">https://arduinojson.org/v6/api/jsonarray/</a></p>
+<p>SPIFFS read and write examples <a href="https://www.esp8266.com/viewtopic.php?f=29&amp;t=8194">https://www.esp8266.com/viewtopic.php?f=29&amp;t=8194</a></p>
+<p>this is how i want to reference an element of the array i think <a href="https://arduinojson.org/v6/api/jsonarray/subscript/">https://arduinojson.org/v6/api/jsonarray/subscript/</a></p>
+<hr>
+<p>2021-01-03 13:12:57</p>
+<p>Okay, this version of the code uses a file, elements.json, on the SPIFFS filesystem of the esp32 to configure things; and it can be modified by the esp32 as well.</p>
+<p><a href="https://github.com/edgecollective/co2-remote-and-gateway/tree/cap_params/rev_e/firmware/wifi_sensor/cap_params_load_immediate">https://github.com/edgecollective/co2-remote-and-gateway/tree/cap_params/rev_e/firmware/wifi_sensor/cap_params_load_immediate</a></p>
+<hr>
+<p>2021-01-03 13:29:44</p>
+<p>Getting closer to capturing parameters data:</p>
+<p><a href="https://github.com/edgecollective/co2-remote-and-gateway/tree/cap_params/rev_e/firmware/wifi_sensor/params_fuller">https://github.com/edgecollective/co2-remote-and-gateway/tree/cap_params/rev_e/firmware/wifi_sensor/params_fuller</a></p>
+<hr>
+<p>2021-01-03 16:51:47</p>
+<p>params_fuller_FS is where it's at!</p>
+<p>warning regarding dynamic memory usage in micros here: <a href="https://arduino.stackexchange.com/questions/1013/how-do-i-split-an-incoming-string">https://arduino.stackexchange.com/questions/1013/how-do-i-split-an-incoming-string</a></p>
+<hr>
+<p>2021-01-03 19:02:50</p>
+<p>This is getting really close now:</p>
+<p><a href="https://github.com/edgecollective/co2-remote-and-gateway/tree/cap_params/rev_e/firmware/wifi_sensor/params_fuller_FS">https://github.com/edgecollective/co2-remote-and-gateway/tree/cap_params/rev_e/firmware/wifi_sensor/params_fuller_FS</a></p>
+<p>Need to get it to make some measurements; but basic interface seems to be in place now.</p>
+<hr>
+<p>2021-01-04 08:52:08</p>
+<p>setting the AutConnect menu items <a href="https://hieromon.github.io/AutoConnect/apiconfig.html#menuitems">https://hieromon.github.io/AutoConnect/apiconfig.html#menuitems</a></p>
+<p>Captive portal IP address if captive doesn't work: 192.168.10.1</p>
+<p>configuration of autoconnect portal <a href="https://hieromon.github.io/AutoConnect/apiconfig.html">here</a></p>
+<p>customizing menu further <a href="https://hieromon.github.io/AutoConnect/menu.html">here</a></p>
+<p>IDEA: be able to modify 'force calibrate co2 value' from AutoConnect</p>
+<p><a href="https://hieromon.github.io/AutoConnect/apiconfig.html#menuitems">this</a> is what I ended up using to customize the menu</p>
+<p>resulting in <a href="https://github.com/edgecollective/co2-remote-and-gateway/tree/e49a35e0fe30a4b1170608f16184063047d8f5d6/rev_e/firmware/wifi_sensor/params_fuller_FS">this commit for param_fuller_FS</a></p>
+<p>TODO:</p>
+<ul>
+<li>
+<p>combine cap_params_load code (measuring CO2) into params_fuller_FS</p>
+</li>
+<li>
+<p>change /mqqt endpoint settings to e.g. 'data'</p>
+</li>
+<li>
+<p>force calibration setting in autconnect</p>
+</li>
+<li>
+<p>mic on/off in autoconnect</p>
+</li>
+<li>
+<p>average co2 readings</p>
+</li>
+<li>
+<p>use pressure values to compensate for co2</p>
+</li>
+<li>
+<p>redesign through-hole board to match existing case on amazon</p>
+</li>
+<li>
+<p>look at specs on amazon case</p>
+</li>
+<li>
+<p>redesign SMT board -- with advantages (longer on battery, say, lower cost to produce)</p>
+</li>
+</ul>
 
 
     </div>
