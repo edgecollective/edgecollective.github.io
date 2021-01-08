@@ -4435,7 +4435,29 @@ serpac  032C</p>
 <p><img src="/img/co2/rev_f_layout.png" alt=""></p>
 <p><a href="https://github.com/edgecollective/co2-remote-and-gateway/tree/cap_params/rev_f/atkins">https://github.com/edgecollective/co2-remote-and-gateway/tree/cap_params/rev_f/atkins</a></p>
 <p>particular commit here:</p>
-<p><a href="https://github.com/edgecollective/co2-remote-and-gateway/commit/7a68c680fd23337fb4daf9bc859e6d312b616a8c#diff-8b7e3d045d2effcb6738a35190e48460e3f8d084dc97983bb0b740101097caaa">https://github.com/edgecollective/co2-remote-and-gateway/commit/7a68c680fd23337fb4daf9bc859e6d312b616a8c#diff-8b7e3d045d2effcb6738a35190e48460e3f8d084dc97983bb0b740101097caaa</a></p>
+<p><a href="https://github.com/edgecollective/co2-remote-and-gateway/commit/37cfff4540a2506cf84b3bc35e8255eb14a25da0#diff-8b7e3d045d2effcb6738a35190e48460e3f8d084dc97983bb0b740101097caaa">https://github.com/edgecollective/co2-remote-and-gateway/commit/37cfff4540a2506cf84b3bc35e8255eb14a25da0#diff-8b7e3d045d2effcb6738a35190e48460e3f8d084dc97983bb0b740101097caaa</a></p>
+<hr>
+<p>2021-01-07 15:07:44</p>
+<p>Update: Pin 34-39 on the ESP32 are not capable of output -- that's why pin 39 wasn't working as an LED control.</p>
+<p>looks like scd30 could use a 2.5 mm screw, ish;  the height of the screw would be about 8 mm.  so can guess at a standoff size perhaps.</p>
+<p>nice material heltec <a href="https://community.hiveeyes.org/t/heltec-wifi-lora-32/3125">here</a></p>
+<p>full heltec tech specs <a href="https://heltec.org/project/wifi-lora-32/">here</a></p>
+<p>does look in the schematic that there's a battery divider already in place -- see discussion <a href="http://community.heltec.cn/t/heltec-battery-power-example-not-working/1234/4">here</a></p>
+<p>interesting code for heltec from a lot of perspectives re: optimal use of esp32, includes battery measurement here: <a href="https://github.com/HelTecAutomation/Heltec_ESP32/blob/master/examples/ESP32/ADC_Read_Voltage/Battery_power/Battery_power.ino">https://github.com/HelTecAutomation/Heltec_ESP32/blob/master/examples/ESP32/ADC_Read_Voltage/Battery_power/Battery_power.ino</a></p>
+<p>pin 21 is external battery control -- low, ON --</p>
+<p>special pins on esp32 <a href="https://randomnerdtutorials.com/esp32-pinout-reference-gpios/">here</a></p>
+<p>pin 12 must be low during boot</p>
+<hr>
+<p>2021-01-07 20:33:35</p>
+<p>PIR sensor <a href="https://learn.adafruit.com/pir-passive-infrared-proximity-motion-sensor">here</a></p>
+<p>just need 3V, GND, and an input pin ... maybe add a screw terminal?</p>
+<p>&quot;sh1.25&quot; is perhaps the search term for relevant batteries on aliexpress <a href="https://www.aliexpress.com/item/32923649233.html">here</a></p>
+<hr>
+<p>2021-01-08 11:54:39</p>
+<p>Rev_F board submitted to JLCPCB, order Order #: Y12-2489114A  // W202101090100951</p>
+<p><img src="/img/co2/rev_f_board.png" alt=""></p>
+<p>board files github commit <a href="https://github.com/edgecollective/co2-remote-and-gateway/tree/9067113e187eb8cbb6cef703900c8b911c834a40/rev_f/atkins">here</a></p>
+<p>zipped gerber files in particular <a href="https://github.com/edgecollective/co2-remote-and-gateway/blob/9067113e187eb8cbb6cef703900c8b911c834a40/rev_f/atkins/rev_f_gerbers.zip">here</a></p>
 </p>
       </div>
     </div>
@@ -5074,6 +5096,10 @@ Along with guides for all of this.</p>
 <p>Battery level seems to be holding steady!</p>
 <p>Feed <a href="http://159.65.226.222:3000/drives/b02f7797b045956e79c019f889dfb080cadbfda6b468a9505835a82aadd5762c">here</a>:</p>
 <p><img src="/img/valedalama/batt_jan2021.png" alt=""></p>
+<hr>
+<p>2021-01-08 08:59:07</p>
+<p>Batt level continues to hold ... feed <a href="http://159.65.226.222:3000/drives/b02f7797b045956e79c019f889dfb080cadbfda6b468a9505835a82aadd5762c">here</a></p>
+<p><img src="/img/valedalama/vale_batt_jan8.png" alt=""></p>
 </p>
       </div>
     </div>
