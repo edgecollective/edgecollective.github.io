@@ -1,0 +1,538 @@
+
+
+<!-- feed it through our cssmin filter to minify -->
+<style>
+  body{font-family:sans-serif;margin:20px;font-size:small;width:90%;margin-right:auto;margin-left:auto;padding-top:15px}#profile_pic{float:right;margin:0 0 1em 1em}h1{line-height:1em;font-size:x-large;margin-bottom:.31em}h2{font-size:large;margin-bottom:1px}h3{font-size:small;margin-bottom:1px}a{text-decoration:none}a:hover{text-decoration:underline}a:visited{color:#00f}*,:after,:before{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}.posts-area{width:100%;padding-top:10px}.posts-area:after{content:"";display:table;clear:both}.post{float:left;width:33.33%;padding-right:20px}.post .post-contents{background:#f7f7f7;border-radius:5px}.post .image a{display:block;overflow:hidden;height:214px}.post img{object-fit:cover;width:100%;height:100%}.post .text{height:200px;padding:20px}@media (max-width:680px){.post{width:100%}}body{font:13px/1.5 Verdana,Helvetica,Arial,sans-serif;width:80%}.img-with-caption{font-size:14px;text-align:center;margin:20 0;background-color:F1F1F1;padding:10px}#pullout{text-align:center}#intro{max-width:700px;display:inline-block;text-align:left}#post-content{max-width:800px}#profile_pic{float:right;margin:0 0 1em 1em}h1{line-height:1em;font-size:x-large;margin-bottom:.31em}h2{font-size:large;margin-bottom:1px}h3{font-size:medium;margin-bottom:1px}ol,ul{max-width:650px}a{text-decoration:none}a:hover{text-decoration:underline}a:visited{color:#00f}*,:after,:before{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}.posts-area{width:100%;padding-top:10px}.posts-area:after{content:"";display:table;clear:both}.post{float:left;width:33.33%;padding:0 20px 20px 0}.contribute{width:100%;padding-top:10px}.post .post-contents{border-radius:10px;padding:20px 20px 10px 20px}.post .project-contents{background:#add8e6;border-radius:10px;padding:20px 20px 10px 20px}.post .podcast-contents{background:#e9967a;border-radius:10px;padding:20px 20px 10px 20px}.post .note-contents{background:#e6e6fa;border-radius:10px;padding:20px 20px 10px 20px}.post .pedagogy-contents{background:#90ee90;border-radius:10px;padding:20px 20px 10px 20px}.post .talk-contents{background:pink;border-radius:10px;padding:20px 20px 10px 20px}.post .inter-contents{background:#add8e6;border-radius:5px}.post .image a{display:block;overflow:hidden;height:214px}.post img{object-fit:cover;width:100%;height:100%}img{max-height:500px;max-width:100%}table{margin:30 auto 30 auto;padding:10px;width:80%;text-align:left;border:1px solid #000}td{padding:10px;text-align:left;font-size:12}.post .text{min-height:250px;padding:5px}.post .inter-text{height:250px}audio{width:100%;height:30px}@media (max-width:1100px){.post{width:100%}table{width:100%}}code[class*=language-],pre[class*=language-]{color:#000;background:0 0;text-shadow:0 1px #fff;font-family:Consolas,Monaco,'Andale Mono','Ubuntu Mono',monospace;font-size:1em;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}code[class*=language-] ::-moz-selection,code[class*=language-]::-moz-selection,pre[class*=language-] ::-moz-selection,pre[class*=language-]::-moz-selection{text-shadow:none;background:#b3d4fc}code[class*=language-] ::selection,code[class*=language-]::selection,pre[class*=language-] ::selection,pre[class*=language-]::selection{text-shadow:none;background:#b3d4fc}@media print{code[class*=language-],pre[class*=language-]{text-shadow:none}}pre[class*=language-]{padding:1em;margin:.5em 0;overflow:auto}:not(pre)>code[class*=language-],pre[class*=language-]{background:#f5f2f0}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal}.token.cdata,.token.comment,.token.doctype,.token.prolog{color:#708090}.token.punctuation{color:#999}.token.namespace{opacity:.7}.token.boolean,.token.constant,.token.deleted,.token.number,.token.property,.token.symbol,.token.tag{color:#905}.token.attr-name,.token.builtin,.token.char,.token.inserted,.token.selector,.token.string{color:#690}.language-css .token.string,.style .token.string,.token.entity,.token.operator,.token.url{color:#9a6e3a;background:hsla(0,0%,100%,.5)}.token.atrule,.token.attr-value,.token.keyword{color:#07a}.token.class-name,.token.function{color:#dd4a68}.token.important,.token.regex,.token.variable{color:#e90}.token.bold,.token.important{font-weight:700}.token.italic{font-style:italic}.token.entity{cursor:help}
+</style>
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" type="image/x-icon" href="/img/edge_favicon.png" />
+    <title>Edge Collective</title>
+  </head>
+  <body>
+
+    <div id='post-content'>
+
+  <a href="/">Edge Collective</a>
+        <h1>Vale da Lama Greenhouse Monitoring</h1>
+
+  
+  <h2>Overview</h2>
+<p>All of this research and prototyping is occurring at <a href="https://www.valedalama.net/en/">Quinta Vale Da Lama</a>.</p>
+<hr>
+<p><em>April 13, 2020</em></p>
+<h2>SQLite</h2>
+<p>Great <a href="https://www.youtube.com/watch?v=Jib2AmRb_rk">talk on Sqllite</a>, arguing that it's appropriate for a database located on 'the edge'.</p>
+<img src="/img/valedalama/about_sqlite.png">
+<hr>
+<p><em>24 Apr 2020</em></p>
+<h2>Test Feather Code</h2>
+<p><a href="https://gist.github.com/dwblair/c18edaaa2de9a8d5e3a6b47c48797d98">Simple test code</a>  for Adafruit Feather + RAK</p>
+<hr>
+<p><em>05 May 2020</em></p>
+<h2>Configuring the region on the RAK</h2>
+<p>General setup for the RAK 7243 + Pi firmware is <a href="https://doc.rakwireless.com/rak7243c-lorawan-developer-gateway/device-firmware-setup">here</a>.</p>
+<p>Information about the configuration file is <a href="https://www.chirpstack.io/network-server/install/config/">here</a>.</p>
+<p>The firmware we're using is <a href="https://downloads.rakwireless.com/LoRa/Pilot-Gateway-Pro-RAK7243/Firmware/">here</a>.</p>
+<p>Can use 'gateway-config' command line script on RAK to set the region:</p>
+<pre><code>sudo gateway-config
+</code></pre>
+<p>This script modifies this file:</p>
+<pre><code>/etc/chirpstack-network-server/chirpstack-network-server.toml
+</code></pre>
+<h2>Basic Arduino Test Code</h2>
+<p>Basic test code for sending data to the RAK in OTAA mode is in gist form <a href="https://gist.github.com/dwblair/f6a0c3dd07fc3ae073fad3914f77af64">here</a>.</p>
+<h2>Configuring the region on the Arduino</h2>
+<p>Changing the region on the Arduino requires modifing a special header file.</p>
+<p>See the Adafruit Arduino tutorial <a href="https://learn.adafruit.com/the-things-network-for-feather?view=all#region-configuration">here</a>.</p>
+<h2>Adafruit Feather 900 Mhz can be tuned to 868 Mhz band</h2>
+<p>See the below snippet from the <a href="https://www.adafruit.com/product/3178">Adafruit Feather M0 LoRa 900 Mhz product page</a>:</p>
+<img src="/img/valedalama/feather_tunable.png">
+<h2>Adafruit LMIC OTAA basic code will attempt to rejoin periodically</h2>
+<p>See this example serial output:</p>
+<img src="/img/valedalama/rejoin.png">
+<h2>Needed tweak on Adafruit for EU band</h2>
+<p>See the forum post <a href="https://www.thethingsnetwork.org/forum/t/solved-adafruit-feather-m0-to-connect-to-ttn-over-otaa-unknown-event-20/29990/15">here</a>:</p>
+<img src="/img/valedalama/eu_band_adafruit_tweak.png">
+<p><a href="https://www.hackster.io/Amedee/the-things-network-node-for-ttnmapper-org-a8bcd4">This</a> might be a useful reference for setting up 868 band.</p>
+<p>Current impression is that RAK hardware does indeed distinguish between 868 and 915 Mhz bands ... ?</p>
+<p>05 May 2020 13:27 Update:  there is a 'project_config' file located in the 'src' folder on in the lmic library folder itself -- and it's set to the US band -- perhaps this is overriding the project files? Trying setting it to EU and the RAK to EU.  One open question is how specific the RAK Pi Hat is re: freq bands ... can it handle 868?</p>
+<p>So the current thinking for getting 868 band to work is:</p>
+<ul>
+<li>change the Arduino lib folder project_config file to 868</li>
+<li>change the sketch lib folder project_config file to 868 (for good measure)</li>
+<li>comment out LMIC_selectSubBand(1);</li>
+</ul>
+<p>Meanwhile, note that upload via bossac did work on the Pi.</p>
+<p>Confirmed -- was able to get upload on RAK in US '915' version by setting to '868' following above steps.  Key seems to have been the Arduino library project_config folder issue.</p>
+<p>Note: we are using <a href="https://github.com/mcci-catena/arduino-lmic/releases/tag/v2.3.2">mcci-catena arduino-lmic 2.3.2 version</a> of library with success.  Later versions haven't always worked. Stick with that for now.</p>
+<h2>Strategy</h2>
+<p>First:</p>
+<ul>
+<li>set up RAK to 868 via sudo gateway-config</li>
+<li>try loading binary to Feather via RAK</li>
+</ul>
+<p>Second:</p>
+<ul>
+<li>make sure we're using proper version of lmic library (see above)</li>
+<li>change the Arduino lib folder project_config file to 868</li>
+<li>change the sketch lib folder project_config file to 868 (for good measure)</li>
+<li>comment out LMIC_selectSubBand(1);</li>
+</ul>
+<h2><a name="bme280_wiring">Wiring Adafruit Feather to BME280</a></h2>
+<p>As per instructions <a href="https://learn.adafruit.com/adafruit-bme280-humidity-barometric-pressure-temperature-sensor-breakout/arduino-test">here</a>:</p>
+<img src="/img/valedalama/feather_pinouts.jpg">
+</br>
+<img src="/img/valedalama/bme_280_pins.jpg">
+<p><strong>BME280 ---&gt; Feather</strong></p>
+<ul>
+<li>VIN --&gt; 3V</li>
+<li>GND --&gt; GND</li>
+<li>SCK --&gt; SCL</li>
+<li>SDI --&gt; SDA</li>
+</ul>
+<img src="/img/valedalama/bme_280_feather_wiring.png">
+<h2>Code for BME280 + Feather M0 LoRa</h2>
+<p>Using the BME280 can be accomplished by using the <a href="https://github.com/adafruit/Adafruit_BME280_Library">Adafruit BME280 Arduino Library</a>, which also requires using the <a href="https://github.com/adafruit/Adafruit_Sensor">Adafruit Sensor Library</a>.</p>
+<h2>Uplaoding firmware to Adafruit Feather M0 via command line (bossac)</h2>
+<p>An Adafruit tutorial is <a href="https://learn.adafruit.com/welcome-to-circuitpython/non-uf2-installation">here</a>.  Note that we need the 'arduino' branch of the bossac tool on github, which is version 1.7.X.</p>
+<pre><code>sudo bossac -p /dev/ttyACM0 -e -w -v -R firmware.bin
+</code></pre>
+<h2>Debugging the BME280 sensor</h2>
+<p>Sensor not working on Walt's RAK.  Q: is it because of connection to Feather / problem with Feather, or is it because of some setting on the Gateway?</p>
+<p>Diagnostic:  some basic BME280 test code, non-LoRa -- just prints values out to serial port.  Wrote the binary, and then sent it to Walt's feather remotely -- and got back an error:</p>
+<img src="/img/valedalama/bme_test.png">
+<hr>
+<p><em>09 May 2020</em></p>
+<h2>BME280 Node Fixed</h2>
+<p>Walt was able to fix the BME280 node by re-soldering nad re-wiring:</p>
+<img src="/img/valedalama/success_bme280.png">
+</br>
+</br>
+<h2>Local Sqlite database on USB</h2>
+<p>We've been able to get a local sqlite database up and running now, stored on a USB flash drive on the RAK:</p>
+<img src="/img/valedalama/local_first_iteration_1.png">
+</br>
+</br>
+<img src="/img/valedalama/local_first_iteration_1_rak.png">
+</br>
+</br>
+<img src="/img/valedalama/local_first_node_red.png">
+</br>
+</br>
+<h2>Human-readable date format</h2>
+<p>And we added a field to the database that provides a human-readable date.</p>
+<img src="/img/valedalama/human_readable_date.png">
+</br>
+</br>
+## Overview
+<p><a href="#version_4_assembly">Assembly Guide for Version 4</a>.</p>
+<p><a href="https://youtu.be/LljqFv8GzxA">Video explanation</a> of the current status as of Oct 07 2020  ..</p>
+<h2>AM2315 and 'new' i2c on Feather M0</h2>
+<p>Issue: we designed a <a href="https://github.com/edgecollective/valedalama-greenhouse-remote">breakout board</a> (in Eagle CAD) to be milled in Portugal by <a href="">Lucio</a>; but the original intent was for a different, non-i2c sensor; the one we're using now is an i2c sensor (the <a href="https://www.adafruit.com/product/1293">AM2315</a>, and requires:</p>
+<ul>
+<li>10K pullups on both signal lines</li>
+<li>that the signal lines be used as i2c lines, which isn't standard for the Feather M0 firmware.</li>
+</ul>
+<h2>References</h2>
+<h3>I2C</h3>
+<ul>
+<li>
+<p><a href="https://learn.adafruit.com/using-atsamd21-sercom-to-add-more-spi-i2c-serial-ports/creating-a-new-wire">Creating a new I2c interface on the M0 -- Adafruit</a></p>
+</li>
+<li>
+<p><a href="https://learn.sparkfun.com/tutorials/adding-more-sercom-ports-for-samd-boards/all">Creating a new I2C interface on the M0 -- Sparkfun</a></p>
+</li>
+</ul>
+<p>Ah -- update -- can't reassign the pins because of the 'pad constraint', see the section <a href="https://learn.adafruit.com/using-atsamd21-sercom-to-add-more-spi-i2c-serial-ports/creating-a-new-wire#ok-so-lets-make-a-new-i2c-sercom-already-1603458-14">here</a>.</p>
+<h3>AM2315</h3>
+<ul>
+<li><a href="https://github.com/adafruit/Adafruit_AM2315">Adafruit AM2315 library</a>.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><a href="/img/valedalama/feather_m0_lora.jpg"> <img src="/img/valedalama/feather_m0_lora.jpg" alt="fig2"></a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Adafruit Feather M0 LoRa (for pin reference).</td>
+</tr>
+</tbody>
+</table>
+<h2>FAB Farm</h2>
+<p><a href="https://www.google.com/maps?q=37.160365,-8.774516&amp;shorturl=1">Location</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><a href="/img/valedalama/fabfarm.png"> <img src="/img/valedalama/fabfarm.png" alt="fig2"></a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Lucio's FAB Farm.</td>
+</tr>
+</tbody>
+</table>
+<h2>Feather BME280 data export from server</h2>
+<p>One can grab CSV data from the Valedalama server like thus:</p>
+<blockquote>
+<p><code>http://64.227.0.108:8100/api/csv?limit=1000</code></p>
+</blockquote>
+<p>where the 'limit=N' parameter gives the 'most recent N values'.</p>
+<p>A snapshot of all of the historical data from &quot;Valedalama BME280 Feather&quot; from the earliest collection date (July 10 2020) up through Oct 10 2020 can be downloaded <a href="/data/historical_bme280_as_of_10_oct_2020.csv">here</a>.</p>
+<h2>Board Designs</h2>
+<h3>Remote</h3>
+<h4>Remote Version 4: Eagle CAD</h4>
+<p>Design files are <a href="https://github.com/edgecollective/valedalama-greenhouse-remote">here</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><a href="/img/valedalama/remote_v4_schematic.png"> <img src="/img/valedalama/remote_v4_schematic.png" alt="fig2"></a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Remote schematic, version 4.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><a href="/img/valedalama/remote_v4_board.png"> <img src="/img/valedalama/remote_v4_board.png" alt="fig2"></a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Remote board, version 4.</td>
+</tr>
+</tbody>
+</table>
+<h4>Remote Version 5 in KiCAD:</h4>
+<p>Repo is <a href="https://github.com/edgecollective/valedalama/tree/master/greenhouse/remote/v5">here</a>.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><a href="/img/valedalama/3d_render.png"> <img src="/img/valedalama/3d_render.png" alt="fig2"></a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Remote board, version 5.</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h3><a name="version_4_assembly"></a>Assembly Guide for Remote Node Version 4</h3>
+<p>(Update OCT 30 2020)</p>
+<p>Lucio has milled both Version 3 and Version 4 of the remote node.  Current focus is on assembly of Version 4 (design files <a href="https://github.com/edgecollective/valedalama-greenhouse-remote/blob/master/pcb/ver4/remote_v4_board.png">here</a>.</p>
+<p>For reference, Version 4 board design looks like this:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><a href="/img/valedalama/remote_v4_board.png"> <img src="/img/valedalama/remote_v4_board.png" alt="fig2"></a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Remote board, version 4.</td>
+</tr>
+</tbody>
+</table>
+<p>It is a 'mother board' for a Feather M0 LoRa microcontroller.</p>
+<p>The remote board version 4 requires:</p>
+<ul>
+<li>A 1x12 and a 1x16 0.1&quot; / 2.54mm female header, to hold the Feather in place.</li>
+<li>Note: the Feather also requires 1x12 and 1x16 2.54mm male headers soldered to it, as well as an antenna (a straight wire, or a helical one). I think this is already done.</li>
+<li>A 4-position 5mm spacing screw terminal (typically, a pair of 2-position screw terminals)</li>
+<li>A 3-position 5mm screw terminal</li>
+<li>A 2-position 5mm screw terminal</li>
+<li>3 resistors (all of them 10K, or all of them 4.7K).</li>
+</ul>
+<p>It is obvious from the footprints on the board which of the above go where :)</p>
+<p>Note: the ESP32 device only requires that the accompanying antenna that came with the baord be plugged into it (it's a bit fiddly, but no soldering required).</p>
+<hr>
+<p>2020 Nov 10</p>
+<p><img src="/img/valedalama/v5_success.png" alt=""></p>
+<p>The associated <a href="">version 5 kicad pcb file</a> is easy to upload to <a href="aisler.net">Aisler</a> (German PCB producer) -- about $25 euros for 3 PCBs, 3-5 day turnaround:</p>
+<p><img src="/img/valedalama/aisler_v5.png" alt=""></p>
+<hr>
+<p>2020 Nov 11</p>
+<p>Lucio's setup, with his milled board:</p>
+<p><img src="/img/valedalama/lucio_setup.jpeg" alt=""></p>
+<p>Sensor working with the feather:</p>
+<p><img src="/img/valedalama/feather_working.jpeg" alt=""></p>
+<p>Data flowing through to Bayou:</p>
+<p><img src="/img/valedalama/bayou_data.png" alt=""></p>
+<hr>
+<p>2020 Nov 14</p>
+<p>Next steps:</p>
+<ul>
+<li>Modify Bayou to allow for inputing date ranges</li>
+<li>Figure out reflashing of boards from command line via Pi</li>
+<li>Figure out setting wifi credentials (and OTA firmware) on ESP via bluetooth</li>
+<li>NRF52 bluetooth OTA firmware update in Arduino possible? If so maybe switch to NRF52 feather</li>
+<li>List the remote board and the esp32 gateway combo -- make a breakout board for the Heltec</li>
+</ul>
+<p>Can offer ...</p>
+<p>Remote:</p>
+<ul>
+<li>Mothbot</li>
+<li>Feather motherboard (add power input 12V or higher)</li>
+</ul>
+<p>Gateway</p>
+<ul>
+<li>Heltec</li>
+<li>Heltec + motherboard (with timer chip)</li>
+<li>Quahog (advantage of power input 12V or higher)</li>
+</ul>
+<p>Database:</p>
+<ul>
+<li>FarmOS</li>
+<li>Bayou</li>
+</ul>
+<p>So -- all off-the-shelf, o r fully custom.
+Along with guides for all of this.</p>
+<h3>OTA for the remote node?</h3>
+<p>NRF52 OTA programming link (weather buoy project) <a href="https://opensourceoceanweatherbuoy.wordpress.com/2018/03/11/nrf52-program-sketches-over-the-air/">here</a></p>
+<h3>Features to add in REV_C</h3>
+<ul>
+<li>Heltec wifi connection debug on display</li>
+<li>Easy way to set up wifi &amp; bayou on Heltec -- via bluetooth, or via 'router setup' / wifi</li>
+<li>Remote node should send status message whether or not the sensors worked</li>
+</ul>
+<h3>TODO</h3>
+<ul>
+<li>Change Feather send frequency to every 10 minutes</li>
+<li>Change the radio frequency to 868 to match Walt's order</li>
+</ul>
+<hr>
+<p>2020 Nov 17</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><a href="/img/valedalama/temp_valedalama.png"> <img src="/img/valedalama/temp_valedalama.png" alt="fig2"></a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Data coming in from first deploymend of milled board version of the remote node.</td>
+</tr>
+</tbody>
+</table>
+<p>bayou_longer.png</p>
+<h3>Server</h3>
+<p>Pagination strategies with pouchdb -- useful for setting up the server, <a href="https://pouchdb.com/2014/04/14/pagination-strategies-with-pouchdb.html">here</a></p>
+<h3>Humidity sensor issue?</h3>
+<p>Looks like the Humidity tends to get pegged ...</p>
+<p><img src="/img/valedalama/humidity_issue.png" alt=""></p>
+<h3>Date Conversion formula in Excel</h3>
+<p>Example is [here[(https://docs.google.com/spreadsheets/d/1yDYKKenBeMRpYumavZ4Df_dnJOKyFEXB-Inp_YYGFdY/edit?usp=sharing).</p>
+<hr>
+<p>2020 NOV 19</p>
+<h3>Added 'hop' parameter and modified units on Bayou display</h3>
+<p><a href="/img/valedalama/temp_hopped.png"><img src="/img/valedalama/temp_hopped.png" alt=""></a></p>
+<p>NOTE:  running the branch 'ticks', code on gitlab <a href="https://gitlab.com/dwblair/p2p-farm-server/-/tree/ticks">here</a>.  Might need to tweak if a new sensor is added, because the ticks currently do only every hour.</p>
+<h3>Humidity sensor details</h3>
+<p>AM2315 temp + humidity sensor tech details:</p>
+<p><a href="/img/valedalama/am2315_details.png"><img src="/img/valedalama/am2315_details.png" alt=""></a></p>
+<p>AM2315 <a href="https://cdn-shop.adafruit.com/datasheets/AM2315.pdf">datasheet</a></p>
+<h2>Architecture Idea</h2>
+<p>Gateway is Heltec.  Can do AP wifi credentials and FarmOS / Bayou configuration.</p>
+<p>Remote node is Feather / Mothbot.  Has a DIP switch to modify the node ID.</p>
+<p>Both might allow for serial configuration, or OTA programming (need to add SPI Memory to Mothbot if so).</p>
+<h3>Battery holders</h3>
+<p>3XAA holder <a href="https://www.amazon.com/LampVPath-Battery-Holder-Leads-Wires/dp/B07WRQ3XTJ/ref=sr_1_7?dchild=1&amp;keywords=3XAA+holder&amp;qid=1605969565&amp;s=electronics&amp;sr=1-7">here</a>.</p>
+<p>Guide to battery holders and mounts <a href="https://uk.rs-online.com/web/generalDisplay.html?id=ideas-and-advice/battery-holders-guide">here</a>.</p>
+<h3>Adafruit guide to using the battery on the Feather</h3>
+<p>Do's and don't's, <a href="https://learn.adafruit.com/adafruit-feather-m0-adalogger/power-management">here</a>.</p>
+<p>What if we put use 3.3V regulator and power the Feather this way?  Try this experiment out at home.  Turning a Feather into a lower-power device would be a win.</p>
+<p>Breakout boards for:</p>
+<ul>
+<li>Feather M0 LoRa</li>
+<li>Moteino , and Moteino M0</li>
+</ul>
+<p>Using: dip switch + MCP1700</p>
+<hr>
+<p>2020 NOV 22</p>
+<p>Looks like remote node (Feather) is requiring reset periodically (every few days) -- doesn't appear to be a battery issue.  Might be in the code -- e.g. if it doesn't read from sensor successfully.</p>
+<h3>ESP32 Watchdog timer</h3>
+<p>Guide <a href="https://iotassistant.io/esp32/enable-hardware-watchdog-timer-esp32-arduino-ide/">here</a>.</p>
+<p>Also, working code <a href="https://medium.com/@supotsaeea/esp32-reboot-system-when-watchdog-timeout-4f3536bf17ef">here</a>. &lt;--- this looks like the proper setup.  Great!</p>
+<h3>SAMD21 Watchdog timer</h3>
+<p>There's a discussion <a href="https://eugeniopace.org/arduino/resiliency/2020/05/11/Using-a-Watchdog-to-fix-all-issues.html">here</a> &lt;&lt;-- this is a GREAT discussion.</p>
+<p>Note that he's also got an e-ink project running, <a href="https://eugeniopace.org/arduino/epaper/eink/stoicism/2020/01/18/A-Display-of-Stoic-Quotes-using-Arduino-and-e-Paper-Display.html">here</a>.</p>
+<p>Getting sleepy dog to work, <a href="https://github.com/adafruit/Adafruit_SleepyDog/issues/9">here</a>.</p>
+<p>Another blog post on it <a href="https://bitknitting.wordpress.com/2016/08/02/backyard-automatic-watering-using-a-featherarduino/">here</a>.</p>
+<h3>AVR Watchdog timers</h3>
+<p>Another article on the watchdog timer for AVRs is <a href="https://create.arduino.cc/projecthub/rafitc/what-is-watchdog-timer-fffe20">here</a>.</p>
+<p>And yet another nice article for WDTs in AVRs is <a href="https://circuits4you.com/2018/01/24/tutorial-on-arduino-watchdog-timer-setup/">here</a>.</p>
+<p>Good point made in <a href="https://www.instructables.com/The-Arduino-Hang-Guardian-Arduino-Watchdog-Timer-T/">this tutorial</a>:</p>
+<blockquote>
+<p>One possible issue with the watchdog timer, depending on the bootloader of your Arduino is that if the watchdog timer value is too low and the bootloader does not reset the timer when uploading new code, you may end up damaging your Arduino board in a way that it will always be stuck in the boot phase. The bootloader will try to start, but the timer will keep resetting the board, never allowing it to properly start. To prevent issues like this, make sure to always use threshold intervals of 2 seconds or more.</p>
+</blockquote>
+<p>Another good description by Electronic Wings, <a href="https://www.electronicwings.com/arduino/watchdog-in-arduino">here</a>.</p>
+<h3>Powerdown Sleep</h3>
+<p>Nice post from Tony D, <a href="https://learn.adafruit.com/low-power-wifi-datalogging/power-down-sleep">here</a>.</p>
+<h3>ArduBadge system for Arduino libraries</h3>
+<p>Check out some of the libraries <a href="https://www.ardu-badge.com/">here</a>.</p>
+<h3>Overview of system architecture</h3>
+<ul>
+<li>Remote</li>
+<li>Gateway</li>
+<li>Server</li>
+</ul>
+<h3>Remote access to Pis</h3>
+<ul>
+<li>TeamViewer</li>
+<li>RealVNC</li>
+<li>UV4L.  Discussion <a href="https://www.raspberrypi.org/forums/viewtopic.php?t=177028#p1128706">here</a>.  RPI videoconference setup <a href="https://www.linux-projects.org/download/rpi-videoconference-os-image/">here</a>.</li>
+</ul>
+<p>Indeed, this looks like cool software -- browser-based.  Check it <a href="https://www.linux-projects.org/uv4l/tutorials/rpi-webapp-screen-audio-keyboard-sharing/">here</a>.</p>
+<p>Ah, a better, RPi-specific set of options is <a href="https://raspberrytips.com/remote-desktop-raspberry-pi/">here</a>.</p>
+<p>Jim Spark's guide to port forwarding / SSH with Pis  <a href="https://medium.com/@jimip6c12/raspberry-pi-dummy-tutorial-on-port-forwarding-and-ssh-to-pi-remotely-d4fbc2ed3bdf">here</a>.</p>
+<p>He says it's very dangerous to do; and that cloud proxy is better. His guide <a href="https://medium.com/@jimip6c12/raspberry-pi-tutorial-on-the-most-secure-way-to-connect-to-your-pi-cloud-proxy-server-11867ddaac95">here</a>.</p>
+<p>pre-burning an image on the pi from remote.it, <a href="https://remote.it/blog/how-to-use-a-raspberry-pi-to-remotely-access-your-office-network/">here</a>.</p>
+<h4>Copy-paste in RealVNC</h4>
+<p>Descriptive link is <a href="https://help.realvnc.com/hc/en-us/articles/360002253738-Copying-and-Pasting-Text">here</a>.</p>
+<h3>Remote Access via hyperssh</h3>
+<p>Diff of dwblair's hyperssh and mafintosh's versions, <a href="https://github.com/mafintosh/hyperssh/compare/master...dwblair:master">here</a>.</p>
+<hr>
+<p>2020 NOV 23</p>
+<p>REV_A of the 'greenhouse' system uses the following code:</p>
+<ul>
+<li>remote: featherm0_am2315_lora_sleep</li>
+<li>gateway: heltec_wifi_lora_bayou_farmos</li>
+</ul>
+<p>Going to try a watchdog timer on the feather ...</p>
+<p>Implemented very basic watchdog <a href="https://github.com/edgecollective/valedalama/tree/master/greenhouse/REV_A/remote/feather_firmware/featherm0_am2315_lora_watchdog">here</a>.</p>
+<p><img src="/img/valedalama/watchdog_attempt.png" alt=""></p>
+<p>Data <a href="http://159.65.226.222:3000/drives/3a28c09fa93ccf15513a055984148b02b0709f545c12013aaf25252f73626f62">here</a>.</p>
+<hr>
+<p>2020-11-26 20:33:48</p>
+<h3>Design notes</h3>
+<p>Interesting Things Network post on a BME280 outdoor LoRa node, <a href="https://www.thethingsnetwork.org/forum/t/lora-bme280-environmental-node-with-webbased-backend/9264">here</a>.</p>
+<p>Relies on a really low power LoRa node design based on an Atmel 328p -- elegant! -- <a href="https://www.thethingsnetwork.org/forum/t/full-arduino-mini-lorawan-below-1ua-sleep-mode/8059">here</a></p>
+<p>Nice post on OLED sleep current, <a href="https://bitbanksoftware.blogspot.com/2019/06/how-much-current-do-oled-displays-use.html">here</a>.  Looks like the 128x65 display I favor uses around 25 uA when asleep.</p>
+<p>A nice general review of OLEDs and various libraries and use-cases, <a href="https://bengoncalves.wordpress.com/2015/10/01/oled-display-and-arduino-with-power-save-mode/">here</a>.  Includes code for putting the OLED to sleep.</p>
+<hr>
+<h2>INTERIM TODO</h2>
+<ul>
+<li>Make a mill-able PCB design in Eagle CAD for Lucio to mill [X]</li>
+<li>Make a manfuacture-able PCB design in KiCAD to send to that company in Germany</li>
+<li>Review: contact of company in Germany</li>
+<li>test timer chip with Heltec ESP32</li>
+<li>figure out how to load code remotely to Feather and to ESP32 via Pi</li>
+<li>set up data repository online</li>
+<li>display sensor data on a map</li>
+</ul>
+<p>Need designs for:</p>
+<ul>
+<li>the remote node (Feather + sensors)</li>
+<li>the gateway node (Heltec ESP32 + LoRa + timer chip + BME280)</li>
+</ul>
+<hr>
+<p>2020-11-29 04:42:55</p>
+<h1><a name="update_nov29"></a> Update NOV 29 2020</h1>
+<p><strong>Current situation.</strong>  Adding the watchdog timer seems to have made the remote node more robust; it has been operating non-stop for several days now, plugged into the RAK Pi. We'd like to move to installing the device into the greenhouse.  Are there any things we ought to do first to improve the likelihood of success there?</p>
+<p>There are two things we might consider doing immediately:</p>
+<ol>
+<li><strong>Reduce remote node power consumption.</strong> The remote node is currently broadcasting every 10 seconds or so, and sleeping in between.  This is far more data than is useful, and will unnecessarily drain the battery.  We should change this to an interval of about 10 minutes or so.</li>
+<li><strong>Add remote node battery measurement</strong>.  It would be helpful to add remote battery level measurement to the remote node, so we can better assess the solar charging statistics.  Note: doing so would require re-programming the gateway, as well, to accommodate the additional parameter.</li>
+</ol>
+<p><strong>Discussion</strong>.  (1) Above (increasing the sleep time between measurements / broadcasts) is an quick fix, which can be accomplished with the Feather plugged into the RAK, and the process has been done before, and recently.  The process for (2) should be straightforward, but hasn't been done before via the RAK.  It could require some fiddling, iterating, back-and-forth, and risks 'breaking' the system until the Arduino IDE is used; and we currently don't have an on-site way of using the Arduino IDE to reprogram the ESP32 (ran into security issues installing ESP32 on Walt's computer).</p>
+<p><strong>Recommendation</strong>.  In following Lucio's philosophy of making minimal changes in-place to a system that is mostly working, my recommendatoin at this point would be: let's do (1) above (increase the sleep time), and wait on (2) (adding battery level). While it would be nice to measure battery level, adding the feature increases the risk that we'll have a somewhat 'bricked' system for a bit, and it seems that there's a fairly high chance of success if we can sleep the node for 10 minutes (and higher still if we can sleep longer, as we'd be even less likely to run the battery down).  In the meantime, I can work on workflow / testing for (2).</p>
+<p><strong>Proposed next steps</strong>.</p>
+<ul>
+<li>On 30 NOV or so, I will test a procedure for accomplishing (1) above -- increasing the remote node sleep time -- locally here in the US, attempting to increase the sleep time on the remote node to approx. 10 minutes.</li>
+<li>If the code works, we can upload it to the remote node (via the RAK). This will require putting the remote node / Feather in 'bootloader' mode -- i.e. a 'double tap' on the RESET button, resulting in a pulsing red LED.  I will attempt to upload the new code remotely. We can then test this overnight, making sure that the remote node sends data every 10 minutes.</li>
+<li>If that works, we can then move the remote node to the greenhouse.</li>
+</ul>
+<p>Meanwhile, I will test locally the procedure for accomplishing (2) above -- adding battery level monitoring to the remote node.</p>
+<hr>
+<p>2020-11-30 08:57:54</p>
+<h3>Watchdog Sleep</h3>
+<p>Use Moteino M0 sleep code as a reference, <a href="https://lowpowerlab.com/guide/moteino/moteinom0/">here</a>.</p>
+<p>Test feed <a href="http://159.65.226.222:3000/api/drives/0b15fcbcc3a7332e3bb061a7739398ffb2322f7feb9556bcc63e1879f0750ad7/csv">here</a></p>
+<p>Alright, looking for every 5 min, after 1606774953 ...</p>
+<p>Checking:</p>
+<ul>
+<li>initial: 1606774953 -- Monday, November 30, 2020 5:22:33 PM</li>
+<li>next: 1606775266 -- Monday, November 30, 2020 5:27:46 PM</li>
+</ul>
+<p>Works!  When get home will try for 10 minute intervals, and test the power consumption ...</p>
+<hr>
+<p>2020-12-01 07:36:47</p>
+<p>Update on code ...</p>
+<p>timestamp difference:</p>
+<ul>
+<li>initial: 1606821668 -- Tuesday, December 1, 2020 6:21:08 AM</li>
+<li>final: 1606822287 -- Tuesday, December 1, 2020 6:31:27 AM</li>
+</ul>
+<p>10 minute intervals!</p>
+<p>Working code is part of &quot;REV_A&quot; greenhouse suite, <a href="https://github.com/edgecollective/valedalama/tree/master/greenhouse/REV_A/remote/feather_firmware/30_NOV/featherm0_am2315_lora_watchdog_sleep">here</a>.</p>
+<p>Also have improved REV_A gateway code that displays wifi status (sort of), <a href="https://github.com/edgecollective/valedalama/tree/master/greenhouse/REV_A/gateway/heltec_wifi_lora_bayou_farmos_monitorwifi">here</a>.</p>
+<hr>
+<p>2020-12-01 13:37:55</p>
+<p>Note -- hadn't fully implemented the watchdog timer in previous REV_A version; and now we send a sensor reading on startup, which is easier for debugging -- latest version (ready for testing) <a href="https://github.com/edgecollective/valedalama/tree/master/greenhouse/REV_A/remote/feather_firmware/30_NOV/featherm0_am2315_lora_watchdog_sleep_countup">here</a></p>
+<hr>
+<p>2020-12-15 08:45:07</p>
+<p><img src="/img/valedalama/connected.png" alt=""></p>
+<p>Next steps:</p>
+<ul>
+<li>status of Feather code w/ watchdog and sleep?</li>
+<li>possible to reprogram the gateway remotely?  test locally first ...</li>
+<li>reconfigure the default Bayou graphing view so that appropriate for 10 min intervals, in anticipation of switching to 10 min from 10 sec intervals</li>
+<li>download and save historical CSV data as backup beforehand</li>
+</ul>
+<p>Note: device is called walt-rak ... can connect via VNC viewer in Downloads ...</p>
+<hr>
+<p>2020-12-15 12:25:29</p>
+<h3>Programming heltec from command line</h3>
+<p>Guide <a href="https://medium.com/jungletronics/esp-idf-programming-guide-wifi-lora-32-v2-53f89e12c96e">here</a></p>
+<p>Code is <a href="https://github.com/edgecollective/vale-gateway/tree/main/rev_c/heltec_wifi_lora_bayou_testdata_vale/bin">here</a></p>
+<p><img src="/img/valedalama/remote_1.png" alt=""></p>
+<p><img src="/img/valedalama/remote_2.png" alt=""></p>
+<hr>
+<p>2020-12-17 09:45:17</p>
+<p>looks like the p2p2-farm server code requires that hop&gt;=1 in 'get-drives-data.js'</p>
+<p>this is now in 'fixhop' branch</p>
+<p>remote code sleeps at 0.15 mA</p>
+<p>latest remote node code is <a href="https://github.com/edgecollective/vale-gateway/tree/main/rev_c/remote_node/featherm0_am2315_lora_watchdog_sleep_countup">here</a> -- sleeps at 0.15mA, uses watchdog timer.</p>
+<p>latest gateway code is <a href="https://github.com/edgecollective/vale-gateway/tree/main/rev_c/heltec_wifi_lora_bayou_farmos">here</a>.</p>
+<p>next steps:</p>
+<ul>
+<li>generate binary file for heltec using local wifi, test.</li>
+<li>generate binary file for heltec using vale wifi. load remotely.</li>
+<li>generate binary file for feather.  load remotely.</li>
+</ul>
+<p>first: testing that code works at 10 min interval.</p>
+<p>command to load onto feather was: ./bossac -p /dev/ttyACM0 -e -w -v -R ./remote_watch_sleep_10min.ino.bin</p>
+<p>bayou feed is located <a href="http://159.65.226.222:3000/drives/b02f7797b045956e79c019f889dfb080cadbfda6b468a9505835a82aadd5762c">here</a></p>
+<hr>
+<p>2020-12-17 15:23:43</p>
+<p><img src="/img/valedalama/greenhouse_v_0.2.png" alt=""></p>
+<hr>
+<p>2020-12-23 08:17:40</p>
+<p>Test of the battery level over a few days ...</p>
+<p><img src="/img/valedalama/sunny_days.png" alt=""></p>
+<hr>
+<p>2021-01-01 17:48:29</p>
+<p>Battery level seems to be holding steady!</p>
+<p>Feed <a href="http://159.65.226.222:3000/drives/b02f7797b045956e79c019f889dfb080cadbfda6b468a9505835a82aadd5762c">here</a>:</p>
+<p><img src="/img/valedalama/batt_jan2021.png" alt=""></p>
+<hr>
+<p>2021-01-08 08:59:07</p>
+<p>Batt level continues to hold ... feed <a href="http://159.65.226.222:3000/drives/b02f7797b045956e79c019f889dfb080cadbfda6b468a9505835a82aadd5762c">here</a></p>
+<p><img src="/img/valedalama/vale_batt_jan8.png" alt=""></p>
+
+
+    </div>
+  </body>
+</html>

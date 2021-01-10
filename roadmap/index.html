@@ -1,0 +1,128 @@
+
+
+<!-- feed it through our cssmin filter to minify -->
+<style>
+  body{font-family:sans-serif;margin:20px;font-size:small;width:90%;margin-right:auto;margin-left:auto;padding-top:15px}#profile_pic{float:right;margin:0 0 1em 1em}h1{line-height:1em;font-size:x-large;margin-bottom:.31em}h2{font-size:large;margin-bottom:1px}h3{font-size:small;margin-bottom:1px}a{text-decoration:none}a:hover{text-decoration:underline}a:visited{color:#00f}*,:after,:before{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}.posts-area{width:100%;padding-top:10px}.posts-area:after{content:"";display:table;clear:both}.post{float:left;width:33.33%;padding-right:20px}.post .post-contents{background:#f7f7f7;border-radius:5px}.post .image a{display:block;overflow:hidden;height:214px}.post img{object-fit:cover;width:100%;height:100%}.post .text{height:200px;padding:20px}@media (max-width:680px){.post{width:100%}}body{font-family:ubuntu,sans-serif;color:#444}h1{margin-bottom:0}#content{max-width:800px;display:block;margin:auto}#header .logo{max-width:800px}#header{position:relative;overflow-x:hidden}#header .links{position:absolute;bottom:42px;right:0}#footer{font-size:.8em;text-align:center;margin-top:4em;margin-bottom:4em}#footer .about{margin-left:1ex}a[name]:link,a[name]:visited{text-decoration:none;color:#766}a[name]:hover{color:#228;text-decoration:underline}.project{position:relative;width:100%;margin-bottom:40px;min-height:130px}.project .logo{position:absolute;top:0;left:0}.project .desc{background-image:url(images/light-texture.svg);background-size:1000px;background-repeat:repeat-y;padding:10px;min-height:120px;margin-left:190px}.project .row{font-size:1.2em;border-bottom:1px dashed #000;padding-bottom:4px;margin-bottom:10px}.project .row .title{display:inline-block}.project .row .title a:link,.project .row .title a:visited{text-decoration:none}.project .row .title a:hover{text-decoration:underline}.project .row .status{display:inline-block;float:right}.project .row .status img{height:1.2em}.section{margin-bottom:1em;padding:10px}.section.stickers{text-align:center}
+</style>
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" type="image/x-icon" href="/img/edge_favicon.png" />
+
+    <title>Edge Collective</title>
+  </head>
+  <body>
+
+
+  <a href="/">Edge Collective</a>
+        <h1>GROUND</h1>
+
+    <div id="content">
+    <div id="header">
+      <img class="logo" src="/img/roadmap/edge.svg" alt="peermaps">
+      <div class="links">
+        <div>
+          <a href="https://github.com/edgecollective">ground on github</a>
+        </div>
+      </div>
+    </div>
+    <!--<div class = "section">
+gritty resilient open un-interruptible network design</br>
+land -- local-first accessible network design </br>
+<b>G</b>ritty <b>R</b>ural <b>O</b>pen <b>U</b>n-interruptible <b>N</b>etwork <b>D</b>esign</br>
+    </div>-->
+    <div class="section">
+      <b>ground</b> is a curated set of designs for sensor and communications networks that is focused on network freedom, collaboration, and resilience.
+    </div>
+    <div class="section">
+      The <b>ground</b> project is intended to curate and develop FOSS (free-and-open-source), interoperable software and hardware that enable farmers and land & water resource managers to gain greater control over their sensor data.
+    </div>
+    <div class="section">
+      <b>ground</b> designs use a <b>'local-first'</b> networking approach:  sensor and communications data are stored locally on-site first, and are always locally available -- even if internet is currently not. Data can then be <b>selectively shared</b> at the user's discretion with others through a variety of methods and formats.
+    </div>
+     <div class="section">
+      <b>ground</b> is an alternative to most commercially-available networked environmental monitoring systems, which usually store data primarily on the cloud, and don't always allow users to store and access their data locally 'offline'.
+    </div>
+    <div class="project">
+      <div class="logo">
+        <a href="https://github.com/peermaps/mixmap"><img src="/img/roadmap/baseStation_c.gif" width="150px" style="padding-top: &gt;20px"></a>
+      </div>
+      <div class="desc">
+        <div class="row">
+          <div class="title">
+            <a href="https://github.com/peermaps/mixmap">Local-First Sensor Gateway</a>
+          </div>
+          <div class="status"><img src="/img/roadmap/alpha.svg" alt="alpha release" title="alpha release"></div>
+        </div>
+        Interactive webgl maps emphasizing direct access to the rendering
+        pipeline.
+      </div>
+    </div>
+    <div class="project">
+      <div class="logo">
+      <a href="https://github.com/peermaps/eyros"><img src="/img/roadmap/feather_milled_c.gif" width="150px"></a>
+      </div>
+      <div class="desc">
+        <div class="row">
+          <div class="title">
+            <a href="https://github.com/peermaps/eyros">Open source hardware SDI-12 LoRa sensor</a>
+          </div>
+          <div class="status"><img src="/img/roadmap/developing.svg" alt="in development" title="in development"></div>
+        </div>
+        Multi-dimensional spatial database. Write batches of geographic
+        coordinates to an interval tree with blocks addressed into a p2p
+        prefix-trie. Perform spatial queries on sparse data by fetching blocks
+        of the tree from peers as necessary.
+      </div>
+    </div>
+    <div class="project">
+      <div class="logo">
+        <a href="https://github.com/peermaps/swarmhead"><img src="/img/roadmap/swarmhead.svg" width="150px"></a>
+      </div>
+      <div class="desc">
+        <div class="row">
+          <div class="title">
+            <a href="https://github.com/peermaps/swarmhead">Getting Started Guide: Local-First LoRa Networks</a>
+          </div>
+          <div class="status"><img src="/img/roadmap/developing.svg" alt="in development" title="in development"></div>
+        </div>
+        Form a cooperative compute cluster under a swarm topic, archiving the
+        collective results into a collection of hypercores.
+      </div>
+    </div>
+    <div class="project">
+      <div class="logo">
+        <a href="https://github.com/peermaps/swarmhead"><img src="/img/roadmap/swarmhead.svg" width="150px"></a>
+      </div>
+      <div class="desc">
+        <div class="row">
+          <div class="title">
+            <a href="https://github.com/peermaps/swarmhead">Video Tutorial Series</a>
+          </div>
+          <div class="status"><img src="/img/roadmap/developing.svg" alt="in development" title="in development"></div>
+        </div>
+        Form a cooperative compute cluster under a swarm topic, archiving the
+        collective results into a collection of hypercores.
+      </div>
+    </div>
+    <h1><a name="support-us" href="https://peermaps.org/#support-us">support us</a></h1>
+    <div class="section">
+      If you'd like to support our work, we have
+      <a href="http://opencollective.com/peermaps">an account on opencollective</a>
+      where you can help fund development.
+    </div>
+  </div>
+  <div id="footer">
+    <div>
+      peermaps is a project of <a href="https://bits.coop/">bits.coop</a>
+      <span class="about">[<a href="https://bits.coop/#about">about us</a>]
+    </span></div>
+    <div>
+    </div>
+  </div>
+
+  </body>
+</html>
