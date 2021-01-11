@@ -1,0 +1,140 @@
+
+
+<!-- feed it through our cssmin filter to minify -->
+<style>
+  body{font-family:sans-serif;margin:20px;font-size:small;width:90%;margin-right:auto;margin-left:auto;padding-top:15px}#profile_pic{float:right;margin:0 0 1em 1em}h1{line-height:1em;font-size:x-large;margin-bottom:.31em}h2{font-size:large;margin-bottom:1px}h3{font-size:small;margin-bottom:1px}a{text-decoration:none}a:hover{text-decoration:underline}a:visited{color:#00f}*,:after,:before{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}.posts-area{width:100%;padding-top:10px}.posts-area:after{content:"";display:table;clear:both}.post{float:left;width:33.33%;padding-right:20px}.post .post-contents{background:#f7f7f7;border-radius:5px}.post .image a{display:block;overflow:hidden;height:214px}.post img{object-fit:cover;width:100%;height:100%}.post .text{height:200px;padding:20px}@media (max-width:680px){.post{width:100%}}body{font-family:sans-serif;margin:10px;font-size:14;width:80%;margin-right:auto;margin-left:auto;padding-top:15px;line-height:140%}.img-with-caption{font-size:14px;text-align:center;margin:20 0;background-color:F1F1F1;padding:10px}#pullout{text-align:center}#intro{max-width:700px;display:inline-block;text-align:left}#post-content{max-width:800px}#profile_pic{float:right;margin:0 0 1em 1em}h1{line-height:1em;font-size:x-large;margin-bottom:.31em}h2{font-size:large;margin-bottom:1px}h3{font-size:medium;margin-bottom:1px}ol,ul{max-width:650px}a{text-decoration:none}a:hover{text-decoration:underline}a:visited{color:#00f}*,:after,:before{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}.posts-area{width:100%;padding-top:10px}.posts-area:after{content:"";display:table;clear:both}.post{float:left;width:33.33%;padding:0 20px 20px 0}.contribute{width:100%;padding-top:10px}.post .post-contents{border-radius:10px;padding:20px 20px 10px 20px}.post .project-contents{background:#add8e6;border-radius:10px;padding:20px 20px 10px 20px}.post .note-contents{background:#add8e6;border-radius:10px;padding:20px 20px 10px 20px}.post .pedagogy-contents{background:#90ee90;border-radius:10px;padding:20px 20px 10px 20px}.post .talk-contents{background:pink;border-radius:10px;padding:20px 20px 10px 20px}.post .inter-contents{background:#add8e6;border-radius:5px}.post .image a{display:block;overflow:hidden;height:214px}.post img{object-fit:cover;width:100%;height:100%}img{max-height:500px;max-width:100%}table{background-color:F1F1F1;margin:30 auto 30 auto;padding:10px;max-width:50%}td{padding:10px;font-size:14}.post .text{min-height:250px;padding:5px}.post .inter-text{height:250px}@media (max-width:680px){.post{width:100%}}
+</style>
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" type="image/x-icon" href="/img/edge_favicon.png" />
+
+    <title>Edge Collective</title>
+  </head>
+  <body>
+    <div id='post-content'>
+
+  <a href="/">Edge Collective</a>
+        <h1>Flood Sensing in New Orleans, Louisiana (USA)</h1>
+
+<!--  &lt;nav class=&quot;toc&quot;&gt;&lt;/nav&gt;-->
+  
+  <img src="/img/nola/gateway_option_a.png">
+<h2>Prototyping</h2>
+<img src="/img/nola/enclosure.jpeg">
+<img src="/img/nola/circuitpytest.jpeg">
+<img src="/img/nola/loratest.jpeg">
+<img src="/img/nola/circuit1a.jpeg">
+<img src="/img/nola/circuit1.jpeg">
+<img src="/img/nola/proto1.jpeg">
+<img src="/img/nola/proto1b.jpeg">
+<h2>Gateway options</h2>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/oT0rrirHWP8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<h2>Notes</h2>
+<p><a href="https://www.wwltv.com/article/news/local/down-the-drain/swb-new-orleans-drainage-system-severely-hampered-going-into-hurricane-season/289-c3757b35-1ccc-4f85-a78a-9d745422a55f">Turbine down</a></p>
+<h2>Itsy Power Options</h2>
+<img src="/img/nola/itsy_power.png">
+<h2>Ultrasonic PVC Pipe Floater Prototype</h2>
+<p><img src="/img/nola/pvc_design.png"></br></p>
+<p><img src="/img/nola/pipe.jpeg"></br></p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/l0kGw_RZJFs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></br>
+<h2>Posting to FarmOS using CircuitPython</h2>
+<p>Using the demo repo <a href="https://github.com/edgecollective/flood-sense/tree/master/circuitpython/remote_and_gateway_demo">here</a>, which provides code for a remote Itsy M4 LoRa node, and an Itsy M4 + Airlift (Wifi) + Lora gateway:</p>
+<p><img src="/img/nola/pinout.jpeg"></br></p>
+<p><img src="/img/nola/floodsense_farmos_data.png"></br></p>
+<p><img src="/img/nola/floodsense_farmos_distance_data.png"></br></p>
+<h2>Arduino Setup for Ultrasonic Sensor Node</h2>
+<p>Setting up the ultrasonic sensor (HC-SR04) ...</p>
+<p>Noticed that the Itsy M4 isn't working with the Adafruit Timer chip -- perhaps the pins boot up in a 'high' state, so that the DONE pin always starts high, and keeps the timer off?</p>
+<p>So going to set up everything in Arduino for now ...</p>
+<p>Wiring identical to ultrasonic setup from before ...</p>
+<p><a href="https://learn.adafruit.com/ultrasonic-sonar-distance-sensors/python-circuitpython">Adafruit wiring setup for ultrasonic</a></p>
+<p>change for itsy:</p>
+<p>pin 5 (trigger) --&gt; pin 10
+pin 6 (echo) --&gt; pin 11</p>
+<p><a href="https://www.instructables.com/id/Simple-Arduino-and-HC-SR04-Example/">Arduino code example for ultrasonic</a></p>
+<p>Note -- there's also a <a href="https://www.adafruit.com/product/4007">3V-compatible version of hte HC-SR04, called the RCWL-1601</a></p>
+<p>Using <a href="https://create.arduino.cc/projecthub/Isaac100/getting-started-with-the-hc-sr04-ultrasonic-sensor-036380">this Arduino code for ultrasonic</a></p>
+<p>Update: SAMD51 (processor on Itsy M4) doesn't seem to be compatible with the Radiohead library currently. Error when compiling:</p>
+<pre><code>Arduino: 1.8.12 (Linux), TD: 1.51, Board: &quot;Adafruit ItsyBitsy M4 (SAMD51), Enabled, 120 MHz (standard), Small (-Os) (standard), 50 MHz (standard), Arduino, Off&quot;
+
+
+/home/dwblair/Arduino/libraries/RadioHead/RH_ASK.cpp:225:36: note: suggested alternative: 'GCLK_CLKCTRL_IDs'
+     REG_GCLK_CLKCTRL = (uint16_t) (GCLK_CLKCTRL_CLKEN | GCLK_CLKCTRL_GEN_GCLK0 | GCLK_CLKCTRL_ID(GCM_TCC2_TC3)) ;
+                                    ^~~~~~~~~~~~~~~~~~
+                                    GCLK_CLKCTRL_IDs
+/home/dwblair/Arduino/libraries/RadioHead/RH_ASK.cpp:225:57: error: 'GCLK_CLKCTRL_GEN_GCLK0' was not declared in this scope
+     REG_GCLK_CLKCTRL = (uint16_t) (GCLK_CLKCTRL_CLKEN | GCLK_CLKCTRL_GEN_GCLK0 | GCLK_CLKCTRL_ID(GCM_TCC2_TC3)) ;
+                                                         ^~~~~~~~~~~~~~~~~~~~~~
+/home/dwblair/Arduino/libraries/RadioHead/RH_ASK.cpp:225:57: note: suggested alternative: 'GCLK_PCHCTRL_GEN_GCLK0'
+     REG_GCLK_CLKCTRL = (uint16_t) (GCLK_CLKCTRL_CLKEN | GCLK_CLKCTRL_GEN_GCLK0 | GCLK_CLKCTRL_ID(GCM_TCC2_TC3)) ;
+                                                         ^~~~~~~~~~~~~~~~~~~~~~
+                                                         GCLK_PCHCTRL_GEN_GCLK0
+/home/dwblair/Arduino/libraries/RadioHead/RH_ASK.cpp:225:82: error: 'GCLK_CLKCTRL_ID' was not declared in this scope
+     REG_GCLK_CLKCTRL = (uint16_t) (GCLK_CLKCTRL_CLKEN | GCLK_CLKCTRL_GEN_GCLK0 | GCLK_CLKCTRL_ID(GCM_TCC2_TC3)) ;
+                                                                                  ^~~~~~~~~~~~~~~
+/home/dwblair/Arduino/libraries/RadioHead/RH_ASK.cpp:225:82: note: suggested alternative: 'GCLK_CLKCTRL_IDs'
+     REG_GCLK_CLKCTRL = (uint16_t) (GCLK_CLKCTRL_CLKEN | GCLK_CLKCTRL_GEN_GCLK0 | GCLK_CLKCTRL_ID(GCM_TCC2_TC3)) ;
+                                                                                  ^~~~~~~~~~~~~~~
+                                                                                  GCLK_CLKCTRL_IDs
+/home/dwblair/Arduino/libraries/RadioHead/RH_ASK.cpp:226:19: error: 'struct Gclk' has no member named 'STATUS'
+     while ( GCLK-&gt;STATUS.bit.SYNCBUSY == 1 ); // wait for sync
+                   ^~~~~~
+/home/dwblair/Arduino/libraries/RadioHead/RH_ASK.cpp:232:27: error: 'volatile struct TC_STATUS_Type::&lt;unnamed&gt;' has no member named 'SYNCBUSY'
+     while (TC-&gt;STATUS.bit.SYNCBUSY == 1); // wait for sync
+                           ^~~~~~~~
+/home/dwblair/Arduino/libraries/RadioHead/RH_ASK.cpp:235:27: error: 'volatile struct TC_STATUS_Type::&lt;unnamed&gt;' has no member named 'SYNCBUSY'
+     while (TC-&gt;STATUS.bit.SYNCBUSY == 1); // wait for sync
+                           ^~~~~~~~
+/home/dwblair/Arduino/libraries/RadioHead/RH_ASK.cpp:236:22: error: 'TC_CTRLA_WAVEGEN_MFRQ' was not declared in this scope
+     TC-&gt;CTRLA.reg |= TC_CTRLA_WAVEGEN_MFRQ; // Set TC as Match Frequency
+                      ^~~~~~~~~~~~~~~~~~~~~
+/home/dwblair/Arduino/libraries/RadioHead/RH_ASK.cpp:236:22: note: suggested alternative: 'TC_WAVE_WAVEGEN_MFRQ'
+     TC-&gt;CTRLA.reg |= TC_CTRLA_WAVEGEN_MFRQ; // Set TC as Match Frequency
+                      ^~~~~~~~~~~~~~~~~~~~~
+                      TC_WAVE_WAVEGEN_MFRQ
+/home/dwblair/Arduino/libraries/RadioHead/RH_ASK.cpp:237:27: error: 'volatile struct TC_STATUS_Type::&lt;unnamed&gt;' has no member named 'SYNCBUSY'
+     while (TC-&gt;STATUS.bit.SYNCBUSY == 1); // wait for sync
+                           ^~~~~~~~
+/home/dwblair/Arduino/libraries/RadioHead/RH_ASK.cpp:243:27: error: 'volatile struct TC_STATUS_Type::&lt;unnamed&gt;' has no member named 'SYNCBUSY'
+     while (TC-&gt;STATUS.bit.SYNCBUSY == 1); // wait for sync
+                           ^~~~~~~~
+/home/dwblair/Arduino/libraries/RadioHead/RH_ASK.cpp:246:27: error: 'volatile struct TC_STATUS_Type::&lt;unnamed&gt;' has no member named 'SYNCBUSY'
+     while (TC-&gt;STATUS.bit.SYNCBUSY == 1); // wait for sync
+                           ^~~~~~~~
+/home/dwblair/Arduino/libraries/RadioHead/RH_ASK.cpp:258:27: error: 'volatile struct TC_STATUS_Type::&lt;unnamed&gt;' has no member named 'SYNCBUSY'
+     while (TC-&gt;STATUS.bit.SYNCBUSY == 1); // wait for sync
+                           ^~~~~~~~
+/home/dwblair/.arduino15/packages/arduino/tools/arm-none-eabi-gcc/7-2017q4/bin/arm-none-eabi-g++ -mcpu=cortex-m4 -mthumb -c -g -Os -w -std=gnu++11 -ffunction-sections -fdata-sections -fno-threadsafe-statics -nostdlib --param max-inline-insns-single=500 -fno-rtti -fno-exceptions -MMD &quot;-D__SKETCH_NAME__=\&quot;\&quot;\&quot;itsym4_lora_ultrasonic.ino\&quot;\&quot;\&quot;&quot; -DF_CPU=120000000L -DARDUINO=10812 -DARDUINO_ITSYBITSY_M4 -DARDUINO_ARCH_SAMD -D__SAMD51G19A__ -DADAFRUIT_ITSYBITSY_M4_EXPRESS -D__SAMD51__ -DUSB_VID=0x239A -DUSB_PID=0x802B -DUSBCON -DUSB_CONFIG_POWER=100 &quot;-DUSB_MANUFACTURER=\&quot;Adafruit LLC\&quot;&quot; &quot;-DUSB_PRODUCT=\&quot;Adafruit ItsyBitsy M4\&quot;&quot; -I/home/dwblair/.arduino15/packages/adafruit/hardware/samd/1.5.9/cores/arduino/TinyUSB -I/home/dwblair/.arduino15/packages/adafruit/hardware/samd/1.5.9/cores/arduino/TinyUSB/Adafruit_TinyUSB_ArduinoCore -I/home/dwblair/.arduino15/packages/adafruit/hardware/samd/1.5.9/cores/arduino/TinyUSB/Adafruit_TinyUSB_ArduinoCore/tinyusb/src -D__FPU_PRESENT -DARM_MATH_CM4 -DCRYSTALLESS -mfloat-abi=hard -mfpu=fpv4-sp-d16 -DENABLE_CACHE -Os -DVARIANT_QSPI_BAUD_DEFAULT=50000000 -D__SAMD51G19A__ -DADAFRUIT_ITSYBITSY_M4_EXPRESS -D__SAMD51__ -DUSB_VID=0x239A -DUSB_PID=0x802B -DUSBCON -DUSB_CONFIG_POWER=100 &quot;-DUSB_MANUFACTURER=\&quot;Adafruit LLC\&quot;&quot; &quot;-DUSB_PRODUCT=\&quot;Adafruit ItsyBitsy M4\&quot;&quot; -I/home/dwblair/.arduino15/packages/adafruit/hardware/samd/1.5.9/cores/arduino/TinyUSB -I/home/dwblair/.arduino15/packages/adafruit/hardware/samd/1.5.9/cores/arduino/TinyUSB/Adafruit_TinyUSB_ArduinoCore -I/home/dwblair/.arduino15/packages/adafruit/hardware/samd/1.5.9/cores/arduino/TinyUSB/Adafruit_TinyUSB_ArduinoCore/tinyusb/src -D__FPU_PRESENT -DARM_MATH_CM4 -DCRYSTALLESS -mfloat-abi=hard -mfpu=fpv4-sp-d16 -I/home/dwblair/.arduino15/packages/arduino/tools/CMSIS/4.5.0/CMSIS/Include/ -I/home/dwblair/.arduino15/packages/arduino/tools/CMSIS-Atmel/1.2.0/CMSIS/Device/ATMEL/ -I/home/dwblair/.arduino15/packages/adafruit/hardware/samd/1.5.9/cores/arduino -I/home/dwblair/.arduino15/packages/adafruit/hardware/samd/1.5.9/variants/itsybitsy_m4 -I/home/dwblair/.arduino15/packages/adafruit/hardware/samd/1.5.9/libraries/SPI -I/home/dwblair/.arduino15/packages/adafruit/hardware/samd/1.5.9/libraries/Adafruit_ZeroDMA -I/home/dwblair/Arduino/libraries/RadioHead -I/home/dwblair/.arduino15/packages/adafruit/hardware/samd/1.5.9/libraries/Wire /home/dwblair/Arduino/libraries/RadioHead/RH_NRF51.cpp -o /tmp/arduino_build_266054/libraries/RadioHead/RH_NRF51.cpp.o
+Using library SPI at version 1.0 in folder: /home/dwblair/.arduino15/packages/adafruit/hardware/samd/1.5.9/libraries/SPI 
+Using library Adafruit_ZeroDMA at version 1.0.4 in folder: /home/dwblair/.arduino15/packages/adafruit/hardware/samd/1.5.9/libraries/Adafruit_ZeroDMA 
+Using library RadioHead in folder: /home/dwblair/Arduino/libraries/RadioHead (legacy)
+Using library Wire at version 1.0 in folder: /home/dwblair/.arduino15/packages/adafruit/hardware/samd/1.5.9/libraries/Wire 
+exit status 1
+Error compiling for board Adafruit ItsyBitsy M4 (SAMD51).
+</code></pre>
+<h2>Version 2</h2>
+<p><a href="https://github.com/edgecollective/flood-sense/tree/master/ver2">Remote and Gateway Code</a></p>
+<p>Remote now is done in Arduino, to allow for low-power Timer use. Wiring is described.</p>
+<p>Gateway has same wiring as previous; but 'main.py' has changed.  Data is now sent to a special server</p>
+<p>No graphs yet on server (very soon!) but can test to see whether new data is arriving <a href="http://64.227.0.108:8600/api/latest">here</a></p>
+<h2>Streetwise</h2>
+<p>Here's a 'traffic accident and street flooding' app that is being used currently in NOLA -- they allow for users to report accidents or flooding:</p>
+<p><a href="http://streetwise.nola.gov/">Streetwise</a></p>
+<h2>Version 3</h2>
+<p>vl6180x Microlidar sensor from adafruit</p>
+<p>Tutorial on using the sensor (with arduino code) <a href="https://learn.adafruit.com/adafruit-vl6180x-time-of-flight-micro-lidar-distance-sensor-breakout/wiring-and-test">here</a></p>
+<pre><code>{ batt: '3.680274',
+  dist: '0',
+  rssi: -25,
+  lux: '9.09',
+  status: '7' }
+</code></pre>
+
+
+    </div>
+  </body>
+</html>
