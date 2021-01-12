@@ -5640,6 +5640,137 @@ console.log(req.user); // =&gt; { _id: &lt;S</p>
 <p>npm install -g node-pre-gyp
 npm install sqlite3 --save-dev</p>
 </blockquote>
+<hr>
+<p>2021-01-09 16:40:05</p>
+<p>Capturing which button was pressed in form submit <a href="https://stackoverflow.com/questions/2066162/how-can-i-get-the-button-that-caused-the-submit-from-the-form-submit-event">here</a></p>
+<p>Got basic forms working in the 'form' branch:</p>
+<p><a href="https://github.com/edgecollective/habitat/tree/form">https://github.com/edgecollective/habitat/tree/form</a></p>
+<p>Going to try templates next. Also:</p>
+<p>understandin gnodejs express templating engines</p>
+<ul>
+<li><a href="https://www.digitalocean.com/community/tutorials/nodejs-express-template-engines">digitalocean</a></li>
+</ul>
+<hr>
+<p>2021-01-09 17:44:55</p>
+<p>Got basic templating working: <a href="https://github.com/edgecollective/habitat/tree/template">https://github.com/edgecollective/habitat/tree/template</a></p>
+<p>TODOS:</p>
+<ul>
+<li>need to extract and show 'feed ID' (via POSTGRESQL commands) to user when creating new feed (currently only show name and private key)</li>
+<li>might want option of generating a hash for the feed id, rather than a simple incremented integer</li>
+<li>need to handle case where the requested feed ID doesn't exist (will require looking up in database)</li>
+<li>render a landing page for a new data feed that explains private key, allows for downloading the key id and private key, shows an example CURL, and links to online arduino examples.</li>
+</ul>
+<p>Going to need to figure out how to create a new table, and new fields.  Follow tutorial by Trickett (habitat creator) <a href="https://able.bio/rhett/creating-a-web-application-in-your-home-with-a-raspberry-pi-express-and-postgresql--3c90a372">here</a></p>
+<hr>
+<p>2021-01-10 10:57:12</p>
+<p>setting up postgresql server ... creating tables ...</p>
+<ul>
+<li>install postgresql <a href="https://www.digitalocean.com/community/tutorials/how-to-install-and-use-postgresql-on-ubuntu-18-04">here</a></li>
+</ul>
+<p>then follow instructions <a href="https://able.bio/rhett/creating-a-web-application-in-your-home-with-a-raspberry-pi-express-and-postgresql--3c90a372">here</a></p>
+<blockquote>
+<p>sudo -i -u postgres
+psql</p>
+</blockquote>
+<p>can exit via \q</p>
+<p>CREATE TABLE users (
+user_id SERIAL PRIMARY KEY,
+username VARCHAR(50),
+password VARCHAR(255),
+is_admin BOOLEAN DEFAULT FALSE
+);</p>
+<p>CREATE TABLE feeds(
+feed_id SERIAL PRIMARY KEY,
+name VARCHAR(255),
+public_key VARCHAR(255),
+private_key VARCHAR(255)
+);</p>
+<p>CREATE TABLE measurements(
+id SERIAL PRIMARY KEY,
+feed_id INT,
+co2 FLOAT,
+tempC FLOAT,
+humidity FLOAT,
+mic FLOAT,
+auxpressure FLOAT,
+auxTempC FLOAT,
+aux001 FLOAT,
+aux002 FLOAT,<br>
+created TIMESTAMP DEFAULT NOW(),
+CONSTRAINT feed
+FOREIGN KEY(feed_id)
+REFERENCES feeds(feed_id)
+);</p>
+<p>INSERT INTO users (username, password) VALUES ('bob', 'jones');</p>
+<p>INSERT INTO feeds (name) values ('NodeMCU  ESP32');</p>
+<p>pcat999</p>
+<p>how to handle: relation does not exist -- <a href="https://stackoverflow.com/questions/19941922/error-relation-does-not-exist">here</a></p>
+<hr>
+<p>2021-01-10 12:09:36</p>
+<p>update: relation didn't exist b/c hadn't created the tables in the proper database.</p>
+<p>PORT=3000
+DB_NAME=hab1
+DB_USER=postgres
+DB_PASSWORD=pcat999
+DB_HOST=localhost
+DB_PORT=5432</p>
+<hr>
+<p>2021-01-10 12:30:59</p>
+<p>Created a 'feed creation' landing page in the 'createfeed-landing' branch of habitat on github.com/edgecollective</p>
+<hr>
+<p>2021-01-10 12:48:01</p>
+<p>using serial primary keys postgresql <a href="https://www.postgresqltutorial.com/postgresql-serial/">here</a></p>
+<p>postgresql random primary key <a href="https://stackoverflow.com/questions/20890129/postgresql-random-primary-key">here</a></p>
+<p>unique identifier in your postgresql database <a href="https://itnext.io/how-to-have-unique-identifier-in-your-postgresql-database-using-primary-key-and-foreign-key-9d2ddd4efce2">here</a></p>
+<p>advice here is not to use the public key as the unique identifier -- <a href="https://dba.stackexchange.com/questions/94203/random-unguessable-primary-key-which-preserves-correct-order">here</a></p>
+<hr>
+<p>2021-01-11 11:06:05</p>
+<p>error handling in express <a href="https://expressjs.com/en/guide/error-h">here</a></p>
+<p>TODO: refactor things based on the suggestions in that post.</p>
+<p>in particular:</p>
+<pre><code>app.get('/user/:id', async function (req, res, next) {
+  var user = await getUserById(req.params.id)
+  res.send(user)
+})
+</code></pre>
+<hr>
+<p>2021-01-11 11:16:08</p>
+<p>notes on api keys:</p>
+<p>nice article <a href="https://stoplight.io/blog/api-keys-best-practices-to-authenticate-apis/">here</a></p>
+<p>carto's policy <a href="https://carto.com/developers/auth-api/guides/how-to-send-API-Keys/">here</a></p>
+<p>maybe should now have authorization key in the header.  should just be a matter of checking on the &quot;POST&quot; ... getting a header.  can implement it after this round.</p>
+<hr>
+<p>2021-01-11 11:25:41</p>
+<p>changing name of table in postgres</p>
+<pre><code>ALTER TABLE table_name 
+RENAME COLUMN column_name TO new_column_name;
+</code></pre>
+<p>tests:</p>
+<ul>
+<li>case of incoming JSON matter? (likely yes) -- YES</li>
+<li>case of postgres request matter? (likely no)</li>
+<li>what if we don't send all the params?</li>
+</ul>
+<hr>
+<p>2021-01-11 12:23:53</p>
+<p>writing an async function <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function">here</a></p>
+<p>guide to async programming <a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous/Async_await">here</a></p>
+<hr>
+<p>2021-01-11 12:32:41</p>
+<p>'use-pubkey' is the latest branch.</p>
+<p>using 'async await' in express <a href="https://zellwk.com/blog/async-await-express/">here</a></p>
+<p>and: definition of 'async / await' <a href="https://zellwk.com/blog/async-await">here</a></p>
+<p>w/ postgresql <a href="https://stackoverflow.com/questions/53910835/using-async-await-with-node-postgres">here</a></p>
+<p>started to use promises ...</p>
+<p>even better now would be to create a 'getFeedPrivateKey() function and use that in postNewMeasurement()</p>
+<hr>
+<p>2021-01-11 17:13:28</p>
+<p>have now started some 'async' code in branch 'async'. that's the latest working branch.</p>
+<p>TODO:  the 'new feed' api should return JSON; the page we land on after creating a new feed in the form should leverage that api.</p>
+<hr>
+<p>2021-01-11 17:25:43</p>
+<p>beginner's guide to pug <a href="https://www.sitepoint.com/a-beginners-guide-to-pug/">here</a></p>
+<p>cami -- simon's kid</p>
 </p>
       </div>
     </div>
