@@ -97,6 +97,20 @@ And if you'd like to help support our podcast, you can now do so via [Patreon](h
   <div class="post">
     <div class="project-contents">
       <div class="image">
+        <a href="/posts/projects/mothbot/">
+          <img src="/img/mothbot/mothbot.png"/>
+        </a>
+      </div>
+      <div class="text">
+        <h3><a href="/posts/projects/mothbot/">Mothbot -- Convivial Radio Microcontroller  Design</a></h3>
+        <p>Designing an accessible and easy-to-assemble radio device for use in environmental monitoring and education.</p>
+        <em>Updated: 2021-01-12</em>
+      </div>
+    </div>
+  </div>
+  <div class="post">
+    <div class="project-contents">
+      <div class="image">
         <a href="/posts/projects/co2/">
           <img src="img/placeholder.png"/>
         </a>
@@ -1883,6 +1897,9 @@ interface = meshtastic.StreamInterface()
 <p><img src="/img/mothbot/mothbot_am2315.jpg" alt=""></p>
 <h2>Web USB</h2>
 <p>Nice description <a href="https://learn.adafruit.com/using-webusb-with-arduino-and-tinyusb">here</a></p>
+<hr>
+<p>2021-01-13 18:46:49</p>
+<p>New repo for Mothbot design files and code <a href="https://github.com/edgecollective/mothbot">here</a></p>
 </p>
       </div>
     </div>
@@ -5695,7 +5712,7 @@ co2 FLOAT,
 tempC FLOAT,
 humidity FLOAT,
 mic FLOAT,
-auxpressure FLOAT,
+auxPressure FLOAT,
 auxTempC FLOAT,
 aux001 FLOAT,
 aux002 FLOAT,<br>
@@ -5774,6 +5791,79 @@ RENAME COLUMN column_name TO new_column_name;
 <p>2021-01-11 17:25:43</p>
 <p>beginner's guide to pug <a href="https://www.sitepoint.com/a-beginners-guide-to-pug/">here</a></p>
 <p>cami -- simon's kid</p>
+<hr>
+<p>2021-01-12 19:02:12</p>
+<p>instructions for setting up postgres for habitat on digitalocean</p>
+<p>install postgres</p>
+<pre><code>sudo apt update
+sudo apt install postgresql postgresql-contrib
+</code></pre>
+<blockquote>
+<p>sudo -i -u postgres
+createdb bay1
+psql
+\c bay1</p>
+</blockquote>
+<p>then:</p>
+<p>CREATE TABLE users (
+user_id SERIAL PRIMARY KEY,
+username VARCHAR(50),
+password VARCHAR(255),
+is_admin BOOLEAN DEFAULT FALSE
+);</p>
+<p>CREATE TABLE feeds(
+feed_id SERIAL PRIMARY KEY,
+name VARCHAR(255),
+public_key VARCHAR(255),
+private_key VARCHAR(255)
+);</p>
+<p>CREATE TABLE measurements(
+id SERIAL PRIMARY KEY,
+feed_id INT,
+co2 FLOAT,
+tempC FLOAT,
+humidity FLOAT,
+mic FLOAT,
+auxPressure FLOAT,
+auxTempC FLOAT,
+aux001 FLOAT,
+aux002 FLOAT,<br>
+created TIMESTAMP DEFAULT NOW(),
+CONSTRAINT feed
+FOREIGN KEY(feed_id)
+REFERENCES feeds(feed_id)
+);</p>
+<p>check that all is well:</p>
+<blockquote>
+<p>\dt</p>
+</blockquote>
+<p>change the user password:</p>
+<blockquote>
+<p>ALTER USER postgres WITH PASSWORD 'pcat999'</p>
+</blockquote>
+<blockquote>
+<p>\q
+exit</p>
+</blockquote>
+<p>see better guide <a href="https://able.bio/rhett/creating-a-web-application-in-your-home-with-a-raspberry-pi-express-and-postgresql--3c90a372">here</a></p>
+<p>need to make sure .env file is proper:</p>
+<p>PORT=3000
+DB_NAME=hab1
+DB_USER=postgres
+DB_PASSWORD=pcat999
+DB_HOST=localhost
+DB_PORT=5432</p>
+<p>key guide <a href="https://www.digitalocean.com/community/tutorials/how-to-set-up-a-node-js-application-for-production-on-ubuntu-16-04">here</a>
+for deploying nodejs server on digitalocean.</p>
+<p>has section for adding additional apps on other ports!</p>
+<p>setting up nginx on digitalocean guide <a href="https://www.digitalocean.com/community/tutorials/how-to-install-nginx-on-ubuntu-20-04">here</a></p>
+<p>how to set up a firewall on ubuntu <a href="https://www.digitalocean.com/community/tutorials/how-to-setup-a-firewall-with-ufw-on-an-ubuntu-and-debian-cloud-server">here</a></p>
+<hr>
+<p>2021-01-13 08:05:11</p>
+<p>Its creation was motivated by recent work (e.g. by <a href="https://www.medrxiv.org/content/10.1101/2020.06.15.20132027v2">Jimenez et al.</a>) indicating that monitoring indoor CO2 levels can (in some contexts) help to assess the risk of airborne SARS-CoV-2 transmission.</p>
+<hr>
+<p>2021-01-13 11:59:26</p>
+<p>html to jade thing <a href="https://html2jade.org/">here</a></p>
 </p>
       </div>
     </div>
