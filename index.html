@@ -1900,6 +1900,53 @@ interface = meshtastic.StreamInterface()
 <hr>
 <p>2021-01-13 18:46:49</p>
 <p>New repo for Mothbot design files and code <a href="https://github.com/edgecollective/mothbot">here</a></p>
+<hr>
+<p>2021-01-14 21:23:57</p>
+<p>If the mothbot isn't receiving, it might be because the 'INT' pin isn't soldered properly:
+e
+<img src="/img/mothbot/mothbot_rev4_int_d2_14_matchup.png" alt=""></p>
+<hr>
+<p>2021-01-15 10:44:21</p>
+<p>Below pulled in from 'e-ink' notes ...</p>
+<h3>Grid Squares</h3>
+<p>Ham Radio for Arduino and Picaxe book --- <a href="http://www.arrl.org/shop/Ham-Radio-for-Arduino-and-PICAXE/">Description</a>, <a href="https://www.amazon.com/Ham-Radio-Arduino-Picaxe-Arrl/dp/087259324X">Amazon</a>.</p>
+<p>Source code for generating tiles from OSM is <a href="http://hamradioprojects.com/authors/wa5znu/+marinus/code/">here</a></p>
+<p>Grid square locator on above site is broken; perhaps <a href="https://www.k2dsl.com/2008/08/27/finding-grid-square-locators/">this</a> works?</p>
+<p>Grid square locator <a href="http://www.arrl.org/grid-squares">here</a>.</p>
+<p>Computing lat / lon <a href="https://stevemorse.org/jcal/latlon.php">here</a>.</p>
+<p>Conant road lat / lon: 42.41158	-71.2983</p>
+<p>Grid square utility <a href="http://www.levinecentral.com/ham/grid_square.php">here</a> works, but doesn't give 10 character grid squares ...</p>
+<p>Another tool is <a href="https://dxcluster.ha8tks.hu/hamgeocoding/">here</a>, which generates a nice overlay ... &lt;-- this is the tool to use!</p>
+<p>So, the combined tools are:</p>
+<ul>
+<li>identifying your grid square in ham radio, <a href="https://dxcluster.ha8tks.hu/hamgeocoding/">here</a>.</li>
+<li>using a python script to grab the tiles, <a href="http://hamradioprojects.com/authors/wa5znu/+marinus/osm/">here</a> -- seems to be broken.</li>
+</ul>
+<p>Example grid square:</p>
+<p>Finding gridsquares from lat / lon <a href="https://www.amsat.org/amsat-new/tools/grids.php">here</a></p>
+<p>Generator <a href="https://dxcluster.ha8tks.hu/hamgeocoding/">here</a>.  Uses a nice open source <a href="https://nominatim.org/">geocoding app</a> that works with OSM.  The author, <a href="https://twitter.com/ha8tks?lang=en">ha8tks</a>, has a <a href="https://github.com/ha8tks/Leaflet.Maidenhead">repo on github</a> that applies the GridSquare layout in Leaflet.</p>
+<p><img src="/img/eink/gridquare.png" alt=""></p>
+<p><img src="/img/eink/weston.png" alt=""></p>
+<p>Reference on gridsquares <a href="https://www.amsat.org/amsat-new/tools/grids.php">here</a></p>
+<p>Ham radio chat on grid squares <a href="https://www.youtube.com/watch?v=3w2SPj5Hs5Q">here</a>.</p>
+<p>General term for this is the <a href="https://en.wikipedia.org/wiki/Maidenhead_Locator_System">Maidenhead Gridsquare System</a>.</p>
+<p>(Alternative:  the <a href="https://en.wikipedia.org/wiki/World_Geodetic_System">World Geodetic System</a>)</p>
+<p>Nice <a href="https://www.hamradio.in/circuits/grid_locator_system.php">explanation</a> of the grid locator system.</p>
+<p>Nice <a href="http://www.jonit.com/fieldlist/maidenhead.htm">historical background</a> on the system.</p>
+<p>Really nice <a href="https://www.youtube.com/watch?v=rlkUAHGw_Sg">video explanation</a> of grid squares.</p>
+<p><img src="/img/eink/gridquare.png" alt=""></p>
+<p><img src="/img/eink/weston.png" alt=""></p>
+<p>Reference on gridsquares <a href="https://www.amsat.org/amsat-new/tools/grids.php">here</a></p>
+<p>Ham radio chat on grid squares <a href="https://www.youtube.com/watch?v=3w2SPj5Hs5Q">here</a>.</p>
+<p>General term for this is the <a href="https://en.wikipedia.org/wiki/Maidenhead_Locator_System">Maidenhead Gridsquare System</a>.</p>
+<p>(Alternative:  the <a href="https://en.wikipedia.org/wiki/World_Geodetic_System">World Geodetic System</a>)</p>
+<p>Nice <a href="https://www.hamradio.in/circuits/grid_locator_system.php">explanation</a> of the grid locator system.</p>
+<p>Nice <a href="http://www.jonit.com/fieldlist/maidenhead.htm">historical background</a> on the system.</p>
+<p>Really nice <a href="https://www.youtube.com/watch?v=rlkUAHGw_Sg">video explanation</a> of grid squares.</p>
+<hr>
+<p>2021-01-15 10:48:51</p>
+<p>Leaflet + Maidenhead Locator system <a href="https://github.com/ha8tks/Leaflet.Maidenhead">here</a></p>
+<p>Key file is <a href="https://github.com/ha8tks/Leaflet.Maidenhead/blob/master/src/L.Maidenhead.js">here</a> -- this is how to figure out GPS on the system.</p>
 </p>
       </div>
     </div>
