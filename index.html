@@ -4583,6 +4583,33 @@ Feed Home Page: http://data.pvos.org/co2/data/9816e2df7cc14d64698d70128590807577
 <hr>
 <p>2021-01-17 08:12:24</p>
 <p>Just re-entered loft w/ coleman now ...</p>
+<p>went back down, then camb back around 8:30 ...</p>
+<hr>
+<p>2021-01-18 11:59:52</p>
+<p>Working on pulling in parameters ... looks like this is how I did it here:</p>
+<p><a href="https://github.com/edgecollective/co2-remote-and-gateway/blob/cap_params/rev_e/firmware/wifi_sensor/cap_params_load_immediate/cap_params_load_immediate.ino">https://github.com/edgecollective/co2-remote-and-gateway/blob/cap_params/rev_e/firmware/wifi_sensor/cap_params_load_immediate/cap_params_load_immediate.ino</a></p>
+<hr>
+<p>2021-01-18 12:06:20</p>
+<p>Requirements in Arduino IDE for CO2 monitor based on ESP32 ...</p>
+<p>IDE setup:</p>
+<ul>
+<li>ESP32 board support in Arduino: <a href="https://randomnerdtutorials.com/installing-the-esp32-board-in-arduino-ide-windows-instructions/">https://randomnerdtutorials.com/installing-the-esp32-board-in-arduino-ide-windows-instructions/</a></li>
+<li>ESP32 file upload tool: <a href="https://randomnerdtutorials.com/install-esp32-filesystem-uploader-arduino-ide/">https://randomnerdtutorials.com/install-esp32-filesystem-uploader-arduino-ide/</a>. Tool is <a href="https://github.com/me-no-dev/arduino-esp32fs-plugin/releases/">here</a></li>
+</ul>
+<p>Libraries:</p>
+<ul>
+<li><a href="https://github.com/thomasfredericks/Bounce2">Bounce2</a> library (via IDE)</li>
+<li>U8g2 (via IDE)</li>
+<li>PubSubClient // https://github.com/knolleary/pubsubclient</li>
+<li>BMP388_DEV (lindupp, via IDE)</li>
+<li>Sparkfun SCD30 (via IDE)</li>
+</ul>
+<hr>
+<p>2021-01-18 12:49:59</p>
+<p>Test feed here: <a href="http://data.pvos.org/co2/data/cbb8d444591def61d4e59f9b53d3193dd7724a9d8599c6ee">http://data.pvos.org/co2/data/cbb8d444591def61d4e59f9b53d3193dd7724a9d8599c6ee</a></p>
+<hr>
+<p>2021-01-18 13:54:57</p>
+<p>Now reading in parameter file and displaying CO2 value with this commit: <a href="https://github.com/p-v-o-s/co2-monitor/commit/39c589e08763c8f280da3e49c05ae70d059a7791">https://github.com/p-v-o-s/co2-monitor/commit/39c589e08763c8f280da3e49c05ae70d059a7791</a></p>
 </p>
       </div>
     </div>
