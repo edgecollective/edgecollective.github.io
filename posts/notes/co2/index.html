@@ -2454,6 +2454,43 @@ Feed Home Page: http://data.pvos.org/co2/data/9816e2df7cc14d64698d70128590807577
 <p>TODO: Reading in measurement interval from param file initially still not working (fix).</p>
 <p>TODO: We should implement a watchdog that looks to see if successful post and/or connection and resets if not -- the error message I was seeing might be related to the wifi, apparently</p>
 <p>TODO: Should also change the plotting style in Bayou-CO2 to <em>not</em> use bezier ...</p>
+<hr>
+<p>2021-01-19 09:26:43</p>
+<p>More TODOS:</p>
+<ul>
+<li>Watchdog ping every loop</li>
+<li>Reset if no wifi connection after one iteration</li>
+<li>autocalibration turn on in bayou settings</li>
+<li>Bayou-CO2 -- download keys as CSV / JSON</li>
+<li>Make a Feather ESP32 option? Can be ESP32 or lora feather</li>
+</ul>
+<p>ESP32 power req's ...</p>
+<p>Observation -- looks like heap stabilizes ...</p>
+<pre><code>getFreeHeap(): 250128
+http://data.pvos.org/co2/data/3897755c6379d00bbb1d622827b1ffd1ba6a0579802044c9
+{&quot;private_key&quot;:&quot;13adcd2e8704165a62aea86bee0a3abe2fd3be4d62427a35&quot;,&quot;co2&quot;:331,&quot;tempC&quot;:22.7,&quot;humidity&quot;:23.25,&quot;mic&quot;:0,&quot;auxPressure&quot;:1008.91,&quot;auxTempC&quot;:19.61,&quot;aux001&quot;:0,&quot;aux002&quot;:0}http://data.pvos.org/co2/data/3897755c6379d00bbb1d622827b1ffd1ba6a0579802044c9
+200
+Measurement recorded
+
+getFreeHeap(): 250128
+http://data.pvos.org/co2/data/3897755c6379d00bbb1d622827b1ffd1ba6a0579802044c9
+{&quot;private_key&quot;:&quot;13adcd2e8704165a62aea86bee0a3abe2fd3be4d62427a35&quot;,&quot;co2&quot;:328,&quot;tempC&quot;:22.52,&quot;humidity&quot;:23.64,&quot;mic&quot;:0,&quot;auxPressure&quot;:1008.86,&quot;auxTempC&quot;:19.56,&quot;aux001&quot;:0,&quot;aux002&quot;:0}http://data.pvos.org/co2/data/3897755c6379d00bbb1d622827b1ffd1ba6a0579802044c9
+200
+Measurement recorded
+
+getFreeHeap(): 250128
+http://data.pvos.org/co2/data/3897755c6379d00bbb1d622827b1ffd1ba6a0579802044c9
+{&quot;private_key&quot;:&quot;13adcd2e8704165a62aea86bee0a3abe2fd3be4d62427a35&quot;,&quot;co2&quot;:332,&quot;tempC&quot;:22.65,&quot;humidity&quot;:23.66,&quot;mic&quot;:0,&quot;auxPressure&quot;:1008.85,&quot;auxTempC&quot;:19.59,&quot;aux001&quot;:0,&quot;aux002&quot;:0}http://data.pvos.org/co2/data/3897755c6379d00bbb1d622827b1ffd1ba6a0579802044c9
+200
+Measurement recorded
+
+
+getFreeHeap(): 250128
+http://data.pvos.org/co2/data/3897755c6379d00bbb1d622827b1ffd1ba6a0579802044c9
+{&quot;private_key&quot;:&quot;13adcd2e8704165a62aea86bee0a3abe2fd3be4d62427a35&quot;,&quot;co2&quot;:348,&quot;tempC&quot;:22.55,&quot;humidity&quot;:24.13,&quot;mic&quot;:0,&quot;auxPressure&quot;:1008.89,&quot;auxTempC&quot;:19.58,&quot;aux001&quot;:0,&quot;aux002&quot;:0}http://data.pvos.org/co2/data/3897755c6379d00bbb1d622827b1ffd1ba6a0579802044c9
+200
+Measurement recorded
+</code></pre>
 
 
     </div>
