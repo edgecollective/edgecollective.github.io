@@ -4699,6 +4699,43 @@ Measurement recorded
 <p>Fixed an interface bug with canceling forced calibration ...</p>
 <p>Now, after pressing the calibrate button, in any case we drop into a 'firstLoop' meausurement, so that we make a measurement, display it, and send it.  Probably a good feature anyway to have a way to send a value immediately.  Might want to indicate graphically that data has been sent (&quot;200&quot; on top right of screen or something)</p>
 <p>Also looks like the sensor needs at least a few seconds to warm up (check datasheet) ... maybe we should check for startup and display 'warming up' and show measurement every few seconds ..</p>
+<hr>
+<p>2021-01-20 05:48:45</p>
+<p>Stopped working overnight:</p>
+<pre><code>http://data.pvos.org/co2/data/3897755c6379d00bbb1d622827b1ffd1ba6a0579802044c9
+{&quot;private_key&quot;:&quot;13adcd2e8704165a62aea86bee0a3abe2fd3be4d62427a35&quot;,&quot;co2&quot;:383,&quot;tempC&quot;:18.98,&quot;humidity&quot;:25.85,&quot;mic&quot;:0,&quot;auxPressure&quot;:1004.71,&quot;auxTempC&quot;:19.74,&quot;aux001&quot;:0,&quot;aux002&quot;:0}http://data.pvos.org/co2/data/3897755c6379d00bbb1d622827b1ffd1ba6a0579802044c9
+[HTTP] GET... failed, error: connection refused
+getFreeHeap(): 250108
+http://data.pvos.org/co2/data/3897755c6379d00bbb1d622827b1ffd1ba6a0579802044c9
+{&quot;private_key&quot;:&quot;13adcd2e8704165a62aea86bee0a3abe2fd3be4d62427a35&quot;,&quot;co2&quot;:376,&quot;tempC&quot;:18.9,&quot;humidity&quot;:25.87,&quot;mic&quot;:0,&quot;auxPressure&quot;:1004.66,&quot;auxTempC&quot;:19.57,&quot;aux001&quot;:0,&quot;aux002&quot;:0}http://data.pvos.org/co2/data/3897755c6379d00bbb1d622827b1ffd1ba6a0579802044c9
+[HTTP] GET... failed, error: connection refused
+getFreeHeap(): 250108
+http://data.pvos.org/co2/data/3897755c6379d00bbb1d622827b1ffd1ba6a0579802044c9
+{&quot;private_key&quot;:&quot;13adcd2e8704165a62aea86bee0a3abe2fd3be4d62427a35&quot;,&quot;co2&quot;:368,&quot;tempC&quot;:19.02,&quot;humidity&quot;:25.47,&quot;mic&quot;:0,&quot;auxPressure&quot;:1004.64,&quot;auxTempC&quot;:19.62,&quot;aux001&quot;:0,&quot;aux002&quot;:0}http://data.pvos.org/co2/data/3897755c6379d00bbb1d622827b1ffd1ba6a0579802044c9
+[HTTP] GET... failed, error: connection refused
+getFreeHeap(): 250108
+http://data.pvos.org/co2/data/3897755c6379d00bbb1d622827b1ffd1ba6a0579802044c9
+{&quot;private_key&quot;:&quot;13adcd2e8704165a62aea86bee0a3abe2fd3be4d62427a35&quot;,&quot;co2&quot;:363,&quot;tempC&quot;:19.18,&quot;humidity&quot;:25.34,&quot;mic&quot;:0,&quot;auxPressure&quot;:1004.58,&quot;auxTempC&quot;:19.96,&quot;aux001&quot;:0,&quot;aux002&quot;:0}http://data.pvos.org/co2/data/3897755c6379d00bbb1d622827b1ffd1ba6a0579802044c9
+[HTTP] GET... failed, error: connection refused
+getFreeHeap(): 250108
+http://data.pvos.org/co2/data/3897755c6379d00bbb1d622827b1ffd1ba6a0579802044c9
+{&quot;private_key&quot;:&quot;13adcd2e8704165a62aea86bee0a3abe2fd3be4d62427a35&quot;,&quot;co2&quot;:372,&quot;tempC&quot;:19,&quot;humidity&quot;:25.77,&quot;mic&quot;:0,&quot;auxPressure&quot;:1004.47,&quot;auxTempC&quot;:19.8,&quot;aux001&quot;:0,&quot;aux002&quot;:0}http://data.pvos.org/co2/data/3897755c6379d00bbb1d622827b1ffd1ba6a0579802044c9
+[HTTP] GET... failed, error: connection refused
+getFreeHeap(): 250108
+http://data.pvos.org/co2/data/3897755c6379d00bbb1d622827b1ffd1ba6a0579802044c9
+{&quot;private_key&quot;:&quot;13adcd2e8704165a62aea86bee0a3abe2fd3be4d62427a35&quot;,&quot;co2&quot;:377,&quot;tempC&quot;:18.9,&quot;humidity&quot;:25.87,&quot;mic&quot;:0,&quot;auxPressure&quot;:1004.4,&quot;auxTempC&quot;:19.66,&quot;aux001&quot;:0,&quot;aux002&quot;:0}http://data.pvos.org/co2/data/3897755c6379d00bbb1d622827b1ffd1ba6a0579802044c9
+[HTTP] GET... failed, error: connection refused
+</code></pre>
+<p>-- is this Bayou, or the monitor?</p>
+<p>Pressed reset, and it just worked.  Need to look into this as a bug; but this is another reason to set up a 'reset' if we don't a good connection to the server.</p>
+<p>Ah -- it could be that the IP address changes overnight.</p>
+<p>Good thread on watchdog style approach here: <a href="https://github.com/espressif/arduino-esp32/issues/653">https://github.com/espressif/arduino-esp32/issues/653</a></p>
+<p>More on this here: <a href="https://github.com/Hieromon/AutoConnect/issues/292">https://github.com/Hieromon/AutoConnect/issues/292</a></p>
+<p>This might be the approach to take: <a href="https://github.com/Hieromon/AutoConnect/issues/292#issuecomment-757340418">https://github.com/Hieromon/AutoConnect/issues/292#issuecomment-757340418</a>.</p>
+<p>Skeleton code here: <a href="https://github.com/Hieromon/AutoConnect/issues/292#issuecomment-756634645">https://github.com/Hieromon/AutoConnect/issues/292#issuecomment-756634645</a></p>
+<p>There is a patched release here: <a href="https://github.com/Hieromon/AutoConnect/issues/292#issuecomment-759202689">https://github.com/Hieromon/AutoConnect/issues/292#issuecomment-759202689</a> that might address the issue, and apparently release v1.2.3 will fix it?</p>
+<p>Another nice post about dropping the wifi here: <a href="https://rntlab.com/question/wifi-connection-drops-auto-reconnect/">https://rntlab.com/question/wifi-connection-drops-auto-reconnect/</a></p>
+<p>oooh -- and it offers some auto-restart code ... will try that ...</p>
 </p>
       </div>
     </div>
@@ -6693,6 +6730,9 @@ https://groups.io/g/ucx</p>
 <p>SDR in a raspberry pi image <a href="https://hackaday.com/2019/12/20/all-your-sdr-software-in-a-handy-raspberry-pi-image/">here</a></p>
 <p>RPi SDR scanner via adafruit <a href="https://learn.adafruit.com/freq-show-raspberry-pi-rtl-sdr-scanner">here</a></p>
 <p>Raspberry Pi websdr <a href="https://github.com/reynico/raspberry-websdr">here</a></p>
+<hr>
+<p>2021-01-19 20:35:50</p>
+<p>Cheap ham antenna here: <a href="https://hackaday.com/2021/01/19/the-50-ham-a-cheap-antenna-for-the-hf-bands/">https://hackaday.com/2021/01/19/the-50-ham-a-cheap-antenna-for-the-hf-bands/</a></p>
 </p>
       </div>
     </div>
