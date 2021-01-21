@@ -4792,6 +4792,28 @@ http://data.pvos.org/co2/data/3897755c6379d00bbb1d622827b1ffd1ba6a0579802044c9
 <hr>
 <p>2021-01-20 16:57:33</p>
 <p>Good start on plotting data in separate Node server here: <a href="https://github.com/edgecollective/floorplan/commit/607816a05848093a471966e0b9dd00c1cab90733">https://github.com/edgecollective/floorplan/commit/607816a05848093a471966e0b9dd00c1cab90733</a></p>
+<hr>
+<p>2021-01-20 20:38:45</p>
+<p>Latest:  try this link: http://192.168.1.163:4000/map/cbb8d444591def61d4e59f9b53d3193dd7724a9d8599c6ee?key=co2</p>
+<p>Some layout details here: <a href="https://coder-coder.com/display-divs-side-by-side/">https://coder-coder.com/display-divs-side-by-side/</a></p>
+<p>Latest attempt is at this commit of floorplan in the url-load branch, here: <a href="https://github.com/edgecollective/floorplan/commit/4972382b4982f34b75a60b5f8026a180a1591daf">https://github.com/edgecollective/floorplan/commit/4972382b4982f34b75a60b5f8026a180a1591daf</a></p>
+<hr>
+<p>2021-01-20 20:59:49</p>
+<p>Ongoing test feed is here: <a href="http://data.pvos.org/co2/data/3897755c6379d00bbb1d622827b1ffd1ba6a0579802044c9">http://data.pvos.org/co2/data/3897755c6379d00bbb1d622827b1ffd1ba6a0579802044c9</a></p>
+<hr>
+<p>2021-01-21 10:49:09</p>
+<p>Structure for a basic todo list app here: <a href="https://codeburst.io/creating-a-todo-app-with-node-js-express-and-postgresql-database-6dbf80c3fe9c">https://codeburst.io/creating-a-todo-app-with-node-js-express-and-postgresql-database-6dbf80c3fe9c</a></p>
+<p>Associated code on github here: <a href="https://github.com/chisom5/nodejs-todoList">https://github.com/chisom5/nodejs-todoList</a></p>
+<p>Idea:</p>
+<ul>
+<li>Make a similar system to Bayou</li>
+<li>Each 'map' has an associated image file, a list of feeds, feed locations</li>
+<li>So everything is indexed by the map, instead of the feed.  The map gets a 'mapkey' and a 'writekey'</li>
+<li>Once you have a mapkey, you can add new feeds to the map, and change the map's metadata</li>
+</ul>
+<p>Idea: add nodemon for auto restart of bayou while developing</p>
+<p>Using React-like library 'Riot' here: <a href="https://hub.packtpub.com/simple-todo-list-web-application-nodejs-express-and-riot/">https://hub.packtpub.com/simple-todo-list-web-application-nodejs-express-and-riot/</a>, with associated code here: <a href="https://github.com/revington/riot-express-todo-list">https://github.com/revington/riot-express-todo-list}</a></p>
+<p>Drawing a grid on a canvas here <a href="https://codereview.stackexchange.com/questions/114702/drawing-a-grid-on-canvas">https://codereview.stackexchange.com/questions/114702/drawing-a-grid-on-canvas</a></p>
 </p>
       </div>
     </div>
@@ -6195,6 +6217,34 @@ option 5</p>
 <p>good example of chart setup here: <a href="view-source:https://www.chartjs.org/samples/latest/charts/line/basic.html">view-source:https://www.chartjs.org/samples/latest/charts/line/basic.html</a></p>
 <p>Reference for p2p-farm-server chartjs setup <a href="https://gitlab.com/dwblair/p2p-farm-server/-/blob/fixhop/public/js/drive.js">here</a></p>
 <p>perhaps-useful chartjs formatting <a href="https://embed.plnkr.co/JOI1fpgWIS0lvTeLUxUp/">here</a></p>
+<hr>
+<p>2021-01-21 11:20:38</p>
+<p>Structure for a basic todo list app here: <a href="https://codeburst.io/creating-a-todo-app-with-node-js-express-and-postgresql-database-6dbf80c3fe9c">https://codeburst.io/creating-a-todo-app-with-node-js-express-and-postgresql-database-6dbf80c3fe9c</a></p>
+<p>Associated code on github here: <a href="https://github.com/chisom5/nodejs-todoList">https://github.com/chisom5/nodejs-todoList</a></p>
+<p>Idea:</p>
+<ul>
+<li>Make a similar system to Bayou</li>
+<li>Each 'map' has an associated image file, a list of feeds, feed locations</li>
+<li>So everything is indexed by the map, instead of the feed.  The map gets a 'mapkey' and a 'writekey'</li>
+<li>Once you have a mapkey, you can add new feeds to the map, and change the map's metadata</li>
+</ul>
+<p>Idea: add nodemon for auto restart of bayou while developing</p>
+<p>Using React-like library 'Riot' here: <a href="https://hub.packtpub.com/simple-todo-list-web-application-nodejs-express-and-riot/">https://hub.packtpub.com/simple-todo-list-web-application-nodejs-express-and-riot/</a>, with associated code here: <a href="https://github.com/revington/riot-express-todo-list">https://github.com/revington/riot-express-todo-list}</a></p>
+<p>Drawing a grid on a canvas here <a href="https://codereview.stackexchange.com/questions/114702/drawing-a-grid-on-canvas">https://codereview.stackexchange.com/questions/114702/drawing-a-grid-on-canvas</a></p>
+<p>postgres tutorial again here: <a href="https://able.bio/rhett/creating-a-web-application-in-your-home-with-a-raspberry-pi-express-and-postgresql--3c90a372">https://able.bio/rhett/creating-a-web-application-in-your-home-with-a-raspberry-pi-express-and-postgresql--3c90a372</a></p>
+<hr>
+<p>2021-01-21 11:38:40</p>
+<p>Simpler todo app approach here -- these are the elements I think I need -- <a href="https://medium.com/@atingenkay/creating-a-todo-app-with-node-js-express-8fa51f39b16f">https://medium.com/@atingenkay/creating-a-todo-app-with-node-js-express-8fa51f39b16f</a></p>
+<p>And on github: <a href="https://github.com/missating/nodejs-todo">https://github.com/missating/nodejs-todo</a></p>
+<p>Okay -- TODO: redo that last repo, using pug.
+Then create feedmaps -- the equiv of bayou but by pulling in new feeds from various sources.  depending on the type of feed, can have various functionality.  so, add a 'feed type' variable -- e.g. bayou-co2 is one such type.</p>
+<hr>
+<p>2021-01-21 12:10:58</p>
+<p>Iteration in pug here: <a href="https://pugjs.org/language/iteration.html">https://pugjs.org/language/iteration.html</a></p>
+<hr>
+<p>2021-01-21 12:42:26</p>
+<p>feed-map can now display a simple list of feeds here: <a href="https://github.com/edgecollective/feed-map/commit/4d3a522ba01f0bae15721fe0420100dcf76fd1a8">https://github.com/edgecollective/feed-map/commit/4d3a522ba01f0bae15721fe0420100dcf76fd1a8</a></p>
+<p><img src="/img/alt-server/feemap1.png" alt=""></p>
 </p>
       </div>
     </div>
