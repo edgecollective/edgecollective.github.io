@@ -741,6 +741,7 @@ Then create feedmaps -- the equiv of bayou but by pulling in new feeds from vari
 <p>sudo apt update
 sudo apt install postgresql postgresql-contrib</p>
 </blockquote>
+<p>Then:</p>
 <blockquote>
 <p>sudo -i -u postgres
 createdb feedmap1;
@@ -798,6 +799,46 @@ Need to modify the database.</p>
 <p>2021-01-27 19:55:39</p>
 <p>Feedmap hacking:
 <a href="http://192.168.1.163:4006/feedmap/manage/7a66feb586010296bb03fc01967a89ac7b1f9b41388db6ff/1f79e0a2d7159495e9be3cb545c83911147035130a2b9fba">http://192.168.1.163:4006/feedmap/manage/7a66feb586010296bb03fc01967a89ac7b1f9b41388db6ff/1f79e0a2d7159495e9be3cb545c83911147035130a2b9fba</a></p>
+<hr>
+<p>2021-01-29 22:14:01</p>
+<h1>Setting up postgres on the Pi</h1>
+<h2>Installing</h2>
+<h2>Creating DB</h2>
+<blockquote>
+<p>sudo -i -u postgres
+postgres@raspberrypi:~$ createdb hab1
+postgres@raspberrypi:~$ psql hab1</p>
+</blockquote>
+<p>CREATE TABLE feeds(
+feed_id SERIAL PRIMARY KEY,
+name VARCHAR(255),
+public_key VARCHAR(255),
+private_key VARCHAR(255)
+;</p>
+<p>CREATE TABLE
+CREATE TABLE measurements(
+id SERIAL PRIMARY KEY,
+feed_id INT,
+co2 FLOAT,
+tempC FLOAT,
+humidity FLOAT,
+mic FLOAT,
+auxPressure FLOAT,
+auxTempC FLOAT,
+aux001 FLOAT,
+aux002 FLOAT,<br>
+created TIMESTAMP DEFAULT NOW(),
+CONSTRAINT feed
+FOREIGN KEY(feed_id)
+REFERENCES feeds(feed_id)
+;</p>
+<p>(exit psql and postgres with &quot;exit&quot; )</p>
+<h2>Changing password</h2>
+<blockquote>
+<p>sudo -i -u postgres
+psql
+postgres=# ALTER USER postgres WITH PASSWORD 'pcat999'</p>
+</blockquote>
 
 
     </div>
