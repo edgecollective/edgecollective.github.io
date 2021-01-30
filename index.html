@@ -4939,6 +4939,20 @@ bottom right: 102.15, 52.2</p>
 <p><a href="https://www.balena.io/blog/turn-a-raspberry-pi-into-a-wi-fi-access-point-or-repeater/">https://www.balena.io/blog/turn-a-raspberry-pi-into-a-wi-fi-access-point-or-repeater/</a></p>
 <p><a href="https://medium.com/@brunoamaroalmeida/rogueone-creating-a-rogue-wi-fi-access-point-using-a-raspberry-pi-79e1b7e628c6">https://medium.com/@brunoamaroalmeida/rogueone-creating-a-rogue-wi-fi-access-point-using-a-raspberry-pi-79e1b7e628c6</a></p>
 <p><a href="https://gist.github.com/Lewiscowles1986/fecd4de0b45b2029c390">https://gist.github.com/Lewiscowles1986/fecd4de0b45b2029c390</a></p>
+<hr>
+<p>2021-01-29 17:12:36</p>
+<h2>deleting partitions using fdisk</h2>
+<p><a href="https://www.pidramble.com/wiki/benchmarks/external-usb-drives">https://www.pidramble.com/wiki/benchmarks/external-usb-drives</a></p>
+<p>This worked nicely: <a href="https://www.nayab.xyz/linux-tools/partitioning-using-fdisk.html">https://www.nayab.xyz/linux-tools/partitioning-using-fdisk.html</a></p>
+<p>Showing progress while zipping: <a href="https://unix.stackexchange.com/questions/179563/when-i-use-zip-how-can-i-display-the-overall-progress-without-flooding-the-comm">https://unix.stackexchange.com/questions/179563/when-i-use-zip-how-can-i-display-the-overall-progress-without-flooding-the-comm</a></p>
+<p>Back up raspberry pi image:</p>
+<blockquote>
+<p>sudo dd bs=4M if=/dev/sdb of=pvosPi.img status=progress</p>
+</blockquote>
+<p>Zipping it afterwards:</p>
+<blockquote>
+<p>zip -qr - pvosPi.img | pv -bep -s $(du -bs pvosPi.img | awk '{print $1}') &gt; pvosPi.img.zip</p>
+</blockquote>
 </p>
       </div>
     </div>
