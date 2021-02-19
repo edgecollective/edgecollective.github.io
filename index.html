@@ -316,6 +316,20 @@ And if you'd like to help support our podcast, you can now do so via [Patreon](h
   <div class="post">
     <div class="note-contents">
       <div class="image">
+        <a href="/posts/notes/microradio/">
+          <img src="/img/placeholder.png"/>
+        </a>
+      </div>
+      <div class="text">
+        <h3><a href="/posts/notes/microradio/">Misc alternative radio experiments</a></h3>
+        <p>Notes on experiments with RNode / Signal / APRS</p>
+        <em>Updated: 2021-02-17</em>
+      </div>
+    </div>
+  </div>
+  <div class="post">
+    <div class="note-contents">
+      <div class="image">
         <a href="/posts/notes/pbot/">
           <img src="/img/placeholder.png"/>
         </a>
@@ -998,6 +1012,12 @@ And if you'd like to help support our podcast, you can now do so via [Patreon](h
 <li><a href="https://github.com/ssbc/ssb-server/wiki/pub-servers">Secure Scuttlebutt Pub Servers</a> -- list of servers you can join with a Secure Scuttlebutt 'client'</li>
 <li><a href="https://github.com/ssbc/patchwork">Patchwork</a> -- a 'client' for Secure Scuttlebutt</li>
 </ul>
+<hr>
+<p>2021-02-18 16:44:38</p>
+<pre><code>https://github.com/AsamK/signal-cli/wiki
+signal-cli -u +18572850070 send -m &quot;hallo from the cli again!&quot; +17817756406
+signal-cli -u +18572850070 receive
+</code></pre>
 </p>
       </div>
     </div>
@@ -5133,6 +5153,10 @@ If it's just a general purpose mount hole with no specifiiic 'other bit', use 3.
 <p>Added to bayou-co2:</p>
 <p><a href="https://gitlab.com/p-v-o-s/co2/bayou-co2/-/tree/f288bec254317eab2deab5af808de973bf5c4d1e">https://gitlab.com/p-v-o-s/co2/bayou-co2/-/tree/f288bec254317eab2deab5af808de973bf5c4d1e</a></p>
 <p><img src="/img/co2/bayou_qr.png" alt=""></p>
+<p>download canvas <a href="https://www.purplesquirrels.com.au/2019/10/saving-a-canvas-element-as-an-image/">https://www.purplesquirrels.com.au/2019/10/saving-a-canvas-element-as-an-image/</a></p>
+<hr>
+<p>2021-02-14 11:14:43</p>
+<p>canvas to pdf <a href="https://stackoverflow.com/questions/23681325/convert-canvas-to-pdf">https://stackoverflow.com/questions/23681325/convert-canvas-to-pdf</a></p>
 </p>
       </div>
     </div>
@@ -7067,6 +7091,39 @@ CREATE TABLE feeds(
 <hr>
 <p>2021-02-11 12:15:10</p>
 <p>creating a .ico image <a href="https://graphicdesign.stackexchange.com/questions/77359/how-to-convert-a-square-svg-to-all-size-ico">https://graphicdesign.stackexchange.com/questions/77359/how-to-convert-a-square-svg-to-all-size-ico</a></p>
+<hr>
+<p>2021-02-18 13:25:49</p>
+<pre><code>sudo -i -u postgres
+postgres@raspberrypi:~$ createdb feedmap3
+postgres@raspberrypi:~$ psql feedmap3
+
+CREATE TABLE feedmaps(
+    feedmap_id SERIAL PRIMARY KEY,
+    name VARCHAR(255),
+    public_key VARCHAR(255) UNIQUE,
+    private_key VARCHAR(255),
+    map_url VARCHAR(255)
+);
+
+CREATE TABLE feeds(
+    id SERIAL PRIMARY KEY,
+    feedmap_id INT,
+    feed_base_url VARCHAR(255),
+    feed_public_key VARCHAR(255),
+    feed_nickname VARCHAR(255),
+    added TIMESTAMP DEFAULT NOW(),
+    CONSTRAINT feedmap
+        FOREIGN KEY(feedmap_id)
+            REFERENCES feedmaps(feedmap_id)
+);
+</code></pre>
+<p>artisan's feeds</p>
+<p>b2srm27dragm	red	CSV | JSON
+ertvughsgqzs	blue	CSV | JSON
+jdwktcu9xt5c	green	CSV | JSON
+t8uic9wh4q82	purple</p>
+<p>feedmap is: 104.248.54.245
+bayou is:</p>
 </p>
       </div>
     </div>
@@ -7553,6 +7610,10 @@ const char* farmOS_url = &quot;(YOUR FARMOS URL)&quot;;
 <p><a href="https://www.sparkfun.com/products/10063">5-way tactile switch</a></p>
 <p>Sparfkun <a href="https://www.sparkfun.com/products/9426">thumb slide joystick</a>.</p>
 <p>Two-axis analog thumb joystick <a href="https://www.adafruit.com/product/3103?gclid=CjwKCAiAnvj9BRA4EiwAuUMDf3G_fkelMEeerVZsKheGOKmEEHHC8dTNP6ZO3IY1C-4tmHcKU-vbJBoC7bUQAvD_BwE">from adafruit</a>.</p>
+<hr>
+<p>2021-02-14 11:23:13</p>
+<p>Interesting thread on plus codes, MRGR, etc -- <a href="https://news.ycombinator.com/item?id=18646485">https://news.ycombinator.com/item?id=18646485</a></p>
+<p>The nicest viz of the map: <a href="https://dxcluster.ha8tks.hu/hamgeocoding/">https://dxcluster.ha8tks.hu/hamgeocoding/</a></p>
 </p>
       </div>
     </div>
@@ -7769,6 +7830,28 @@ Now it Works…&quot;</p>
 <h3>2. Update PCB from schematic.</h3>
 <p>In the <em>pcb layout editor</em>, select the &quot;Update PCB From Schematic&quot; button.  It'll import any recent (saved) changes to the schematic.  You might need to fiddle with the dialog settings in order to have it do the proper thing.</p>
 <p><img src="/img/pbot/update_pcb_from_schematic.png" alt=""></p>
+</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="post">
+    <div class="project-contents">
+      <div class="text">
+        <h3>Note </h3>
+        <p><hr>
+<p>2021-02-18 16:44:38</p>
+<pre><code>https://github.com/AsamK/signal-cli/wiki
+signal-cli -u +18572850070 send -m &quot;hallo from the cli again!&quot; +17817756406
+signal-cli -u +18572850070 receive
+</code></pre>
+<h2>atmega1284</h2>
+<p>Using the ATmega1284 with the Arduino IDE: <a href="http://www.technoblogy.com/show?19OV">http://www.technoblogy.com/show?19OV</a></p>
+<p>Mighty core -- <a href="https://github.com/maniacbug/mighty-1284p">https://github.com/maniacbug/mighty-1284p</a></p>
+<hr>
+<p>2021-02-18 18:46:08</p>
+<p>minimal mqtt -- <a href="https://hackaday.com/2021/02/17/minimal-mqtt-with-micropython/">https://hackaday.com/2021/02/17/minimal-mqtt-with-micropython/</a></p>
+<p>life at bell labsl -- <a href="https://hackaday.com/2021/02/17/james-west-began-40-years-at-bell-labs-with-world-changing-microphone-tech/">https://hackaday.com/2021/02/17/james-west-began-40-years-at-bell-labs-with-world-changing-microphone-tech/</a></p>
 </p>
       </div>
     </div>
