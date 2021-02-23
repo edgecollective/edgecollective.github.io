@@ -7852,6 +7852,42 @@ signal-cli -u +18572850070 receive
 <p>2021-02-18 18:46:08</p>
 <p>minimal mqtt -- <a href="https://hackaday.com/2021/02/17/minimal-mqtt-with-micropython/">https://hackaday.com/2021/02/17/minimal-mqtt-with-micropython/</a></p>
 <p>life at bell labsl -- <a href="https://hackaday.com/2021/02/17/james-west-began-40-years-at-bell-labs-with-world-changing-microphone-tech/">https://hackaday.com/2021/02/17/james-west-began-40-years-at-bell-labs-with-world-changing-microphone-tech/</a></p>
+<hr>
+<p>2021-02-18 21:08:49</p>
+<p>https://github.com/adafruit/Adafruit-Prototyping-Pi-Plate-PCB</p>
+<hr>
+<p>2021-02-19 12:11:26</p>
+<h2>Signal</h2>
+<p>flexible e-ink</p>
+<p>[https://www.adafruit.com/product/4262?gclid=Cj0KCQiA4L2BBhCvARIsAO0SBdYCJRlLyAq1JfBmGYGTNmRsiYjVidXXcUxDisUhWo3SYs3PJMGjKjcaAkcEEALw_wcB]</p>
+<p>signal-cli rest api <a href="https://pypi.org/project/signal-cli-rest-api/">here</a></p>
+<h2>Node serialport</h2>
+<p><a href="https://www.npmjs.com/package/serialport">https://www.npmjs.com/package/serialport</a></p>
+<p><a href="https://serialport.io/docs/guide-usage">https://serialport.io/docs/guide-usage</a></p>
+<p><a href="https://stackabuse.com/executing-shell-commands-with-node-js/">https://stackabuse.com/executing-shell-commands-with-node-js/</a></p>
+<h2>Arduino serial</h2>
+<p>Serial input basics: <a href="https://forum.arduino.cc/index.php?topic=288234.0">https://forum.arduino.cc/index.php?topic=288234.0</a></p>
+<h2>Stuck serialports in linux</h2>
+<p><a href="https://www.question-defense.com/2009/09/09/how-to-reset-a-serial-port-in-linux-ttys0-ttyam0-etc">https://www.question-defense.com/2009/09/09/how-to-reset-a-serial-port-in-linux-ttys0-ttyam0-etc</a></p>
+<hr>
+<p>2021-02-20 09:25:50</p>
+<h2>converting unix timestamp in javascript</h2>
+<pre><code>let unix_timestamp = 1549312452
+// Create a new JavaScript Date object based on the timestamp
+// multiplied by 1000 so that the argument is in milliseconds, not seconds.
+var date = new Date(unix_timestamp * 1000);
+// Hours part from the timestamp
+var hours = date.getHours();
+// Minutes part from the timestamp
+var minutes = &quot;0&quot; + date.getMinutes();
+// Seconds part from the timestamp
+var seconds = &quot;0&quot; + date.getSeconds();
+
+// Will display time in 10:30:23 format
+var formattedTime = hours + ':' + minutes.substr(-2) + ':' + seconds.substr(-2);
+
+console.log(formattedTime);
+</code></pre>
 </p>
       </div>
     </div>
