@@ -1201,6 +1201,80 @@ jdwktcu9xt5c	green	CSV | JSON
 t8uic9wh4q82	purple</p>
 <p>feedmap is: 104.248.54.245
 bayou is:</p>
+<hr>
+<p>2021-02-24 09:39:08</p>
+<p>belfast-feed</p>
+<pre><code>sudo -i -u postgres
+postgres@raspberrypi:~$ createdb belfast2
+postgres@raspberrypi:~$ psql belfast2
+
+
+CREATE TABLE feeds(
+    feed_id SERIAL PRIMARY KEY,
+    name VARCHAR(255),
+    public_key VARCHAR(255) UNIQUE,
+    private_key VARCHAR(255) 
+);
+
+CREATE TABLE measurements(
+id SERIAL PRIMARY KEY,
+feed_id INT,
+temperature_c FLOAT,
+humidity_rh FLOAT,
+distance_meters FLOAT,
+pressure_mbar FLOAT,
+battery_volts FLOAT,
+gps_lat FLOAT,
+gps_lon FLOAT,
+gps_alt FLOAT,
+distance_meters_1 FLOAT,
+distance_meters_2 FLOAT,
+distance_meters_3 FLOAT,
+temperature_c_1 FLOAT,
+temperature_c_2 FLOAT,
+temperature_c_3 FLOAT,
+voltage_1 FLOAT,
+voltage_2 FLOAT,
+voltage_3 FLOAT,
+aux_1 FLOAT,
+aux_2 FLOAT,
+aux_3 FLOAT,
+log VARCHAR(255),    
+created TIMESTAMP DEFAULT NOW(),
+CONSTRAINT feed
+ FOREIGN KEY(feed_id)
+REFERENCES feeds(feed_id)
+);
+
+</code></pre>
+<p>sudo apt install postgresql postgresql-contrib</p>
+<pre><code>
+setting password for user postgres:
+
+</code></pre>
+<p>sudo -u postgres psql
+ALTER USER postgres PASSWORD 'myPassword';</p>
+<pre><code>
+need to install nvm first ...
+
+and note:  i've been using npm version 12!
+
+now need to set up server creds ...
+
+1. add subdomain on dreamhost as 'A' record ...
+2. manage firewall on digital ocean drople to allow the specific port to get access [https://www.digitalocean.com/community/tutorials/how-to-set-up-a-firewall-with-ufw-on-ubuntu-18-04]
+3. set up nginx on digital ocean droplet [https://www.digitalocean.com/community/tutorials/how-to-install-nginx-on-ubuntu-20-04]
+4. set up nodejs server blocks [https://www.digitalocean.com/community/tutorials/how-to-install-nginx-on-ubuntu-20-04]
+
+---
+2021-02-24 11:15:42
+
+python http posts:
+
+https://www.w3schools.com/python/ref_requests_post.asp
+
+
+</code></pre>
 
 
     </div>
