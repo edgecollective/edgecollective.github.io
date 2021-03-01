@@ -3051,6 +3051,46 @@ RH_RF95 rf95(RFM95_CS, RFM95_INT, sx1278_spi);
 <p>NOTE: in order to generate the 'test networks', it has to be done in the RHROUTER.h file in the library itself.</p>
 <p>See below, displaying RH_TEST_NETWORK==3:</p>
 <p><img src="/img/co2/rh_network_test.png" alt=""></p>
+<p>Documentation on RHMesh <a href="https://www.airspayce.com/mikem/arduino/RadioHead/classRHMesh.html">here</a></p>
+<hr>
+<p>2021-02-28 20:23:29</p>
+<p>Nice LoRa tracker project <a href="https://www.rcgroups.com/forums/showthread.php?2454546-Arduino-LoRa-Long-Range-Lost-Model-Tracker">here</a></p>
+<p>Great thread on using CO2 for indoor ventilation assessment <a href="https://twitter.com/Poppendieck/status/1366055136859070468">here</a></p>
+<hr>
+<p>2021-03-01 13:55:42</p>
+<p>from <a href="https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-guides/fatal-errors.html">https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-guides/fatal-errors.html</a>:</p>
+<p>LoadProhibited, StoreProhibited
+This CPU exception happens when application attempts to read from or write to an invalid memory location. The address which was written/read is found in EXCVADDR register in the register dump. If this address is zero, it usually means that application attempted to dereference a NULL pointer. If this address is close to zero, it usually means that application attempted to access member of a structure, but the pointer to the structure was NULL. If this address is something else (garbage value, not in 0x3fxxxxxx - 0x6xxxxxxx range), it likely means that the pointer used to access the data was either not initialized or was corrupted.</p>
+<p>Indeed, this is what we're seeing from the stack trace:</p>
+<pre><code>Rebooting...
+RFM95_CS:18
+initializing node done
+RF95 ready
+Guru Meditation Error: Core  1 panic'ed (LoadProhibited). Exception was unhandled.
+Core 1 register dump:
+PC      : 0x400d0dfa  PS      : 0x00060d30  A0      : 0x800d37cc  A1      : 0x3ffb1f60  
+A2      : 0x3ffc0214  A3      : 0x00000004  A4      : 0x3ffc0224  A5      : 0x3ffc08b8  
+A6      : 0x00000000  A7      : 0x3ffba264  A8      : 0x800d0dee  A9      : 0x3ffb1f40  
+A10     : 0x00000000  A11     : 0x00000001  A12     : 0x00000000  A13     : 0x00000003  
+A14     : 0x00000001  A15     : 0x00000000  SAR     : 0x0000000e  EXCCAUSE: 0x0000001c  
+EXCVADDR: 0x00000001  LBEG    : 0x400eb508  LEND    : 0x400eb525  LCOUNT  : 0x00000000  
+
+Backtrace: 0x400d0dfa:0x3ffb1f60 0x400d37c9:0x3ffb1fb0 0x40088249:0x3ffb1fd0
+</code></pre>
+<p>Is there a way to check whether a pointer is null or not before attempting?</p>
+<p>Null pointer material <a href="https://stackoverflow.com/questions/4007268/what-exactly-is-meant-by-de-referencing-a-null-pointer">here</a></p>
+<p>Checking for null status in Arduino: <a href="https://forum.arduino.cc/index.php?topic=128622.0">https://forum.arduino.cc/index.php?topic=128622.0</a></p>
+<p>Checked for null pointer first, now it works!</p>
+<p>Going to implement in other versions, too ...</p>
+<hr>
+<p>2021-03-01 14:35:37</p>
+<p>Fixed trio! <a href="https://github.com/edgecollective/lora-mesh/tree/50f2046267c6fdc4c8f0d68c1d225a53ddbb854c/co2/simple_e">https://github.com/edgecollective/lora-mesh/tree/50f2046267c6fdc4c8f0d68c1d225a53ddbb854c/co2/simple_e</a></p>
+<p>Working basic lora mesh relay code.</p>
+<p>Now set up to send CO2 data.</p>
+<hr>
+<p>2021-03-01 15:15:49</p>
+<p>Mesh healing:</p>
+<p><img src="/img/co2/mesh_healing.png" alt=""></p>
 
 
     </div>
