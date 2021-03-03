@@ -5374,6 +5374,43 @@ if we're a remote node, measure our own CO2 and send via lora;
 the node id would ideally be set in hardware, but we'll do it in the config file in this round.
 i don't think there's any need to have an upper limit on # nodes; but each nodeid needs to be unique</p>
 <p>we should rename nodeId to node_id</p>
+<hr>
+<p>2021-03-02 10:41:51</p>
+<p>Heating events ...</p>
+<p><img src="/img/co2/labeled_heating_events.png" alt=""></p>
+<p>Exponential decay <a href="http://cdn.teledynelecroy.com/files/appnotes/lecroy_measuring_exponential_decay_slope.pdf">here</a></p>
+<p>fitting using python <a href="https://stackoverflow.com/questions/49565152/curve-fit-an-exponential-decay-function-in-python-using-given-data-points">here</a></p>
+<p>get slopes of data <a href="https://stackoverflow.com/questions/49100471/how-to-get-slopes-of-data-in-pandas-dataframe-in-python/49100744">here</a></p>
+<p>adding fields to bayou:</p>
+<hr>
+<p>2021-03-02 18:20:59</p>
+<p>Plan:</p>
+<ul>
+<li>add node_id, next_hop, and next_rssi to posgres.</li>
+<li>develop on two heltecs to start w/ 'real' code, can just vary node #</li>
+<li>add in two other feather m0 nodes w/ faked co2 data loops</li>
+</ul>
+<ol>
+<li>adding new column to postgres <a href="https://www.postgresqltutorial.com/postgresql-add-column/">https://www.postgresqltutorial.com/postgresql-add-column/</a></li>
+</ol>
+<pre><code>hab3=# ALTER TABLE measurements ADD COLUMN node_id INT;
+ALTER TABLE
+hab3=# ALTER TABLE measurements ADD COLUMN next_hop INT;
+ALTER TABLE
+hab3=# ALTER TABLE measurements ADD COLUMN next_rssi FLOAT;
+</code></pre>
+<p>need to remember to optimize strings!</p>
+<p>need to add lux to database</p>
+<p>string args and string cat -- <a href="https://forum.arduino.cc/index.php?topic=120233.0">https://forum.arduino.cc/index.php?topic=120233.0</a></p>
+<p>strlcat() -- truncates string if necessary rather than writing outside bounds</p>
+<hr>
+<p>2021-03-02 21:31:36</p>
+<p>Replaced use of strings with chars; put stuff into functions: <a href="https://github.com/edgecollective/lora-mesh/tree/bdec49aedecffb83f29723c3f0fcfdf924c9e2fe/co2/simple_h/mesh_heltec">https://github.com/edgecollective/lora-mesh/tree/bdec49aedecffb83f29723c3f0fcfdf924c9e2fe/co2/simple_h/mesh_heltec</a> -- basic gateway is working.</p>
+<p>Now need to:</p>
+<ul>
+<li>add 'light' to postgres, and set up bayou</li>
+<li>add 'mesh relay/receive (and post if gateway)' logic to heltec</li>
+</ul>
 </p>
       </div>
     </div>
