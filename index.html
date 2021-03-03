@@ -5393,11 +5393,11 @@ i don't think there's any need to have an upper limit on # nodes; but each nodei
 <ol>
 <li>adding new column to postgres <a href="https://www.postgresqltutorial.com/postgresql-add-column/">https://www.postgresqltutorial.com/postgresql-add-column/</a></li>
 </ol>
-<pre><code>hab3=# ALTER TABLE measurements ADD COLUMN node_id INT;
-ALTER TABLE
-hab3=# ALTER TABLE measurements ADD COLUMN next_hop INT;
-ALTER TABLE
-hab3=# ALTER TABLE measurements ADD COLUMN next_rssi FLOAT;
+<pre><code>ALTER TABLE measurements ADD COLUMN node_id INT;
+ALTER TABLE measurements ADD COLUMN next_hop INT;
+ALTER TABLE measurements ADD COLUMN next_rssi FLOAT;
+ALTER TABLE measurements ADD COLUMN light FLOAT;
+
 </code></pre>
 <p>need to remember to optimize strings!</p>
 <p>need to add lux to database</p>
@@ -5411,6 +5411,28 @@ hab3=# ALTER TABLE measurements ADD COLUMN next_rssi FLOAT;
 <li>add 'light' to postgres, and set up bayou</li>
 <li>add 'mesh relay/receive (and post if gateway)' logic to heltec</li>
 </ul>
+<hr>
+<p>2021-03-03 12:43:22</p>
+<p>Basic working version for Heltec!</p>
+<p><a href="https://github.com/edgecollective/lora-mesh/tree/f7b27e7f51805341db7ef8874882ed2523eebbb7/co2/simple_j">https://github.com/edgecollective/lora-mesh/tree/f7b27e7f51805341db7ef8874882ed2523eebbb7/co2/simple_j</a></p>
+<p>Also includes code for a 'dummy' featherm0 node.</p>
+<p>Next priorities:</p>
+<ol>
+<li>Change Bayou so that it display the node_id, next_hop, next_rssi</li>
+<li>Change Feedmap so that it can display a 'viz' of the network coming through</li>
+<li>Make code for a simple relay node in the network</li>
+</ol>
+<hr>
+<p>2021-03-03 17:08:56</p>
+<p>sorting javascript objects by key <a href="https://stackoverflow.com/questions/5467129/sort-javascript-object-by-key">https://stackoverflow.com/questions/5467129/sort-javascript-object-by-key</a></p>
+<p>sorting javascript objects by value <a href="https://stackoverflow.com/questions/1069666/sorting-object-property-by-values">https://stackoverflow.com/questions/1069666/sorting-object-property-by-values</a></p>
+<hr>
+<p>2021-03-03 17:38:11</p>
+<p>working!</p>
+<p><img src="/img/co2/feedmap_mesh.png" alt=""></p>
+<p>bayou code: <a href="https://gitlab.com/p-v-o-s/co2/bayou-co2/-/tree/d738bfcbbd1f4b934a11add33852f7f00267e0fc">https://gitlab.com/p-v-o-s/co2/bayou-co2/-/tree/d738bfcbbd1f4b934a11add33852f7f00267e0fc</a></p>
+<p>feedmap code: <a href="https://gitlab.com/p-v-o-s/co2/feedmap/-/tree/52820c9e0cdbdb02808a239cf75fe65ff7360391">https://gitlab.com/p-v-o-s/co2/feedmap/-/tree/52820c9e0cdbdb02808a239cf75fe65ff7360391</a></p>
+<p>arduino firmware: https://github.com/edgecollective/lora-mesh/tree/731e5e392831f657b3cb9bdfb01c6fe3691d9187/co2/simple_k](https://github.com/edgecollective/lora-mesh/tree/731e5e392831f657b3cb9bdfb01c6fe3691d9187/co2/simple_k)</p>
 </p>
       </div>
     </div>
