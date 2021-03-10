@@ -5443,6 +5443,34 @@ ALTER TABLE measurements ADD COLUMN light FLOAT;
 <p>Arduino firmware is 'simple_l' version: <a href="https://github.com/edgecollective/lora-mesh/tree/32dbf22e74e37e31f55ce6855fca599a2c0105f9/co2/simple_l">https://github.com/edgecollective/lora-mesh/tree/32dbf22e74e37e31f55ce6855fca599a2c0105f9/co2/simple_l</a></p>
 <p>Feedmap version is in the 'mesh' branch: <a href="https://gitlab.com/p-v-o-s/co2/feedmap/-/tree/817f69f4ab2012de69c9be0644be988d19e879e8">https://gitlab.com/p-v-o-s/co2/feedmap/-/tree/817f69f4ab2012de69c9be0644be988d19e879e8</a></p>
 <p>Bayou-feed version is <a href="https://gitlab.com/p-v-o-s/co2/bayou-co2/-/tree/d738bfcbbd1f4b934a11add33852f7f00267e0fc">https://gitlab.com/p-v-o-s/co2/bayou-co2/-/tree/d738bfcbbd1f4b934a11add33852f7f00267e0fc</a></p>
+<hr>
+<p>2021-03-05 10:15:35</p>
+<p>Pandas series to numpy array <a href="https://pandas.pydata.org/pandas-docs/version/0.24.0rc1/api/generated/pandas.Series.to_numpy.html">https://pandas.pydata.org/pandas-docs/version/0.24.0rc1/api/generated/pandas.Series.to_numpy.html</a></p>
+<p>polyfit: <a href="https://numpy.org/doc/stable/reference/generated/numpy.polyfit.html">https://numpy.org/doc/stable/reference/generated/numpy.polyfit.html</a></p>
+<p><a href="https://stackoverflow.com/questions/54313463/pandas-datetime-to-unix-timestamp-seconds">https://stackoverflow.com/questions/54313463/pandas-datetime-to-unix-timestamp-seconds</a></p>
+<p><img src="/img/co2/heating_events_mar_5_annotated.png" alt=""></p>
+<p><a href="https://stackoverflow.com/questions/35495045/exponential-fit-of-the-data-python">https://stackoverflow.com/questions/35495045/exponential-fit-of-the-data-python</a></p>
+<p><a href="https://numpy.org/doc/stable/reference/generated/numpy.exp.html">https://numpy.org/doc/stable/reference/generated/numpy.exp.html</a></p>
+<hr>
+<p>2021-03-06 08:10:48</p>
+<p>Error on the fit in numpy: <a href="https://stackoverflow.com/questions/15721053/whats-the-error-of-numpy-polyfit">https://stackoverflow.com/questions/15721053/whats-the-error-of-numpy-polyfit</a></p>
+<hr>
+<p>2021-03-07 13:19:18</p>
+<p>New mesh code here: <a href="https://gitlab.com/p-v-o-s/co2/co2monitor-firmware/-/raw/master/releases/v0.7-alpha.zip">https://gitlab.com/p-v-o-s/co2/co2monitor-firmware/-/raw/master/releases/v0.7-alpha.zip</a></p>
+<hr>
+<p>2021-03-10 16:13:42</p>
+<p>error in fit: <a href="http://clip.med.yale.edu/courses/brdu/Costa_ODE.pdf">http://clip.med.yale.edu/courses/brdu/Costa_ODE.pdf</a></p>
+<p>error in slope of linear fit: <a href="https://pages.mtu.edu/~fmorriso/cm3215/UncertaintySlopeInterceptOfLeastSquaresFit.pdf">https://pages.mtu.edu/~fmorriso/cm3215/UncertaintySlopeInterceptOfLeastSquaresFit.pdf</a></p>
+<blockquote>
+<p>SE of regression slope = sb1 = sqrt [ Σ(yi – ŷi)2 / (n – 2) ] / sqrt [ Σ(xi – x)2 ]</p>
+</blockquote>
+<p>https://people.duke.edu/~rnau/mathreg.htm</p>
+<p>https://faculty1.coloradocollege.edu/~sburns/LinearFitting/SimpleDataFitting.html</p>
+<p>https://newt.phys.unsw.edu.au/~mcba/mcba12.pdf</p>
+<p>https://www.ruf.rice.edu/~bioslabs/tools/data_analysis/errors_curvefits.html</p>
+<p>https://statisticsbyjim.com/regression/standard-error-regression-vs-r-squared/</p>
+<p>https://astrofrog.github.io/py4sci/_static/15.%20Fitting%20models%20to%20data.html</p>
+<p>aprs position off-grid with js8call https://www.youtube.com/watch?v=dAiXsSMIkKY</p>
 </p>
       </div>
     </div>
@@ -6221,6 +6249,13 @@ and the user you want to connect as to hyperssh</p>
 <p>Working example <a href="https://github.com/edgecollective/micro-hid">here</a> -- presses the 'u' key on a button press.</p>
 <p>Working example for multiple buttons <a href="https://github.com/edgecollective/micro-hid/tree/main/key_multi">here</a>.  Video demo <a href="https://www.youtube.com/watch?v=x7i3M5QsfW0">here</a>.  Or click below:</p>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/x7i3M5QsfW0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<hr>
+<p>2021-03-10 17:19:33</p>
+<p>aprs position off-grid with js8call https://www.youtube.com/watch?v=dAiXsSMIkKY</p>
+<p>watching aprs activities around you</p>
+<p>http://www.knology.net/~gmarcus/Si5351/Si5351A_WSPR_XCVR.pdf</p>
+<p>https://antrak.org.tr/blog/projeler/poor-mans-hf-ssb-receiver-lets-build-it/</p>
+<p>https://www.qrp-labs.com/synth/synthnoise.html</p>
 </p>
       </div>
     </div>
@@ -8285,6 +8320,72 @@ http://ssdv.habhub.org/KW03PL</p>
 <hr>
 <p>2021-02-27 15:00:48</p>
 <p>slow scan digital imagery: <a href="http://tt7hab.blogspot.com/2018/04/the-lora-ssdv.html">http://tt7hab.blogspot.com/2018/04/the-lora-ssdv.html</a></p>
+<hr>
+<p>2021-03-05 12:57:54</p>
+<p>Burned bootloader!</p>
+<p>General instructions -- <a href="http://www.technoblogy.com/show?19OV">http://www.technoblogy.com/show?19OV</a></p>
+<p>BUT NOTE:</p>
+<p>Forum post suggesting cap between RESET and GND on UNO when burning: <a href="https://forum.arduino.cc/index.php?topic=347441.0">https://forum.arduino.cc/index.php?topic=347441.0</a></p>
+<p><img src="/img/microradio/atmega1284_bootloader.png" alt=""></p>
+<hr>
+<p>2021-03-05 17:31:06</p>
+<p>maybe this is a better mightycore to use ... <a href="https://github.com/MCUdude/MightyCore">https://github.com/MCUdude/MightyCore</a></p>
+<p>YES indeed.  looks like it's working ...</p>
+<hr>
+<p>2021-03-06 13:58:58</p>
+<p>Mark's code ported to 328p: <a href="https://freesoft.dev/program/136302037">https://freesoft.dev/program/136302037</a></p>
+<p>This looks good:</p>
+<p>lora aprs <a href="https://github.com/josefmtd/lora-aprs">here</a></p>
+<p>more details <a href="https://github.com/josefmtd/lora-aprs/tree/master/lora-kiss">here</a></p>
+<p>reverse tunnel ssh <a href="https://github.com/josefmtd/reverse-tunnel">here</a></p>
+<p>kiss aprs <a href="https://github.com/josefmtd/kiss-aprs">here</a></p>
+<hr>
+<p>this looks even more directly useful for kiss: <a href="https://github.com/josefmtd/arduino-kiss">https://github.com/josefmtd/arduino-kiss</a></p>
+<p><a href="https://josefmtd.com/">https://josefmtd.com/</a></p>
+<p>arduino apros tracker <a href="https://create.arduino.cc/projecthub/jweers1/arduino-aprs-tracker-wilderness-location-tracking-a50607">here</a></p>
+<p>more by that fellow <a href="https://github.com/jweers1?tab=repositories">here</a></p>
+<hr>
+<p>2021-03-06 14:17:51</p>
+<p>ahhh, so</p>
+<p><a href="https://github.com/jweers1/Aprs-Tracker/tree/master/Arduino/libraries/LibAPRS">https://github.com/jweers1/Aprs-Tracker/tree/master/Arduino/libraries/LibAPRS</a>  is the APRS library developed by the micromodem fellow;</p>
+<p>and <a href="https://github.com/jweers1/Aprs-Tracker">this repo</a> pulls out particular functions from that lib and uses them in a simple manner</p>
+<p>original library is here: <a href="https://github.com/markqvist/LibAPRS">https://github.com/markqvist/LibAPRS</a></p>
+<p>manual here: <a href="https://github.com/markqvist/LibAPRS/blob/master/extras/MicroModem_Manual_v3.pdf">https://github.com/markqvist/LibAPRS/blob/master/extras/MicroModem_Manual_v3.pdf</a></p>
+<p>Much more extensive version of Arduino APRS here: <a href="https://github.com/handiko/Arduino-APRS">https://github.com/handiko/Arduino-APRS</a></p>
+<h2>One to replicate</h2>
+<p><a href="https://github.com/handiko/Arduino-APRS">https://github.com/handiko/Arduino-APRS</a></p>
+<p>Gnu radio test for APRS here: <a href="https://github.com/handiko/gr-APRS">https://github.com/handiko/gr-APRS</a></p>
+<p>Walkie talkie module <a href="http://www.dorji.com/docs/data/DRA818V.pdf">http://www.dorji.com/docs/data/DRA818V.pdf</a></p>
+<p>light aprs tracker <a href="https://www.qrp-labs.com/lightaprs.html">https://www.qrp-labs.com/lightaprs.html</a></p>
+<p><a href="https://github.com/lightaprs/LightAPRS-1.0">https://github.com/lightaprs/LightAPRS-1.0</a></p>
+<hr>
+<p>2021-03-06 14:38:50</p>
+<p>DIY walkie talkie <a href="https://www.radiojitter.com/walkie-talkie-arduino-shield/">https://www.radiojitter.com/walkie-talkie-arduino-shield/</a></p>
+<p>generate aprs via arduino <a href="https://hamprojects.wordpress.com/2015/06/29/vhf-beacon-and-aprs-tracker-english-version/">https://hamprojects.wordpress.com/2015/06/29/vhf-beacon-and-aprs-tracker-english-version/</a></p>
+<p>WSPR tracker
+<a href="https://git.ok1kvk.cz/RAJlab/rajx-v5.0/">https://git.ok1kvk.cz/RAJlab/rajx-v5.0/</a></p>
+<p>more references here: <a href="https://swharden.com/software/FSKview/wspr/">https://swharden.com/software/FSKview/wspr/</a></p>
+<p>WSPR protocl <a href="https://www.nutsvolts.com/magazine/article/january2012_Steber">https://www.nutsvolts.com/magazine/article/january2012_Steber</a></p>
+<p>Seems like WSPR is optimized for longer-range, lower-power ... forward error correction.  If one has ham license, is it permissible to transmit longer messages (not just location)?</p>
+<p><a href="https://www.rfzero.net/">https://www.rfzero.net/</a></p>
+<p>minimal wspr transmit -- looks like a great place to start: <a href="http://blog.marxy.org/2018/12/minimal-wspr-transmit-with-arduino-and.html">http://blog.marxy.org/2018/12/minimal-wspr-transmit-with-arduino-and.html</a></p>
+<p>another arduino wspr beacon project <a href="https://hamprojects.wordpress.com/2019/06/02/wspr-beacon/">https://hamprojects.wordpress.com/2019/06/02/wspr-beacon/</a></p>
+<p>similar project <a href="http://people.physics.anu.edu.au/~dxt103/472/wspr_tx/">http://people.physics.anu.edu.au/~dxt103/472/wspr_tx/</a></p>
+<p>wspr message types: <a href="https://dxplorer.net/wspr/msgtypes.html">https://dxplorer.net/wspr/msgtypes.html</a></p>
+<p>using aprs while backpacking <a href="https://mthikes.com/backpacking-aprs/">https://mthikes.com/backpacking-aprs/</a></p>
+<p>more info on aprs <a href="https://www.jpole-antenna.com/2018/09/17/introduction-to-aprs-the-automated-packet-reporting-system/">https://www.jpole-antenna.com/2018/09/17/introduction-to-aprs-the-automated-packet-reporting-system/</a></p>
+<p>messaging via aprs <a href="http://www.aprs.org/aprs-messaging.html">http://www.aprs.org/aprs-messaging.html</a></p>
+<hr>
+<p>2021-03-07 17:29:26</p>
+<p>ism band clock here: <a href="https://www.silabs.com/documents/public/data-sheets/Si4421.pdf">https://www.silabs.com/documents/public/data-sheets/Si4421.pdf</a></p>
+<hr>
+<p>2021-03-07 17:33:36</p>
+<p>RFM95 FSK here: <a href="https://teknokoodiradio.vuodatus.net/lue/2017/06/semtech-sx1278-fsk-packet-mode-decoding-with-arduino">https://teknokoodiradio.vuodatus.net/lue/2017/06/semtech-sx1278-fsk-packet-mode-decoding-with-arduino</a></p>
+<p>jgromes radiolib <a href="https://github.com/jgromes/RadioLib">https://github.com/jgromes/RadioLib</a> --- wow!</p>
+<hr>
+<p>micro keypad <a href="https://hackaday.com/2019/09/03/a-pocket-qwerty-for-arduino-and-more/">https://hackaday.com/2019/09/03/a-pocket-qwerty-for-arduino-and-more/</a></p>
+<p>nice arduino keyboard link <a href="https://hackaday.io/project/158454-mini-piqwerty-usb-keyboard">https://hackaday.io/project/158454-mini-piqwerty-usb-keyboard</a></p>
+<p>another nice tutorial link <a href="https://create.arduino.cc/projecthub/cameroncoward/64-key-prototyping-keyboard-matrix-for-arduino-4c9531">https://create.arduino.cc/projecthub/cameroncoward/64-key-prototyping-keyboard-matrix-for-arduino-4c9531</a></p>
 </p>
       </div>
     </div>
