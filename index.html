@@ -5470,7 +5470,17 @@ ALTER TABLE measurements ADD COLUMN light FLOAT;
 <p>https://www.ruf.rice.edu/~bioslabs/tools/data_analysis/errors_curvefits.html</p>
 <p>https://statisticsbyjim.com/regression/standard-error-regression-vs-r-squared/</p>
 <p>https://astrofrog.github.io/py4sci/_static/15.%20Fitting%20models%20to%20data.html</p>
-<p>aprs position off-grid with js8call https://www.youtube.com/watch?v=dAiXsSMIkKY</p>
+<hr>
+<p>2021-03-11 18:17:18</p>
+<p>Rework of firmware and bayou for mesh networking ...</p>
+<ul>
+<li>
+<p>Bayou software: <a href="https://gitlab.com/p-v-o-s/agroeco/bayou/-/tree/08b7b44a7fc53e3e3fd1f61d3eb32aee927503e9">https://gitlab.com/p-v-o-s/agroeco/bayou/-/tree/08b7b44a7fc53e3e3fd1f61d3eb32aee927503e9</a></p>
+</li>
+<li>
+<p>Arduino firmware -- ver 0.8-alpha: <a href="https://gitlab.com/p-v-o-s/co2/co2monitor-firmware/-/tree/96f83332bae148ced8d4809c85f2e35f16c18a85/v0.8-alpha">https://gitlab.com/p-v-o-s/co2/co2monitor-firmware/-/tree/96f83332bae148ced8d4809c85f2e35f16c18a85/v0.8-alpha</a></p>
+</li>
+</ul>
 </p>
       </div>
     </div>
@@ -7675,13 +7685,22 @@ aux_1 FLOAT,
 aux_2 FLOAT,
 aux_3 FLOAT,
 log VARCHAR(255),<br>
-created TIMESTAMP DEFAULT NOW(),
+timestamp TIMESTAMP DEFAULT NOW(),
 CONSTRAINT feed
 FOREIGN KEY(feed_id)
 REFERENCES feeds(feed_id)
 );</p>
 <pre><code>
-up and running at root@104.248.50.193 !</code></pre>
+up and running at root@104.248.50.193 !
+
+</code></pre>
+<p>ALTER TABLE measurements RENAME COLUMN created TO timestamp;</p>
+<pre><code>
+
+
+
+
+</code></pre>
 </p>
       </div>
     </div>
