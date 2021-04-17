@@ -961,6 +961,22 @@ And if you'd like to help support our podcast, you can now do so via [Patreon](h
 <h2>Rationale for Quahog</h2>
 <p>'Off-grid wifi gateway' ... is this useful?</p>
 <p>I guess if you want the Quahog up on a pole ... up to 100 feet away from the wifi gateway... then it can be powered by 12V ... so that might be useful in some circumstances ...</p>
+<hr>
+<p>2021-04-08 13:48:00</p>
+<h2>Quahog reboot</h2>
+<p>Feather S2</p>
+<p>test the current consumption</p>
+<p>esp32-s2 <a href="https://www.adafruit.com/product/4775">https://www.adafruit.com/product/4775</a></p>
+<p>eagle cad files on github <a href="https://github.com/adafruit/Adafruit-Metro-ESP32-S2-PCB">https://github.com/adafruit/Adafruit-Metro-ESP32-S2-PCB</a></p>
+<p><a href="https://maker.pro/esp8266/tutorial/a-comparison-of-the-new-esp32-s2-to-the-esp32">https://maker.pro/esp8266/tutorial/a-comparison-of-the-new-esp32-s2-to-the-esp32</a></p>
+<p>moteino schematic files <a href="https://lowpowerlab.com/guide/moteino/design-files/">https://lowpowerlab.com/guide/moteino/design-files/</a></p>
+<p>mothbot <a href="https://github.com/edgecollective/mothbot/blob/main/ver4B/hardware/dippy.pdf">https://github.com/edgecollective/mothbot/blob/main/ver4B/hardware/dippy.pdf</a></p>
+<p>feather s2</p>
+<p>lora:</p>
+<p>spi
+cs io33
+rst io38
+int -- ?  need to test out w/ arduino ...</p>
 </p>
       </div>
     </div>
@@ -5595,6 +5611,11 @@ ALTER TABLE measurements ADD COLUMN light FLOAT;
 <p>barrel jack connector <a href="https://www.sparkfun.com/datasheets/Prototyping/Barrel-Connector-PJ-202A.pdf">https://www.sparkfun.com/datasheets/Prototyping/Barrel-Connector-PJ-202A.pdf</a></p>
 <p>pos centerpole on 2.1 mm + USB cable from Amazon ...</p>
 <p>extension cable from sparkfun for 2.1 mm jack <a href="https://www.sparkfun.com/products/11707">here</a></p>
+<hr>
+<p>2021-04-17 08:49:02</p>
+<p>force calibration event at a2:</p>
+<p>![](/img/co2/force_calibration_at _a2.png)</p>
+<p><a href="http://bayou.pvos.org/data/8fs9k3zwjg4w">http://bayou.pvos.org/data/8fs9k3zwjg4w</a></p>
 </p>
       </div>
     </div>
@@ -8783,6 +8804,10 @@ both on transmitting images via lora
 ￼
 and -- oooh! https://blog.adafruit.com/2020/11/24/transmitting-sound-and-image-over-a-lora-link-lora-radio/
 https://github.com/bwhitman/loracamera</p>
+<p>https://github.com/rxi/lite</p>
+<p>https://www.oregon.gov/deq/FilterDocs/latlonginstr.pdf</p>
+<p>https://www.topozone.com/</p>
+<p>https://hackaday.com/2021/04/07/an-esp32-walkie-talkie-for-those-spy-radio-moments/</p>
 </p>
       </div>
     </div>
@@ -9275,6 +9300,36 @@ it would be pretty easy to simplify the schematic and, hopefully dissect the cod
 <p>DORJI module VHF Band HAM Amateur Radio Module DRA818V
 Home : <a href="http://www.dorji.com/products-detail.php?ProId=55">http://www.dorji.com/products-detail.php?ProId=55</a></p>
 <p>ham radio module <a href="https://www.ebay.com/c/943323740">https://www.ebay.com/c/943323740</a></p>
+<hr>
+<p>2021-04-09 10:23:55</p>
+<p>serial input basics</p>
+<p><a href="https://forum.arduino.cc/index.php?topic=288234.0">https://forum.arduino.cc/index.php?topic=288234.0</a></p>
+<hr>
+<p>2021-04-10 14:42:07</p>
+<p><a href="https://github.com/arduino-libraries/Arduino_OV767X">https://github.com/arduino-libraries/Arduino_OV767X</a></p>
+<p><a href="https://maker.pro/arduino/tutorial/how-to-interface-the-ov7670-camera-module-with-arduino">https://maker.pro/arduino/tutorial/how-to-interface-the-ov7670-camera-module-with-arduino</a></p>
+<pre><code>One of the modules has a solder ball on the PCLK trace. The other module appears to be fine. I'll update my review once I capture a couple of images from them.
+
+Update: Both camera modules work. Documentation is the absolute worse. The default color settings don't appear to work properly. The secret to YUV with correct colors is writing address 0xB0 with 0x84 (This is a reserved register. I have no idea what this does).
+
+I used these coefficients for the YUV to RGB conversion
+r = y + 1.371*(v-128);
+g = y - 0.698*(v-128) - 0.336*(u-128);
+b = y + 1.732*(u-128);
+</code></pre>
+<hr>
+<p>2021-04-10 15:06:18</p>
+<p>https://www.instructables.com/OV7670-Arduino-Camera-Sensor-Module-Framecapture-T/</p>
+<p>https://www.arducam.com/product-category/standone-camera-modue/</p>
+<hr>
+<p>2021-04-10 16:32:02</p>
+<p>esp32 ...</p>
+<p>https://bitluni.net/esp32-i2s-camera-ov7670</p>
+<p>https://www.youtube.com/watch?v=S2yTQHM82jc</p>
+<hr>
+<p>2021-04-10 16:37:01</p>
+<p>express memory explainer:
+<a href="https://learn.adafruit.com/adafruit-feather-m0-express-designed-for-circuit-python-circuitpython/uf2-bootloader-details">https://learn.adafruit.com/adafruit-feather-m0-express-designed-for-circuit-python-circuitpython/uf2-bootloader-details</a></p>
 </p>
       </div>
     </div>
