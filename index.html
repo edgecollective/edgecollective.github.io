@@ -5712,6 +5712,15 @@ ALTER TABLE measurements ADD COLUMN light FLOAT;
 <hr>
 <p>2021-04-24 12:22:18</p>
 <p>feather m0 express + hardware airlift and hardware lora working in this commit: <a href="https://gitlab.com/p-v-o-s/co2/co2monitor-firmware/-/tree/b21eeb06612cf2d21b35c77848c71bd4566b9cc5/v0.91-alpha/gateway/featherm0express_hardware_airlift_ScanNetworks_hardware_lora">https://gitlab.com/p-v-o-s/co2/co2monitor-firmware/-/tree/b21eeb06612cf2d21b35c77848c71bd4566b9cc5/v0.91-alpha/gateway/featherm0express_hardware_airlift_ScanNetworks_hardware_lora</a></p>
+<p>virtual SPi on m0 reference here: <a href="https://learn.adafruit.com/using-atsamd21-sercom-to-add-more-spi-i2c-serial-ports?gclid=CjwKCAjwg4-EBhBwEiwAzYAlsoaFHbvfOeNx0AQbUp4pAbEmXst8Mpb2HCE15YLEejIkYbjp9jlnWRoC4VkQAvD_BwE">https://learn.adafruit.com/using-atsamd21-sercom-to-add-more-spi-i2c-serial-ports?gclid=CjwKCAjwg4-EBhBwEiwAzYAlsoaFHbvfOeNx0AQbUp4pAbEmXst8Mpb2HCE15YLEejIkYbjp9jlnWRoC4VkQAvD_BwE</a></p>
+<p>....</p>
+<p>challenging to create virtual SPI for uSD ... ?  can't find in library as yet ...</p>
+<p>another option might be to do virtual SPI for lora + airlift ...</p>
+<p>quick test of that ...</p>
+<hr>
+<p>2021-04-24 14:32:12</p>
+<p>basic test of: featherm0express + hardware_airlift + hardware uSD + virtual LoRa here: <a href="https://gitlab.com/p-v-o-s/co2/co2monitor-firmware/-/tree/a0e75274df4518dbe081546bc32aacd0a79d6e80/v0.91-alpha/gateway/featherm0express_airlift_test_hardware_uSD_virtual_LoRa">https://gitlab.com/p-v-o-s/co2/co2monitor-firmware/-/tree/a0e75274df4518dbe081546bc32aacd0a79d6e80/v0.91-alpha/gateway/featherm0express_airlift_test_hardware_uSD_virtual_LoRa</a></p>
+<p>now try writing to uSD, connecting to wifi, and sending lora packet in loop ...</p>
 </p>
       </div>
     </div>
