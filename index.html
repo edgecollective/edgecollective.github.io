@@ -6021,6 +6021,41 @@ force calibrate procedure</p>
 <p><a href="https://cdn-learn.adafruit.com/assets/assets/000/098/502/original/Sensirion_SCD30_Design-In_Guidelines_D1.pdf?1609963143">Design-in guidelines for SCD30</a></p>
 <p>Seems to argue for larger ventilation holes, smaller inside enclosure.</p>
 <p>Might just place holes directly beneath the sensor.</p>
+<hr>
+<p>2021-07-25 11:29:17</p>
+<h1>Enclosure experiments</h1>
+<h2>Option A</h2>
+<p>Sensor inside enclosure, sensor close to 'pcb'; square hole cut out as per build-in guidelines; no tape around sensor.</p>
+<p><img src="/img/co2/enclosure_config_a.png" alt=""></p>
+<p>Ambient CO2 level;  brought from inside out to outside in &lt; 5 seconds.  Same outside to inside, but ambient CO2 indoors may have been lower; then people entered room.</p>
+<h2>Option B</h2>
+<p>No enclosure; sensor close to 'pcb'; no tape around board.</p>
+<p>Comparison of option A and option B:</p>
+<p><img src="/img/co2/enc_option_a_vs_b.png" alt=""></p>
+<p>Note that when we'd calibrated using the 'slow' enclosure, it looks as though we didn't actually give the sensor enough time to reach ambient; when the enclosure is removed, we dropped down to ambient.</p>
+<h2>Option C</h2>
+<p>No enclosure; sensor close to 'pcb', tape around sensor to create 'small enclosure'</p>
+<p><img src="/img/co2/enc_options_a_b_c.png" alt=""></p>
+<p>(graphic shows events for options a, b, c from left to right)</p>
+<h2>Option D</h2>
+<p>Enclosure; sensor close to 'pcb', tape around sensor to create 'small enclosure'.</p>
+<p>Note that there are CO2 intakes on top and bottom of sensor.  The top of the sensor is not taped.  The below behavior in fact indicates that by having the bottom exposed only to the outside, and the top exposed only to the outside, we are somewhat 'averaging' the measurement (with a slow leak).</p>
+<p>(graphic shows events for options a,b,c,d from left to right)</p>
+<p><img src="/img/co2/enc_options_a_b_c_d_longer.png" alt=""></p>
+<h2>Option E</h2>
+<p>Enclosure; sensor close to 'pcb', tape around sensor to create 'small enclosure'; also covered 'top' of sensor to avoid intake on top.</p>
+<p>Note that what appears to be happening is that I've sealed in a slightly higher CO2 env on the top, by putting tape on top of the intakes.  Also, the sensor responds a bit slower with only the bottom intakes (perhaps the time constant is 'half' as fast as with top and bottom intakes exposed?).</p>
+<p>So: as per Mike's suggestion, let's create the tightest enclosure around the sensor that <em>also</em> allows air to flow up over the intakes ...</p>
+<p>(Note: I think spike on far right is me exhaling towards sensor accidentally while writing these notes ...)</p>
+<p>(graphic shows events for options b,c,d from left to right; option a is only partially visible on left)</p>
+<p><img src="/img/co2/enc_option_b_c_d_e.png" alt=""></p>
+<h2>Option F</h2>
+<p>Made a &quot;small box&quot; that has some finite volume but still allows air flow over the top part of the sensor.</p>
+<p>Note that the ends of the response (drop down and rise up) seem a bit more rounded / slower ... perhaps because of the small reservoir of gas inside the enclosure ...</p>
+<p>(options a,b,c,d,e,f from left to right below:)</p>
+<p><img src="/img/co2/enc_a_b_c_d_e_f_longer.png" alt=""></p>
+<h2>Conclusion</h2>
+<p>Looks like the sensor is about 9 or 10 mm peak off board, with sides around 5 mm; the intakes on the 'top' would still have some breathing room if tape was put over the top;  so 8.5 mm headers could work pretty well as 'sides'</p>
 </p>
       </div>
     </div>
