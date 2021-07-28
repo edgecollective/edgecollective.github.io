@@ -6025,24 +6025,35 @@ force calibrate procedure</p>
 <p>2021-07-25 11:29:17</p>
 <h1>Enclosure experiments</h1>
 <h2>Option A</h2>
+<p><img src="/img/co2/A_1.png" alt=""></p>
+<p><img src="/img/co2/A_2.png" alt=""></p>
 <p>Sensor inside enclosure, sensor close to 'pcb'; square hole cut out as per build-in guidelines; no tape around sensor.</p>
 <p><img src="/img/co2/enclosure_config_a.png" alt=""></p>
 <p>Ambient CO2 level;  brought from inside out to outside in &lt; 5 seconds.  Same outside to inside, but ambient CO2 indoors may have been lower; then people entered room.</p>
 <h2>Option B</h2>
+<p><img src="/img/co2/B_1.png" alt=""></p>
+<p><img src="/img/co2/B_2.png" alt=""></p>
+<p><img src="/img/co2/B_3.png" alt=""></p>
 <p>No enclosure; sensor close to 'pcb'; no tape around board.</p>
 <p>Comparison of option A and option B:</p>
 <p><img src="/img/co2/enc_option_a_vs_b.png" alt=""></p>
 <p>Note that when we'd calibrated using the 'slow' enclosure, it looks as though we didn't actually give the sensor enough time to reach ambient; when the enclosure is removed, we dropped down to ambient.</p>
 <h2>Option C</h2>
+<p><img src="/img/co2/C_1.png" alt=""></p>
+<p><img src="/img/co2/C_2.png" alt=""></p>
 <p>No enclosure; sensor close to 'pcb', tape around sensor to create 'small enclosure'</p>
 <p><img src="/img/co2/enc_options_a_b_c.png" alt=""></p>
 <p>(graphic shows events for options a, b, c from left to right)</p>
 <h2>Option D</h2>
+<p><img src="/img/co2/D_1.png" alt=""></p>
+<p><img src="/img/co2/D_2.png" alt=""></p>
 <p>Enclosure; sensor close to 'pcb', tape around sensor to create 'small enclosure'.</p>
 <p>Note that there are CO2 intakes on top and bottom of sensor.  The top of the sensor is not taped.  The below behavior in fact indicates that by having the bottom exposed only to the outside, and the top exposed only to the outside, we are somewhat 'averaging' the measurement (with a slow leak).</p>
 <p>(graphic shows events for options a,b,c,d from left to right)</p>
 <p><img src="/img/co2/enc_options_a_b_c_d_longer.png" alt=""></p>
 <h2>Option E</h2>
+<p><img src="/img/co2/E_1.png" alt=""></p>
+<p><img src="/img/co2/E_2.png" alt=""></p>
 <p>Enclosure; sensor close to 'pcb', tape around sensor to create 'small enclosure'; also covered 'top' of sensor to avoid intake on top.</p>
 <p>Note that what appears to be happening is that I've sealed in a slightly higher CO2 env on the top, by putting tape on top of the intakes.  Also, the sensor responds a bit slower with only the bottom intakes (perhaps the time constant is 'half' as fast as with top and bottom intakes exposed?).</p>
 <p>So: as per Mike's suggestion, let's create the tightest enclosure around the sensor that <em>also</em> allows air to flow up over the intakes ...</p>
@@ -6050,16 +6061,24 @@ force calibrate procedure</p>
 <p>(graphic shows events for options b,c,d from left to right; option a is only partially visible on left)</p>
 <p><img src="/img/co2/enc_option_b_c_d_e.png" alt=""></p>
 <h2>Option F</h2>
+<p><img src="/img/co2/F_1.png" alt=""></p>
+<p><img src="/img/co2/F_2.png" alt=""></p>
+<p><img src="/img/co2/F_3.png" alt=""></p>
+<p><img src="/img/co2/F_4.png" alt=""></p>
 <p>Made a &quot;small box&quot; that has some finite volume but still allows air flow over the top part of the sensor.</p>
 <p>Note that the ends of the response (drop down and rise up) seem a bit more rounded / slower ... perhaps because of the small reservoir of gas inside the enclosure ...</p>
 <p>(options a,b,c,d,e,f from left to right below:)</p>
 <p><img src="/img/co2/enc_a_b_c_d_e_f_longer.png" alt=""></p>
 <h2>Conclusion</h2>
+<p><img src="/img/co2/pcb_experiment.png" alt=""></p>
 <p>Looks like the sensor is about 9 or 10 mm peak off board, with sides around 5 mm; the intakes on the 'top' would still have some breathing room if tape was put over the top;  so 8.5 mm headers could work pretty well as 'sides'</p>
 <hr>
 <p>2021-07-25 16:51:24</p>
 <h2>Bug via Dave S.</h2>
 <p><img src="/img/co2/dave_bug.png" alt=""></p>
+<hr>
+<p>2021-07-27 19:56:53</p>
+<p>Summary of PCB ventilation experiment ...</p>
 </p>
       </div>
     </div>
@@ -9897,7 +9916,21 @@ between soil water and the water inside the tensiometer shaft.</p>
 <p><a href="https://www.youtube.com/watch?v=kH5APw_SLUU">https://www.youtube.com/watch?v=kH5APw_SLUU</a></p>
 <h2>Energy vanguard instructions</h2>
 <p><a href="https://www.energyvanguard.com/blog/how-make-high-merv-diy-portable-air-cleaner/">https://www.energyvanguard.com/blog/how-make-high-merv-diy-portable-air-cleaner/</a></p>
-<h2>DIY Build</h2>
+<h2>Philly Inquirer</h2>
+<p><a href="https://www.inquirer.com/health/coronavirus/covid19-make-your-own-air-filter-diy-trap-particles-fan-20201020.html">https://www.inquirer.com/health/coronavirus/covid19-make-your-own-air-filter-diy-trap-particles-fan-20201020.html</a></p>
+<h2>Tex-air overview</h2>
+<p><a href="https://www.texairfilters.com/iaq-research-practice-in-action-the-corsi-rosenthal-box-air-cleaner/">https://www.texairfilters.com/iaq-research-practice-in-action-the-corsi-rosenthal-box-air-cleaner/</a></p>
+<h2>Treehugger</h2>
+<p><a href="https://www.treehugger.com/build-own-covid-19-air-filter-5081272">https://www.treehugger.com/build-own-covid-19-air-filter-5081272</a></p>
+<h2>Percent effectiveness at capturing particles</h2>
+<p><a href="https://www.ashrae.org/technical-resources/filtration-and-disinfection-faq">https://www.ashrae.org/technical-resources/filtration-and-disinfection-faq</a></p>
+<p>--&gt; 85%</p>
+<h2>Calculating ACH from CFM</h2>
+<p><a href="https://www.vaniman.com/air-changes-per-hour-calculator/#:~:text=To%20calculate%20Air%20Changes%20Per,to%20get%20your%20total%20ACH.">https://www.vaniman.com/air-changes-per-hour-calculator/#:~:text=To%20calculate%20Air%20Changes%20Per,to%20get%20your%20total%20ACH.</a></p>
+<h2>Corsi presentation on air box</h2>
+<p><a href="https://www.youtube.com/watch?v=MmWQUHswfOs">https://www.youtube.com/watch?v=MmWQUHswfOs</a></p>
+<p><img src="/img/co2/box_fan_effectiveness.png" alt=""></p>
+<p>note: reason that you pull through the filter is that it tends to seal, rather than blow apart</p>
 </p>
       </div>
     </div>
