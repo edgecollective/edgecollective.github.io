@@ -174,8 +174,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.35355339"
-     inkscape:cx="366.17287"
-     inkscape:cy="527.57982"
+     inkscape:cx="23.058277"
+     inkscape:cy="534.03556"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -292,7 +292,7 @@
          id="tspan11851"
          x="-106.106"
          y="98.322746"
-         style="stroke-width:0.26458332;-inkscape-font-specification:sans-serif;font-family:sans-serif;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;"></tspan></text>
+         style="stroke-width:0.26458332;-inkscape-font-specification:sans-serif;font-family:sans-serif;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;" /></text>
     <flowRoot
        xml:space="preserve"
        id="flowRoot14065"
@@ -305,7 +305,7 @@
            x="-798.02051"
            y="245.70728"
            style="-inkscape-font-specification:sans-serif;font-family:sans-serif;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;" /></flowRegion><flowPara
-         id="flowPara14071"></flowPara></flowRoot>    <rect
+         id="flowPara14071" /></flowRoot>    <rect
        style="fill:url(#linearGradient6911-2);fill-opacity:1;stroke:#000000;stroke-width:0.41036874;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0"
        id="rect950-8"
        width="20.678379"
@@ -2940,7 +2940,7 @@
     </g>
     <path
        style="fill:#ffffff;stroke:#000000;stroke-width:0.26458332;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:0.52916663, 0.26458329;stroke-dashoffset:0;stroke-opacity:1"
-       d="m 176.50322,136.9649 h -1.82426 l 2.87321,-3.77129 c 0,0 3.3195,3.77888 3.13707,3.77888 -0.62328,0 -2.55953,0.0156 -2.24666,0.0544 l 0.24374,6.55178 c 0,0 -1.61177,0.31796 -1.65737,-0.11305 -0.0455,-0.43101 -0.0206,-6.47178 -0.0206,-6.47178 z"
+       d="m 178.42145,136.9649 h -1.82426 l 2.87321,-3.77129 c 0,0 3.3195,3.77888 3.13707,3.77888 -0.62328,0 -2.55953,0.0156 -2.24666,0.0544 l 0.24374,6.55178 c 0,0 -1.61177,0.31796 -1.65737,-0.11305 -0.0455,-0.43101 -0.0206,-6.47178 -0.0206,-6.47178 z"
        id="path9471-7-4-6-8-8-9-0"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="cccsccccc"
@@ -3379,7 +3379,7 @@
            x="-1615.7142"
            y="426.80539"
            style="-inkscape-font-specification:sans-serif;font-family:sans-serif;font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;" /></flowRegion><flowPara
-         id="flowPara22461"></flowPara></flowRoot>    <rect
+         id="flowPara22461" /></flowRoot>    <rect
        style="fill:#ffffff;stroke:#000000;stroke-width:0.41031116;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0"
        id="rect950-5-9-3"
        width="20.678379"
@@ -4354,7 +4354,7 @@
          id="tspan24030"
          x="-889.98065"
          y="-18.699734"
-         style="stroke-width:0.26458332"></tspan><tspan
+         style="stroke-width:0.26458332" /><tspan
          sodipodi:role="line"
          x="-889.98065"
          y="-5.4705682"
@@ -4370,7 +4370,7 @@
            height="54.947159"
            x="-3160.4792"
            y="-261.33469" /></flowRegion><flowPara
-         id="flowPara24050"></flowPara></flowRoot>    <ellipse
+         id="flowPara24050" /></flowRoot>    <ellipse
        style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.26499996;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0"
        id="path24066"
        cx="177.8149"
@@ -4542,7 +4542,9 @@
          id="tspan25275-7-0-7">(FOR COMPARISON: TYPICAL CLASSROOM ACH &lt; 3 ACH;  IDEAL ACH: 6+ )</tspan></text>
     <g
        id="g26162"
-       transform="translate(85.312433,-187.92783)">
+       transform="translate(85.312433,-187.92783)"
+       inkscape:export-xdpi="321.30292"
+       inkscape:export-ydpi="321.30292">
       <rect
          inkscape:export-ydpi="321.30292"
          inkscape:export-xdpi="321.30292"
