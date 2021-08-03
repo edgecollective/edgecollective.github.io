@@ -789,8 +789,29 @@ And if you'd like to help support our podcast, you can now do so via [Patreon](h
 <p>Because 'bare virus' itself is difficult or expensive to detect, we assess whether these systems work typically by using 'tracers'.</p>
 <p>In the case of filtration systems, some detectable particulate matter of the sizes that might carry viral partciles can be used as a 'tracer', in conjuction with particulate matters sensors, to estimate the effectiveness of the filters.</p>
 <p>In the case of indoor-outdoor air exchange rates, CO2 and can be used as a 'tracer gas' by injecting an amount of CO2 into the room and using CO2 monitors to measure the rate at which this 'excess CO2' decays -- this will be related to the 'air changes per hour' (ACH) in the room, a common measure of indoor ventilation rate.</p>
-<h2>Assessing indoor ventilation through the 'CO2 steady state' method</h2>
-<p>Via <a href="https://schools.forhealth.org/wp-content/uploads/sites/19/2020/06/Harvard-Healthy-Buildings-Program-Schools-For-Health-Reopening-Covid19-June2020.pdf">&quot;Risk Reduction Strategies for Reopening Schools&quot;</a>:</p>
+<h2>Assessing indoor ventilation</h2>
+<h3>The 'CO2 stoplight' method</h3>
+<p>The most common source of CO2 in a space is usually human exhalation.  Since the outdoor concentration of CO2 is a little over 400 PPM, if a space never gets above that no matter the occupancy level, it's a good bet that the space is well-ventilated.</p>
+<p>Further: it's possible to estimate what percentage of the air that someone is breathing in has been exhaled by someone else -- the &quot;rebreathe fraction&quot;.  Most guidelines suggest aiming for a rebreathe fraction of under 1% -- though it's unclear whether this represents an acceptable safety threshold for a particular virus.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><img src="/img/co2/co2_stoplight.png" alt=""></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">From Poppendieck <a href="https://twitter.com/Poppendieck/status/1366055136859070468?s=20">thread</a></td>
+</tr>
+</tbody>
+</table>
+<p>Complications for this method (courtesy, Poppendieck):</p>
+<ul>
+<li>It's a very rough estimate-- we're not sure how good an estimate this is of inhaled viral load for various individuals at various levels of activity;</li>
+<li>It's really only a useful measurement when room is fully occupied by the expected number occupants -- which is a risky 'experiment' to run;</li>
+<li>Doesn't give a good indication of what will happen when room fills up further, or activity level changes -- doesn't give a sense of 'trends'.</li>
+</ul>
+<p>More commentary on this can be found in  <a href="https://schools.forhealth.org/wp-content/uploads/sites/19/2020/06/Harvard-Healthy-Buildings-Program-Schools-For-Health-Reopening-Covid19-June2020.pdf">&quot;Risk Reduction Strategies for Reopening Schools&quot;</a>:</p>
 <blockquote>
 <p>In between commissioning events, there are several ways to test whether a classroom’s ventilation
 delivers sufficient outdoor air. In addition to working with trained experts, a school could quickly evaluate
@@ -823,7 +844,10 @@ removed even if CO2
 remains high because cleaners with HEPA filters are not designed to remove CO2
 .</p>
 </blockquote>
-<h2>Assessing air changes per hour (ACH) using CO2 as a 'tracer gas'</h2>
+<h3>Estimating air changes per hour (ACH) using CO2 as a 'tracer gas'</h3>
+<p>Another, more robust way of using CO2 to assess COVID-19 transmission risk indoors is to use CO2 as a 'tracer gas' to assess indoor ventilation.</p>
+<p>The basic idea is that we can inject 'excess' CO2 into a room (exhaled by humans, or generated some other way), then watch how long it takes for that excess CO2 to be removed via ventilation.  By measuring carefully, we can use this approach to estimate a standard measure of ventilation, &quot;air changes per hour&quot; -- the number of times per hour that all of the room has been effectively replaced by outdoor air.</p>
+<p>Estimates have been made for 'safe' levels of ACH for COVID-19:</p>
 <table>
 <thead>
 <tr>
@@ -836,6 +860,21 @@ remains high because cleaners with HEPA filters are not designed to remove CO2
 </tr>
 </tbody>
 </table>
+<p>NOTE:  these safety levels were made for the initial, 'wild-type' variant, and may be underestimates for current variants, which are considered to be more infectious.</p>
+<p>For reference:  ACH levels for typical settings:</p>
+<ul>
+<li>homes are often less than 1 ACH;</li>
+<li>schools are usually designed to be at least 3 ACH, though are often less in practice;</li>
+<li>hospital patient rooms are kept at between 6 and 12 ACH;</li>
+<li>hospital operating rooms are usually between 20 and 40 ACH</li>
+</ul>
+<p>Using this 'tracer gas' approach, we only need to have a single experimenter in the room.  The procedure in more detail is:</p>
+<ul>
+<li>Start monitoring CO2 level in the room, so that we know the 'baseline' level.</li>
+<li>Release a source of CO2 into the room for several minutes, using a fan to make sure it mixes well into the room.</li>
+<li>Stop the release of excess CO2 into the room (remove the source from the room).</li>
+<li>Monitor the CO2 level until it returns to within 10 or 20% of its initial baseline.</li>
+</ul>
 <table>
 <thead>
 <tr>
@@ -872,18 +911,37 @@ remains high because cleaners with HEPA filters are not designed to remove CO2
 </tr>
 </tbody>
 </table>
-<h2>Considerations in CO2 Monitoring Devices</h2>
-<h3>Response time</h3>
-<p>Enclosure design. Ability to modify.</p>
-<h3>Calibration</h3>
-<p>How easy is it to calibrate the device?</p>
-<h3>Remote data</h3>
-<p>Online is ideal:</p>
-<p>So that you don't need to be in the same space necessarily need to put people at risk to see how high the CO2 is.</p>
-<h3>Data analysis</h3>
-<p>As CSV, so can easily be imported directly into Jupyter.</p>
-<p>Online platform to make exponential fits of selections of data easy.</p>
-<h3>Tech sovereignty</h3>
+<h3>Design considerations for CO2 Monitoring Devices and the 'tracer gas' method -- a case for 'open source'</h3>
+<p>When using a CO2 monitor for the 'tracer gas' method outlined above, particular design considerations become salient:</p>
+<h4>1. Fast response time</h4>
+<p><img src="/img/co2/pcb_experiment.png" alt=""></p>
+<p>The CO2 monitor should have a 'response time' (how long it takes to measure and record the ambient level of CO2 in the room) that is as fast or faster than the rate at which CO2 is expected to 'decay' in the 'tracer gas' experiment.</p>
+<p>If the response time is too slow, the indoor ventilation rate (in ACH) will be an underestimate.</p>
+<p>This response time is a function both of the underyling sensor technology and design, as well as the 'enclosure' used by the manufacturer, which will allow ambient gas to be sampled / retained at a particular rate.</p>
+<h4>2. Calibration procedure</h4>
+<p><img src="/img/co2/asc_algorithm.png" alt=""></p>
+<p>CO2 monitors require calibration in order to give accurate CO2 levels.  Even after calibration, they may drift over time.</p>
+<p>Many CO2 monitors are set up to use an 'automatic' calibration procedure that assumes that the sensor will be exposed to the equivalent of 'outdoor air' at least once per week;  every week, the sensor uses the lowest CO2 value it has 'seen' over the week, assumes that this value is equal to approx 415 PPM, and calibrates its further measurements accordingly.</p>
+<p>For many industrial spaces, this is valid assumption;  when a space is unoccupied during nights or weekends, the HVAC system may bring the indoor CO2 level down to approximately the outdoor CO2 level.</p>
+<p>But this assumption may break down for spaces that never reach ambient levels of CO2 -- e.g. whose daytime occupation is significant and whose ventilation is particularly poor.</p>
+<p>Further -- this calibration typically occurs over hte span of a week.  Practitioners who would like to perform CO2 tracer gas experiments require that their CO2 monitors are calibrated as soon as the experiment begins.</p>
+<p>For these reasons, it's important to be able to 'force calibrate' the device -- typically by calibrating it outdoors.</p>
+<h4>3. 'Live' remote data access</h4>
+<p><img src="/img/co2/force_fed.png" alt=""></p>
+<p>For minimizing COVID-19 risk, and for ease of data analysis, it is useful to have the data transmitted 'live' to an online database via wifi / internet.</p>
+<p>Having the data accessible 'live' via the web means that CO2 levels can be monitored without having to enter a room.  This makes CO2 tracer gas experiments more accurate (by avoiding or minimizing CO2 contributions due to experimenters in the room), and allows CO2 levels to be assessed by remote personnel without requiring additional occupants in the room, minimizing transmission risk.</p>
+<p>Web-based access to data also makes it easy for multiple stakeholders, remote and local, to weigh in immediately their interpretation of the data.</p>
+<h4>4. Data accessibility for analysis</h4>
+<p><img src="/img/co2/ach_combo.png" alt=""></p>
+<p>The data generated by the CO2 monitor should be in an easily-digested, easily-shared format -- e.g. a standard CSV time series.</p>
+<p>This enables practitioners to analyze the data more readily.  For the 'tracer gas' method, an exponential fit of the data must be performed; if the data is available in CSV format, this analysis can be done in a spreadsheet program, or numerical analysis programs such as Jupyter or Matlab.</p>
+<p>Exponential fits can even be built into online web platforms, in order to facilitate this fitting procedure and generate ACH values more directly.</p>
+<h4>The case for 'open source'</h4>
+<p><img src="/img/co2/rev_3_3d_render.png" alt=""></p>
+<p>Practitioners who urgently want to apply the CO2 tracer gas method to assess indoor ventilation should use any off-the-shelf, inexpensive CO2 monitors that best meet the above design criteria.</p>
+<p>If no such devices exist, then it is useful to attempt to design a device that attempts to optimally meet these criteria, making CO2 tracer gas measurements as easy and effective as possible.</p>
+<p>We've been working on an open source CO2 monitor design, outlined <a href="">here</a>, in order to attempt to mee this goal.</p>
+<p><img src="/img/co2/co2_monitor_rev_L.jpg" alt=""></p>
 </p>
       </div>
     </div>
