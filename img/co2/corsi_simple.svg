@@ -246,9 +246,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.79762662"
-     inkscape:cx="3306.4794"
-     inkscape:cy="1269.0828"
+     inkscape:zoom="0.56400719"
+     inkscape:cx="362.14712"
+     inkscape:cy="583.60908"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -4793,7 +4793,7 @@
     <rect
        style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.16500001;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0"
        id="rect25374"
-       width="58.378235"
+       width="64.349075"
        height="6.3499999"
        x="136.83821"
        y="26.951204"
@@ -4835,7 +4835,7 @@
          x="79.226974"
          y="24.423616"
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:3.27875185px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;stroke-width:0.08196894"
-         id="tspan25116-4">COST:  &lt; $100 USD</tspan></text>
+         id="tspan25116-4">COST:  &lt; $175 USD</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:3.27875185px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.08196894"
@@ -4850,7 +4850,7 @@
          style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:3.27875185px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;stroke-width:0.08196894"
          id="tspan25116-4-6"><tspan
    style="font-weight:normal"
-   id="tspan25277">ADDS THE EQUIVALENT OF  </tspan>~ + 3 AIR CHANGES PER HOUR</tspan><tspan
+   id="tspan25277">CAN ADD THE EQUIVALENT OF  </tspan>~ + 3 AIR CHANGES PER HOUR</tspan><tspan
          sodipodi:role="line"
          x="91.535728"
          y="35.374897"
