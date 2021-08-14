@@ -1,0 +1,676 @@
+
+
+<!-- feed it through our cssmin filter to minify -->
+<style>
+  body{font-family:sans-serif;margin:20px;font-size:small;width:90%;margin-right:auto;margin-left:auto;padding-top:15px}#profile_pic{float:right;margin:0 0 1em 1em}h1{line-height:1em;font-size:x-large;margin-bottom:.31em}h2{font-size:large;margin-bottom:1px}h3{font-size:small;margin-bottom:1px}a{text-decoration:none}a:hover{text-decoration:underline}a:visited{color:#00f}*,:after,:before{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}.posts-area{width:100%;padding-top:10px}.posts-area:after{content:"";display:table;clear:both}.post{float:left;width:33.33%;padding-right:20px}.post .post-contents{background:#f7f7f7;border-radius:5px}.post .image a{display:block;overflow:hidden;height:214px}.post img{object-fit:cover;width:100%;height:100%}.post .text{height:200px;padding:20px}@media (max-width:680px){.post{width:100%}}body{font:13px/1.5 Verdana,Helvetica,Arial,sans-serif;width:80%}.img-with-caption{font-size:14px;text-align:center;margin:20 0;background-color:F1F1F1;padding:10px}#pullout{text-align:center}#intro{max-width:700px;display:inline-block;text-align:left}#post-content{max-width:800px}#post-title{margin-bottom:1px;background-color:#eee;border:1px solid #999;display:block;padding:8px;width:max-content;font-size:40px;margin-right:40px;margin-bottom:5px}#profile_pic{float:right;margin:0 0 1em 1em}#main-title{line-height:1em;font-size:x-large;margin-bottom:.31em}h1{line-height:1em;font-size:30px;margin-bottom:.31em}h2{margin-bottom:1px;font-size:22px}h3{font-size:15px;margin-bottom:1px}ol,ul{max-width:650px}a{text-decoration:none}a:hover{text-decoration:underline}a:visited{color:#00f}*,:after,:before{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}.posts-area{width:100%;padding-top:10px}.posts-area:after{content:"";display:table;clear:both}.post{float:left;width:33.33%;padding:0 20px 20px 0}.contribute{width:100%;padding-top:10px}.post .post-contents{border-radius:10px;padding:20px 20px 10px 20px}.post .project-contents{background:#add8e6;border-radius:10px;padding:20px 20px 10px 20px}.post .podcast-contents{background:#e9967a;border-radius:10px;padding:20px 20px 10px 20px}.post .note-contents{background:#e6e6fa;border-radius:10px;padding:20px 20px 10px 20px}.post .pedagogy-contents{background:#90ee90;border-radius:10px;padding:20px 20px 10px 20px}.post .talk-contents{background:pink;border-radius:10px;padding:20px 20px 10px 20px}.post .inter-contents{background:#add8e6;border-radius:5px}.post .image a{display:block;overflow:hidden;height:214px}.post img{object-fit:cover;width:100%;height:100%}img{max-height:500px;max-width:100%}table{margin:30 auto 30 auto;padding:10px;text-align:left;border:1px solid #000}td{padding:10px;text-align:left;font-size:12}.post .text{min-height:250px;padding:5px}.post .inter-text{height:250px}audio{width:100%;height:30px}@media (max-width:1100px){.post{width:100%}table{width:100%}}code[class*=language-],pre[class*=language-]{color:#000;background:0 0;text-shadow:0 1px #fff;font-family:Consolas,Monaco,'Andale Mono','Ubuntu Mono',monospace;font-size:1em;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}code[class*=language-] ::-moz-selection,code[class*=language-]::-moz-selection,pre[class*=language-] ::-moz-selection,pre[class*=language-]::-moz-selection{text-shadow:none;background:#b3d4fc}code[class*=language-] ::selection,code[class*=language-]::selection,pre[class*=language-] ::selection,pre[class*=language-]::selection{text-shadow:none;background:#b3d4fc}@media print{code[class*=language-],pre[class*=language-]{text-shadow:none}}pre[class*=language-]{padding:1em;margin:.5em 0;overflow:auto}:not(pre)>code[class*=language-],pre[class*=language-]{background:#f5f2f0}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal}.token.cdata,.token.comment,.token.doctype,.token.prolog{color:#708090}.token.punctuation{color:#999}.token.namespace{opacity:.7}.token.boolean,.token.constant,.token.deleted,.token.number,.token.property,.token.symbol,.token.tag{color:#905}.token.attr-name,.token.builtin,.token.char,.token.inserted,.token.selector,.token.string{color:#690}.language-css .token.string,.style .token.string,.token.entity,.token.operator,.token.url{color:#9a6e3a;background:hsla(0,0%,100%,.5)}.token.atrule,.token.attr-value,.token.keyword{color:#07a}.token.class-name,.token.function{color:#dd4a68}.token.important,.token.regex,.token.variable{color:#e90}.token.bold,.token.important{font-weight:700}.token.italic{font-style:italic}.token.entity{cursor:help}
+</style>
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" type="image/x-icon" href="/img/edge_favicon.png" />
+    <title>E-Ink Map Display Prototyping</title>
+  </head>
+  <body>
+
+    <div id='post-content'>
+
+  <a href="/">Edge Collective</a>:  E-Ink Map Display Prototyping
+        <!-- <h1>E-Ink Map Display Prototyping</h1> -->
+
+  
+  <hr>
+<p>2020 Nov 09</p>
+<h2>Youtube tutorial by Techiesms</h2>
+<p>Nice <a href="https://www.youtube.com/watch?v=mySnfyyL4i4">tutorial</a> using ESP32 and 4.2 &quot; e-ink display</p>
+<p>Associated library, GxEPD is <a href="https://github.com/ZinggJM/GxEPD">here</a></p>
+<p>Link for project code in the tutorial is <a href="https://github.com/techiesms/E-paper-module-using-ESP32">here</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><a href="/img/valedalama/heltec_pinout.png"> <img src="/img/valedalama/heltec_pinout.png" alt="figA2"></a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Heltec Wifi LoRa v2 pinout.</td>
+</tr>
+</tbody>
+</table>
+<p>Instructions for Adafruit MicroSD are <a href="https://www.adafruit.com/product/254">here</a>.</p>
+<p>Formatting a microSD tutorial <a href="https://ragnyll.gitlab.io/2018/05/22/format-a-sd-card-to-fat-32linux.html">here</a></p>
+<p>Convert to byte array code <a href="https://www.briandorey.com/post/bitmap-byte-converter-for-e-ink-display">here</a></p>
+<p>converting input images to proper grayscale <a href="https://github.com/sqfmi/badgy/tree/master/examples/grayscale">here</a></p>
+<p>this conversion pipeline looks great -- <a href="https://stackoverflow.com/questions/35797988/converting-images-to-indexed-2-bit-grayscale-bmp">here</a></p>
+<p>which is explained along with other code <a href="https://github.com/yy502/ePaperDisplay">here</a></p>
+<h2>Working code, SD card to itsym0 4.2 in e-ink</h2>
+<p>Code on github is <a href="https://github.com/edgecollective/eink-map/tree/main/GxEPD_SD_itsym0">here</a></p>
+<h2>Converting images</h2>
+<p>Great little tutorial <a href="https://steve.fi/hardware/d1-epaper/">here</a></p>
+<pre><code>convert Lenna.png -monochrome lenna-1.png
+</code></pre>
+<pre><code>convert lenna.png -monochrome -resize 200x320\! lenna4.bmp
+
+</code></pre>
+<h3>Compass</h3>
+<p>Good quality compass offered <a href="https://www.amazon.com/gp/product/B07CK8B3R3/ref=ox_sc_saved_title_1?smid=A2LLNHIZM5ZWNT&amp;psc=1">here</a></p>
+<h3>Map tiles</h3>
+<p>Typical map tile size is 256x265 -- reference <a href="https://wiki.openstreetmap.org/wiki/Tiles#:~:text=Graphical%20Map%20Tiles,-Map%20tiles%20are&amp;text=512%C3%97512%20pixel%20seems,and%20also%20several%20zoom%20levels.">here</a></p>
+<p>Guide to creating your own tiles <a href="https://wiki.openstreetmap.org/wiki/Creating_your_own_tiles">here</a></p>
+<p>Browsing local tiles guide <a href="https://wiki.openstreetmap.org/wiki/OpenLayers_Local_Tiles_Example">here</a> &lt;---- this seems like a great guide to dive into.</p>
+<p>More basic guide to OSM tiles <a href="https://wiki.openstreetmap.org/wiki/Tiles">here</a>.</p>
+<h3>PCB Antennas for GPS</h3>
+<p>Guide <a href="https://resources.altium.com/p/gps-antennas-in-your-pcb-design-you-won-t-get-lost-again">here</a></p>
+<p>Design considerations for UBlox <a href="GNSS-Antennas_AppNote_UBX-15030289.pdf">here</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><a href="/img/eink/chip_antenna_vs_patch.png"><img src="/img/eink/chip_antenna_vs_patch.png" alt=""></a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Fig 9 from the UBlox <a href="GNSS-Antennas_AppNote_UBX-15030289.pdf">App Note</a> mentioned above.</td>
+</tr>
+</tbody>
+</table>
+<h3>Offline maps</h3>
+<p>Nice discussion and review <a href="https://meshtastic.discourse.group/t/offline-maps-on-meshtastic/137/20">here</a></p>
+<h3>Open Map Tiles</h3>
+<p>Main project description is <a href="https://openmaptiles.com/">here</a>.</p>
+<p>Open map tiles project update is <a href="https://www.maptiler.com/news/2020/05/the-future-of-openmaptiles-project/">here</a></p>
+<p>OMT is compatible with Stamen's Toner -- post <a href="https://www.maptiler.com/news/2020/04/long-live-toner/">here</a>.</p>
+<h3>Grayscale / B&amp;W image</h3>
+<p>Thread discussion <a href="https://www.imagemagick.org/discourse-server/viewtopic.php?t=21264">here</a>.</p>
+<p>Doing it without dithering:</p>
+<pre><code>convert bone.png -colorspace gray -threshold 80% -type bilevel -resize 200x320\! bone4.bmp
+</code></pre>
+<h2>Caltopo</h2>
+<p><a href="https://caltopo.com/">Caltopo</a></p>
+<h2>E-Ink setup</h2>
+<p>Link to waveshare guide for 4.2 in e-ink <a href="https://www.waveshare.com/wiki/4.2inch_e-Paper_Module">here</a></p>
+<p>Datasheet is <a href="https://www.waveshare.com/w/upload/6/6a/4.2inch-e-paper-specification.pdf">here</a>.</p>
+<h2>ESP32 Low-power modes</h2>
+<p>There's a nice description <a href="https://lastminuteengineers.com/esp32-sleep-modes-power-consumption/">here</a>.</p>
+<p>Tutorial on using ESP32 deep sleep <a href="https://lastminuteengineers.com/esp32-deep-sleep-wakeup-sources/">here</a>.</p>
+<p>In particular, wakeup from external pin <a href="https://lastminuteengineers.com/esp32-deep-sleep-wakeup-sources/#ext0-external-wakeup-source">here</a>.</p>
+<h2>Low-power ESP32:</h2>
+<ul>
+<li>
+<p>TinyPic project is <a href="https://www.tinypico.com/">here</a>, on sale at Amazon <a href="https://www.amazon.com/gp/product/B07ZZKZDGQ/ref=ppx_yo_dt_b_asin_title_o00_s00?ie=UTF8&amp;psc=1">here</a></p>
+</li>
+<li>
+<p>E-Pulse project is [here](https://thingpulse.com/product/epulse-low-power-esp32-development-board/#:~:text=ePulse%2C%20the%20low%20power%20ESP32,and%2035uA%20(at%2012V).</p>
+</li>
+</ul>
+<h3>Eink experiments</h3>
+<p><img src="/img/eink/map_proto.jpg" alt=""></p>
+<h3>Inspiring projects</h3>
+<p>Arduino APRS project, <a href="http://9w2svt.blogspot.com/2014/12/aprs-arduino-with-map-display.html">here</a>.</p>
+<p><strong>Key project</strong>. Marinus, and APRS display project, <a href="http://hamradioprojects.com/authors/wa5znu/+marinus/">here</a>. Great set of links, here!</p>
+<p>Online code to generate OSM tiles for download is <a href="http://hamradioprojects.com/authors/wa5znu/+marinus/osm/">here</a>.</p>
+<p>Ham Radio for Arduino and Picaxe book --- <a href="http://www.arrl.org/shop/Ham-Radio-for-Arduino-and-PICAXE/">Description</a>, <a href="https://www.amazon.com/Ham-Radio-Arduino-Picaxe-Arrl/dp/087259324X">Amazon</a>.</p>
+<p>Source code for generating tiles from OSM is <a href="http://hamradioprojects.com/authors/wa5znu/+marinus/code/">here</a></p>
+<p>Grid square locator on above site is broken; perhaps <a href="https://www.k2dsl.com/2008/08/27/finding-grid-square-locators/">this</a> works?</p>
+<p>Grid square locator <a href="http://www.arrl.org/grid-squares">here</a>.</p>
+<p>Computing lat / lon <a href="https://stevemorse.org/jcal/latlon.php">here</a>.</p>
+<p>Conant road lat / lon: 42.41158	-71.2983</p>
+<p>Grid square utility <a href="http://www.levinecentral.com/ham/grid_square.php">here</a> works, but doesn't give 10 character grid squares ...</p>
+<p>Another tool is <a href="https://dxcluster.ha8tks.hu/hamgeocoding/">here</a>, which generates a nice overlay ... &lt;-- this is the tool to use!</p>
+<p>So, the combined tools are:</p>
+<ul>
+<li>identifying your grid square in ham radio, <a href="https://dxcluster.ha8tks.hu/hamgeocoding/">here</a>.</li>
+<li>using a python script to grab the tiles, <a href="http://hamradioprojects.com/authors/wa5znu/+marinus/osm/">here</a> -- seems to be broken.</li>
+</ul>
+<p>Example grid square:</p>
+<p>FN42IK44LP</p>
+<h3>Grid Squares</h3>
+<p>Generator <a href="https://dxcluster.ha8tks.hu/hamgeocoding/">here</a>.  Uses a nice open source <a href="https://nominatim.org/">geocoding app</a> that works with OSM.  The author, <a href="https://twitter.com/ha8tks?lang=en">ha8tks</a>, has a <a href="https://github.com/ha8tks/Leaflet.Maidenhead">repo on github</a> that applies the GridSquare layout in Leaflet.</p>
+<p><img src="/img/eink/gridquare.png" alt=""></p>
+<p><img src="/img/eink/weston.png" alt=""></p>
+<p>Reference on gridsquares <a href="https://www.amsat.org/amsat-new/tools/grids.php">here</a></p>
+<p>Ham radio chat on grid squares <a href="https://www.youtube.com/watch?v=3w2SPj5Hs5Q">here</a>.</p>
+<p>General term for this is the <a href="https://en.wikipedia.org/wiki/Maidenhead_Locator_System">Maidenhead Gridsquare System</a>.</p>
+<p>(Alternative:  the <a href="https://en.wikipedia.org/wiki/World_Geodetic_System">World Geodetic System</a>)</p>
+<p>Nice <a href="https://www.hamradio.in/circuits/grid_locator_system.php">explanation</a> of the grid locator system.</p>
+<p>Nice <a href="http://www.jonit.com/fieldlist/maidenhead.htm">historical background</a> on the system.</p>
+<p>Really nice <a href="https://www.youtube.com/watch?v=rlkUAHGw_Sg">video explanation</a> of grid squares.</p>
+<h3>OSM Tiles</h3>
+<p>Guide to tiles <a href="https://wiki.openstreetmap.org/wiki/Tiles">here</a>.</p>
+<p>Tutorial on how to use OSM tiles in an application, <a href="https://switch2osm.org/using-tiles/">here</a>.</p>
+<p>Leaflet providers <a href="http://leaflet-extras.github.io/leaflet-providers/preview/">here</a> &lt;-- really useful survey of free tile providers.</p>
+<p>Good list of <a href="https://wiki.openstreetmap.org/wiki/Hiking_Maps">hiking maps</a></p>
+<hr>
+<p>2020-11-25 10:50:31</p>
+<p>Would be nice to include the GridSquare system in an offline map.  Easily switch between a device and a paper printout.</p>
+<p>How would one overlap on a 'regular' map? Might be neat to try to do via features.  Would need same project I suppose.</p>
+<p>Note that there's a TTGO EINK+ESP32 module <a href="https://www.amazon.com/WEMS-ESP32-EPaper-Module-Speakers/dp/B07B9V1K7H">here</a>.</p>
+<p>E-ink calendar display project <a href="https://github.com/martinberlin/eink-calendar">here</a> for ESP32.</p>
+<h3>Quick tally of hardware costs</h3>
+<p>If custom board:</p>
+<ul>
+<li>pcb: $10</li>
+<li>display: $30</li>
+<li>gps: $5</li>
+<li>micro+passives: $5</li>
+<li>misc: $5</li>
+<li><strong>total</strong>: $55</li>
+</ul>
+<p>can sell for 4X to support project, or around $200?</p>
+<p>If DIY kit:</p>
+<ul>
+<li>pcb: $10</li>
+<li>display: $30</li>
+<li>microcontroller: $20</li>
+<li>SD card: $5</li>
+<li>GPS: $5</li>
+</ul>
+<p>Can sell the PCB + SD card + GPS + screen as a kit for (10+30+5+5)*4 = $200 ... hmm. Maybe if also sell a case ...</p>
+<h3>GPS</h3>
+<p>Sparkfun <a href="https://www.arduino.cc/reference/en/libraries/sparkfun-ublox-arduino-library/">ublox library</a>.</p>
+<p>Various Sparkfun <a href="https://www.sparkfun.com/categories/tags/u-blox">ublox products</a>.</p>
+<p>I think the cheap chip vis a vis ublox is the NEO-6M. That's on the meshtastic, and that's what I'm using via Amazon. E.g. <a href="https://www.amazon.com/DIYmall-AeroQuad-Antenna-Arduino-Aircraft/dp/B01H5FNA4K/ref=sr_1_7?dchild=1&amp;keywords=GPS+U-blox+NEO-6M+Module&amp;qid=1606324327&amp;refinements=p_76%3A2661625011&amp;rps=1&amp;sr=8-7">here</a>.</p>
+<p>This is the 'NEO-6M' item I've been using, <a href="https://www.amazon.com/DIYmall-AeroQuad-Antenna-Arduino-Aircraft/dp/B01H5FNA4K/ref=pd_lpo_147_t_0/138-2479136-9655161?_encoding=UTF8&amp;pd_rd_i=B01H5FNA4K&amp;pd_rd_r=4c20784f-c1a2-486c-b9dc-aa87c28e8ace&amp;pd_rd_w=oiq9h&amp;pd_rd_wg=sPeQk&amp;pf_rd_p=7b36d496-f366-4631-94d3-61b87b52511b&amp;pf_rd_r=TE8WSNWNZTAYDY5AT2RK&amp;psc=1&amp;refRID=TE8WSNWNZTAYDY5AT2RK">here</a>.</p>
+<h3>Designing a PCB for the waveshare</h3>
+<p>Module description is <a href="https://www.waveshare.com/4.2inch-e-paper-module.htm">here</a>.</p>
+<p>Dimensions of module are thus:</p>
+<p><img src="/img/eink/4.2inch-e-Paper-Module-size.jpg" alt=""></p>
+<p><a href="https://www.sparkfun.com/products/10063">5-way tactile switch</a></p>
+<p>Sparfkun <a href="https://www.sparkfun.com/products/9426">thumb slide joystick</a>.</p>
+<p>Two-axis analog thumb joystick <a href="https://www.adafruit.com/product/3103?gclid=CjwKCAiAnvj9BRA4EiwAuUMDf3G_fkelMEeerVZsKheGOKmEEHHC8dTNP6ZO3IY1C-4tmHcKU-vbJBoC7bUQAvD_BwE">from adafruit</a>.</p>
+<hr>
+<p>2021-02-14 11:23:13</p>
+<p>Interesting thread on plus codes, MRGR, etc -- <a href="https://news.ycombinator.com/item?id=18646485">https://news.ycombinator.com/item?id=18646485</a></p>
+<p>The nicest viz of the map: <a href="https://dxcluster.ha8tks.hu/hamgeocoding/">https://dxcluster.ha8tks.hu/hamgeocoding/</a></p>
+<hr>
+<p>2021-02-27 16:30:18</p>
+<p>Note that there is a new GxEPD library -- GxEPD2 -- should check it out!</p>
+<hr>
+<p>2021-03-17 11:41:44</p>
+<p>Nice article on hiking and mapping: <a href="https://blog.mapillary.com/community/2017/04/07/mapping-hiking-routes-openstreetmap-mapillary.html">https://blog.mapillary.com/community/2017/04/07/mapping-hiking-routes-openstreetmap-mapillary.html</a></p>
+<hr>
+<p>2021-03-17 11:44:27</p>
+<p>Leaflet trails plugin here: <a href="https://github.com/Raruto/leaflet-trails">https://github.com/Raruto/leaflet-trails</a></p>
+<hr>
+<p>2021-03-17 12:01:19</p>
+<p>From Dave S.:</p>
+<p>Minimalist display lib:</p>
+<p>The library I used is the lcdgfx library which should be right in the list of Arduino libraries.</p>
+<p>Here's the code.  As you can see, the interface to it is quite different than
+the standard 1306 library.  You do a display.fill to clear the display
+and then use the display.printFixed function to write strings at a specific row/column location (those coordinates are in pixels with column followed by row.  I'll put the whole code below but here are the include and some of the display functions I used in setup() to show an startup message:</p>
+<pre><code>#include &quot;lcdgfx.h&quot;
+
+DisplaySSD1306_128x64_I2C display(-1); // This line is suitable for most platforms by default
+
+setup() {
+display.setFixedFont( ssd1306xled_font6x8 );
+display.begin();
+display.fill(0x00);
+display.setFixedFont(ssd1306xled_font6x8);
+display.printFixed (0,  8, &quot;Starting...&quot;, STYLE_NORMAL);
+}
+</code></pre>
+<p>Here's the full sketch:</p>
+<pre><code>
+----------------------------------
+
+#include &lt;LowPower.h&gt;
+
+#include &lt;SPI.h&gt;
+#include &lt;Wire.h&gt;
+#include &lt;RH_RF95.h&gt;
+#include &quot;lcdgfx.h&quot;
+#include &lt;SoftwareSerial.h&gt;
+
+SoftwareSerial Serial1(3, 4); // RX, TX
+
+DisplaySSD1306_128x64_I2C display(-1); // This line is suitable for most platforms by default
+
+// radio pins for mothbot
+#define RFM95_CS 8
+#define RFM95_RST 7
+#define RFM95_INT 2
+
+// Change to 434.0 or other frequency, must match RX's freq!
+#define RF95_FREQ 434.0
+
+// Singleton instance of the radio driver
+RH_RF95 rf95(RFM95_CS, RFM95_INT);
+
+#define LED 14
+
+void types(String a) { Serial.println(&quot;it's a String&quot;); }
+void types(int a) { Serial.println(&quot;it's an int&quot;); }
+void types(char *a) { Serial.println(&quot;it's a char*&quot;); }
+void types(float a) { Serial.println(&quot;it's a float&quot;); }
+void types(bool a) { Serial.println(&quot;it's a bool&quot;); }
+
+void setup()
+{
+  pinMode(LED, OUTPUT);
+
+  pinMode(RFM95_RST, OUTPUT);
+  digitalWrite(RFM95_RST, HIGH);
+
+  Serial.begin(115600);
+  //  while (!Serial) {
+  //    delay(1);
+  //  }
+  Serial1.begin(9600);
+  delay(100);
+  display.setFixedFont( ssd1306xled_font6x8 );
+  display.begin();
+  display.fill(0x00);
+  display.setFixedFont(ssd1306xled_font6x8);
+  display.printFixed (0,  8, &quot;Starting...&quot;, STYLE_NORMAL);
+  Serial.println(&quot;Starting...&quot;);
+//  display.printFixed (0, 16, &quot;Line 2. Bold text&quot;, STYLE_BOLD);
+//  display.printFixed (0, 24, &quot;Line 3. Italic text&quot;, STYLE_ITALIC);
+//  display.printFixedN (0, 32, &quot;Line 4. Double size&quot;, STYLE_BOLD, FONT_SIZE_2X);
+
+  delay(1000);
+  
+  // manual reset
+  digitalWrite(RFM95_RST, LOW);
+  delay(10);
+  digitalWrite(RFM95_RST, HIGH);
+  delay(10);
+
+  while (!rf95.init()) {
+    Serial.println(F(&quot;LoRa radio init failed&quot;));
+    Serial.println(F(&quot;Uncomment '#define SERIAL_DEBUG' in RH_RF95.cpp for detailed debug info&quot;));
+    while (1);
+  }
+  Serial.println(F(&quot;LoRa radio init OK!&quot;));
+
+  // Defaults after init are 434.0MHz, modulation GFSK_Rb250Fd250, +13dbM
+  if (!rf95.setFrequency(RF95_FREQ)) {
+    Serial.println(F(&quot;setFrequency failed&quot;));
+    while (1);
+  }
+  Serial.print(F(&quot;Set Freq to: &quot;)); Serial.println(RF95_FREQ);
+
+  // Defaults after init are 434.0MHz, 13dBm, Bw = 125 kHz, Cr = 4/5, Sf = 128chips/symbol, CRC on
+
+  // The default transmitter power is 13dBm, using PA_BOOST.
+  // If you are using RFM95/96/97/98 modules which uses the PA_BOOST transmitter pin, then
+  // you can set transmitter powers from 5 to 23 dBm:
+  rf95.setTxPower(5, false);
+}
+
+int16_t packetnum = 0;  // packet counter, we increment per xmission
+
+void loop()
+{
+  //LowPower.idle(SLEEP_8S, ADC_OFF, TIMER2_OFF, TIMER1_OFF, TIMER0_OFF, 
+  //        SPI_OFF, USART0_OFF, TWI_OFF);
+   // LowPower.powerDown(SLEEP_8S, ADC_OFF, BOD_OFF);  
+  int start_time = millis();
+  // read battery voltage and convert to 10ths of volts
+  int voltsX10 = round(10* 2 * 3.3 *analogRead(A3)/1023);
+  voltsX10=25; //  *** REMOVE THIS WHEN BATTERY USED ***
+  // read temp/humid/press
+
+  int countBuffer = 0;
+  // Empty the software serial buffer
+  while (Serial1.available()) {
+    Serial1.read();
+    countBuffer++;
+  }
+
+  Serial.print(F(&quot;Cleared Buffer: &quot;));
+  Serial.println(countBuffer);
+  
+  // wait for an R
+  while (!Serial1.available() || Serial1.read() != 'R')
+  {
+    //Wait for an 'R' that significes the start of a message
+    //  from the Maxbotix
+  }
+  //Read the distance measurement
+  char buff[5]=&quot;    &quot;;
+  int count = 0;
+  while (count &lt; 4) {
+    char c = Serial1.read();
+    if (int(c) == -1) {
+      continue;
+    }else {
+      buff[count] = c;
+      count++;
+    }   
+  }
+  buff[4] = 0;
+  display.fill(0x00);
+  digitalWrite(LED, HIGH);
+  delay(5);
+  digitalWrite(LED, LOW);
+  char radiopacket[25] = &quot;D&quot;;
+  //itoa(packetnum, radiopacket + 13, 10);
+  strcat(radiopacket, buff);
+  strcat(radiopacket, &quot;mm&quot;);
+  char voltStr[3];
+  itoa(voltsX10, voltStr, 10);
+  strcat(radiopacket, voltStr);
+  strcat(radiopacket, &quot;v&quot;);
+  char seq[2];
+  itoa(packetnum%10, seq, 10);
+  strcat(radiopacket, seq);
+  packetnum++;
+  Serial.print(F(&quot;Sending Msg: &quot;));
+  Serial.println(radiopacket);
+  delay(10);
+  display.printFixed (0,  0, &quot;Sending...&quot;, STYLE_NORMAL);
+  display.printFixed (0, 8, radiopacket, STYLE_NORMAL);
+  
+  radiopacket[19] = 0;
+  rf95.send((uint8_t *)radiopacket, 20);
+
+  delay(10);
+  rf95.waitPacketSent();
+  
+
+  // Now wait for a reply
+  uint8_t buf[RH_RF95_MAX_MESSAGE_LEN];
+  uint8_t len = sizeof(buf);
+
+  if (rf95.waitAvailableTimeout(1000))
+  {
+    // Should be a reply message for us now
+    if (rf95.recv(buf, &amp;len))
+    {
+      // delay(500);
+      digitalWrite(LED, HIGH);
+      delay(5);
+      digitalWrite(LED, LOW);
+      display.printFixed (0,  24, &quot;Reply:&quot;, STYLE_NORMAL);
+      display.printFixed (0, 36, (char*)buf, STYLE_NORMAL);
+      display.printFixed (0, 48, &quot;RSSI:&quot;, STYLE_NORMAL);
+      char rs[5];
+      itoa(rf95.lastRssi(), rs,10);
+      display.printFixed (40, 48, rs, STYLE_NORMAL);
+      digitalWrite(LED, LOW);
+    }
+    else
+    {
+      Serial.println(F(&quot;Receive failed&quot;));
+    }
+  }
+  else
+  {
+    Serial.println(F(&quot;No reply, is there a listener around?&quot;));
+    display.printFixed (0, 24, &quot;No Reply&quot;, STYLE_NORMAL);
+    display.printFixed (0, 36, &quot;Anyone There?&quot;, STYLE_NORMAL);
+  }
+  delay(1000);
+  display.fill(0x00);
+  delay(8000);           
+  int end_time = millis();
+  Serial.print(F(&quot;Loop duration: &quot;));Serial.println(end_time - start_time);
+}
+</code></pre>
+<p>Article comparing libraries: <a href="https://www.best-microcontroller-projects.com/ssd1306.html">https://www.best-microcontroller-projects.com/ssd1306.html</a></p>
+<hr>
+<p>2021-03-17 12:12:23</p>
+<p>Nice overview of leaflet layers: <a href="https://leaflet-extras.github.io/leaflet-providers/preview/">https://leaflet-extras.github.io/leaflet-providers/preview/</a></p>
+<p>Another implementation of Maidenhead in Leaflet: <a href="https://gitlab.com/IvanSanchez/leaflet.maidenhead">https://gitlab.com/IvanSanchez/leaflet.maidenhead</a></p>
+<p>Nice explanation of the gridsquare formula here: <a href="https://ham.stackexchange.com/questions/221/how-can-one-convert-from-lat-long-to-grid-square">https://ham.stackexchange.com/questions/221/how-can-one-convert-from-lat-long-to-grid-square</a></p>
+<p>Way of converting code to the bounds of the square here: <a href="https://ham.stackexchange.com/questions/6114/convert-maidenhead-grid-square-to-lat-long-in-excel">https://ham.stackexchange.com/questions/6114/convert-maidenhead-grid-square-to-lat-long-in-excel</a></p>
+<p>lat: =(CODE(MID(A1,2,1))-65)*10 + VALUE(MID(A1,4,1)) + (CODE(MID(A1,6,1))-97)/24 + 1/48 - 90</p>
+<p>lon: =(CODE(MID(A1,1,1))-65)*20 + VALUE(MID(A1,3,1))*2 + (CODE(MID(A1,5,1))-97)/12 + 1/24 - 180</p>
+<hr>
+<p>2021-03-18 16:38:49</p>
+<p>Working version of mothboth trip here: <a href="https://github.com/edgecollective/mothbot-trip/tree/2183b1aae56f516f98a047230a68cd2553ea982e/ver_0.1-alpha/mothbot_getLoc">https://github.com/edgecollective/mothbot-trip/tree/2183b1aae56f516f98a047230a68cd2553ea982e/ver_0.1-alpha/mothbot_getLoc</a></p>
+<hr>
+<p>2021-03-18 17:29:40</p>
+<p>Bayou with gridsquares: <a href="https://gitlab.com/p-v-o-s/agroeco/bayou/-/tree/34ef9184bed1363f8898ec28e746165d1d451f58">https://gitlab.com/p-v-o-s/agroeco/bayou/-/tree/34ef9184bed1363f8898ec28e746165d1d451f58</a></p>
+<p>Mothbot w/ gridsquares: <a href="https://github.com/edgecollective/mothbot-trip/tree/bb1cc43d0a44d89632f710a618f8f8e894ab33a2">https://github.com/edgecollective/mothbot-trip/tree/bb1cc43d0a44d89632f710a618f8f8e894ab33a2</a></p>
+<hr>
+<p>2021-03-18 17:43:02</p>
+<p>Working url for bayou w/ gridsquares for now: http://192.168.1.163:5000/data/srercz3pjhsu/gridsquare/2</p>
+<hr>
+<p>2021-03-19 13:39:45</p>
+<p>1.54 in e-ink -- <a href="https://www.aliexpress.com/item/33044560386.html?src=google&amp;albch=shopping&amp;acnt=708-803-3821&amp;isdl=y&amp;slnk=&amp;plac=&amp;mtctp=&amp;albbt=Google_7_shopping&amp;aff_platform=google&amp;aff_short_key=UneMJZVf&amp;&amp;albagn=888888&amp;isSmbAutoCall=false&amp;needSmbHouyi=false&amp;albcp=1582410664&amp;albag=59754279756&amp;trgt=743612850874&amp;crea=en33044560386&amp;netw=u&amp;device=c&amp;albpg=743612850874&amp;albpd=en33044560386&amp;gclid=Cj0KCQjwl9GCBhDvARIsAFunhskAztz-CQQkCjD1O8Lmx1vdRxf57xUijdA-lED-6VsmU3RzPM0chX0aAle7EALw_wcB&amp;gclsrc=aw.ds">ali express</a></p>
+<hr>
+<p>2021-03-19 16:54:40</p>
+<p>SSD1306 power saving -- https://forum.arduino.cc/index.php?topic=565996.0</p>
+<p>Article on OLED with powersave: <a href="https://bengoncalves.wordpress.com/2015/10/01/oled-display-and-arduino-with-power-save-mode/">https://bengoncalves.wordpress.com/2015/10/01/oled-display-and-arduino-with-power-save-mode/</a></p>
+<hr>
+<p>2021-03-19 21:16:33</p>
+<p>Added a gridsquare demo repo codebase here:</p>
+<p><a href="https://github.com/edgecollective/leaflet-gridsquare">https://github.com/edgecollective/leaflet-gridsquare</a></p>
+<hr>
+<p>2021-03-20 11:27:36</p>
+<p>Gps sleep for NEO-6M -- <a href="https://forum.arduino.cc/index.php?topic=497410.0">https://forum.arduino.cc/index.php?topic=497410.0</a></p>
+<p>Sending sleep command to Adafruit GPS <a href="https://forums.adafruit.com/viewtopic.php?f=19&amp;t=28121">https://forums.adafruit.com/viewtopic.php?f=19&amp;t=28121</a></p>
+<p>Really great thread here: GPS sleep mode described here: <a href="https://forums.adafruit.com/viewtopic.php?f=31&amp;p=547903">https://forums.adafruit.com/viewtopic.php?f=31&amp;p=547903</a></p>
+<hr>
+<p>2021-03-20 11:45:37</p>
+<p>Distances, deg minute sec <a href="https://www.usgs.gov/faqs/how-much-distance-does-a-degree-minute-and-second-cover-your-maps?qt-news_science_products=0#qt-news_science_products">https://www.usgs.gov/faqs/how-much-distance-does-a-degree-minute-and-second-cover-your-maps?qt-news_science_products=0#qt-news_science_products</a></p>
+<hr>
+<p>2021-03-21 11:10:33</p>
+<p>e-ink feather friend <a href="https://learn.adafruit.com/assets/86035">https://learn.adafruit.com/assets/86035</a></p>
+<p>selection guide -- https://www.amazon.com/Waveshare-Resolution-Electronic-Controller-Three-Color/dp/B074P3LWJQ/ref=sr_1_3?dchild=1&amp;keywords=1.54+in+eink+raw&amp;qid=1616340057&amp;sr=8-3</p>
+<p>black and white e-ink supports partial refresh, can refresh in 2 sec rather than 8 sec ...</p>
+<p>sparkfun ublox library <a href="https://github.com/sparkfun/SparkFun_u-blox_GNSS_Arduino_Library">https://github.com/sparkfun/SparkFun_u-blox_GNSS_Arduino_Library</a></p>
+<p>adafruit gfx library <a href="https://learn.adafruit.com/adafruit-gfx-graphics-library/graphics-primitives">https://learn.adafruit.com/adafruit-gfx-graphics-library/graphics-primitives</a></p>
+<hr>
+<p>2021-03-22 09:50:48</p>
+<p>advantages of e-ink <a href="https://www.electronicdesign.com/technologies/embedded-revolution/article/21805149/11-myths-about-epaper-displays">https://www.electronicdesign.com/technologies/embedded-revolution/article/21805149/11-myths-about-epaper-displays</a></p>
+<p>UTM method for topographic maps <a href="https://www.usgs.gov/faqs/what-does-term-utm-mean-utm-better-or-more-accurate-latitudelongitude?qt-news_science_products=0#qt-news_science_products">https://www.usgs.gov/faqs/what-does-term-utm-mean-utm-better-or-more-accurate-latitudelongitude?qt-news_science_products=0#qt-news_science_products</a></p>
+<p>exploring options for diy waterproofing <a href="https://hackaday.com/2017/12/26/exploring-options-for-diy-waterproofing/">https://hackaday.com/2017/12/26/exploring-options-for-diy-waterproofing/</a></p>
+<hr>
+<p>2021-03-24 10:48:02</p>
+<p><a href="https://github.com/noopkat/avrgirl-arduino">https://github.com/noopkat/avrgirl-arduino</a></p>
+<p><a href="https://github.com/spaceneedle/Chromeduino">https://github.com/spaceneedle/Chromeduino</a></p>
+<p><a href="http://meow.noopkat.com/the-avrgirl-project-an-introduction/">http://meow.noopkat.com/the-avrgirl-project-an-introduction/</a></p>
+<p><a href="https://chrome.google.com/webstore/detail/avrchick/kpbgbcocfgjbmnpplcjlcammjdkgogba?hl=en">https://chrome.google.com/webstore/detail/avrchick/kpbgbcocfgjbmnpplcjlcammjdkgogba?hl=en</a></p>
+<p><a href="https://github.com/noopkat/oled-js">https://github.com/noopkat/oled-js</a></p>
+<p><a href="https://github.com/avrxml/AS6-Devices-XML/blob/master/ATmega1284P.xml">https://github.com/avrxml/AS6-Devices-XML/blob/master/ATmega1284P.xml</a></p>
+<p><a href="http://archive.fabacademy.org/2016/fablabkamplintfort/students/125/exercise14.html">http://archive.fabacademy.org/2016/fablabkamplintfort/students/125/exercise14.html</a></p>
+<p>compiled .hex using arduino ideo for 1284p</p>
+<p>boards.js of avrgirl-arduino:</p>
+<p>(pretty sure pageSize is correct; not sure about numPages ... just trying to get to 128K )</p>
+<pre><code>  {
+    name: '1284p',
+    baud: 115200,
+    signature: Buffer.from([0x1e, 0x97, 0x05]),
+    pageSize: 256,
+    numPages: 500,
+    timeout: 400,
+    //productId: ['0x0043', '0x7523', '0x0001', '0xea60', '0x6015'],
+    //productPage: 'https://store.arduino.cc/arduino-uno-rev3',
+    protocol: 'stk500v1'
+  },
+</code></pre>
+<p>command:</p>
+<pre><code>node cli.js flash -f Blink_1284.hex -a 1284p -p /dev/ttyUSB0
+</code></pre>
+<hr>
+<p>2021-03-24 13:20:30</p>
+<p>reading software serial RX as pin 13 on 128p4.</p>
+<hr>
+<p>2021-03-24 13:50:33</p>
+<p>neo 6m sleep:</p>
+<ul>
+<li><a href="https://github.com/JoepSchyns/Low_power_TTGO_T-beam">https://github.com/JoepSchyns/Low_power_TTGO_T-beam</a></li>
+</ul>
+<p>The t-beam gps chip (Neo-6m) can be put into sleep by commisioning a power save command using proprietary UBX protocol over Neo's RX TX pins. In normal mode of operation the chip sends out location using NMEA protocol. Switching between these protocols can be done via pin 14 and 15 (see Data Sheet 1.15). However, as can be seen in the image below, these pins are not connected on the T-beam. During testing is established that the Neo does execute UBX commands in NMEA mode but does not send back acknowledgements. Therefore UBX commands, such as the sleep command, that do not require acknowledgements work out of the box. Nonetheless, protocols switching pins 14 and 15 are exposed on the t-beam. Thus the pins could be soldered to two GPIO pins by hand. By connectings these pins UBX acknowledgements could be enabled, this is however not an necessity.</p>
+<p>analyzing neo6m module <a href="http://forum.espruino.com/conversations/332295/">http://forum.espruino.com/conversations/332295/</a></p>
+<p>nice video on setup for neo 6m <a href="https://www.youtube.com/watch?v=pHu2yvsFFgw">https://www.youtube.com/watch?v=pHu2yvsFFgw</a></p>
+<p>power saving for ublox <a href="https://ukhas.org.uk/guides:ublox_psm">https://ukhas.org.uk/guides:ublox_psm</a> &lt;-- this is the relevant guide!</p>
+<p><a href="https://github.com/MCUdude/MightyCore">https://github.com/MCUdude/MightyCore</a></p>
+<p><a href="https://hackaday.io/project/25677-chirppp-serial-over-lora">https://hackaday.io/project/25677-chirppp-serial-over-lora</a> serial over lora</p>
+<hr>
+<p>2021-03-25 08:31:45</p>
+<p>Mightyduino <a href="https://www.eevblog.com/forum/projects/mightyduino-diy-arduino-with-atmega644patmega1284p/">https://www.eevblog.com/forum/projects/mightyduino-diy-arduino-with-atmega644patmega1284p/</a></p>
+<p>universal power cord adapter <a href="https://www.amazon.com/YIKU-Universal-5-5x2-1mm-Charging-Connector/dp/B0825SD9ZM/ref=asc_df_B0825SD9ZM/?tag=hyprod-20&amp;linkCode=df0&amp;hvadid=416794793908&amp;hvpos=&amp;hvnetw=g&amp;hvrand=16523120492126351854&amp;hvpone=&amp;hvptwo=&amp;hvqmt=&amp;hvdev=c&amp;hvdvcmdl=&amp;hvlocint=&amp;hvlocphy=9001876&amp;hvtargid=pla-973096075837&amp;psc=1&amp;tag=&amp;ref=&amp;adgrpid=95587149484&amp;hvpone=&amp;hvptwo=&amp;hvadid=416794793908&amp;hvpos=&amp;hvnetw=g&amp;hvrand=16523120492126351854&amp;hvqmt=&amp;hvdev=c&amp;hvdvcmdl=&amp;hvlocint=&amp;hvlocphy=9001876&amp;hvtargid=pla-973096075837">https://www.amazon.com/YIKU-Universal-5-5x2-1mm-Charging-Connector/dp/B0825SD9ZM/ref=asc_df_B0825SD9ZM/?tag=hyprod-20&amp;linkCode=df0&amp;hvadid=416794793908&amp;hvpos=&amp;hvnetw=g&amp;hvrand=16523120492126351854&amp;hvpone=&amp;hvptwo=&amp;hvqmt=&amp;hvdev=c&amp;hvdvcmdl=&amp;hvlocint=&amp;hvlocphy=9001876&amp;hvtargid=pla-973096075837&amp;psc=1&amp;tag=&amp;ref=&amp;adgrpid=95587149484&amp;hvpone=&amp;hvptwo=&amp;hvadid=416794793908&amp;hvpos=&amp;hvnetw=g&amp;hvrand=16523120492126351854&amp;hvqmt=&amp;hvdev=c&amp;hvdvcmdl=&amp;hvlocint=&amp;hvlocphy=9001876&amp;hvtargid=pla-973096075837</a></p>
+<p>-- 6ft 3 pack usb to barrel jack <a href="https://www.amazon.com/3-Pack-2-1mm-Power-Barrel-Connector/dp/B07JGR7JJQ/ref=sr_1_3?dchild=1&amp;keywords=5.5x2.1+mm+usb&amp;qid=1616687264&amp;s=industrial&amp;sr=1-3">https://www.amazon.com/3-Pack-2-1mm-Power-Barrel-Connector/dp/B07JGR7JJQ/ref=sr_1_3?dchild=1&amp;keywords=5.5x2.1+mm+usb&amp;qid=1616687264&amp;s=industrial&amp;sr=1-3</a></p>
+<p>SRAM chip to place <a href="https://www.digikey.com/en/products/detail/microchip-technology/23K256-I-SN/2001113">https://www.digikey.com/en/products/detail/microchip-technology/23K256-I-SN/2001113</a></p>
+<p>standby current: 4 uA</p>
+<p>breakout for max m8q -- https://store.uputronics.com/index.php?route=product/product&amp;product_id=84</p>
+<p>sam m8q digikey <a href="https://www.digikey.com/en/products/detail/u-blox-america-inc/SAM-M8Q-0-10/7393573?utm_adgroup=RF%20Receivers&amp;utm_source=google&amp;utm_medium=cpc&amp;utm_campaign=Shopping_Product_RF%2FIF%20and%20RFID&amp;utm_term=&amp;utm_content=RF%20Receivers&amp;gclid=CjwKCAjw6fCCBhBNEiwAem5SO5nA43zsTMDsK6kBg4TkfYGYzt2dmapmRLDrsuMZJhlDdbG03UjLMhoCxygQAvD_BwE">https://www.digikey.com/en/products/detail/u-blox-america-inc/SAM-M8Q-0-10/7393573?utm_adgroup=RF%20Receivers&amp;utm_source=google&amp;utm_medium=cpc&amp;utm_campaign=Shopping_Product_RF%2FIF%20and%20RFID&amp;utm_term=&amp;utm_content=RF%20Receivers&amp;gclid=CjwKCAjw6fCCBhBNEiwAem5SO5nA43zsTMDsK6kBg4TkfYGYzt2dmapmRLDrsuMZJhlDdbG03UjLMhoCxygQAvD_BwE</a></p>
+<p>sam m8q datasheet <a href="https://www.u-blox.com/en/docs/UBX-16012619">https://www.u-blox.com/en/docs/UBX-16012619</a></p>
+<p>WOAH:</p>
+<p>clone of adafruit featherwing using sam m8q <a href="https://github.com/PaulZC/SAM-M8Q_GPS_FeatherWing/blob/master/LEARN.md">https://github.com/PaulZC/SAM-M8Q_GPS_FeatherWing/blob/master/LEARN.md</a></p>
+<p>clone of adafruti featherwing using max m8q <a href="https://github.com/PaulZC/MAX-M8Q_GPS_FeatherWing">https://github.com/PaulZC/MAX-M8Q_GPS_FeatherWing</a></p>
+<p>interesting projects from paulzc <a href="https://github.com/PaulZC?tab=repositories">https://github.com/PaulZC?tab=repositories</a></p>
+<p>hookup guide for sam m8q <a href="https://learn.sparkfun.com/tutorials/sparkfun-gps-breakout-zoe-m8q-and-sam-m8q-hookup-guide/all">https://learn.sparkfun.com/tutorials/sparkfun-gps-breakout-zoe-m8q-and-sam-m8q-hookup-guide/all</a></p>
+<hr>
+<p>2021-03-25 14:30:50</p>
+<p>gps basics written by sparkfun <a href="https://learn.sparkfun.com/tutorials/gps-basics">https://learn.sparkfun.com/tutorials/gps-basics</a></p>
+<p>sam m8q breakout from sparkun schematic: <a href="https://cdn.sparkfun.com/assets/3/c/2/2/e/SparkFun_Ublox_SAM-M8Q.pdf">https://cdn.sparkfun.com/assets/3/c/2/2/e/SparkFun_Ublox_SAM-M8Q.pdf</a></p>
+<p>sam m8q feather wing schematic: <a href="https://github.com/PaulZC/SAM-M8Q_GPS_FeatherWing/blob/master/SAM-M8Q_GPS_FeatherWing.pdf">https://github.com/PaulZC/SAM-M8Q_GPS_FeatherWing/blob/master/SAM-M8Q_GPS_FeatherWing.pdf</a></p>
+<p>En is a true 'power disable' control line you can use to completely cut power to the SAM-M8Q. This is good if you need to run at ultra-low-power modes. By default this is pulled low (enabled). So pull high (to 3V) to disable the SAM-M8Q.</p>
+<p>data on hot start / warm start neo 6m: <a href="https://portal.u-blox.com/s/question/0D52p00008HKEEpCAP/i-have-been-using-a-neo-6m-how-do-i-ensure-that-it-always-performs-a-hot-start-every-time-it-powers-up">https://portal.u-blox.com/s/question/0D52p00008HKEEpCAP/i-have-been-using-a-neo-6m-how-do-i-ensure-that-it-always-performs-a-hot-start-every-time-it-powers-up</a></p>
+<p>p channel mosfet</p>
+<p><a href="https://www.digikey.com/en/products/detail/diodes-incorporated/DMG3415U-7/2052768">https://www.digikey.com/en/products/detail/diodes-incorporated/DMG3415U-7/2052768</a></p>
+<p>eink friend schematic <a href="https://cdn-learn.adafruit.com/assets/assets/000/057/645/original/adafruit_products_schem.png?1531712746">https://cdn-learn.adafruit.com/assets/assets/000/057/645/original/adafruit_products_schem.png?1531712746</a></p>
+<hr>
+<p>2021-03-26 19:41:58</p>
+<p>eink friend: <a href="https://cdn-learn.adafruit.com/assets/assets/000/086/035/original/adafruit_products_Feather_eInk_Friend_sch.png?1576774972">https://cdn-learn.adafruit.com/assets/assets/000/086/035/original/adafruit_products_Feather_eInk_Friend_sch.png?1576774972</a></p>
+<p>eink feather friend: <a href="https://cdn-learn.adafruit.com/assets/assets/000/086/035/original/adafruit_products_Feather_eInk_Friend_sch.png?1576774972">https://cdn-learn.adafruit.com/assets/assets/000/086/035/original/adafruit_products_Feather_eInk_Friend_sch.png?1576774972</a></p>
+<p><a href="https://hackaday.com/2015/07/24/it-keeps-on-going-and-arduino-edition/">https://hackaday.com/2015/07/24/it-keeps-on-going-and-arduino-edition/</a></p>
+<pre><code>70 μA is a huge amount of current for a sleeping microcontroller. In a well-designed system, sleep currents under 1μA should be quite possible. I haven’t watched the whole video, but here are some general strategies, in no particular order:
+
+* Turn off all unnecessary clocks, and run necessary clocks as slow as possible while sleeping. If you can get by with just waking up on an external interrupt, all clocks can be off while asleep. If you need to wake up periodically, use a low-power RC oscillator (like the one for the watchdog timer on the mega328p). When powered on, there is a tradeoff: a faster clock requires more power, but means that the work can be finished and the chip can go back to sleep sooner.
+
+* Use the power reduction registers to turn off all unused peripherals all the time, and used peripherals when they are not needed, especially if there isn’t a long reinitialization time when powering them back on.
+
+* Turn on the pull-up resistors on all unused GPIO pins. If they are left floating, the inputs might flip back and forth randomly, needlessly consuming power.
+
+* Turn off brownout detection if you can. It consumes a significant amount of power. If erratic behavior (and possible memory corruption) is intolerable when your batteries are dying, some microcontrollers have a sampled BOD mode that uses much less power. You can also implement this yourself in software with an ADC and bandgap (or other stable reference), checking your system voltage only periodically (like once a day) and shutting down before it gets too low.
+
+* Voltage dividers, like the one for the photocell in this project, consume power—current flows from power to ground through the two series resistors. Size the resistors as large as practically possible, and bias the voltage divider with a GPIO pin that can be turned off when the sensor is not needed rather than just tying it to Vcc.
+
+* Voltage regulators can have significant quiescent current draw. If at all possible, power the circuit directly from batteries without a regulator. A pair of AAs, or a CR2032 coin cell are both good 3V supplies, and most microcontrollers are very happy with this. If regulators must be used, specifically choose ones with very low quiescent draw.
+
+* Electrolytic capacitors can also have high leakage currents—avoid them in power supplies or choose low-leakage versions.
+
+* Rechargeable batteries are generally a poor choice for long-life low power applications. Self-discharge rates can often be higher than the load of the circuit itself! Non-rechargeable lithium batteries are a good in these applications.
+
+* Generally, less power is consumed at lower voltages, so running as low as is practical can be advantageous. However, often sensors and other devices will have higher voltage requirements than the MCU, and the complexity (and additional power draw) of translating between multiple voltages often isn’t worth it, nor is regulating down from whatever battery voltages are available (unless it’s a significant drop and you’re using good switching regulators). Depending on your battery chemistry, running at the minimum voltage might also mean that you can only run your battery down so far before you start browning out.
+</code></pre>
+<pre><code>Instead of a transistor I prefer a (second) LDO with low quiescent current draq like the TPS 783xx with enable input. So you can power-off all external components not needed.
+I do a lot of low power applications at work (with MSP, never had to handle Atmel for low power) and with the “usual” tricks you and bdm mentioned &gt;1uA applications are no problem
+So here we go, throw your AA batteries out of the desing an go with a cr2302 cell, easy as 123 :D
+</code></pre>
+<p>tps783xx <a href="https://www.ti.com/lit/ds/symlink/tps783.pdf?ts=1616850726580&amp;ref_url=https%253A%252F%252Fwww.google.com%252F">https://www.ti.com/lit/ds/symlink/tps783.pdf?ts=1616850726580&amp;ref_url=https%253A%252F%252Fwww.google.com%252F</a></p>
+<p>total supply on device needed:</p>
+<ul>
+<li>gps: 67 mA</li>
+<li></li>
+</ul>
+<p>so:</p>
+<ul>
+<li>use MCP1702/3 for main LDO</li>
+<li>use ap2112k-3.3 to power subcircuit</li>
+<li>uno might only do eink and gps</li>
+<li>atmega adds sd card and lora</li>
+<li>pinouts for other displays?</li>
+</ul>
+<p>uno-based version that uses oled and gps and uno and is all dip</p>
+<p>smt version should use SAM or CAM M8Q</p>
+<hr>
+<p>2021-03-27 19:36:11</p>
+<p><a href="https://www.eevblog.com/forum/beginners/potting-a-battery/">https://www.eevblog.com/forum/beginners/potting-a-battery/</a></p>
+<pre><code>Have you considered using AA batteries ? 
+
+You can get lithium based AA batteries like Energizer Ultimate Lithium that have something like 3500mAh at around 1.4v..1.7v ... see : http://data.energizer.com/pdfs/l91.pdf
+They're not cheap at around 2-3$ each but it's way cheaper than your 14$ battery. 
+Regular alkaline AA batteries get close to 2500-2800 mAh and discharge down to around 1..1.2v
+
+You can buy battery holders that solder to the circuit board and then you can pot everything leaving just the battery contacts on the outside. Then insert battery and use hot glue or that selastic / flexible gunk / whatever... something to lock it in the battery holder to prevent vibrations from breaking contact.
+
+
+There are microcontrollers that run from battery but if you need 3v, why not just use a very efficient voltage doubler IC... would be over 95% efficient at a few mA of current.
+Here's some examples: 
+1. TPS6031x series : 0.9v..1.8v , 2 outputs,  1: 2xVin max 40mA, 2: regulated 3.3v 20mA  up to 90% efficiency : http://www.ti.com/lit/ds/symlink/tps60310.pdf
+2. TPS6030x series : pretty much same thing? http://www.ti.com/lit/ds/symlink/tps60300.pdf
+
+The above are ~ 1.7$ in 10pcs or higher and need only 5 ceramic capacitors to work. This + battery is still way cheaper than 14$
+
+There's also very efficient switching regulators.. here's ex
+
+&lt;1$ / 10+ pcs TLV61225 - min 0.7v in, fixed 3.3v out, 94% efficiency, needs only 2 ceramic caps and inductor  : http://www.ti.com/lit/ds/symlink/tlv61225.pdf
+There's also TLV61224, 
+
+TPS61261 - min 0.8v, fixed 3.3v out or adjustable options, up to 95% efficiency, same min. parts : http://www.ti.com/lit/ds/symlink/tps61260.pdf
+
+Even when you add the price of a surface mounted ceramic inductor and a bunch of ceramic capacitors, you're still below 2$.
+
+There's loads of microcontrollers from Microchip that use less power and can run at lower voltages (like 1.8v..3.6v for example). There's also Silicon Labs with their BusyBee micros that can work at low voltages and they're quite nice micros.
+</code></pre>
+<p><a href="https://www.ti.com/lit/ds/symlink/tlv61225.pdf">https://www.ti.com/lit/ds/symlink/tlv61225.pdf</a></p>
+<p><a href="https://www.e-education.psu.edu/geog585/node/708">https://www.e-education.psu.edu/geog585/node/708</a></p>
+<p>multiple spi buses in the atmega1284p <a href="https://feilipu.me/2015/02/17/avr-atmega-usart-spi-mspim/">https://feilipu.me/2015/02/17/avr-atmega-usart-spi-mspim/</a></p>
+<hr>
+<p>2021-03-28 17:51:24</p>
+<p>Rotary position switch digikey <a href="https://www.digikey.com/en/products/detail/grayhill-inc/94HBB16T/726321">https://www.digikey.com/en/products/detail/grayhill-inc/94HBB16T/726321</a></p>
+<p>nice rotary switch SMT digikey <a href="https://www.digikey.com/en/products/detail/nidec-copal-electronics/SH-7010TB/2057868">https://www.digikey.com/en/products/detail/nidec-copal-electronics/SH-7010TB/2057868</a></p>
+<p>through hole, black, nice color <a href="https://www.digikey.com/en/products/detail/nidec-copal-electronics/SD-2010/948380">https://www.digikey.com/en/products/detail/nidec-copal-electronics/SD-2010/948380</a> &lt;---- this is the one to get!!</p>
+<p>1000 uF capacitor <a href="https://www.digikey.com/en/products/detail/nichicon/UVZ1A102MPD1TD/4342138?utm_adgroup=Aluminum%20Electrolytic%20Capacitors&amp;utm_source=google&amp;utm_medium=cpc&amp;utm_campaign=Shopping_Product_Capacitors_NEW&amp;utm_term=&amp;utm_content=Aluminum%20Electrolytic%20Capacitors&amp;gclid=Cj0KCQjw0oCDBhCPARIsAII3C_EvNOyYeWGjdHGnfCCgVUi6RgGF35Gjn5o3K1FT3lty7302KYbdnSgaAj5EEALw_wcB">https://www.digikey.com/en/products/detail/nichicon/UVZ1A102MPD1TD/4342138?utm_adgroup=Aluminum%20Electrolytic%20Capacitors&amp;utm_source=google&amp;utm_medium=cpc&amp;utm_campaign=Shopping_Product_Capacitors_NEW&amp;utm_term=&amp;utm_content=Aluminum%20Electrolytic%20Capacitors&amp;gclid=Cj0KCQjw0oCDBhCPARIsAII3C_EvNOyYeWGjdHGnfCCgVUi6RgGF35Gjn5o3K1FT3lty7302KYbdnSgaAj5EEALw_wcB</a></p>
+<p>garmin foretex <a href="https://www.amazon.com/Garmin-010-01772-00-Foretrex-601-inches/dp/B073NXKWYN/ref=psdc_2230642011_t1_B07RTD2PMT?th=1">https://www.amazon.com/Garmin-010-01772-00-Foretrex-601-inches/dp/B073NXKWYN/ref=psdc_2230642011_t1_B07RTD2PMT?th=1</a></p>
+<p>military grid reference system <a href="https://en.wikipedia.org/wiki/Military_Grid_Reference_System">https://en.wikipedia.org/wiki/Military_Grid_Reference_System</a></p>
+<p>mgrs vs maidenhead <a href="https://www.usna.edu/Users/oceano/pguth/md_help/html/mgrs_utm.htm">https://www.usna.edu/Users/oceano/pguth/md_help/html/mgrs_utm.htm</a></p>
+<hr>
+<p>2021-03-29 09:10:01</p>
+<p><img src="/img/eink/signal-2021-03-29-090916.jpeg" alt=""></p>
+<hr>
+<p>2021-03-31 08:37:52</p>
+<p>espruino discussion on nordic chip <a href="http://forum.espruino.com/conversations/351086/">here</a></p>
+<p>discussion of nrf52840 <a href="https://forum.arduino.cc/index.php?topic=636292.0">here</a></p>
+<p>continued <a href="https://forum.arduino.cc/index.php?topic=673224.0">here</a> ---</p>
+<hr>
+<p>2021-03-31 09:05:26</p>
+<p>Cave pearl post on the atmega1284p <a href="https://thecavepearlproject.org/2020/05/11/build-an-atmega-1284p-based-data-logger/">https://thecavepearlproject.org/2020/05/11/build-an-atmega-1284p-based-data-logger/</a></p>
+<hr>
+<p>2021-03-31 09:25:20</p>
+<p>dual screens <a href="https://thecavepearlproject.org/2020/11/15/adding-two-oled-displays-to-your-arduino-logger-with-no-library/">https://thecavepearlproject.org/2020/11/15/adding-two-oled-displays-to-your-arduino-logger-with-no-library/</a></p>
+<p>espruino firmware esp32 <a href="http://www.esp32learning.com/information/espruino-on-an-esp32.php">http://www.esp32learning.com/information/espruino-on-an-esp32.php</a></p>
+<p><a href="https://www.espruino.com/ESP32">https://www.espruino.com/ESP32</a></p>
+<hr>
+<p>2021-03-31 13:01:06</p>
+<p>ESP32-S2 -- circuitpython -- sleep! Magtag -- [https://www.adafruit.com/product/4800][https://www.adafruit.com/product/4800]</p>
+<p>adafruit magtag -<a href="https://www.digikey.com/catalog/en/partgroup/adafruit-magtag-2-9-grayscale-e-ink-wi-fi-display/113912">https://www.digikey.com/catalog/en/partgroup/adafruit-magtag-2-9-grayscale-e-ink-wi-fi-display/113912</a></p>
+<p>on digikey <a href="https://www.digikey.com/en/products/detail/adafruit-industries-llc/4800/13616787?s=N4IgjCBcoLQBxVAYygMwIYBsDOBTANCAPZQDa4ArAEwIC6AvvYVWSACxwAMnIDQA">https://www.digikey.com/en/products/detail/adafruit-industries-llc/4800/13616787?s=N4IgjCBcoLQBxVAYygMwIYBsDOBTANCAPZQDa4ArAEwIC6AvvYVWSACxwAMnIDQA</a></p>
+<p>itsy bitsy bluefruit <a href="https://learn.adafruit.com/adafruit-itsybitsy-nrf52840-express">https://learn.adafruit.com/adafruit-itsybitsy-nrf52840-express</a></p>
+<p>meshtastic dicussion around keyboard <a href="https://meshtastic.discourse.group/t/autonomous-device-with-q10-keyboard-and-ili9341/438/13">https://meshtastic.discourse.group/t/autonomous-device-with-q10-keyboard-and-ili9341/438/13</a></p>
+<p>nice docs for lora communicator project <a href="https://github.com/manacake/docs.greycat.co/">https://github.com/manacake/docs.greycat.co/</a></p>
+<p>nice github repo for blackberry keyboard <a href="https://github.com/arturo182/BBQ10KBD">https://github.com/arturo182/BBQ10KBD</a></p>
+<p>blackberry q10 adafruit description <a href="https://blog.adafruit.com/2019/01/14/interfacing-a-blackberry-q10-keyboard-into-your-microcontroller-project-blackberry-arduino-microcontroller/">https://blog.adafruit.com/2019/01/14/interfacing-a-blackberry-q10-keyboard-into-your-microcontroller-project-blackberry-arduino-microcontroller/</a></p>
+<p>and arduino thread <a href="https://forum.arduino.cc/index.php?topic=355709.0">https://forum.arduino.cc/index.php?topic=355709.0</a></p>
+<p>q10 keyboard on ebay <a href="https://www.ebay.com/c/1731749316">https://www.ebay.com/c/1731749316</a></p>
+<p>and on eevblog here <a href="https://www.eevblog.com/forum/beginners/how-to-connect-to-a-very-very-challanging-blackberry-q10-keyboard-connector/msg735622/#msg735622">https://www.eevblog.com/forum/beginners/how-to-connect-to-a-very-very-challanging-blackberry-q10-keyboard-connector/msg735622/#msg735622</a></p>
+<p>stm32 bootloader vis espruino <a href="http://www.espruino.com/Serial+Bootloader">http://www.espruino.com/Serial+Bootloader</a></p>
+<hr>
+<p>2021-03-31 17:18:40</p>
+<p>ble uart <a href="https://learn.adafruit.com/circuitpython-ble-libraries-on-any-computer/ble-uart-example">https://learn.adafruit.com/circuitpython-ble-libraries-on-any-computer/ble-uart-example</a></p>
+<p>Q10 on Ebay <a href="https://www.ebay.com/c/1731749316">https://www.ebay.com/c/1731749316</a></p>
+<p>nice library for ublox modules <a href="https://github.com/loginov-rocks/UbxGps">https://github.com/loginov-rocks/UbxGps</a></p>
+<p>sam m8q on digikey <a href="https://www.digikey.com/en/products/detail/u-blox/SAM-M8Q-0-10/7393574">https://www.digikey.com/en/products/detail/u-blox/SAM-M8Q-0-10/7393574</a> -- $25</p>
+<p>max m8q on digikey <a href="https://www.digikey.com/en/products/detail/u-blox/MAX-M8Q-0/6150636">https://www.digikey.com/en/products/detail/u-blox/MAX-M8Q-0/6150636</a> -- $21</p>
+<p>ble uart <a href="https://learn.adafruit.com/bluefruit-le-connect">https://learn.adafruit.com/bluefruit-le-connect</a></p>
+<p><a href="https://www.hackster.io/mitchwongho/read-phone-notifications-using-esp-eb0ad4">https://www.hackster.io/mitchwongho/read-phone-notifications-using-esp-eb0ad4</a></p>
+<p><a href="https://play.google.com/store/apps/details?id=com.lianhezhuli.btnotification">https://play.google.com/store/apps/details?id=com.lianhezhuli.btnotification</a></p>
+<p><a href="https://play.google.com/store/apps/details?id=com.lhzl.mtwearpro">https://play.google.com/store/apps/details?id=com.lhzl.mtwearpro</a></p>
+<hr>
+<p>2021-04-07 20:31:34</p>
+<p>images over lora</p>
+<p>https://github.com/javl/slowimage
+and -- oh goodness!  https://ieeexplore.ieee.org/document/8875321
+both on transmitting images via lora
+￼
+and -- oooh! https://blog.adafruit.com/2020/11/24/transmitting-sound-and-image-over-a-lora-link-lora-radio/
+https://github.com/bwhitman/loracamera</p>
+<p>https://github.com/rxi/lite</p>
+<p>https://www.oregon.gov/deq/FilterDocs/latlonginstr.pdf</p>
+<p>https://www.topozone.com/</p>
+<p>https://hackaday.com/2021/04/07/an-esp32-walkie-talkie-for-those-spy-radio-moments/</p>
+
+
+    </div>
+  </body>
+</html>
