@@ -1,4 +1,0 @@
-Sitemap: http://edgeresearch.io/sitemapindex.xml
-
-User-Agent: *
-Host: edgeresearch.io
