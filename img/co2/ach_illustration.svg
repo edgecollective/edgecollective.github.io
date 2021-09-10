@@ -68,6 +68,21 @@
          style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1"
          transform="scale(0.8) rotate(180) translate(12.5,0)" />
     </marker>
+    <marker
+       inkscape:isstock="true"
+       style="overflow:visible"
+       id="marker2002-3"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Lend">
+      <path
+         inkscape:connector-curvature="0"
+         transform="matrix(-0.8,0,0,-0.8,-10,0)"
+         style="fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.00000003pt;stroke-opacity:1"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path2000-6" />
+    </marker>
   </defs>
   <sodipodi:namedview
      id="base"
@@ -76,9 +91,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.7"
-     inkscape:cx="-543.24125"
-     inkscape:cy="968.79422"
+     inkscape:zoom="0.49497475"
+     inkscape:cx="-472.25554"
+     inkscape:cy="1072.7393"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -105,14 +120,18 @@
      id="layer1">
     <g
        id="g2441"
-       transform="matrix(1.0000644,0,0,0.9193545,0.00946525,-2.3765254)">
+       transform="matrix(0.90988856,0,0,0.91937563,-5.8811849,-4.6452951)"
+       style="stroke:none"
+       inkscape:export-filename="/home/dwblair/ach_room.png"
+       inkscape:export-xdpi="251.543"
+       inkscape:export-ydpi="251.543">
       <rect
          y="-48.095535"
          x="-270.62863"
          height="182.56905"
          width="247.19737"
          id="rect2400"
-         style="fill:#ffffff;stroke:#000000;stroke-width:0.43201885;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0" />
+         style="fill:#ffffff;stroke:none;stroke-width:0.43201885;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0" />
     </g>
     <rect
        style="fill:#ffffff;stroke:#000000;stroke-width:0.31356847;stroke-miterlimit:4;stroke-dasharray:0.94070535, 0.31356845;stroke-dashoffset:0"
@@ -121,7 +140,10 @@
        height="72.697311"
        x="-253.93152"
        y="-101.85283"
-       transform="matrix(0.91533019,-0.40270417,0,1,0,0)" />
+       transform="matrix(0.91533019,-0.40270417,0,1,0,0)"
+       inkscape:export-filename="/home/dwblair/ach_room.png"
+       inkscape:export-xdpi="251.543"
+       inkscape:export-ydpi="251.543" />
     <rect
        style="fill:#ffffff;stroke:#000000;stroke-width:0.31356847;stroke-miterlimit:4;stroke-dasharray:0.94070536, 0.31356845;stroke-dashoffset:0"
        id="rect10-3"
@@ -129,15 +151,24 @@
        height="72.697311"
        x="74.064148"
        y="30.232395"
-       transform="matrix(-0.91533019,-0.40270416,0,1,0,0)" />
+       transform="matrix(-0.91533019,-0.40270416,0,1,0,0)"
+       inkscape:export-filename="/home/dwblair/ach_room.png"
+       inkscape:export-xdpi="251.543"
+       inkscape:export-ydpi="251.543" />
     <path
        style="fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        d="m -67.79315,73.103763 -82.31902,36.480647 -82.31902,-36.480637 v 0"
        id="path57"
-       inkscape:connector-curvature="0" />
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/dwblair/ach_room.png"
+       inkscape:export-xdpi="251.543"
+       inkscape:export-ydpi="251.543" />
     <g
        id="g914"
-       transform="matrix(1,-0.44636225,0,1,-201.09808,-73.888335)">
+       transform="matrix(1,-0.44636225,0,1,-201.09808,-73.888335)"
+       inkscape:export-filename="/home/dwblair/ach_room.png"
+       inkscape:export-xdpi="251.543"
+       inkscape:export-ydpi="251.543">
       <rect
          transform="matrix(0.99999391,0.00349085,0,1,0,0)"
          y="72.26516"
@@ -174,7 +205,10 @@
     </g>
     <g
        id="g914-5"
-       transform="matrix(-1,-0.44636224,0,1,-76.428,-24.461844)">
+       transform="matrix(-1,-0.44636224,0,1,-76.428,-24.461844)"
+       inkscape:export-filename="/home/dwblair/ach_room.png"
+       inkscape:export-xdpi="251.543"
+       inkscape:export-ydpi="251.543">
       <rect
          transform="matrix(0.99999391,0.00349085,0,1,0,0)"
          y="72.26516"
@@ -210,13 +244,20 @@
          style="fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
     </g>
     <path
-       style="fill:none;stroke:#000000;stroke-width:0.44627741;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow1Lend)"
-       d="m -276.72897,5.750465 c 15.09963,-14.721583 38.61112,-27.260647 60.96757,-19.9265 10.62226,3.93747 16.71434,14.584305 28.66576,16.169873 13.7336,3.68901 30.6579,1.48195 41.53931,11.37685 11.94689,13.075585 8.437,35.475525 26.68632,44.017215 12.28404,6.02265 27.513208,3.0734 37.28185,-5.70821 10.25032,-8.48653 21.15382,-17.57813 35.5302,-18.90981 2.08828,-0.32663 4.20209,-0.51798 6.32001,-0.5599"
+       style="fill:none;stroke:#000000;stroke-width:0.43375877;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow1Lend)"
+       d="m -231.63191,-19.098729 c 10.03241,3.93836 30.77968,19.50240293 42.06745,21.0883294 12.97098,3.689844 28.95549,1.482285 39.23266,11.3794216 11.28349,13.078541 7.9685,35.483545 25.20445,44.027166 11.60192,6.024012 25.985425,3.074095 35.211622,-5.7095 9.681128,-8.488449 19.979165,-17.582104 33.557237,-18.914085 1.972319,-0.326704 3.968751,-0.518097 5.969065,-0.560027"
        id="path951"
-       inkscape:connector-curvature="0" />
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccccc"
+       inkscape:export-filename="/home/dwblair/ach_room.png"
+       inkscape:export-xdpi="251.543"
+       inkscape:export-ydpi="251.543" />
     <g
        id="g1978"
-       transform="translate(-61.98809,-83.910714)">
+       transform="translate(-61.98809,-83.910714)"
+       inkscape:export-filename="/home/dwblair/ach_full.png"
+       inkscape:export-xdpi="251.543"
+       inkscape:export-ydpi="251.543">
       <g
          transform="matrix(1,-0.44636224,0,1,-87.235684,93.466726)"
          id="g914-0">
@@ -310,16 +351,159 @@
          style="fill:#ffffff;stroke:#000000;stroke-width:0.26250792;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0" />
     </g>
     <path
-       style="fill:none;stroke:#000000;stroke-width:0.433;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker2002)"
-       d="m -179.65263,67.946423 c 2.05676,14.63855 16.58246,18.49612 26.16188,14.81271 7.09091,-6.5989 6.47777,-20.61623 2.096,-29.1758"
+       style="fill:none;stroke:#000000;stroke-width:0.36651644;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#marker2002)"
+       d="m -174.3923,70.203572 c 1.71362,12.588614 13.81593,15.905983 21.79718,12.738386 5.9079,-5.674812 5.39705,-17.7292 1.74631,-25.090115"
        id="path1980"
-       inkscape:connector-curvature="0" />
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/dwblair/ach_full.png"
+       inkscape:export-xdpi="251.543"
+       inkscape:export-ydpi="251.543" />
+    <g
+       id="g2441-9"
+       transform="matrix(0.95728898,0,0,0.91937562,-29.767812,199.02834)"
+       style="stroke:none"
+       inkscape:export-filename="/home/dwblair/ach_bare.png"
+       inkscape:export-xdpi="251.543"
+       inkscape:export-ydpi="251.543">
+      <rect
+         y="-48.095535"
+         x="-270.62863"
+         height="182.56905"
+         width="247.19737"
+         id="rect2400-3"
+         style="fill:#ffffff;stroke:none;stroke-width:0.43201885;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0" />
+    </g>
     <rect
-       style="fill:#ffffff;stroke:#ffffff;stroke-width:0.29148793;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0"
-       id="rect2352"
-       width="16.443756"
-       height="59.720234"
-       x="-270.0658"
-       y="-28.815479" />
+       style="fill:#ffffff;stroke:#000000;stroke-width:0.31356847;stroke-miterlimit:4;stroke-dasharray:0.94070536, 0.31356845;stroke-dashoffset:0"
+       id="rect10-1"
+       width="89.933685"
+       height="72.697311"
+       x="-280.41522"
+       y="88.887856"
+       transform="matrix(0.91533019,-0.40270416,0,1,0,0)"
+       inkscape:export-filename="/home/dwblair/ach_bare.png"
+       inkscape:export-xdpi="251.543"
+       inkscape:export-ydpi="251.543" />
+    <rect
+       style="fill:#ffffff;stroke:#000000;stroke-width:0.31356847;stroke-miterlimit:4;stroke-dasharray:0.94070537, 0.31356845;stroke-dashoffset:0"
+       id="rect10-3-9"
+       width="89.933685"
+       height="72.697311"
+       x="100.54784"
+       y="242.30327"
+       transform="matrix(-0.91533019,-0.40270416,0,1,0,0)"
+       inkscape:export-filename="/home/dwblair/ach_bare.png"
+       inkscape:export-xdpi="251.543"
+       inkscape:export-ydpi="251.543" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m -92.034482,274.50953 -82.319018,36.48065 -82.31902,-36.48064 v 0"
+       id="path57-4"
+       inkscape:connector-curvature="0"
+       inkscape:export-filename="/home/dwblair/ach_bare.png"
+       inkscape:export-xdpi="251.543"
+       inkscape:export-ydpi="251.543" />
+    <g
+       id="g914-7"
+       transform="matrix(1,-0.44636224,0,1,-225.33941,127.51744)"
+       inkscape:export-filename="/home/dwblair/ach_bare.png"
+       inkscape:export-xdpi="251.543"
+       inkscape:export-ydpi="251.543">
+      <rect
+         transform="matrix(0.99999391,0.00349085,0,1,0,0)"
+         y="72.26516"
+         x="1.7421743"
+         height="14.153138"
+         width="16.026445"
+         id="rect10-5-3-8"
+         style="fill:#ffffff;stroke:#000000;stroke-width:0.25800079;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path898-4"
+         d="M 1.6036172,74.498117 H 17.840241"
+         style="fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path900-5"
+         d="M 1.6036172,76.903542 H 17.639789"
+         style="fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path902-03"
+         d="M 1.6036172,79.108516 H 17.706606"
+         style="fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path904-61"
+         d="M 1.6036172,81.31349 H 17.639789"
+         style="fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path906-0"
+         d="M 1.8708867,83.785733 H 17.706606"
+         style="fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    </g>
+    <g
+       id="g914-5-6"
+       transform="matrix(-1,-0.44636224,0,1,-100.66932,176.94393)"
+       inkscape:export-filename="/home/dwblair/ach_bare.png"
+       inkscape:export-xdpi="251.543"
+       inkscape:export-ydpi="251.543">
+      <rect
+         transform="matrix(0.99999391,0.00349085,0,1,0,0)"
+         y="72.26516"
+         x="1.7421743"
+         height="14.153138"
+         width="16.026445"
+         id="rect10-5-3-6-3"
+         style="fill:#ffffff;stroke:#000000;stroke-width:0.25800079;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path898-2-2"
+         d="M 1.6036172,74.498117 H 17.840241"
+         style="fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path900-9-0"
+         d="M 1.6036172,76.903542 H 17.639789"
+         style="fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path902-1-6"
+         d="M 1.6036172,79.108516 H 17.706606"
+         style="fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path904-2-1"
+         d="M 1.6036172,81.31349 H 17.639789"
+         style="fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path906-7-5"
+         d="M 1.8708867,83.785733 H 17.706606"
+         style="fill:none;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.3499999px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="-164.79761"
+       y="53.961311"
+       id="text3924"><tspan
+         sodipodi:role="line"
+         id="tspan3922"
+         x="-164.79761"
+         y="53.961311"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.3499999px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;stroke-width:0.26458332">eACH</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.3499999px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="-45.958652"
+       y="34.350178"
+       id="text3924-4"><tspan
+         sodipodi:role="line"
+         id="tspan3922-3"
+         x="-45.958652"
+         y="34.350178"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:6.3499999px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;stroke-width:0.26458332">ACH</tspan></text>
   </g>
 </svg>
