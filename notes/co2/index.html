@@ -3901,6 +3901,29 @@ force calibrate procedure</p>
 <p>One of the boards for which deep sleep is supported: the adafruit nrf express <a href="https://www.adafruit.com/product/4062">https://www.adafruit.com/product/4062</a></p>
 <p>so maybe: feather s2, or nrf express, might be better choice for python, now ... esp if they can deep-sleep in circuitpython ... the sleep current of the nrf chip in particular is likely quite low ... and then bluetooth might be an option!</p>
 <p>Primary guide to the nrf52840, <a href="https://learn.adafruit.com/introducing-the-adafruit-nrf52840-feather">here</a></p>
+<hr>
+<p>2021-10-19 13:31:15</p>
+<p>Learn guide for adafruit scd30 module: <a href="https://learn.adafruit.com/adafruit-scd30">https://learn.adafruit.com/adafruit-scd30</a></p>
+<p>scd30 lib: https://github.com/adafruit/Adafruit_CircuitPython_SCD30</p>
+<p>notes:</p>
+<ul>
+<li>might be nice to move JST a bit to allow for duct tape on sides</li>
+<li>might want to re-expose the reset button</li>
+</ul>
+<p>also! didn't realize -- we can use bluetooth with the esp32 module via circuitpython! can configure over bluetooth ...</p>
+<p>getting cpy wifi up and running:</p>
+<p>https://github.com/adafruit/Adafruit_CircuitPython_ESP32SPI</p>
+<p>read-only issue:
+<a href="https://learn.adafruit.com/adafruit-circuit-playground-express/troubleshooting">https://learn.adafruit.com/adafruit-circuit-playground-express/troubleshooting</a></p>
+<p>oled</p>
+<p><a href="https://learn.adafruit.com/micropython-hardware-ssd1306-oled-display">https://learn.adafruit.com/micropython-hardware-ssd1306-oled-display</a></p>
+<p>(deprecated? see:)</p>
+<p><a href="https://learn.adafruit.com/adafruit-oled-featherwing/python-circuitpython-wiring">https://learn.adafruit.com/adafruit-oled-featherwing/python-circuitpython-wiring</a></p>
+<p>example fonts
+<a href="https://github.com/adafruit/Adafruit_CircuitPython_Bitmap_Font/tree/main/examples/fonts">https://github.com/adafruit/Adafruit_CircuitPython_Bitmap_Font/tree/main/examples/fonts</a></p>
+<hr>
+<p>2021-10-19 17:08:39</p>
+<p>Basic working version for circuitpy is here: <a href="https://gitlab.com/p-v-o-s/co2/co2-monitor/-/blob/36659313a245c6dbeeff2610fb8ea737f8958a48/REV_T/firmware/co2_cpy_v0/poster_oled.py">https://gitlab.com/p-v-o-s/co2/co2-monitor/-/blob/36659313a245c6dbeeff2610fb8ea737f8958a48/REV_T/firmware/co2_cpy_v0/poster_oled.py</a></p>
 
 
     </div>
