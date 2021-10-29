@@ -3933,6 +3933,14 @@ force calibrate procedure</p>
 <p>Dave's co2 analysis repo associated with Belfast PiE experiments: <a href="https://github.com/DaveSprague/co2-analysis">https://github.com/DaveSprague/co2-analysis</a></p>
 <p>Hasbrouck main office data feed <a href="http://bayou.pvos.org/data/kurqr92abvua">http://bayou.pvos.org/data/kurqr92abvua</a></p>
 <p>Added '?ambient' param to <a href="https://github.com/edgecollective/aranet4-plotter">https://github.com/edgecollective/aranet4-plotter</a></p>
+<hr>
+<p>2021-10-29 14:50:55</p>
+<p>deleting all items from table before a given date:</p>
+<pre><code>sudo -i -u postgres
+psql bayou3
+delete from measurements where feed_id=16 and timestamp &lt; '2021-10-28';
+</code></pre>
+<p><img src="/img/co2/co2_ppm_hasbrouck.png" alt=""></p>
 
 
     </div>
