@@ -3941,6 +3941,21 @@ psql bayou3
 delete from measurements where feed_id=16 and timestamp &lt; '2021-10-28';
 </code></pre>
 <p><img src="/img/co2/co2_ppm_hasbrouck.png" alt=""></p>
+<hr>
+<p>2021-11-07 10:21:03</p>
+<p>upgrading firmware on the wifi module ...</p>
+<p>see this issue here:
+<a href="https://github.com/adafruit/Adafruit_CircuitPython_ESP32SPI/issues/123">https://github.com/adafruit/Adafruit_CircuitPython_ESP32SPI/issues/123</a></p>
+<p>which relates to v1.2.2 of the esp32 firmware (which I seem to have).</p>
+<p>fix is to upgrade firmware as per:</p>
+<p><a href="https://learn.adafruit.com/upgrading-esp32-firmware/upgrade-an-external-esp32#upload-serial-passthrough-code-for-feather-or-itsybitsy-3055058-4">https://learn.adafruit.com/upgrading-esp32-firmware/upgrade-an-external-esp32#upload-serial-passthrough-code-for-feather-or-itsybitsy-3055058-4</a></p>
+<p>link to needed uf2 was broken, see better link here:</p>
+<p><a href="https://github.com/adafruit/Adafruit_Learning_System_Guides/tree/main/Adafruit_ESP32_Arduino_Demos/SerialESPPassthrough">https://github.com/adafruit/Adafruit_Learning_System_Guides/tree/main/Adafruit_ESP32_Arduino_Demos/SerialESPPassthrough</a></p>
+<hr>
+<p>2021-11-08 13:48:04</p>
+<p>NOTE: looks like the ESP32 labeled pins on the IBM Airlift add-on are swapped around -- need to check schematic</p>
+<p>Watchdog implementation for REV_L (only need to modify ESP32 pins for REV_T):</p>
+<p><a href="https://gitlab.com/p-v-o-s/co2/co2-monitor/-/tree/956dc86badf6ef1f36e176b83c7ba1b82f4dc5ff/REV_L/firmware/CPY/v2">https://gitlab.com/p-v-o-s/co2/co2-monitor/-/tree/956dc86badf6ef1f36e176b83c7ba1b82f4dc5ff/REV_L/firmware/CPY/v2</a></p>
 
 
     </div>
