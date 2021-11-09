@@ -11,65 +11,24 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="shortcut icon" type="image/x-icon" href="/img/edge_favicon.png" />
-    <title>DIY Low Power Radio Nodes</title>
+    <title>Notes on Ham Radio</title>
   </head>
   <body>
 
     <div id='post-content'>
 
-  <a href="/">Edge Collective</a>:  DIY Low Power Radio Nodes
-        <!-- <h1>DIY Low Power Radio Nodes</h1> -->
+  <a href="/">Edge Collective</a>:  Notes on Ham Radio
+        <!-- <h1>Notes on Ham Radio</h1> -->
 
   
-  <h2>Rough prototype</h2>
-<p>Using a JeeNode and a LoRA FeatherWing ... sleeping at 6 uA!</p>
-<p><img src="/img/lorad/rough.jpg" alt="jee"></p>
-<h2>LoRa Ra-01</h2>
-<p><a href="https://www.openhardware.io/view/395/LoRa-Ra-01-ATmega328P-Node">LoRa Ra-01</a></p>
-<p><img src="/img/lorad/node.jpg" alt="lorad"></p>
-<h2>JeeNode</h2>
-<p><a href="https://jeelabs.org/2009/12/06/building-the-jeenode-v4/">Assembling the JeeNode</a></p>
-<p><img src="/img/lorad/jee_assemble.jpg" alt="jee_assemble"></p>
-<h2>LoRaWAN MiniBrick</h2>
-<p><a href="https://www.tindie.com/products/lps/lorawan-minibrick/">MiniBrick</a></p>
-<p><img src="/img/lorad/minibrick.jpg" alt="minibrick"></p>
-<p>Using the 328p's internal crystal;  and adding a bootloader -- described <a href="https://www.hackster.io/techmirtz/arduino-without-external-clock-crystal-on-atmega328-d4fcc4">here</a>.</p>
-<hr>
-<p>2021-11-09 07:12:30</p>
-<p>Power consumption in CPY using deep sleep ...</p>
-<p>Downloading latest CPY distro for M0 via <a href="https://circuitpython.org/">https://circuitpython.org/</a></p>
-<p>following instructions: <a href="https://circuitpython.readthedocs.io/en/latest/shared-bindings/alarm/index.html">https://circuitpython.readthedocs.io/en/latest/shared-bindings/alarm/index.html</a></p>
-<pre><code>import alarm
-import time
-import board
-import digitalio
-
-led= digitalio.DigitalInOut(board.D13)
-led.direction = digitalio.Direction.OUTPUT
-#print(&quot;Waking up&quot;)
-
-while True:
-
-    # blink
-    for i in range(0,10):
-        led.value=True
-        time.sleep(1)
-        led.value=False
-        time.sleep(1)
-
-    # Set an alarm for 60 seconds from now.
-    time_alarm = alarm.time.TimeAlarm(monotonic_time=time.monotonic() + 10)
-
-    # Deep sleep until the alarm goes off. Then restart the program.
-    alarm.exit_and_deep_sleep_until_alarms(time_alarm)
-</code></pre>
-<p>looks like the M0 sleeps at .03 mA</p>
-<p>Meanwhile, the M4 doesn't seem to recognize the 'alarm' module.</p>
-<p>Code is here: <a href="https://github.com/edgecollective/cpy-lowpower">https://github.com/edgecollective/cpy-lowpower</a></p>
-<hr>
-<p>2021-11-09 10:25:44</p>
-<p>Update: I believe I was misinterpreting what was going on. I may have already had some 'sleep' code running on the board? In any case, 'alarm' doesn't seem to load for either M0 or M4, and isn't listed as an option in the official docs.</p>
-<p>Also tried latest build of CPY for nordic IB, didn't seem to work. Going to try 'vanilla' 7.0 build ...</p>
+  <hr>
+<p>2021-11-09 12:40:30</p>
+<p>Notes on kits: <a href="https://www.hamradiosecrets.com/ham-radio-kits.html">https://www.hamradiosecrets.com/ham-radio-kits.html</a></p>
+<h2>APRS</h2>
+<p>DORJI</p>
+<p><a href="https://www.tindie.com/products/dorji_com/ham-amateur-radio-module-dra818v/">https://www.tindie.com/products/dorji_com/ham-amateur-radio-module-dra818v/</a></p>
+<p><a href="http://squirrelengineering.com/arduino/dra818v-aprs-144-390mhz/">http://squirrelengineering.com/arduino/dra818v-aprs-144-390mhz/</a></p>
+<p><a href="https://hamgear.wordpress.com/2015/02/03/make-your-own-transceiver-with-a-dorji-dra818u-or-dra818v/">https://hamgear.wordpress.com/2015/02/03/make-your-own-transceiver-with-a-dorji-dra818u-or-dra818v/</a></p>
 
 
     </div>

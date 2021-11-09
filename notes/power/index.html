@@ -116,6 +116,19 @@ https://spectrum.ieee.org/electric-bike</a></p>
 <p>which circuit topology? <a href="https://www.embeddedrelated.com/showarticle/98.php">https://www.embeddedrelated.com/showarticle/98.php</a></p>
 <p>punchline -- use a low-side n-channel mosfet</p>
 <p><img src="/img/power/low-side.png" alt=""></p>
+<hr>
+<p>2021-11-09 10:51:45</p>
+<p>Prototyping PMW with an n-channel mosfet ...</p>
+<p>we have an IRF820 here:</p>
+<p><a href="https://www.vishay.com/docs/91059/91059.pdfn%20channel">https://www.vishay.com/docs/91059/91059.pdfn%20channel</a></p>
+<p>Using N-channel mosfet to switch on/off a 12V motor <a href="https://www.youtube.com/watch?v=3PkpOeHTnfo">https://www.youtube.com/watch?v=3PkpOeHTnfo</a></p>
+<p><img src="/img/power/nchannel.png" alt=""></p>
+<p>Nice summary here -- which suggests adding resistor between gate and GPIO <a href="https://electronics.stackexchange.com/questions/235672/for-3-3v-microprocessors-whats-the-best-way-to-power-the-gate-of-a-mosfet">https://electronics.stackexchange.com/questions/235672/for-3-3v-microprocessors-whats-the-best-way-to-power-the-gate-of-a-mosfet</a></p>
+<p>Update:  was not using a logic-level mosfet. Need to grab one.</p>
+<p>e.g. adafruit has a nice one here: <a href="https://cdn-shop.adafruit.com/datasheets/irlb8721pbf.pdf">https://cdn-shop.adafruit.com/datasheets/irlb8721pbf.pdf</a></p>
+<p>IRLB8721PbF</p>
+<p>On Digikey <a href="https://www.digikey.com/en/products/detail/infineon-technologies/IRF4905PBF/812139?utm_adgroup=Transistors%20-%20FETs%2C%20MOSFETs%20-%20Arrays&amp;utm_source=google&amp;utm_medium=cpc&amp;utm_campaign=Shopping_Product_Discrete%20Semiconductor%20Products&amp;utm_term=&amp;utm_content=Transistors%20-%20FETs%2C%20MOSFETs%20-%20Arrays&amp;gclid=CjwKCAiA1aiMBhAUEiwACw25MXYE-ldiuZiNsTnYYP6dHWbSpWETzw8xk-om3lEYsK9ANPzUxUqxuRoCKfkQAvD_BwE">here</a></p>
+<p>Arduino Button wiring / code example: <a href="https://www.arduino.cc/en/Tutorial/BuiltInExamples/Button">https://www.arduino.cc/en/Tutorial/BuiltInExamples/Button</a></p>
 
 
     </div>
