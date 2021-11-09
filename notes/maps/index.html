@@ -11,61 +11,24 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="shortcut icon" type="image/x-icon" href="/img/edge_favicon.png" />
-    <title>DIY Low Power Radio Nodes</title>
+    <title>Mapping tech</title>
   </head>
   <body>
 
     <div id='post-content'>
 
-  <a href="/">Edge Collective</a>:  DIY Low Power Radio Nodes
-        <!-- <h1>DIY Low Power Radio Nodes</h1> -->
+  <a href="/">Edge Collective</a>:  Mapping tech
+        <!-- <h1>Mapping tech</h1> -->
 
   
-  <h2>Rough prototype</h2>
-<p>Using a JeeNode and a LoRA FeatherWing ... sleeping at 6 uA!</p>
-<p><img src="/img/lorad/rough.jpg" alt="jee"></p>
-<h2>LoRa Ra-01</h2>
-<p><a href="https://www.openhardware.io/view/395/LoRa-Ra-01-ATmega328P-Node">LoRa Ra-01</a></p>
-<p><img src="/img/lorad/node.jpg" alt="lorad"></p>
-<h2>JeeNode</h2>
-<p><a href="https://jeelabs.org/2009/12/06/building-the-jeenode-v4/">Assembling the JeeNode</a></p>
-<p><img src="/img/lorad/jee_assemble.jpg" alt="jee_assemble"></p>
-<h2>LoRaWAN MiniBrick</h2>
-<p><a href="https://www.tindie.com/products/lps/lorawan-minibrick/">MiniBrick</a></p>
-<p><img src="/img/lorad/minibrick.jpg" alt="minibrick"></p>
-<p>Using the 328p's internal crystal;  and adding a bootloader -- described <a href="https://www.hackster.io/techmirtz/arduino-without-external-clock-crystal-on-atmega328-d4fcc4">here</a>.</p>
-<hr>
-<p>2021-11-09 07:12:30</p>
-<p>Power consumption in CPY using deep sleep ...</p>
-<p>Downloading latest CPY distro for M0 via <a href="https://circuitpython.org/">https://circuitpython.org/</a></p>
-<p>following instructions: <a href="https://circuitpython.readthedocs.io/en/latest/shared-bindings/alarm/index.html">https://circuitpython.readthedocs.io/en/latest/shared-bindings/alarm/index.html</a></p>
-<pre><code>import alarm
-import time
-import board
-import digitalio
-
-led= digitalio.DigitalInOut(board.D13)
-led.direction = digitalio.Direction.OUTPUT
-#print(&quot;Waking up&quot;)
-
-while True:
-
-    # blink
-    for i in range(0,10):
-        led.value=True
-        time.sleep(1)
-        led.value=False
-        time.sleep(1)
-
-    # Set an alarm for 60 seconds from now.
-    time_alarm = alarm.time.TimeAlarm(monotonic_time=time.monotonic() + 10)
-
-    # Deep sleep until the alarm goes off. Then restart the program.
-    alarm.exit_and_deep_sleep_until_alarms(time_alarm)
-</code></pre>
-<p>looks like the M0 sleeps at .03 mA</p>
-<p>Meanwhile, the M4 doesn't seem to recognize the 'alarm' module.</p>
-<p>Code is here: <a href="https://github.com/edgecollective/cpy-lowpower">https://github.com/edgecollective/cpy-lowpower</a></p>
+  <p><a href="http://9w2svt.blogspot.com/2014/12/aprs-arduino-with-map-display.html">http://9w2svt.blogspot.com/2014/12/aprs-arduino-with-map-display.html</a></p>
+<p><a href="https://unsigned.io/forum/viewtopic.php?id=9">https://unsigned.io/forum/viewtopic.php?id=9</a></p>
+<p><a href="https://towardsdatascience.com/loading-data-from-openstreetmap-with-python-and-the-overpass-api-513882a27fd0">https://towardsdatascience.com/loading-data-from-openstreetmap-with-python-and-the-overpass-api-513882a27fd0</a></p>
+<p><a href="https://morioh.com/p/60ee1bfcd36c">https://morioh.com/p/60ee1bfcd36c</a></p>
+<p><a href="https://github.com/marceloprates/prettymaps">https://github.com/marceloprates/prettymaps</a></p>
+<p>[https://newbedev.com/leaflet-with-custom-map-crs-how-to-convert-jpg-to-tilelayer-tiles]</p>
+<p><a href="https://wiki.openstreetmap.org/wiki/Slippy_map_tilenames">https://wiki.openstreetmap.org/wiki/Slippy_map_tilenames</a></p>
+<p><a href="https://gist.github.com/tonyrewin/9444410">https://gist.github.com/tonyrewin/9444410</a></p>
 
 
     </div>
