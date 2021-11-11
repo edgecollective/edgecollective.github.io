@@ -3956,6 +3956,28 @@ delete from measurements where feed_id=16 and timestamp &lt; '2021-10-28';
 <p>NOTE: looks like the ESP32 labeled pins on the IBM Airlift add-on are swapped around -- need to check schematic</p>
 <p>Watchdog implementation for REV_L (only need to modify ESP32 pins for REV_T):</p>
 <p><a href="https://gitlab.com/p-v-o-s/co2/co2-monitor/-/tree/956dc86badf6ef1f36e176b83c7ba1b82f4dc5ff/REV_L/firmware/CPY/v2">https://gitlab.com/p-v-o-s/co2/co2-monitor/-/tree/956dc86badf6ef1f36e176b83c7ba1b82f4dc5ff/REV_L/firmware/CPY/v2</a></p>
+<hr>
+<p>2021-11-10 16:08:45</p>
+<p>Just pulled out CO2 REV_L test a few minutes ago ...</p>
+<p>Going to add calibration code</p>
+<p>Following tutorial <a href="https://learn.adafruit.com/adafruit-scd30?gclid=Cj0KCQiAsqOMBhDFARIsAFBTN3eeLoluaVmGvJqaC6NMumw3hFXWo92L1jzzbz-9ZtfCTePbVDlEyTAaApX3EALw_wcB">here</a></p>
+<hr>
+<p>2021-11-10 16:33:50</p>
+<p>Checking for watchdog resets -- looks like there was one at 12 PM today:</p>
+<p><a href="http://bayou.pvos.org/data/5wa9caat8kn7?plot_param=aux_1&amp;limit=20000">http://bayou.pvos.org/data/5wa9caat8kn7?plot_param=aux_1&amp;limit=20000</a></p>
+<p><img src="/img/co2/watchdog_reset.png" alt=""></p>
+<p>Note: the event at around 4 PM was when I manually disconnected and reconnected sensor ...</p>
+<hr>
+<p>2021-11-10 17:47:29</p>
+<p>Trying out CPY version of firmware for logger featherwing on a feather m0 ... wondering if there's enough memory ...</p>
+<p>featherwing here: <a href="https://www.adafruit.com/product/2922">https://www.adafruit.com/product/2922</a></p>
+<p>updated to CPY 7.0</p>
+<p>following tutorial here: <a href="https://learn.adafruit.com/adafruit-adalogger-featherwing/circuitpython">https://learn.adafruit.com/adafruit-adalogger-featherwing/circuitpython</a></p>
+<p>assembling rev_t -- quick review -- is the dc-dc oriented properly?</p>
+<p>cui dvx785-500 datasheet: <a href="https://www.cui.com/product/resource/vx78-500.pdf">https://www.cui.com/product/resource/vx78-500.pdf</a></p>
+<p><img src="/img/co2/cui_data_pic.png" alt=""></p>
+<p>Also for reference -- TRACO power modules w/ same footprint: <a href="https://cdn-shop.adafruit.com/datasheets/tsr1.pdf">https://cdn-shop.adafruit.com/datasheets/tsr1.pdf</a></p>
+<p><img src="/img/co2/traco_power.png" alt=""></p>
 
 
     </div>
