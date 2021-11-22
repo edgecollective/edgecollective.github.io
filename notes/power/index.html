@@ -128,6 +128,29 @@ https://spectrum.ieee.org/electric-bike</a></p>
 <p>e.g. adafruit has a nice one here: <a href="https://cdn-shop.adafruit.com/datasheets/irlb8721pbf.pdf">https://cdn-shop.adafruit.com/datasheets/irlb8721pbf.pdf</a></p>
 <p>IRLB8721PbF</p>
 <p>On Digikey <a href="https://www.digikey.com/en/products/detail/infineon-technologies/IRF4905PBF/812139?utm_adgroup=Transistors%20-%20FETs%2C%20MOSFETs%20-%20Arrays&amp;utm_source=google&amp;utm_medium=cpc&amp;utm_campaign=Shopping_Product_Discrete%20Semiconductor%20Products&amp;utm_term=&amp;utm_content=Transistors%20-%20FETs%2C%20MOSFETs%20-%20Arrays&amp;gclid=CjwKCAiA1aiMBhAUEiwACw25MXYE-ldiuZiNsTnYYP6dHWbSpWETzw8xk-om3lEYsK9ANPzUxUqxuRoCKfkQAvD_BwE">here</a></p>
+<hr>
+<p>2021-11-21 11:40:14</p>
+<p>Heater application --</p>
+<p><a href="https://www.reddit.com/r/AskElectronics/comments/1156tx/pwm_for_a_heater_using_nmosfet%C2%B5c/">https://www.reddit.com/r/AskElectronics/comments/1156tx/pwm_for_a_heater_using_nmosfet%C2%B5c/</a></p>
+<p><a href="https://circuitjournal.com/how-to-use-a-p-channel-mosfet-with-an-arduino">https://circuitjournal.com/how-to-use-a-p-channel-mosfet-with-an-arduino</a></p>
+<p><img src="/img/power/motor_circuit.png" alt=""></p>
+<p>IRF4905 <a href="https://www.infineon.com/cms/en/product/power/mosfet/p-channel/irf4905/">https://www.infineon.com/cms/en/product/power/mosfet/p-channel/irf4905/</a> and <a href="https://www.infineon.com/dgdl/Infineon-IRF4905-DataSheet-v01_01-EN.pdf?fileId=5546d462533600a4015355e329b1197e">datasheet</a></p>
+<p><img src="/img/power/irfpins.png" alt=""></p>
+<p>Notes on running heating elements in PWM mode <a href="https://electronics.stackexchange.com/questions/127064/what-are-some-problems-with-running-a-heating-element-in-pwm-mode">https://electronics.stackexchange.com/questions/127064/what-are-some-problems-with-running-a-heating-element-in-pwm-mode</a></p>
+<p>Upshot: can have very slow PWM duty cycle (40 sec say)</p>
+<hr>
+<p>2021-11-21 12:52:16</p>
+<p>IRLB8721PbF datasheet: <a href="https://cdn-shop.adafruit.com/datasheets/irlb8721pbf.pdf">https://cdn-shop.adafruit.com/datasheets/irlb8721pbf.pdf</a></p>
+<p>Upshot: worked nicely as per &quot;Using N-channel mosfet to switch on/off a 12V motor&quot; notes / diagram above; the IRLB8721PbF is an n-channel fet; I'd tried a p-channel accidentally.  N-channels are the one that Mike suggested almost always be used. Diagram:</p>
+<p><img src="/img/power/nchannel.png" alt=""></p>
+<hr>
+<p>2021-11-21 20:12:20</p>
+<p>See this note on duty cycles, &quot;Normal PWM is not suitable for switching heating elements...&quot; here: <a href="https://electronics.stackexchange.com/questions/127064/what-are-some-problems-with-running-a-heating-element-in-pwm-mode">https://electronics.stackexchange.com/questions/127064/what-are-some-problems-with-running-a-heating-element-in-pwm-mode</a></p>
+<p>(actually, looks like this information may be wrong -- PWM might be fine)</p>
+<p>Nice discussion on resistive heating elements <a href="http://www.plctalk.net/qanda/showthread.php?t=116582">http://www.plctalk.net/qanda/showthread.php?t=116582</a></p>
+<p>Good thread on issues around heating -- add a fuse in line, PTC, other -- <a href="https://www.sparkfun.com/news/1340?_ga=2.56045666.891433149.1637516873-163747255.1632182571">https://www.sparkfun.com/news/1340?_ga=2.56045666.891433149.1637516873-163747255.1632182571</a></p>
+<p>Thermal fuse <a href="https://www.amazon.com/Microtemp-Thermal-x2103-Cut-off-Skywalking/dp/B00EC83QES">https://www.amazon.com/Microtemp-Thermal-x2103-Cut-off-Skywalking/dp/B00EC83QES</a></p>
+<p>Digital multimeter fuse <a href="https://www.amazon.com/dp/B07CB968SQ/ref=sspa_dk_detail_5?psc=1&amp;pd_rd_i=B07CB968SQ&amp;pd_rd_w=gvQxl&amp;pf_rd_p=887084a2-5c34-4113-a4f8-b7947847c308&amp;pd_rd_wg=MIXWU&amp;pf_rd_r=4TN41YEQR1R5SBQCJN75&amp;pd_rd_r=ad099993-0585-4191-8205-64fe8257a6ad&amp;spLa=ZW5jcnlwdGVkUXVhbGlmaWVyPUEyN082REpZNEE5VlEwJmVuY3J5cHRlZElkPUEwNjU4NDEwMjY4WEtFS0tQVFA2SSZlbmNyeXB0ZWRBZElkPUEwMjU2MDkwMjNUV1c1WEFNMTE1WCZ3aWRnZXROYW1lPXNwX2RldGFpbCZhY3Rpb249Y2xpY2tSZWRpcmVjdCZkb05vdExvZ0NsaWNrPXRydWU=">https://www.amazon.com/dp/B07CB968SQ/ref=sspa_dk_detail_5?psc=1&amp;pd_rd_i=B07CB968SQ&amp;pd_rd_w=gvQxl&amp;pf_rd_p=887084a2-5c34-4113-a4f8-b7947847c308&amp;pd_rd_wg=MIXWU&amp;pf_rd_r=4TN41YEQR1R5SBQCJN75&amp;pd_rd_r=ad099993-0585-4191-8205-64fe8257a6ad&amp;spLa=ZW5jcnlwdGVkUXVhbGlmaWVyPUEyN082REpZNEE5VlEwJmVuY3J5cHRlZElkPUEwNjU4NDEwMjY4WEtFS0tQVFA2SSZlbmNyeXB0ZWRBZElkPUEwMjU2MDkwMjNUV1c1WEFNMTE1WCZ3aWRnZXROYW1lPXNwX2RldGFpbCZhY3Rpb249Y2xpY2tSZWRpcmVjdCZkb05vdExvZ0NsaWNrPXRydWU=</a></p>
 
 
     </div>
