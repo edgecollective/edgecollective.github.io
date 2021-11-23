@@ -39,6 +39,27 @@ gnuplot&gt;
 </ul>
 <p>~/gitwork/offgrid-heater/v2</p>
 <p><img src="/img/heater/exp1.png" alt=""></p>
+<hr>
+<p>2021-11-22 18:37:23</p>
+<p>In v3, tried two heaters in parallel. Got:</p>
+<p><img src="/img/heater/two_parallel_max.png" alt=""></p>
+<p>Now re-trying one without changing position of temp sensor, for direct comparison ...</p>
+<p><img src="/img/heater/one_max.png" alt=""></p>
+<p>Now re-trying with three in parallel ...</p>
+<p><img src="/img/heater/three_parallel_prelim.png" alt=""></p>
+<p>Testing linearity by plotting equilibrated temp vs pwm for that temp:</p>
+<p><img src="/img/heater/equil_temp_vs_pwm_percent.png" alt=""></p>
+<hr>
+<p>2021-11-23 08:03:59</p>
+<p>Arduino PID <a href="https://www.teachmemicro.com/arduino-pid-control-tutorial/">https://www.teachmemicro.com/arduino-pid-control-tutorial/</a></p>
+<p>Three paralllel heaters:</p>
+<p><img src="/img/heater/three_parallel.png" alt=""></p>
+<p>Note that as of now (2021-11-23 08:06:17) the battery voltage is approx 12V; early in the experiments it was at 13V.</p>
+<p>Now, return to one heater, repeat experiment, see if lower voltage has had an impact ...</p>
+<hr>
+<p>2021-11-23 11:01:49</p>
+<p>Results from one heater experiment. Note that the initial temp was higher, so perhaps easier to reach max temp initially; second run seems to reach lower max temp.</p>
+<p><img src="/img/heater/one_heater_12v.png" alt=""></p>
 
 
     </div>
