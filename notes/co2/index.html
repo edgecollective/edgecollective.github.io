@@ -4016,10 +4016,32 @@ delete from measurements where feed_id=16 and timestamp &lt; '2021-10-28';
 <p>Ideas around running CO2 sensor on low power <a href="https://afterhourscoding.wordpress.com/2021/09/">https://afterhourscoding.wordpress.com/2021/09/</a></p>
 <hr>
 <p>2021-12-02 17:28:09</p>
-<p>IBM4 diode input selection:</p>
-<p><img src="/img/co2/diode_selector.png" alt=""></p>
-<p>Feather M4 diode scenario:</p>
-<p><img src="/img/co2/featherm4_diode.png" alt=""></p>
+<p>IBM4 power circuit (left) vs Feather M4 (right):</p>
+<p><img src="/img/co2/diode_selector.png" alt=""> <img src="/img/co2/featherm4_diode.png" alt=""></p>
+<hr>
+<p>2021-12-05 12:04:39</p>
+<p>Schematics and dimensions for microlipo chargers:</p>
+<p><a href="https://learn.adafruit.com/adafruit-microlipo-and-minilipo-battery-chargers/downloads">https://learn.adafruit.com/adafruit-microlipo-and-minilipo-battery-chargers/downloads</a></p>
+<p>Schematic for IBM4:</p>
+<p><img src="/img/co2/ibm4_schem.png" alt=""></p>
+<hr>
+<p>2021-12-07 13:43:48</p>
+<p>Airlift Featherwing schematic:  <a href="https://cdn-learn.adafruit.com/assets/assets/000/076/198/original/adafruit_products_AirLift_FeatherWing_Sch.png?1559155254">https://cdn-learn.adafruit.com/assets/assets/000/076/198/original/adafruit_products_AirLift_FeatherWing_Sch.png?1559155254</a></p>
+<p>Forum post on switching 3v3 load w/ mosfet -- <a href="https://forum.arduino.cc/t/switching-with-3v3/675483/2">https://forum.arduino.cc/t/switching-with-3v3/675483/2</a></p>
+<blockquote>
+<p>MOSFETs have something called On-Resistance or Rds(on). Basically they act like a series resistor in your circuit. So they will drop a voltage of V = IRds(on). Your MOSFET has a huge Rds(on). At 4.5v it has a resistance of 3 Ohms. So if 300mA of current goes through it it will drop 30.3 ~ 1 volts.</p>
+</blockquote>
+<blockquote>
+<p>You need to get a MOSFET with lower on-resistance. It’s a very important factor in selecting MOSFETs and is usually stated at the top of the datasheet.</p>
+</blockquote>
+<p>Actually, should look at how Feather S2 does it --</p>
+<p>Feather S2 schematic <a href="https://feathers2.io/images/FeatherS2_Schematic.pdf">https://feathers2.io/images/FeatherS2_Schematic.pdf</a></p>
+<p>They control current with this part: <a href="https://www.mouser.com/datasheet/2/308/1/NCP167_D-2316956.pdf">https://www.mouser.com/datasheet/2/308/1/NCP167_D-2316956.pdf</a></p>
+<p>The Adafruit LDO part <a href="https://cdn-shop.adafruit.com/product-files/2471/AP2112.pdf">https://cdn-shop.adafruit.com/product-files/2471/AP2112.pdf</a></p>
+<p>hall effect sensor A3144E</p>
+<p>vibration sensor <a href="https://www.adafruit.com/product/1767">https://www.adafruit.com/product/1767</a></p>
+<p>hall effect sparkfun AH1815 <a href="https://www.sparkfun.com/products/14709">https://www.sparkfun.com/products/14709</a></p>
+<p>on digikey here: <a href="https://www.digikey.com/en/products/detail/diodes-incorporated/AH1815-P-B/5453089">https://www.digikey.com/en/products/detail/diodes-incorporated/AH1815-P-B/5453089</a></p>
 
 
     </div>

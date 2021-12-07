@@ -85,6 +85,42 @@
 <p>LSM303 flora: <a href="https://www.amazon.com/Adafruit-Flora-Accelerometer-Compass-Sensor/dp/B00OKJFELC">https://www.amazon.com/Adafruit-Flora-Accelerometer-Compass-Sensor/dp/B00OKJFELC</a></p>
 <p>LSM303 via adafruit STEMMA: <a href="https://www.adafruit.com/product/4413">https://www.adafruit.com/product/4413</a></p>
 <p>LSM303 in some random Amazon package: <a href="https://www.amazon.com/HiLetgo-LSM303DLHC-Compass-Accelerometer-Magnetometer/dp/B07X3GFKYD/ref=sr_1_1?keywords=LSM303&amp;qid=1638470322&amp;sr=8-1">https://www.amazon.com/HiLetgo-LSM303DLHC-Compass-Accelerometer-Magnetometer/dp/B07X3GFKYD/ref=sr_1_1?keywords=LSM303&amp;qid=1638470322&amp;sr=8-1</a></p>
+<hr>
+<p>2021-12-06 15:18:49</p>
+<p>M0 wake from interrupt code example: <a href="https://github.com/ProjectsByJRP/M0_Sleep_External_Int">https://github.com/ProjectsByJRP/M0_Sleep_External_Int</a></p>
+<p>Also: the RTCZero library is available</p>
+<p>This seems to be the edge-mount SMA part: <a href="https://www.digikey.com/en/products/detail/samtec-inc/SMA-J-P-H-ST-EM1/2602450">https://www.digikey.com/en/products/detail/samtec-inc/SMA-J-P-H-ST-EM1/2602450</a></p>
+<p>Appropriate lora antenna on Digikey: <a href="https://www.digikey.com/en/products/detail/seeed-technology-co.,-ltd/318020389/15277460?utm_adgroup=RF%20Antennas&amp;utm_source=google&amp;utm_medium=cpc&amp;utm_campaign=Shopping_Product_RF%2FIF%20and%20RFID_NEW&amp;utm_term=&amp;utm_content=RF%20Antennas&amp;gclid=CjwKCAiAhreNBhAYEiwAFGGKPACMhG_iZ7Z5NfBJH9PoIr5wcTi-rGeWcapD-65skeYaGehZQl5PVhoCm2UQAvD_BwE">https://www.digikey.com/en/products/detail/seeed-technology-co.,-ltd/318020389/15277460?utm_adgroup=RF%20Antennas&amp;utm_source=google&amp;utm_medium=cpc&amp;utm_campaign=Shopping_Product_RF%2FIF%20and%20RFID_NEW&amp;utm_term=&amp;utm_content=RF%20Antennas&amp;gclid=CjwKCAiAhreNBhAYEiwAFGGKPACMhG_iZ7Z5NfBJH9PoIr5wcTi-rGeWcapD-65skeYaGehZQl5PVhoCm2UQAvD_BwE</a></p>
+<p>QT to male header cable on adafruit: <a href="https://www.adafruit.com/product/4209">https://www.adafruit.com/product/4209</a></p>
+<p>horiztonal JST 4 pin connector / stemma <a href="https://www.adafruit.com/product/4392">https://www.adafruit.com/product/4392</a> -- hor</p>
+<p>vertical (through-hole) JST 4 pin connector: <a href="https://www.adafruit.com/product/4390">https://www.adafruit.com/product/4390</a> -- even nicer! use this on CO2!</p>
+<p>adafruit monochrome OLED 128x64 that works with stemma -- nice find! <a href="https://www.adafruit.com/product/326">https://www.adafruit.com/product/326</a></p>
+<p>image transfer, bluetooth BLE <a href="https://learn.adafruit.com/bluefruit-le-connect/image-transfer">https://learn.adafruit.com/bluefruit-le-connect/image-transfer</a></p>
+<p>tile downloader via OSM: <a href="https://wiki.openstreetmap.org/wiki/OpenLayers_Local_Tiles_Example">https://wiki.openstreetmap.org/wiki/OpenLayers_Local_Tiles_Example</a></p>
+<p>downloading tiles <a href="https://help.openstreetmap.org/questions/43792/can-i-download-osm-tiles-for-offline-use">https://help.openstreetmap.org/questions/43792/can-i-download-osm-tiles-for-offline-use</a></p>
+<p>openmaptiles <a href="https://openmaptiles.org/">https://openmaptiles.org/</a></p>
+<p>create vector tiles from openstreetmap <a href="https://openmaptiles.org/docs/generate/generate-openmaptiles/">https://openmaptiles.org/docs/generate/generate-openmaptiles/</a></p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/GxnbLshM1iM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<p>openlayers with tile coords for debugging <a href="https://openlayers.org/en/latest/examples/canvas-tiles.html">https://openlayers.org/en/latest/examples/canvas-tiles.html</a></p>
+<hr>
+<p>2021-12-07 10:51:27</p>
+<p>Adafruit TFT display I have for testing: <a href="https://www.adafruit.com/product/358">https://www.adafruit.com/product/358</a></p>
+<p>Associated product tutorial: <a href="https://learn.adafruit.com/1-8-tft-display/downloads">https://learn.adafruit.com/1-8-tft-display/downloads</a></p>
+<p>imagemagick create 24 bit bitmap:</p>
+<blockquote>
+<p>convert 2color.bmp -type truecolor 24bit.bmp</p>
+</blockquote>
+<p>resize:</p>
+<blockquote>
+<p>convert dragon_sm.gif    -resize 64x64</p>
+</blockquote>
+<p>If use '^', it will fill the image based on smallest dimension:</p>
+<blockquote>
+<p>convert dragon_sm.gif    -resize 64x64^</p>
+</blockquote>
+<p>Simple plotting code using Adafruit graphics library:</p>
+<p><a href="https://forum.arduino.cc/t/another-free-graph-function-for-plotting-in-cartesian-space/354751">https://forum.arduino.cc/t/another-free-graph-function-for-plotting-in-cartesian-space/354751</a></p>
+<p>Waveshare display <a href="https://www.amazon.com/gp/product/B0728BJTZC/ref=sw_img_1?smid=&amp;psc=1">https://www.amazon.com/gp/product/B0728BJTZC/ref=sw_img_1?smid=&amp;psc=1</a></p>
 
 
     </div>
