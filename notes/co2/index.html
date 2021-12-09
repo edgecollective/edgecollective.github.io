@@ -4038,10 +4038,24 @@ delete from measurements where feed_id=16 and timestamp &lt; '2021-10-28';
 <p>Feather S2 schematic <a href="https://feathers2.io/images/FeatherS2_Schematic.pdf">https://feathers2.io/images/FeatherS2_Schematic.pdf</a></p>
 <p>They control current with this part: <a href="https://www.mouser.com/datasheet/2/308/1/NCP167_D-2316956.pdf">https://www.mouser.com/datasheet/2/308/1/NCP167_D-2316956.pdf</a></p>
 <p>The Adafruit LDO part <a href="https://cdn-shop.adafruit.com/product-files/2471/AP2112.pdf">https://cdn-shop.adafruit.com/product-files/2471/AP2112.pdf</a></p>
-<p>hall effect sensor A3144E</p>
-<p>vibration sensor <a href="https://www.adafruit.com/product/1767">https://www.adafruit.com/product/1767</a></p>
-<p>hall effect sparkfun AH1815 <a href="https://www.sparkfun.com/products/14709">https://www.sparkfun.com/products/14709</a></p>
-<p>on digikey here: <a href="https://www.digikey.com/en/products/detail/diodes-incorporated/AH1815-P-B/5453089">https://www.digikey.com/en/products/detail/diodes-incorporated/AH1815-P-B/5453089</a></p>
+<p>Is this the proper JST PH for the waveshare e-ink? <a href="https://www.digikey.com/en/products/detail/jst-sales-america-inc./A08SUR08SUR32W51B/6009364?utm_adgroup=Rectangular%20Cable%20Assemblies&amp;utm_source=google&amp;utm_medium=cpc&amp;utm_campaign=Shopping_Product_Cable%20Assemblies_NEW&amp;utm_term=&amp;utm_content=Rectangular%20Cable%20Assemblies&amp;gclid=Cj0KCQiAzMGNBhCyARIsANpUkzPgNJXx5moiChPy3_BWiicQZtJ8WywE0vjAIpTDepZcRlipH-7Es6waArgeEALw_wcB">https://www.digikey.com/en/products/detail/jst-sales-america-inc./A08SUR08SUR32W51B/6009364?utm_adgroup=Rectangular%20Cable%20Assemblies&amp;utm_source=google&amp;utm_medium=cpc&amp;utm_campaign=Shopping_Product_Cable%20Assemblies_NEW&amp;utm_term=&amp;utm_content=Rectangular%20Cable%20Assemblies&amp;gclid=Cj0KCQiAzMGNBhCyARIsANpUkzPgNJXx5moiChPy3_BWiicQZtJ8WywE0vjAIpTDepZcRlipH-7Es6waArgeEALw_wcB</a> -- with white cables.</p>
+<p>Yes, seems -- the PH JST connector is 2.0 mm ... <a href="https://cdn-shop.adafruit.com/datasheets/17311.pdf">https://cdn-shop.adafruit.com/datasheets/17311.pdf</a></p>
+<p>This is an 8-position cable: <a href="https://www.digikey.com/en/products/detail/jst-sales-america-inc/A08KR08KR26E51A/6194792">https://www.digikey.com/en/products/detail/jst-sales-america-inc/A08KR08KR26E51A/6194792</a> -- with blue cables</p>
+<p>Ah -- it's socket to socket --</p>
+<p>So, maybe for now we just rely on the waveshare cabling ...a</p>
+<p>Adafruit e-ink breakout friend: <a href="https://www.adafruit.com/product/4224">https://www.adafruit.com/product/4224</a></p>
+<p>Note: in the waveshare code, needed to use this:</p>
+<blockquote>
+<p>#include &lt;GxGDEH0154D67/GxGDEH0154D67.h&gt;  // 1.54&quot; b/w</p>
+</blockquote>
+<p>Included fonts in adafruit graphics lib: <a href="https://learn.adafruit.com/adafruit-gfx-graphics-library/using-fonts">https://learn.adafruit.com/adafruit-gfx-graphics-library/using-fonts</a></p>
+<p>Adafruit e-ink display: <a href="https://www.adafruit.com/product/4196">https://www.adafruit.com/product/4196</a></p>
+<p>That part on digikey: <a href="https://www.digikey.com/en/products/detail/adafruit-industries-llc/4196/10060722">https://www.digikey.com/en/products/detail/adafruit-industries-llc/4196/10060722</a></p>
+<p>Extra tall female header on Pi <a href="https://www.adafruit.com/product/1979">https://www.adafruit.com/product/1979</a></p>
+<p>Extra tall male header?</p>
+<p>Sparkfun RPI extra tall header <a href="https://www.digikey.com/en/products/detail/sparkfun-electronics/PRT-14017">https://www.digikey.com/en/products/detail/sparkfun-electronics/PRT-14017</a></p>
+<p>Sparkfun elevated header <a href="https://www.digikey.com/en/products/detail/sparkfun-electronics/PRT-16764/12686344?utm_adgroup=Rectangular%20Connectors%20-%20Headers%2C%20Receptacles%2C%20Female%20Sockets&amp;utm_source=google&amp;utm_medium=cpc&amp;utm_campaign=Shopping_Product_Connectors%2C%20Interconnects_NEW&amp;utm_term=&amp;utm_content=Rectangular%20Connectors%20-%20Headers%2C%20Receptacles%2C%20Female%20Sockets&amp;gclid=Cj0KCQiAzMGNBhCyARIsANpUkzNFbSbrEKyLV-1zhTH32pz3zMSeM6-q51GH2f8Ycnzh2GUAMQl39M8aAmwqEALw_wcB">https://www.digikey.com/en/products/detail/sparkfun-electronics/PRT-16764/12686344?utm_adgroup=Rectangular%20Connectors%20-%20Headers%2C%20Receptacles%2C%20Female%20Sockets&amp;utm_source=google&amp;utm_medium=cpc&amp;utm_campaign=Shopping_Product_Connectors%2C%20Interconnects_NEW&amp;utm_term=&amp;utm_content=Rectangular%20Connectors%20-%20Headers%2C%20Receptacles%2C%20Female%20Sockets&amp;gclid=Cj0KCQiAzMGNBhCyARIsANpUkzNFbSbrEKyLV-1zhTH32pz3zMSeM6-q51GH2f8Ycnzh2GUAMQl39M8aAmwqEALw_wcB</a></p>
+<p>and this is their grayscale version: <a href="https://www.digikey.com/en/products/detail/adafruit-industries-llc/4741/13426655?utm_adgroup=Display%20Modules%20-%20LCD%2C%20OLED%2C%20Graphic&amp;utm_source=google&amp;utm_medium=cpc&amp;utm_campaign=Shopping_Product_Optoelectronics&amp;utm_term=&amp;utm_content=Display%20Modules%20-%20LCD%2C%20OLED%2C%20Graphic&amp;gclid=Cj0KCQiAzMGNBhCyARIsANpUkzP3lNvMilUHS7GpyURSzXB895xQgkj6tqucAFz9KVdT2-OBrcMHPwgaArvCEALw_wcB">https://www.digikey.com/en/products/detail/adafruit-industries-llc/4741/13426655?utm_adgroup=Display%20Modules%20-%20LCD%2C%20OLED%2C%20Graphic&amp;utm_source=google&amp;utm_medium=cpc&amp;utm_campaign=Shopping_Product_Optoelectronics&amp;utm_term=&amp;utm_content=Display%20Modules%20-%20LCD%2C%20OLED%2C%20Graphic&amp;gclid=Cj0KCQiAzMGNBhCyARIsANpUkzP3lNvMilUHS7GpyURSzXB895xQgkj6tqucAFz9KVdT2-OBrcMHPwgaArvCEALw_wcB</a></p>
 
 
     </div>
