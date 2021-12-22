@@ -4088,7 +4088,7 @@ Contact Length - Post
 </blockquote>
 <p>adafruit lipo charger <a href="https://www.adafruit.com/product/4410">https://www.adafruit.com/product/4410</a></p>
 <p>Board layout:  [https://learn.adafruit.com/assets/83636](https://learn.adafruit.com/assets/836360</p>
-<p><img src="/img/co2/adafruit_products_USB-C_MicroLipo_Charger_Fab_Print..png" alt=""></p>
+<p><img src="/img/co2/adafruit_products_USB-C_MicroLipo_Charger_Fab_Print.png" alt=""></p>
 <hr>
 <p>2021-12-13 16:15:29</p>
 <p><img src="/img/co2/rev_v_config_1.png" alt=""></p>
@@ -4133,6 +4133,51 @@ Contact Length - Post
 <p>'Flat' button in kicad:</p>
 <p><img src="/img/co2/flat_button.png" alt=""></p>
 <p><img src="/img/co2/flat_button_foot.png" alt=""></p>
+<p>Experiment with capacitor to ground in mosfet setup:</p>
+<p><img src="/img/co2/adafruit_products_USB-C_MicroLipo_Charger_Fab_Print.png" alt=""></p>
+<hr>
+<p>2021-12-20 09:20:03</p>
+<p>Sharp memory display (adafruit) datasheet: <a href="https://cdn-shop.adafruit.com/product-files/3502/Data+sheet.pdf">https://cdn-shop.adafruit.com/product-files/3502/Data+sheet.pdf</a></p>
+<p>128x128 display on digikey -- many avail!! <a href="https://www.digikey.com/en/products/detail/sharp-microelectronics/LS013B7DH03/5300387?utm_adgroup=Display%20Modules%20-%20LCD%2C%20OLED%2C%20Graphic&amp;utm_source=google&amp;utm_medium=cpc&amp;utm_campaign=Shopping_Product_Optoelectronics&amp;utm_term=&amp;utm_content=Display%20Modules%20-%20LCD%2C%20OLED%2C%20Graphic&amp;gclid=Cj0KCQiA8ICOBhDmARIsAEGI6o0HqA3PzTMOWEsJbinLhPHk30Klc9dSMITXiTTgADQpFi6HW5b89hcaAmMlEALw_wcB">https://www.digikey.com/en/products/detail/sharp-microelectronics/LS013B7DH03/5300387?utm_adgroup=Display%20Modules%20-%20LCD%2C%20OLED%2C%20Graphic&amp;utm_source=google&amp;utm_medium=cpc&amp;utm_campaign=Shopping_Product_Optoelectronics&amp;utm_term=&amp;utm_content=Display%20Modules%20-%20LCD%2C%20OLED%2C%20Graphic&amp;gclid=Cj0KCQiA8ICOBhDmARIsAEGI6o0HqA3PzTMOWEsJbinLhPHk30Klc9dSMITXiTTgADQpFi6HW5b89hcaAmMlEALw_wcB</a></p>
+<p>40 pin TFT friend <a href="https://www.adafruit.com/product/1932">https://www.adafruit.com/product/1932</a></p>
+<p>144x168 (raw) sharp display <a href="https://www.digikey.com/en/products/detail/sharp-microelectronics/LS013B7DH05/5799456">https://www.digikey.com/en/products/detail/sharp-microelectronics/LS013B7DH05/5799456</a></p>
+<p><a href="https://www.tindie.com/products/TheRengineer/sharp-memory-lcd-breakout-and-library/">https://www.tindie.com/products/TheRengineer/sharp-memory-lcd-breakout-and-library/</a></p>
+<p>breakout for sharp lcd displays <a href="https://www.tindie.com/products/kuzyatech/sharp-memory-lcd-breakout-a2/">https://www.tindie.com/products/kuzyatech/sharp-memory-lcd-breakout-a2/</a></p>
+<p>Nice description of the parts <a href="http://kuzyatech.com/sharp-memory-lcd-breakout-a2">http://kuzyatech.com/sharp-memory-lcd-breakout-a2</a></p>
+<p>Ah!! Reflective makes them readable in daylight -- and the 128x128 might not be readable -- so we want the reflective one, I think <a href="https://hackaday.com/2013/07/01/working-with-very-cool-lcd-modules-from-sharp/">https://hackaday.com/2013/07/01/working-with-very-cool-lcd-modules-from-sharp/</a></p>
+<hr>
+<p>2021-12-20 20:52:16</p>
+<p><img src="/img/co2/adafruit_sharp.jpg" alt=""></p>
+<hr>
+<p>2021-12-21 16:19:42</p>
+<p>128x128</p>
+<p><img src="/img/co2/128_wiring.png" alt=""></p>
+<p>d13 -- esp32
+d12 -- esp32
+d11 -- esp32
+d10 -- esp32 gpio0 | rtcmicrosd cs</p>
+<p>d9 -- q1 (co2 power)
+d6 -- q2 (display power)
+d5 -- 128 cs | sharp cs</p>
+<p>a0 -- jumper to dio1 ?
+a1 -- 128 dc
+a2 -- 128 rst (?)
+a3 -- write permit
+a4 -- button a
+a5 -- button b</p>
+<p>128 CLK --&gt; SCK
+128 DATA --&gt; MOSI</p>
+<p>sharp CLK --&gt; SCK
+sharp DI --&gt; MOSI</p>
+<p><a href="https://github.com/adafruit/Adafruit-Sharp-Memory-Display-PCBs">https://github.com/adafruit/Adafruit-Sharp-Memory-Display-PCBs</a></p>
+<p>sharp screen placement:</p>
+<p>github repo for adafruit sharp display:</p>
+<p><a href="https://github.com/adafruit/Adafruit-Sharp-Memory-Display-PCBs">https://github.com/adafruit/Adafruit-Sharp-Memory-Display-PCBs</a></p>
+<p>sharp screen placement:</p>
+<p><img src="/img/co2/sharp_dim.png" alt=""></p>
+<p>github repo for adafruit 128 display:</p>
+<p><a href="https://github.com/adafruit/Adafruit-1.12in-128x128-OLED-PCB">https://github.com/adafruit/Adafruit-1.12in-128x128-OLED-PCB</a></p>
+<p>128 screen placement:</p>
 
 
     </div>
