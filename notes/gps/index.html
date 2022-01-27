@@ -269,6 +269,27 @@ D13  free</p>
 <p>2022-01-21 22:23:15</p>
 <p>latest 'trace.py' code will show latest 100 datapoints <a href="https://github.com/edgecollective/dog-compass/blob/28695531aa75c3c57e9ae1f70cf4403398ea132d/tracker_v_0.2/firmware/CPY/v5/trace.py">https://github.com/edgecollective/dog-compass/blob/28695531aa75c3c57e9ae1f70cf4403398ea132d/tracker_v_0.2/firmware/CPY/v5/trace.py</a></p>
 <p>note: the labels on the switches need to be updated, they're covered currently ...</p>
+<hr>
+<p>2022-01-22 20:56:09</p>
+<p>Testing IMU on tracker 0.2 ...</p>
+<p><a href="https://learn.adafruit.com/adafruit-bno055-absolute-orientation-sensor/python-circuitpython?gclid=CjwKCAiA866PBhAYEiwANkIneOXNnFsFH7Ze19fHe8GXVNl8cL2wZGaBEhDoZfnJrhVcmaFCj2RVnxoCz7IQAvD_BwE">https://learn.adafruit.com/adafruit-bno055-absolute-orientation-sensor/python-circuitpython?gclid=CjwKCAiA866PBhAYEiwANkIneOXNnFsFH7Ze19fHe8GXVNl8cL2wZGaBEhDoZfnJrhVcmaFCj2RVnxoCz7IQAvD_BwE</a></p>
+<p>via <a href="https://github.com/adafruit/Adafruit_CircuitPython_BNO055/blob/cd0f90659517b0682252fe534b1a28e9424c5dfd/adafruit_bno055.py#L354">https://github.com/adafruit/Adafruit_CircuitPython_BNO055/blob/cd0f90659517b0682252fe534b1a28e9424c5dfd/adafruit_bno055.py#L354</a></p>
+<pre><code>    @property
+    def calibration_status(self):
+        &quot;&quot;&quot;Tuple containing sys, gyro, accel, and mag calibration data.&quot;&quot;&quot;
+        calibration_data = self._read_register(_CALIBRATION_REGISTER)
+        sys = (calibration_data &gt;&gt; 6) &amp; 0x03
+        gyro = (calibration_data &gt;&gt; 4) &amp; 0x03
+        accel = (calibration_data &gt;&gt; 2) &amp; 0x03
+        mag = calibration_data &amp; 0x03
+        return sys, gyro, accel, mag
+</code></pre>
+<hr>
+<p>2022-01-24 12:20:44</p>
+<p>Magnetic declination at 10 Conant Rd, Lincoln, MA</p>
+<p><img src="/img/gps/noaa_mag_declination.png" alt=""></p>
+<p>via: <a href="https://www.ngdc.noaa.gov/geomag/calculators/magcalc.shtml">https://www.ngdc.noaa.gov/geomag/calculators/magcalc.shtml</a></p>
+<p>Datasheet for bno-005 bosch absolute sensor <a href="https://cdn-shop.adafruit.com/datasheets/BST_BNO055_DS000_12.pdf">https://cdn-shop.adafruit.com/datasheets/BST_BNO055_DS000_12.pdf</a></p>
 
 
     </div>
