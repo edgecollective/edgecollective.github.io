@@ -371,6 +371,38 @@ Lon : 00212.21149 becomes 2 degrees and 12.21149 seconds = 2 + 12.21149/60 = 2.2
 <p>2022-02-19 08:40:02</p>
 <p>High-accuracy GPS from Sparkfun: <a href="https://learn.sparkfun.com/tutorials/gps-rtk2-hookup-guide?_ga=2.9331189.1546501649.1645193699-1617606000.1645193699">https://learn.sparkfun.com/tutorials/gps-rtk2-hookup-guide?_ga=2.9331189.1546501649.1645193699-1617606000.1645193699</a></p>
 <p>Connecting to a correlation source <a href="https://learn.sparkfun.com/tutorials/gps-rtk-hookup-guide/all#connecting-the-gps-rtk-to-a-correction-source">https://learn.sparkfun.com/tutorials/gps-rtk-hookup-guide/all#connecting-the-gps-rtk-to-a-correction-source</a></p>
+<hr>
+<p>2022-02-20 14:02:47</p>
+<p>Memory management tips in circuipython:</p>
+<p><a href="https://learn.adafruit.com/Memory-saving-tips-for-CircuitPython?view=all">https://learn.adafruit.com/Memory-saving-tips-for-CircuitPython?view=all</a></p>
+<p>14K log file for gps data had 523 lines ... that's about 26 bytes per line ...</p>
+<p>looks like we have about 100K free now ... so that's about 3800 lines we could save .. at 10 second measurement intervals, that's 60 hours of measurements</p>
+<hr>
+<p>2022-02-20 18:33:06</p>
+<p><a href="https://learn.adafruit.com/adafruit-9-dof-orientation-imu-fusion-breakout-bno085/overview">https://learn.adafruit.com/adafruit-9-dof-orientation-imu-fusion-breakout-bno085/overview</a></p>
+<p>using lora w sd card -- looks like we can basically just use the CS pin to deselect radio before using SD card</p>
+<p><a href="https://forums.adafruit.com/viewtopic.php?f=24&amp;p=860057">https://forums.adafruit.com/viewtopic.php?f=24&amp;p=860057</a></p>
+<hr>
+<p>2022-02-21 18:43:18</p>
+<p><a href="https://github.com/helscream/HMC5883L_Header_Arduino_Auto_calibration">https://github.com/helscream/HMC5883L_Header_Arduino_Auto_calibration</a></p>
+<p><a href="http://arduino-er.blogspot.com/2015/04/hmc5883l-library-with-calibration-for.html">http://arduino-er.blogspot.com/2015/04/hmc5883l-library-with-calibration-for.html</a></p>
+<p>compass: <a href="https://www.amazon.com/HiLetgo-LSM303DLHC-Compass-Accelerometer-Magnetometer/dp/B07X3GFKYD/ref=pd_sbs_6/138-1407279-7301129?pd_rd_w=t2ppy&amp;pf_rd_p=cd718a0c-f7e0-41b6-9f23-6496d85d1998&amp;pf_rd_r=87P8WT7H01PBMNK2BXZ3&amp;pd_rd_r=accb5e3b-b23a-4d50-b181-c2654e22539e&amp;pd_rd_wg=oWbGx&amp;pd_rd_i=B07X3GFKYD&amp;psc=1">https://www.amazon.com/HiLetgo-LSM303DLHC-Compass-Accelerometer-Magnetometer/dp/B07X3GFKYD/ref=pd_sbs_6/138-1407279-7301129?pd_rd_w=t2ppy&amp;pf_rd_p=cd718a0c-f7e0-41b6-9f23-6496d85d1998&amp;pf_rd_r=87P8WT7H01PBMNK2BXZ3&amp;pd_rd_r=accb5e3b-b23a-4d50-b181-c2654e22539e&amp;pd_rd_wg=oWbGx&amp;pd_rd_i=B07X3GFKYD&amp;psc=1</a></p>
+<hr>
+<p>2022-02-22 19:59:47</p>
+<p>Sparkfun tutorial on compass calibration <a href="https://www.youtube.com/watch?v=k6ccH8QYGK8">https://www.youtube.com/watch?v=k6ccH8QYGK8</a></p>
+<hr>
+<p>2022-02-24 12:08:25</p>
+<p>LSM303DLHC</p>
+<p><a href="https://www.amazon.com/gp/product/B07X3GFKYD/ref=ppx_yo_dt_b_asin_title_o01_s00?ie=UTF8&amp;psc=1">https://www.amazon.com/gp/product/B07X3GFKYD/ref=ppx_yo_dt_b_asin_title_o01_s00?ie=UTF8&amp;psc=1</a></p>
+<p><a href="https://learn.adafruit.com/lsm303-accelerometer-slash-compass-breakout/which-lsm303-do-i-have">https://learn.adafruit.com/lsm303-accelerometer-slash-compass-breakout/which-lsm303-do-i-have</a></p>
+<p>Calibration code: <a href="https://learn.adafruit.com/lsm303-accelerometer-slash-compass-breakout/calibration">https://learn.adafruit.com/lsm303-accelerometer-slash-compass-breakout/calibration</a></p>
+<p>Mag Minimums: -75.91  -90.00  -26.12
+Mag Maximums: 68.45  46.55  130.82</p>
+<hr>
+<p>2022-02-24 12:54:33</p>
+<p>This library works with the above lsm303 module:</p>
+<p><a href="https://github.com/pololu/lsm303-arduino">https://github.com/pololu/lsm303-arduino</a></p>
+<p>min: {  -668,   -761,    -23}    max: {  +586,   +422,  +1034}</p>
 
 
     </div>
