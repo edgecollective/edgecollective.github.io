@@ -11,46 +11,24 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="shortcut icon" type="image/x-icon" href="/img/edge_favicon.png" />
-    <title>Notes on Ham Radio</title>
+    <title>COVID-19 Testing</title>
   </head>
   <body>
 
     <div id='post-content'>
 
-  <a href="/">Edge Collective</a>:  Notes on Ham Radio
-        <!-- <h1>Notes on Ham Radio</h1> -->
+  <a href="/">Edge Collective</a>:  COVID-19 Testing
+        <!-- <h1>COVID-19 Testing</h1> -->
 
   
-  <hr>
-<p>2021-11-09 12:40:30</p>
-<p>Notes on kits: <a href="https://www.hamradiosecrets.com/ham-radio-kits.html">https://www.hamradiosecrets.com/ham-radio-kits.html</a></p>
-<h2>APRS</h2>
-<p>DORJI</p>
-<p><a href="https://www.tindie.com/products/dorji_com/ham-amateur-radio-module-dra818v/">https://www.tindie.com/products/dorji_com/ham-amateur-radio-module-dra818v/</a></p>
-<p><a href="http://squirrelengineering.com/arduino/dra818v-aprs-144-390mhz/">http://squirrelengineering.com/arduino/dra818v-aprs-144-390mhz/</a></p>
-<p><a href="https://hamgear.wordpress.com/2015/02/03/make-your-own-transceiver-with-a-dorji-dra818u-or-dra818v/">https://hamgear.wordpress.com/2015/02/03/make-your-own-transceiver-with-a-dorji-dra818u-or-dra818v/</a></p>
-<p><a href="https://www.qrp-labs.com/">https://www.qrp-labs.com/</a></p>
-<p><a href="https://nescitech.org/ham-exam-contact-us/">https://nescitech.org/ham-exam-contact-us/</a></p>
-<p>QRP Labs device for $60: <a href="https://hackaday.com/2021/12/08/four-band-digital-hf-sdr-transceiver-offers-high-performance-for-only-60/">https://hackaday.com/2021/12/08/four-band-digital-hf-sdr-transceiver-offers-high-performance-for-only-60/</a></p>
-<hr>
-<h2>APRS on micros</h2>
-<h3>Micromodem</h3>
-<p>Github repo for micromodem: <a href="https://github.com/markqvist/MicroModem">https://github.com/markqvist/MicroModem</a></p>
-<p>Key diagram for circuit: <a href="https://github.com/markqvist/MicroModem/blob/master/Documentation/Quickstart.pdf">https://github.com/markqvist/MicroModem/blob/master/Documentation/Quickstart.pdf</a></p>
-<h3>Mobilinkd Arduino KISS TNC</h3>
-<p><a href="http://www.mobilinkd.com/2014/09/11/arduino-kiss-tnc/">http://www.mobilinkd.com/2014/09/11/arduino-kiss-tnc/</a></p>
-<p>Uses the Sparkfun 3.5 mm jack breakout:</p>
-<p><a href="http://www.mobilinkd.com/wp-content/uploads/2014/09/Breadboard-TNC_bb_2.png">http://www.mobilinkd.com/wp-content/uploads/2014/09/Breadboard-TNC_bb_2.png</a></p>
-<pre><code>    Sleeve is ground.
-    Ring2 is audio out (TX)
-    Ring1 is PTT
-    Tip is audio in (RX)
-</code></pre>
-<h2>Adding GPS</h2>
-<p>use Example3_GetPosition from UBLOX GNSS Sparkfun lib <a href="https://github.com/sparkfun/SparkFun_u-blox_GNSS_Arduino_Library/archive/main.zip">https://github.com/sparkfun/SparkFun_u-blox_GNSS_Arduino_Library/archive/main.zip</a></p>
-<p>Hmm ... module requires 3V ...</p>
-<p>might need to try arduino pro mini 3V if avail ... or 5V tolerant gps module
-(adafruit's?)</p>
+  <p>Performing a test can give two types of answers:  'positive' (suggesting the presence of the disease) or 'negative' (suggesting the absence of the disease).</p>
+<p>It's customary to distinguish two aspects of a test's performance:</p>
+<ul>
+<li>its <em>sensitivity</em>: how frequently it correctly detects the presence of the virus (test is 'positive' when virus is present)</li>
+<li>its <em>specificity</em>: how frequently it correctly detects the absence of the virus (test is 'negative' when the virus is absent)</li>
+</ul>
+<p>From a public health or practitioner standpoint, one would like both of these characteristics to be as high as possible. Low sensitivity ('false negatives') means one misses many cases where the virus is present, leading to increased transmission risk; low specificity ('false positives') means one incorrectly identifies individuals as positive, leading to unnecessary burden on the healthcare system, unnecessary absences from school or work, etc.</p>
+<p>From a individual risk standpoint, it seems possible to tolerate a highly specific test even if it isn't as sensitive.  I.e., if a negative test is very likely to indicate a true 'negative', one can simply postpone a social engagement on this basis, and test again when convenient.</p>
 
 
     </div>
