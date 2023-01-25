@@ -11,38 +11,65 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="shortcut icon" type="image/x-icon" href="/img/edge_favicon.png" />
-    <title>10</title>
+    <title>Satellite Modem Prototyping</title>
   </head>
   <body>
 
     <div id='post-content'>
 
   <h3><a href="/">Edge Collective</a></h3>
-    <h1>10</h1>
-    <h3> The energy future; projects.</h3>
+    <h1>Satellite Modem Prototyping</h1>
+    <h3> Using a satellite modem to send data from off-grid.</h3>
 <hr>
-        <!-- <h1>10</h1> -->
+        <!-- <h1>Satellite Modem Prototyping</h1> -->
 
   
-  <p>Summary of recent readings.</p>
-<p>There aren't sufficient material resources (esp mineral, but also likely oil and gas) in order to achieve a renewable transition to the economy as it currently stands.</p>
-<p>Oil is being consumed as oil-based infrastructure is being used as if it were never going to run out. Indications are that the quality of oil is decreasing.  Our ability to source cheap diesel may be diminishing soon.  Coal is used in the production and deployement of renewable energy infrstructure, and there is currently no replacement.  Much of our infrastructure would need to be replaced if we were to switch to renewables. This takes energy and time.  For many vital applications, there is no known viable non-fossil replacement; theoretical subtitutions exist in some cases, but they haven't been shown to scale, and even if they were adopted wholesale right now, they would take years (a decade or more?) to deploy.</p>
-<p>Many of the elements of the current plans that would allow us to remain at or below 1.5C or 2C are not based on realistic numbers in terms of minerals or available technologies.</p>
-<p>It seems likely that the future will involve significant disruption to the economy and/or the climate.  If fossil fuels become expensive, many things will need to shift. Everything will become more localized, out of necessity, because transport will no longer be cheap.</p>
+  <p>Working with CPy 7 on Feather Blue Sense for now ...</p>
+<p>Guide <a href="https://learn.adafruit.com/using-the-rockblock-iridium-modem?view=all#circuitpython-example">https://learn.adafruit.com/using-the-rockblock-iridium-modem?view=all#circuitpython-example</a></p>
+<p>Rockblock Circuitpython library <a href="https://github.com/adafruit/Adafruit_CircuitPython_RockBlock">https://github.com/adafruit/Adafruit_CircuitPython_RockBlock</a></p>
+<p>Library documentation <a href="https://docs.circuitpython.org/projects/rockblock/en/latest/api.html">https://docs.circuitpython.org/projects/rockblock/en/latest/api.html</a></p>
+<h1>ESP32-S2 TFT</h1>
+<p>Guide <a href="https://learn.adafruit.com/adafruit-esp32-s2-tft-feather/circuitpython">https://learn.adafruit.com/adafruit-esp32-s2-tft-feather/circuitpython</a></p>
+<p>Adding an additional serial port to the Feather S2</p>
+<h1>Maxbotix</h1>
+<p>Guide for maxbotic sensors: <a href="https://www.maxbotix.com/tutorials.htm">https://www.maxbotix.com/tutorials.htm</a></p>
+<p>Sensor output options: <a href="https://www.maxbotix.com/tutorials2/sensor-output-options.htm">https://www.maxbotix.com/tutorials2/sensor-output-options.htm</a></p>
+<h1>1-wire sensor</h1>
+<p>Guide to Circuitpython <a href="https://learn.adafruit.com/using-ds18b20-temperature-sensor-with-circuitpython/circuitpython?gclid=CjwKCAiAoL6eBhA3EiwAXDom5mIOC8cvQlFba_1gHHcrOiyseLnxqKod4WhS_KgQP5pCrCnVg9h3ihoCKwcQAvD_BwE">here</a></p>
 <hr>
-<p>There is a shift in thinking in a lot of the readings from 'what would be ideal from an ethical standpoint, all things considered' to 'pragmatically preparing for what is actually going to happen soon'.</p>
+<p>Using CPY 7.X on the Feather Bluefruit Sense for now</p>
+<p><img src="/img/blue_sat_upload.png" alt=""></p>
 <hr>
-<p>If the future of the economy is necessarily going to look different (in the next decade or two), then the struggles of local food systems and low-carbon transport systems and the like to be 'economically viable' are at best a temporary necessity.  The economy as it is currently structured will increasingly be less and less able to provide for the basic needs of the people.  Systems that actually support the needs of people will increasingly need to be developed outside the economy as it currently stands.</p>
-<hr>
-<p>One of the benefits of this form of low-carbon economy is increased agency. The systems of production, distrubution, will be under more local control -- the supply chains will be shorter, more legible.  The technologies will become less complex to produce (at least initially).  Imagine a world in which we feel more agency and involvement in the production of our lives and our tools.</p>
-<hr>
-<p>The overlap with pedagogy is significant. Much of pedagogy is about increasing energy and capacity, our future will require this of us anwyay. The ideal pedagogy for children and adults won't differ so greatly when preparing for this future.</p>
-<hr>
-<p>For most of human history, there was no mass production of infrastructure.  Currently, our homes and workplaces are built for an 'average person', with chairs, drawers, sinks, toilets, doors, transport that accommodate that 'idealized' person. Children are excluded.  Children are today brought up in an environment that was clearly not designed for them, within which they are unable to operate without adult help. Until recently in human history, nearly all of the environment was fairly well accessible to adults and children equally. Children had nearly full agency as soon as they could walk and grasp.</p>
-<hr>
-<p>One useful way to begin to prototype this future right now, while networking across regions, is to focus on communications and navigation infrastructure.  GPS may go away; cellular networks and the internet may become unreliable.  Communication and navigation without these systems will rely on more 'analog' technologies.  Finding ways of bridging this transition might be involve 'hybrid' approaches that use the best available systems but 'fail gracefully' when they are not available.  I.e. we wouldn't choose to be out of touch with friends across the world now, because we might not easily be able to chat with them in the future.  Instead, we'll chat with them now, but make a plan for how to be in touch if the phone line fails.</p>
-<hr>
-<p>If we take the likely contours of the future seriously, what should we be planning for?</p>
+<p>Message 75 and 76 are in the format:</p>
+<pre><code>data = struct.pack(&quot;f&quot;,batt_voltage)
+data += struct.pack(&quot;f&quot;,depth_inches)
+data += struct.pack(&quot;2f&quot;, sht.relative_humidity, sht.temperature)
+data += struct.pack(&quot;2f&quot;, bmp.pressure, bmp.temperature)
+</code></pre>
+<p>E.g. Message 75:</p>
+<pre><code>IMEI: 300234065897350
+MOMSN: 75
+Transmit Time: 2023-01-25T00:36:18Z UTC
+Iridium Latitude: 42.4393
+Iridium Longitude: -70.7191
+Iridium CEP: 544.0
+Iridium Session Status: 2
+Data: 982f854090673f43bc35bb410028cf4188577d44646ccf41
+</code></pre>
+<p>Example python3 code for decoding:</p>
+<pre><code>&gt;&gt;&gt; data=bytes.fromhex(&quot;982f854090673f43bc35bb410028cf4188577d44646ccf41&quot;)
+&gt;&gt;&gt; struct.unpack(&quot;&lt;6f&quot;, data)
+(4.162059783935547, 191.404541015625, 23.40123748779297, 25.89453125, 1013.36767578125, 25.92792510986328)
+</code></pre>
+<p>Initial version of satellite modem that sends depth and sensor data, waits 1 minute in between:</p>
+<p><a href="https://github.com/dwblair/rockblock-ultrasonic/tree/b1fe20872cbe983c372010ae1e78fe4a9b0b035e/feather-bluefruit">https://github.com/dwblair/rockblock-ultrasonic/tree/b1fe20872cbe983c372010ae1e78fe4a9b0b035e/feather-bluefruit</a></p>
+<p>Looks as though it's 1 credit per message.</p>
+<p>The highest rate is 0.145 British Pounds per credit for 100 credits (.099 BP per credit when buying 1000 credits).</p>
+<p>So that's a purchase of $17.86 for 100 credits ($.18 per credits); or $121.94 for 1000 credits ($.12 per credit)</p>
+<p>We might be able to pack more data in per message ... i.e., we could perhaps send several hours' worth of data once per day ...</p>
+<p>But let's say we want to send one message per day. That's one credit per day.</p>
+<p>So, 30 credits per month.</p>
+<p>That's $5.40 per month for the messages, and $16 per month for the line rental -- so, that's about $22 per month</p>
 
 
     </div>
