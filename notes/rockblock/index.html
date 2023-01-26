@@ -69,7 +69,19 @@ Data: 982f854090673f43bc35bb410028cf4188577d44646ccf41
 <p>We might be able to pack more data in per message ... i.e., we could perhaps send several hours' worth of data once per day ...</p>
 <p>But let's say we want to send one message per day. That's one credit per day.</p>
 <p>So, 30 credits per month.</p>
+<p>The line rental is $16 per month.</p>
 <p>That's $5.40 per month for the messages, and $16 per month for the line rental -- so, that's about $22 per month</p>
+<h1>Decoding python structs using javascript</h1>
+<p><a href="https://www.thethingsnetwork.org/forum/t/payload-formats-howto/3441/3">https://www.thethingsnetwork.org/forum/t/payload-formats-howto/3441/3</a></p>
+<p><a href="https://stackoverflow.com/questions/37471158/converting-ieee-754-from-bit-stream-into-float-in-javascript/37471538#37471538">https://stackoverflow.com/questions/37471158/converting-ieee-754-from-bit-stream-into-float-in-javascript/37471538#37471538</a></p>
+<p>Better: a nodejs package python-struct: <a href="https://www.npmjs.com/package/python-struct">https://www.npmjs.com/package/python-struct</a></p>
+<p>Or alternatively: <a href="https://github.com/lyngklip/structjs">https://github.com/lyngklip/structjs</a> which seems to include easy to use source code ...</p>
+<p>Using python-struct ...</p>
+<p>Better link? <a href="https://stackoverflow.com/questions/5605108/pack-unpack-functions-for-node-js">https://stackoverflow.com/questions/5605108/pack-unpack-functions-for-node-js</a></p>
+<p>Working code using structjs:</p>
+<p>Gist: <a href="https://gist.github.com/dwblair/cc651bcb3bd11f13840c074c80bd924b">https://gist.github.com/dwblair/cc651bcb3bd11f13840c074c80bd924b</a></p>
+<p>Structjs: <a href="https://github.com/lyngklip/structjs">https://github.com/lyngklip/structjs</a></p>
+<p>Working repository (needed to make it a 'type':'module' ... ?): <a href="https://github.com/dwblair/js-python-struct-converter">https://github.com/dwblair/js-python-struct-converter</a></p>
 
 
     </div>
