@@ -71,33 +71,6 @@
 </tbody>
 </table>
 <p>The satellite modem will then send water level data to an online database, allowing Grass Nomads LLC to access up-to-date water level over the internet or on their phones, anywhere they have access to internet or cellular service.  (For a schematic overview of the system, see Figure 3 below.)</p>
-<h1>Prior work</h1>
-<p>At Edge Collective we have previously developed and worked with most of the non-satellite components of this system, collecting data from a solar-powered ultrasonic water level sensor (Fig 4) via local LoRa radio connection to a LoRa-wifi gateway, and sending it periodically to an online database (Fig 5).</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center"><a href="/img/ojofeliz/chappy_proto.png"><img src="/img/ojofeliz/chappy_proto.png" alt=""></a></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center"><strong>Fig 4.</strong> A previous, LoRa-based ultrasonic water level sensor prototype built by Edge Collective.</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th style="text-align:center"><a href="/img/ojofeliz/sonar_data.png"><img src="/img/ojofeliz/sonar_data.png" alt=""></a></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center"><strong>Fig 5.</strong> Data from an initial deployment of a LoRa-based ultrasonic sensor</td>
-</tr>
-</tbody>
-</table>
-<p>Another example of a version of the (open source) online database system we'd previously developed (in this case, used for chicken coop temperatures) is <a href="http://bayou.pvos.org/data/834ksnvaq3hn?plot_param=temperature_c">here</a>.</p>
 <h1>Planned hardware components</h1>
 <p>Except for the custom PCBs we will be designing, nearly every component of the system consists of off-the-shelf hardware.</p>
 <!--
@@ -114,7 +87,7 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align:center"><strong>Fig 6.</strong> The <a href="https://www.sparkfun.com/products/13745">Rockblock 9602 Satellite Modem</a>, available e.g. from Sparkfun for $300 USD</td>
+<td style="text-align:center"><strong>Fig 4.</strong> The <a href="https://www.sparkfun.com/products/13745">Rockblock 9602 Satellite Modem</a>, available e.g. from Sparkfun for $300 USD</td>
 </tr>
 </tbody>
 </table>
@@ -126,7 +99,7 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align:center"><strong>Fig 7.</strong> The <a href="https://www.adafruit.com/product/1137">Maxbotix MB7092</a>, available e.g. from Adafruit for $100</td>
+<td style="text-align:center"><strong>Fig 5.</strong> The <a href="https://www.adafruit.com/product/1137">Maxbotix MB7092</a>, available e.g. from Adafruit for $100</td>
 </tr>
 </tbody>
 </table>
@@ -138,10 +111,37 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align:center"><strong>Fig 8.</strong> The <a href="https://www.adafruit.com/product/3178">Feather M0 LoRa microcontroller</a>, available e.g. from Adafruit for $35</td>
+<td style="text-align:center"><strong>Fig 6.</strong> The <a href="https://www.adafruit.com/product/3178">Feather M0 LoRa microcontroller</a>, available e.g. from Adafruit for $35</td>
 </tr>
 </tbody>
 </table>
+<h1>Prior work</h1>
+<p>At Edge Collective we have previously developed and worked with most of the non-satellite components of this system, collecting data from a solar-powered ultrasonic water level sensor (Fig 7) via local LoRa radio connection to a LoRa-wifi gateway, and sending it periodically to an online database (Fig 8).</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><a href="/img/ojofeliz/chappy_proto.png"><img src="/img/ojofeliz/chappy_proto.png" alt=""></a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><strong>Fig 7.</strong> A previous, LoRa-based ultrasonic water level sensor prototype built by Edge Collective.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><a href="/img/ojofeliz/sonar_data.png"><img src="/img/ojofeliz/sonar_data.png" alt=""></a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><strong>Fig 8.</strong> Data from an initial deployment of a LoRa-based ultrasonic sensor</td>
+</tr>
+</tbody>
+</table>
+<p>Another example of a version of the (open source) online database system we'd previously developed (in this case, used for chicken coop temperatures) is <a href="http://bayou.pvos.org/data/834ksnvaq3hn?plot_param=temperature_c">here</a>.</p>
 <h1>Current status</h1>
 <p>We currently have a working breadboard prototype (Fig 9) of a satellite modem + ultrasonic water level device, which is posting its data to an online database.  Next steps include designing and producing a batch of integrative PCBs for these devices, optimizing the firmware for power, and adding in the 'LoRa relay' node circuitry if necessary.</p>
 <table>
