@@ -58,7 +58,7 @@
 </tbody>
 </table>
 <h1>Planned monitoring strategy</h1>
-<p>Because of the remote location of the water storage tanks and uncertain cellular coverage, we have decided to develop a satellite modem-based monitoring system.  Currently, we are unsure as to whether the satellite modem (and accompanying solar panel) would best be situated directly on top / next to the storage tank, or whether a location 100+ feet away might better optimize solar energy and minimize obstacles to satellite coverage.  We are therefore designing the system to include a 'low-power, remote radio (LoRa) depth sensor node', which will be situated on the tank, and relay its data to a 'LoRa-satellite-modem gateway' somewhere within radio range.</p>
+<p>Because of the remote location of the water storage tanks and uncertain cellular coverage, we have decided to develop a satellite modem-based monitoring system.  Currently, we are unsure as to whether the satellite modem (and accompanying solar panel) would best be situated directly on top / next to the storage tank, or whether a location 100+ feet away might better optimize solar energy and minimize obstacles to satellite coverage.</p>
 <table>
 <thead>
 <tr>
@@ -71,7 +71,8 @@
 </tr>
 </tbody>
 </table>
-<p>The satellite modem will then send water level data to an online database, allowing Grass Nomads LLC to access up-to-date water level over the internet or on their phones, anywhere they have access to internet or cellular service.  (For a schematic overview of the system, see Figure 3 below.)</p>
+<p>We are therefore designing the system to include a 'low-power, remote radio (LoRa) depth sensor node', which will be situated on the tank, and relay its data to a 'LoRa-satellite-modem gateway' somewhere within radio range (Fig 3).</p>
+<p>The satellite modem will then send water level data to an online database, allowing Grass Nomads LLC to access up-to-date water level over the internet or on their phones, anywhere they have access to internet or cellular service.</p>
 <h1>Planned hardware components</h1>
 <p>Except for the custom PCBs we will be designing, nearly every component of the system consists of off-the-shelf hardware, including the satellite modem (Fig 4), ultrasonic water sensor (Fig 5), and microcontroller + LoRa radio (Fig 6).</p>
 <p>We've evaluated the <a href="https://docs.rockblock.rock7.com/docs/iridium-contract-costs">satellite modem data plan pricing</a>, and believe that if we send one water level update per day from each storage tank (with a message containing measurements at 4 hour intervals for the previous 24 hours), the associated cost of the satellite data service will be the same as or less than a comporable cellular data plan.</p>
