@@ -25,21 +25,13 @@
 
   
   <h1>Background</h1>
-<p><a href="https://www.grassnomads.com/">Grass Nomads, LLC</a> leases a 120,000 acre high elevation ranch in New Mexico, where we run a cow-calf operation. Progressive grazing management featuring higher density and longer recovery periods is critical to our success, made possible by an extensive and reliable water system. Several key storage tanks in our system are the first indication of a leak or failure, and driving to them takes hours. Remote water monitoring would save us time, vehicle wear, water, and further enable advances in our land stewardship.</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center"><a href="/img/ojofeliz/ofr_map.png"><img src="/img/ojofeliz/ofr_map.png" alt=""></a></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center"><strong>Fig 1.</strong> The Ojo Felix ranch, a 200 square mile lease, shwoing the location of the three key water storage tanks to be monitored -- 'Twin Towers', 'Casias', and 'Marsh Wells'. Not shown are planned pipelines to be installed in 2023.</td>
-</tr>
-</tbody>
-</table>
-<p>Collecting updated water level data from three key water storage tanks on the ranch is of particular interest: 'Twin Towers' (Fig. 2), 'Casias' (Fig 3), and 'Marsh Wells'.</p>
-<p>Because of the remote location of the water storage tanks, with uncertain cellular coverage, we have decided to develop a satellite modem-based monitoring system.  Currently, we are unsure as to whether the satellite modem (and accompanying solar panel) would best be situated directly on top / next to the storage tank, or whether a location 100+ feet away might better optimize solar energy and minimize obstacles to satellite coverage.  We are therefore designing the system to include a 'low-power, remote radio (LoRa) depth sensor node', which will be situated on the tank, and relay its data to a 'LoRa-satellite-modem gateway' somewhere within radio range.</p>
+<p><a href="https://www.grassnomads.com/">Grass Nomads, LLC</a> leases a 120,000 acre high elevation ranch in New Mexico, where they run a cow-calf operation with an extensive water system. Several key storage tanks in their system are the first indication of a leak or failure, and driving to them takes hours. Remote water monitoring would save them time, vehicle wear, and water.</p>
+<!--
+| [![](/img/ojofeliz/ofr_map.png)](/img/ojofeliz/ofr_map.png) |
+|:--:|
+|**Fig 1.** The Ojo Felix ranch, a 200 square mile lease, shwoing the location of the three key water storage tanks to be monitored -- 'Twin Towers', 'Casias', and 'Marsh Wells'. Not shown are planned pipelines to be installed in 2023.   |
+-->
+<p>In particular, there is an interested in collecting ongoing water level data from three key water storage tanks on the ranch is of particular interest: 'Twin Towers' (Fig. 1), 'Casias' (Fig 2), and 'Marsh Wells'.</p>
 <table>
 <thead>
 <tr>
@@ -48,7 +40,7 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align:center"><strong>Fig 2.</strong> The 'Twin Towers' water storage tank on Ojo Feliz Ranch, one of the tanks to be monitored.</td>
+<td style="text-align:center"><strong>Fig 1.</strong> The 'Twin Towers' water storage tank on Ojo Feliz Ranch, one of the tanks to be monitored.</td>
 </tr>
 </tbody>
 </table>
@@ -60,25 +52,27 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align:center"><strong>Fig 3.</strong> The 'Casias' water storage tank on Ojo Feliz Ranch, one of the tanks to be monitored.</td>
+<td style="text-align:center"><strong>Fig 2.</strong> The 'Casias' water storage tank on Ojo Feliz Ranch, one of the tanks to be monitored.</td>
 </tr>
 </tbody>
 </table>
 <h1>Planned Monitoring Strategy</h1>
-<p>The plan is to develop an open-source, DIY system that uses a satellite modem to send water level data from remote storage tanks to an online database, allowing Grass Nomads LLC to access up-to-date water level over the internet or on their phones, anywhere they have access to internet or cellular service.  (For a schematic overview of the system, see Figure 4 below.)</p>
+<p>Because of the remote location of the water storage tanks and uncertain cellular coverage, we have decided to develop a satellite modem-based monitoring system.  Currently, we are unsure as to whether the satellite modem (and accompanying solar panel) would best be situated directly on top / next to the storage tank, or whether a location 100+ feet away might better optimize solar energy and minimize obstacles to satellite coverage.  We are therefore designing the system to include a 'low-power, remote radio (LoRa) depth sensor node', which will be situated on the tank, and relay its data to a 'LoRa-satellite-modem gateway' somewhere within radio range.</p>
+<p>The satellite modem will then send water level data to an online database, allowing Grass Nomads LLC to access up-to-date water level over the internet or on their phones, anywhere they have access to internet or cellular service.  (For a schematic overview of the system, see Figure 3 below.)</p>
 <table>
 <thead>
 <tr>
-<th style="text-align:center"><a href="/img/ojofeliz/floodsense.png"><img src="/img/ojofeliz/floodsense.png" alt=""></a></th>
+<th style="text-align:center"><a href="/img/ojofeliz/system_overview.png"><img src="/img/ojofeliz/system_overview.png" alt=""></a></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align:center"><strong>Fig 4.</strong> The overall approach to monitoring the water storage tanks.</td>
+<td style="text-align:center"><strong>Fig 3.</strong> The overall approach to monitoring the water storage tanks.</td>
 </tr>
 </tbody>
 </table>
-<p>At Edge Collective we have previously developed and worked with most of the non-satellite components of this system, collecting data from a solar-powered ultrasonic water level sensor (Fig 5) via local LoRa radio connection to a LoRa-wifi gateway, and to an online database (Fig 6).</p>
+<h1>Prior art</h1>
+<p>At Edge Collective we have previously developed and worked with most of the non-satellite components of this system, collecting data from a solar-powered ultrasonic water level sensor (Fig 4) via local LoRa radio connection to a LoRa-wifi gateway, and to an online database (Fig 5).</p>
 <table>
 <thead>
 <tr>
@@ -87,7 +81,7 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align:center"><strong>Fig 5.</strong> A previous, LoRa-based ultrasonic water level sensor prototype built by Edge Collective.</td>
+<td style="text-align:center"><strong>Fig 4.</strong> A previous, LoRa-based ultrasonic water level sensor prototype built by Edge Collective.</td>
 </tr>
 </tbody>
 </table>
@@ -99,23 +93,32 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align:center"><strong>Fig 6.</strong> Data from an initial deployment of a LoRa-based ultrasonic sensor</td>
+<td style="text-align:center"><strong>Fig 5.</strong> Data from an initial deployment of a LoRa-based ultrasonic sensor</td>
 </tr>
 </tbody>
 </table>
-<h1>Monitoring system hardware</h1>
+<h1>Current Status</h1>
+<p>We currently have a working breadboard prototype (Fig 6) of a satellite modem + ultrasonic water level device, which is posting its data to an online database.  Next steps include designing and producing a batch of integrative PCBs for these devices, optimizing the firmware for power, and adding in the 'LoRa relay' node circuitry if necessary.</p>
 <table>
 <thead>
 <tr>
-<th style="text-align:center"><a href="/img/ojofeliz/ultrasonic_housing.jpg"><img src="/img/ojofeliz/ultrasonic_housing.jpg" alt=""></a></th>
+<th style="text-align:center"><a href="/img/ojofeliz/breadboard.jpeg"><img src="/img/ojofeliz/breadboard.jpeg" alt=""></a></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align:center"><strong>Fig 7.</strong> Close-up of the housing for the ultrasonic water level sensor.</td>
+<td style="text-align:center"><strong>Fig 6.</strong> Data from an initial deployment of a LoRa-based ultrasonic sensor</td>
 </tr>
 </tbody>
 </table>
+<h1>Hardware components</h1>
+<p>Except for the custom PCBs we will be designing, nearly every component of the system consists of off-the-shelf hardware.</p>
+<!--
+| [![](/img/ojofeliz/ultrasonic_housing.jpg)](/img/ojofeliz/ultrasonic_housing.jpg) |
+|:--:|
+|**Fig 7.** Close-up of the housing for the ultrasonic water level sensor. |
+
+-->
 <table>
 <thead>
 <tr>
@@ -124,7 +127,7 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align:center"><strong>Fig 8.</strong> The <a href="https://www.sparkfun.com/products/13745">Rockblock 9602 Satellite Modem</a>, available e.g. from Sparkfun for $300 USD</td>
+<td style="text-align:center"><strong>Fig 7.</strong> The <a href="https://www.sparkfun.com/products/13745">Rockblock 9602 Satellite Modem</a>, available e.g. from Sparkfun for $300 USD</td>
 </tr>
 </tbody>
 </table>
@@ -136,7 +139,7 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align:center"><strong>Fig 9.</strong> The <a href="https://www.adafruit.com/product/1137">Maxbotix MB7092</a>, available e.g. from Adafruit for $100</td>
+<td style="text-align:center"><strong>Fig 8.</strong> The <a href="https://www.adafruit.com/product/1137">Maxbotix MB7092</a>, available e.g. from Adafruit for $100</td>
 </tr>
 </tbody>
 </table>
@@ -148,7 +151,7 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align:center"><strong>Fig 10.</strong> The <a href="https://www.adafruit.com/product/3178">Feather M0 LoRa microcontroller</a>, available e.g. from Adafruit for $35</td>
+<td style="text-align:center"><strong>Fig 9.</strong> The <a href="https://www.adafruit.com/product/3178">Feather M0 LoRa microcontroller</a>, available e.g. from Adafruit for $35</td>
 </tr>
 </tbody>
 </table>
@@ -160,6 +163,7 @@
 <p><a href="/img/ojofeliz/ofr6.jpeg"><img src="/img/ojofeliz/ofr6.jpeg" alt=""></a></p>
 <p><a href="/img/ojofeliz/ofr7.jpeg"><img src="/img/ojofeliz/ofr7.jpeg" alt=""></a></p>
 <p><a href="/img/ojofeliz/ofr2.jpeg"><img src="/img/ojofeliz/ofr2.jpeg" alt=""></a></p>
+<p><a href="/img/ojofeliz/horseback.jpeg"><img src="/img/ojofeliz/horseback.jpeg" alt=""></a></p>
 
 
     </div>
