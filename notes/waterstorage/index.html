@@ -11,17 +11,17 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="shortcut icon" type="image/x-icon" href="/img/edge_favicon.png" />
-    <title>Satellite Modem Prototyping</title>
+    <title>Remote Water Storage Monitoring System</title>
   </head>
   <body>
 
     <div id='post-content'>
 
   <h3><a href="/">Edge Collective</a></h3>
-    <h1>Satellite Modem Prototyping</h1>
-    <i>Using a satellite modem to send data from off-grid.</i>
+    <h1>Remote Water Storage Monitoring System</h1>
+    <i>Developing a remote water storage monitoring system.</i>
 
-        <!-- <h1>Satellite Modem Prototyping</h1> -->
+        <!-- <h1>Remote Water Storage Monitoring System</h1> -->
 
   
   <p>Working with CPy 7 on Feather Blue Sense for now ...</p>
@@ -94,19 +94,17 @@ Data: 982f854090673f43bc35bb410028cf4188577d44646ccf41
 </blockquote>
 <p><a href="https://docs.rockblock.rock7.com/docs/iridium-contract-costs">https://docs.rockblock.rock7.com/docs/iridium-contract-costs</a></p>
 <hr>
-<h1>Update Jan 31 2023</h1>
 <p>Rockblock is sending depth data, pulling readings from analog pin on the depth sensor. The Circuipython firmware is v 7.X, and is from here: <a href="https://github.com/dwblair/rockblock-ultrasonic/tree/main/firmware/v1">https://github.com/dwblair/rockblock-ultrasonic/tree/main/firmware/v1</a></p>
 <p>The rockblock sends it data to the rockblock server, which has a 'webhook' that sends an HTTP POST JSON of data to 159.65.226.222:4000</p>
 <p>The firmware on the rockblock encodes its data using a python struct approach</p>
 <p>A 'relay server' is running at 159.65.226.222:4000, using code from here: <a href="https://github.com/edgecollective/iridium-bayou-relay">https://github.com/edgecollective/iridium-bayou-relay</a>. The relay server decodes the data using a js version of the python struct approach, and then does an HTTP POST of the data to bayou.pvos.org at the '2ifhwi34ue4j' data feed</p>
 <hr>
-<h1>Update Mar 7 2023</h1>
 <p>Sleep stats for Feather S2: <a href="https://learn.adafruit.com/adafruit-esp32-feather-v2/power-management">https://learn.adafruit.com/adafruit-esp32-feather-v2/power-management</a></p>
 <p>Smaller sharp display (adafruit product) -- <a href="https://www.digikey.com/en/products/detail/adafruit-industries-llc/3502/7386264">https://www.digikey.com/en/products/detail/adafruit-industries-llc/3502/7386264</a></p>
 <p>Larger sharp display: <a href="https://www.digikey.com/en/products/detail/sharp-microelectronics/LS013B7DH03/5300387">https://www.digikey.com/en/products/detail/sharp-microelectronics/LS013B7DH03/5300387</a></p>
 <p>Sharp memory family <a href="https://www.mouser.com/datasheet/2/365/Sharp_Memory_LCD_Brochure_2015-746065.pdf">https://www.mouser.com/datasheet/2/365/Sharp_Memory_LCD_Brochure_2015-746065.pdf</a></p>
 <hr>
-<h1>Update Mar 8 2023</h1>
+<h1>Wed Mar  8 06:00:46 PM EST 2023</h1>
 <p>Sleep mode in Feather ESP32 S2 TFT</p>
 <p><a href="https://learn.adafruit.com/deep-sleep-with-circuitpython/power-consumption">https://learn.adafruit.com/deep-sleep-with-circuitpython/power-consumption</a></p>
 
