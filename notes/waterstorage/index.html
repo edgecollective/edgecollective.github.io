@@ -107,6 +107,23 @@ Data: 982f854090673f43bc35bb410028cf4188577d44646ccf41
 <h1>Wed Mar  8 06:00:46 PM EST 2023</h1>
 <p>Sleep mode in Feather ESP32 S2 TFT</p>
 <p><a href="https://learn.adafruit.com/deep-sleep-with-circuitpython/power-consumption">https://learn.adafruit.com/deep-sleep-with-circuitpython/power-consumption</a></p>
+<p>Seems like we get less than 0.1 mA in deep sleep!</p>
+<p>Maxbotix 7092 datasheet: <a href="/img/ojofeliz/PD11838z_-XL-MaxSonar-WR_Datasheet-website.pdf">/img/ojofeliz/PD11838z_-XL-MaxSonar-WR_Datasheet-website.pdf</a></p>
+<p>Notes:</p>
+<p>Feather ESP32 S2 seems like a good chip to use.</p>
+<p>Sleep current will likely be dictated by the ultrasonic sensor module.</p>
+<p>Datasheet suggests that average current for module is 2 mA.  We might be able to turn on/off, too.</p>
+<p>First order: don't worry about turning off ultrasonic.  Solar charging will likely provide ample energy.</p>
+<p>First pass:  looks like Feather S2 doesn't like talking to its uart?</p>
+<p><img src="/img/ojofeliz/rockblock_bug.png" alt=""></p>
+<p>Looks like there is a delay in response to the SBDIX command</p>
+<p>Added a delay in adafruit_rockblock.py when sending that command!</p>
+<p>Also note: reference /gitwork/rockblock-ultrasonic/firmware/v2 for model code that was working on the nrf</p>
+<h1>Fri Mar 10 10:22:56 AM EST 2023</h1>
+<p>selecting a fluid level sensor <a href="https://www.digikey.com/en/articles/selecting-a-fluid-level-sensor-what-you-need-to-know">https://www.digikey.com/en/articles/selecting-a-fluid-level-sensor-what-you-need-to-know</a></p>
+<p>PVC float switch: <a href="https://www.digikey.com/en/products/detail/LS01-1A66-PA-500W/374-1000-ND/385414">https://www.digikey.com/en/products/detail/LS01-1A66-PA-500W/374-1000-ND/385414</a> -- $14</p>
+<p>Optomax liquid level detector -- $25 -- <a href="https://learn.sparkfun.com/tutorials/photon-remote-water-level-sensor/all">https://www.adafruit.com/product/3397?gclid=Cj0KCQiAx6ugBhCcARIsAGNmMbg3aIRxX2yRx9D1Ut7yRgv7RB8RR9syOGakpW9teGRHD29flF-9ktoaAk5bEALw_wcB</a></p>
+<p>Sparkfun project to turn a pump on/off on a farm -- <a href="https://learn.sparkfun.com/tutorials/photon-remote-water-level-sensor/all">https://learn.sparkfun.com/tutorials/photon-remote-water-level-sensor/all</a></p>
 
 
     </div>
