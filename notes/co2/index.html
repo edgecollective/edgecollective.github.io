@@ -4285,6 +4285,24 @@ ID / drain current of 500 mA <a href="https://components101.com/sites/default/fi
 <p>Meanwhile:  revise cover for REV_W so that there are no mounting holes ... perhaps expand the 'window' ... rely on fact that the screen <em>is</em> positioned consistently with respect to the header?</p>
 <p>Latest firmware for REV_W is here: <a href="https://gitlab.com/p-v-o-s/co2/co2-monitor/-/blob/128a3bf60fdcca3d279099922cb8fd66f8ec6527/REV_W/firmware/CPY/v5/jp_batt.py">https://gitlab.com/p-v-o-s/co2/co2-monitor/-/blob/128a3bf60fdcca3d279099922cb8fd66f8ec6527/REV_W/firmware/CPY/v5/jp_batt.py</a></p>
 <p>Allows for 'wall mount' display, and simple graphing, by switching button A.  Also experimenting with turning display off via button B.</p>
+<hr>
+<p>2023-03-27</p>
+<p>Notes on ideal diodes <a href="https://www.ti.com/lit/ml/slvae57b/slvae57b.pdf?ts=1679863892842&amp;ref_url=https%253A%252F%252Fwww.reddit.com%252F">https://www.ti.com/lit/ml/slvae57b/slvae57b.pdf?ts=1679863892842&amp;ref_url=https%253A%252F%252Fwww.reddit.com%252F</a></p>
+<p>Nice material on an ideal diode <a href="https://simple-ee.com/2021/02/17/idealdiode/">https://simple-ee.com/2021/02/17/idealdiode/</a></p>
+<p>Available, small buzzer on digikey <a href="https://www.digikey.com/en/products/detail/cui-devices/CMT-322-65-SMT-TR/14682617">https://www.digikey.com/en/products/detail/cui-devices/CMT-322-65-SMT-TR/14682617</a></p>
+<p>Nice small buzzer, avail on digikey: <a href="https://www.digikey.com/en/products/detail/cui-devices/CMT-4023S-SMT-TR/6012413">https://www.digikey.com/en/products/detail/cui-devices/CMT-4023S-SMT-TR/6012413</a></p>
+<p>Footprint via CUI:
+devices has nice footprints <a href="https://www.cuidevices.com/product/resource/pcbfootprint/cmt-4023s-smt-tr">https://www.cuidevices.com/product/resource/pcbfootprint/cmt-4023s-smt-tr</a></p>
+<p>Raspberry Pi Pico datasheet <a href="https://datasheets.raspberrypi.com/picow/pico-w-datasheet.pdf">https://datasheets.raspberrypi.com/picow/pico-w-datasheet.pdf</a></p>
+<h1>mosfets for ideal diode on pico-w</h1>
+<p>pico w datasheet:</p>
+<p>through-hole mosfets suggested by mike:</p>
+<p>G700P06J <a href="https://www.digikey.com/en/products/detail/goford-semiconductor/G700P06J/17728086">https://www.digikey.com/en/products/detail/goford-semiconductor/G700P06J/17728086</a> - GDS</p>
+<p>SUP53P06-20-E3 <a href="https://www.digikey.com/en/products/detail/vishay-siliconix/SUP53P06-20-E3/2623103">https://www.digikey.com/en/products/detail/vishay-siliconix/SUP53P06-20-E3/2623103</a> - GDS</p>
+<p>SUP90P06-09L-E3 <a href="https://www.digikey.com/en/products/detail/vishay-siliconix/SUP90P06-09L-E3/2623132?utm_adgroup=Semiconductor%20Modules&amp;utm_source=google&amp;utm_medium=cpc&amp;utm_campaign=Dynamic%20Search_EN_RLSA_Buyers&amp;utm_term=&amp;utm_content=Semiconductor%20Modules&amp;gclid=CjwKCAjw_YShBhAiEiwAMomsEP6eqRBe0CFW4P-Bdfs89GYrkXVatmb4x03sbc4NIiH6557Wx1P35BoCV2UQAvD_BwE">https://www.digikey.com/en/products/detail/vishay-siliconix/SUP90P06-09L-E3/2623132?utm_adgroup=Semiconductor%20Modules&amp;utm_source=google&amp;utm_medium=cpc&amp;utm_campaign=Dynamic%20Search_EN_RLSA_Buyers&amp;utm_term=&amp;utm_content=Semiconductor%20Modules&amp;gclid=CjwKCAjw_YShBhAiEiwAMomsEP6eqRBe0CFW4P-Bdfs89GYrkXVatmb4x03sbc4NIiH6557Wx1P35BoCV2UQAvD_BwE</a> - GDS</p>
+<p>TSM680P06CH X0G <a href="https://www.digikey.com/en/products/detail/taiwan-semiconductor-corporation/TSM680P06CH-X0G/7360503">https://www.digikey.com/en/products/detail/taiwan-semiconductor-corporation/TSM680P06CH-X0G/7360503</a></p>
+<p>TSM480P06CH X0G <a href="https://www.digikey.com/en/products/detail/taiwan-semiconductor-corporation/TSM480P06CH-X0G/7360375">https://www.digikey.com/en/products/detail/taiwan-semiconductor-corporation/TSM480P06CH-X0G/7360375</a> - GDS</p>
+<p>SMT mosfet suggested by pico datasheet: <a href="https://www.digikey.com/en/products/detail/diodes-incorporated/DMG2305UX-7/4340667">https://www.digikey.com/en/products/detail/diodes-incorporated/DMG2305UX-7/4340667</a> - GSD</p>
 
 
     </div>
