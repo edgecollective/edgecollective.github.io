@@ -29,6 +29,43 @@
 <p>Keystone 2479 3XAAA holder <a href="https://www.digikey.com/en/products/detail/keystone-electronics/2479/303824">https://www.digikey.com/en/products/detail/keystone-electronics/2479/303824</a></p>
 <p>sma antenna horizontal <a href="https://www.digikey.com/en/products/detail/te-connectivity-amp-connectors/5-1814400-2/11498408">https://www.digikey.com/en/products/detail/te-connectivity-amp-connectors/5-1814400-2/11498408</a></p>
 <p>sma antenna vertical <a href="https://www.digikey.com/en/products/detail/te-connectivity-amp-connectors/5-1814832-2/11611208">https://www.digikey.com/en/products/detail/te-connectivity-amp-connectors/5-1814832-2/11611208</a></p>
+<p>MCP1702 has through-hole option, capable of 250mA <a href="https://www.digikey.com/en/products/detail/microchip-technology/MCP1702-3302E%2FTO/1098463?utm_adgroup=Integrated%20Circuits&amp;utm_source=google&amp;utm_medium=cpc&amp;utm_campaign=Shopping_Supplier_Microchip_0150_Co-op&amp;utm_term=&amp;utm_content=Integrated%20Circuits&amp;gclid=CjwKCAjwoIqhBhAGEiwArXT7K7I1hcoVI18yDyanMFynm7qaPZQPBQjBFUdALWkfJCc4vPWMe8IFMBoC9dgQAvD_BwE">https://www.digikey.com/en/products/detail/microchip-technology/MCP1702-3302E%2FTO/1098463?utm_adgroup=Integrated%20Circuits&amp;utm_source=google&amp;utm_medium=cpc&amp;utm_campaign=Shopping_Supplier_Microchip_0150_Co-op&amp;utm_term=&amp;utm_content=Integrated%20Circuits&amp;gclid=CjwKCAjwoIqhBhAGEiwArXT7K7I1hcoVI18yDyanMFynm7qaPZQPBQjBFUdALWkfJCc4vPWMe8IFMBoC9dgQAvD_BwE</a></p>
+<p>ESP32S2 wifi current draw?</p>
+<p>ESP32S2 datasheet: <a href="https://www.espressif.com/sites/default/files/documentation/esp32-s2_datasheet_en.pdf">https://www.espressif.com/sites/default/files/documentation/esp32-s2_datasheet_en.pdf</a></p>
+<p>MIC5219 - <a href="https://www.digikey.com/en/products/detail/microchip-technology/MIC5219-3-3YM5-TR/771750?s=N4IgTCBcDaIKwHYBsBaAjGAHG9KByAIiALoC%2BQA">https://www.digikey.com/en/products/detail/microchip-technology/MIC5219-3-3YM5-TR/771750?s=N4IgTCBcDaIKwHYBsBaAjGAHG9KByAIiALoC%2BQA</a></p>
+<p>CAT6219 <a href="https://www.led-professional.com/products/led-driver-ics-modules/catalyst-semiconductor-launches-500ma-low-dropout-ldo-regulator#:~:text=An%20alternative%20to%20Micrel's%20MIC5219,ideal%20for%20low%20noise%20applications.">https://www.led-professional.com/products/led-driver-ics-modules/catalyst-semiconductor-launches-500ma-low-dropout-ldo-regulator#:~:text=An%20alternative%20to%20Micrel's%20MIC5219,ideal%20for%20low%20noise%20applications.</a></p>
+<p>MIC5319 -- can do 500mA max, 150uA sleep current <a href="https://www.digikey.com/en/products/detail/microchip-technology/MIC5319-3-0YD5-TR/9642879">https://www.digikey.com/en/products/detail/microchip-technology/MIC5319-3-0YD5-TR/9642879</a></p>
+<p>Top 3 contenders:</p>
+<p>S-1155B33-U5T1U -- 500mA max output, 1uA sleep current <a href="https://www.digikey.com/en/products/detail/ablic-u-s-a-inc/S-1155B33-U5T1U/6601512">https://www.digikey.com/en/products/detail/ablic-u-s-a-inc/S-1155B33-U5T1U/6601512</a></p>
+<p>the AP2112K that Adafruit uses -- 600mA output, 80uA quiescent current, 250mV dropout at 600mA  <a href="https://www.digikey.com/en/products/detail/diodes-incorporated/AP2112K-3-3TRG1/4470746">https://www.digikey.com/en/products/detail/diodes-incorporated/AP2112K-3-3TRG1/4470746</a></p>
+<p>RT9080-33GJS -- wow, 600mA max output, 4uA quiescent current, 530mV dropout at 600mA  <a href="https://www.digikey.com/en/products/detail/richtek-usa-inc/RT9080-33GJ5/6161634">https://www.digikey.com/en/products/detail/richtek-usa-inc/RT9080-33GJ5/6161634</a></p>
+<p>hmm -- AP2112K seems to be the winner</p>
+<p>Nice thread on putting diode into VUSB on feather -- <a href="https://forums.adafruit.com/viewtopic.php?f=8&amp;p=706250">https://forums.adafruit.com/viewtopic.php?f=8&amp;p=706250</a></p>
+<p>Looks like max current for Rockblock is approx 470 mA -- so the AP2112K might be the right answer</p>
+<h1>reusing a tracker v0.1 prototype</h1>
+<p>rfm95 pinout <a href="https://cdn.sparkfun.com/assets/learn_tutorials/8/0/4/RFM95_96_97_98W.pdf">https://cdn.sparkfun.com/assets/learn_tutorials/8/0/4/RFM95_96_97_98W.pdf</a></p>
+<hr>
+<p>non-uf2 circuitpython installation: <a href="https://learn.adafruit.com/welcome-to-circuitpython/non-uf2-installation">https://learn.adafruit.com/welcome-to-circuitpython/non-uf2-installation</a> for feather m0 lora</p>
+<p>bossac:</p>
+<p><a href="https://github.com/shumatech/BOSSA/tree/arduino">https://github.com/shumatech/BOSSA/tree/arduino</a></p>
+<p>circuitpython for feather m0 lora :
+https://circuitpython.org/board/feather_m0_rfm9x/</p>
+<pre><code>sudo ./bossac -p /dev/ttyACM0 -e -w -v -R adafruit-circuitpython-feather_m0_rfm9x-en_US-8.0.4.bin
+</code></pre>
+<p><a href="https://learn.adafruit.com/using-ds18b20-temperature-sensor-with-circuitpython/circuitpython">https://learn.adafruit.com/using-ds18b20-temperature-sensor-with-circuitpython/circuitpython</a></p>
+<p><a href="https://learn.adafruit.com/using-ds18b20-temperature-sensor-with-circuitpython/circuitpython">https://learn.adafruit.com/using-ds18b20-temperature-sensor-with-circuitpython/circuitpython</a></p>
+<hr>
+<p>todo:</p>
+<ul>
+<li>1-wire test w CPY -- 1 sensor works on feather esp32 s2 tft</li>
+<li>adding an additional UART to the esp32-s2 in CPY</li>
+<li>proper choice of ultrasonic sensor</li>
+<li>adding a mosfet on top of the ultrasonic to control it</li>
+</ul>
+<p>maximum device count on bus: <a href="https://github.com/adafruit/Adafruit_CircuitPython_OneWire/issues/16">https://github.com/adafruit/Adafruit_CircuitPython_OneWire/issues/16</a></p>
+<p>notes:</p>
+<p>going to try a p-mosfet ideal diode circuit and bring 3V independently to the feather board.  basically, replicate adafruit's setup, but the action of the mosfet is to bring EN to ground when V_EXT battery is plugged in (V_EXT is connected to gate of fet; fet connects EN to ground).</p>
+<p>independently:  an N-fet is required to turn an external sensor (ultrasonic) on/off -- by disconnecting ground (low side).  can double check this by looking at feather s2 circuit. 'cut the ground lead using an n-fet'</p>
 
 
     </div>
