@@ -11,17 +11,17 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="shortcut icon" type="image/x-icon" href="/img/edge_favicon.png" />
-    <title>DIY Remote Radio Temp Sensor</title>
+    <title>Satellite + LoRa Depth Sensor</title>
   </head>
   <body>
 
     <div id='post-content'>
 
   <h3><a href="/">Edge Collective</a></h3>
-    <h1>DIY Remote Radio Temp Sensor</h1>
-    <i>Remote temp sensor transmitting over lora radio</i>
+    <h1>Satellite + LoRa Depth Sensor</h1>
+    <i>Remote temp and depth sensor transmitting over lora and satellite radio</i>
 
-        <!-- <h1>DIY Remote Radio Temp Sensor</h1> -->
+        <!-- <h1>Satellite + LoRa Depth Sensor</h1> -->
 
   
   <p>RJ45 connector avail on digikey, with footprint in kicad: <a href="https://www.digikey.com/en/products/detail/amphenol-cs-commercial-products/RJMG1BD3B8K1ANR/5359794">https://www.digikey.com/en/products/detail/amphenol-cs-commercial-products/RJMG1BD3B8K1ANR/5359794</a></p>
@@ -66,6 +66,24 @@ https://circuitpython.org/board/feather_m0_rfm9x/</p>
 <p>notes:</p>
 <p>going to try a p-mosfet ideal diode circuit and bring 3V independently to the feather board.  basically, replicate adafruit's setup, but the action of the mosfet is to bring EN to ground when V_EXT battery is plugged in (V_EXT is connected to gate of fet; fet connects EN to ground).</p>
 <p>independently:  an N-fet is required to turn an external sensor (ultrasonic) on/off -- by disconnecting ground (low side).  can double check this by looking at feather s2 circuit. 'cut the ground lead using an n-fet'</p>
+<h1>Testing depth sensor current consumption</h1>
+<p>Note -- seems that 3.3V input to VBUS isn't sufficient to power the battery monitor on the esp32-s2?</p>
+<p>maxbotix 7388 datasheet: <a href="https://maxbotix.com/pages/hrxl-maxsonar-wr-datasheet">https://maxbotix.com/pages/hrxl-maxsonar-wr-datasheet</a></p>
+<p>power profiler website: <a href="https://www.nordicsemi.com/Products/Development-hardware/Power-Profiler-Kit-2">https://www.nordicsemi.com/Products/Development-hardware/Power-Profiler-Kit-2</a></p>
+<ul>
+<li>instructions: <a href="https://infocenter.nordicsemi.com/index.jsp?topic=%2Fug_ppk2%2FUG%2Fppk%2FPPK_user_guide_Intro.html">https://infocenter.nordicsemi.com/index.jsp?topic=%2Fug_ppk2%2FUG%2Fppk%2FPPK_user_guide_Intro.html</a></li>
+</ul>
+<h1>I2C Power Management</h1>
+<p><a href="https://learn.adafruit.com/adafruit-esp32-s2-feather/i2c-power-management">https://learn.adafruit.com/adafruit-esp32-s2-feather/i2c-power-management</a></p>
+<h1>Power testing</h1>
+<p>sat modem &quot;disabled&quot; + esp32-s2 tft asleep -- 3.68 mA
+sat modem &quot;enabled&quot; + esp32-s2 tft asleep -- 3.66 mA</p>
+<p>essentially no difference.</p>
+<p>Seems like the esp32-s2 with no display sleeps at about .7 mA</p>
+<p>Apparent issue with the watchdog timer: <a href="https://github.com/adafruit/circuitpython/issues/5890">https://github.com/adafruit/circuitpython/issues/5890</a></p>
+<p>Testing out LoRa - based depth:</p>
+<p><a href="http://bayou.pvos.org/data/pb87ap97vgrr">http://bayou.pvos.org/data/pb87ap97vgrr</a></p>
+<p>Running every 2 seconds as a test ... latest version is sweet-p/firmware/board_ver_0.2/v4.0</p>
 
 
     </div>
