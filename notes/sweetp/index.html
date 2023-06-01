@@ -87,6 +87,12 @@ sat modem &quot;enabled&quot; + esp32-s2 tft asleep -- 3.66 mA</p>
 <p>Experiment overnight, May 30th:</p>
 <p><a href="http://bayou.pvos.org/data/pb87ap97vgrr?plot_param=battery_volts">http://bayou.pvos.org/data/pb87ap97vgrr?plot_param=battery_volts</a></p>
 <p><img src="/img/ojofeliz/exp_1_400mAH.png" alt=""></p>
+<p>Power consumption guidance for the sat modem:</p>
+<p><a href="https://docs.rockblock.rock7.com/docs/power-consumption-guidance">https://docs.rockblock.rock7.com/docs/power-consumption-guidance</a></p>
+<p>Very strange behavior when pull down the satellite 'on/off pin'.  I've added an external resistor pull-down to make sure it stays down. Seems like the voltage is still around 1.5V, nevertheless.  Stronger pulldown required?</p>
+<p><img src="/img/ojofeliz/sat_sleep_with_pulldown.png" alt=""></p>
+<p>Extended test -- note, test begins with largest spike:</p>
+<p><img src="/img/ojofeliz/sat_sleep_strange.png" alt=""></p>
 
 
     </div>
