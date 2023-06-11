@@ -148,6 +148,11 @@ sat modem &quot;enabled&quot; + esp32-s2 tft asleep -- 3.66 mA</p>
 <p>Best is if the system can be turned on every X hours, do its thing, then turned off.</p>
 <p>Maybe there's some hardware counter than can help.</p>
 <p>Turn on every 2 hours. Every time it turns on, it makes the counter progress.  Read the counter on wakeup; if the counter has reached Y counts, then try satellite.</p>
+<p>Waking up an arduino with the DS3231: <a href="https://www.youtube.com/watch?v=-dW4XsBo3Mk">https://www.youtube.com/watch?v=-dW4XsBo3Mk</a></p>
+<p>Failsafe design for space: <a href="https://www.mouser.com/applications/electronic-systems-space-require-fail-safe/">https://www.mouser.com/applications/electronic-systems-space-require-fail-safe/</a></p>
+<p>pros / cons of various memory approaches: <a href="https://www.digikey.com/en/articles/the-fundamentals-of-embedded-memory">https://www.digikey.com/en/articles/the-fundamentals-of-embedded-memory</a></p>
+<h1>Proposal A</h1>
+<p><img src="/img/ojofeliz/wakeup_scheme.png" alt=""></p>
 
 
     </div>
