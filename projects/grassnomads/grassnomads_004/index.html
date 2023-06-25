@@ -110,6 +110,53 @@ sat modem &quot;enabled&quot; + esp32-s2 tft asleep -- 3.66 mA</p>
 <p><img src="/img/ojofeliz/wakeup_scheme.png" alt=""></p>
 <h1>Interfacing with the microSD card</h1>
 <p><a href="https://learn.adafruit.com/micropython-hardware-sd-cards?view=all&amp;gclid=CjwKCAjw4ZWkBhA4EiwAVJXwqTIw_ktRSa_ozdxaS8Tk8CNPWuvHmbTkwex7W76mLztDJs1VnvRz8BoCRxgQAvD_BwE">Adafruit guide to microSD and Circuitpython</a></p>
+<h1>Issues with the TPL5110</h1>
+<p><a href="https://electronics.stackexchange.com/questions/390139/tpl5110-doesnt-work-with-nodemcu">https://electronics.stackexchange.com/questions/390139/tpl5110-doesnt-work-with-nodemcu</a></p>
+<p>Interesting ... adding caps on VDD / GND didn't do it for me, using the Feather ESP32-S2 + TFT</p>
+<p>What seems to work is to add a stronger pull-down resistor on the &quot;DONE&quot; pin.</p>
+<p>When I added 45K, the micro didn't wake up fully.</p>
+<p>When I changed it to 4.5K, the micro woke up.</p>
+<p>The default resistor on the TPL5110 board from adafruit is 1M to ground -- seemingly far too weak for our purposes here.</p>
+<p>Hmm -- oddly, seems as though the 'shutoff' works when DONE is connected to A1, even though the firmware points at D5.
+If I connect to D5, it shuts off too soon.</p>
+<p>Going to experiment with other pins ...</p>
+<p>Perhaps there is something strange about e.g. D5 ...</p>
+<p>Oh wait -- the code was actually changing A1 still ...</p>
+<p>Okay, changing code to A1 ...</p>
+<p>A1 works.</p>
+<p>Trying D5 ...</p>
+<p>Interesting!  D5 doesn't work, but A1 does ...</p>
+<p>Note that A1 is pulled to ground with a bodged resistor, too ...</p>
+<p>value: also 4.4K!</p>
+<p>i.e. we have two 4.4K resistors in parallel ... equalling 2.2K</p>
+<p>What if we tried D5 with the same setup -- parallel 4.4K resistors as a pulldown?</p>
+<p>Cool, works!</p>
+<p>Now try with the power recording tool ...</p>
+<p>... doesn't work for some reason.</p>
+<p>System works using an ItsyBitsy BLE, running of 5V to VDD into the TPL5110 board.
+Also works off 3V pin on IB.</p>
+<p>Something wrong with the power measurement device?</p>
+<p>Ah, mystery continues ...</p>
+<p>The power profiler works when the itsy bitsy is in the loop -- i.e. when the input power is connected to '3V' on the IB board.</p>
+<p>Let me also test with 'USB' pin ...</p>
+<p>Yes, seems to work.</p>
+<p>Perhaps this is b/c of the capacitors on the IB board ...
+I can look them up quickly ...</p>
+<p>Schematic is here: <a href="https://cdn-learn.adafruit.com/assets/assets/000/087/158/original/adafruit_products_schem.png?1579387035">https://cdn-learn.adafruit.com/assets/assets/000/087/158/original/adafruit_products_schem.png?1579387035</a></p>
+<p>Looks like the max we have is a 10uF cap ...</p>
+<p>.. so let's try a 10uF cap between VDD and GND (which, TBH, may be what we <em>removed</em> from the TPL5110 board in the first place ...)</p>
+<p>YES, 10 uF cap works!</p>
+<p><a href="/img/ojofeliz/tpl_working.png"> <img src="/img/ojofeliz/tpl_working.png" alt=""></a></p>
+<p>Result:  .2 uA sleep current ... pretty great!</p>
+<p>Summary:</p>
+<ul>
+<li>used sweet-p/firmware/board_ver_0.2/v6.0/test_tpl_code.py</li>
+<li>used pin D5</li>
+<li>two parallel 4.4K resistors pull-down to ground</li>
+<li>10uF cap on VDD + GND on the TPL</li>
+</ul>
+<p>Note: the TPL5110 board had a 1uF cap -- let me quickly test with that ...</p>
+<p>Didn't seem to work!  So, 10uF is a useful addition ... if we're using the TPL5110 breakout, we should add it in parallel on VDD and GND ...</p>
 
 
     </div>
