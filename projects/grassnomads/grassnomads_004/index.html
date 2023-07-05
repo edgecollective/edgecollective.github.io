@@ -24,9 +24,12 @@
         <!-- <h1>Lower-power, resilient operation</h1> -->
 
   
-  <h1>Video Update</h1>
+  <h1>Video Updates</h1>
 <div class = "video-container">
 <iframe class = "video" src="https://www.youtube.com/embed/dRVijSpeKJ4"  allowfullscreen></iframe>
+</div>
+<div class = "video-container">
+<iframe class = "video" src="https://www.youtube.com/embed/nx2r2zGM7o0"  allowfullscreen></iframe>
 </div>
 <h1>Prototype #1</h1>
 <p><a href="/img/ojofeliz/ojofeliz_prototype_1.jpeg"><img src="/img/ojofeliz/ojofeliz_prototype_1.jpeg" alt=""></a></p>
@@ -158,6 +161,10 @@ I can look them up quickly ...</p>
 <p>Note: the TPL5110 board had a 1uF cap -- let me quickly test with that ...</p>
 <p>Didn't seem to work!  So, 10uF is a useful addition ... if we're using the TPL5110 breakout, we should add it in parallel on VDD and GND ...</p>
 <p>Update: tested the 'original' code -- with microSD and LoRa broadcast -- with a resistance that results in a longer period -- approx 20 secs -- and it all seems to work!</p>
+<hr>
+<p>Note -- looks as though various of the ESP8266 pins fluctuate on boot -- which may have been another issue affecting satellite pull-down, and now the TPL5110 pull- down.</p>
+<p>See &quot;All ESP8266 pins oscillate at boot, except GPIO4 and GPIO5.&quot; &amp; etc post, <a href="https://electronics.stackexchange.com/questions/390139/tpl5110-doesnt-work-with-nodemcu">here</a> (same link as above)</p>
+<h1></h1>
 
 
     </div>
