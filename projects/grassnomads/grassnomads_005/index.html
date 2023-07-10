@@ -124,6 +124,15 @@
 <p>Can also see that if simply wait another 8 or 16 minutes, satellite conditions are much more favorable.</p>
 <p>Conclusion:  if you can't get it in 2 or 3 tries, maybe wait at least 30 minutes ...</p>
 <p>... and that might be what we do anyway if we start transmitting at lower frequencies ...</p>
+<h1>Sat Jul  8 09:34:45 PM EDT 2023</h1>
+<p>I've been sending every 10 'send index counts'.  Below, I've switched between an algorithm where my max sat send attempt count was 3, and then I would reattempt, to one where, if I hit that max count, I decremented the 'send index' by 3. The idea was that the system would wait another three sleep intervals before trying to send again, and that then perhaps the satellite network conditions would be more favorable.</p>
+<p>My impression is that it's not yet working very well -- if I've implemented it properly, it seems that a count of '3' is usually too small to send.  I might return to allowing a count of 10.<br>
+<img src="/img/ojofeliz/two_sat_algorithms.png" alt=""></p>
+<p>Fig O.</p>
+<p><img src="/img/ojofeliz/two_sat_algorithms_stats.png" alt=""></p>
+<p>Fig P.</p>
+<p><img src="/img/ojofeliz/two_sat_algorithms_batt.png" alt=""></p>
+<p>Fig Q.</p>
 
 
     </div>
