@@ -11,17 +11,17 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="shortcut icon" type="image/x-icon" href="/img/edge_favicon.png" />
-    <title>Stress testing the initial system</title>
+    <title>Getting ready for first deployment.</title>
   </head>
   <body>
 
     <div id='post-content'>
 
   <h3><a href="/">Edge Collective</a></h3>
-    <h1>Stress testing the initial system</h1>
+    <h1>Getting ready for first deployment.</h1>
     <i>Testing updated boards; selecting enclosures</i>
 
-        <!-- <h1>Stress testing the initial system</h1> -->
+        <!-- <h1>Getting ready for first deployment.</h1> -->
 
   
   <p>Note:  a clear see-through cover might not be ideal for our application, as sunlight might cause too much heating in this configuration.  More convenient might be a plastic cover that can be opened easily.</p>
@@ -72,6 +72,24 @@ edgecollective</p>
 <a href="http://bayou.pvos.org/data/35tmkbqumaz7?plot_param=battery_volts&amp;limit=10">http://bayou.pvos.org/data/35tmkbqumaz7?plot_param=battery_volts&amp;limit=10</a></p>
 <p>new link for satellite data:
 <a href="http://bayou.pvos.org/data/gcr565avyan2?plot_param=battery_volts&amp;limit=10">http://bayou.pvos.org/data/gcr565avyan2?plot_param=battery_volts&amp;limit=10</a></p>
+<p>Note: solution to blinking TPL5110 problem was to add a 1000 uF cap across GND + DRIVE on the TPL5110, likely due to the initial current draw from the ESP32</p>
+<p>For now, should probably place it on the underside of the board so that it doesn't get jostled when pressing the button</p>
+<h1>Mon Aug 28 01:12:16 PM EDT 2023</h1>
+<p>Quick notes on upgrades before mailing prototype:</p>
+<ul>
+<li>new splash screen</li>
+<li>modify sleep interval to reduce number of iterations before send, to facilitate testing in field?</li>
+<li>test satellite data flow</li>
+<li>how to incorporate the 'sensor height' variable?</li>
+<li>use sweet-p v0.3 for 'wifi receiver' board</li>
+<li>upgrade the feather esp32-tft on the main board (screen broken)</li>
+<li>screw in the satellite modem connector</li>
+<li>solder / heatshrink the solar panel connector</li>
+</ul>
+<h1>Tue Aug 29 10:54:10 AM EDT 2023</h1>
+<p>Currently $0.18 per credit.</p>
+<p>Currently every 3 hours = 8 credits per day.</p>
+<p>I.e.:  $43 per month</p>
 
 
     </div>
