@@ -24,78 +24,31 @@
         <!-- <h1>Low-energy transportation</h1> -->
 
   
-  <h2>No-weld bike trailer designs:</h2>
-<p>Main reference, with nice design elements: <a href="http://drumbent.com/trailer.html">http://drumbent.com/trailer.html</a></p>
-<p>Version with plastic bin: <a href="http://drumbent.blogspot.com/2007/05/fan-mail-2.html">http://drumbent.blogspot.com/2007/05/fan-mail-2.html</a></p>
+  <h1>No-weld, Low-cost Bike Trailer</h1>
+<p>The goal here is to develop an easy-to-assemble, low-cost bike trailer design, sourced from readily-available parts.</p>
+<p>After <a href="/notes/transport">some experimentation</a>, we've currently settled on:</p>
 <ul>
-<li><img src="/img/transport/bin_trailer.JPG" alt=""></li>
+<li>a bike frame made from 1/2&quot; electrical conduit (inexpensive / easily sourced)</li>
+<li>recycled bicycle wheels</li>
+<li>steel 'dropouts' (the wheel supports) that can be either laser- or hand-cut.</li>
 </ul>
-<h2>Larger trailer, with nice build pics:</h2>
-<p><a href="http://drumbent.com/trailer_big.html">http://drumbent.com/trailer_big.html</a></p>
-<ul>
-<li>
-<p><img src="/img/transport/no_weld_trailer.jpeg" alt=""></p>
-</li>
-<li>
-<p><img src="/img/transport/no_weld_pieces.jpeg" alt=""></p>
-</li>
-<li>
-<p><img src="/img/transport/no_weld_bolts.jpeg" alt=""></p>
-</li>
-<li>
-<p><img src="/img/transport/dropouts.jpeg" alt=""></p>
-</li>
-<li>
-<p><img src="/img/transport/dropouts_mounted.jpeg" alt=""></p>
-</li>
-<li>
-<p><img src="/img/transport/trailer_box.jpeg" alt=""></p>
-</li>
-<li>
-<p><img src="/img/transport/finished_bike.jpeg" alt=""></p>
-</li>
-</ul>
-<h1>Bike dropout design</h1>
-<p><a href="https://www.jeffgeerling.com/blog/2021/how-export-2d-illustration-3d-model-openscad">https://www.jeffgeerling.com/blog/2021/how-export-2d-illustration-3d-model-openscad</a></p>
-<h1>Wed Oct 18 07:06:43 PM EDT 2023</h1>
-<h2>First design for dropouts</h2>
-<p><a href="https://gitlab.com/edgecollective/bike-trailer-dropouts/-/tree/main/v_0.1?ref_type=heads">https://gitlab.com/edgecollective/bike-trailer-dropouts/-/tree/main/v_0.1?ref_type=heads</a></p>
-<p><img src="/img/transport/dropout_first_two.jpeg" alt=""></p>
-<p><img src="/img/transport/trailer_v1.jpeg" alt=""></p>
-<p><img src="/img/transport/trailer_1.jpeg" alt=""></p>
-<h1>Sun Oct 29 07:31:51 PM EDT 2023</h1>
-<p>Adding a bend:</p>
-<p><img src="/img/ojofeliz/send_cut_bend.png" alt=""></p>
-<p>bike_plate_2_bend.dxf</p>
-<h1>Mon Oct 30 05:04:13 PM EDT 2023</h1>
-<p>Assembled initial trailer. Notes:</p>
-<ul>
-<li>internal dropouts need to be shifted up to account for geometry of support bars</li>
-<li>if u-bolts will be used, should be oriented sideways with bend to avoid bolts sticking out</li>
-</ul>
-<p><img src="/img/transport/number_10_screw.png" alt=""></p>
-<p>i.e. can do 0.16&quot; diameter hole i.e. 4 mm</p>
-<h2>Trailer dropouts &quot;Version 0.3&quot;</h2>
-<p><img src="/img/transport/dropout_longer.png" alt=""></p>
-<p><img src="/img/transport/different_lengths.png" alt=""></p>
-<p>Choosing 0.125&quot; (3.2 mm) thickness this round.</p>
-<p>Convention:</p>
-<ul>
-<li>'short' is the one that is attached to the 'outer' frame</li>
-<li>'middle' is inner frame, if use flattened ends; it is longer by 0.5 of pipe diam (1/2&quot; EMT)</li>
-<li>'long' is inner frame, if use non-flattened ends; it is longer by a pipe diam</li>
-</ul>
-<p>Version 0.3 on github: <a href="https://gitlab.com/edgecollective/bike-trailer-dropouts/-/tree/f21a3fa739245bb51466d63d18eab6291da84101/v_0.3">https://gitlab.com/edgecollective/bike-trailer-dropouts/-/tree/f21a3fa739245bb51466d63d18eab6291da84101/v_0.3</a></p>
-<h2>Trailer Version 1.0</h2>
-<ul>
-<li>Dropouts need wider mounting holes, to accommodate a #10 screw (need to measure diameter precisely)</li>
-<li>Might want to select 'lock nuts' or similar</li>
-<li>Might want to upgrade bolt size for added strength</li>
-</ul>
-<p>Do some experiments around lightweight 'beds' for the trailer.  Wood tends to add unnecessary weight</p>
+<h1>Trailer Version 1.0</h1>
+<p><img src="/img/transport/barebones.jpeg" alt=""></p>
 <p><img src="/img/transport/trailer_assembled.jpg" alt=""></p>
-<p><img src="/img/transport/wheel_closeup.jpg" alt=""></p>
+<h1>Dropout design</h1>
+<p>The bike frame design has an 'inner' wheel support bar that is higher than the 'outer' support bar:</p>
+<p><img src="/img/transport/head_on.jpeg" alt=""></p>
+<p>This lead us to design a longer 'inner' dropout, and a shorter, 'outer' dropout.</p>
+<h2>Dropout CAD files</h2>
+<p>The dropouts were designed using openscad; <a href="https://gitlab.com/edgecollective/bike-trailer-dropouts/-/tree/f21a3fa739245bb51466d63d18eab6291da84101/v_0.3">version 0.3 can be found on gitlab</a>.  This repository includes both the original .scad files, as well as the .dxf files useful for laser-cutting.</p>
+<p><img src="/img/transport/openscad_ver_0.3_long.png" alt=""></p>
+<p><img src="/img/transport/openscad_ver_0.3_short.png" alt=""></p>
+<p><img src="/img/transport/dropout_ver_0.3_sideby.png" alt=""></p>
+<h2>Dropouts produced via lasercutting service</h2>
+<p>We chose to have our dropouts made out of 0.125&quot; (3.2 mm) stainless steel by <a href="sendcutsend.com">sendcutsend.com</a></p>
 <p><img src="/img/transport/dropouts_two.jpg" alt=""></p>
+<p><img src="/img/transport/wheel_closeup.jpg" alt=""></p>
+<p><img src="/img/transport/height_diff.jpeg" alt=""></p>
 
 
     </div>
