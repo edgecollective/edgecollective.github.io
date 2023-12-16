@@ -10,66 +10,29 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="shortcut icon" type="image/x-icon" href="/img/edge_favicon.png" />
-    <title>Test deployment of ultrasonic sensor and radio system in CT</title>
-    <meta name="description" content="An initial deployment of the ultrasonic sensor to measure water level in a homestead cistern.">
-    <meta property="og:title" content="An initial deployment of the ultrasonic sensor to measure water level in a homestead cistern." />
+    <title>Marsh Storage Upgrade</title>
+    <meta name="description" content="Upgrading Marsh Storage to gps and a condensation-proof tank sensor">
+    <meta property="og:title" content="Upgrading Marsh Storage to gps and a condensation-proof tank sensor" />
     <!--<meta property="og:url" content="https://www.example.com/webpage/" /> -->
-    <meta property="og:description" content="An initial deployment of the ultrasonic sensor to measure water level in a homestead cistern." />
-    <meta property="og:image" content="/img/ojofeliz/storrs_4.jpg" />
+    <meta property="og:description" content="Upgrading Marsh Storage to gps and a condensation-proof tank sensor" />
+    <meta property="og:image" content="/img/ojofeliz/twintowers.jpeg" />
   </head>
   <body>
 
     <div id='post-content'>
 
   <h3><a href="/">Edge Collective</a></h3>
-    <h1>Test deployment of ultrasonic sensor and radio system in CT.</h1>
-    <i>An initial deployment of the ultrasonic sensor to measure water level in a homestead cistern..</i>
+    <h1>Marsh Storage Upgrade.</h1>
+    <i>Upgrading Marsh Storage to gps and a condensation-proof tank sensor.</i>
 <hr>
-        <!-- <h1>Test deployment of ultrasonic sensor and radio system in CT</h1> -->
+        <!-- <h1>Marsh Storage Upgrade</h1> -->
 
   
-  <h1>Background</h1>
-<p>Maxbotic ultrasonic 7092 water depth sensor, sending data via LoRa radio to a Raspberry Pi, which then is posting data online to bayou.pvos.org and farmos via a python script.</p>
-<h1>Live data feed (as of Mar 26 2023)</h1>
-<p><a href="http://bayou.pvos.org/data/6hs74zsv4ecj?plot_param=distance_meters">http://bayou.pvos.org/data/6hs74zsv4ecj?plot_param=distance_meters</a></p>
-<p><a href="http://bayou.pvos.org/data/6hs74zsv4ecj?plot_param=distance_meters"><img src="/img/ojofeliz/storrs_data.png" alt=""></a></p>
-<h1>Images from the deployment</h1>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/b7-ZXCsvF3k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-<p><a href="/img/ojofeliz/storrs_1.jpg"><img src="/img/ojofeliz/storrs_1.jpg" alt=""></a></p>
-<p><a href="/img/ojofeliz/storrs_2.jpg"><img src="/img/ojofeliz/storrs_2.jpg" alt=""></a></p>
-<p><a href="/img/ojofeliz/storrs_2.jpg"><img src="/img/ojofeliz/storrs_3.jpg" alt=""></a></p>
-<p><a href="/img/ojofeliz/storrs_3.jpg"><img src="/img/ojofeliz/storrs_3.jpg" alt=""></a></p>
-<p><a href="/img/ojofeliz/storrs_4.jpg"><img src="/img/ojofeliz/storrs_4.jpg" alt=""></a></p>
-<p><a href="/img/ojofeliz/storrs_5.jpg"><img src="/img/ojofeliz/storrs_5.jpg" alt=""></a></p>
-<p><a href="/img/ojofeliz/storrs_6.jpg"><img src="/img/ojofeliz/storrs_6.jpg" alt=""></a></p>
-<p><a href="/img/ojofeliz/storrs_7.jpg"><img src="/img/ojofeliz/storrs_7.jpg" alt=""></a></p>
-<p><a href="/img/ojofeliz/storrs_8.jpg"><img src="/img/ojofeliz/storrs_8.jpg" alt=""></a></p>
-<h1>Python script for posting to FarmOS</h1>
-<pre><code>import serial
-import requests
-
-# Define the serial connection.
-ser=serial.Serial('/dev/ttyACM0')
-
-# Read and convert data.
-out=ser.readline()
-a=eval(out)
-b=a.decode(&quot;utf-8&quot;)
-c=b.split(&quot;,&quot;)
-depth_meters=c[0]
-voltage=c[1]
-
-# Send to farmOS.
- = 'XXXX'
-
-url = 'https://test.farmos.dev/asset/1f86f3f4-be57-4e16-99f6-84290afd0a7d/data/basic?private_key=' + private_key
-
-payload = {
-  'depth_meters': depth_meters,
-  'voltage': voltage
-}
-requests.post(url, json=payload)
-</code></pre>
+  <h1>Sat Dec 16 04:29:19 PM EST 2023</h1>
+<p>Working on adding gps module</p>
+<p><a href="https://learn.adafruit.com/adafruit-mini-gps-pa1010d-module">Primary guide</a> on adafruit mini gps</p>
+<p><a href="https://learn.adafruit.com/adafruit-mini-gps-pa1010d-module/circuitpython-python-i2c-usage">circuitpython i2c usage</a></p>
+<p>Able to get current time from gps!  Note: it's UTC time.</p>
 
 
     </div>
