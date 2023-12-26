@@ -35,6 +35,17 @@
 <p><a href="https://learn.adafruit.com/adafruit-mini-gps-pa1010d-module/circuitpython-python-i2c-usage">circuitpython i2c usage</a></p>
 <p>Able to get current time from gps!  Note: it's UTC time.</p>
 <p>Goal: to send only at 5 AM and 1 PM MST</p>
+<h1>Tue Dec 19 03:50:14 PM EST 2023</h1>
+<p>Going to try to use RTC instead of GPS -- might remove a failure mode (connecting to gps network) ...</p>
+<p><a href="https://learn.adafruit.com/adafruit-ds3231-precision-rtc-breakout/circuitpython">Circuitpython code for the DS3231</a></p>
+<p>Rockblock codes: <a href="https://learn.adafruit.com/using-the-rockblock-iridium-modem/basic-test">https://learn.adafruit.com/using-the-rockblock-iridium-modem/basic-test</a></p>
+<h1>Fri Dec 22 05:29:03 PM EST 2023</h1>
+<p>Note: the old smithereen test code is at <a href="http://bayou.pvos.org/data/t2tn5x6krzvw?plot_param=temperature_c">http://bayou.pvos.org/data/t2tn5x6krzvw?plot_param=temperature_c</a></p>
+<h1>Sat Dec 23 12:18:36 PM EST 2023</h1>
+<p><a href="http://bayou.pvos.org/data/hynj3bxfuzst?plot_param=distance_meters&amp;limit=43">http://bayou.pvos.org/data/hynj3bxfuzst?plot_param=distance_meters&amp;limit=43</a></p>
+<p><img src="/img/ojofeliz/sat_pinging.png" alt=""></p>
+<p>This code seems to be working well: <a href="https://github.com/edgecollective/sweet-p/blob/12ce832cbadbaeb9d29aa78e8f4a9ed8c1cbeef8/ver_0.3/firmware/grassnomads/v2.0/utilities/satellite_hour.py">https://github.com/edgecollective/sweet-p/blob/12ce832cbadbaeb9d29aa78e8f4a9ed8c1cbeef8/ver_0.3/firmware/grassnomads/v2.0/utilities/satellite_hour.py</a></p>
+<p>This code also works well, and sends temperature: <a href="https://github.com/edgecollective/sweet-p/blob/a9dcde832bb8d2363664934cd545ba1b778fba73/ver_0.3/firmware/grassnomads/v2.0/utilities/satellite_temperature.py">https://github.com/edgecollective/sweet-p/blob/a9dcde832bb8d2363664934cd545ba1b778fba73/ver_0.3/firmware/grassnomads/v2.0/utilities/satellite_temperature.py</a></p>
 
 
     </div>
