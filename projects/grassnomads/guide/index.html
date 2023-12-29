@@ -36,7 +36,7 @@
 <li><a href="#overview">Overview</a> -- the background context and motivation for our design</li>
 <li><a href="#collaboration">Design Process</a> -- techniques for remote collaboration that we found useful</li>
 <li><a href="#design">Current Design</a> -- the current state of the design, with a simplified build guide and link to design files</li>
-<li><a href="#development">Ongoing Development</a> -- current development goals and improvements that we're working on</li>
+<li><a href="#development">Next Steps</a> -- current development goals and improvements that we're working on.</li>
 </ul>
 <table>
 <thead>
@@ -81,16 +81,278 @@
 <h2>Google docs or equivalent</h2>
 <p>For easy shared text editing and information exchange.</p>
 <h1><a name="design"></a> The current design</h1>
-<h2>System overview</h2>
-<p><img src="/img/ojofeliz/tank_combo.jpeg" alt=""></p>
-<p><img src="/img/ojofeliz/sp_plain.png" alt=""></p>
-<p><img src="/img/ojofeliz/sp_annot.png" alt=""></p>
-<h2>Detailed Components</h2>
-<h2>Hardware costs</h2>
-<h2>Satellite Service setup and cost</h2>
+<h2>System overview and cost summary</h2>
+<p>The current water monitoring system consists of three main parts:</p>
+<ol>
+<li>An <strong>ultrasonic water level sensor</strong>, which measures the height of the water level in a tank</li>
+<li>A open source <strong>transmitter board</strong> which reads the sensor values, and sends them via satellite modem to the internet</li>
+<li>An open source <strong>online data repository</strong>, which can store, graph, and display the data.</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><img src="/img/ojofeliz/tank_combo.jpeg" alt=""></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">'tank_combo.png'</td>
+</tr>
+</tbody>
+</table>
+<p>The ultrasonic sensor is the <a href="https://maxbotix.com/products/mb7850">Maxbotix 7850 Tank Sensor</a>, which is specially designed to avoid problems with condensation that are common with ultrasonic measurements inside tanks and retails for $180.</p>
+<p>The open source transmitter board consists of an open source, custom circuit board, populated with widely-available electronics components.  Building the board requires approximately $550, $300 of which is the cost of the satellite modem.</p>
+<p>The data fees for sending satellite data from one transmitter via Ground Control's online service. at a rate of twice per day for a year, are approximately $100.</p>
+<p>(cf. Ground Control's <a href="https://docs.rockblock.rock7.com/docs/iridium-contract-costs">pricing schedule</a>).</p>
+<p>The cost of maintaining the online database for a year is about $20 per month, or $240 per year.</p>
+<h2>The ultrasonic sensor</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><img src="/img/ojofeliz/mb7850.png" alt=""></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">'mb7850.png'</td>
+</tr>
+</tbody>
+</table>
+<p>The <a href="https://maxbotix.com/products/mb7850">Maxbotix 7850 Tank Sensor</a></p>
+<h2>The transmitter board</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><img src="/img/ojofeliz/sp_schem_v0.3.png" alt=""></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">''</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><img src="/img/ojofeliz/sweet-p-v0.3-3d.png" alt=""></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">''</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><img src="/img/ojofeliz/sp_plain.png" alt=""></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">''</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><img src="/img/ojofeliz/sp_annot.png" alt=""></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">''</td>
+</tr>
+</tbody>
+</table>
+<h2>Satellite modem and service</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><img src="/img/ojofeliz/rockblock.jpg" alt=""></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">''</td>
+</tr>
+</tbody>
+</table>
 <h2>Online data repository</h2>
-<h2><a name="development"></a> Current development</h2>
-<p>The ‘freezing’ problem</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><img src="/img/ojofeliz/bayou_overview.png" alt=""></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">''</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><img src="/img/ojofeliz/tank_drop.png" alt=""></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">''</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><img src="/img/ojofeliz/gallons.png" alt=""></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">''</td>
+</tr>
+</tbody>
+</table>
+<h2>Field applications and testing</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><img src="/img/ojofeliz/marsh_applied.jpeg" alt=""></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">''</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><img src="/img/ojofeliz/twin_closeup.jpeg" alt=""></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">''</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><img src="/img/ojofeliz/casias.png" alt=""></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">''</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><img src="/img/ojofeliz/marsh_deploy.jpeg" alt=""></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">''</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><img src="/img/ojofeliz/tank_depletion_refill.png" alt=""></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">''</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><img src="/img/ojofeliz/initial_marsh_test.jpeg" alt=""></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">''</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><img src="/img/ojofeliz/marsh_mineral.jpeg" alt=""></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">''</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><img src="/img/twintowers.jpeg" alt=""></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">''</td>
+</tr>
+</tbody>
+</table>
+<h1><a name="development"></a> Next Steps in Development</h1>
+<h2>Dealing with condensation issues</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><img src="/img/ojofeliz/max7092.jpg" alt=""></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">''</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><img src="/img/ojofeliz/ojo_freeze.png" alt=""></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">''</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><img src="/img/ojofeliz/sensor_freeze_2.jpeg" alt=""></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">''</td>
+</tr>
+</tbody>
+</table>
 
 
     </div>
