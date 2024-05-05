@@ -169,6 +169,46 @@
 <p><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9112109/">An easy spectrophotometric acid-base titration protocol for dissolved organic matter</a></p>
 <p>correlating uv254 to TOC, BOD, and COD <a href="https://www.youtube.com/watch?v=gqqIAzbyQjM">video</a></p>
 <p>Great paper on UV254 methods and applications.  Note: correlations between uv254 and disinfection byproducts! references <a href="https://downloads.regulations.gov/EPA-HQ-OW-2014-0408-0008/content.pdf">here</a></p>
+<h1>Mon Apr 29 09:29:59 PM EDT 2024</h1>
+<p><a href="https://chem.libretexts.org/Bookshelves/General_Chemistry/Book%3A_Structure_and_Reactivity_in_Organic_Biological_and_Inorganic_Chemistry_(Schaller)/Structure_and_Reactivity_in_Organic_Biological_and_Inorganic_Chemistry_II%3A_Practical_Aspects_of_Structure_-_Purification_and_Spectroscopy/02%3A_Ultraviolet-Visible_Spectroscopy/2.03%3A_UV-Visible_Spectroscopy_of_Organic_Compounds">UV-Vis spec of Organic Compounds</a></p>
+<p><a href="https://edu.rsc.org/resources/students-resource-uv-/-visible-spectroscopy/282.article#:~:text=UV%2Dvisible%20spectroscopy%20is%20a,a%20mechanism%20can%20be%20proposed.">UV-Vis spec, student resources</a></p>
+<p><a href="https://www.intechopen.com/chapters/78677">Nice chapter on uv absorbance</a></p>
+<p><a href="https://www2.chemistry.msu.edu/faculty/reusch/virttxtjml/spectrpy/uv-vis/spectrum.htm">Nice general reference on uv-vis spec</a></p>
+<p><a href="https://chem.libretexts.org/Bookshelves/Organic_Chemistry/Map%3A_Organic_Chemistry_(Wade)_Complete_and_Semesters_I_and_II/Map%3A_Organic_Chemistry_(Wade)/16%3A_Conjugated_Systems_Orbital_Symmetry_and_Ultraviolet_Spectroscopy/16.10%3A_Interpreting_Ultraviolet_Spectra_-_The_Effect_of_Conjugation#:~:text=Molecules%20or%20parts%20of%20molecules,a%20%CF%80%20%2D%20%CF%80*%20transition.">Some UV-Vis chemistry examples</a></p>
+<h1>Sun May  5 02:54:23 PM EDT 2024</h1>
+<h2>Notes on testing v0.2</h2>
+<p>idea: place all non-emitter/detector components on 'bottom' of board to allow easy access during testing</p>
+<p>use voltage doubler on emitter board, as per this part <a href="https://www.analog.com/en/products/max1682.html">here</a></p>
+<p>replace the 5K R15 on detector board with R15 = 619 ohms</p>
+<p>add current sense breakout above R2 on emitter board</p>
+<p>add 555 boost and 555 emitter input on external feather board</p>
+<p>add usb socket to motherboard for power</p>
+<pre><code>I was getting a measly 1.0V at the &quot;2V5&quot; reference pin - some buffoon (that is, me) seems to have chosen poorly the value of R15. I have replaced the 5K with a 619 Ohm resistor - and much better! I get 2.5Vreference.
+
+And the signal at &quot;leak&quot; seems to act as I expected, in room light anyway. I still have to set up the LED and test a blank and wet cuvette ...
+
+so, that T-network has a nice high gain!
+
+And the input signal is 2.491 to 2.517 at 1kHz
+
+Implies the equivalent feedback R is about 53.8Meg
+
+There about 26nApp into the the stage with this test
+
+So , 26mVpp into 1Meg for test current, and about 1.4Vpp output
+
+Now to find what I did wrong at the LED stage ...
+
+With 130us rise time that's about 2.7kHz tia bandwidth
+
+Don't run the LED at 10kHz ..
+
+OK I have a solid 0.5Vpp signal at &quot;leak&quot; node when I ping the LED board with 0V to 3V square wave at 500 Hz. On that emitter pcb I had to swap out R1 (was 49.9K) to 49.9 Ohms, and R2 (was 24.9K) to 24.9 Ohms. So, no cuvette, in the opto-mechanical system Craig designed, I see 0.5Vpp signal. Not bad.
+
+less nice, I see some noise - I think that high gain TIA is also picking up 60Hz, and some other crap. more scope-ing to figure this out .... maybe we want a metal box ?
+</code></pre>
+<p><img src="/img/uvf/mike_test_v0.2.jpg" alt=""></p>
+<p><img src="/img/uvf/craig_PD.jpg" alt=""></p>
 
 
     </div>
