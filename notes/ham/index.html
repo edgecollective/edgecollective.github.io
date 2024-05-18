@@ -391,6 +391,66 @@ void loop()
   }  // end of loop
 </code></pre>
 <p>meshtastic_to_serial_cardkb</p>
+<h1>Sat May 11 04:42:13 PM EDT 2024</h1>
+<p>circuitpython module for waveshare e-paper <a href="https://github.com/gpshead/epaper-circuitpython">here</a></p>
+<p>arduino libraries for waveshare <a href="https://github.com/soonuse/epd-library-arduino">here</a></p>
+<h1>Sat May 11 07:13:12 PM EDT 2024</h1>
+<p>using cardkb in circuitpython <a href="https://scruss.com/blog/2021/06/02/cardkb-mini-keyboard-with-micropython/">here</a></p>
+<p>cardkb layout <a href="https://docs.m5stack.com/en/hat/hat-cardkb">here</a></p>
+<p>better cardkb layout <a href="https://docs.m5stack.com/en/unit/cardkb">here</a></p>
+<p><img src="/img/ham/cardkb_02.webp" alt=""></p>
+<p>asking for enclosure with tbeam and cardkb <a href="https://www.reddit.com/r/meshtastic/comments/1c95iqg/does_anyone_have_enclosure_for_tbeam_cardkb/">here</a></p>
+<p>up: 0xB5
+down: 0xB6
+left: 0xB4
+right: 0xB7</p>
+<p>wrapping text in circuitpython on a display <a href="https://forums.adafruit.com/viewtopic.php?p=873407">here</a></p>
+<h1>Sun May 12 09:07:23 PM EDT 2024</h1>
+<p>RAK4631 documentation for module [here](https://docs.rakwireless.com/Product-Categories/WisBlock/RAK4631/Overview/#product-description</p>
+<p>RAK19007 is the base I bought. RAK19007 documentation <a href="https://docs.rakwireless.com/Product-Categories/WisBlock/RAK19007/Overview/#product-description">here</a></p>
+<p>RAK19007 product guide <a href="https://store.rakwireless.com/products/rak19007-wisblock-base-board-2nd-gen?utm_source=RAK19007&amp;utm_medium=Document&amp;utm_campaign=BuyFromStore">here</a></p>
+<ul>
+<li>description of headers is <a href="https://docs.rakwireless.com/Product-Categories/WisBlock/RAK19007/Datasheet/#hardware">here</a></li>
+</ul>
+<p>custom nodes <a href="https://github.com/meshtastic/firmware/issues/2698">here</a></p>
+<h1>Mon May 13 06:26:40 PM EDT 2024</h1>
+<p>nrf52 dongle prototyping <a href="https://meshtastic.discourse.group/t/wip-diy-nrf82540-nicerf-868-4-2-inch-epaper/5552">here</a></p>
+<p>nrf52 variant <a href="https://github.com/meshtastic/firmware/issues/3628">here</a></p>
+<p>another nrf52 variant board <a href="https://meshtastic.discourse.group/t/new-1w-diy-variant-xiao-nrf52840-ebyte-e22-900m30s/7904">here</a></p>
+<p>board with adafruit feather express <a href="https://github.com/meshtastic/firmware/issues/3628">here</a></p>
+<p>rak IO module on digikey <a href="https://www.digikey.com/en/products/detail/rakwireless-technology-limited/RAK13002-X-WB-N/22536551">here</a></p>
+<p>rak19007 pinout description <a href="https://meshtastic.org/docs/hardware/devices/rak/core-module/">here</a></p>
+<h1>Mon May 13 10:01:22 PM EDT 2024</h1>
+<p>using the cli to talk / hear nodes <a href="https://meshtastic.discourse.group/t/get-last-message-using-meshtastic-python-api-feature-request/2876/26">here</a></p>
+<p>rxd 7
+txd 47
+baud 38400
+mode textmsg</p>
+<p>in arduino ide, use 'new line'</p>
+<hr>
+<p>waveshare:</p>
+<p>guide for 2.13 e ink <a href="https://www.waveshare.com/wiki/2.13inch_e-Paper_HAT_Manual#Working_With_Arduino">here</a></p>
+<p>same on itsy m0, but:
+rst d7
+busy d12</p>
+<p>arduino library for waveshare <a href="https://github.com/soonuse/epd-library-arduino">here</a></p>
+<p>getting serial data on arduino without blocking <a href="https://gammon.com.au/serial">here</a></p>
+<p>circuitpython tips and tricks <a href="https://github.com/todbot/circuitpython-tricks">here</a></p>
+<p>meshtastic-to-serial is basic working version</p>
+<p>suggestion on reading bytes from keyboard <a href="https://forum.arduino.cc/t/read-a-character-string-from-i2c-keyboard/1011365/12">here</a></p>
+<h1>Tue May 14 03:02:50 PM EDT 2024</h1>
+<p>rtc power switches:</p>
+<ul>
+<li><a href="https://electronics.stackexchange.com/questions/396748/rtc-power-switch-for-raspberry-pi">https://electronics.stackexchange.com/questions/396748/rtc-power-switch-for-raspberry-pi</a></li>
+<li><a href="https://hackaday.io/project/170925-sweech">sweech</a></li>
+<li><a href="https://forum.dronebotworkshop.com/components/external-power-on-off-control-circuit/paged/3/">https://forum.dronebotworkshop.com/components/external-power-on-off-control-circuit/paged/3/</a></li>
+<li><a href="https://hackaday.com/2019/06/24/ditch-the-switch-a-soft-latching-circuit-roundup/">https://hackaday.com/2019/06/24/ditch-the-switch-a-soft-latching-circuit-roundup/</a></li>
+<li><a href="https://sites.google.com/site/wayneholder/time-based-and-low-power-techniques-for-arduino">https://sites.google.com/site/wayneholder/time-based-and-low-power-techniques-for-arduino</a></li>
+<li><a href="https://randomnerdtutorials.com/latching-power-switch-circuit-auto-power-off-circuit-esp32-esp8266-arduino/">https://randomnerdtutorials.com/latching-power-switch-circuit-auto-power-off-circuit-esp32-esp8266-arduino/</a></li>
+<li><a href="https://www.eevblog.com/forum/beginners/switching-12v-power-from-ds3231-open-drain-intsqw-pin/">https://www.eevblog.com/forum/beginners/switching-12v-power-from-ds3231-open-drain-intsqw-pin/</a> -- this might be where to begin!</li>
+<li>another simple explanation here: <a href="https://forum.arduino.cc/t/power-on-off-with-ds323rtc/308686/6">https://forum.arduino.cc/t/power-on-off-with-ds323rtc/308686/6</a></li>
+<li>need a p-mos for a ds3231 circuit <a href="https://forum.arduino.cc/t/using-ds3231-rtc-alarm-pin-to-power-mosfet/219377">https://forum.arduino.cc/t/using-ds3231-rtc-alarm-pin-to-power-mosfet/219377</a></li>
+</ul>
 
 
     </div>

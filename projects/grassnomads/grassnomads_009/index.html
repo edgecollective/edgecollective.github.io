@@ -101,6 +101,23 @@ Current code:</p>
 <p><a href="https://realgoods.com/blog/how-to-keep-solar-batteries-warm-in-winter/">How to keep batteries warm in winter</a></p>
 <p><a href="https://diysolarforum.com/threads/diy-low-temp-battery-cutoff-using-relay-and-electronic-thermostat.21038/">https://diysolarforum.com/threads/diy-low-temp-battery-cutoff-using-relay-and-electronic-thermostat.21038/</a></p>
 <p><a href="https://www.amazon.com/dp/B07VDRGK9F">https://www.amazon.com/dp/B07VDRGK9F</a></p>
+<h1>Wed May 15 07:58:41 PM EDT 2024</h1>
+<p><a href="https://www.eevblog.com/forum/beginners/switching-12v-power-from-ds3231-open-drain-intsqw-pin/">https://www.eevblog.com/forum/beginners/switching-12v-power-from-ds3231-open-drain-intsqw-pin/</a></p>
+<p><img src="/img/ojofeliz/DS3231_power_control.jpg" alt=""></p>
+<p>also here: <a href="https://forum.arduino.cc/t/mods-to-ds3231-zs-042-module-for-power-control/1101164">https://forum.arduino.cc/t/mods-to-ds3231-zs-042-module-for-power-control/1101164</a></p>
+<ul>
+<li>discusses necessary modifications to make the ebay module work</li>
+</ul>
+<p>see post #2 -- also handles higher-voltage circuit</p>
+<blockquote>
+<p>For the low-voltage circuit, the P-channel mosfet could be a DMP1045U or something similar with very low threshold voltage and low on-resistance.</p>
+</blockquote>
+<blockquote>
+<p>For the high-voltage circuit, the P-channel doesn't need to be logic level, but should have a GS maximum of 20V, and low on-resistance. An IRF9540 would work.</p>
+</blockquote>
+<blockquote>
+<p>And the BSS138 would work for the small N-channel mosfet.</p>
+</blockquote>
 
 
     </div>

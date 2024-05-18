@@ -211,22 +211,132 @@ less nice, I see some noise - I think that high gain TIA is also picking up 60Hz
 <p><img src="/img/uvf/craig_PD.jpg" alt=""></p>
 <h1>Fri May 10 03:39:30 PM EDT 2024</h1>
 <p><img src="/img/uvf/uvf_meeting_may10.png" alt=""></p>
-<p>rxd 7
-txd 47
-baud 38400
-mode textmsg</p>
-<p>in arduino ide, use 'new line'</p>
-<hr>
-<p>waveshare:</p>
-<p>guide for 2.13 e ink <a href="https://www.waveshare.com/wiki/2.13inch_e-Paper_HAT_Manual#Working_With_Arduino">here</a></p>
-<p>same on itsy m0, but:
-rst d7
-busy d12</p>
-<p>arduino library for waveshare <a href="https://github.com/soonuse/epd-library-arduino">here</a></p>
-<p>getting serial data on arduino without blocking <a href="https://gammon.com.au/serial">here</a></p>
-<p>circuitpython tips and tricks <a href="https://github.com/todbot/circuitpython-tricks">here</a></p>
-<p>meshtastic-to-serial is basic working version</p>
-<p>suggestion on reading bytes from keyboard <a href="https://forum.arduino.cc/t/read-a-character-string-from-i2c-keyboard/1011365/12">here</a></p>
+<h1>Fri May 17 08:25:56 PM EDT 2024</h1>
+<p>Version 0.2 of hardware does indeed work!</p>
+<p>Input: 1 kHz square wave, 50% duty cycle, 3.3V pp</p>
+<p>[Video of initial test with cuvette filled with distilled water](<img src="/img/uvf/initial_cuvette_test.mp4" alt=""></p>
+<ul>
+<li>interesting: voltage at DETECT slightly higher with liquid-filled cuvette than without any cuvette ... lens effect?</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><img src="/img/uvf/raw_battery_sag.jpg" alt=""></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Raw battery sag is about 0.2V</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><img src="/img/uvf/urea_setup.jpg" alt=""></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Test setup</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><img src="/img/uvf/leak_blocked.jpg" alt=""></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">LEAK blocked</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><img src="/img/uvf/leak_unblocked.jpg" alt=""></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">LEAK unblocked</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><img src="/img/uvf/rect_blocked.jpg" alt=""></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">RECT blocked</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><img src="/img/uvf/rect_unblocked_ac.jpg" alt=""></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">RECT unblocked</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><img src="/img/uvf/detect_blocked.jpg" alt=""></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">DETECT blocked</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><img src="/img/uvf/detect_unblocked.jpg" alt=""></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">DETECT unblocked</td>
+</tr>
+</tbody>
+</table>
+<p><img src="/img/uvf/dilution.jpg" alt=""></p>
+<h2>Initial 'linearity test' attempt using tannin powder</h2>
+<p><img src="/img/uvf/tannin.jpg" alt=""></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><a href="/img/uvf/tannin_test.mp4"><img src="/img/uvf/droplet_experiment_cover.png" alt=""></a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Video of initial tannin test. Initial solution: 25 mg tannin powder in 5 mL of distilled water (this dropped DETECT signal to 'zero'); then diluted 5 mL of that solution into 25 mL of distilled water.</td>
+</tr>
+</tbody>
+</table>
+<h2>Next steps:</h2>
+<ul>
+<li>DC-DC boost noise reduction via 555-based circuit</li>
+<li>test of linearity of circuit</li>
+<li>555-based 1 kHz input</li>
+<li>respin case to enhance internal light collimation</li>
+<li>ground plane on board and 60 Hz shielding</li>
+</ul>
 
 
     </div>
