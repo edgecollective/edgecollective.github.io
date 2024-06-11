@@ -29,13 +29,68 @@
         <!-- <h1>Upgrading the Power System</h1> -->
 
   
-  <h1>Wed Jun  5 07:05:51 PM EDT 2024</h1>
-<p><img src="/img/ojofeliz/overall_circuit_transmitter_sensor.png" alt=""></p>
-<p><img src="/img/ojofeliz/transmit_box_labeled.png" alt=""></p>
-<p><img src="/img/ojofeliz/solar_box_cables.png" alt=""></p>
-<p><img src="/img/ojofeliz/solar_power_setup.jpeg" alt=""></p>
-<p><img src="/img/ojofeliz/dc_dc_labeled.png" alt=""></p>
-<p><img src="/img/ojofeliz/dc_dc_swap.png" alt=""></p>
+  <h2>Background</h2>
+<p>We had attempted to implement a solar-charged lead-acid battery system in order to deal with cold weather temperatures.</p>
+<p>An overview of our new system diagram can be seen in Fig. 0 below.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><img src="/img/ojofeliz/overall_circuit_transmitter_sensor.png" alt=""></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><strong>Fig 0.</strong></td>
+</tr>
+</tbody>
+</table>
+<p>The lead-acid battery voltage is 12V;  but the transmitter box electronics requires a lower voltage -- something between 3V and 5V.</p>
+<p>We had therefore used a 'DC-DC Converter' (the circuit board highlighted with a green rectangle in Figure 1) to convert 12V down to 3.3V.</p>
+<p>After testing in the field, we found that 3.3V was insufficient;  5V is required.</p>
+<h2>Upgrade Procedure</h2>
+<p>So our plan now is to replace the current 3.3V DC-DC Converter with a 5V DC-DC converter (shown in Figure 2. below).</p>
+<p>The procedure requires:</p>
+<ol>
+<li>Removing the original 3.3V DC-DC converter by disconnecting or cutting the wires connecting it to the solar controller and the power-out cable (Cable 'PWR' in Fig 1.)</li>
+<li>Inserting the new 5V DC-DC converter by connecting its input wires ('A' and 'B' in Fig. 1) to the solar controller, and splicing its output wires ('C' and 'D' in Fig. 1) to the output power cable (Cable 'PWR' in Fig 1.)</li>
+<li>Connecting the power cable from the solar box (Cable 'PWR' in Fig 1.) to the transmitter box input (Cable 'PWR' in Fig 3.)</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><img src="/img/ojofeliz/solarbox_dcdc.png" alt=""></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><strong>Fig. 1.</strong></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><img src="/img/ojofeliz/dc_dc_labeled.png" alt=""></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><strong>Fig. 2.</strong></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><img src="/img/ojofeliz/transmitter_box_labeled.png" alt=""></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><strong>Fig. 3.</strong></td>
+</tr>
+</tbody>
+</table>
 
 
     </div>
