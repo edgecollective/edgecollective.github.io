@@ -360,7 +360,61 @@ less nice, I see some noise - I think that high gain TIA is also picking up 60Hz
 <p>op-amp is LT1716</p>
 <p><a href="/img/uvf/555_switcher_boost_circuit_1.png"><img src="/img/uvf/555_switcher_boost_circuit_1.png" alt=""></a></p>
 <p><img src="/img/uvf/555_pinout.webp" alt=""></p>
-<h1>Mon May 27 04:44:00 PM EDT 2024</h1>
+<h1>Sat Jun 15 03:28:33 PM EDT 2024</h1>
+<p>generating a 500 hz signal on a feather m4 ...</p>
+<p>start with silly blink example</p>
+<p>.002 second delay ...</p>
+<h1>Tue Jun 18 05:51:13 PM EDT 2024</h1>
+<p>Great description of method for UV254 here: <a href="https://images.hach.com/asset-get.download.jsa?code=50588">https://images.hach.com/asset-get.download.jsa?code=50588</a></p>
+<p>&quot;use a glass fiber filter with no organic binder&quot;</p>
+<p>As well as here: <a href="https://assets.thermofisher.com/TFS-Assets/LPD/Application-Notes/an_uva_e_1020_rev_b_rev_web.pdf">https://assets.thermofisher.com/TFS-Assets/LPD/Application-Notes/an_uva_e_1020_rev_b_rev_web.pdf</a></p>
+<p>Kearns et al methods suggest 1 um filter;
+Looks from last link there that .45 um filters are also acceptable</p>
+<p>Getting some good results here -- <a href="https://www.amazon.com/s?k=glass+fiber+syringe+filter&amp;i=industrial&amp;crid=3FR5VDYJW4RHQ&amp;sprefix=glass+fiber+syringe+filter%2Cindustrial%2C105&amp;ref=nb_sb_noss_1">https://www.amazon.com/s?k=glass+fiber+syringe+filter&amp;i=industrial&amp;crid=3FR5VDYJW4RHQ&amp;sprefix=glass+fiber+syringe+filter%2Cindustrial%2C105&amp;ref=nb_sb_noss_1</a></p>
+<p>... need to figure out what diameter filter to try</p>
+<h1>Fri Jun 28 02:33:07 PM EDT 2024</h1>
+<p>Another 555 boost circuit <a href="https://circuitdigest.com/electronic-circuits/a-simple-boost-converter-circuit-using-555-timer-ic">here</a></p>
+<p><a href="https://www.eevblog.com/forum/projects/555-timer-boost-converter-(and-buck-converter)-switching-power-regulator/">https://www.eevblog.com/forum/projects/555-timer-boost-converter-(and-buck-converter)-switching-power-regulator/</a></p>
+<p>And yet another here: <a href="https://www.instructables.com/Simple-DC-DC-Boost-Converter-Using-555/">https://www.instructables.com/Simple-DC-DC-Boost-Converter-Using-555/</a></p>
+<p><a href="https://www.researchgate.net/publication/359257240_DC_to_DC_Boost_Converter_using_555_Timer_IC">https://www.researchgate.net/publication/359257240_DC_to_DC_Boost_Converter_using_555_Timer_IC</a></p>
+<p>From <a href="https://www.researchgate.net/figure/DC-to-DC-Boost-Converter-using-555-timer-IC-6-to-24_fig1_359257240">https://www.researchgate.net/figure/DC-to-DC-Boost-Converter-using-555-timer-IC-6-to-24_fig1_359257240</a> -- <img src="/img/uvf/dc_dc_555_boost.png" alt=""></p>
+<p><img src="/img/uvf/simple_boost_555.png" alt=""> via <a href="https://www.youtube.com/watch?v=fuXH-cQjYwo">https://www.youtube.com/watch?v=fuXH-cQjYwo</a></p>
+<p>also: <a href="https://how2electronics.com/dc-dc-converter-using-555-timer/">https://how2electronics.com/dc-dc-converter-using-555-timer/</a></p>
+<p>simplest: <a href="https://www.circuits-diy.com/boost-converter-circuit-using-555-timer-ic/">https://www.circuits-diy.com/boost-converter-circuit-using-555-timer-ic/</a></p>
+<p>555 oscillator circuit explained here: <a href="https://www.electronics-tutorials.ws/waveforms/555_oscillator.html">https://www.electronics-tutorials.ws/waveforms/555_oscillator.html</a></p>
+<p>simplest 555 oscillator circuit <a href="https://www.555-timer-circuits.com/simplest-555-oscillator.html">https://www.555-timer-circuits.com/simplest-555-oscillator.html</a></p>
+<p>good explanation of desgining a 555 oscillator: <a href="https://www.digikey.com/en/resources/conversion-calculators/conversion-calculator-555-timer#:~:text=mS,Niobium%20Oxide%20Capacitors">https://www.digikey.com/en/resources/conversion-calculators/conversion-calculator-555-timer#:~:text=mS,Niobium%20Oxide%20Capacitors</a></p>
+<p>BCN547 reference <a href="https://components101.com/transistors/bc547-transistor-pinout-datasheet">https://components101.com/transistors/bc547-transistor-pinout-datasheet</a></p>
+<h1>Sun Jun 30 05:40:21 PM EDT 2024</h1>
+<p>Used this circuit to make a mostly 50% duty cycle oscillator: <a href="https://www.electronics-tutorials.ws/waveforms/555-circuits-part-1.html">https://www.electronics-tutorials.ws/waveforms/555-circuits-part-1.html</a> -- using the 'Simple 555 Oscillator' ... could improve by using diodes in lower circuits on that page ('exact 50% duty cycle'), but waiting on diode supply.  used R=5.5K, C=.1uF ... freq should be 1.3KHz, got more like 580 Hz.</p>
+<p>Now going to try to build this: <a href="https://www.researchgate.net/profile/Muhammad-Ameer-Hamza-2/publication/359257240/figure/fig1/AS:1134177667817474@1647420436729/DC-to-DC-Boost-Converter-using-555-timer-IC-6-to-24.ppm">https://www.researchgate.net/profile/Muhammad-Ameer-Hamza-2/publication/359257240/figure/fig1/AS:1134177667817474@1647420436729/DC-to-DC-Boost-Converter-using-555-timer-IC-6-to-24.ppm</a></p>
+<p>... or this: <a href="https://how2electronics.com/dc-dc-converter-using-555-timer/">https://how2electronics.com/dc-dc-converter-using-555-timer/https://how2electronics.com/dc-dc-converter-using-555-timer/</a></p>
+<p>Review of 555 timer <a href="https://electronics.stackexchange.com/questions/152432/555-timer-boost-converter-doesnt-meet-spec">https://electronics.stackexchange.com/questions/152432/555-timer-boost-converter-doesnt-meet-spec</a></p>
+<p>Flyback converter for dummies <a href="https://www.dos4ever.com/flyback/flyback.html">https://www.dos4ever.com/flyback/flyback.html</a> -- great explanation</p>
+<p>Nice notes on 555 boost converters <a href="https://github.com/tardate/LittleArduinoProjects/blob/master/Electronics101/555Timer/NixiePowerSupply/README.md">https://github.com/tardate/LittleArduinoProjects/blob/master/Electronics101/555Timer/NixiePowerSupply/README.md</a></p>
+<p>This instructable might be derivative <a href="https://www.instructables.com/High-Voltage-Power-Supply-for-Nixie-and-Valve-Tube/">https://www.instructables.com/High-Voltage-Power-Supply-for-Nixie-and-Valve-Tube/</a> -- with a better circuit to follow</p>
+<p>Very clear circuit diagrams:</p>
+<ul>
+<li><a href="https://www.instructables.com/High-Voltage-Power-Supply-for-Nixie-and-Valve-Tube/">https://www.instructables.com/High-Voltage-Power-Supply-for-Nixie-and-Valve-Tube/</a></li>
+<li><a href="https://github.com/tardate/LittleArduinoProjects/blob/master/Electronics101/555Timer/NixiePowerSupply/README.md">https://github.com/tardate/LittleArduinoProjects/blob/master/Electronics101/555Timer/NixiePowerSupply/README.md</a></li>
+</ul>
+<p>this seems like a very similar circuit <a href="https://www.eleccircuit.com/wp-content/uploads/2012/08/dc-to-dc-converter-using-ic-ne555.jpg">https://www.eleccircuit.com/wp-content/uploads/2012/08/dc-to-dc-converter-using-ic-ne555.jpg</a></p>
+<p>problem -- if use single 555, the output voltage will drop as the battery voltage drops. using another 555 can compensate.  <a href="https://www.eevblog.com/forum/beginners/boost-converter-using-555/">https://www.eevblog.com/forum/beginners/boost-converter-using-555/</a></p>
+<p>... unless, i think, there's some feedback mechanism -- which an op-amp, or another 555, can provide.</p>
+<h1>Mon Jul  1 05:23:37 PM EDT 2024</h1>
+<p>Might try the IRF740 as a power mosfet ... <a href="https://www.vishay.com/docs/91054/91054.pdf">https://www.vishay.com/docs/91054/91054.pdf</a></p>
+<p>why / why not use an op-amp as a comparator?  nice app note: <a href="https://www.analog.com/media/en/technical-documentation/application-notes/an-849.pdf">https://www.analog.com/media/en/technical-documentation/application-notes/an-849.pdf</a></p>
+<p>second circuit uses the BC557 PNP transistor <a href="https://www.mouser.com/datasheet/2/308/BC556BTA_D-2310029.pdf">https://www.mouser.com/datasheet/2/308/BC556BTA_D-2310029.pdf</a></p>
+<p>trying the first circuit</p>
+<p>using the tlv2462 as a comparator, datasheet <a href="https://www.ti.com/lit/ds/symlink/tlv2462.pdf?ts=1719855288428&amp;ref_url=https%253A%252F%252Fwww.ti.com%252Fproduct%252FTLV2462%253Fbm-verify%253DAAQAAAAJ_____7t_iiCZs2-0IXoUu_7mYbVf72gUi9_Ko-Vr6kyE7u3yaZwWkwcX_3-3XyM--l5cbybllQ09BX9Fosc2bSl5SVAUcYE8BgTvwibsRHt4BKdv4NuSec8KGih_O17wKTFpGevutg1ad4qYDMjPZtobhp5b2fbQ_4If76jp7igw1qe93F_nBcqs4jYqnXtlSvpIJPny889ZlSpN-7ylR0VzY-NkOYZutNP2wDUlyvxAzlIi2YEOAEdgT_3B1BaiT2L2jmYh6CH8_l4focJHkLdDmHthJ2MIVf5KYlvIosmgsWHE_nobYb7TyPBUOA">here</a></p>
+<p><img src="/img/uvf/tlv2462_pinout.png" alt=""></p>
+<p><img src="/img/uvf/irf740.png" alt=""></p>
+<p>Post debug with Mike:</p>
+<ul>
+<li>Remove D3 &amp; D9</li>
+<li>Place C3, but might not need</li>
+<li>Whatever value of voltage reference D1 implies values of R6 and R7 to get us to 7.5 Volts</li>
+</ul>
 
 
     </div>
