@@ -411,10 +411,44 @@ Looks from last link there that .45 um filters are also acceptable</p>
 <p><img src="/img/uvf/irf740.png" alt=""></p>
 <p>Post debug with Mike:</p>
 <ul>
-<li>Remove D3 &amp; D9</li>
-<li>Place C3, but might not need</li>
-<li>Whatever value of voltage reference D1 implies values of R6 and R7 to get us to 7.5 Volts</li>
+<li>
+<p>replaced IRF29072 with IRF740</p>
+</li>
+<li>
+<p>for voltage ref, replaced 1N750 with 1N4732A (4.7V) Zener  ... 4.7V was too close to 5V ... so then used 1N4727A (3V) Zener ... whatever voltage we generate via D1, implies proper value of voltage divider R6 &amp; R7 to get us to 7.5 Volts</p>
+</li>
+<li>
+<p>Remove D3 &amp; D9</p>
+</li>
+<li>
+<p>Place C3, but might not need to populate</p>
+</li>
+<li>
+<p>replaced DFLS220L with IN5817</p>
+</li>
+<li>
+<p>tested with 3 x 1K resistor load in parallel (replacing R5); still very smooth output, no droop</p>
+</li>
 </ul>
+<h1>Tue Jul  2 05:26:31 PM EDT 2024</h1>
+<p>LM358ADR digikey $0.40 <a href="https://www.digikey.com/en/products/detail/texas-instruments/LM358ADR/555540?utm_adgroup=&amp;utm_source=google&amp;utm_medium=cpc&amp;utm_campaign=Pmax_Shopping_Boston%20Metro%20Category%20Awareness&amp;utm_term=&amp;utm_content=&amp;utm_id=go_cmp-20837509568_adg-_ad-__dev-c_ext-_prd-555540_sig-CjwKCAjwyo60BhBiEiwAHmVLJX4WQ_9Vm3RCA1vSrYdf1WwBZ7y5ZAuo139o7Uyq6VomeHFqisBuNhoC9SUQAvD_BwE&amp;gad_source=1&amp;gclid=CjwKCAjwyo60BhBiEiwAHmVLJX4WQ_9Vm3RCA1vSrYdf1WwBZ7y5ZAuo139o7Uyq6VomeHFqisBuNhoC9SUQAvD_BwE">here</a></p>
+<p>Package: 8-SOIC (0.154&quot;, 3.90mm Width)</p>
+<p>What input voltage is ideal for the LEDs?</p>
+<p>Try to get to 7.5 volts ...</p>
+<p>Okay ...</p>
+<p>Got to 7.5 volts with the combination I have</p>
+<p>Replicated the basic setup with 555 timer input</p>
+<p><img src="/img/uvf/555_50_50.png" alt=""></p>
+<p>Reference: see &quot;555 Circuits Part 1 – An Improved Duty Cycle&quot; ,  at <a href="https://www.electronics-tutorials.ws/waveforms/555-circuits-part-1.html">https://www.electronics-tutorials.ws/waveforms/555-circuits-part-1.html</a></p>
+<p>Used:  NE555 timer, RA = RB = 5.5K; C = 0.1 uF;  got freq of 1.15 kHz;   used 100 nF from pin 5 to ground</p>
+<p>The circuit I'm using to generate 7.5 volts:</p>
+<ul>
+<li>R1 is 10K</li>
+<li>D1 is a 1N4727A ... the voltage drop across it seemed to be around 2.2 V</li>
+<li>R6 is 10K (9.69K when measured)</li>
+<li>R7 is 4.2K</li>
+</ul>
+<p>seemed to generate around 7.5 volts.  Might want to place an optional potentiometer to dial in the proper voltage ...</p>
 
 
     </div>
