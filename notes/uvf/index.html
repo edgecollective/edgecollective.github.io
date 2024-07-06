@@ -454,11 +454,37 @@ Looks from last link there that .45 um filters are also acceptable</p>
 <li>R6 is 10K (9.69K when measured)</li>
 <li>R7 is 4.2K</li>
 <li>replaced IRF29072 with IRF740</li>
-<li>Remove D3 &amp; D9</li>
+<li>Remove D3 &amp; R9</li>
 <li>Place C3, but might not need to populate</li>
 <li>replaced DFLS220L with IN5817</li>
 </ul>
 <p>seemed to generate around 7.5 volts.  Might want to place an optional potentiometer to dial in the proper voltage ...</p>
+<h1>Wed Jul  3 05:27:24 PM EDT 2024</h1>
+<p>Reading about output filter design here: <a href="https://resources.altium.com/p/switching-power-supply-output-filter-design-and-simulationhttps://resources.altium.com/p/switching-power-supply-output-filter-design-and-simulation">https://resources.altium.com/p/switching-power-supply-output-filter-design-and-simulation</a></p>
+<p>Added 10uF cap from 5V to GND, and added 50 uH inductor across 5V output ...</p>
+<p>Switching 555 is running at 155 KHz</p>
+<p>Current signal gen 555 output is at 880 Hz</p>
+<p>Designing a snubber circuit for a buck IC: <a href="https://fscdn.rohm.com/en/products/databook/applinote/ic/power/switching_regulator/buck_snubber_app-e.pdf">https://fscdn.rohm.com/en/products/databook/applinote/ic/power/switching_regulator/buck_snubber_app-e.pdf</a></p>
+<p>Minimizing ringing of a boost converter: <a href="https://www.ti.com/lit/an/slva255/slva255.pdf?ts=1720022648821">https://www.ti.com/lit/an/slva255/slva255.pdf?ts=1720022648821</a></p>
+<p>Pi filter: <a href="https://diyguru.org/term/what-is-a-pi-filter/">https://diyguru.org/term/what-is-a-pi-filter/</a></p>
+<p><img src="/img/uvf/555_footprint_size.png" alt=""></p>
+<p>via <a href="https://www.ti.com/lit/ds/symlink/lm555.pdf?HQS=dis-dk-null-digikeymode-dsf-pf-null-wwe&amp;ts=1720046307239&amp;ref_url=https%253A%252F%252Fwww.ti.com%252Fgeneral%252Fdocs%252Fsuppproductinfo.tsp%253FdistId%253D10%2526gotoUrl%253Dhttps%253A%252F%252Fwww.ti.com%252Flit%252Fgpn%252Flm555">LM555 datasheet</a></p>
+<p>SOIC-8 -- 4.90 mm × 3.91 mm</p>
+<p>RC snubber around a Mosfet</p>
+<h1>Fri Jul  5 06:07:37 PM EDT 2024</h1>
+<p><img src="/img/uvf/instructable_boost.bmp" alt=""></p>
+<p>What to do with unused op-amps <a href="https://e2e.ti.com/blogs_/archives/b/thesignal/posts/the-unused-op-amp-what-to-do">https://e2e.ti.com/blogs_/archives/b/thesignal/posts/the-unused-op-amp-what-to-do</a></p>
+<p>Selecting the right comparator <a href="https://www.analog.com/en/resources/technical-articles/selecting-the-right-comparator.html">https://www.analog.com/en/resources/technical-articles/selecting-the-right-comparator.html</a></p>
+<p>Reference around designing snubber circuits <a href="https://www.cde.com/resources/technical-papers/design.pdf">https://www.cde.com/resources/technical-papers/design.pdf</a></p>
+<p>TL331IDBVR -- the single comparator version of the lm339 -- <a href="https://www.digikey.com/en/products/detail/texas-instruments/TL331IDBVR/381307">https://www.digikey.com/en/products/detail/texas-instruments/TL331IDBVR/381307</a></p>
+<p>LMV331 also a possibility <a href="https://www.ti.com/lit/ds/symlink/lmv331-n.pdf?HQS=dis-dk-null-digikeymode-dsf-pf-null-wwe&amp;ts=1720219930696&amp;ref_url=https%253A%252F%252Fwww.ti.com%252Fgeneral%252Fdocs%252Fsuppproductinfo.tsp%253FdistId%253D10%2526gotoUrl%253Dhttps%253A%252F%252Fwww.ti.com%252Flit%252Fgpn%252Flmv331-n">https://www.ti.com/lit/ds/symlink/lmv331-n.pdf?HQS=dis-dk-null-digikeymode-dsf-pf-null-wwe&amp;ts=1720219930696&amp;ref_url=https%253A%252F%252Fwww.ti.com%252Fgeneral%252Fdocs%252Fsuppproductinfo.tsp%253FdistId%253D10%2526gotoUrl%253Dhttps%253A%252F%252Fwww.ti.com%252Flit%252Fgpn%252Flmv331-n</a></p>
+<p><img src="/img/uvf/pi_filter.png" alt=""></p>
+<p>Suggested power mosfet here: <a href="https://www.digikey.com/en/products/detail/diodes-incorporated/DMN61D9UWQ-13/7666847">https://www.digikey.com/en/products/detail/diodes-incorporated/DMN61D9UWQ-13/7666847</a></p>
+<p>-- to be determined, as long as there's a proper footprint</p>
+<p>going for this for now <a href="https://www.diodes.com/assets/Datasheets/DMN2056U.pdf">https://www.diodes.com/assets/Datasheets/DMN2056U.pdf</a> -- final is the DMN2056U</p>
+<p><img src="/img/uvf/PI_FILTER.png" alt=""></p>
+<p>QT-PY details <a href="https://learn.adafruit.com/adafruit-qt-py/downloads">https://learn.adafruit.com/adafruit-qt-py/downloads</a></p>
+<p>test point <a href="https://www.digikey.com/en/products/detail/keystone-electronics/5001/255327">https://www.digikey.com/en/products/detail/keystone-electronics/5001/255327</a></p>
 
 
     </div>
