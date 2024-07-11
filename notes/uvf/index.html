@@ -485,6 +485,50 @@ Looks from last link there that .45 um filters are also acceptable</p>
 <p><img src="/img/uvf/PI_FILTER.png" alt=""></p>
 <p>QT-PY details <a href="https://learn.adafruit.com/adafruit-qt-py/downloads">https://learn.adafruit.com/adafruit-qt-py/downloads</a></p>
 <p>test point <a href="https://www.digikey.com/en/products/detail/keystone-electronics/5001/255327">https://www.digikey.com/en/products/detail/keystone-electronics/5001/255327</a></p>
+<h1>Thu Jul 11 04:35:04 PM EDT 2024</h1>
+<h2>Previous linearity evaluation</h2>
+<p>Previous linearity test, using multimeter to measure outout of 'DETECT', and wine tannins:</p>
+<p><img src="/img/uvf/linearity_exp.jpg" alt=""></p>
+<p><img src="/img/uvf/linearity_exp_3.png" alt=""></p>
+<h2>Addressing fluctuating ADC measurement</h2>
+<p>Fixing the fluctuating signal on the ADC Feather input by adding an RC filter (R=5.5K, C=330nF, placed right at ADC input)</p>
+<table>
+<thead>
+<tr>
+<th><img src="/img/uvf/adc_fix_1.jpg" alt=""></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0.1uF or 1uF cap only</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th><img src="/img/uvf/adc_fix_2.jpg" alt=""></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RC filter (R=5.5K, C=330nF) on breadboard; 4 inch wire then connects to Feather ADC.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th><img src="/img/uvf/adc_fix_3.jpg" alt=""></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RC filter (R=5.5K, C=330nF) with cap placed directly at Feather ADC</td>
+</tr>
+</tbody>
+</table>
+<p>Summary: fluctuating ADC measurements seem to have been due to boost generator pulses being picked up by ADC.  Adding RC filter squashed it, made ADC much more stable.  Further improvements might involve measuring just after the 555 pulses, to avoid any influence of 555 signal.</p>
 
 
     </div>
