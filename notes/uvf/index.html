@@ -529,6 +529,19 @@ Looks from last link there that .45 um filters are also acceptable</p>
 </tbody>
 </table>
 <p>Summary: fluctuating ADC measurements seem to have been due to boost generator pulses being picked up by ADC.  Adding RC filter squashed it, made ADC much more stable.  Further improvements might involve measuring just after the 555 pulses, to avoid any influence of 555 signal.</p>
+<h1>Fri Jul 12 08:05:59 PM EDT 2024</h1>
+<p>added measurement 'solid' to Craig's openscad model:</p>
+<p>//PCB_PCB = COLUMN_DEPTH-(PCB_STAND_OFF_DEPTH);
+PCB_PCB = COLUMN_DEPTH - PCB_THICKNESS*2;
+translate([-COLUMN_WIDTH/2,-PCB_PCB/2,0])
+color(&quot;blue&quot;,0.6)
+cube([COLUMN_WIDTH,PCB_PCB,COLUMN_HEIGHT]);</p>
+<p>echo(PCB_PCB=PCB_PCB);</p>
+<p>where PCB_PCB is the distance between the inner surfaces of the emitter and detector PCBs</p>
+<p>seems to work well</p>
+<p><img src="/img/uvf/pcb_pcb.png" alt=""></p>
+<p>and the measured distance is 23.9 mm</p>
+<p>so in the control board design, use this distance, plus any offset due to right angle headers</p>
 
 
     </div>
