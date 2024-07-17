@@ -556,7 +556,21 @@ cube([COLUMN_WIDTH,PCB_PCB,COLUMN_HEIGHT]);</p>
 <p>Detector pinout:</p>
 <p><img src="/img/uvf/detector_pinout_inner.png" alt=""></p>
 <p>Emitter pinout:</p>
-<p><img src="/img/uvf/emitter_pintout_inner.png" alt=""></p>
+<p><img src="/img/uvf/emitter_pinout_inner.png" alt=""></p>
+<p>COLUMN_WIDTH=44 mm</p>
+<p>i.e. the emitter and detector pcbs are 34 mm x 34 mm; the current 'column' 3d design is 10 mm wider than the pcb</p>
+<p>if we want the connectors to be separated by an integral number typical header spacings, we can do 12;  i.e. 12*2.54 mm = 30.48</p>
+<p>detector header is at 29.62;</p>
+<h1>Tue Jul 16 07:12:13 PM EDT 2024</h1>
+<p>Partitioning and layout of mixed-signal PCBs <a href="https://hott.shielddigitaldesign.com/pdf_files/june2001pcd_mixedsignal.pdf">here</a></p>
+<p><img src="/img/uvf/mixed_signal.png" alt=""></p>
+<p><img src="/img/uvf/button.png" alt=""></p>
+<p>Ground pours in KiCad <a href="https://www.wayneandlayne.com/blog/2013/02/26/kicad-tutorial-copper-pours-fills/">here</a></p>
+<p><img src="/img/uvf/pushbutton_style.png" alt=""></p>
+<p>D1 -- Zener diode -- Need to use 3V zener ; for example, <a href="https://www.digikey.com/en/products/detail/micro-commercial-co/MMSZ4683-TP/2345537">MMSZ4683-TP</a> -- SOD123 seems like typical footprint?</p>
+<p>D4 -- Schottky diode, e.g. <a href="https://www.digikey.com/en/products/detail/micro-commercial-co/SM5817PL-TP/1793251">SM5817PL-TP</a> ... SOD123FL</p>
+<p>555 timer -- e.g. <a href="https://www.digikey.com/en/products/detail/texas-instruments/NE555DR/372491">NE555DR</a> -- 8-SOIC</p>
+<p>inductor 50uH -- e.g. <a href="https://www.digikey.com/en/products/detail/bourns-inc/SRR1205-500YL/2562284">SRR1205-500YL</a></p>
 
 
     </div>
