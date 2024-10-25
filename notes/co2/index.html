@@ -3282,11 +3282,9 @@ Feed Home Page: http://co2.pvos.org/data/7zqjzktfq997</p>
 <p>in the limit of many receipts, it simply loops back into another receipt again; but it will always measure itself and send via wifi if it's past time to do so</p>
 <p>i.e. something like:</p>
 <p>if (millis() &gt; wait interval) {</p>
-<pre><code>if we're the gateway, measure our own CO2 and send via wifi;
-
-if we're a remote node, measure our own CO2 and send via lora;
-</code></pre>
-<p>}</p>
+<p>if we're the gateway, measure our own CO2 and send via wifi;</p>
+<p>if we're a remote node, measure our own CO2 and send via lora;
+}</p>
 <p>if recvfromAckTimeout(wait interval) {
 // running this function means that we are relaying any mesh messages
 // if it returns true, then we were the intended recipient

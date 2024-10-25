@@ -45,8 +45,7 @@
 <blockquote>
 <p>For esp32, elf2image produces a single output binary &quot;image file&quot;. By default this has the same name as the .elf file, with a .bin extension. ie:</p>
 </blockquote>
-<pre><code>    esptool.py --chip esp32 elf2image my_esp32_app.elf
-</code></pre>
+<p>esptool.py --chip esp32 elf2image my_esp32_app.elf</p>
 <blockquote>
 <p>In the above example, the output image file would be called my_esp32_app.bin.</p>
 </blockquote>
@@ -56,8 +55,7 @@
 <p>Setting up <a href="https://www.youtube.com/watch?v=j-Nz14qaNIw">Heltec ESP32 on Arduino</a></p>
 <h2>What is working</h2>
 <p>If I first erase the chip using:</p>
-<pre><code>python esptool.py --chip esp32 erase_flash
-</code></pre>
+<p>python esptool.py --chip esp32 erase_flash</p>
 <p>And then use 'adafruit esp32 feather' in the board setup in arduino ide, it seems to just work.  Not sure if I needed simply to erase the flash beforehand.</p>
 <h2>Button on Meshtastic</h2>
 <p>I was getting 'button press functionality' when running Meshtastic on the Quahog.  I needed to change the quahog Mestastic-device code so that the 'button' was no longer GPIO 0 (default), but GPIO 19 (other pins may also work for this).  This corresponds to 'release/latest/quahog_firmware_v3.bin' in Meshtastic-device-quahog on github.</p>
