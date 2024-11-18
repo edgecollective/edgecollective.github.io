@@ -84,6 +84,9 @@ RX pin: board.D9         TX pin: board.D8
 RX pin: board.D5         TX pin: board.MISO
 RX pin: board.D9         TX pin: board.MISO</p>
 <p>NOTE:  the depth sensor should receive on the 'created' UART -- only need to coordinate the RX pin -- while the satellite modem should have the 'true' board UART as defined.</p>
+<h1>Mon Nov 18 12:10:48 PM EST 2024</h1>
+<p>Update:  ver 0.4 board seems to work well ...</p>
+<p>There are periodic errors on the depth sensor -- reading an 'error' -- when sending via satellite on battery (ie waking up periodically).  Haven't been able to reproduce when plugged in.  Going to try to insert a delay after starting up uart on depth sensor in case that's the issue.  In parallel might try to design version of board that has an extra linear regulator for 3V line in case insufficient current on startup is an issue.</p>
 
 
     </div>
