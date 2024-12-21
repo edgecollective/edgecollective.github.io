@@ -93,6 +93,19 @@ RX pin: board.D9         TX pin: board.MISO</p>
 <h1>Tue Nov 19 12:17:18 PM EST 2024</h1>
 <p>Looks like things are pretty solid ... using 'second_test.py' in sweet-p firmware version 4a</p>
 <p><img src="/img/ojofeliz/regular_pings.png" alt=""></p>
+<h1>Fri 20 Dec 2024 05:31:22 PM EST</h1>
+<p>Recent experiment indicated that the problem is not with the battery, but with the sensor.</p>
+<p>On a very cold morning, the system starting reading '999'.  When I swapped in a 'warm' battery, it still read '999'.</p>
+<p>Seems that the sensor itself doesn't do well in the cold.</p>
+<p>So, new plan:</p>
+<ul>
+<li>we'll always try to send whatever data we get, goofy or not, at 5 AM and 1 PM</li>
+<li>if we ever get goofy data, afterwards we'll keep trying every 30 minutes to get 'good' data until we get a good reading we can send</li>
+</ul>
+<p>so, when sending ...</p>
+<p>now we need to start recording the value of what was sent ...</p>
+<p>if last reading was '999' or '-1', and the current value isn't either of those, then should send</p>
+<p>okay -- attempting this with code ver 0.4.5</p>
 
 
     </div>
