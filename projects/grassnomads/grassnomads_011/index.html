@@ -84,28 +84,6 @@ RX pin: board.D9         TX pin: board.D8
 RX pin: board.D5         TX pin: board.MISO
 RX pin: board.D9         TX pin: board.MISO</p>
 <p>NOTE:  the depth sensor should receive on the 'created' UART -- only need to coordinate the RX pin -- while the satellite modem should have the 'true' board UART as defined.</p>
-<h1>Mon Nov 18 12:10:48 PM EST 2024</h1>
-<p>Update:  ver 0.4 board seems to work well ...</p>
-<p>There are periodic errors on the depth sensor -- reading an 'error' -- when sending via satellite on battery (ie waking up periodically).  Haven't been able to reproduce when plugged in.  Going to try to insert a delay after starting up uart on depth sensor in case that's the issue.  In parallel might try to design version of board that has an extra linear regulator for 3V line in case insufficient current on startup is an issue.</p>
-<h1>Mon Nov 18 06:40:46 PM EST 2024</h1>
-<p>Testing new uart code.  Another source of 'error' might've been the code for reading from the uart -- I think the earlier version wouldn't immediately return the depth once a reasonable depth was reported</p>
-<p>Q: if we do get any 999 values, i wonder if we can re-query?</p>
-<h1>Tue Nov 19 12:17:18 PM EST 2024</h1>
-<p>Looks like things are pretty solid ... using 'second_test.py' in sweet-p firmware version 4a</p>
-<p><img src="/img/ojofeliz/regular_pings.png" alt=""></p>
-<h1>Fri 20 Dec 2024 05:31:22 PM EST</h1>
-<p>Recent experiment indicated that the problem is not with the battery, but with the sensor.</p>
-<p>On a very cold morning, the system starting reading '999'.  When I swapped in a 'warm' battery, it still read '999'.</p>
-<p>Seems that the sensor itself doesn't do well in the cold.</p>
-<p>So, new plan:</p>
-<ul>
-<li>we'll always try to send whatever data we get, goofy or not, at 5 AM and 1 PM</li>
-<li>if we ever get goofy data, afterwards we'll keep trying every 30 minutes to get 'good' data until we get a good reading we can send</li>
-</ul>
-<p>so, when sending ...</p>
-<p>now we need to start recording the value of what was sent ...</p>
-<p>if last reading was '999' or '-1', and the current value isn't either of those, then should send</p>
-<p>okay -- attempting this with code ver 0.4.5</p>
 
 
     </div>
