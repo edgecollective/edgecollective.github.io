@@ -166,6 +166,123 @@ Noctua NF-F12 3000rpm  109.8 CFM at mo</p>
 <p>Fri 04 Jul 2025 03:21:57 PM EDT</p>
 <p><img src="/img/journal/sdcard.png" alt=""></p>
 <p><img src="/img/journal/original_lay.png" alt=""></p>
+<p>Sat 05 Jul 2025 08:55:55 PM EDT</p>
+<p><img src="/img/journal/volts.jpg" alt=""></p>
+<p>Fri 11 Jul 2025 04:46:35 PM EDT</p>
+<p>Adafruit instructions for updating bootloader <a href="https://learn.adafruit.com/adafruit-feather-sense/update-bootloader-use-command-line">here</a></p>
+<p>using the spi bus on battery power <a href="https://learn.adafruit.com/introducing-the-adafruit-nrf52840-feather/caution-using-spi-on-battery-power">https://learn.adafruit.com/introducing-the-adafruit-nrf52840-feather/caution-using-spi-on-battery-power</a></p>
+<p>creating an mpy file <a href="https://learn.adafruit.com/welcome-to-circuitpython/library-file-types-and-frozen-libraries">here</a></p>
+<p>Sat 12 Jul 2025 02:59:34 PM EDT</p>
+<p>Current approach to radio library works alright</p>
+<p>Tue 15 Jul 2025 08:42:57 AM EDT</p>
+<p>Making a 12V solar charger with LM317 video <a href="https://www.youtube.com/watch?v=xvpqFcUm-lE">here</a></p>
+<p>Lindsay video <a href="https://www.youtube.com/watch?v=QY0WfFA3ju4">here</a></p>
+<p>design <a href="http://imajeenyus.com/electronics/20160530_adjustable_current_source/index.shtml">here</a></p>
+<p>Auto cutoff <a href="https://www.youtube.com/watch?v=MZ_6Wc563XE">here</a></p>
+<p><img src="/assets/img/auto_cut.png" alt=""></p>
+<p>Cutoff circuit diagram <a href="https://www.rcpano.net/2019/10/09/12v-lead-acid-battery-charging-circuit-with-auto-cut-off-diy-pb-battery-charger/#google_vignette">here</a></p>
+<p>ACS712 <a href="https://www.amazon.com/HiLetgo-ACS712-Current-Sensor-Module/dp/B07SPRL8DL/ref=asc_df_B07SPRL8DL?mcid=1e273d1686c83d518d00fe34c1c08249&amp;tag=hyprod-20&amp;linkCode=df0&amp;hvadid=693071814664&amp;hvpos=&amp;hvnetw=g&amp;hvrand=5715915006728785760&amp;hvpone=&amp;hvptwo=&amp;hvqmt=&amp;hvdev=c&amp;hvdvcmdl=&amp;hvlocint=&amp;hvlocphy=9002061&amp;hvtargid=pla-1953911807751&amp;psc=1&amp;hvocijid=5715915006728785760-B07SPRL8DL-&amp;hvexpln=0">here</a></p>
+<p>LM317 datasheet <a href="https://www.ti.com/lit/an/snva581/snva581.pdf?ts=1750976004509&amp;ref_url=https%253A%252F%252Fwww.google.com%252F">here</a></p>
+<p><a href="https://electronics.stackexchange.com/questions/503642/lithium-ion-battery-charger-using-lm317">charging circuit with lm317</a></p>
+<p><a href="https://www.eleccircuit.com/the-most-lead-acid-battery-charger-circuit-by-lm317/">lm317 battery charging tutorial</a></p>
+<p><img src="/assets/img/lm317_design.png" alt=""></p>
+<p>Adjustible DC-DC booster circuit <a href="https://www.rcpano.net/2022/10/22/adjustable-dc-to-dc-booster-circuit-5-15v-to-max-40v/#google_vignette">here</a></p>
+<p>This video uses lm317 for solar charging, claims better than standard equipment <a href="https://www.youtube.com/watch?v=lOxJru8VOuU">https://www.youtube.com/watch?v=lOxJru8VOuU</a></p>
+<p>And associated circuit diagram <a href="https://youtu.be/lOxJru8VOuU?t=253">here</a></p>
+<p>auto cutoff, a little neater <a href="https://www.youtube.com/watch?v=QGTvWTN0K_Y">here</a></p>
+<p>best of both worlds <a href="https://www.eleccircuit.com/the-most-lead-acid-battery-charger-circuit-by-lm317/">here</a></p>
+<p>suggesting here that lm317 already has inherent current limiting characteristic -- <a href="https://electronics.stackexchange.com/questions/311633/lm317-sealed-lead-acid-charger">discussion</a></p>
+<p>app note on lm317 <a href="https://www.ti.com/lit/ds/symlink/lm317.pdf">here</a></p>
+<p>circuit digest article <a href="https://circuitdigest.com/microcontroller-projects/12v-battery-charger-circuit-diagram-using-lm317">here</a></p>
+<p>Focus on this one:</p>
+<p><img src="/assets/img/dual.png" alt=""></p>
+<p>Wed 16 Jul 2025 02:24:08 PM EDT</p>
+<p>the proper circuit for the charger is here <a href="https://www.youtube.com/watch?v=xvpqFcUm-lE">https://www.youtube.com/watch?v=xvpqFcUm-lE</a> as per convo with Mike Beach</p>
+<p>Wed 16 Jul 2025 02:44:50 PM EDT</p>
+<p>The 'nibbler' is for sale <a href="https://www.amazon.com/BEAVERBOT-Kids-Cardboard-Cutter-Tool/dp/B0F1YGX2KP/ref=asc_df_B0F1YGX2KP?mcid=4e90ce22b2b13758830a873d3d648b58&amp;tag=hyprod-20&amp;linkCode=df0&amp;hvadid=745030100340&amp;hvpos=&amp;hvnetw=g&amp;hvrand=1614601410888290240&amp;hvpone=&amp;hvptwo=&amp;hvqmt=&amp;hvdev=c&amp;hvdvcmdl=&amp;hvlocint=&amp;hvlocphy=9001996&amp;hvtargid=pla-2420323204993&amp;psc=1&amp;hvocijid=1614601410888290240-B0F1YGX2KP-&amp;hvexpln=0">here</a></p>
+<p>App note for LM317 battery charger <a href="https://www.ti.com/lit/an/snva581/snva581.pdf?ts=1752611628597">here</a></p>
+<p>Wed 16 Jul 2025 02:49:33 PM EDT</p>
+<p>Ideas for STEM sailing</p>
+<p>GPS location live
+Accelerometer - capsize / tilt
+anemometer
+water depth
+mesh radio comm</p>
+<p>solar charging
+basics of batteries and voltage and current
+what can be powered
+how long to charge
+schwag -- voltmeter, charger</p>
+<p>Sun 20 Jul 2025 10:10:30 PM EDT</p>
+<p><img src="/img/journal/mb1.png" alt=""></p>
+<p><img src="/img/journal/mb2.png" alt=""></p>
+<p><img src="/img/journal/mb3.png" alt=""></p>
+<p>Thu 31 Jul 2025 11:03:41 AM EDT</p>
+<p>Neat DIY radio case <a href="https://www.amazon.com/STEM-Science-Educational-Radio-Building/dp/B0DB5R4N2C">https://www.amazon.com/STEM-Science-Educational-Radio-Building/dp/B0DB5R4N2C</a></p>
+<p>DIY walkie talkie <a href="https://www.amazon.com/dp/B0DZ71RSHQ/ref=sspa_dk_detail_3">here</a></p>
+<h1>ideas for WFS</h1>
+<ul>
+<li>franconia hike</li>
+<li>RC fan boat</li>
+<li>welded cargo bike</li>
+<li>mobile workshop trailer</li>
+</ul>
+<p>leather tool belt for skipping stones <a href="https://x.com/Johnny_suputama/status/1950617183916081155">here</a></p>
+<p>Some solid ideas to sketch out</p>
+<p>bike trailer / kayak trailers</p>
+<p>solar charging circuit prototyping and assessment</p>
+<p>conductivity</p>
+<p>uv254</p>
+<p>meshbot radios</p>
+<p>historical fiction with Judy</p>
+<p>mobile workshops -- tarp + materials -- a lot can be done just via the car, or via bike trailer</p>
+<p>test out a bike trailer mobile workshop in a park</p>
+<p>Mon 04 Aug 2025 10:01:32 PM EDT</p>
+<p><img src="/img/journal/waveshare_radio_pins_lucc.png" alt=""></p>
+<p><img src="/img/journal/itsybitsy_pins_lucc.png" alt=""></p>
+<p>Thu 07 Aug 2025 10:40:42 AM EDT</p>
+<p>Great video on latching circuit <a href="https://www.youtube.com/watch?v=Er8fSoeaZD0">here</a></p>
+<p><img src="/img/journal/latch_circuit.png" alt=""></p>
+<p>Reference at start of this video to making a battery charging circuit <a href="https://www.youtube.com/watch?v=NecbHbGAkkc">here</a></p>
+<p>Homemade liPo battery charger circuit <a href="https://www.youtube.com/watch?v=qRVEJjk5B_g">here</a></p>
+<p>Teaching writing with precision <a href="https://x.com/MrZachG/status/1954570637449613434">here</a></p>
+<p>Using co2 monitors to monitor indoor air quality / occupancy <a href="https://x.com/ukhadds/status/1954086871610380730">here</a></p>
+<p>Far-UVC in an elderly care setting <a href="https://x.com/DrNick4126/status/1954148924631007481">here</a></p>
+<p>Mon 11 Aug 2025 09:04:57 AM EDT</p>
+<p>Homeschooling resources:</p>
+<ul>
+<li><a href="https://www.doe.mass.edu/homeschool/">https://www.doe.mass.edu/homeschool/</a></li>
+<li><a href="https://lexington.macaronikid.com/articles/5f17205ce54a9278612499ac/how-do-i-homeschool-in-massachusetts">https://lexington.macaronikid.com/articles/5f17205ce54a9278612499ac/how-do-i-homeschool-in-massachusetts</a></li>
+<li><a href="https://www.ahem.info/faq.html">https://www.ahem.info/faq.html</a></li>
+<li><a href="https://www.mhla.org/getting-started/quick-start-guide">https://www.mhla.org/getting-started/quick-start-guide</a></li>
+</ul>
+<p>draft homeschool education plans</p>
+<ul>
+<li><a href="https://www.ahem.info/sample_ed_plan.html">https://www.ahem.info/sample_ed_plan.html</a></li>
+</ul>
+<p>Tue 12 Aug 2025 08:40:43 PM EDT</p>
+<p>Latch webpage <a href="https://electronoobs.com/eng_circuitos_tut60.php">here</a></p>
+<p><img src="/img/journal/latch_circuit.jpg" alt=""></p>
+<p>Datasheet for IRF4905 P-Channel Mosfet <a href="https://www.infineon.com/assets/row/public/documents/24/49/infineon-irf4905-datasheet-en.pdf">here</a></p>
+<p><img src="/img/journal/irf4905_pmos.png" alt=""></p>
+<p><img src="/img/journal/2n3904.webp" alt=""></p>
+<p>Great scott latching circuit described <a href="https://forum.arduino.cc/t/soft-latching-circuit-is-leakage-current-an-issue-through-a-pmos/1012689">here</a></p>
+<p>Update:  used the latch circuit from electronoobs above, but replaced R3 with 100K.</p>
+<p>Latching circuit with micro, <a href="https://electronoobs.com/eng_circuitos_tut61.php">here</a></p>
+<p>Wed 13 Aug 2025 03:50:14 PM EDT</p>
+<p>Nice!Nano pinout <a href="https://nicekeyboards.com/docs/nice-nano/pinout-schematic/">here</a></p>
+<p>erase methods <a href="https://docs.circuitpython.org/en/latest/docs/troubleshooting.html">here</a></p>
+<p>NOTE!  When P0.13 is set low, it cuts off power to the 3.3V power pin on the board!!!!</p>
+<p>011 SCL
+104 SDA</p>
+<p>Useful post on setting alarms in circuitpython <a href="https://forums.adafruit.com/viewtopic.php?t=213231">here</a></p>
+<p>Wed 13 Aug 2025 08:27:18 PM EDT</p>
+<p>'every_few_seconds_control.py is the latest working code'</p>
+<p>it seems that things are most stable when there is no pullup on SQW, and there is a pull down (100K) on P0_09 (the 'off' pin for the latch)</p>
+<p>Thu 14 Aug 2025 02:24:51 PM EDT</p>
+<p>Great example of a forest school website, <a href="https://mulberryforestschool.net/Typical-Day">Mulberry Montessori</a></p>
+<p>amazing architecture presentations <a href="https://tr.pinterest.com/pin/1056586762582048918/">here</a></p>
+<p>types of wood <a href="https://www.pinterest.com/pin/602567625182403960/">here</a></p>
 
 
     </div>
