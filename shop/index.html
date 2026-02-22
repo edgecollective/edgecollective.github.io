@@ -1,0 +1,265 @@
+
+
+<!-- feed it through our cssmin filter to minify -->
+<style>
+  body{font:16px/1.5 sans-serif;font:16px}.img-with-caption{font-size:15px;text-align:center;margin:20 0;background-color:F1F1F1;padding:10px}#pullout{text-align:center}#intro{max-width:700px;display:inline-block;text-align:justify;text-justify:inter-word}#post-content{max-width:800px}#post-title{margin-bottom:1px;background-color:#eee;border:1px solid #999;display:block;padding:8px;width:max-content;font-size:40px;margin-right:40px;margin-bottom:5px}#profile_pic{float:right;margin:0 0 1em 1em}#main-title{line-height:1em;font-size:x-large;margin-bottom:.31em}h1{line-height:1em;font-size:30px;margin-bottom:.31em}h2{margin-bottom:1px;font-size:22px}h3{font-size:15px;margin-bottom:1px}ol,ul{max-width:650px}a{text-decoration:none}a:hover{text-decoration:underline}a:visited{color:#00f}*,:after,:before{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}.section-container{background:#fff;border:1px solid #e6e6e3;border-radius:16px;padding:1.5rem;box-shadow:0 1px 2px rgba(0,0,0,.04),0 8px 24px rgba(0,0,0,.06);margin-bottom:2rem}.section-container h2{color:#1c4d3a;font-size:1.4rem;text-align:center;margin:0 0 .5rem}.section-container .section-desc{color:#6b6b6b;text-align:center;max-width:600px;margin:0 auto 1rem;font-size:.95rem}.section-container .back-to-top{text-align:center;margin:0 0 .5rem}.section-container .back-to-top a{font-size:.8rem;color:#6b6b6b}.posts-area{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.contribute{width:100%;padding-top:10px}.post{background:#fff;border:1px solid #e6e6e3;border-radius:16px;overflow:hidden;box-shadow:0 1px 2px rgba(0,0,0,.04),0 8px 24px rgba(0,0,0,.06);display:flex;flex-direction:column}.post.project-card{border-top:3px solid #5b8fd4}.post.note-card{border-top:3px solid #9370db}.post.pedagogy-card{border-top:3px solid #6b9b4d}.post.talk-card{border-top:3px solid #cd5c5c}.post.podcast-card{border-top:3px solid #d4a574}.post .image{aspect-ratio:4/3;background:#dcdcd7;overflow:hidden;position:relative}.post .image a{display:block;position:absolute;top:0;left:0;width:100%;height:100%}.post .image img{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover}.post .text{padding:14px;flex:1;display:flex;flex-direction:column}.post .text h3{margin:0 0 6px;font-size:1rem}.post .text p{color:#6b6b6b;font-size:.85rem;margin:4px 0 0;line-height:1.4}.post .text em{color:#6b6b6b;font-size:.8rem;margin-top:auto;padding-top:8px}img{max-width:100%}table{margin:30 auto 30 auto;padding:10px;text-align:left;border:1px solid #000;max-width:100%}td{padding:10px;text-align:left;font-size:15}.post .inter-text{padding:14px}audio{width:50%;height:50px}figure{font-size:20}@media (max-width:880px){.posts-area{grid-template-columns:1fr 1fr}table{width:100%}}@media (max-width:560px){.posts-area{grid-template-columns:1fr}}.video-container{position:relative;width:100%;padding-bottom:56.25%}.video{position:absolute;top:0;left:0;width:100%;height:100%;border:0}.frame{height:300px;width:100%;white-space:nowrap;text-align:center;margin:1em 0}.helper{display:inline-block;height:100%;vertical-align:middle}.present_img{background:#3a6f9a;vertical-align:middle;max-height:300}
+</style>
+
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/x-icon" href="/img/edge_favicon.png" />
+
+    <title>Edge Collective</title>
+  </head>
+  <body>
+    <style>
+/* ── Shop Page Styles ── */
+.shop-wrap {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: left;
+}
+.shop-intro {
+  text-align: center;
+  margin-bottom: 28px;
+}
+.shop-intro p {
+  max-width: 580px;
+  margin: 0 auto;
+  color: #555;
+}
+
+/* Cart button */
+.cart-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #fff;
+  border: 1px solid #ccc;
+  padding: 8px 18px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+  cursor: pointer;
+  margin-bottom: 24px;
+}
+.cart-button:hover {
+  background: #f0f0f0;
+}
+
+/* Product grid */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.product-card {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow 0.15s ease;
+}
+.product-card:hover {
+  box-shadow: 0 4px 16px rgba(0,0,0,.1);
+}
+
+.product-thumb {
+  aspect-ratio: 4/3;
+  background: #e8e8e8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+}
+.product-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.product-body {
+  padding: 16px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.product-body h3 {
+  margin: 0 0 4px;
+  font-size: 16px;
+  background: none;
+  border: none;
+  padding: 0;
+  width: auto;
+}
+.product-price {
+  font-size: 18px;
+  font-weight: 600;
+  color: #2a7a5a;
+  margin: 0 0 8px;
+}
+.product-desc {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.45;
+  margin: 0 0 14px;
+  flex: 1;
+}
+
+.badge-tag {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  background: lightblue;
+  color: #333;
+  padding: 2px 8px;
+  border-radius: 999px;
+  margin-bottom: 6px;
+  width: fit-content;
+}
+
+.snipcart-add-item {
+  display: inline-block;
+  background: #2a7a5a;
+  color: #fff !important;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none !important;
+}
+.snipcart-add-item:hover {
+  background: #1f5c44;
+}
+
+.product-buttons {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.learn-more-link {
+  display: inline-block;
+  padding: 10px 18px;
+  border: 1px solid #2a7a5a;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #2a7a5a !important;
+  text-decoration: none !important;
+  text-align: center;
+}
+.learn-more-link:hover {
+  background: rgba(42, 122, 90, 0.08);
+}
+
+.shop-footer {
+  text-align: center;
+  margin-top: 28px;
+  padding-top: 16px;
+  border-top: 1px solid #ddd;
+  color: #888;
+  font-size: 14px;
+}
+
+@media (max-width: 700px) {
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+<div class="shop-wrap">
+<div class="shop-intro">
+<p><a href="/">Edge Collective</a></p>
+<h2>Shop</h2>
+<p>Kits, boards, and hardware for off-grid communication, environmental monitoring, and resilience projects.</p>
+</div>
+<div class="product-grid">
+  <!-- Product 1 -->
+  <div class="product-card">
+    <div class="product-thumb">
+      <img src="/img/ec_flower_logo_small.png" alt="LoRa Mesh Radio Kit" />
+    </div>
+    <div class="product-body">
+      <span class="badge-tag">Kit</span>
+      <h3>LoRa Mesh Radio Kit</h3>
+      <div class="product-price">$45.00</div>
+      <p class="product-desc">
+        Everything you need to build an off-grid mesh radio communicator.
+        Includes microcontroller, LoRa radio module, OLED display, antenna, and enclosure.
+      </p>
+      <a href="/shop/lora-mesh-radio-kit/" class="learn-more-link">Learn more</a>
+    </div>
+  </div>
+  <!-- Product 2 -->
+  <div class="product-card">
+    <div class="product-thumb">
+      <img src="/img/ec_flower_logo_small.png" alt="Solar Charge Controller Board" />
+    </div>
+    <div class="product-body">
+      <span class="badge-tag">Board</span>
+      <h3>Solar Charge Controller Board</h3>
+      <div class="product-price">$28.00</div>
+      <p class="product-desc">
+        A simple LiFePO4 solar charge controller for small off-grid setups.
+        Accepts 6V–20V panels, charges a single 3.2V LiFePO4 cell, and provides
+        regulated 3.3V and 5V outputs.
+      </p>
+      <a href="/shop/solar-charge-controller/" class="learn-more-link">Learn more</a>
+    </div>
+  </div>
+  <!-- Product 3 -->
+  <div class="product-card">
+    <div class="product-thumb">
+      <img src="/img/ec_flower_logo_small.png" alt="Water Quality Sensor Kit" />
+    </div>
+    <div class="product-body">
+      <span class="badge-tag">Kit</span>
+      <h3>Water Quality Sensor Kit</h3>
+      <div class="product-price">$55.00</div>
+      <p class="product-desc">
+        DIY conductivity/salinity sensor with LoRa telemetry. Includes probe,
+        signal conditioning board, microcontroller, and waterproof enclosure.
+      </p>
+      <a href="/shop/water-quality-sensor-kit/" class="learn-more-link">Learn more</a>
+    </div>
+  </div>
+  <!-- Product 4 -->
+  <div class="product-card">
+    <div class="product-thumb">
+      <img src="/img/ec_flower_logo_small.png" alt="CO2 Monitor Kit" />
+    </div>
+    <div class="product-body">
+      <span class="badge-tag">Hardware</span>
+      <h3>CO2 Monitor Kit</h3>
+      <div class="product-price">$35.00</div>
+      <p class="product-desc">
+        Build your own indoor air quality monitor. Includes SCD40 CO2 sensor,
+        microcontroller, OLED display, and 3D-printed enclosure.
+      </p>
+      <a href="/shop/co2-monitor-kit/" class="learn-more-link">Learn more</a>
+    </div>
+  </div>
+</div><!-- /product-grid -->
+<div class="shop-footer">
+  Questions about a product? Reach us at
+  <a href="mailto:collaborate@edgecollective.io?subject=Shop%20Question">collaborate@edgecollective.io</a>
+</div>
+</div><!-- /shop-wrap -->
+
+  </body>
+</html>

@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edge Blog Quick Edit</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: #1a1a2e;
+      color: #eee;
+      line-height: 1.5;
+      padding: 1rem;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 1rem;
+      position: sticky;
+      top: 0;
+      background: #1a1a2e;
+      padding: 0.5rem 0 1rem;
+      z-index: 100;
+      border-bottom: 1px solid #333;
+    }
+
+    .title-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+      margin-bottom: 0.75rem;
+    }
+
+    h1 {
+      font-size: 1.5rem;
+      color: #4ecdc4;
+      margin: 0;
+    }
+
+    #refresh-btn {
+      background: #2d2d44;
+      border: 1px solid #444;
+      color: #ccc;
+      padding: 0.4rem 0.7rem;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 0.85rem;
+      transition: all 0.2s;
+    }
+
+    #refresh-btn:hover {
+      background: #4ecdc4;
+      color: #1a1a2e;
+      border-color: #4ecdc4;
+    }
+
+    #refresh-btn.loading {
+      opacity: 0.6;
+      cursor: wait;
+    }
+
+    .search-container {
+      margin-bottom: 0.75rem;
+    }
+
+    #search {
+      width: 100%;
+      max-width: 400px;
+      padding: 0.6rem 1rem;
+      font-size: 1rem;
+      border: 2px solid #333;
+      border-radius: 6px;
+      background: #2d2d44;
+      color: #eee;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    #search:focus {
+      border-color: #4ecdc4;
+    }
+
+    #search::placeholder {
+      color: #666;
+    }
+
+    .search-info {
+      font-size: 0.8rem;
+      color: #666;
+      margin-top: 0.4rem;
+    }
+
+    .highlight {
+      background: #4ecdc4;
+      color: #1a1a2e;
+      padding: 0 2px;
+      border-radius: 2px;
+    }
+
+    .no-results {
+      text-align: center;
+      padding: 2rem;
+      color: #888;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      justify-content: center;
+    }
+
+    nav a {
+      background: #2d2d44;
+      color: #ccc;
+      padding: 0.4rem 0.8rem;
+      border-radius: 4px;
+      text-decoration: none;
+      font-size: 0.85rem;
+      transition: all 0.2s;
+    }
+
+    nav a:hover {
+      background: #4ecdc4;
+      color: #1a1a2e;
+    }
+
+    section {
+      margin-bottom: 2rem;
+    }
+
+    h2 {
+      font-size: 1.1rem;
+      color: #4ecdc4;
+      border-bottom: 1px solid #333;
+      padding-bottom: 0.5rem;
+      margin-bottom: 1rem;
+      text-transform: capitalize;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 0.75rem;
+    }
+
+    .card {
+      background: #2d2d44;
+      border-radius: 8px;
+      padding: 0.75rem;
+      cursor: pointer;
+      transition: all 0.2s;
+      border: 1px solid transparent;
+    }
+
+    .card:hover {
+      border-color: #4ecdc4;
+      transform: translateY(-2px);
+    }
+
+    .card.related {
+      background: #252538;
+      border-left: 3px solid #666;
+      opacity: 0.85;
+    }
+
+    .card.related:hover {
+      opacity: 1;
+      border-color: #4ecdc4;
+      border-left-color: #4ecdc4;
+    }
+
+    .related-label {
+      font-size: 0.65rem;
+      color: #888;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 0.25rem;
+    }
+
+    .card-title {
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 0.25rem;
+      font-size: 0.95rem;
+    }
+
+    .card-path {
+      font-size: 0.75rem;
+      color: #888;
+      margin-bottom: 0.4rem;
+      font-family: monospace;
+    }
+
+    .card-excerpt {
+      font-size: 0.8rem;
+      color: #aaa;
+      margin-bottom: 0.4rem;
+      line-height: 1.4;
+    }
+
+    .card-modified {
+      font-size: 0.7rem;
+      color: #666;
+    }
+
+    .loading {
+      text-align: center;
+      padding: 2rem;
+      color: #888;
+    }
+
+    .error {
+      background: #442d2d;
+      color: #ff6b6b;
+      padding: 1rem;
+      border-radius: 8px;
+      text-align: center;
+    }
+
+    .status {
+      position: fixed;
+      bottom: 1rem;
+      right: 1rem;
+      background: #4ecdc4;
+      color: #1a1a2e;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      font-size: 0.85rem;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .status.show {
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="title-row">
+      <h1>Edge Blog Quick Edit</h1>
+      <button id="refresh-btn" title="Reload file list">Refresh</button>
+    </div>
+    <div class="search-container">
+      <input type="text" id="search" placeholder="Search titles, excerpts, and full content..." autofocus>
+      <div id="search-info" class="search-info"></div>
+    </div>
+    <nav id="nav"></nav>
+  </header>
+
+  <main id="content">
+    <div class="loading">Loading files...</div>
+  </main>
+
+  <div id="status" class="status"></div>
+
+  <script>
+    const API_BASE = 'http://localhost:3002';
+
+    // Category display order (others will follow alphabetically)
+    const categoryOrder = ['projects', 'blog', 'posts', 'tutorials', 'farming', 'fieldschool', 'co2', 'airbox', 'root'];
+
+    // Store all files for filtering
+    let allFilesData = null;
+
+    function formatDate(isoString) {
+      const date = new Date(isoString);
+      const now = new Date();
+
+      const month = date.toLocaleDateString('en-US', { month: 'short' });
+      const day = date.getDate().toString().padStart(2, ' ');
+
+      // Like ls -l: show time for current year, year for older
+      if (date.getFullYear() === now.getFullYear()) {
+        const time = date.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: false });
+        return `${month} ${day} ${time}`;
+      } else {
+        return `${month} ${day}  ${date.getFullYear()}`;
+      }
+    }
+
+    function showStatus(message) {
+      const status = document.getElementById('status');
+      status.textContent = message;
+      status.classList.add('show');
+      setTimeout(() => status.classList.remove('show'), 2000);
+    }
+
+    async function openFile(filePath) {
+      try {
+        const res = await fetch(`${API_BASE}/api/open`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ filePath })
+        });
+        const data = await res.json();
+        if (data.success) {
+          showStatus('Opening in gedit...');
+        } else {
+          showStatus('Error: ' + data.error);
+        }
+      } catch (err) {
+        showStatus('Error: ' + err.message);
+      }
+    }
+
+    function renderCard(file, searchTerms = []) {
+      const card = document.createElement('div');
+      card.className = file.isRelated ? 'card related' : 'card';
+      card.onclick = () => openFile(file.path);
+
+      let titleHtml = escapeHtml(file.title);
+      let excerptHtml = escapeHtml(file.excerpt);
+
+      // Highlight search terms
+      if (searchTerms.length > 0) {
+        for (const term of searchTerms) {
+          const regex = new RegExp(`(${escapeRegex(term)})`, 'gi');
+          titleHtml = titleHtml.replace(regex, '<span class="highlight">$1</span>');
+          excerptHtml = excerptHtml.replace(regex, '<span class="highlight">$1</span>');
+        }
+      }
+
+      const relatedLabel = file.isRelated ? '<div class="related-label">Related file</div>' : '';
+
+      card.innerHTML = `
+        ${relatedLabel}
+        <div class="card-title">${titleHtml}</div>
+        <div class="card-path">${escapeHtml(file.relativePath)}</div>
+        <div class="card-excerpt">${excerptHtml}</div>
+        <div class="card-modified">Modified: ${formatDate(file.modified)}</div>
+      `;
+
+      return card;
+    }
+
+    function escapeHtml(text) {
+      const div = document.createElement('div');
+      div.textContent = text;
+      return div.innerHTML;
+    }
+
+    function escapeRegex(string) {
+      return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    }
+
+    // Check if file matches search query
+    function fileMatchesSearch(file, query) {
+      if (!query) return true;
+
+      const lowerQuery = query.toLowerCase();
+      const terms = lowerQuery.split(/\s+/).filter(t => t.length > 0);
+
+      // All terms must match somewhere (title, excerpt, path, or body)
+      return terms.every(term => {
+        const searchText = [
+          file.title,
+          file.excerpt,
+          file.relativePath,
+          file.body || ''
+        ].join(' ').toLowerCase();
+
+        return searchText.includes(term);
+      });
+    }
+
+    // Filter and re-render based on search
+    function filterFiles(query) {
+      if (!allFilesData) return;
+
+      const content = document.getElementById('content');
+      const searchInfo = document.getElementById('search-info');
+      const terms = query.toLowerCase().split(/\s+/).filter(t => t.length > 0);
+
+      // If no query, show all files without related grouping
+      if (!query) {
+        const categories = Object.keys(allFilesData).sort((a, b) => {
+          const aIdx = categoryOrder.indexOf(a);
+          const bIdx = categoryOrder.indexOf(b);
+          if (aIdx === -1 && bIdx === -1) return a.localeCompare(b);
+          if (aIdx === -1) return 1;
+          if (bIdx === -1) return -1;
+          return aIdx - bIdx;
+        });
+        renderNav(categories);
+        content.innerHTML = '';
+        searchInfo.textContent = '';
+        for (const category of categories) {
+          content.appendChild(renderSection(category, allFilesData[category].map(f => ({...f, isRelated: false})), []));
+        }
+        return;
+      }
+
+      // First pass: find directly matching files and their parent directories
+      const directMatches = new Set();
+      const matchedParentDirs = new Set();
+
+      for (const [category, files] of Object.entries(allFilesData)) {
+        for (const file of files) {
+          if (fileMatchesSearch(file, query)) {
+            directMatches.add(file.path);
+            if (file.parentDir) {
+              matchedParentDirs.add(file.parentDir);
+            }
+          }
+        }
+      }
+
+      // Second pass: collect matches + related files from same directories
+      const filteredData = {};
+      let totalMatches = 0;
+      let totalRelated = 0;
+
+      for (const [category, files] of Object.entries(allFilesData)) {
+        const results = [];
+        for (const file of files) {
+          const isDirect = directMatches.has(file.path);
+          const isRelated = !isDirect && file.parentDir && matchedParentDirs.has(file.parentDir);
+
+          if (isDirect || isRelated) {
+            results.push({ ...file, isRelated });
+            if (isDirect) totalMatches++;
+            if (isRelated) totalRelated++;
+          }
+        }
+        if (results.length > 0) {
+          // Sort: direct matches first, then related
+          results.sort((a, b) => {
+            if (a.isRelated !== b.isRelated) return a.isRelated ? 1 : -1;
+            return 0;
+          });
+          filteredData[category] = results;
+        }
+      }
+
+      // Update search info
+      let infoText = `${totalMatches} file${totalMatches !== 1 ? 's' : ''} matching "${query}"`;
+      if (totalRelated > 0) {
+        infoText += ` + ${totalRelated} related`;
+      }
+      searchInfo.textContent = infoText;
+
+      // Sort categories
+      const categories = Object.keys(filteredData).sort((a, b) => {
+        const aIdx = categoryOrder.indexOf(a);
+        const bIdx = categoryOrder.indexOf(b);
+        if (aIdx === -1 && bIdx === -1) return a.localeCompare(b);
+        if (aIdx === -1) return 1;
+        if (bIdx === -1) return -1;
+        return aIdx - bIdx;
+      });
+
+      // Update nav
+      renderNav(categories);
+
+      // Render content
+      content.innerHTML = '';
+
+      if (categories.length === 0 && query) {
+        content.innerHTML = '<div class="no-results">No files match your search</div>';
+        return;
+      }
+
+      for (const category of categories) {
+        content.appendChild(renderSection(category, filteredData[category], terms));
+      }
+    }
+
+    function renderSection(category, files, searchTerms = []) {
+      const section = document.createElement('section');
+      section.id = `section-${category}`;
+
+      const h2 = document.createElement('h2');
+      h2.textContent = category.replace(/-/g, ' ') + ` (${files.length})`;
+      section.appendChild(h2);
+
+      const grid = document.createElement('div');
+      grid.className = 'grid';
+
+      for (const file of files) {
+        grid.appendChild(renderCard(file, searchTerms));
+      }
+
+      section.appendChild(grid);
+      return section;
+    }
+
+    function renderNav(categories) {
+      const nav = document.getElementById('nav');
+      nav.innerHTML = '';
+
+      for (const cat of categories) {
+        const a = document.createElement('a');
+        a.href = `#section-${cat}`;
+        a.textContent = cat.replace(/-/g, ' ');
+        nav.appendChild(a);
+      }
+    }
+
+    async function loadFiles() {
+      const content = document.getElementById('content');
+
+      try {
+        const res = await fetch(`${API_BASE}/api/files`);
+        const data = await res.json();
+
+        if (res.status !== 200) {
+          throw new Error(data.error || 'Failed to load files');
+        }
+
+        // Store for filtering
+        allFilesData = data;
+
+        // Sort categories by our preferred order
+        const categories = Object.keys(data).sort((a, b) => {
+          const aIdx = categoryOrder.indexOf(a);
+          const bIdx = categoryOrder.indexOf(b);
+          if (aIdx === -1 && bIdx === -1) return a.localeCompare(b);
+          if (aIdx === -1) return 1;
+          if (bIdx === -1) return -1;
+          return aIdx - bIdx;
+        });
+
+        // Render navigation
+        renderNav(categories);
+
+        // Render content
+        content.innerHTML = '';
+        for (const category of categories) {
+          content.appendChild(renderSection(category, data[category]));
+        }
+
+      } catch (err) {
+        content.innerHTML = `<div class="error">Error: ${escapeHtml(err.message)}</div>`;
+      }
+    }
+
+    // Set up search input
+    function setupSearch() {
+      const searchInput = document.getElementById('search');
+      let debounceTimer;
+
+      searchInput.addEventListener('input', (e) => {
+        clearTimeout(debounceTimer);
+        debounceTimer = setTimeout(() => {
+          filterFiles(e.target.value.trim());
+        }, 150); // Small debounce for smooth typing
+      });
+
+      // Clear search on Escape
+      searchInput.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          searchInput.value = '';
+          filterFiles('');
+        }
+      });
+    }
+
+    // Refresh files and re-apply current search
+    async function refreshFiles() {
+      const btn = document.getElementById('refresh-btn');
+      const searchInput = document.getElementById('search');
+
+      btn.classList.add('loading');
+      btn.textContent = 'Loading...';
+
+      await loadFiles();
+
+      // Re-apply current search filter
+      if (searchInput.value.trim()) {
+        filterFiles(searchInput.value.trim());
+      }
+
+      btn.classList.remove('loading');
+      btn.textContent = 'Refresh';
+      showStatus('Files reloaded');
+    }
+
+    // Set up refresh button
+    function setupRefresh() {
+      document.getElementById('refresh-btn').addEventListener('click', refreshFiles);
+    }
+
+    // Load on page load
+    loadFiles();
+    setupSearch();
+    setupRefresh();
+  </script>
+</body>
+</html>
