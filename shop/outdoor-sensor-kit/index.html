@@ -18,7 +18,7 @@
   <body>
     <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.7.1/default/snipcart.css" />
 <style>
-.product-page { max-width: 800px; margin: 0 auto; }
+.product-page { max-width: 800px; margin: 0 auto; padding: 0 16px; }
 .product-page-header { text-align: center; margin-bottom: 24px; }
 .product-page-header h2 { margin: 0 0 4px; }
 .product-page-image { text-align: center; margin-bottom: 24px; }
@@ -76,6 +76,14 @@
 }
 .options-add-btn {
   text-align: center;
+}
+
+/* ── Mobile ── */
+@media (max-width: 480px) {
+  .product-options { max-width: 100%; }
+  .options-add-btn .snipcart-add-item,
+  .product-page-actions .snipcart-add-item { display: block; width: 100%; }
+  .product-page-price { font-size: 21px; }
 }
 </style>
 <div class="product-page">
