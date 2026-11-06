@@ -85,6 +85,7 @@
   .product-page-actions .snipcart-add-item { display: block; width: 100%; }
   .product-page-price { font-size: 21px; }
 }
+.snipcart-add-item.out-of-stock, .snipcart-add-item.out-of-stock:hover { background: #b9b9b4; cursor: not-allowed; }
 </style>
 <div class="product-page">
 <p><a href="/shop/" class="back-link">← Back to Shop</a></p>
@@ -110,7 +111,7 @@
   <input type="number" id="qty-sensor" min="1" max="5" value="1" onchange="document.getElementById('sensor-btn').setAttribute('data-item-quantity', this.value)" />
 </div>
 <div class="options-add-btn">
-  <button class="snipcart-add-item" id="sensor-btn"
+  <button class="snipcart-add-item out-of-stock" disabled aria-disabled="true" id="sensor-btn"
     data-item-id="outdoor-sensor-kit"
     data-item-name="Mesh Radio Water Level Kit"
     data-item-price="275.00"
@@ -120,8 +121,8 @@
     data-item-weight="1700"
     data-item-quantity="1"
     data-item-max-quantity="5">
-    Add to Cart
-  </button>
+      Out of stock
+    </button>
 </div>
 </div>
 <div class="product-page-details">
@@ -144,7 +145,7 @@
 </div>
 <!-- Repeat Add to Cart at bottom -->
 <div class="product-page-actions">
-<button class="snipcart-add-item"
+<button class="snipcart-add-item out-of-stock" disabled aria-disabled="true"
   data-item-id="outdoor-sensor-kit"
   data-item-name="Mesh Radio Water Level Kit"
   data-item-price="275.00"
@@ -153,8 +154,8 @@
   data-item-image="/img/mesh/bric/sensor_package_listing_4x3.png"
   data-item-weight="1700"
   data-item-max-quantity="5">
-  Add to Cart
-</button>
+      Out of stock
+    </button>
 </div>
 </div>
 <div id="snipcart" data-api-key="MTA2ODIzNWItMjAyZi00ZThmLThiMDktNTNiOGVmMjJhNzU5NjM5MDczMTU2MTI1ODk3MDU1" data-config-modal-style="side" hidden></div>
